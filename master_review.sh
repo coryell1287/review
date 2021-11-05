@@ -54,14 +54,9 @@ list_review_material() {
     1). System Design
     2). Rest Architecture
     3). Authentication/Authorization
-    3). Python
-        a). Data Structures
-        b). Algorithms
-        c). Minutes of code
     4). TypeScript
-        a). Data Structures
-        b). Algorithms
-        c). 30 Seconds of code
+        a). Fundamentals
+        b). Recipes
     
     "
 }
@@ -79,31 +74,27 @@ check_for_flags() {
 echo "$@"
 check_for_flags "$@"
 
-# if [[ "$@" ]]
-# while getopts n:d: flag; do
-#     case "${flag}" in
-#     n) APP_NAME=${OPTARG} ;;
-#     d) DATABASE=${OPTARG} ;;
-#     *) help exit 1 ;;
-#     esac
-# done
 
 symlink=$(read_symbolic_link $(which master-review))
 PS3="Please enter your choice: "
-options=("System Design" "REST" "Auth" "Quit")
+options=("System Design" "REST" "Auth" "TypeScript" "Quit")
 select opt in "${options[@]}"; do
     case $opt in
     "System Design")
         symlink=$(read_symbolic_link $(which master-review))
-        execute_setup $symlink/"system_design.sh"
+        execute_setup $symlink/architecture/"system_design.sh"
         break
         ;;
     "REST")
-        echo "you chose choice 2"
+        execute_setup $symlink/backend/"rest.sh"
         break
         ;;
     "Auth")
-        echo "you chose choice $REPLY which is $opt"
+        execute_setup $symlink/backend/"auth.sh"
+        break
+        ;;
+    "TypeScript")
+        execute_setup $symlink/typescript/"select.sh"
         break
         ;;
     "Quit")
@@ -113,27 +104,16 @@ select opt in "${options[@]}"; do
     esac
 done
 
-# PS3="Please enter your choice: "
-# options=("System Design" "Rest Architecture" "Authentication/Authorization" "Quit")
-# select opt in "${options[@]}"; do
-#     case $opt in
-#     "System Design")
-#         echo "software_architecture.sh"
-#         break
-#         ;;
-#     "Rest Architecture")
-#         echo "you chose choice 2"
-#         break
-#         ;;
-#     "Authentication/Authorization")
-#         echo "you chose choice $REPLY which is $opt"
-#         break
-#         ;;
-#     "Quit")
-#         break
-#         ;;
-#     *) echo "invalid option $REPLY" ;;
-#     esac
-# done
-
-# cat phone-numbers.txt | grep -P "[^\s.](?:[^?.]|\.(?! ))*\?"
+#    1). System Design
+#     2). Rest Architecture
+#     3). Authentication/Authorization
+#     3). Python
+#         a). Data Structures
+#         b). Algorithms
+#         c). Minutes of code
+#     4). TypeScript
+#         a). Data Structures
+#         b). Algorithms
+#         c). 30 Seconds of code
+    
+#     "

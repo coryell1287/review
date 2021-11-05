@@ -82,7 +82,7 @@ next_question
 
 
 
-read -p "What would the output of the following code?
+read -p "What would be the output of the following code?
 
     let ages = [2, 1000, 10, 3, 23, 12, 30, 21];
 
@@ -126,5 +126,24 @@ additional_feedback="
     });
 
 "
+evaluate_answer "$response" "$answer" "$additional_feedback"
 
+
+
+
+########################################
+#         Calculate your score         #
+########################################
+
+((questions = questions + 1))
+
+if [[ correct -eq 0 ]]; then
+    echo "
+    You got nothing correct. Stop and go study.
+    
+    "
+else
+    score=$(((questions / correct) * 100))
+    echo "    You scored $score% on TypeScript recipes."
+fi
 

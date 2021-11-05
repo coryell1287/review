@@ -304,5 +304,250 @@ evaluate_answer "$response" "$answer" "$additional_feedback"
 
 
 
+next_question
+
+read -p "What is type narrowing? " response
+answer="The process of refining types to more specific types than declared."
+evaluate_answer "$response" "$answer"
+
+
 
 next_question
+
+
+
+read -p "What is a type guard? " response
+answer="Type guard is checking the result of typeof and similar runtime operations."
+additional_feedback="
+
+
+    Correct.
+
+    function getScore(value: number|string): number {
+        if (typeof value === 'number') { // (A)
+            // %inferred-type: number
+            value;
+            return value;
+        }
+        if (typeof value === 'string') { // (B)
+            // %inferred-type: string
+            value;
+            return value.length;
+        }
+        throw new Error('Unsupported value: ' + value);
+    }
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+
+
+next_question
+
+
+read -p "What types do typeof return? " response
+answer="string number bigint boolean symbol undefined object function"
+evaluate_answer "$response" "$answer"
+
+
+
+next_question
+
+
+
+
+read -p "What operator can be used to narrow the type of the following code? 
+    type Fish = { swim: () => void };
+    type Bird = { fly: () => void };
+ 
+    function move(animal: Fish | Bird) {
+        if (\"swim\" in animal) {
+            return animal.swim();
+        }
+        
+        return animal.fly();
+    }
+
+
+Enter your answer: " response
+additional_feedback="
+
+      Correct.
+
+      type Fish = { swim: () => void };
+      type Bird = { fly: () => void };
+
+      function move(animal: Fish | Bird) {
+        if (\"swim\" in animal) {
+            return animal.swim();
+        }
+        
+        return animal.fly();
+    }
+
+"
+answer="in operator"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+
+
+next_question
+
+
+read -p "What is control flow analysis? " response
+answer="Analysis of code based on reachability"
+additional_feedback="
+
+    TypeScript uses this flow analysis to narrow types as it encounters type guards 
+    and assignments. When a variable is analyzed, control flow can split off and re-merge 
+    over and over again, and that variable can be observed to have a different type at each point.
+
+    function example() {
+        let x: string | number | boolean;
+        
+        x = Math.random() < 0.5;
+        
+        console.log(x);
+             
+        let x: boolean
+        
+        if (Math.random() < 0.5) {
+            x = \"hello\";
+            console.log(x);
+                    
+        let x: string
+        } else {
+            x = 100;
+            console.log(x);
+                    
+        let x: number
+        }
+        
+        return x;
+                
+        let x: string | number
+    }
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+
+
+next_question
+
+
+
+read -p "How is user-defined defined? " response
+answer="Define a function whose return type is a type predicate."
+
+
+
+next_question
+
+
+
+read -p "What is the type predicate for the function if the type has to be Fish? 
+    
+    
+    function isFish(pet: Fish | Bird) {
+       return;
+    }
+
+
+Enter you answer" response
+answer="pet is Fish"
+additional_feedback="
+
+    Correct.
+
+    function isFish(pet: Fish | Bird): pet is Fish {
+      return;
+    }
+
+"
+
+next_question
+
+read -p "What should go next to the return statement? 
+    
+    
+    function isFish(pet: Fish | Bird): pet is Fish {
+       return;
+    }
+
+
+Enter you answer" response
+answer="(pet as Fish).swim !== undefined"
+additional_feedback="
+
+    Correct.
+    function isFish(pet: Fish | Bird): pet is Fish {
+       return (pet as Fish).swim !== undefined;
+    }
+
+
+    let pet = getSmallPet();
+ 
+    if (isFish(pet)) {
+      pet.swim();
+    } else {
+      pet.fly();
+    }
+
+"
+
+ next_question
+
+
+
+ read -p "How would a discriminate union be applied to the following code to narrow the type?
+
+        interface Circle {
+           kind: \"circle\";
+           radius: number;
+        }
+ 
+        interface Square {
+          kind: \"square\";
+          sideLength: number;
+        }
+ 
+        type Shape = Circle | Square;
+
+
+        function getArea(shape: Shape) {
+          return Math.PI * shape.radius ** 2;
+        }
+ 
+ "
+answer="shape.kind === 'Circle'"
+additional_feedback="
+
+    function getArea(shape: Shape) {
+        if (shape.kind === \"circle\") {
+            return Math.PI * shape.radius ** 2;
+                            
+        }
+    }
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+
+
+next_question
+
+
+########################################
+#         Calculate your score         #
+########################################
+
+((questions = questions + 1))
+
+if [[ correct -eq 0 ]]; then
+    echo "
+    You got nothing correct. Stop and go study.
+    
+    "
+else
+    score=$(((questions / correct) * 100))
+    echo "    You scored $score% on TypeScript recipes."
+fi

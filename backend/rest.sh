@@ -480,6 +480,223 @@ additional_feedback="
 evaluate_answer "$response" "$answer"
 
 
+read -p "Complete the following sentence: 
+
+    Applications that do not require reliable data stream service 
+    may use the ______________.
+
+"
+answer="User Datagram Protocol"
+additional_feedback="
+
+    Correct.
+
+    User Datagram Protocol provides a connectionless datagram service 
+    that prioritizes time over reliability.
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+
+
+next_question
+
+
+
+read -p "What does the Transmission Control Protocol do? " response
+answer="The Transmission Control Protocol provides a communication service at an intermediate level between an application program and the Internet Protocol."
+additional_feedback="
+
+    Correct.
+
+    At the transport layer, TCP handles all handshaking and transmission 
+    details and presents an abstraction of the network connection to the 
+    application typically through a network socket interface.
+
+"
+evaluate_answer "$response" "$answer"
+
+
+next_question
+
+
+read -p "
+    At the lower levels of the protocol stack, due to network congestion, what happens when
+    traffic load balancing, or unpredictable network behaviour, IP packets get lost, duplicated, 
+    or delivered out of order? 
+    
+Enter your answer " response
+answer="TCP detects these problems, requests re-transmission of lost data, rearranges out-of-order data and even helps minimize network congestion to reduce the occurrence of the other problems."
+evaluate_answer "$response" "$answer"
+
+
+
+next_question
+
+
+read -p "Is TCP a good option for real-time applications? " response
+answer="No. Protocols like the Real-time Transport Protocol (RTP) operating over the User Datagram Protocol (UDP) are usually recommended instead"
+evaluate_answer "$response" "$answer"
+
+
+
+next_question
+
+
+read -p "How does TCP and IP work together? " response
+answer="While IP handles actual delivery of the data, TCP keeps track of segments - the individual units of data transmission that a message is divided into for efficient routing through the network."
+additional_feedback="
+
+    Correct.
+
+    For example, when an HTML file is sent from a web server, the TCP software 
+    layer of that server divides the file into segments and forwards them individually 
+    to the internet layer in the network stack. The internet layer software encapsulates 
+    each TCP segment into an IP packet by adding a header that includes (among other data) 
+    the destination IP address. When the client program on the destination computer receives 
+    them, the TCP software in the  transport layer re-assembles the segments and ensures they 
+    are correctly ordered and error-free as it streams the file contents to the receiving 
+    application.
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+read -p "What does REST mean and who came up wit the concept? " response
+answer="REST means Representational State Transfer. Roy Field Jr. came up with term REST in 2000 to define architectural constraints."
+evaluate_answer "$response" "$answer"
+
+
+
+next_question
+
+
+
+read -p "What is the client-server contraint? " response
+answer="Decouple the user interface concerns from the data storage concerns with the client-server architecture style."
+additional_feedback="
+
+    Separation of concerns principles makes the distributed system's
+    server components scalable by removing any view rendering related
+    concerns while improving the user interface portable across multiple
+    platforms. Thus the same server components can be used by multiple 
+    clients on different platforms with various view specific implementation
+    with the same response from the server.
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+
+
+next_question
+
+
+
+read -p "What is the stateless constraint? " response
+answer="The client is responsible storing and managing any session related information at the client side and send all information related to request to the server so that the server doesn't need to use any of the previous request details."
+additional_feedback="
+
+    The constraint provides the RESTful service with the visibility,
+    reliability, and scalibility.
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+
+
+
+next_question
+
+
+read -p "Explain the characterstic of visibility in REST"
+evaluate_answer "$response" "$answer"
+answer="Visibility: the request has everything so the server doesn't have to look beyond the single request."
+
+
+
+
+
+next_question
+
+
+
+read -p "Explain the characterstic of reliability in REST"
+evaluate_answer "$response" "$answer"
+answer="Reliability: other request do not depend on a single request so other request fail without impacting one another."
+
+
+
+next_question
+
+
+read -p "Explain the characterstic of scalability in REST"
+evaluate_answer "$response" "$answer"
+answer="Scalibility: Server components do not store state between request, so resources are free once a request is processed."
+
+
+
+next_question
+
+
+
+read -p "Explain the Cache constraint? " response
+answer="The server component can label the data in the response for a request as cacheable or non-cacheable and client can re-use this response for the same request later"
+evaluate_answer "$response" "$answer"
+
+
+
+next_question
+
+
+read -p "Explain the Uniform Interface constraint? " response
+answer="Uniform Interface constraint enforces the component's behavior or interfaces to be uniform across all the components even though the implementation varies."
+evaluate_answer "$response" "$answer"
+
+
+
+next_question
+
+
+
+
+read -p "Explain a Resource in the context of Uniform Constraint. " response
+answer="It is mapping to a set of entities and can be any information that can be named: a document, image or temporal service, a collection of other resources or a non-virtual object."
+evaluate_answer "$response" "$answer"
+
+
+
+
+next_question
+
+
+
+read -p "Explain a Representation in the context of Uniform Constraint. " response
+answer="Representation consists of data and metadata about about the data. The data format of representation is known as media type."
+evaluate_answer "$response" "$answer"
+
+
+
+next_question
+
+
+
+read -p "Explain a Self-Descripitive Message in the context of Uniform Constraint. " response
+answer="The response from the server should contain the media type ofr the resource's representation to the client, so that the client knows how to parse and process the data."
+evaluate_answer "$response" "$answer"
+
+
+
+next_question
+
+
+
+read -p "Explain a HATEOS in the context of Uniform Constraint. " response
+answer="HATEOS is an acronym for Hypermedia As the Engine of Application State. It means the response from the server should have links for other application states so that the client can use those links to move to the next state of the applicatio."
+evaluate_answer "$response" "$answer"
+
+
+
+next_question
+
+
 ########################################
 #         Calculate your score         #
 ########################################

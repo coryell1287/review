@@ -510,30 +510,56 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
+read -p "What is an Extensible Service Proxy? " response
+answer="Extensible Service Proxy validates a JWT in a performant way by using the JWT's issuer's public keys."
+additional_feedback="
 
-ESP validates a JWT in a performant way by using the JWT's issuer's 
-public keys. ESP caches the public keys for five minutes. In addition, 
-ESP caches validated JWTs for five minutes or until JWT expiry, 
+    The Extensible Service Proxy (ESP) is an NGINX-based proxy that 
+    enables Cloud Endpoints to provide API management features.
+
+    ESP validates a JWT in a performant way by using the JWT's issuer's 
+    public keys. ESP caches the public keys for five minutes. In addition, 
+    ESP caches validated JWTs for five minutes or until JWT expiry.
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
 
 
-Project identification — Identify the application or the project that's making a call to this API
-
-Project authorization — Check whether the calling application has been granted 
-access to call the API and has enabled the API in their project
 
 
+next_question
 
-You do want to block anonymous traffic. 
-API keys identify an application's traffic for the API producer, 
-in case the application developer needs to work with the API producer 
-to debug an issue or show their application's usage.
 
-You want to control the number of calls made to your API.
+read -p "An API key can be used for project identification. What is project identification? " response
+answer="Project identification is identifying the application or the project that's making a call to the API."
+evaluate_answer "$response" "$answer"
 
-You want to identify usage patterns in your API's traffic. You can see 
-application usage in APIs & services.
 
-You want to filter logs by API key.
+
+next_question
+
+
+
+read -p "An API key can be used for project authorization. What is project authorization? " response
+answer="Project authorization is checking whether the calling application has been granted access to call the API and has enabled the API for the project."
+evaluate_answer "$response" "$answer"
+
+
+
+next_question
+
+
+
+read -p "What are three use-cases for an API key? " response
+answer="API keys can be used to control the number of calls made to the API, identify usage patterns, and filter logs."
+evaluate_answer "$response" "$answer"
+
+
+next_question
+
+
+
+
 ########################################
 #         Calculate your score         #
 ########################################
