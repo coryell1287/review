@@ -1,7 +1,7 @@
 # Mac users only
 
 
-# The Master Review Project
+## The Master Review Project
 
 The master review project is designed as a more demanding study aid because there are no multiple choice questions.
 Each answer has to be entered with a specific wording. Obviously, answers can be express different from how they are
@@ -22,4 +22,9 @@ ln -s /path/to/review/master_review.sh /usr/local/bin/master-review
 Verify that the command has been set.
 ```sh
 which master-review
+```
+
+Then run the script to see the list of reviews.
+```sh
+master-review
 ```
