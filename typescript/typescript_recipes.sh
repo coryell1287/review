@@ -128,9 +128,34 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
+    validate_signature: false,
+          sign_sp_metadata: false,
+          allowed_clock_skew: 0,
+          authn_context_comparison_type: '',
+          authn_context_class_refs: [],
+          authn_context_decl_refs: [],
+        };
+if (
+              Array.isArray(value) &&
+              (key === 'authn_context_class_refs' ||
+                key === 'authn_context_decl_refs')
+            ) {
+              readResult[key] = value;
+            }
 
 
 
+type KeyMap = typeof keyMap
+
+
+type the key to map over the properties
+ let key: KeyMap
+          for (key in keyMap) {
+            const xmlProps = keyMap[key];
+            value = getXmlValue(xml, xmlProps['name'], xmlProps['attribute']);
+            if (value === 'true') {
+              value = true;
+            }
 ########################################
 #         Calculate your score         #
 ########################################

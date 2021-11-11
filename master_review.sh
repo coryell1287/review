@@ -77,7 +77,7 @@ check_for_flags "$@"
 
 symlink=$(read_symbolic_link $(which master-review))
 PS3="Please enter your choice: "
-options=("System Design" "REST" "Auth" "TypeScript" "Quit")
+options=("System Design" "REST" "Auth" "TypeScript" "Cryptography" "Quit")
 select opt in "${options[@]}"; do
     case $opt in
     "System Design")
@@ -95,6 +95,10 @@ select opt in "${options[@]}"; do
         ;;
     "TypeScript")
         execute_setup $symlink/typescript/"select.sh"
+        break
+        ;;
+    "Cryptography")
+        execute_setup $symlink/nodejs/"crypto.sh"
         break
         ;;
     "Quit")
