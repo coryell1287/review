@@ -77,6 +77,15 @@ next_question() {
 "
 }
 
+
+next_line() {
+    echo "
+ ########################################
+               Next Line 
+ ########################################
+"
+}
+
 read -p "
     Digest types specifies the format in which the digest is returned
 
@@ -1440,7 +1449,7 @@ next_question
 
 
 read -p "
-    Write a hash in the following program as piped streams: 
+    Write a hash in the following program as hash.update() and hash.digest(): 
 
     console.log(hash.digest('hex'));
     // Prints:
@@ -1461,7 +1470,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_line
 
 read -p "
-    Write a hash in the following program as piped streams: 
+    Write a hash in the following program as hash.update() and hash.digest(): 
 
     const { createHash } = require('crypto');
 
@@ -1486,7 +1495,7 @@ next_line
 
 
 read -p "
-    Write a hash in the following program as piped streams: 
+    Write a hash in the following program as hash.update() and hash.digest(): 
 
     const { createHash } = require('crypto');
 
