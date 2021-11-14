@@ -960,6 +960,17 @@ additional_feedback="
        }
        return result;
     }
+
+    const total = reduce<number, number>([1, 2, 3, 4, 5], (sum, el) => sum + el, 0);
+
+    const ageByName = reduce<Person, Record<string, number>>(
+        persons, 
+        (result, person) => ({
+            ...result,
+            [person.name]: person.age
+        }),
+        {}
+    );
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
