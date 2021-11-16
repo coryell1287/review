@@ -26,10 +26,16 @@ increment_questions_count() {
 affirm_answer() {
     if [[ -z "$1" ]]; then
         echo "
-    Correct. 
-
+########################################
+              Correct
+########################################
     "
     else
+        echo "     
+########################################
+              Correct
+########################################
+             "
         echo "$1"
     fi
 }
@@ -40,12 +46,14 @@ evaluate_answer() {
         increment_correct_responses
         affirm_answer "$3"
     else
+        echo "     
+########################################
 
-        echo "
-    
-    Wrong! There is no tommorrow, so get this right right now!
-    
-    "
+       Wrong! There is no tommorrow, 
+       so get this right right now!
+
+########################################
+             "
     fi
 }
 
@@ -98,8 +106,6 @@ Enter your answer: " response
 answer="fn: (a: string) => void"
 additional_feedback="
         
-        Correct.
-
         function greeter(fn: (a: string) => void) {
             fn('Hello, World');
         }
@@ -130,10 +136,8 @@ read -p "How would you access the properties in the DescribableFunction type?
         }
 
 Enter your answer: " response
-answer="console.log(fn.description + \" returned \" + fn(6))"
+answer="console.log(fn.description + ' returned ' + fn(6));"
 additional_feedback="
-
-        Correct.
 
         type DescribableFunction = {
             description: string;
@@ -160,24 +164,23 @@ read -p "How would a constructor signature look like for SomeConstructor type?
     };
 
     function fn(ctor: SomeConstructor) {
-        return new ctor(\"hello\");
+        return new ctor('hello');
     }
 
 
 Enter your answer: " response
+answer="new (s: string): SomeObject"
 additional_feedback="
-
-        Correct.
 
         type SomeConstructor = {
           new (s: string): SomeObject;
         };
 
         function fn(ctor: SomeConstructor) {
-            return new ctor(\"hello\");
+            return new ctor('hello');
         }
 "
-evaluate_answer "$response" "$answer" "additional_feedback"
+evaluate_answer "$response" "$answer" "$additional_feedback"
 
 
 
@@ -186,17 +189,25 @@ next_question
 
 
 
-read -p "Define the types of the map function. " response
-answer="<T, U>(arr: T[], func: (arg: T) => Output): U[]"
-additional_feedback="
+read -p "
 
-    Correct.
+    Define the types of the map function. 
 
-    function map<T, U>(arr: T[], func: (arg: T) => Output): U[] {
+    function map(arr, func) {
         return arr.map(func);
     }
 
-    const parsed = map([\"1\", \"2\", \"3\"], (n) => parseInt(n));
+    const parsed = map(['1', '2', '3'], (n) => parseInt(n));
+
+Enter your answer: " response
+answer="<S, N>(arr: S[], func: (arg: S) => N): N[]"
+additional_feedback="
+
+    function map<S, N>(arr: S[], func: (arg: S) => N): N[] {
+        return arr.map(func);
+    }
+
+    const parsed = map(['1', '2', '3'], (n) => parseInt(n));
 
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
