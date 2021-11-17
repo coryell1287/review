@@ -171,7 +171,7 @@ next_question
 
 
 
-read -p "How would a constructor signature look like for SomeConstructor type? 
+read -p "How would a constructor signature look for SomeConstructor type? 
 
     type SomeConstructor = {
       // define the property here
@@ -524,7 +524,7 @@ read -p "What is the type predicate for the function if the type has to be Fish?
     }
 
 
-Enter you answer" response
+Enter you answer: " response
 answer="pet is Fish"
 additional_feedback="
 
@@ -544,7 +544,7 @@ read -p "What should go next to the return statement?
     }
 
 
-Enter you answer" response
+Enter you answer: " response
 answer="(pet as Fish).swim !== undefined"
 additional_feedback="
 
@@ -587,7 +587,7 @@ additional_feedback="
           return Math.PI * shape.radius ** 2;
         }
  
- "
+Enter your answer: " response
 answer="shape.kind === 'circle'"
 additional_feedback="
 
@@ -842,11 +842,11 @@ additional_feedback="
        constructor(private header: string) {}
 
         render() {
-            return `<h1>${this.header.toUpperCase()}</h1>`;
+            return \`<h1>\${this.header.toUpperCase()}</h1>\`;
         }
     }
 "
-evaluate_answer "$response" "$answer"
+evaluate_answer "$response" "$answer" "$additional_feedback"
 
 next_question
 
