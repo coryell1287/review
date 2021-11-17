@@ -5,10 +5,21 @@ calculate_score() {
     ((questions = questions + 1))
 
     if [[ correct -eq 0 ]]; then
-        echo "
-    You got nothing correct. Stop and go study.
-    
-    "
+                echo "     
+########################################
+
+       Wrong! There is no tommorrow, 
+       so get this right right now!
+
+########################################
+             "
+                        echo "     
+########################################
+
+       You got nothing correct. Stop and go study.
+
+########################################
+             "
     else
         score=$(((questions / correct) * 100))
         echo "    You scored $score% on cryptography."
@@ -64,11 +75,14 @@ evaluate_answer_written_with_code() {
         affirm_answer "$3"
     else
 
-        echo "
-    
-       Wrong! There is no tommorrow, so get this right right now!
-    
-    "
+        echo "     
+########################################
+
+       Wrong! There is no tommorrow, 
+       so get this right right now!
+
+########################################
+             "
         calculate_score
         exit 1
     fi
@@ -234,13 +248,11 @@ read -p "How would you define the type if you need to access the length member o
         const longerArray = longest([1, 2], [1, 2, 3]);
 
         // longerString is of type 'alice' | 'bob'
-        const longerString = longest(\"alice\", \"bob\");
+        const longerString = longest('alice', 'bob');
 
 Enter your answer: " response
-answer="T extends { length: number }>(a: T, b: T)"
+answer="<T extends { length: number }>(a: T, b: T)"
 additional_feedback="
-    
-    Correct.
 
     function longest<T extends { length: number }>(a: T, b: T) {
         if (a.length >= b.length) {
@@ -254,7 +266,7 @@ additional_feedback="
     const longerArray = longest([1, 2], [1, 2, 3]);
 
     // longerString is of type 'alice' | 'bob'
-    const longerString = longest(\"alice\", \"bob\");
+    const longerString = longest('alice', 'bob');
 
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
@@ -266,14 +278,21 @@ next_question
 
 read -p "Define a type that will make the following code legal? 
         
-        const arr = combine([1, 2, 3], [\"hello\"]);
+        function combine<T>(arr1: T[], arr2: T[]): T[] {
+            return arr1.concat(arr2);
+        }
 
-Enter your and" response
+        const arr = combine([1, 2, 3], ['hello']);
+
+Enter your answer: " response
 answer="<string | number>"
 additional_feedback="
 
-        Correct.
-        const arr = combine<string | number>([1, 2, 3], [\"hello\"]);
+        function combine<T>(arr1: T[], arr2: T[]): T[] {
+            return arr1.concat(arr2);
+        }
+
+        const arr = combine<string | number>([1, 2, 3], ['hello']);
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
@@ -291,23 +310,33 @@ read -p "Complete the implementation signature to make the overload valid.
             return x.length;
         }
 
-        len([""])
+        len([''])
 
 
 Enter your answer: " response
 answer="string[] | string"
-additional_feedback "$response" "$answer" "$additional_feedback"
+additional_feedback="
+
+        function len(s: string): number;
+        function len(arr: string[]): number;
+        function len(x: string[] | string) {
+            /* what the parameters here be ?*/
+            return x.length;
+        }
+
+        len([''])
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
 
 
 
 next_question
 
 
-read -p "What is Function type? " response
-answer="Function describes properties like bind, call, apply, and any property of a function in JavaScript."
+read -p "What is a Function type? " response
+answer="Function type describes properties like bind, call, apply, and any property of a function in JavaScript."
 additional_feedback="
-
-    Correct.
 
     function doSomething(f: Function) {
         f(1, 2, 3);
@@ -335,11 +364,9 @@ read -p "How to fix the following code so that it is valid?
     const angle = Math.atan2(...args);
     error: A spread argument must either have a tuple type or be passed to a rest parameter.
 
-Enter your answer " response
+Enter your answer: " response
 answer="as const"
 additional_feedback="
-
-    Correct.
 
     TypeScript does not assume that arrays are immutable. 
     // Inferred as 2-length tuple
@@ -355,7 +382,7 @@ evaluate_answer "$response" "$answer" "$additional_feedback"
 next_question
 
 read -p "What is type narrowing? " response
-answer="The process of refining types to more specific types than declared."
+answer="Type narrowing is the process of refining types to more specific types than declared."
 evaluate_answer "$response" "$answer"
 
 
@@ -367,9 +394,6 @@ next_question
 read -p "What is a type guard? " response
 answer="Type guard is checking the result of typeof and similar runtime operations."
 additional_feedback="
-
-
-    Correct.
 
     function getScore(value: number|string): number {
         if (typeof value === 'number') { // (A)
@@ -409,7 +433,7 @@ read -p "What operator can be used to narrow the type of the following code?
     type Bird = { fly: () => void };
  
     function move(animal: Fish | Bird) {
-        if (\"swim\" in animal) {
+        if (animal) {
             return animal.swim();
         }
         
@@ -418,15 +442,14 @@ read -p "What operator can be used to narrow the type of the following code?
 
 
 Enter your answer: " response
+answer="if ('swim' in animal) { }"
 additional_feedback="
-
-      Correct.
 
       type Fish = { swim: () => void };
       type Bird = { fly: () => void };
 
       function move(animal: Fish | Bird) {
-        if (\"swim\" in animal) {
+        if ('swim' in animal) {
             return animal.swim();
         }
         
@@ -434,7 +457,7 @@ additional_feedback="
     }
 
 "
-answer="in operator"
+
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
 
@@ -443,7 +466,7 @@ next_question
 
 
 read -p "What is control flow analysis? " response
-answer="Analysis of code based on reachability"
+answer="It's analysis of code based on reachability."
 additional_feedback="
 
     TypeScript uses this flow analysis to narrow types as it encounters type guards 
@@ -484,7 +507,7 @@ next_question
 
 
 
-read -p "How is user-defined defined? " response
+read -p "How do you define a user-defined type guard? " response
 answer="Define a function whose return type is a type predicate."
 
 
@@ -504,8 +527,6 @@ read -p "What is the type predicate for the function if the type has to be Fish?
 Enter you answer" response
 answer="pet is Fish"
 additional_feedback="
-
-    Correct.
 
     function isFish(pet: Fish | Bird): pet is Fish {
       return;
@@ -567,7 +588,7 @@ additional_feedback="
         }
  
  "
-answer="shape.kind === 'Circle'"
+answer="shape.kind === 'circle'"
 additional_feedback="
 
     function getArea(shape: Shape) {
@@ -585,7 +606,7 @@ next_question
 
 
 read -p "What does the noImplicitAny flag do? " response
-answer="Raise error on expressions and declarations with an implied any type."
+answer="noImplicitAny flag raises an error on expressions and declarations with an implied any type."
 additional_feedback="
 
     When you enable the flag, TypeScript will throw an error 
