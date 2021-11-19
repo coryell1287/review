@@ -363,7 +363,7 @@ additional_feedback="
       col2: string;
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 "
@@ -380,7 +380,7 @@ read -p "
       col2: string;
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 Enter the next line: " response
@@ -394,7 +394,7 @@ additional_feedback="
 
     type DataKey = keyof Data;
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -411,7 +411,7 @@ read -p "
 
     type DataKey = keyof Data;
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 Enter the next line: " response
@@ -424,7 +424,7 @@ additional_feedback="
 
     type DataKey = keyof Data;
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 "
@@ -442,7 +442,7 @@ read -p "
 
     type DataKey = keyof Data;
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 Enter the next line: " response
@@ -459,7 +459,7 @@ additional_feedback="
 
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -481,7 +481,7 @@ read -p "
 
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 Enter the next line: " response
@@ -498,7 +498,7 @@ additional_feedback="
         const titles = data.slice(0, data.indexOf('\n')).split(',') as DataKey[];
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 "
@@ -520,7 +520,7 @@ read -p "
         const titles = data.slice(0, data.indexOf('\n')).split(',') as DataKey[];
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 Enter the next line: " response
@@ -540,7 +540,7 @@ additional_feedback="
           .slice(data.indexOf('\n') + 1)
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 "
@@ -566,7 +566,7 @@ read -p "
           .slice(data.indexOf('\n') + 1)
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 Enter the next line: " response
@@ -587,7 +587,7 @@ additional_feedback="
           .split('\n')
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -613,7 +613,7 @@ read -p "
           .split('\n')
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 Enter the next line: " response
@@ -637,7 +637,7 @@ additional_feedback="
           });
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];        
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -665,7 +665,7 @@ read -p "
           });
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 Enter the next line: " response
@@ -689,7 +689,7 @@ additional_feedback="
           });
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 "
@@ -718,7 +718,7 @@ read -p "
           });
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 Enter the next line: " response
@@ -742,7 +742,7 @@ additional_feedback="
           });
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -773,7 +773,7 @@ read -p "
           });
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 Enter the next line: " response
@@ -795,12 +795,12 @@ additional_feedback="
           .map(function (v) { 
               const values = v.split(delimiter);
               return titles.reduce(function (obj: Data, title: DataKey, index: number) { 
-                  return (obj[title] = values[index]), obj;
+                  return (obj[title] = values[index], obj);
               }, {} as Data);
           });
     }
 
-    console.log(CSV_to_JSON('col1,col2\na,b\nc,d')); 
+    console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -808,7 +808,137 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_question
 
 
+# interface Employee {
+#   id: string;
+#   firstName: boolean;
+# }
 
+# interface Guest {
+#   firstName: string;
+# }
+
+# interface IObjectYo {
+#   someProp: number;
+#   same: boolean;
+# }
+
+# interface IDifObjYo {
+#   otherProp: number;
+#   same: boolean;
+# }
+
+# function example(someArg: IObjectYo | IDifObjYo) {
+#   if ('someProp' in someArg) {
+#     console.log(someArg.someProp); // tsc knows it must be type IObjectYo because someProp only belongs to IObjectYo
+#   } else {
+#     console.log(someArg.otherProp); // tsc knows this is IDifObjYo because the first condition failed (which means it must be of type IDifObjYo)
+#   }
+#   if ('same' in someArg) {
+#     console.log(someArg.someProp); // make sure the property is indeed unique between the possible types or tsc can't infer
+#   }
+
+
+# }
+
+
+# f you want the accumulator value to be indexable by string, Record<string, string> should do the trick. You can pass this as the type argument to reduce
+
+# interface MediaQueryProps {
+#   [key: string]: number;
+# }
+
+# const size: MediaQueryProps = {
+#   small: 576,
+#   medium: 768,
+#   large: 992,
+#   extra: 1200
+# };
+
+# export default Object.keys(size).reduce<Record<string, string>>((acc, cur) => {
+#   acc[cur] = `(min-width: ${size[cur]}px)`;
+#   return acc;
+# }, {});
+# const result = Object.keys(keyMap).reduce<Record<string, ValueType>>((acc, cur) => {
+#             const xmlProps = keyMap[key];
+#             value = getXmlValue(xml, xmlProps['name'], xmlProps['attribute']);
+#             acc[cur] = value;
+#             return acc;
+#           }, [] as unknown as FileReaderResults);
+
+
+
+# export const c = Object.keys(size).reduce((acc, cur) => {
+#   acc[cur] = `(min-width: ${size[cur]}px)`;
+
+#   return acc;
+# }, {} as Record<keyof MediaQueryProps, string>);
+
+
+
+
+# type Breakpoints = {
+#   small: number;
+#   medium: number;
+#   large: number;
+#   extra: number;
+# };
+
+# const size: Breakpoints = {
+#   small: 576,
+#   medium: 768,
+#   large: 992,
+#   extra: 1200
+# };
+
+# // Type of entry after Object.entries() is used
+# type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
+
+# // Generic helper to make all of the properties' types: string | undefined
+# type Stringify<T> = { [key in keyof T]?: string };
+
+# // Override Object interface for custom Object.entries():
+# interface CustomObject extends ObjectConstructor {
+#   entries<K extends keyof Breakpoints, T>(
+#     o: { [s in K]: T } | ArrayLike<T>
+#   ): [K, T][];
+# }
+
+# // Let's use this interface now:
+# const obj: CustomObject = Object;
+
+# export default obj
+#   .entries(size)
+#   .reduce<Stringify<Breakpoint>>((acc, cur: BreakpointEntry) => {
+#     const [key, value] = cur;
+#     acc[key] = `(min-width: ${value}px)`;
+
+#     return acc;
+#   }, {});
+
+
+
+# Iterate over mixed values using reduce
+#     let readResult: FileReaderResults = {
+#           alias: '',
+#           display_name: '',
+#           enabled: false,
+#           store_token: false,
+#           add_read_token_role_on_create: false,
+#           trust_email: false,
+#           link_only: false,
+#           hide_on_login_page: false,
+#           gui_order: null,
+#           first_broker_login_flow_alias: '',
+#           post_broker_login_flow_alias: '',
+
+#           }
+
+#   const result = Object.keys(keyMap).reduce<Record<string, ValueType>>((map, key:KeyMap) => {
+#             const xmlProps = keyMap[key];
+#             value = getXmlValue(xml, xmlProps['name'], xmlProps['attribute']);
+#             map[key] = value;
+#             return map;
+#           }, {} as FileReaderResults);
 ########################################
 #         Calculate your score         #
 ########################################

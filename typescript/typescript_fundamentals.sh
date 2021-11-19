@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 correct=0
 questions=0
 
@@ -306,7 +309,7 @@ read -p "Complete the implementation signature to make the overload valid.
         function len(s: string): number;
         function len(arr: string[]): number;
         function len(x) {
-            /* what the parameters here be ?*/
+            /* what parameters should be in the function definition? */
             return x.length;
         }
 
@@ -335,7 +338,7 @@ next_question
 
 
 read -p "What is a Function type? " response
-answer="Function type describes properties like bind, call, apply, and any property of a function in JavaScript."
+answer="Function type describes any function property in JavaScript, for example, bind, call and apply."
 additional_feedback="
 
     function doSomething(f: Function) {
@@ -370,8 +373,8 @@ additional_feedback="
 
     TypeScript does not assume that arrays are immutable. 
     // Inferred as 2-length tuple
-    const args = [8, 5] as const;
-    // OK
+
+    const args = [8, 5] as const; // OK
     const angle = Math.atan2(...args);
 
 "
@@ -466,7 +469,7 @@ next_question
 
 
 read -p "What is control flow analysis? " response
-answer="It's analysis of code based on reachability."
+answer="Control flow analysis is the analysis of code based on reachability."
 additional_feedback="
 
     TypeScript uses this flow analysis to narrow types as it encounters type guards 
@@ -518,6 +521,8 @@ next_question
 
 read -p "What is the type predicate for the function if the type has to be Fish? 
     
+    type Fish = { swim: () => void };
+    type Bird = { fly: () => void };
     
     function isFish(pet: Fish | Bird) {
        return;
@@ -527,6 +532,9 @@ read -p "What is the type predicate for the function if the type has to be Fish?
 Enter you answer: " response
 answer="pet is Fish"
 additional_feedback="
+
+    type Fish = { swim: () => void };
+    type Bird = { fly: () => void };
 
     function isFish(pet: Fish | Bird): pet is Fish {
       return;
@@ -538,6 +546,8 @@ next_question
 
 read -p "What should go next to the return statement? 
     
+    type Fish = { swim: () => void };
+    type Bird = { fly: () => void };
     
     function isFish(pet: Fish | Bird): pet is Fish {
        return;
@@ -548,7 +558,9 @@ Enter you answer: " response
 answer="(pet as Fish).swim !== undefined"
 additional_feedback="
 
-    Correct.
+    type Fish = { swim: () => void };
+    type Bird = { fly: () => void };
+
     function isFish(pet: Fish | Bird): pet is Fish {
        return (pet as Fish).swim !== undefined;
     }
@@ -582,7 +594,6 @@ additional_feedback="
  
         type Shape = Circle | Square;
 
-
         function getArea(shape: Shape) {
           return Math.PI * shape.radius ** 2;
         }
@@ -594,7 +605,6 @@ additional_feedback="
     function getArea(shape: Shape) {
         if (shape.kind === \"circle\") {
             return Math.PI * shape.radius ** 2;
-                            
         }
     }
 "
@@ -1046,7 +1056,6 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_line
 
 read -p "
-
     Add types to the following zip function that takes two arrays 
     and returns an array of pairs with elements from both arrays.
 
