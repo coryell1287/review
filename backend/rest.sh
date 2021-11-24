@@ -696,6 +696,108 @@ evaluate_answer "$response" "$answer"
 
 next_question
 
+read -p "Explain a HATEOS in the context of Uniform Constraint. " response
+answer="HATEOS is an acronym for Hypermedia As the Engine of Application State. It means the response from the server should have links for other application states so that the client can use those links to move to the next state of the applicatio."
+evaluate_answer "$response" "$answer"
+
+
+next_question
+
+read -p "What is content negotiatio? " response
+answer="Content negotiation is the mechanism that is used for serving different representations of a resource to the same URI to help the user agent specify which representation is best suited for the user."
+additional_feedback="
+
+    for example, which document language, which image format, or which content encoding.
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+ 
+
+next_question
+
+read -p "What is a resource? " response
+answer="A resource is a specific document."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "How is a resource obtained? " response
+answer="The client requests a resource via a URL."
+evaluate_answer "$response" "$answer"
+
+
+next_question
+
+read -p "
+    The server uses this URL to choose one of the resource variants available. 
+    What is a variant in this content?
+
+Enter your answer: " response
+answer="A variant is a representation."
+evaluate_answer "$response" "$answer"
+
+
+
+next_question
+
+read -p "How is a representation identified? " response
+answer="Representation is identified using specific HTTP headers by the client (server-driven negotiation or proactive negotiation). HTTP response codes by the server (agent-driven negotiation or reactive negotiation), that are used as fallback mechanisms."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is a drawback to server-driven negotiation? " response
+answer="Server-driven negotiation does not scale. Negotiation involves one header per request. As the number of headers increases, the message size could eventually affect performance. Sending precise headers allows for HTTP fingerprinting and corresponding privacy concerns."
+evaluate_answer "$response" "$answer"
+
+
+next_question
+
+read -p "How does agent-driven negotiation work? " response
+answer="The server sends back a page that contains links to the available alternative resources when faced with an ambiguous request. The user is presented the resources and chooses the one to use."
+evaluate_answer "$response" "$answer"
+
+
+next_question
+
+read -p "What is a drawback to agent-driven negotiation? " response
+answer="The process can not automatically choose between the available resources and specify the format of the page. Another request is needed to fetch the actual resource, slowing the availability of the resource to the user."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is cross-site request forgery? " response
+answer="CSRF is an attack that tricks the victim into submitting a malicious request. It inherits the identity and privileges of the victim to perform an undesired function on the victim’s behalf."
+additional_feedback="
+
+    With a little help of social engineering (such as sending a 
+    link via email or chat), an attacker may trick the users of 
+    a web application into executing actions of the attacker’s 
+    choosing. If the victim is a normal user, a successful CSRF 
+    attack can force the user to perform state changing requests 
+    like transferring funds, changing their email address, and so 
+    forth. If the victim is an administrative account, CSRF can 
+    compromise the entire web application
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Why do Cross-site Request Forgery target state changing request? " response
+answer="Forcing the victim to retrieve data doesn’t benefit an attacker because the attacker doesn’t receive the response, the victim does."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "How does login Cross-site Request Forgery work? " response
+answer="The attacker forces a non-authenticated user to log in to an account the attacker controls. If the victim does not realize this, they may add personal data—such as credit card information—to the account. The attacker can then log back into the account to view this data, along with the victim’s activity history on the web application."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p " " response
+answer=""
+evaluate_answer "$response" "$answer"
 
 ########################################
 #         Calculate your score         #

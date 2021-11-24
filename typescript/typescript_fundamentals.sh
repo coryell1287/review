@@ -5,7 +5,6 @@ correct=0
 questions=0
 
 calculate_score() {
-    ((questions = questions + 1))
 
     if [[ correct -eq 0 ]]; then
                 echo "     
@@ -24,8 +23,9 @@ calculate_score() {
 ########################################
              "
     else
+
         score=$(((questions / correct) * 100))
-        echo "    You scored $score% on cryptography."
+        echo "    You scored $score% on Typescript fundamentals."
     fi
 }
 
@@ -55,6 +55,7 @@ affirm_answer() {
 }
 
 evaluate_answer() {
+    increment_questions_count
 
     if [ "$1" == "$2" ]; then
         increment_correct_responses
@@ -69,9 +70,11 @@ evaluate_answer() {
 ########################################
              "
     fi
+    calculate_score
 }
 
 evaluate_answer_written_with_code() {
+    increment_questions_count
 
     if [[ "$1" == "$2" ]]; then
         increment_correct_responses
@@ -512,7 +515,7 @@ next_question
 
 read -p "How do you define a user-defined type guard? " response
 answer="Define a function whose return type is a type predicate."
-
+evaluate_answer "$response" "$answer"
 
 
 next_question
@@ -541,6 +544,7 @@ additional_feedback="
     }
 
 "
+evaluate_answer "$response" "$answer" "$additional_feedback"
 
 next_question
 
@@ -575,6 +579,8 @@ additional_feedback="
     }
 
 "
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
 
  next_question
 
@@ -601,12 +607,23 @@ additional_feedback="
 Enter your answer: " response
 answer="shape.kind === 'circle'"
 additional_feedback="
-
-    function getArea(shape: Shape) {
-        if (shape.kind === \"circle\") {
-            return Math.PI * shape.radius ** 2;
+        interface Circle {
+           kind: \"circle\";
+           radius: number;
         }
-    }
+ 
+        interface Square {
+          kind: \"square\";
+          sideLength: number;
+        }
+ 
+        type Shape = Circle | Square;
+
+        function getArea(shape: Shape) {
+            if (shape.kind === 'circle') {
+                return Math.PI * shape.radius ** 2;
+            }
+        }
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
@@ -633,7 +650,7 @@ evaluate_answer "$response" "$answer" "$additional_feedback"
 next_question
 
 read -p "What is the difference between unknown and any type? " response
-answer="All types are assignable to the any type and the any type is assignable to any other type. All types are assignable to the unknown type, but the unknown type is not assignable to any type"
+answer="All types are assignable to the any type and the any type is assignable to any other type. All types are assignable to the unknown type, but the unknown type is not assignable to any type."
 additional_feedback="
 
     function foo1(bar: any) {
@@ -665,7 +682,7 @@ next_question
 
 
 read -p "What is the consequence of using unknown? " response
-answer="unknown type has to be cast to another type before a developer can use it. The consequence is that the unknown type does not propagate like any does, which is much safer."
+answer="The consequence is that the unknown type does not propagate like any does, which is much safer. unknown type has to be cast to another type before a developer can use it."
 evaluate_answer "$response" "$answer"
 
 
@@ -673,7 +690,7 @@ next_question
 
 
 read -p "What is a good use case for using unknown type? " response
-answer="unknown should be used when a backend service returns it or when a developer deserializes it."
+answer="unknown should be used when a backend service returns data and when a developer deserializes it."
 evaluate_answer "$response" "$answer"
 
 
@@ -709,7 +726,7 @@ additional_feedback="
 
     fetch(\"http://example.com\")
     .then(response => response.json())
-    .then((body) => {
+    .then((body: unknown) => {
         const article = body as Article;
         // we need to cast, otherwise we'd get an error
         console.log(article.title);
@@ -731,10 +748,10 @@ read -p "
     }
 
 Enter the next line: " response
-answer="return typeof body === \"object\" &&"
+answer="return typeof body === 'object' &&"
 additional_feedback="
     function isArticle(body: unknown): boolean {
-       return typeof body === \"object\" &&
+       return typeof body === 'object' &&
     }
 
 "
@@ -2415,6 +2432,10 @@ additional_feedback="
     }
 
 "
+
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
 ########################################
 #         Calculate your score         #
 ########################################
