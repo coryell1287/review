@@ -4,10 +4,14 @@
 correct=0
 questions=0
 
+calculate_float() {
+    awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
+}
+
 calculate_score() {
 
     if [[ correct -eq 0 ]]; then
-                echo "     
+        echo "     
 ########################################
 
        Wrong! There is no tommorrow, 
@@ -15,7 +19,7 @@ calculate_score() {
 
 ########################################
              "
-                        echo "     
+        echo "     
 ########################################
 
        You got nothing correct. Stop and go study.
@@ -23,8 +27,11 @@ calculate_score() {
 ########################################
              "
     else
-
-        score=$(((questions / correct) * 100))
+        echo "########################################"
+        echo "          Progress                    "
+        echo "    $questions questions answered."
+        echo "    $correct answered correctly."
+        score=$(calculate_float $correct $questions)
         echo "    You scored $score% on Typescript fundamentals."
     fi
 }
@@ -109,6 +116,7 @@ next_line() {
  ########################################
 "
 }
+
 
 read -p "What type goes in the greeter function?
 
@@ -682,7 +690,7 @@ next_question
 
 
 read -p "What is the consequence of using unknown? " response
-answer="The consequence is that the unknown type does not propagate like any does, which is much safer. unknown type has to be cast to another type before a developer can use it."
+answer="The consequence is that the unknown type does not propagate like the any type does, which is safer. unknown type has to be cast to another type before a developer can use it."
 evaluate_answer "$response" "$answer"
 
 
@@ -690,7 +698,7 @@ next_question
 
 
 read -p "What is a good use case for using unknown type? " response
-answer="unknown should be used when a backend service returns data and when a developer deserializes it."
+answer="unknown type should be used when a backend service returns data and when a developer deserializes it."
 evaluate_answer "$response" "$answer"
 
 
@@ -740,7 +748,7 @@ next_question
 
 
 read -p "
-    Write a runtime check that could be used in the above code to make 
+    Write a runtime check that could be used in the below code to make 
     sure that body is indeed an Article.
     
     function isArticle(body: unknown): boolean {
@@ -765,14 +773,14 @@ read -p "
     sure that body is indeed an Article.
     
     function isArticle(body: unknown): boolean {
-       return typeof body === \"object\" &&
+       return typeof body === 'object' &&
     }
 
 Enter the next line: " response
 answer="body !== null &&"
 additional_feedback="
     function isArticle(body: unknown): boolean {
-       return typeof body === \"object\" &&
+       return typeof body === 'object' &&
           body !== null &&
     }
 
@@ -788,17 +796,17 @@ read -p "
     sure that body is indeed an Article.
     
     function isArticle(body: unknown): boolean {
-       return typeof body === \"object\" &&
+       return typeof body === 'object' &&
           body !== null &&
     }
 
 Enter the next line: " response
-answer="typeof (body as any).title === \"string\" &&"
+answer="typeof (body as any).title === 'string' &&"
 additional_feedback="
     function isArticle(body: unknown): boolean {
-       return typeof body === \"object\" &&
+       return typeof body === 'object' &&
           body !== null &&
-          typeof (body as any).title === \"string\" &&
+          typeof (body as any).title === 'string' &&
     }
 
 "
@@ -814,19 +822,19 @@ read -p "
     sure that body is indeed an Article.
     
     function isArticle(body: unknown): boolean {
-       return typeof body === \"object\" &&
+       return typeof body === 'object' &&
           body !== null &&
-          typeof (body as any).title === \"string\" &&
+          typeof (body as any).title === 'string' &&
     }
 
 Enter the next line: " response
-answer="typeof (body as any).body === \"string\";"
+answer="typeof (body as any).body === 'string';"
 additional_feedback="
     function isArticle(body: unknown): boolean {
-       return typeof body === \"object\" &&
+       return typeof body === 'object' &&
           body !== null &&
-          typeof (body as any).title === \"string\" &&
-          typeof (body as any).body === \"string\";
+          typeof (body as any).title === 'string' &&
+          typeof (body as any).body === 'string';
     }
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -2435,6 +2443,11 @@ additional_feedback="
 
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
+
+# read -p ""
+# setOpenRolesDrawer: React.Dispatch<React.SetStateAction<{
+#     update: any;
+# }>
 
 ########################################
 #         Calculate your score         #

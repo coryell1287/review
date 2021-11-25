@@ -795,9 +795,107 @@ evaluate_answer "$response" "$answer"
 
 next_question
 
-read -p " " response
-answer=""
+read -p "How often are DNS lookups performed? " response
+answer="DNS lookups must be done for each unique hostname the requested page references. If your fonts, images, scripts, ads, and metrics all have different hostnames, a DNS lookup will have to be made for each one."
+evaluate_answer "$response" "$answer" 
+
+next_question
+
+read -p "How can multiple DNS lookups be problematic for mobile networks? " response
+answer="When a user is on a mobile network, each DNS lookup has to go from the phone to the cell tower to reach an authoritative DNS server. The distance between a phone, a cell tower, and the name server can add significant latency."
 evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is a TLS negotiation? " response
+answer="TLS negotiation determines which cipher will be used to encrypt the communication, verifies the server, and establishes that a secure connection is in place before beginning the actual transfer of data."
+additional_feedback="
+
+        While making the connection secure adds time to the page load,
+        a secure connection is worth the latency expense, as the data 
+        transmitted between the browser and the web server cannot be 
+        decrypted by a third party.
+
+"
+evaluate_answer "$response" "$answer"
+
+next_question
+ 
+read -p "What is Time-to-first-byte? " response
+answer="Time to First Byte (TTFB) is the time between when the user made the request—say by clicking on a link—and the receipt of this first packet of HTML. The first chunk of content is usually 14kb of data."
+evaluate_answer "$response" "$answer"
+ 
+
+next_question
+
+read -p "What is TCP slow start? " response
+answer="TCP slow start is an algorithm which balances the speed of a network connection. Slow start gradually increases the amount of data transmitted until the network's maximum bandwidth can be determined."
+additional_feedback="
+
+    TCP slow start gradually builds up transmission speeds appropriate 
+    for the network's capabilities to avoid congestion.
+
+"
+evaluate_answer "$response" "$answer"
+
+
+next_question
+
+read -p "Why is it important for web performance optimization to include everything the browser needs to start rendering a page?" response
+answer="Because even if the request page's HTML is larger than the initial 14KB packet, the browser will begin parsing and attempting to render an experience based on the data it has."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What does preload scanner do? " response
+answer="A preload scanner will parse through the content available and request high priority resources like CSS, JavaScript, and web fonts.  It will retrieve resources in the background so that by the time the main HTML parser reaches requested assets, they may possibly already be in flight, or have been downloaded."
+additional_feedback="
+
+
+    <link rel=\"stylesheet\" src=\"styles.css\"/>
+    <script src=\"myscript.js\" async></script>
+    <img src=\"myimage.jpg\" alt=\"image description\"/>
+    <script src=\"anotherscript.js\" async></script>
+
+
+    In this example, while the main thread is parsing the HTML and CSS, 
+    the preload scanner will find the scripts and image, and start downloading 
+    them as well. To ensure the script doesn't block the process, add the async 
+    attribute, or the defer attribute if JavaScript parsing and execution order 
+    is important.
+
+    Waiting to obtain CSS doesn't block HTML parsing or downloading, 
+    but it does block JavaScript, because JavaScript is often used to 
+    query CSS properties’ impact on elements.
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is a CSSOM? " response
+answer="The CSSOM is an independent data structure the browser converts into a map of styles from the CSS rules. The browser goes through each rule set in the CSS, creating a tree of nodes with a parent, child, and sibling relationships based on the CSS selectors."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "How does the browser traverse the CCSSOM? " response
+answer="The browser begins with the most general rule applicable to a node and recursively refines the computed styles by applying more specific rules."
+evaluate_answer "$response" "$answer"
+
+
+next_question
+
+read -p "What is the accessibility tree? " response
+answer="The accessibility object model (AOM) is like a semantic version of the DOM. The browser updates the accessibility tree when the DOM is updated."
+evaluate_answer "$response" "$answer"
+
+
+# next_question
+
+# read -p "" response
+# answer=""
+# evaluate_answer "$response" "$answer"
 
 ########################################
 #         Calculate your score         #
