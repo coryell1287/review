@@ -114,7 +114,10 @@ next_line() {
 "
 }
 
-read -p "Sort the list in descending order.
+read -p "
+
+
+        Sort the list in descending order.
 
         let artists = [
             'John White Abbott',
@@ -126,7 +129,7 @@ read -p "Sort the list in descending order.
 
 
 Enter your answer: " response
-answer="a === b ? 0 : a > b ? -1 : 1;"
+answer="a === b ? 0 : a > b ? -1 : 1"
 additional_feedback="
     let artists = [
         'John White Abbott',
@@ -163,7 +166,7 @@ next_question
 
 
 
-read -p "In the previous answer, why did the program output those results?" response
+read -p "In the previous answer, why did the program output those results? " response
 answer="Because with the default sort(), elements are converted to strings and compared in UTF-16 code units order."
 evaluate_answer "$response" "$answer"
 
@@ -229,6 +232,7 @@ read -p "
         {'name': 'Carl', 'address': 'Bangalore', 'dob':'December 25, 1982', 'income': 97351},
         {'name': 'Amanda', 'address': 'Lagos', 'dob':'March 19, 2001', 'income': 57753},
     ];
+    
 
 Enter the next line: " response
 answer="users.sort(function(a, b) { });"
@@ -264,7 +268,7 @@ read -p "
     });
 
 Enter the next line: " response
-answer="return a.name === b.name ? 0 : left > right ? 1 : -1;"
+answer="return a.name === b.name ? 0 : a.name > b.name ? 1 : -1;"
 additional_feedback="
     let users = [
         {'name': 'Joe', 'address': 'Huston', 'dob':'February 9, 1991', 'income': 87654},
@@ -274,7 +278,7 @@ additional_feedback="
     ];
 
     users.sort(function(a, b) { 
-       return a.name === b.name ? 0 : left > right ? 1 : -1;
+       return a.name === b.name ? 0 : a.name > b.name ? 1 : -1;
     });
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -833,6 +837,69 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
+Remove duplicate
+arr.filter((item, idx) => arr.indexOf(item) === idx);
+
+let cart = [
+ { name: "Soda", price: 3.12 },
+ { name: "Margarita", price: 12.99 },
+ { name: "Beer", price: 6.50 }
+];
+
+let totalPrice = cart.reduce((acc,next) => acc + next.price, 0);
+
+let mostExpensiveItem = cart.reduce((acc, next) => acc.price > next.price ? acc : next);
+
+// { name: "Margarita", price: 12.99}
+const initials = "FirstName LastName".split(" ").map((n) => n[0]).join("");
+
+random color
+const color = '#'+Math.random().toString(16).slice(-6);
+
+Check for duplicate before adding it to an array
+const arr = ['hamber', 'coal'];
+const item = 'coal';
+if (!arr.includes(item)) {
+ arr.push(item);
+}
+remove numbers from strings
+const output = [];
+ const arr = inputText.split(' ');
+ arr.forEach(item => {
+   output.push(item.replace(/\'/g, '').split(/(\d+)/).filter(Boolean));
+ });
+
+
+removing an items from an array
+const s1 = [ 1, 2, 3, 4, 5 ]
+const s2 = [ 2, 4 ]
+const subtracted = s1.filter(x => s2.indexOf(x) < 0)
+console.log(subtracted) //[ 1, 3, 5 ]
+
+
+Moving item around in an index
+const obj = [
+ { item: 'something' },
+ { item: 'more something' },
+];
+
+const copy = obj.slice();
+
+Array.prototype.move = function (from, to) {
+ this.splice(to, 0, this.splice(from, 1)[0]);
+};
+
+copy.move(1, 0);
+
+console.log(copy);
+# Change a property on an interface
+#  interface A {
+#    x: string
+#  }
+
+#  interface B extends Omit<A, 'x'> {
+#     x: number
+#  }
 
 # interface Employee {
 #   id: string;
