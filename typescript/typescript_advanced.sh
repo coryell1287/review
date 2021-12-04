@@ -1637,12 +1637,695 @@ evaluate_answer "$response" "$answer" "$additional_feedback"
 
 next_line
 
+
+type Person = { name: string } | string;
+
+class Mother implements Person {
+  name: string = "";
+}
+read -p "
+    Will the following code compile?
+
+    type Person = { name: string } | string;
+
+    class Mother implements Person {
+       name: string = "";
+    }
+
+Enter your answer: " response
+answer="The following code does not compile because the type is a union. A union means a type or another type making the implementation not deterministic."
+additional_feedback="
+
+    type Person = { name: string } | string;
+
+    class Mother implements Person {
+       name: string = "";
+    }
+
+    /usr/lib/node_modules/ts-node/src/index.ts:245
+    return new TSError(diagnosticText, diagnosticCodes)
+           ^
+    TSError: ⨯ Unable to compile TypeScript:
+    index.ts(3,25): error TS2422: A class can only implement an object type or intersection of object types with statically known members.
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback" 
+
+next_question
+
+read -p "What is a branded type? " response
+answer="The pattern of branded types means creating uniqueness in the structure itself. One way is to use a common name among types and have a unique type. The unique type can be a literal type to avoid the creation of a new unique type each time."
+additional_feedback="
+
+    interface TypeA {
+       kind: 'TYPEA'
+       name: string;
+       id: number;
+    }
+
+    interface TypeB {
+      kind: 'TYPEB'
+      error: boolean;
+    }
+
+    let var1: TypeA = {
+      kind: 'TYPEA',
+      name: 'Variable1',
+      id: 1
+    };
+
+    let var2: TypeB = {
+      kind: 'TYPEB',
+      error: true
+    };
+
+    if (var1 === var2) { // Always will be false 
+    
+    }
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback" 
+
+next_question
+
+read -p "What is the difference between a module and a namespace? " response
+answer="Modules do not use global scope, but rather, their own scope."
+evaluate_answer "$response" "$answer" "$additional_feedback" 
+
+next_question
+
+read -p "
+
+    What is the event type for the following function?
+
+    <input
+       type=\"text\"
+       value={criteria}
+       onChange={e => setCriteria(e.currentTarget.value)}
+    />
+
+Enter your answer: " response
+answer="React.ChangeEvent<HTMLInputElement>"
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "
+    Make the handleSubmit event handler strongly-typed.
+
+    function Search() {
+        const handleSubmit = e => {
+           e.preventDefault();
+           ...
+        };
+        return (
+            <form onSubmit={handleSubmit} >
+            <input
+                name=\"search\"
+                type=\"text\"
+            />
+            </form>
+        );
+    }
+Enter your answer: " response
+answer="React.FormEvent<HTMLFormElement>"
+additional_feedback="
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+    ...
+    };
+"
+evaluate_answer "$response" "$answer" "$additional_feedback" 
+
+next_question
+
+read -p "
+
+    Build a theme context function for the following code.
+
+    export const ThemeProvider = ({ children }: Props) => {
+       const [theme, setTheme] = React.useState(defaultTheme);
+
+        React.useEffect(() => {
+         const currentTheme = \"lightblue\";
+         setTheme(currentTheme);
+        }, []);
+
+ 
+        return (
+            
+        );
+    };
+
+    const Header = () => {
+    const { theme, setTheme } = useTheme()!;
+        return (
+            <div style={{ backgroundColor: theme }}>
+                <select value={theme} onChange={e => setTheme(e.currentTarget.value)}>
+                    <option value=\"white\">White</option>
+                    <option value=\"lightblue\">Blue</option>
+                    <option value=\"lightgreen\">Green</option>
+                </select>
+                <span>Hello!</span>
+            </div>
+        );
+    };
+
+Enter the next line: " response
+answer="type ThemeContextType = { theme: string; setTheme: (value: string) => void; };"
+additional_feedback="
+
+    type ThemeContextType = { 
+        theme: string; 
+        setTheme: (value: string) => void; 
+    };
+
+    export const ThemeProvider = ({ children }: Props) => {
+       const [theme, setTheme] = React.useState(defaultTheme);
+
+        React.useEffect(() => {
+         const currentTheme = \"lightblue\";
+         setTheme(currentTheme);
+        }, []);
+
+ 
+        return (
+            
+        );
+    };
+
+    const Header = () => {
+    const { theme, setTheme } = useTheme()!;
+        return (
+            <div style={{ backgroundColor: theme }}>
+                <select value={theme} onChange={e => setTheme(e.currentTarget.value)}>
+                    <option value=\"white\">White</option>
+                    <option value=\"lightblue\">Blue</option>
+                    <option value=\"lightgreen\">Green</option>
+                </select>
+                <span>Hello!</span>
+            </div>
+        );
+    };
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
+
+next_line
+
+read -p "
+
+    Build a theme context function for the following code.
+
+    type ThemeContextType = { 
+        theme: string; 
+        setTheme: (value: string) => void; 
+    };
+
+    export const ThemeProvider = ({ children }: Props) => {
+       const [theme, setTheme] = React.useState(defaultTheme);
+
+        React.useEffect(() => {
+         const currentTheme = \"lightblue\";
+         setTheme(currentTheme);
+        }, []);
+
+ 
+        return (
+            
+        );
+    };
+
+    const Header = () => {
+    const { theme, setTheme } = useTheme()!;
+        return (
+            <div style={{ backgroundColor: theme }}>
+                <select value={theme} onChange={e => setTheme(e.currentTarget.value)}>
+                    <option value=\"white\">White</option>
+                    <option value=\"lightblue\">Blue</option>
+                    <option value=\"lightgreen\">Green</option>
+                </select>
+                <span>Hello!</span>
+            </div>
+        );
+    };
+
+Enter the next line: " response
+answer="const ThemeContext = React.createContext<ThemeContextType | undefined>(undefined);"
+additional_feedback="
+    type ThemeContextType = { 
+        theme: string; 
+        setTheme: (value: string) => void; 
+    };
+
+    const ThemeContext = React.createContext<ThemeContextType | undefined>(
+       undefined
+    );
+
+    export const ThemeProvider = ({ children }: Props) => {
+       const [theme, setTheme] = React.useState(defaultTheme);
+
+        React.useEffect(() => {
+         const currentTheme = \"lightblue\";
+         setTheme(currentTheme);
+        }, []);
+
+ 
+        return (
+            
+        );
+    };
+
+    const Header = () => {
+    const { theme, setTheme } = useTheme()!;
+        return (
+            <div style={{ backgroundColor: theme }}>
+                <select value={theme} onChange={e => setTheme(e.currentTarget.value)}>
+                    <option value=\"white\">White</option>
+                    <option value=\"lightblue\">Blue</option>
+                    <option value=\"lightgreen\">Green</option>
+                </select>
+                <span>Hello!</span>
+            </div>
+        );
+    };
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
+
+next_line
+
+read -p "
+
+    Build a theme context function for the following code.
+
+    type ThemeContextType = { 
+        theme: string; 
+        setTheme: (value: string) => void; 
+    };
+
+    const ThemeContext = React.createContext<ThemeContextType | undefined>(
+       undefined
+    );
+
+    export const ThemeProvider = ({ children }: Props) => {
+       const [theme, setTheme] = React.useState(defaultTheme);
+
+        React.useEffect(() => {
+         const currentTheme = \"lightblue\";
+         setTheme(currentTheme);
+        }, []);
+
+        const themeValues = {
+          theme,
+          setTheme,
+        };
+
+        return (
+            
+        );
+    };
+
+    const Header = () => {
+    const { theme, setTheme } = useTheme()!;
+        return (
+            <div style={{ backgroundColor: theme }}>
+                <select value={theme} onChange={e => setTheme(e.currentTarget.value)}>
+                    <option value=\"white\">White</option>
+                    <option value=\"lightblue\">Blue</option>
+                    <option value=\"lightgreen\">Green</option>
+                </select>
+                <span>Hello!</span>
+            </div>
+        );
+    };
+
+Enter the next line: " response
+answer="const themeValues = { theme, setTheme, };"
+additional_feedback="
+
+    type ThemeContextType = { 
+        theme: string; 
+        setTheme: (value: string) => void; 
+    };
+
+    const ThemeContext = React.createContext<ThemeContextType | undefined>(
+       undefined
+    );
+
+    export const ThemeProvider = ({ children }: Props) => {
+       const [theme, setTheme] = React.useState(defaultTheme);
+
+        React.useEffect(() => {
+         const currentTheme = \"lightblue\";
+         setTheme(currentTheme);
+        }, []);
+
+        const themeValues = {
+          theme,
+          setTheme,
+        };
+
+        return (
+            
+        );
+    };
+
+    const Header = () => {
+    const { theme, setTheme } = useTheme()!;
+        return (
+            <div style={{ backgroundColor: theme }}>
+                <select value={theme} onChange={e => setTheme(e.currentTarget.value)}>
+                    <option value=\"white\">White</option>
+                    <option value=\"lightblue\">Blue</option>
+                    <option value=\"lightgreen\">Green</option>
+                </select>
+                <span>Hello!</span>
+            </div>
+        );
+    };
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
+
+next_line
+
+read -p "
+
+    Build a theme context function for the following code.
+
+    type ThemeContextType = { 
+        theme: string; 
+        setTheme: (value: string) => void; 
+    };
+
+    const ThemeContext = React.createContext<ThemeContextType | undefined>(
+       undefined
+    );
+
+    export const ThemeProvider = ({ children }: Props) => {
+       const [theme, setTheme] = React.useState(defaultTheme);
+
+        React.useEffect(() => {
+         const currentTheme = \"lightblue\";
+         setTheme(currentTheme);
+        }, []);
+
+        const themeValues = {
+          theme,
+          setTheme,
+        };
+
+        return (
+            
+        );
+    };
+
+    const Header = () => {
+    const { theme, setTheme } = useTheme()!;
+        return (
+            <div style={{ backgroundColor: theme }}>
+                <select value={theme} onChange={e => setTheme(e.currentTarget.value)}>
+                    <option value=\"white\">White</option>
+                    <option value=\"lightblue\">Blue</option>
+                    <option value=\"lightgreen\">Green</option>
+                </select>
+                <span>Hello!</span>
+            </div>
+        );
+    };
+
+Enter the next line: " response
+answer="const memoizedValues = useMemo(() => themeValues, [themeValues]);"
+additional_feedback="
+
+    type ThemeContextType = { 
+        theme: string; 
+        setTheme: (value: string) => void; 
+    };
+
+    const ThemeContext = React.createContext<ThemeContextType | undefined>(
+       undefined
+    );
+
+    export const ThemeProvider = ({ children }: Props) => {
+       const [theme, setTheme] = React.useState(defaultTheme);
+
+        React.useEffect(() => {
+         const currentTheme = \"lightblue\";
+         setTheme(currentTheme);
+        }, []);
+
+        const themeValues = {
+          theme,
+          setTheme,
+        };
+
+        const memoizedValues = useMemo(() => themeValues, [themeValues]);
+
+        return (
+            
+        );
+    };
+
+    const Header = () => {
+    const { theme, setTheme } = useTheme()!;
+        return (
+            <div style={{ backgroundColor: theme }}>
+                <select value={theme} onChange={e => setTheme(e.currentTarget.value)}>
+                    <option value=\"white\">White</option>
+                    <option value=\"lightblue\">Blue</option>
+                    <option value=\"lightgreen\">Green</option>
+                </select>
+                <span>Hello!</span>
+            </div>
+        );
+    };
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
+
+next_line
+
+read -p "
+
+    Build a theme context function for the following code.
+
+    type ThemeContextType = { 
+        theme: string; 
+        setTheme: (value: string) => void; 
+    };
+
+    const ThemeContext = React.createContext<ThemeContextType | undefined>(
+       undefined
+    );
+
+    export const ThemeProvider = ({ children }: Props) => {
+       const [theme, setTheme] = React.useState(defaultTheme);
+
+        React.useEffect(() => {
+         const currentTheme = \"lightblue\";
+         setTheme(currentTheme);
+        }, []);
+
+        const themeValues = {
+          theme,
+          setTheme,
+        };
+
+        const memoizedValues = useMemo(() => themeValues, [themeValues]);
+
+        return (
+            
+        );
+    };
+
+    const Header = () => {
+    const { theme, setTheme } = useTheme()!;
+        return (
+            <div style={{ backgroundColor: theme }}>
+                <select value={theme} onChange={e => setTheme(e.currentTarget.value)}>
+                    <option value=\"white\">White</option>
+                    <option value=\"lightblue\">Blue</option>
+                    <option value=\"lightgreen\">Green</option>
+                </select>
+                <span>Hello!</span>
+            </div>
+        );
+    };
+
+Enter the next line: " response
+answer="<ThemeContext.Provider value={memoizedValues}>{children}</ThemeContext.Provider>"
+additional_feedback="
+    type ThemeContextType = { 
+        theme: string; 
+        setTheme: (value: string) => void; 
+    };
+
+    const ThemeContext = React.createContext<ThemeContextType | undefined>(
+       undefined
+    );
+
+    export const ThemeProvider = ({ children }: Props) => {
+       const [theme, setTheme] = React.useState(defaultTheme);
+
+        React.useEffect(() => {
+         const currentTheme = \"lightblue\";
+         setTheme(currentTheme);
+        }, []);
+
+        const themeValues = {
+          theme,
+          setTheme,
+        };
+
+        const memoizedValues = useMemo(() => themeValues, [themeValues]);
+
+        return (
+            <ThemeContext.Provider value={memoizedValues}>
+                {children}
+            </ThemeContext.Provider>
+        );
+    };
+
+    const Header = () => {
+    const { theme, setTheme } = useTheme()!;
+        return (
+            <div style={{ backgroundColor: theme }}>
+                <select value={theme} onChange={e => setTheme(e.currentTarget.value)}>
+                    <option value=\"white\">White</option>
+                    <option value=\"lightblue\">Blue</option>
+                    <option value=\"lightgreen\">Green</option>
+                </select>
+                <span>Hello!</span>
+            </div>
+        );
+    };
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
+
+next_line
+
+read -p "" response
+answer="export const useTheme = () => React.useContext(ThemeContext);"
+additional_feedback="
+    type ThemeContextType = { 
+        theme: string; 
+        setTheme: (value: string) => void; 
+    };
+
+    const ThemeContext = React.createContext<ThemeContextType | undefined>(
+       undefined
+    );
+
+    export const ThemeProvider = ({ children }: Props) => {
+       const [theme, setTheme] = React.useState(defaultTheme);
+
+        React.useEffect(() => {
+         const currentTheme = \"lightblue\";
+         setTheme(currentTheme);
+        }, []);
+
+        const themeValues = {
+          theme,
+          setTheme,
+        };
+
+        const memoizedValues = useMemo(() => themeValues, [themeValues]);
+
+        return (
+            <ThemeContext.Provider value={memoizedValues}>
+                {children}
+            </ThemeContext.Provider>
+        );
+    };
+
+    const Header = () => {
+    const { theme, setTheme } = useTheme()!;
+        return (
+            <div style={{ backgroundColor: theme }}>
+                <select value={theme} onChange={e => setTheme(e.currentTarget.value)}>
+                    <option value=\"white\">White</option>
+                    <option value=\"lightblue\">Blue</option>
+                    <option value=\"lightgreen\">Green</option>
+                </select>
+                <span>Hello!</span>
+            </div>
+        );
+    };
+
+    export const useTheme = () => React.useContext(ThemeContext);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
+
+next_question
+
+read -p "
+
+    Why does there have to be an exclamation mark (!) after the call to the useTheme hook?
+
+    const { theme, setTheme } = useTheme()!;
+
+Enter your answer: " response
+answer="Exclamation mark tells the TypeScript compiler that its return value won’t be undefined."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "
+
+   Define the type in useRef for the input variable.
+
+    const Search = () => {
+    const input = React.useRef(null);
+
+    React.useEffect(() => {
+      if (input.current) {
+        input.current.focus();
+      }
+    }, []);
+
+      return (
+        <form>
+         <input ref={input} type=\"search\" />
+        </form>
+      );
+    };
+
+Enter your answer:" response
+answer="const input = React.useRef<HTMLInputElement>(null);"
+additional_feedback="
+
+ const Search = () => {
+  const input = React.useRef<HTMLInputElement>(null);
+
+  React.useEffect(() => {
+    if (input.current) {
+      input.current.focus();
+    }
+   }, []);
+
+      return (
+        <form>
+         <input ref={input} type=\"search\" />
+        </form>
+      );
+ };
+"
+evaluate_answer "$response" "$answer" "$additional_feedback" 
+
+
+
+
+next_question
+
 read -p "" response
 answer=""
 additional_feedback=""
 evaluate_answer "$response" "$answer" "$additional_feedback" 
-
  
+
 
 
 
