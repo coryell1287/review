@@ -1,36 +1,125 @@
-Loss-less compression, where the compression-uncompression cycle doesn't 
-alter the data that is recovered. It matches (byte to byte) with the original. 
-For images, gif or png are using lossless compression.
+#!/bin/bash
+
+correct=0
+questions=0
+
+calculate_float() {
+    awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
+}
+
+calculate_score() {
+
+    if [[ correct -eq 0 ]]; then
+        echo "     
+########################################
+
+       Wrong! There is no tommorrow, 
+       so get this right right now!
+
+########################################
+             "
+        echo "     
+########################################
+
+       You got nothing correct. Stop and go study.
+
+########################################
+             "
+    else
+        echo "########################################"
+        echo "          Progress                    "
+        echo "    $questions questions answered."
+        echo "    $correct answered correctly."
+        score=$(calculate_float $correct $questions)
+        echo "    You scored $score% on web performance."
+    fi
+}
+
+increment_correct_responses() {
+    ((correct = correct + 1))
+}
+
+increment_questions_count() {
+    ((questions = questions + 1))
+}
+
+affirm_answer() {
+    if [[ -z "$1" ]]; then
+        echo "
+########################################
+              Correct
+########################################
+    "
+    else
+        echo "     
+########################################
+              Correct
+########################################
+             "
+        echo "$1"
+    fi
+}
+
+evaluate_answer() {
+    increment_questions_count
+
+    if [ "$1" == "$2" ]; then
+        increment_correct_responses
+        affirm_answer "$3"
+    else
+        echo "     
+########################################
+
+       Wrong! There is no tommorrow, 
+       so get this right right now!
+
+########################################
+             "
+    fi
+    calculate_score
+}
+
+evaluate_answer_written_with_code() {
+    increment_questions_count
+
+    if [[ "$1" == "$2" ]]; then
+        increment_correct_responses
+        affirm_answer "$3"
+    else
+
+        echo "     
+########################################
+
+       Wrong! There is no tommorrow, 
+       so get this right right now!
+
+########################################
+             "
+        calculate_score
+        exit 1
+    fi
+}
+
+next_question() {
+    echo "
+ ########################################
+             Next Question 
+ ########################################
+"
+}
+
+next_line() {
+    echo "
+ ########################################
+                Next Line 
+ ########################################
+"
+}
 
 
-Lossy compression, where the cycle alters the original data in a (hopefully) imperceptible 
-way for the user. Video formats on the Web are lossy; the jpeg image format is also lossy.
-
-End-to-end compression refers to a compression of the body of a message that is done by the 
-server and will last unchanged until it reaches the client. Whatever the intermediate nodes are, 
-they leave the body untouched.
 
 
-In the 1990s, compression technology was advancing at a rapid pace and numerous successive 
-algorithms have been added to the set of possible choices. Nowadays, only two are relevant:
-gzip, the most common one, and br the new challenger.
 
-
-Hop-by-hop compression, though similar to end-to-end compression, differs by one fundamental 
-element: the compression doesn't happen on the resource in the server, creating a specific 
-representation that is then transmitted, but on the body of the message between any two nodes 
-on the path between the client and the server. Connections between successive intermediate nodes 
-may apply a different compression.
-
-
- TE and Transfer-Encoding are mostly used to send a response by chunks, allowing to start 
- transmitting a resource without knowing its length.
-
-
-additional info
-Note that using Transfer-Encoding and compression at the hop level is so 
-rare that most servers, like Apache, Nginx, or IIS, have no easy way to configure it. Such
- configuration usually happens at the proxy level
 
 
 next_question
@@ -52,8 +141,6 @@ answer="Layout is the process by which the width, height, and location of all th
 evaluate_answer "$response" "$answer"
 
 next_question
-
-
 
 read -p "What is reflow? " response
 answer="Reflow is any subsequent recalcuations of the layout's size and position determination of any part of the page or the entire document."
@@ -94,7 +181,166 @@ evaluate_answer "$response" "$answer"
 
 next_question
 
+read -p "What is loss-less compression? " response
+answer="Loss-less compression is where the compression-uncompression cycle does not alter the data that is recovered. It matches byte to byte with the original. For images, gif or png are using lossless compression."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is lossy compression? " response
+answer="Lossy compression is where the cycle alters the original data in a imperceptible way for the user. Video formats on the Web are lossy; the jpeg image format is also lossy."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is end-to-end compression? " response
+answer="End-to-end compression refers to a compression of the body of a message that is done by the  server and will last unchanged until it reaches the client. Whatever the intermediate nodes are, they leave the body untouched."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What are some common compression algorithms? " response
+answer="gzip, the most common one, and br."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is a hop-by-hop compression? " response
+answer="Hop-by-hop compression, though similar to end-to-end compression, differs by one fundamental  element: the compression does not happen on the resource in the server, creating a specific representation that is then transmitted, but on the body of the message between any two nodes on the path between the client and the server. Connections between successive intermediate nodes may apply a different compression."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "When is Transfer-Encoding used? " response
+answer="Transfer-Encoding are mostly used to send a response by chunks, allowing to start transmitting a resource without knowing its length."
+evaluate_answer "$response" "$answer"
+
+next_question
+
 read -p "" response
 answer=""
 evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is preload? " response
+answer="Preload is a declarative fetch, allowing you to force the browser to make a request for a resource, before browsers\' main rendering machinery starts, without blocking the document\'s onload event."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is prefetch? " response
+answer="Prefetch is the process whereby the browser fetches the resources of a link and stores it in its local cache."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "Write link element that preloads a Shopify font from a CDN. " response
+answer="<link rel=\"preload\" as=\"font\" crossorigin=\"crossorigin\" type=\"font/woff2\" href=\"https://cdn.shopify.com\"/>"
+evaluate_answer "$response" "$answer"
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "When would a developer use preload? " response
+answer="Developers preload resources when they have high-confidence the resource will be used in the current page."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "When would a developer prefetch a resource? " response
+answer="Developers prefetch resources when the resource will be used for future navigations across multiple navigation boundaries."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "How are resources cached when they are preloaded or prefetched? " response
+answer="If the resource has a valid cache-control with valid max-age, it is stored in the HTTP cache and is available for current and future sessions. If the resource is not cacheable, the browser will not store it in the HTTP cache—instead, it goes to the memory cache and remains until a future request."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is the call-by-value strategy? " response
+answer="The call-by-value strategy consists in copying the contents of the actual parameters into the formal parameters. State changes performed in the formal parameters do not reflect back into the actual parameters. "
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is call-by-reference? " response
+answer="Whereas in the call-by-value strategy we copy the contents of the actual parameter to the formal parameter, in the call-by-reference we copy the address of the actual parameter to the formal one."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is a downside to eager evaluation? " response
+answer="Eager evaluation has the downside that, if a user tries to interact with your page while the code is evaluating, the browser must wait until the code is done evaluating to respond."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is the problem with lazy evaluation? " response
+answer="The problem with waiting until the user needs the result of running that code is now you’re guaranteeing that your expensive code will block user input. Choose wisely which processes need to be delay until requested."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "Can converting synchronous code to a microtask prevent the UI from block? " response
+answer="While browsers can run input callbacks ahead of queued tasks, they cannot run input callbacks ahead of queued microtasks. And since promises and async functions run as microtasks, converting your sync code to promise-based code will not prevent it from blocking user input."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "Can converting synchronous code to a microtask prevent the UI from block? " response
+answer="While browsers can run input callbacks ahead of queued tasks, they cannot run input callbacks ahead of queued microtasks. And since promises and async functions run as microtasks, converting your sync code to promise-based code will not prevent it from blocking user input."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is the best and worst case scenario for idle-unitl-urget? " response
+answer="In the worst case, it has the exact same performance characteristics as lazy evaluation, and in the best case it doesn’t block interactivity at all because execution happens during idle periods."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "
+    How does the following code work? 
+
+    export class IdleValue {
+        constructor(init) {
+          this._init = init;
+          this._value;
+          this._idleHandle = requestIdleCallback(() => {
+            this._value = this._init();
+          });
+       }
+
+        getValue() {
+          if (this._value === undefined) {
+            cancelIdleCallback(this._idleHandle);
+            this._value = this._init();
+           }
+          return this._value;
+        }
+
+       // ...
+    }
+Enter your answer: " response
+answer="IdleValue class works is it schedules the initialization function to be run during the next idle period. If the idle period occurs before the IdleValue instance is referenced, then no blocking occurs and the value can be returned immediately when requested. But if, on the other hand, the value is referenced before the next idle period, then the scheduled idle callback is canceled and the initialization function is run immediately."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is the last reliable callback developers have before the user terminates the page? " response
+answer="The last reliable callback developers have before a page gets terminated or discarded is the visibilitychange event as the page’s visibilityState changes to hidden."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "Give an example of code developers should evaluate to determine whether the developer should use idle-unitl-urgent. " response
+answer="The first thing I'd suggest to do is look at all your constructor functions, and if any of them run potentially-expensive operations, refactor them to use an IdleValue object instead."
+evaluate_answer "$response" "$answer"
+
+
+next_question
+
 
