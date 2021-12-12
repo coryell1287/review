@@ -22,3 +22,17 @@ For short-term projects, that might be a safe bet. Over multiple decades, it pro
 The job of a software engineer, or a software
 engineering leader, is to aim for sustainability and management of the scaling
 costs for the organization, the product, and the development workflow.
+
+
+Never implement multiple disparate activities in parallel and in isolation from the awareness of each individual team member.
+The process doesn't need all of the teams consent but it does need their evaluation to quickly learn how to improve the actions.
+
+“software engineering” encompasses not just the act of
+writing code, but all of the tools and processes an organization uses to build
+and maintain that code over time.
+The job of a software engineer, or a software
+engineering leader, is to aim for sustainability and management of the scaling
+costs for the organization, the product, and the development workflow.
+
+Programming versus software engineering
+Programming is the immediate act of producing without concern for the long-term usefulness of the product, while software engineering is the set of policies, practices, and tools that are necessary to make that code useful for as long as it needs to be used and allow collaboration across team.

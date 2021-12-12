@@ -3,6 +3,30 @@
 correct=0
 questions=0
 
+calculate_float() {
+    awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
+}
+
+calculate_score() {
+
+    if [[ correct -eq 0 ]]; then
+        echo "     
+########################################
+
+       You got nothing correct. Stop and go study.
+
+########################################
+             "
+    else
+        echo "########################################"
+        echo "          Progress                    "
+        echo "    $questions questions answered."
+        echo "    $correct answered correctly."
+        score=$(calculate_float $correct $questions)
+        echo "    You scored $score% on rest architecture review."
+    fi
+}
+
 increment_correct_responses() {
     ((correct = correct + 1))
 }
@@ -14,33 +38,79 @@ increment_questions_count() {
 affirm_answer() {
     if [[ -z "$1" ]]; then
         echo "
-    Correct. 
-
+########################################
+              Correct
+########################################
     "
     else
+        echo "     
+########################################
+              Correct
+########################################
+             "
         echo "$1"
     fi
 }
 
 evaluate_answer() {
+    increment_questions_count
+
+    if [ "$1" == "$2" ]; then
+        increment_correct_responses
+        affirm_answer "$3"
+    else
+        echo "     
+########################################
+        
+       Wrong! There is no tommorrow, 
+       so get this right right now!
+
+        
+       Your answer:     "$1"
+       Correct answer:  "$2"
+
+########################################
+             "
+    fi
+    calculate_score
+}
+
+evaluate_answer_written_with_code() {
+    increment_questions_count
 
     if [[ "$1" == "$2" ]]; then
         increment_correct_responses
         affirm_answer "$3"
     else
 
-        echo "
-    
-    Wrong! There is no tommorrow, so get this right right now!
-    
-    "
+        echo "     
+########################################
+        
+       Wrong! There is no tommorrow, 
+       so get this right right now!
+
+        
+       Your answer:     "$1"
+       Correct answer:  "$2"
+
+########################################
+             "
     fi
+    calculate_score
 }
 
 next_question() {
     echo "
  ########################################
              Next Question 
+ ########################################
+"
+}
+
+next_line() {
+    echo "
+ ########################################
+                Next Line 
  ########################################
 "
 }

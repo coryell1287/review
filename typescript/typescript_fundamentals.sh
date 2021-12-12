@@ -12,14 +12,6 @@ calculate_score() {
 
     if [[ correct -eq 0 ]]; then
         echo "     
-########################################
-
-       Wrong! There is no tommorrow, 
-       so get this right right now!
-
-########################################
-             "
-        echo "     
 #################################################
 
   You got nothing correct. Stop and go study.
@@ -70,9 +62,14 @@ evaluate_answer() {
     else
         echo "     
 ########################################
-
+        
        Wrong! There is no tommorrow, 
        so get this right right now!
+
+        
+       Your answer:     "$1"
+       Correct answer:  "$2"
+        
 
 ########################################
              "
@@ -90,15 +87,19 @@ evaluate_answer_written_with_code() {
 
         echo "     
 ########################################
-
+        
        Wrong! There is no tommorrow, 
        so get this right right now!
 
+        
+       Your answer:     "$1"
+       Correct answer:  "$2"
+        
+
 ########################################
              "
-        calculate_score
-        exit 1
     fi
+    calculate_score
 }
 
 next_question() {

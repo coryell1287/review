@@ -12,14 +12,6 @@ calculate_score() {
 
     if [[ correct -eq 0 ]]; then
         echo "     
-########################################
-
-       Wrong! There is no tommorrow, 
-       so get this right right now!
-
-########################################
-             "
-        echo "     
 #################################################
 
   You got nothing correct. Stop and go study.
@@ -32,7 +24,7 @@ calculate_score() {
         echo "    $questions questions answered."
         echo "    $correct answered correctly."
         score=$(calculate_float $correct $questions)
-        echo "    You scored $score% on Typescript fundamentals."
+        echo "    You scored $score% on Typescript advanced."
     fi
 }
 
@@ -70,9 +62,14 @@ evaluate_answer() {
     else
         echo "     
 ########################################
-
+        
        Wrong! There is no tommorrow, 
        so get this right right now!
+
+        
+       Your answer:     "$1"
+       Correct answer:  "$2"
+        
 
 ########################################
              "
@@ -90,14 +87,18 @@ evaluate_answer_written_with_code() {
 
         echo "     
 ########################################
-
+        
        Wrong! There is no tommorrow, 
        so get this right right now!
+
+        
+       Your answer:     "$1"
+       Correct answer:  "$2"
+        
 
 ########################################
              "
         calculate_score
-        exit 1
     fi
 }
 
@@ -2325,7 +2326,12 @@ answer=""
 additional_feedback=""
 evaluate_answer "$response" "$answer" "$additional_feedback" 
  
+next_question
 
+read -p "" response
+answer=""
+evaluate_answer "$response" "$answer"
+ 
 
 
 

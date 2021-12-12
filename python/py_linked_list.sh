@@ -1,17 +1,29 @@
+#!/bin/bash
+
 correct=0
 questions=0
 
+calculate_float() {
+    awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
+}
+
 calculate_score() {
-    ((questions = questions + 1))
 
     if [[ correct -eq 0 ]]; then
-        echo "
-    You got nothing correct. Stop and go study.
-    
-    "
+        echo "     
+########################################
+
+       You got nothing correct. Stop and go study.
+
+########################################
+             "
     else
-        score=$(((questions / correct) * 100))
-        echo "    You scored $score% on List data structures."
+        echo "########################################"
+        echo "          Progress                    "
+        echo "    $questions questions answered."
+        echo "    $correct answered correctly."
+        score=$(calculate_float $correct $questions)
+        echo "    You scored $score% on Python linked list."
     fi
 }
 
@@ -26,46 +38,76 @@ increment_questions_count() {
 affirm_answer() {
     if [[ -z "$1" ]]; then
         echo "
-    Correct. 
-
+########################################
+              Correct
+########################################
     "
     else
+        echo "     
+########################################
+              Correct
+########################################
+             "
         echo "$1"
     fi
 }
 
 evaluate_answer() {
+    increment_questions_count
+
+    if [ "$1" == "$2" ]; then
+        increment_correct_responses
+        affirm_answer "$3"
+    else
+        echo "     
+########################################
+
+       Wrong! There is no tommorrow, 
+       so get this right right now!
+
+########################################
+             "
+    fi
+    calculate_score
+}
+
+evaluate_answer_written_with_code() {
+    increment_questions_count
 
     if [[ "$1" == "$2" ]]; then
         increment_correct_responses
         affirm_answer "$3"
     else
 
-        echo "
-    
-       Wrong! There is no tommorrow, so get this right right now!
-    
-    "
-        calculate_score
-        exit 1
-    fi
-}
+        echo "     
+########################################
 
-next_line() {
-    echo "
-    ########################################
-                Next Line 
-    ########################################
-"
+       Wrong! There is no tommorrow, 
+       so get this right right now!
+
+########################################
+             "
+    fi
+    calculate_score
 }
 
 next_question() {
     echo "
-    ########################################
-                Next Question 
-    ########################################
+ ########################################
+             Next Question 
+ ########################################
 "
 }
+
+next_line() {
+    echo "
+ ########################################
+                Next Line 
+ ########################################
+"
+}
+
+
 
 read -p "
     Implement a function that removes all the even elements from a given list. Name it remove_even(lst).

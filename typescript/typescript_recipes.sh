@@ -2,13 +2,13 @@ correct=0
 questions=0
 
 calculate_float() {
-    awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
+  awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
 }
 
 calculate_score() {
 
-    if [[ correct -eq 0 ]]; then
-        echo "     
+  if [[ correct -eq 0 ]]; then
+    echo "     
 ########################################
 
        Wrong! There is no tommorrow, 
@@ -16,89 +16,96 @@ calculate_score() {
 
 ########################################
              "
-        echo "     
+    echo "     
 ########################################
 
        You got nothing correct. Stop and go study.
 
 ########################################
              "
-    else
-        echo "########################################"
-        echo "          Progress                    "
-        echo "    $questions questions answered."
-        echo "    $correct answered correctly."
-        score=$(calculate_float $correct $questions)
-        echo "    You scored $score% on Typescript recipes."
-    fi
+  else
+    echo "########################################"
+    echo "          Progress                    "
+    echo "    $questions questions answered."
+    echo "    $correct answered correctly."
+    score=$(calculate_float $correct $questions)
+    echo "    You scored $score% on Typescript recipes."
+  fi
 }
 
 increment_correct_responses() {
-    ((correct = correct + 1))
+  ((correct = correct + 1))
 }
 
 increment_questions_count() {
-    ((questions = questions + 1))
+  ((questions = questions + 1))
 }
 
 affirm_answer() {
-    if [[ -z "$1" ]]; then
-        echo "
+  if [[ -z "$1" ]]; then
+    echo "
 ########################################
               Correct
 ########################################
     "
-    else
-        echo "     
+  else
+    echo "     
 ########################################
               Correct
 ########################################
              "
-        echo "$1"
-    fi
+    echo "$1"
+  fi
 }
 
 evaluate_answer() {
-    increment_questions_count
-    if [ "$1" == "$2" ]; then
-        increment_correct_responses
-        affirm_answer "$3"
-    else
-        echo "     
+  increment_questions_count
+  if [ "$1" == "$2" ]; then
+    increment_correct_responses
+    affirm_answer "$3"
+  else
+    echo "     
 ########################################
-
+        
        Wrong! There is no tommorrow, 
        so get this right right now!
 
+        
+       Your answer:     "$1"
+       Correct answer:  "$2"
+
 ########################################
              "
-    fi
-    calculate_score
+  fi
+  calculate_score
 }
 
 evaluate_answer_written_with_code() {
-    increment_questions_count
+  increment_questions_count
 
-    if [[ "$1" == "$2" ]]; then
-        increment_correct_responses
-        affirm_answer "$3"
-    else
+  if [[ "$1" == "$2" ]]; then
+    increment_correct_responses
+    affirm_answer "$3"
+  else
 
-        echo "     
+    echo "     
 ########################################
-
+        
        Wrong! There is no tommorrow, 
        so get this right right now!
 
+        
+       Your answer:     "$1"
+       Correct answer:  "$2"
+
 ########################################
              "
-        calculate_score
-        exit 1
-    fi
+  fi
+  calculate_score
 }
 
 next_question() {
-    echo "
+  echo "
  ########################################
              Next Question 
  ########################################
@@ -106,7 +113,7 @@ next_question() {
 }
 
 next_line() {
-    echo "
+  echo "
  ########################################
                 Next Line 
  ########################################
@@ -144,9 +151,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_question
-
 
 read -p "What would be the output of the following code?
 
@@ -159,20 +164,13 @@ Enter your answer: " response
 answer="10, 1000, 12, 2, 21, 23, 3, 30"
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
 
 read -p "In the previous answer, why did the program output those results? " response
 answer="Because with the default sort(), elements are converted to strings and compared in UTF-16 code units order."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
 
 read -p "How would you properly sort the previous example in ascending order? 
 
@@ -220,7 +218,6 @@ additional_feedback="
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
-
 
 read -p "
     Sort the names in ascending order. 
@@ -297,7 +294,6 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-
 read -p "
     Write a program that uses Navigator.clipboard to copy text from an input field. 
 
@@ -315,9 +311,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "Write a program that uses Navigator.clipboard to copy text from an input field. 
 
@@ -340,10 +334,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
-
 next_line
-
 
 read -p "Write a program that uses Navigator.clipboard to copy text from an input field. 
 
@@ -374,7 +365,6 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-
 read -p "
 
     Write a JavaScript program to convert a comma-separated values (CSV) string to a 2D array. 
@@ -399,7 +389,6 @@ additional_feedback="
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
-
 
 read -p "
     Write a JavaScript program to convert a comma-separated values (CSV) string to a 2D array.
@@ -444,7 +433,7 @@ read -p "
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 Enter the next line: " response
-answer="function csvToJson(data: string, delimiter = ',') { }"
+answer="function csvToJson(data: string, delimiter = ','): Data[] { }"
 additional_feedback="
     interface Data {
       col1: string;
@@ -453,7 +442,7 @@ additional_feedback="
 
     type DataKey = keyof Data;
 
-    function csvToJson(data: string, delimiter = ',') { 
+    function csvToJson(data: string, delimiter = ','): Data[] { 
 
     }
 
@@ -475,7 +464,7 @@ read -p "
 
     type DataKey = keyof Data;
 
-    function csvToJson(data: string, delimiter = ',') { 
+    function csvToJson(data: string, delimiter = ','): Data[] { 
         
     }
 
@@ -483,7 +472,7 @@ read -p "
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
 
 Enter the next line: " response
-answer="const titles = data.slice(0, data.indexOf('\n')).split(delimiter);"
+answer="const titles = data.slice(0, data.indexOf('\\n')).split(delimiter) as DataKey[];"
 additional_feedback="
     interface Data {
       col1: string;
@@ -492,8 +481,8 @@ additional_feedback="
 
     type DataKey = keyof Data;
 
-    function csvToJson(data: string, delimiter = ',') { 
-        const titles = data.slice(0, data.indexOf('\n')).split(delimiter);
+    function csvToJson(data: string, delimiter = ','): Data[] { 
+        const titles = data.slice(0, data.indexOf('\n')).split(delimiter) as DataKey[];
     }
 
     console.log(csvToJson('col1,col2\na,b\nc,d')); 
@@ -502,7 +491,6 @@ additional_feedback="
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
-
 
 read -p "
     Write a JavaScript program to convert a comma-separated values (CSV) string to a 2D array.
@@ -514,8 +502,8 @@ read -p "
 
     type DataKey = keyof Data;
 
-    function csvToJson(data: string, delimiter = ',') { 
-        const titles = data.slice(0, data.indexOf('\n')).split(delimiter);
+    function csvToJson(data: string, delimiter = ','): Data[] { 
+        const titles = data.slice(0, data.indexOf('\n')).split(delimiter) as DataKey[];
     }
 
     console.log(csvToJson('col1,col2\na,b\nc,d')); 
@@ -531,7 +519,7 @@ additional_feedback="
 
     type DataKey = keyof Data;
 
-    function csvToJson(data: string, delimiter = ',') { 
+    function csvToJson(data: string, delimiter = ','): Data[] { 
         const titles = data.slice(0, data.indexOf('\n')).split(',') as DataKey[];
 
         return data
@@ -556,7 +544,7 @@ read -p "
 
     type DataKey = keyof Data;
 
-    function csvToJson(data: string, delimiter = ',') { 
+    function csvToJson(data: string, delimiter = ','): Data[] { 
         const titles = data.slice(0, data.indexOf('\n')).split(',') as DataKey[];
 
         return data
@@ -576,7 +564,7 @@ additional_feedback="
 
     type DataKey = keyof Data;
 
-    function csvToJson(data: string, delimiter = ',') { 
+    function csvToJson(data: string, delimiter = ','): Data[] { 
         const titles = data.slice(0, data.indexOf('\n')).split(',') as DataKey[];
 
         return data
@@ -592,7 +580,6 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-
 read -p "
     Write a JavaScript program to convert a comma-separated values (CSV) string to a 2D array.
 
@@ -603,7 +590,7 @@ read -p "
 
     type DataKey = keyof Data;
 
-    function csvToJson(data: string, delimiter = ',') { 
+    function csvToJson(data: string, delimiter = ','): Data[] { 
         const titles = data.slice(0, data.indexOf('\n')).split(',') as DataKey[];
 
         return data
@@ -624,7 +611,7 @@ additional_feedback="
 
     type DataKey = keyof Data;
 
-    function csvToJson(data: string, delimiter = ',') { 
+    function csvToJson(data: string, delimiter = ','): Data[] { 
         const titles = data.slice(0, data.indexOf('\n')).split(',') as DataKey[];
 
         return data
@@ -642,7 +629,6 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-
 read -p "
     Write a JavaScript program to convert a comma-separated values (CSV) string to a 2D array.
 
@@ -653,7 +639,7 @@ read -p "
 
     type DataKey = keyof Data;
 
-    function csvToJson(data: string, delimiter = ',') { 
+    function csvToJson(data: string, delimiter = ','): Data[] { 
         const titles = data.slice(0, data.indexOf('\n')).split(',') as DataKey[];
 
         return data
@@ -677,7 +663,7 @@ additional_feedback="
 
     type DataKey = keyof Data;
 
-    function csvToJson(data: string, delimiter = ',') { 
+    function csvToJson(data: string, delimiter = ','): Data[] { 
         const titles = data.slice(0, data.indexOf('\n')).split(',') as DataKey[];
 
         return data
@@ -705,14 +691,14 @@ read -p "
 
     type DataKey = keyof Data;
 
-    function csvToJson(data: string, delimiter = ',') { 
+    function csvToJson(data: string, delimiter = ','): Data[] { 
         const titles = data.slice(0, data.indexOf('\n')).split(',') as DataKey[];
 
         return data
           .slice(data.indexOf('\n') + 1)
           .split('\n')
           .map(function (v) { 
-
+              const values = v.split(delimiter);
           });
     }
 
@@ -729,7 +715,7 @@ additional_feedback="
 
     type DataKey = keyof Data;
 
-    function csvToJson(data: string, delimiter = ',') { 
+    function csvToJson(data: string, delimiter = ','): Data[] { 
         const titles = data.slice(0, data.indexOf('\n')).split(',') as DataKey[];
 
         return data
@@ -761,7 +747,7 @@ read -p "
 
     type DataKey = keyof Data;
 
-    function csvToJson(data: string, delimiter = ',') { 
+    function csvToJson(data: string, delimiter = ','): Data[] { 
         const titles = data.slice(0, data.indexOf('\n')).split(',') as DataKey[];
 
         return data
@@ -788,7 +774,7 @@ additional_feedback="
 
     type DataKey = keyof Data;
 
-    function csvToJson(data: string, delimiter = ',') { 
+    function csvToJson(data: string, delimiter = ','): Data[] { 
         const titles = data.slice(0, data.indexOf('\n')).split(',') as DataKey[];
 
         return data
@@ -809,8 +795,8 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
-read -p "Write a function that removes an duplicate string value. " response
-answer="arr.filter((item, idx) => arr.indexOf(item) === idx);"
+read -p "Write a function that removes a duplicate string value. " response
+answer="arr.filter((item, index) => arr.indexOf(item) === index);"
 evaluate_answer "$response" "$answer"
 
 next_question
@@ -825,22 +811,7 @@ read -p "
     ];
 
 Enter your answer: " response
-answer="const totalPrice = cart.reduce((acc,next) => acc + next.price, 0);"
-evaluate_answer "$response" "$answer"
-
-next_question
-
-read -p "
-    Calculate the most expensive items.
-
-    const cart = [
-      { name: 'Soda', price: 3.12 },
-      { name: 'Margarita', price: 12.99 },
-      { name: 'Beer', price: 6.50 }
-    ];
-
-Enter your answer: " response
-answer="const mostExpensiveItem = cart.reduce((acc, next) => acc.price > next.price ? acc : next);"
+answer="const totalPrice = cart.reduce((acc, next) => acc + next.price, 0);"
 evaluate_answer "$response" "$answer"
 
 next_question
@@ -866,7 +837,7 @@ evaluate_answer "$response" "$answer"
 
 next_question
 
-read -p "Check for duplicate before adding it to an array." response
+read -p "Check for duplicate before adding it to an array. " response
 answer="if (!arr.includes(item)) { arr.push(item); }"
 additional_feedback="
     const arr = ['hamber', 'coal'];
@@ -875,7 +846,7 @@ additional_feedback="
         arr.push(item);
      }
 "
-evaluate_answer "$response" "$answer" "$additional_feedback" 
+evaluate_answer "$response" "$answer" "$additional_feedback"
 
 next_question
 
@@ -899,8 +870,8 @@ additional_feedback="
     console.log(subtracted) //[ 1, 3, 5 ]
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback" 
- 
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
 next_question
 
 read -p "
@@ -908,26 +879,22 @@ read -p "
     Write an interface that changes the string type to a number. 
 
      interface A {
-       x: string
+       x: string;
      }
-
-    interface B extends Omit<A, 'x'> {
-        x: number
-    }
 
 Enter your answer: " response
-answer="interface B extends Omit<A, 'x'> { x: number }"
+answer="interface B extends Omit<A, 'x'> { x: number; }"
 additional_feedback="
     interface A {
-       x: string
+       x: string;
      }
 
     interface B extends Omit<A, 'x'> {
-       x: number
+       x: number;
     }
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback" 
+evaluate_answer "$response" "$answer" "$additional_feedback"
 
 next_question
 
@@ -967,7 +934,6 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_question
 
 read -p "
@@ -981,101 +947,15 @@ read -p "
     };
 
      const mediaQueries = Object.keys(size).reduce((acc, cur) => {
-      acc[cur] = `(min-width: ${size[cur]}px)`
-      return acc
+       const [key, value] = cur;
+       acc[key] = \`(min-width: \${value}px)\`;
+       return acc;
     }, {});
-
-Enter your answer: " response
-answer="interface MediaQueryProps { [key: string]: number }"
-additional_feedback="
-
-    interface MediaQueryProps { 
-       [key: string]: number 
-    }
-
-    const size = {
-      small: 576,
-      medium: 768,
-      large: 992,
-      extra: 1200,
-    };
-
-     const mediaQueries = Object.keys(size).reduce((acc, cur) => {
-      acc[cur] = `(min-width: ${size[cur]}px)`
-      return acc
-    }, {});
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
-
-next_line
-
-read -p "
-    Write a strongly-type function for the following code.
-
-    interface MediaQueryProps { 
-       [key: string]: number 
-    }
-
-    const size = {
-      small: 576,
-      medium: 768,
-      large: 992,
-      extra: 1200,
-    };
-
-     const mediaQueries = Object.keys(size).reduce((acc, cur) => {
-      acc[cur] = `(min-width: ${size[cur]}px)`
-      return acc
-    }, {});
-
-Enter your answer: " response
-answer="Object.keys(size).reduce<Record<string, string>>((acc, cur) => { }, {});"
-additional_feedback="
-    interface MediaQueryProps { 
-       [key: string]: number 
-    }
-
-    const size = {
-      small: 576,
-      medium: 768,
-      large: 992,
-      extra: 1200,
-    };
-
-     const mediaQueries = Object.keys(size).reduce<Record<string, string>>((acc, cur) => {
-      acc[cur] = `(min-width: ${size[cur]}px)`
-      return acc
-    }, {});
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
-
-next_question
-
-read -p "
-
-    Declare types properly for the following code. 
-
-    const size = {
-      small: 576,
-      medium: 768,
-      large: 992,
-      extra: 1200
-    };
-
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
-
-        return acc;
-       }, {});
 
 Enter your answer: " response
 answer="type Breakpoints = { small: number; medium: number; large: number; extra: number; };"
 additional_feedback="
+
     type Breakpoints = {
       small: number;
       medium: number;
@@ -1087,26 +967,22 @@ additional_feedback="
       small: 576,
       medium: 768,
       large: 992,
-      extra: 1200
+      extra: 1200,
     };
 
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
-
-        return acc;
-       }, {});
+     const mediaQueries = Object.keys(size).reduce((acc, cur) => {
+       const [key, value] = cur;
+       acc[key] = \`(min-width: \${value}px)\`;
+       return acc;
+    }, {});
 
 "
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
 read -p "
-    
-    Declare types properly for the following code.
+    Write a strongly-type function for the following code.
 
     type Breakpoints = {
       small: number;
@@ -1119,17 +995,14 @@ read -p "
       small: 576,
       medium: 768,
       large: 992,
-      extra: 1200
+      extra: 1200,
     };
 
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
-
-        return acc;
-       }, {});
+     const mediaQueries = Object.keys(size).reduce((acc, cur) => {
+       const [key, value] = cur;
+       acc[key] = \`(min-width: \${value}px)\`;
+       return acc;
+    }, {});
 
 Enter your answer: " response
 answer="type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];"
@@ -1145,28 +1018,26 @@ additional_feedback="
       small: 576,
       medium: 768,
       large: 992,
-      extra: 1200
+      extra: 1200,
     };
 
     // Type of entry after Object.entries() is used
     type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
 
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
+     const mediaQueries = Object.keys(size).reduce((acc, cur) => {
+       const [key, value] = cur;
+       acc[key] = \`(min-width: \${value}px)\`;
+       return acc;
+    }, {});
 
-        return acc;
-       }, {});
 "
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+next_question
 
 read -p "
-    
-    Declare types properly for the following code.
+
+    Write a strongly-type function for the following code. 
 
     type Breakpoints = {
       small: number;
@@ -1179,25 +1050,21 @@ read -p "
       small: 576,
       medium: 768,
       large: 992,
-      extra: 1200
+      extra: 1200,
     };
 
     // Type of entry after Object.entries() is used
     type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
 
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
-
-        return acc;
-       }, {});
+     const mediaQueries = Object.keys(size).reduce((acc, cur) => {
+       const [key, value] = cur;
+       acc[key] = \`(min-width: \${value}px)\`;
+       return acc;
+    }, {});
 
 Enter your answer: " response
 answer="type Stringify<T> = { [key in keyof T]?: string };"
 additional_feedback="
-
     type Breakpoints = {
       small: number;
       medium: number;
@@ -1209,7 +1076,7 @@ additional_feedback="
       small: 576,
       medium: 768,
       large: 992,
-      extra: 1200
+      extra: 1200,
     };
 
     // Type of entry after Object.entries() is used
@@ -1218,23 +1085,20 @@ additional_feedback="
     // Generic helper to make all of the properties' types: string | undefined
     type Stringify<T> = { [key in keyof T]?: string };
 
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
-
-        return acc;
-       }, {});
+     const mediaQueries = Object.keys(size).reduce((acc, cur) => {
+       const [key, value] = cur;
+       acc[key] = \`(min-width: \${value}px)\`;
+       return acc;
+    }, {});
 
 "
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
 read -p "
     
-    Declare types properly for the following code.
+    Write a strongly-type function for the following code.
 
     type Breakpoints = {
       small: number;
@@ -1247,7 +1111,7 @@ read -p "
       small: 576,
       medium: 768,
       large: 992,
-      extra: 1200
+      extra: 1200,
     };
 
     // Type of entry after Object.entries() is used
@@ -1256,14 +1120,11 @@ read -p "
     // Generic helper to make all of the properties' types: string | undefined
     type Stringify<T> = { [key in keyof T]?: string };
 
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
-
-        return acc;
-       }, {});
+     const mediaQueries = Object.keys(size).reduce((acc, cur) => {
+       const [key, value] = cur;
+       acc[key] = \`(min-width: \${value}px)\`;
+       return acc;
+    }, {});
 
 Enter your answer: " response
 answer="interface CustomObject extends ObjectConstructor { }"
@@ -1285,30 +1146,23 @@ additional_feedback="
     // Type of entry after Object.entries() is used
     type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
 
-    // Generic helper to make all of the properties' types: string | undefined
-    type Stringify<T> = { [key in keyof T]?: string };
+    interface CustomObject extends ObjectConstructor { 
 
-    interface CustomObject extends ObjectConstructor {
+    }
 
-    };
-
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
-
-          return acc;
-       }, {});
-
+    const mediaQueries = Object.keys(size).reduce((acc, cur) => {
+       const [key, value] = cur;
+       acc[key] = \`(min-width: \${value}px)\`;
+       return acc;
+    }, {});
 "
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
 read -p "
     
-    Declare types properly for the following code.
+    Write a strongly-type function for the following code.
 
     type Breakpoints = {
       small: number;
@@ -1327,186 +1181,18 @@ read -p "
     // Type of entry after Object.entries() is used
     type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
 
-    // Generic helper to make all of the properties' types: string | undefined
-    type Stringify<T> = { [key in keyof T]?: string };
+    interface CustomObject extends ObjectConstructor { 
 
-    interface CustomObject extends ObjectConstructor {
-        
-    };
+    }
 
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
-
-         return acc;
-       }, {});
+    const mediaQueries = Object.keys(size).reduce((acc, cur) => {
+       const [key, value] = cur;
+       acc[key] = \`(min-width: \${value}px)\`;
+       return acc;
+    }, {});
 
 Enter your answer: " response
-answer="entries()"
-additional_feedback="
-    type Breakpoints = {
-      small: number;
-      medium: number;
-      large: number;
-      extra: number;
-    };
-
-    const size: Breakpoints = {
-      small: 576,
-      medium: 768,
-      large: 992,
-      extra: 1200
-    };
-
-    // Type of entry after Object.entries() is used
-    type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
-
-    // Generic helper to make all of the properties' types: string | undefined
-    type Stringify<T> = { [key in keyof T]?: string };
-
-    interface CustomObject extends ObjectConstructor {
-        entries()
-    };
-
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
-
-         return acc;
-       }, {});
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
-
-
-next_line
-
-read -p "
-
-    Declare types properly for the following code.
-
-    type Breakpoints = {
-      small: number;
-      medium: number;
-      large: number;
-      extra: number;
-    };
-
-    const size: Breakpoints = {
-      small: 576,
-      medium: 768,
-      large: 992,
-      extra: 1200
-    };
-
-    // Type of entry after Object.entries() is used
-    type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
-
-    // Generic helper to make all of the properties' types: string | undefined
-    type Stringify<T> = { [key in keyof T]?: string };
-
-    interface CustomObject extends ObjectConstructor {
-        entries()
-    };
-
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
-
-         return acc;
-       }, {});
-
-
-Enter your answer: " response
-answer="<K extends keyof Breakpoints, T>"
-additional_feedback="
-    type Breakpoints = {
-      small: number;
-      medium: number;
-      large: number;
-      extra: number;
-    };
-
-    const size: Breakpoints = {
-      small: 576,
-      medium: 768,
-      large: 992,
-      extra: 1200
-    };
-
-    // Type of entry after Object.entries() is used
-    type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
-
-    // Generic helper to make all of the properties' types: string | undefined
-    type Stringify<T> = { [key in keyof T]?: string };
-
-    interface CustomObject extends ObjectConstructor {
-        entries<K extends keyof Breakpoints, T>(
-
-        )
-    };
-
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
-
-         return acc;
-       }, {});
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
-
-next_line
-
-read -p "
-
-    Declare types properly for the following code.
-
-    type Breakpoints = {
-      small: number;
-      medium: number;
-      large: number;
-      extra: number;
-    };
-
-    const size: Breakpoints = {
-      small: 576,
-      medium: 768,
-      large: 992,
-      extra: 1200
-    };
-
-    // Type of entry after Object.entries() is used
-    type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
-
-    // Generic helper to make all of the properties' types: string | undefined
-    type Stringify<T> = { [key in keyof T]?: string };
-
-    interface CustomObject extends ObjectConstructor {
-        entries<K extends keyof Breakpoints, T>(
-
-        )
-    };
-
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
-
-         return acc;
-       }, {});
-
-
-Enter your answer: " response
-answer="(o: { [s in K]: T } | ArrayLike<T>): [K, T][];"
+answer="entries<K extends keyof Breakpoints, T>(o: { [s in K]: T } | ArrayLike<T>): [K, T][];"
 additional_feedback="
 
     type Breakpoints = {
@@ -1530,28 +1216,25 @@ additional_feedback="
     type Stringify<T> = { [key in keyof T]?: string };
 
     interface CustomObject extends ObjectConstructor {
-        entries<K extends keyof Breakpoints, T>(
-          o: { [s in K]: T } | ArrayLike<T>
-        ): [K, T][];
-    };
+      entries<K extends keyof Breakpoints, T>(
+        o: { [s in K]: T } | ArrayLike<T>
+      ): [K, T][];
+    }
 
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
-
-         return acc;
-       }, {});
+    const mediaQueries = Object.keys(size).reduce((acc, cur) => {
+       const [key, value] = cur;
+       acc[key] = \`(min-width: \${value}px)\`;
+       return acc;
+    }, {});
 
 "
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
 read -p "
-
-    Declare types properly for the following code.
+    
+    Write a strongly-type function for the following code.
 
     type Breakpoints = {
       small: number;
@@ -1574,25 +1257,20 @@ read -p "
     type Stringify<T> = { [key in keyof T]?: string };
 
     interface CustomObject extends ObjectConstructor {
-        entries<K extends keyof Breakpoints, T>(
-          o: { [s in K]: T } | ArrayLike<T>
-        ): [K, T][];
-    };
+      entries<K extends keyof Breakpoints, T>(
+        o: { [s in K]: T } | ArrayLike<T>
+      ): [K, T][];
+    }
 
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
-
-         return acc;
-       }, {});
-
+    const mediaQueries = Object.keys(size).reduce((acc, cur) => {
+       const [key, value] = cur;
+       acc[key] = \`(min-width: \${value}px)\`;
+       return acc;
+    }, {});
 
 Enter your answer: " response
 answer="const obj: CustomObject = Object;"
 additional_feedback="
-
     type Breakpoints = {
       small: number;
       medium: number;
@@ -1614,30 +1292,28 @@ additional_feedback="
     type Stringify<T> = { [key in keyof T]?: string };
 
     interface CustomObject extends ObjectConstructor {
-        entries<K extends keyof Breakpoints, T>(
-          o: { [s in K]: T } | ArrayLike<T>
-        ): [K, T][];
-    };
-
+      entries<K extends keyof Breakpoints, T>(
+        o: { [s in K]: T } | ArrayLike<T>
+      ): [K, T][];
+    }
+    
     // Let's use this interface now:
     const obj: CustomObject = Object;
 
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
+    const mediaQueries = Object.keys(size).reduce((acc, cur) => {
+       const [key, value] = cur;
+       acc[key] = \`(min-width: \${value}px)\`;
+       return acc;
+    }, {});
 
-         return acc;
-       }, {});
 "
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
 read -p "
-
-    Declare types properly for the following code.
+    
+    Write a strongly-type function for the following code.
 
     type Breakpoints = {
       small: number;
@@ -1660,28 +1336,23 @@ read -p "
     type Stringify<T> = { [key in keyof T]?: string };
 
     interface CustomObject extends ObjectConstructor {
-        entries<K extends keyof Breakpoints, T>(
-          o: { [s in K]: T } | ArrayLike<T>
-        ): [K, T][];
-    };
-
+      entries<K extends keyof Breakpoints, T>(
+        o: { [s in K]: T } | ArrayLike<T>
+      ): [K, T][];
+    }
+    
     // Let's use this interface now:
     const obj: CustomObject = Object;
 
-    const breakpoints = obj
-       .entries(size)
-       .reduce((acc, cur) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
-
-         return acc;
-       }, {});
-
+    const mediaQueries = Object.keys(size).reduce((acc, cur) => {
+       const [key, value] = cur;
+       acc[key] = \`(min-width: \${value}px)\`;
+       return acc;
+    }, {});
 
 Enter your answer: " response
-answer="reduce<Stringify<Breakpoints>>((acc, cur: BreakpointEntry) => { }, {});"
+answer="const mediaQueriesobj.entries(size).reduce<Stringify<Breakpoints>>((acc, cur: BreakpointEntry) => { }, {});"
 additional_feedback="
-
     type Breakpoints = {
       small: number;
       medium: number;
@@ -1703,25 +1374,25 @@ additional_feedback="
     type Stringify<T> = { [key in keyof T]?: string };
 
     interface CustomObject extends ObjectConstructor {
-        entries<K extends keyof Breakpoints, T>(
-          o: { [s in K]: T } | ArrayLike<T>
-        ): [K, T][];
-    };
-
+      entries<K extends keyof Breakpoints, T>(
+        o: { [s in K]: T } | ArrayLike<T>
+      ): [K, T][];
+    }
+    
     // Let's use this interface now:
     const obj: CustomObject = Object;
 
-    const breakpoints = obj
-       .entries(size)
-       .reduce<Stringify<Breakpoints>>((acc, cur: BreakpointEntry) => {
-          const [key, value] = cur;
-          acc[key] = `(min-width: ${value}px)`;
+    const mediaQueries = obj
+      .entries(size)
+      .reduce<Stringify<Breakpoints>>((acc, cur: BreakpointEntry) => {
+        const [key, value] = cur;
+        acc[key] = \`(min-width: \${value}px)\`;
 
-         return acc;
-       }, {});
+        return acc;
+      }, {});
 
 "
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 # const result = Object.keys(keyMap).reduce<Record<string, ValueType>>(
 #   (acc, cur) => {
@@ -1757,5 +1428,3 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 ########################################
 #         Calculate your score         #
 ########################################
-
-calculate_score

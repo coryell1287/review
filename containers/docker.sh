@@ -1,5 +1,4 @@
-#!/bin/bash 
-
+#!/bin/bash
 
 correct=0
 questions=0
@@ -8,7 +7,7 @@ calculate_score() {
     ((questions = questions + 1))
 
     if [[ correct -eq 0 ]]; then
-                echo "     
+        echo "     
 ########################################
 
        Wrong! There is no tommorrow, 
@@ -16,7 +15,7 @@ calculate_score() {
 
 ########################################
              "
-                        echo "     
+        echo "     
 ########################################
 
  You got nothing correct. Stop and go study.
@@ -68,9 +67,13 @@ evaluate_answer() {
     else
         echo "     
 ########################################
-
+        
        Wrong! There is no tommorrow, 
        so get this right right now!
+
+        
+       Your answer:     "$1"
+       Correct answer:  "$2"
 
 ########################################
              "
@@ -86,15 +89,18 @@ evaluate_answer_written_with_code() {
 
         echo "     
 ########################################
-
+        
        Wrong! There is no tommorrow, 
        so get this right right now!
 
+        
+       Your answer:     "$1"
+       Correct answer:  "$2"
+
 ########################################
              "
-        calculate_score
-        exit 1
     fi
+    calculate_score
 }
 
 next_question() {
@@ -113,15 +119,11 @@ next_line() {
 "
 }
 
-
 read -p "What do you run to start the docker/getting-started image? " response
 answer="docker run -d -p 80:80 docker/getting-started"
 evaluate_answer "$response" "$answer"
 
-
 next_question
-
-
 
 read -p "What does each flag mean? " response
 answer="-d - run the container in detached mode -p 80:80 - map port 80 of the host to port 80 in the container docker/getting-started - the image to use"
@@ -133,14 +135,11 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer"
 
-
 next_question
- 
 
 read -p "What is a container? " response
 answer="A process on a machine that is isolated from all other processes on the host machine."
 evaluate_answer "$response" "$answer"
-
 
 next_question
 
@@ -159,12 +158,10 @@ additional_feedback="
     from the image. But, a container adds additional isolation 
     not available when simply using chroot.
 
-" 
+"
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_question
-
 
 read -p "Create an alpine nodejs version 12 image. " response
 answer="FROM node:12-alpine"
@@ -176,7 +173,6 @@ additional_feedback="
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
-
 
 read -p "
     Create an alpine nodejs version 12 image. 
@@ -192,9 +188,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
     Create an alpine nodejs version 12 image. 
@@ -256,7 +250,6 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-
 read -p "
     Create an alpine nodejs version 12 image. 
 
@@ -285,7 +278,6 @@ read -p "Execute a command that builds getting-started container image. " respon
 answer="docker build -t getting-started ."
 evaluate_answer "$response" "$answer"
 
-
 next_question
 
 read -p "Execute a command that stops a running container and removes it. " response
@@ -305,7 +297,6 @@ read -p "What are volumes? " response
 answer="Volumes provide the ability to connect specific filesystem paths of the container back to the host machine, so changes in the container are also on the host machine."
 evaluate_answer "$response" "$answer"
 
-
 next_question
 
 read -p "What command shows where the a volume stores data? " response
@@ -314,22 +305,17 @@ evaluate_answer "$response" "$answer"
 
 next_question
 
-
 read -p "Execute a npm command in a container? " response
 answer="docker exec -it <container-id> bash -c npm install"
 evaluate_answer "$response" "$answer"
 
-
 next_question
-
 
 read -p "What happens to the layers that are cached during Docker when one of the dependencies change? " response
 answer="Once a layer changes, all downstream layers have to be recreated."
 evaluate_answer "$response" "$answer"
 
 next_question
-
-
 
 read -p "Create a Dockerfile that performs a multi-build step for a web that is copied into ngnix. " response
 answer="FROM node:latest as build"
@@ -341,7 +327,6 @@ additional_feedback="
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
-
 
 read -p "
     Create a Dockerfile that performs a multi-build step for a web that is copied into ngnix. 
@@ -361,7 +346,6 @@ additional_feedback="
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
-
 
 read -p "
     Create a Dockerfile that performs a multi-build step for a web that is copied into ngnix. 
@@ -412,7 +396,6 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-
 read -p "
     Create a Dockerfile that performs a multi-build step for a web that is copied into ngnix. 
     
@@ -442,9 +425,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
     Create a Dockerfile that performs a multi-build step for a web that is copied into ngnix. 
@@ -479,9 +460,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
     Create a Dockerfile that performs a multi-build step for a web that is copied into ngnix. 
@@ -522,9 +501,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
     Create a Dockerfile that performs a multi-build step for a web that is copied into ngnix. 
@@ -571,9 +548,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
     Create a Dockerfile that performs a multi-build step for a web that is copied into ngnix. 
@@ -624,9 +599,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
     Create a Dockerfile that performs a multi-build step for a web that is copied into ngnix. 
@@ -681,9 +654,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
     Create a Dockerfile that performs a multi-build step for a web that is copied into ngnix. 
@@ -742,29 +713,20 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
-
-
 
 read -p "Create a Dockerfile that performs a multi-build step for a web that is copied into ngnix. " response
 answer=""
 additional_feedback=""
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_question
-
 
 read -p "Execute the command to install redis inside of a container. " response
 answer="docker-compose exec <service-name> npm install"
 evaluate_answer "$response" "$answer"
 
-
 next_question
-
 
 read -p "
 
@@ -801,9 +763,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer"
 
-
 next_question
-
 
 read -p "Which Docker commands create layers. " response
 answer="RUN, COPY, and  ADD create layers."
@@ -811,14 +771,11 @@ evaluate_answer "$response" "$answer"
 
 next_question
 
-
-
 read -p "What does a multi-build stage process do? " response
 answer="This allows you to include tools and debug information in your intermediate build stages without increasing the size of the final image."
 evaluate_answer "$response" "$answer"
 
 next_question
-
 
 read -p "What does the ADD command do" response
 answer="The ADD command does local-only tar extraction and remote URL download."
@@ -832,13 +789,11 @@ evaluate_answer "$response" "$answer"
 
 next_question
 
-
 read -p "What are deployments? " response
 answer="Deployments are scalable groups of pods maintained automatically by Kubernetes."
 evaluate_answer "$response" "$answer"
 
 next_question
-
 
 read -p "What does a NodePort do? " response
 answer="A NodePort service will route traffic from port on the host machine to port inside the pods."
@@ -846,20 +801,15 @@ evaluate_answer "$response" "$answer"
 
 next_question
 
-
 read -p "What commands allow for viewing the docker-compose configuration? " response
 answer="docker-compose config"
 evaluate_answer "$response" "$answer"
 
- 
 next_question
-
 
 read -p "What do links do? " response
 answer="Links allow developers to define extra aliases for a service to reach another service."
 evaluate_answer "$response" "$answer"
-
-
 
 next_question
 
@@ -875,7 +825,6 @@ read -p "Run a command that removes any stopped containers and all unused images
 answer="docker system prune -a"
 evaluate_answer "$response" "$answer"
 
-
 next_question
 
 read -p "Run a command that removes one or more specific images. " response
@@ -889,8 +838,7 @@ additional_feedback="
     $ docker rmi <image-id>
 
 "
-evaluate_answer "$response" "$answer"  "$additional_feedback"
-
+evaluate_answer "$response" "$answer" "$additional_feedback"
 
 next_question
 
@@ -909,8 +857,6 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
 
 read -p "Run a command that removes all images. " response
@@ -925,7 +871,6 @@ additional_feedback="
     $ docker rmi $(docker images -a -q)
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
-
 
 next_question
 
@@ -942,13 +887,11 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_question
 
 read -p "Run a command to remove a specific container after it exits. " response
 answer="docker run --rm <image-name>"
 evaluate_answer "$response" "$answer"
-
 
 next_question
 
@@ -966,7 +909,6 @@ additional_feedback="
 
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
-
 
 next_question
 
@@ -986,7 +928,6 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 The main benefit behind this recommendation is that a makefile helps in providing a standard interface to build Docker images
- 
 
 ########################################
 #         Calculate your score         #

@@ -1,17 +1,29 @@
+#!/bin/bash
+
 correct=0
 questions=0
 
+calculate_float() {
+    awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
+}
+
 calculate_score() {
-    ((questions = questions + 1))
 
     if [[ correct -eq 0 ]]; then
-        echo "
-    You got nothing correct. Stop and go study.
-    
-    "
+        echo "     
+#################################################
+
+  You got nothing correct. Stop and go study.
+
+#################################################
+             "
     else
-        score=$(((questions / correct) * 100))
-        echo "    You scored $score% on cryptography."
+        echo "########################################"
+        echo "          Progress                    "
+        echo "    $questions questions answered."
+        echo "    $correct answered correctly."
+        score=$(calculate_float $correct $questions)
+        echo "    You scored $score% on cryptography review."
     fi
 }
 
@@ -26,47 +38,61 @@ increment_questions_count() {
 affirm_answer() {
     if [[ -z "$1" ]]; then
         echo "
-    Correct. 
-
+########################################
+              Correct
+########################################
     "
     else
-        echo "Correct."
-
+        echo "     
+########################################
+              Correct
+########################################
+             "
         echo "$1"
     fi
 }
 
 evaluate_answer() {
+    increment_questions_count
 
     if [ "$1" == "$2" ]; then
         increment_correct_responses
         affirm_answer "$3"
     else
+        echo "     
+########################################
 
-        echo "
-    
-    Wrong! There is no tommorrow, so get this right right now!
-    
-    "
+       Wrong! There is no tommorrow, 
+       so get this right right now!
+
+########################################
+             "
     fi
+    calculate_score
 }
 
-
 evaluate_answer_written_with_code() {
+    increment_questions_count
 
     if [[ "$1" == "$2" ]]; then
         increment_correct_responses
         affirm_answer "$3"
     else
 
-        echo "
-    
-       Wrong! There is no tommorrow, so get this right right now!
-    
-    "
-        calculate_score
-        exit 1
+        echo "     
+########################################
+        
+       Wrong! There is no tommorrow, 
+       so get this right right now!
+
+        
+       Your answer:     "$1"
+       Correct answer:  "$2"
+
+########################################
+             "
     fi
+    calculate_score
 }
 
 next_question() {
@@ -77,15 +103,13 @@ next_question() {
 "
 }
 
-
 next_line() {
     echo "
  ########################################
-               Next Line 
+                Next Line 
  ########################################
 "
 }
-
 read -p "
     Digest types specifies the format in which the digest is returned
 
@@ -297,7 +321,6 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
 
 read -p "Encrypt the following password using Cipher.
@@ -325,8 +348,6 @@ additional_feedback="
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
-
-
 
 read -p "Encrypt the following password using Cipher.
 
@@ -357,7 +378,6 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-
 read -p "Encrypt the following password using Cipher.
 
     const { scrypt, randomFill, createCipheriv } = require('crypto');
@@ -387,7 +407,6 @@ additional_feedback="
       });
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
 
 next_line
 
@@ -424,9 +443,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "Encrypt the following password using Cipher.
 
@@ -465,7 +482,6 @@ additional_feedback="
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
-
 
 read -p "Encrypt the following password using Cipher.
 
@@ -506,7 +522,6 @@ additional_feedback="
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
 
 next_line
 
@@ -554,9 +569,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "Encrypt the following password using Cipher.
 
@@ -602,7 +615,6 @@ additional_feedback="
     });
 "
 answer="cipher.write('some clear text data');"
-
 
 next_line
 
@@ -659,7 +671,6 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
-
 read -p "What lines would you add to stream the following code?
     
     const { scrypt, randomFill, createCipheriv } = require('crypto');
@@ -709,9 +720,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "What lines would you add to stream the following code?
 
@@ -820,7 +829,6 @@ additional_feedback="
 
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
 
 read -p "What lines would you add to stream the following code?
@@ -876,9 +884,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "What lines would you add to stream the following code?
 
@@ -939,7 +945,6 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-
 read -p "What lines would you add to stream the following code?
 
     const { scrypt, randomFill, createCipheriv } = require('crypto');
@@ -999,9 +1004,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_question
-
 
 read -p "
     Decrypt the text in the following code: 
@@ -1065,7 +1068,6 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
 
 read -p "
@@ -1100,7 +1102,6 @@ additional_feedback="
     // Prints: some clear text data
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
 
 next_line
 
@@ -1142,7 +1143,6 @@ additional_feedback="
 evaluate_answer_written_with_code "$response" "$answer" "additional_feedback"
 
 next_line
-
 
 read -p "
     Decrypt the text in the following code: 
@@ -1186,9 +1186,7 @@ additional_feedback="
 
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
     Decrypt the text in the following code: 
@@ -1234,11 +1232,7 @@ additional_feedback="
 answer="let decrypted = decipher.update(encrypted, 'hex', 'utf8');"
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
-
 next_line
-
-
 
 read -p "
     Decrypt the text in the following code: 
@@ -1289,8 +1283,6 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
-
-
 read -p "
     Write a hash in the following program as a stream: 
 
@@ -1314,7 +1306,6 @@ additional_feedback="
     }
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
 
 next_line
 
@@ -1346,7 +1337,6 @@ additional_feedback="
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
 
 next_line
 
@@ -1380,9 +1370,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
     Write a hash in the following program as a stream: 
@@ -1419,9 +1407,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
     Write a hash in the following program as a stream: 
@@ -1444,9 +1430,7 @@ Enter the next line: " response
 answer="hash.end();"
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_question
-
 
 read -p "
     Write a hash in the following program as hash.update() and hash.digest(): 
@@ -1465,7 +1449,6 @@ additional_feedback="
     //   6a2da20943931e9834fc12cfe5bb47bbd9ae43489a30726962b576f4e3993e50
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
 
 next_line
 
@@ -1490,9 +1473,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
     Write a hash in the following program as hash.update() and hash.digest(): 
@@ -1518,19 +1499,15 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-
 read -p "What is a Cipher? " response
 answer="Cipher is an algorithm for performing encryption or decryption."
 evaluate_answer "$response" "$answer"
 
-
 next_question
-
 
 read -p "What is a public-key cryptography? " response
 answer="Public-key cryptography is a cryptographic system that uses pairs of keys--public key, known to others, and private key, known to only the owner."
 evaluate_answer "$response" "$answer"
-
 
 next_question
 
@@ -1546,7 +1523,6 @@ evaluate_answer_written_with_code "$response" "$answer"
 
 next_question
 
-
 read -p "What are Symmetric-key algorithms? " response
 answer="Symmetric-key algorithms are algorithms for cryptography that use the same cryptographic keys for both the encryption of plaintext and the decryption of ciphertext."
 evaluate_answer "$response" "$answer"
@@ -1557,9 +1533,7 @@ read -p "What is a digital signature? " response
 answer="A digital signature is a mathematical scheme for verifying the authenticity of digital messages or documents."
 evaluate_answer "$response" "$answer"
 
-
 next_question
-
 
 read -p "What is public key infrastructure (PKI)? " response
 answer="A public key infrastructure (PKI) is a set of roles, policies, hardware, software and procedures needed to create, manage, distribute, use, store and revoke digital certificates and manage public-key encryption."
@@ -1571,7 +1545,6 @@ additional_feedback="
     in the communication and validate the transferred information.
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
-
 
 next_question
 
@@ -1591,21 +1564,17 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer"
 
-
 next_question
 
 read -p "What is cryptanalysis? " response
 answer="Cryptanalysis is used to breach cryptographic security systems and gain access to the contents of encrypted messages, even if the cryptographic key is unknown."
 evaluate_answer "$response" "$answer"
 
-
 next_question
- 
 
 read -p "What is the registration authority (RA)? " response
 answer="RA is responsible for accepting requests for digital certificates and authenticating the entity making the request."
 evaluate_answer "$response" "$answer"
-
 
 next_question
 
@@ -1615,11 +1584,9 @@ evaluate_answer "$response" "$answer"
 
 next_question
 
-
 read -p "What is a certificate authority (CA)? " response
 answer="A certificate authority or certification authority (CA) is an entity that issues digital certificates. A digital certificate certifies the ownership of a public key by the named subject of the certificate."
 evaluate_answer "$response" "$answer"
-
 
 read -p "What is a Diffie–Hellman key exchange? " response
 answer="Diffie–Hellman key exchange is a method of securely exchanging cryptographic keys over a public channel and was one of the first public-key protocols as conceived by Ralph Merkle and named after Whitfield Diffie and Martin Hellman."
@@ -1638,27 +1605,8 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 ########################################
 #         Calculate your score         #
 ########################################
 
-
- calculate_score
-
-
-
-
-
-
-
- 
-
-
-
-
-
- 
- 
- 
+calculate_score
