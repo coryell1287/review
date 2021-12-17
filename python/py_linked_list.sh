@@ -81,12 +81,18 @@ evaluate_answer_written_with_code() {
 
         echo "     
 ########################################
-
+        
        Wrong! There is no tommorrow, 
        so get this right right now!
 
+        
+       Your answer:     "$1"
+       Correct answer:  "$2"
+
 ########################################
              "
+        calculate_score
+        exit 1
     fi
     calculate_score
 }
@@ -106,8 +112,6 @@ next_line() {
  ########################################
 "
 }
-
-
 
 read -p "
     Implement a function that removes all the even elements from a given list. Name it remove_even(lst).
@@ -130,11 +134,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_line
-
-
 
 read -p "
     Implement a function that removes all the even elements from a given list. Name it remove_even(lst).
@@ -158,11 +158,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_line
-
-
 
 read -p "
     Implement a function that removes all the even elements from a given list. Name it remove_even(lst).
@@ -187,10 +183,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_line
-
 
 read -p "
     Implement a function that removes all the even elements from a given list. Name it remove_even(lst).
@@ -217,11 +210,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_line
-
-
 
 read -p "
     Implement a function that removes all the even elements from a given list. Name it remove_even(lst).
@@ -258,21 +247,13 @@ the list is reached.
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
-
 next_question
-
 
 read -p "What is the time complexity of the previous solution? " response
 answer="Because the entire list has to be iterated over, this solution is in O(n)O(n) time."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
 
 read -p "How do you solve the previous question using list comprehension? " response
 answer="[number for number in lst if number % 2 != 0]"
@@ -285,21 +266,13 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
-
 
 read -p "What is the time complexity of the previous solution? " response
 answer="The time complexity of this solution is also O(n), since only the syntax has changed while the algorithm still iterates over all elements of the list."
 evaluate_answer "$response" "$answer"
 
-
 next_question
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -319,11 +292,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -344,10 +313,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -370,11 +336,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -398,11 +360,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -429,10 +387,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -462,10 +417,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -498,9 +450,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -536,9 +486,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -576,10 +524,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -619,9 +564,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -663,9 +606,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -709,10 +650,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -757,10 +695,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -808,10 +743,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -860,10 +792,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -916,9 +845,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -973,9 +900,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -1030,10 +955,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -1091,10 +1013,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -1154,10 +1073,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -1219,10 +1135,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -1286,10 +1199,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -1354,9 +1264,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "
 Implement a function that merges two sorted lists of m and n elements respectively, 
@@ -1440,13 +1348,10 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
 next_line
-
 
 read -p "What is the time complexity of the previous solution? " response
 answer="The time complexity for this algorithm is O(n+m) where nn and mm are the lengths of the lists. This is because both lists are iterated over at least once."
-
 
 next_question
 
@@ -1454,5 +1359,4 @@ next_question
 #         Calculate your score         #
 ########################################
 
-
- calculate_score
+calculate_score

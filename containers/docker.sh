@@ -81,6 +81,7 @@ evaluate_answer() {
 }
 
 evaluate_answer_written_with_code() {
+    increment_questions_count
 
     if [[ "$1" == "$2" ]]; then
         increment_correct_responses
@@ -99,6 +100,8 @@ evaluate_answer_written_with_code() {
 
 ########################################
              "
+        calculate_score
+        exit 1
     fi
     calculate_score
 }

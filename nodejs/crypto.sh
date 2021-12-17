@@ -91,6 +91,8 @@ evaluate_answer_written_with_code() {
 
 ########################################
              "
+        calculate_score
+        exit 1
     fi
     calculate_score
 }

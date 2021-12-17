@@ -78,14 +78,14 @@ evaluate_answer() {
 }
 
 evaluate_answer_written_with_code() {
-    increment_questions_count
+  increment_questions_count
 
-    if [[ "$1" == "$2" ]]; then
-        increment_correct_responses
-        affirm_answer "$3"
-    else
+  if [[ "$1" == "$2" ]]; then
+    increment_correct_responses
+    affirm_answer "$3"
+  else
 
-        echo "     
+    echo "     
 ########################################
         
        Wrong! There is no tommorrow, 
@@ -94,12 +94,13 @@ evaluate_answer_written_with_code() {
         
        Your answer:     "$1"
        Correct answer:  "$2"
-        
 
 ########################################
              "
-    fi
     calculate_score
+    exit 1
+  fi
+  calculate_score
 }
 
 next_question() {

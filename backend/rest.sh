@@ -95,6 +95,8 @@ evaluate_answer_written_with_code() {
 
 ########################################
              "
+        calculate_score
+        exit 1
     fi
     calculate_score
 }
@@ -134,11 +136,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
 
 read -p "Complete this sentence: 
 
@@ -151,11 +149,7 @@ additional_feedback="Implemented correctly, the GET, HEAD, PUT, and DELETE metho
 answer="GET HEAD PUT DELETE POST safe"
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
 
 read -p "Complete this sentence: 
          
@@ -172,11 +166,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
 
 read -p "Complete this sentence: 
         
@@ -192,12 +182,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
-
 
 read -p "Complete this sentence: 
          The HTTP PATCH request method applies _____ _______ to a resource.       
@@ -210,12 +195,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
-
 next_question
-
-
 
 read -p "Complete this sentence: 
 
@@ -231,12 +211,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
-
 
 read -p "Complete this sentence:
 
@@ -254,12 +229,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
-
 next_question
-
-
 
 read -p "What is the difference between PUT and POST? " response
 answer="PATCH is a set of instructions on how to modify a resource. PUT is a complet respentation of a resource."
@@ -271,12 +241,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
-
 
 read -p "Complete this sentence: 
     
@@ -291,50 +256,31 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
-
 
 read -p "What is Cross-origin resource sharing? " response
 answer="Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
 
 read -p "What mechanism does CORS rely on to know whether an actual request will be permitted.? " response
 answer="Preflight. In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in the actual request."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
 
 read -p "How does the preflight mechanism work? " response
-answer="A preflight request solicits supported methods from the server with HTTP OPTIONS request method. Upon approval from the server the, actual request is sent." 
+answer="A preflight request solicits supported methods from the server with HTTP OPTIONS request method. Upon approval from the server the, actual request is sent."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
 
 read -p "Which methods do not trigger a preflight? " response
 answer="GET HEAD POST"
 evaluate_answer "$response" "$answer"
 
-
-
-
 next_question
-
 
 read -p "
 
@@ -346,19 +292,13 @@ Enter your answer: " response
 answer="Change the server-side behavior to avoid the preflight or to avoid the redirect or avoid both. Change the request to a simple request that doesn’t cause a preflight."
 evaluate_answer "$response" "$answer"
 
-
 next_question
-
 
 read -p "What does the Access-Control-Allow-Origin header do? " response
 answer="It specifies either a single origin which tells browsers to allow that origin to access the resource."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
 
 read -p "What does the Access-Control-Max-Age header do? " response
 answer="It indicates how long the results of a preflight request can be cached."
@@ -372,11 +312,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
 
 read -p "What does the Access-Control-Allow-Credentials header do? " response
 answer="Is indicates whether or not the response to the request can be exposed when the credentials flag is true."
@@ -395,38 +331,25 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
-
 next_question
 
-
-read -p "What is a cookie used for? " response 
+read -p "What is a cookie used for? " response
 answer="An HTTP cookie is used to tell if two requests come from the same browser. It remembers stateful information for the stateless HTTP protocol."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
 
 read -p "What are three other uses for a cookie? " response
 answer="Session management. Personalization: User preferences, themes, and other settings. Tracking: Recording and analyzing user behavior."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
 
 read -p "How is session fixation attacks prevented? " response
 answer="Regenerating and resending session cookies."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
 
 read -p "How do developers ensure that cookies are sent securely and aren't accessed by unintended parties? " response
 answer="Add the Secure attribute and the HttpOnly attribute."
@@ -440,21 +363,13 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
 
 read -p "What does the Domain attribute specify? " response
 answer="The Domain attribute specifies which hosts can receive a cookie. If unspecified, the attribute defaults to the same host that set the cookie, excluding subdomains. If Domain is specified, then subdomains are always included."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
 
 read -p "What does the SameSite attribute specify? " response
 answer="The SameSite attribute lets servers specify whether and when cookies are sent with cross-site requests."
@@ -470,23 +385,11 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer"
 
-
 next_question
-
-
-
-
-
-
 
 read -p "Why would using JSON web token be a better alternative than using cookies?" response
 answer="When information is stored in cookies, all cookie values are visible and the user can change them."
 evaluate_answer "$response" "$answer"
-
-
-
-
-
 
 read -p "What are the Cookie-related Legislation or regulations that cover the use of cookies?" response
 answer="General Data Privacy Regulation ePrivacy Directive California Consumer Privacy Act"
@@ -503,29 +406,19 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
 
 read -p "What is covered under the Cookie-related Legislation or regulations? " response
 answer="Notifying users that your site uses cookies. Allowing users to opt out of receiving some or all cookies. Allowing users to use the bulk of your service without receiving cookies."
-evaluate_answer "$response" "$answer" 
-
-
+evaluate_answer "$response" "$answer"
 
 next_question
-
 
 read -p "What are the three steps to the client-server protocols? " response
 answer="The client establishes a TCP connection. The client sends its request, and waits for the answer. The server processes the request, sending back its answer, providing a status code and appropriate data."
 evaluate_answer "$response" "$answer"
 
-
 next_question
-
-
 
 read -p "What is Content Security Policy? " response
 answer="Content Security Policy is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross-Site Scripting (XSS) and data injection attacks."
@@ -549,7 +442,6 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer"
 
-
 read -p "Complete the following sentence: 
 
     Applications that do not require reliable data stream service 
@@ -566,11 +458,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
 
 read -p "What does the Transmission Control Protocol do? " response
 answer="The Transmission Control Protocol provides a communication service at an intermediate level between an application program and the Internet Protocol."
@@ -585,9 +473,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer"
 
-
 next_question
-
 
 read -p "
     At the lower levels of the protocol stack, due to network congestion, what happens when
@@ -598,19 +484,13 @@ Enter your answer " response
 answer="TCP detects these problems, requests re-transmission of lost data, rearranges out-of-order data and even helps minimize network congestion to reduce the occurrence of the other problems."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
 
 read -p "Is TCP a good option for real-time applications? " response
 answer="No. Protocols like the Real-time Transport Protocol (RTP) operating over the User Datagram Protocol (UDP) are usually recommended instead"
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
 
 read -p "How does TCP and IP work together? " response
 answer="While IP handles actual delivery of the data, TCP keeps track of segments - the individual units of data transmission that a message is divided into for efficient routing through the network."
@@ -634,11 +514,7 @@ read -p "What does REST mean and who came up wit the concept? " response
 answer="REST means Representational State Transfer. Roy Field Jr. came up with term REST in 2000 to define architectural constraints."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
 
 read -p "What is the client-server contraint? " response
 answer="Decouple the user interface concerns from the data storage concerns with the client-server architecture style."
@@ -654,11 +530,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
 
 read -p "What is the stateless constraint? " response
 answer="The client is responsible storing and managing any session related information at the client side and send all information related to request to the server so that the server doesn't need to use any of the previous request details."
@@ -670,106 +542,65 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
-
 next_question
-
 
 read -p "Explain the characterstic of visibility in REST"
 evaluate_answer "$response" "$answer"
 answer="Visibility: the request has everything so the server doesn't have to look beyond the single request."
 
-
-
-
-
 next_question
-
-
 
 read -p "Explain the characterstic of reliability in REST"
 evaluate_answer "$response" "$answer"
 answer="Reliability: other request do not depend on a single request so other request fail without impacting one another."
 
-
-
 next_question
-
 
 read -p "Explain the characterstic of scalability in REST"
 evaluate_answer "$response" "$answer"
 answer="Scalibility: Server components do not store state between request, so resources are free once a request is processed."
 
-
-
 next_question
-
-
 
 read -p "Explain the Cache constraint? " response
 answer="The server component can label the data in the response for a request as cacheable or non-cacheable and client can re-use this response for the same request later"
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
 
 read -p "Explain the Uniform Interface constraint? " response
 answer="Uniform Interface constraint enforces the component's behavior or interfaces to be uniform across all the components even though the implementation varies."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
-
 
 read -p "Explain a Resource in the context of Uniform Constraint. " response
 answer="It is mapping to a set of entities and can be any information that can be named: a document, image or temporal service, a collection of other resources or a non-virtual object."
 evaluate_answer "$response" "$answer"
 
-
-
-
 next_question
-
-
 
 read -p "Explain a Representation in the context of Uniform Constraint. " response
 answer="Representation consists of data and metadata about about the data. The data format of representation is known as media type."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
 
 read -p "Explain a Self-Descripitive Message in the context of Uniform Constraint. " response
 answer="The response from the server should contain the media type ofr the resource's representation to the client, so that the client knows how to parse and process the data."
 evaluate_answer "$response" "$answer"
 
-
-
-next_question
-
-
-
-read -p "Explain a HATEOS in the context of Uniform Constraint. " response
-answer="HATEOS is an acronym for Hypermedia As the Engine of Application State. It means the response from the server should have links for other application states so that the client can use those links to move to the next state of the applicatio."
-evaluate_answer "$response" "$answer"
-
-
-
 next_question
 
 read -p "Explain a HATEOS in the context of Uniform Constraint. " response
 answer="HATEOS is an acronym for Hypermedia As the Engine of Application State. It means the response from the server should have links for other application states so that the client can use those links to move to the next state of the applicatio."
 evaluate_answer "$response" "$answer"
 
+next_question
+
+read -p "Explain a HATEOS in the context of Uniform Constraint. " response
+answer="HATEOS is an acronym for Hypermedia As the Engine of Application State. It means the response from the server should have links for other application states so that the client can use those links to move to the next state of the applicatio."
+evaluate_answer "$response" "$answer"
 
 next_question
 
@@ -780,7 +611,6 @@ additional_feedback="
     for example, which document language, which image format, or which content encoding.
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
- 
 
 next_question
 
@@ -794,7 +624,6 @@ read -p "How is a resource obtained? " response
 answer="The client requests a resource via a URL."
 evaluate_answer "$response" "$answer"
 
-
 next_question
 
 read -p "
@@ -804,8 +633,6 @@ read -p "
 Enter your answer: " response
 answer="A variant is a representation."
 evaluate_answer "$response" "$answer"
-
-
 
 next_question
 
@@ -819,13 +646,11 @@ read -p "What is a drawback to server-driven negotiation? " response
 answer="Server-driven negotiation does not scale. Negotiation involves one header per request. As the number of headers increases, the message size could eventually affect performance. Sending precise headers allows for HTTP fingerprinting and corresponding privacy concerns."
 evaluate_answer "$response" "$answer"
 
-
 next_question
 
 read -p "How does agent-driven negotiation work? " response
 answer="The server sends back a page that contains links to the available alternative resources when faced with an ambiguous request. The user is presented the resources and chooses the one to use."
 evaluate_answer "$response" "$answer"
-
 
 next_question
 
@@ -867,7 +692,7 @@ next_question
 
 read -p "How often are DNS lookups performed? " response
 answer="DNS lookups must be done for each unique hostname the requested page references. If your fonts, images, scripts, ads, and metrics all have different hostnames, a DNS lookup will have to be made for each one."
-evaluate_answer "$response" "$answer" 
+evaluate_answer "$response" "$answer"
 
 next_question
 
@@ -890,11 +715,10 @@ additional_feedback="
 evaluate_answer "$response" "$answer"
 
 next_question
- 
+
 read -p "What is Time-to-first-byte? " response
 answer="Time to First Byte (TTFB) is the time between when the user made the request—say by clicking on a link—and the receipt of this first packet of HTML. The first chunk of content is usually 14kb of data."
 evaluate_answer "$response" "$answer"
- 
 
 next_question
 
@@ -907,7 +731,6 @@ additional_feedback="
 
 "
 evaluate_answer "$response" "$answer"
-
 
 next_question
 
@@ -953,13 +776,11 @@ read -p "How does the browser traverse the CCSSOM? " response
 answer="The browser begins with the most general rule applicable to a node and recursively refines the computed styles by applying more specific rules."
 evaluate_answer "$response" "$answer"
 
-
 next_question
 
 read -p "What is the accessibility tree? " response
 answer="The accessibility object model (AOM) is like a semantic version of the DOM. The browser updates the accessibility tree when the DOM is updated."
 evaluate_answer "$response" "$answer"
-
 
 # next_question
 
@@ -982,4 +803,3 @@ else
     score=$(((questions / correct) * 100))
     echo "    You scored $score% on REST knowledge."
 fi
-

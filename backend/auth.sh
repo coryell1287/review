@@ -95,6 +95,8 @@ evaluate_answer_written_with_code() {
 
 ########################################
              "
+        calculate_score
+        exit 1
     fi
     calculate_score
 }
@@ -114,7 +116,6 @@ next_line() {
  ########################################
 "
 }
-
 
 echo "
    ########################################
@@ -138,20 +139,14 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
-
 next_question
-
 
 read -p "What is the difference between authentication and authorization? " response
 
 answer="Authentication confirms identity; authentication gives permission."
-evaluate_answer "$response"  "$answer"
-
+evaluate_answer "$response" "$answer"
 
 next_question
-
 
 read -p "What does federated identity mean? " response
 answer="Federated identity is the ability to link a user’s digital identity across separate security domains."
@@ -164,12 +159,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
-
 
 read -p "Complete this sentence:
 
@@ -190,14 +180,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
-
-
-
 
 read -p "What does IDP do? " response
 answer="Identity provider (IDP) is the application responsible for performing authentication."
@@ -209,14 +192,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
-
-
-
 
 read -p "Considering the IDP model, if you create an account through Google 
          and separately attempt to log in to Firebase using that very same 
@@ -231,9 +207,6 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
-
 next_question
 
 read -p "What does SAML stand for? " response
@@ -246,22 +219,13 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
-
 next_question
 
 read -p "What is SAML? " response
 answer="SAML is its own self-contained authentication and authorization protocol."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
-
-
 
 read -p "Complete this sentence:
 
@@ -281,9 +245,6 @@ additional_feedback="
 
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
-
-
-
 
 next_question
 
@@ -305,13 +266,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
-
 next_question
-
-
-
 
 read -p "Complete this sentence:
 
@@ -332,13 +287,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
-
 next_question
-
-
-
 
 read -p "How does IDP work? " response
 answer="Client queries IDP and is redirected to an authorization prompt. IDP compatible with OIDC also becomes authentication prompt then an access token is issued."
@@ -352,15 +301,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
-
 next_question
-
-
-
-
-
 
 read -p "How does IDP work? " response
 answer="Client queries IDP and is redirected to an authorization prompt. IDP compatible with OIDC also becomes authentication prompt then an access token is issued."
@@ -374,13 +315,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
-
 next_question
-
-
-
 
 read -p "OIDC defines a protected resource, called the _______ _______ " response
 answer="UserInfo Endpoint"
@@ -392,13 +327,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
-
-
 
 read -p "What information is contained on UserInfo Endpoint? " response
 answer="Claims about the user that can requested through standardized scopes and other OAuth scopes."
@@ -411,11 +340,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
 
 read -p "What are some user claims? " response
 answer="sub = Subject iss = Issuer aud = Audience iat = Issue time exp = Expirytime"
@@ -431,23 +356,13 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
-
 
 read -p "What is the purpose of OAuth? " response
 answer="OAuth exists to provide third party applications limited access to secure resources without compromising the user’s data."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
-
 
 read -p "In OAuth flow there are two components: the authorization server resource server. 
 
@@ -457,49 +372,25 @@ Enter your answer: " response
 answer="Authorization server exists to validate and authorize the client whereas the resource server hosts the resources being requested."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
-
 
 read -p "What are the four types of scopes?  " response
 answer="Read Access Write Access Read and Write Access No Access"
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
-
-
 
 read -p "What are refresh tokens?  " response
 answer="Refresh tokens are used to automatically obtain new access tokens when they are no longer functional."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
-
-
-
 
 read -p "What are grants?  " response
 answer="Grants dictate the order of operations for a client to obtain an access token. These unique orderings are called flows."
 evaluate_answer "$response" "$answer"
 
-
-
-
 next_question
-
-
-
 
 read -p "For the resource server to know whether or not to honor a query for information, 
          it must know ______________.   " response
@@ -507,25 +398,13 @@ read -p "For the resource server to know whether or not to honor a query for inf
 answer="if the requestor has been authorized"
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
-
 
 read -p "What is the relationship between the access token and the resource server?  " response
 answer="The access token exists to inform the resource server that the requestor has been vetted by the authorization server and has permission to make the query."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
-
-
-
 
 read -p "What is one benefit of access tokens?  " response
 answer="Access tokens remove the need to provide credentials."
@@ -538,11 +417,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
 next_question
-
-
 
 read -p "How does Authorization Code Grant work?  " response
 answer="The client receives a unique code issued by the authorization server, which is then exchanged for a token."
@@ -556,13 +431,7 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
-
 next_question
-
-
-
 
 read -p "Describe an OAuth flow.  " response
 answer="The application sends a request to the client. The client sends a grant to collect the data. Application will send the grant to an another applications's API.
@@ -597,41 +466,25 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-
-
 next_question
-
 
 read -p "An API key can be used for project identification. What is project identification? " response
 answer="Project identification is identifying the application or the project that's making a call to the API."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
 
 read -p "An API key can be used for project authorization. What is project authorization? " response
 answer="Project authorization is checking whether the calling application has been granted access to call the API and has enabled the API for the project."
 evaluate_answer "$response" "$answer"
 
-
-
 next_question
-
-
 
 read -p "What are three use-cases for an API key? " response
 answer="API keys can be used to control the number of calls made to the API, identify usage patterns, and filter logs."
 evaluate_answer "$response" "$answer"
 
-
 next_question
-
-
-
 
 ########################################
 #         Calculate your score         #
@@ -648,4 +501,3 @@ else
     score=$(((questions / correct) * 100))
     echo "    You scored $score% on authentication and authorization."
 fi
-

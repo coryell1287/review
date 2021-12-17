@@ -100,6 +100,8 @@ evaluate_answer_written_with_code() {
 
 ########################################
              "
+    calculate_score
+    exit 1
   fi
   calculate_score
 }
@@ -1063,7 +1065,7 @@ read -p "
     }, {});
 
 Enter your answer: " response
-answer="type Stringify<T> = { [key in keyof T]?: string };"
+answer="type Stringify<T> = { [key in keyof T]?: string; };"
 additional_feedback="
     type Breakpoints = {
       small: number;
@@ -1083,7 +1085,7 @@ additional_feedback="
     type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
 
     // Generic helper to make all of the properties' types: string | undefined
-    type Stringify<T> = { [key in keyof T]?: string };
+    type Stringify<T> = { [key in keyof T]?: string; };
 
      const mediaQueries = Object.keys(size).reduce((acc, cur) => {
        const [key, value] = cur;
@@ -1118,7 +1120,7 @@ read -p "
     type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
 
     // Generic helper to make all of the properties' types: string | undefined
-    type Stringify<T> = { [key in keyof T]?: string };
+    type Stringify<T> = { [key in keyof T]?: string; };
 
      const mediaQueries = Object.keys(size).reduce((acc, cur) => {
        const [key, value] = cur;
@@ -1145,6 +1147,9 @@ additional_feedback="
 
     // Type of entry after Object.entries() is used
     type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
+
+    // Generic helper to make all of the properties' types: string | undefined
+    type Stringify<T> = { [key in keyof T]?: string; };
 
     interface CustomObject extends ObjectConstructor { 
 
@@ -1180,6 +1185,9 @@ read -p "
 
     // Type of entry after Object.entries() is used
     type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
+
+    // Generic helper to make all of the properties' types: string | undefined
+    type Stringify<T> = { [key in keyof T]?: string; };
 
     interface CustomObject extends ObjectConstructor { 
 
@@ -1213,7 +1221,7 @@ additional_feedback="
     type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
 
     // Generic helper to make all of the properties' types: string | undefined
-    type Stringify<T> = { [key in keyof T]?: string };
+    type Stringify<T> = { [key in keyof T]?: string; };
 
     interface CustomObject extends ObjectConstructor {
       entries<K extends keyof Breakpoints, T>(
@@ -1254,7 +1262,7 @@ read -p "
     type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
 
     // Generic helper to make all of the properties' types: string | undefined
-    type Stringify<T> = { [key in keyof T]?: string };
+    type Stringify<T> = { [key in keyof T]?: string; };
 
     interface CustomObject extends ObjectConstructor {
       entries<K extends keyof Breakpoints, T>(
@@ -1289,7 +1297,7 @@ additional_feedback="
     type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
 
     // Generic helper to make all of the properties' types: string | undefined
-    type Stringify<T> = { [key in keyof T]?: string };
+    type Stringify<T> = { [key in keyof T]?: string; };
 
     interface CustomObject extends ObjectConstructor {
       entries<K extends keyof Breakpoints, T>(
@@ -1333,7 +1341,7 @@ read -p "
     type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
 
     // Generic helper to make all of the properties' types: string | undefined
-    type Stringify<T> = { [key in keyof T]?: string };
+    type Stringify<T> = { [key in keyof T]?: string; };
 
     interface CustomObject extends ObjectConstructor {
       entries<K extends keyof Breakpoints, T>(
@@ -1351,7 +1359,7 @@ read -p "
     }, {});
 
 Enter your answer: " response
-answer="const mediaQueriesobj.entries(size).reduce<Stringify<Breakpoints>>((acc, cur: BreakpointEntry) => { }, {});"
+answer="const mediaQueries = obj.entries(size).reduce<Stringify<Breakpoints>>((acc, cur: BreakpointEntry) => { }, {});"
 additional_feedback="
     type Breakpoints = {
       small: number;
@@ -1371,7 +1379,7 @@ additional_feedback="
     type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
 
     // Generic helper to make all of the properties' types: string | undefined
-    type Stringify<T> = { [key in keyof T]?: string };
+    type Stringify<T> = { [key in keyof T]?: string; };
 
     interface CustomObject extends ObjectConstructor {
       entries<K extends keyof Breakpoints, T>(
@@ -1425,6 +1433,3 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 #             map[key] = value;
 #             return map;
 #           }, {} as FileReaderResults);
-########################################
-#         Calculate your score         #
-########################################
