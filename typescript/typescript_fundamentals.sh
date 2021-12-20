@@ -3053,19 +3053,9 @@ answer="The most important difference is how these two approaches cope with chan
 evaluate_answer "$response" "$answer"
 
 
-
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-
-
-
-next_line
-########################################
-#         Calculate your score         #
-########################################
-
-calculate_score
+read -p " " response
+answer=""
+evaluate_answer "$response" "$answer"
 
 
 

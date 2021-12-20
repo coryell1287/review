@@ -369,7 +369,7 @@ next_line
 
 read -p "
 
-    Write a JavaScript program to convert a comma-separated values (CSV) string to a 2D array. 
+    Write a  program to convert a comma-separated values (CSV) string to a 2D array. 
 
     console.log(csvToJson('col1,col2\na,b\nc,d')); 
     // [{'col1': 'a', 'col2': 'b'}, {'col1': 'c', 'col2': 'd'}];
@@ -393,7 +393,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_line
 
 read -p "
-    Write a JavaScript program to convert a comma-separated values (CSV) string to a 2D array.
+    Write a  program to convert a comma-separated values (CSV) string to a 2D array.
 
     interface Data {
       col1: string;
@@ -422,7 +422,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_line
 
 read -p "
-    Write a JavaScript program to convert a comma-separated values (CSV) string to a 2D array.
+    Write a  program to convert a comma-separated values (CSV) string to a 2D array.
 
     interface Data {
       col1: string;
@@ -457,7 +457,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_line
 
 read -p "
-    Write a JavaScript program to convert a comma-separated values (CSV) string to a 2D array.
+    Write a  program to convert a comma-separated values (CSV) string to a 2D array.
 
     interface Data {
       col1: string;
@@ -495,7 +495,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_line
 
 read -p "
-    Write a JavaScript program to convert a comma-separated values (CSV) string to a 2D array.
+    Write a  program to convert a comma-separated values (CSV) string to a 2D array.
 
     interface Data {
       col1: string;
@@ -537,7 +537,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_line
 
 read -p "
-    Write a JavaScript program to convert a comma-separated values (CSV) string to a 2D array.
+    Write a  program to convert a comma-separated values (CSV) string to a 2D array.
 
     interface Data {
       col1: string;
@@ -583,7 +583,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_line
 
 read -p "
-    Write a JavaScript program to convert a comma-separated values (CSV) string to a 2D array.
+    Write a  program to convert a comma-separated values (CSV) string to a 2D array.
 
     interface Data {
       col1: string;
@@ -632,7 +632,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_line
 
 read -p "
-    Write a JavaScript program to convert a comma-separated values (CSV) string to a 2D array.
+    Write a  program to convert a comma-separated values (CSV) string to a 2D array.
 
     interface Data {
       col1: string;
@@ -684,7 +684,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_line
 
 read -p "
-    Write a JavaScript program to convert a comma-separated values (CSV) string to a 2D array.
+    Write a  program to convert a comma-separated values (CSV) string to a 2D array.
 
     interface Data {
       col1: string;
@@ -740,7 +740,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_line
 
 read -p "
-    Write a JavaScript program to convert a comma-separated values (CSV) string to a 2D array.
+    Write a  program to convert a comma-separated values (CSV) string to a 2D array.
 
     interface Data {
       col1: string;
@@ -1401,6 +1401,2111 @@ additional_feedback="
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Write a program that takes a csv and returns an array. 
+
+Enter the next line: " response
+answer="const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => );"
+additional_feedback="
+
+  const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => );
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a program that takes a csv and returns an array. 
+
+  const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => );
+
+Enter the next line: " response
+answer="data.slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)"
+additional_feedback="
+
+  const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => 
+     data
+      .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0));
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a program that takes a csv and returns an array. 
+
+  const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => 
+     data
+      .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0));
+  
+Enter the next line: " response
+answer=".split('\n')"
+additional_feedback="
+
+  const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => 
+     data
+      .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
+      .split('\n'));
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a program that takes a csv and returns an array. 
+
+  const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => 
+     data
+      .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0));
+      .split('\n'));
+  
+Enter the next line: " response
+answer=".map(v => v.split(delimiter)"
+additional_feedback="
+
+  const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => 
+     data
+      .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
+      .split('\n')
+      .map(v => v.split(delimiter));
+
+      console.log(csvToArray('a,b\nc,d')); 
+      console.log(csvToArray('a;b\nc;d', ';')); 
+      console.log(csvToArray('head1,head2\na,b\nc,d', ',', true));
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Write a  program to convert an array of objects to a comma-separated values (CSV) string. 
+
+Enter the next line: " response
+answer="interface Data { x: number; y: number; z: number; }"
+additional_feedback="
+
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a  program to convert an array of objects to a comma-separated values (CSV) string. 
+
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+
+Enter the next line: " response
+answer=""
+additional_feedback="
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a  program to convert an array of objects to a comma-separated values (CSV) string. 
+
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+
+Enter the next line: " response
+answer="type DataKey = keyof Data;"
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a  program to convert an array of objects to a comma-separated values (CSV) string. 
+
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  type DataKey = keyof Data;
+
+Enter the next line: " response
+answer="const jsonToCsv = (arr: Data[], delimiter = ','): string => { };"
+additional_feedback="
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  type DataKey = keyof Data;
+
+  const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
+
+  };
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a  program to convert an array of objects to a comma-separated values (CSV) string. 
+
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  type DataKey = keyof Data;
+
+  const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
+
+  };
+
+Enter the next line: " response
+answer="const headings = Object.keys(arr[0]) as DataKey[];"
+additional_feedback="
+   interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  type DataKey = keyof Data;
+
+  const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
+    const headings = Object.keys(arr[0]) as DataKey[];
+
+  };
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a  program to convert an array of objects to a comma-separated values (CSV) string. 
+
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  type DataKey = keyof Data;
+
+  const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
+    const headings = Object.keys(arr[0]) as DataKey[];
+  };
+
+Enter the next line: " response
+answer="return [].join('');"
+additional_feedback="
+
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  type DataKey = keyof Data;
+
+  const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
+    const headings = Object.keys(arr[0]) as DataKey[];
+
+    return [].join('');
+  };
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a  program to convert an array of objects to a comma-separated values (CSV) string. 
+
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  type DataKey = keyof Data;
+
+  const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
+    const headings = Object.keys(arr[0]) as DataKey[];
+
+    return [].join('');
+  };
+
+Enter the next line: " response
+answer="headings.join(delimiter)"
+additional_feedback="
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  type DataKey = keyof Data;
+
+  const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
+    const headings = Object.keys(arr[0]) as DataKey[];
+
+    return [
+      headings.join(delimiter)
+    ].join('');
+  };
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a  program to convert an array of objects to a comma-separated values (CSV) string. 
+
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  type DataKey = keyof Data;
+
+  const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
+    const headings = Object.keys(arr[0]) as DataKey[];
+
+    return [
+      headings.join(delimiter)
+    ].join('');
+  };
+
+Enter the next line: " response
+answer="...arr.map((obj) => )"
+additional_feedback="
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  type DataKey = keyof Data;
+
+  const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
+    const headings = Object.keys(arr[0]) as DataKey[];
+
+    return [
+      headings.join(delimiter),
+      ...arr.map((obj) =>
+     
+      )
+    ].join('');
+  };
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a  program to convert an array of objects to a comma-separated values (CSV) string. 
+
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  type DataKey = keyof Data;
+
+  const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
+    const headings = Object.keys(arr[0]) as DataKey[];
+
+    return [
+      headings.join(delimiter),
+      ...arr.map((obj) =>
+     
+      )
+    ].join('');
+  };
+
+Enter the next line: " response
+answer="headings.reduce((acc, key: DataKey) => )"
+additional_feedback="
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  type DataKey = keyof Data;
+
+  const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
+    const headings = Object.keys(arr[0]) as DataKey[];
+
+    return [
+      headings.join(delimiter),
+      ...arr.map((obj) =>
+        headings.reduce((acc, key: DataKey) => 
+
+        )
+      )
+    ].join('');
+  };
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a  program to convert an array of objects to a comma-separated values (CSV) string. 
+
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  type DataKey = keyof Data;
+
+  const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
+    const headings = Object.keys(arr[0]) as DataKey[];
+
+    return [
+      headings.join(delimiter),
+      ...arr.map((obj) =>
+        headings.reduce((acc, key: DataKey) => 
+
+        )
+      )
+    ].join('');
+  };
+
+Enter the next line: " response
+answer="\`\${acc}\${!acc.length ? '' : delimiter}\${!obj[key] ? '' : obj[key]}\`,''"
+additional_feedback="
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  type DataKey = keyof Data;
+
+  const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
+    const headings = Object.keys(arr[0]) as DataKey[];
+
+    return [
+      headings.join(delimiter),
+      ...arr.map((obj) =>
+        headings.reduce((acc, key: DataKey) => 
+          \`\${acc}\${!acc.length ? '' : delimiter}\${!obj[key] ? '' : obj[key]}\`,
+        ''
+        )
+      )
+    ].join('');
+  };
+
+
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Write a  program to target a given value in a nested JSON object. 
+  
+  const update = {
+    status: 'success',
+    message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
+  };
+
+Enter the next line: " response
+answer="interface Update { status: string; message: string; }"
+additional_feedback="
+
+  interface Update { 
+    status: string; 
+    message: string; 
+  }
+
+  const update: Update = {
+    status: 'success',
+    message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
+  };
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a  program to target a given value in a nested JSON object. 
+  
+  interface Update { 
+    status: string; 
+    message: string; 
+  }
+
+  const update: Update = {
+    status: 'success',
+    message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
+  };
+
+Enter the next line: " response
+answer="function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { }"
+additional_feedback="
+
+  interface Update { 
+    status: string; 
+    message: string; 
+  }
+
+  const update: Update = {
+    status: 'success',
+    message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
+  };
+
+  function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
+
+  }
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a  program to target a given value in a nested JSON object. 
+  
+  interface Update { 
+    status: string; 
+    message: string; 
+  }
+
+  const update: Update = {
+    status: 'success',
+    message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
+  };
+
+  function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
+
+  }
+
+Enter the next line: " response
+answer="return target in obj"
+additional_feedback="
+
+  interface Update { 
+    status: string; 
+    message: string; 
+  }
+
+  const update: Update = {
+    status: 'success',
+    message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
+  };
+
+  function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
+    return target in obj
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a  program to target a given value in a nested JSON object. 
+  
+  interface Update { 
+    status: string; 
+    message: string; 
+  }
+
+  const update: Update = {
+    status: 'success',
+    message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
+  };
+
+  function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
+    return target in obj
+  }
+
+Enter the next line: " response
+answer="? obj[target]"
+additional_feedback="
+
+  interface Update { 
+    status: string; 
+    message: string; 
+  }
+
+  const update: Update = {
+    status: 'success',
+    message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
+  };
+
+  function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
+    return target in obj
+      ? obj[target]
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a  program to target a given value in a nested JSON object. 
+  
+  interface Update { 
+    status: string; 
+    message: string; 
+  }
+
+  const update: Update = {
+    status: 'success',
+    message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
+  };
+
+  function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
+    return target in obj
+      ? obj[target]
+  }
+
+Enter the next line: " response
+answer=": Object.values(obj).reduce((acc, val) => { }, undefined);"
+additional_feedback="
+
+  interface Update { 
+    status: string; 
+    message: string; 
+  }
+
+  const update: Update = {
+    status: 'success',
+    message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
+  };
+
+  function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
+    return target in obj
+      ? obj[target]
+      : Object.values(obj).reduce((acc, val) => { 
+
+      }, undefined);
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a  program to target a given value in a nested JSON object. 
+  
+  interface Update { 
+    status: string; 
+    message: string; 
+  }
+
+  const update: Update = {
+    status: 'success',
+    message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
+  };
+
+  function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
+    return target in obj
+      ? obj[target]
+      : Object.values(obj).reduce((acc, val) => { 
+          
+      }, undefined);
+  }
+
+Enter the next line: " response
+answer="if (acc !== undefined) return acc;"
+additional_feedback="
+  interface Update { 
+    status: string; 
+    message: string; 
+  }
+
+  const update: Update = {
+    status: 'success',
+    message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
+  };
+
+  function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
+    return target in obj
+      ? obj[target]
+      : Object.values(obj).reduce((acc, val) => { 
+          if (acc !== undefined) return acc;
+      }, undefined);
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a program to target a given value in a nested JSON object. 
+  
+  interface Update { 
+    status: string; 
+    message: string; 
+  }
+
+  const update: Update = {
+    status: 'success',
+    message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
+  };
+
+  function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
+    return target in obj
+      ? obj[target]
+      : Object.values(obj).reduce((acc, val) => { 
+          if (acc !== undefined) return acc;
+      }, undefined);
+  }
+
+Enter the next line: " response
+answer="if (typeof val === 'object') return getValueFromKey(val, target);"
+additional_feedback="
+    interface Update { 
+    status: string; 
+    message: string; 
+  }
+
+  const update: Update = {
+    status: 'success',
+    message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
+  };
+
+  function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
+    return target in obj
+      ? obj[target]
+      : Object.values(obj).reduce((acc, val) => { 
+          if (acc !== undefined) return acc;
+          if (typeof val === 'object') return getValueFromKey(val, target);
+      }, undefined);
+  }
+
+  console.log(dig(update, 'status'));
+  console.log(dig(update, 'message'));
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Write a program to replace the names of multiple object keys with the values provided. 
+
+  const customer = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+  
+  console.log(result);
+
+Enter the next line: " response
+answer="interface CustomerDetails { name: string; job: string; shoeSize: number; }"
+additional_feedback="
+
+  interface CustomerDetails { 
+    name: string; 
+    job: string; 
+    shoeSize: number; 
+  }
+
+
+  const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+
+  console.log(result);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a program to replace the names of multiple object keys with the values provided. 
+
+  interface CustomerDetails { 
+    name: string; 
+    job: string; 
+    shoeSize: number; 
+  }
+
+
+  const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+  
+  console.log(result);
+
+Enter the next line: " response
+answer="type DetailKeys = keyof CustomerDetails;"
+additional_feedback="
+
+  interface CustomerDetails { 
+    name: string; 
+    job: string; 
+    shoeSize: number; 
+  }
+
+  type DetailKeys = keyof CustomerDetails;
+
+  const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+  
+  console.log(result);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a program to replace the names of multiple object keys with the values provided. 
+
+  interface CustomerDetails { 
+    name: string; 
+    job: string; 
+    shoeSize: number; 
+  }
+
+  type DetailKeys = keyof CustomerDetails;
+
+  const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+  
+  console.log(result);
+
+Enter the next line: " response
+answer="interface RenamedAttributes extends CustomerDetails { firstName: string; actor: string; }"
+additional_feedback="
+
+  interface CustomerDetails { 
+    name: string; 
+    job: string; 
+    shoeSize: number; 
+  }
+
+  type DetailKeys = keyof CustomerDetails;
+
+  interface RenamedAttributes extends CustomerDetails { 
+    firstName: string; 
+    actor: string; 
+  }
+
+  const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+  
+  console.log(result);
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a program to replace the names of multiple object keys with the values provided. 
+
+  interface CustomerDetails { 
+    name: string; 
+    job: string; 
+    shoeSize: number; 
+  }
+
+  type DetailKeys = keyof CustomerDetails;
+
+  interface RenamedAttributes extends CustomerDetails { 
+    firstName: string; 
+    actor: string; 
+  }
+
+  const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+  
+  console.log(result);
+
+Enter the next line: " response
+answer="type ObjectKeys<T> = T extends object ? (keyof T)[] : T extends number ? [] : T extends Array<any> | string ? string[] : never;"
+additional_feedback="
+
+  interface CustomerDetails { 
+    name: string; 
+    job: string; 
+    shoeSize: number; 
+  }
+
+  type DetailKeys = keyof CustomerDetails;
+
+  interface RenamedAttributes extends CustomerDetails { 
+    firstName: string; 
+    actor: string; 
+  }
+
+  type ObjectKeys<T> = 
+    T extends object ? (keyof T)[] :
+    T extends number ? [] :
+    T extends Array<any> | string ? string[] :
+    never;
+
+  const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+  
+  console.log(result);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a program to replace the names of multiple object keys with the values provided. 
+
+  interface CustomerDetails { 
+    name: string; 
+    job: string; 
+    shoeSize: number; 
+  }
+
+  type DetailKeys = keyof CustomerDetails;
+
+  interface RenamedAttributes extends CustomerDetails { 
+    firstName: string; 
+    actor: string; 
+  }
+
+  type ObjectKeys<T> = 
+    T extends object ? (keyof T)[] :
+    T extends number ? [] :
+    T extends Array<any> | string ? string[] :
+    never;
+
+  const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+  
+  console.log(result);
+
+Enter the next line: " response
+answer="interface ObjectConstructor { keys<T>(o: T): ObjectKeys<T> }"
+additional_feedback="
+
+  interface CustomerDetails { 
+    name: string; 
+    job: string; 
+    shoeSize: number; 
+  }
+
+  type DetailKeys = keyof CustomerDetails;
+
+  interface RenamedAttributes extends CustomerDetails { 
+    firstName: string; 
+    actor: string; 
+  }
+
+  type ObjectKeys<T> = 
+    T extends object ? (keyof T)[] :
+    T extends number ? [] :
+    T extends Array<any> | string ? string[] :
+    never;
+
+  interface ObjectConstructor { 
+    keys<T>(o: T): ObjectKeys<T> 
+  }
+
+  const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+  
+  console.log(result);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a program to replace the names of multiple object keys with the values provided. 
+
+  interface CustomerDetails { 
+    name: string; 
+    job: string; 
+    shoeSize: number; 
+  }
+
+  type DetailKeys = keyof CustomerDetails;
+
+  interface RenamedAttributes extends CustomerDetails { 
+    firstName: string; 
+    actor: string; 
+  }
+
+  type ObjectKeys<T> = 
+    T extends object ? (keyof T)[] :
+    T extends number ? [] :
+    T extends Array<any> | string ? string[] :
+    never;
+
+  interface ObjectConstructor { 
+    keys<T>(o: T): ObjectKeys<T> 
+  }
+
+  const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+  
+  console.log(result);
+
+Enter the next line: " response
+answer="function renameKeys(keyMap: Partial<CustomerDetails>, details: CustomerDetails) { }"
+additional_feedback="
+
+  interface CustomerDetails { 
+    name: string; 
+    job: string; 
+    shoeSize: number; 
+  }
+
+  type DetailKeys = keyof CustomerDetails;
+
+  interface RenamedAttributes extends CustomerDetails { 
+    firstName: string; 
+    actor: string; 
+  }
+
+  type ObjectKeys<T> = 
+    T extends object ? (keyof T)[] :
+    T extends number ? [] :
+    T extends Array<any> | string ? string[] :
+    never;
+
+  interface ObjectConstructor { 
+    keys<T>(o: T): ObjectKeys<T> 
+  }
+
+  function renameKeys(keyMap: Partial<CustomerDetails>, details: CustomerDetails) { 
+
+  }
+
+
+  const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+  
+  console.log(result);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p " 
+
+  Write a program to replace the names of multiple object keys with the values provided.
+
+  interface CustomerDetails { 
+    name: string; 
+    job: string; 
+    shoeSize: number; 
+  }
+
+  type DetailKeys = keyof CustomerDetails;
+
+  interface RenamedAttributes extends CustomerDetails { 
+    firstName: string; 
+    actor: string; 
+  }
+
+  type ObjectKeys<T> = 
+    T extends object ? (keyof T)[] :
+    T extends number ? [] :
+    T extends Array<any> | string ? string[] :
+    never;
+
+  interface ObjectConstructor { 
+    keys<T>(o: T): ObjectKeys<T> 
+  }
+
+  function renameKeys(keyMap: Partial<CustomerDetails>, details: CustomerDetails) { 
+
+  }
+
+
+  const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+  
+  console.log(result);
+
+Enter the next line: " response
+answer="return Object.keys(details).reduce(function (acc, key: DetailKeys) { }, , {} as RenamedAttributes);"
+additional_feedback="
+  interface CustomerDetails { 
+    name: string; 
+    job: string; 
+    shoeSize: number; 
+  }
+
+  type DetailKeys = keyof CustomerDetails;
+
+  interface RenamedAttributes extends CustomerDetails { 
+    firstName: string; 
+    actor: string; 
+  }
+
+  type ObjectKeys<T> = 
+    T extends object ? (keyof T)[] :
+    T extends number ? [] :
+    T extends Array<any> | string ? string[] :
+    never;
+
+  interface ObjectConstructor { 
+    keys<T>(o: T): ObjectKeys<T> 
+  }
+
+  function renameKeys(keyMap: Partial<CustomerDetails>, details: CustomerDetails) { 
+    return Object.keys(details).reduce(function (acc, key: DetailKeys) { 
+      
+    }, , {} as RenamedAttributes);
+  }
+
+
+  const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+  
+  console.log(result);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p " 
+
+  Write a program to replace the names of multiple object keys with the values provided.
+
+  interface CustomerDetails { 
+    name: string; 
+    job: string; 
+    shoeSize: number; 
+  }
+
+  type DetailKeys = keyof CustomerDetails;
+
+  interface RenamedAttributes extends CustomerDetails { 
+    firstName: string; 
+    actor: string; 
+  }
+
+  type ObjectKeys<T> = 
+    T extends object ? (keyof T)[] :
+    T extends number ? [] :
+    T extends Array<any> | string ? string[] :
+    never;
+
+  interface ObjectConstructor { 
+    keys<T>(o: T): ObjectKeys<T> 
+  }
+
+  function renameKeys(keyMap: Partial<CustomerDetails>, details: CustomerDetails) { 
+    return Object.keys(details).reduce(function (acc, key: DetailKeys) { 
+      
+    }, , {} as RenamedAttributes);
+  }
+
+
+  const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+  
+  console.log(result);
+
+Enter the next line: " response
+answer="return { ...acc, [keyMap[key] ?? key]: details[key] }"
+additional_feedback="
+
+  interface CustomerDetails { 
+    name: string; 
+    job: string; 
+    shoeSize: number; 
+  }
+
+  type DetailKeys = keyof CustomerDetails;
+
+  interface RenamedAttributes extends CustomerDetails { 
+    firstName: string; 
+    actor: string; 
+  }
+
+  type ObjectKeys<T> = 
+    T extends object ? (keyof T)[] :
+    T extends number ? [] :
+    T extends Array<any> | string ? string[] :
+    never;
+
+  interface ObjectConstructor { 
+    keys<T>(o: T): ObjectKeys<T> 
+  }
+
+  function renameKeys(keyMap: Partial<CustomerDetails>, details: CustomerDetails) { 
+    return Object.keys(details).reduce(function (acc, key: DetailKeys) { 
+      return { 
+        ...acc, 
+        [keyMap[key] ?? key]: details[key] 
+      }
+    }, , {} as RenamedAttributes);
+  }
+
+
+  const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
+
+  console.log('Original Object');
+  console.log(customer);
+
+  console.log('-------------------------------------');
+
+  const result = renameKeys({ name: 'firstName', job: 'actor' }, customer);
+  console.log('New Object');
+  
+  console.log(result);
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a program that finds the unique item.
+
+  console.log(
+    findUniqueItem(
+      [
+        { id: 0, value: 'a' },
+        { id: 1, value: 'b' },
+        { id: 2, value: 'c' },
+        { id: 1, value: 'd' },
+        { id: 0, value: 'e' },
+      ],
+      (a, b) => a.id == b.id
+    )
+  );
+
+Enter the next line: " response
+answer="interface Items { id: number; value: string; }"
+additional_feedback="
+
+  interface Items { 
+    id: number; 
+    value: string; 
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a program that finds the unique item.
+
+  interface Items { 
+    id: number; 
+    value: string; 
+  }
+
+  console.log(
+    findUniqueItem(
+      [
+        { id: 0, value: 'a' },
+        { id: 1, value: 'b' },
+        { id: 2, value: 'c' },
+        { id: 1, value: 'd' },
+        { id: 0, value: 'e' },
+      ],
+      (a, b) => a.id == b.id
+    )
+  );
+
+Enter the next line: " response
+answer="interface CompareFunc { (a: Items, b: Items): boolean; }"
+additional_feedback="
+
+  interface Items { 
+    id: number; 
+    value: string; 
+  }
+
+  interface CompareFunc { 
+    (a: Items, b: Items): boolean; 
+  }
+
+  console.log(
+    findUniqueItem(
+      [
+        { id: 0, value: 'a' },
+        { id: 1, value: 'b' },
+        { id: 2, value: 'c' },
+        { id: 1, value: 'd' },
+        { id: 0, value: 'e' },
+      ],
+      (a, b) => a.id == b.id
+    )
+  );
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a program that finds the unique item.
+
+  interface Items { 
+    id: number; 
+    value: string; 
+  }
+
+  interface CompareFunc { 
+    (a: Items, b: Items): boolean; 
+  }
+
+  console.log(
+    findUniqueItem(
+      [
+        { id: 0, value: 'a' },
+        { id: 1, value: 'b' },
+        { id: 2, value: 'c' },
+        { id: 1, value: 'd' },
+        { id: 0, value: 'e' },
+      ],
+      (a, b) => a.id == b.id
+    )
+  );
+
+Enter the next line: " response
+answer="function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { }"
+additional_feedback="
+
+  interface Items { 
+    id: number; 
+    value: string; 
+  }
+
+  interface CompareFunc { 
+    (a: Items, b: Items): boolean; 
+  }
+
+  function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { 
+
+  }
+
+  console.log(
+    findUniqueItem(
+      [
+        { id: 0, value: 'a' },
+        { id: 1, value: 'b' },
+        { id: 2, value: 'c' },
+        { id: 1, value: 'd' },
+        { id: 0, value: 'e' },
+      ],
+      (a, b) => a.id == b.id
+    )
+  );  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a program that finds the unique item.
+
+  interface Items { 
+    id: number; 
+    value: string; 
+  }
+
+  interface CompareFunc { 
+    (a: Items, b: Items): boolean; 
+  }
+
+  function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { 
+
+  }
+
+  console.log(
+    findUniqueItem(
+      [
+        { id: 0, value: 'a' },
+        { id: 1, value: 'b' },
+        { id: 2, value: 'c' },
+        { id: 1, value: 'd' },
+        { id: 0, value: 'e' },
+      ],
+      (a, b) => a.id == b.id
+    )
+  );
+
+Enter the next line: " response
+answer="return arr.filter(function (v, i) { });"
+additional_feedback="
+
+  interface Items { 
+    id: number; 
+    value: string; 
+  }
+
+  interface CompareFunc { 
+    (a: Items, b: Items): boolean; 
+  }
+
+  function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { 
+    return arr.filter(function (v, i) { 
+
+    });
+  }
+  
+  console.log(
+    findUniqueItem(
+      [
+        { id: 0, value: 'a' },
+        { id: 1, value: 'b' },
+        { id: 2, value: 'c' },
+        { id: 1, value: 'd' },
+        { id: 0, value: 'e' },
+      ],
+      (a, b) => a.id == b.id
+    )
+  );  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a program that finds the unique item.
+
+  interface Items { 
+    id: number; 
+    value: string; 
+  }
+
+  interface CompareFunc { 
+    (a: Items, b: Items): boolean; 
+  }
+
+  function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { 
+    return arr.filter(function (v, i) { 
+
+    });
+  }
+
+  console.log(
+    findUniqueItem(
+      [
+        { id: 0, value: 'a' },
+        { id: 1, value: 'b' },
+        { id: 2, value: 'c' },
+        { id: 1, value: 'd' },
+        { id: 0, value: 'e' },
+      ],
+      (a, b) => a.id == b.id
+    )
+  );
+
+Enter the next line: " response
+answer="return arr.every(function (x, j) { });"
+additional_feedback="
+
+  interface Items { 
+    id: number; 
+    value: string; 
+  }
+
+  interface CompareFunc { 
+    (a: Items, b: Items): boolean; 
+  }
+
+  function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { 
+    return arr.filter(function (v, i) { 
+      return arr.every(function (x, j) { 
+
+      });
+    });
+  }
+
+  console.log(
+    findUniqueItem(
+      [
+        { id: 0, value: 'a' },
+        { id: 1, value: 'b' },
+        { id: 2, value: 'c' },
+        { id: 1, value: 'd' },
+        { id: 0, value: 'e' },
+      ],
+      (a, b) => a.id == b.id
+    )
+  );
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a program that finds the unique item.
+
+  interface Items { 
+    id: number; 
+    value: string; 
+  }
+
+  interface CompareFunc { 
+    (a: Items, b: Items): boolean; 
+  }
+
+  function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { 
+    return arr.filter(function (v, i) { 
+      return arr.every(function (x, j) { 
+
+      });
+    });
+  }
+
+  console.log(
+    findUniqueItem(
+      [
+        { id: 0, value: 'a' },
+        { id: 1, value: 'b' },
+        { id: 2, value: 'c' },
+        { id: 1, value: 'd' },
+        { id: 0, value: 'e' },
+      ],
+      (a, b) => a.id == b.id
+    )
+  );
+
+Enter the next line: " response
+answer="return (i === j) === fn(v, x);"
+additional_feedback="
+
+  interface Items { 
+    id: number; 
+    value: string; 
+  }
+
+  interface CompareFunc { 
+    (a: Items, b: Items): boolean; 
+  }
+
+  function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { 
+    return arr.filter(function (v, i) { 
+      return arr.every(function (x, j) { 
+        return (i === j) === fn(v, x);
+      });
+    });
+  }
+
+  console.log(
+    findUniqueItem(
+      [
+        { id: 0, value: 'a' },
+        { id: 1, value: 'b' },
+        { id: 2, value: 'c' },
+        { id: 1, value: 'd' },
+        { id: 0, value: 'e' },
+      ],
+      (a, b) => a.id == b.id
+    )
+  );
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_line
+
+read -p "
+  Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
+  
+  console.log(
+    findCommonElements(
+      [1, 1.2, 1.5, 3, 0],
+      [1.9, 3, 0, 3.9],
+      (a, b) => Math.round(a) === Math.round(b)
+    )
+  );
+
+Enter the next line: " response
+answer="type Comp = { (x: number, y: number): boolean; };"
+additional_feedback="
+
+  type Comp = { 
+    (x: number, y: number): boolean; 
+  };
+
+  console.log(
+    findCommonElements(
+      [1, 1.2, 1.5, 3, 0],
+      [1.9, 3, 0, 3.9],
+      (a, b) => Math.round(a) === Math.round(b)
+    )
+  );
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
+  
+  type Comp = { 
+    (x: number, y: number): boolean; 
+  };
+
+  console.log(
+    findCommonElements(
+      [1, 1.2, 1.5, 3, 0],
+      [1.9, 3, 0, 3.9],
+      (a, b) => Math.round(a) === Math.round(b)
+    )
+  );
+
+Enter the next line: " response
+answer="function findCommonElements(a: number[], b: number[], comp: Comp) { }"
+additional_feedback="
+
+  type Comp = { 
+    (x: number, y: number): boolean; 
+  };
+
+  function findCommonElements(a: number[], b: number[], comp: Comp) { 
+
+  }
+
+  console.log(
+    findCommonElements(
+      [1, 1.2, 1.5, 3, 0],
+      [1.9, 3, 0, 3.9],
+      (a, b) => Math.round(a) === Math.round(b)
+    )
+  );
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
+  
+  type Comp = { 
+    (x: number, y: number): boolean; 
+  };
+
+  function findCommonElements(a: number[], b: number[], comp: Comp) { 
+
+  }
+
+  console.log(
+    findCommonElements(
+      [1, 1.2, 1.5, 3, 0],
+      [1.9, 3, 0, 3.9],
+      (a, b) => Math.round(a) === Math.round(b)
+    )
+  );
+
+Enter the next line: " response
+answer="return Array.from()"
+additional_feedback="
+
+  type Comp = { 
+    (x: number, y: number): boolean; 
+  };
+
+  function findCommonElements(a: number[], b: number[], comp: Comp) { 
+    return Array.from(
+
+    )
+  }
+
+  console.log(
+    findCommonElements(
+      [1, 1.2, 1.5, 3, 0],
+      [1.9, 3, 0, 3.9],
+      (a, b) => Math.round(a) === Math.round(b)
+    )
+  );
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
+  
+  type Comp = { 
+    (x: number, y: number): boolean; 
+  };
+
+  function findCommonElements(a: number[], b: number[], comp: Comp) { 
+    return Array.from(
+
+    )
+  }
+
+  console.log(
+    findCommonElements(
+      [1, 1.2, 1.5, 3, 0],
+      [1.9, 3, 0, 3.9],
+      (a, b) => Math.round(a) === Math.round(b)
+    )
+  );
+
+Enter the next line: " response
+answer="new Set()"
+additional_feedback="
+  type Comp = { 
+    (x: number, y: number): boolean; 
+  };
+
+  function findCommonElements(a: number[], b: number[], comp: Comp) { 
+    return Array.from(
+      new Set(
+
+      )
+    )
+  }
+
+  console.log(
+    findCommonElements(
+      [1, 1.2, 1.5, 3, 0],
+      [1.9, 3, 0, 3.9],
+      (a, b) => Math.round(a) === Math.round(b)
+    )
+  );
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
+  
+  type Comp = { 
+    (x: number, y: number): boolean; 
+  };
+
+  function findCommonElements(a: number[], b: number[], comp: Comp) { 
+    return Array.from(
+      new Set(
+
+      )
+    )
+  }
+
+  console.log(
+    findCommonElements(
+      [1, 1.2, 1.5, 3, 0],
+      [1.9, 3, 0, 3.9],
+      (a, b) => Math.round(a) === Math.round(b)
+    )
+  );
+
+Enter the next line: " response
+answer="([] as number[]).concat()"
+additional_feedback="
+
+  type Comp = { 
+    (x: number, y: number): boolean; 
+  };
+
+  function findCommonElements(a: number[], b: number[], comp: Comp) { 
+    return Array.from(
+      new Set(
+        ([] as number[]).concat(
+
+        )
+      )
+    )
+  }
+
+  console.log(
+    findCommonElements(
+      [1, 1.2, 1.5, 3, 0],
+      [1.9, 3, 0, 3.9],
+      (a, b) => Math.round(a) === Math.round(b)
+    )
+  );
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
+  
+  type Comp = { 
+    (x: number, y: number): boolean; 
+  };
+
+  function findCommonElements(a: number[], b: number[], comp: Comp) { 
+    return Array.from(
+      new Set(
+        ([] as number[]).concat(
+
+        )
+      )
+    )
+  }
+
+  console.log(
+    findCommonElements(
+      [1, 1.2, 1.5, 3, 0],
+      [1.9, 3, 0, 3.9],
+      (a, b) => Math.round(a) === Math.round(b)
+    )
+  );
+
+Enter the next line: " response
+answer="a, b.filter(function (x) { })"
+additional_feedback="
+
+  type Comp = { 
+    (x: number, y: number): boolean; 
+  };
+
+  function findCommonElements(a: number[], b: number[], comp: Comp) { 
+    return Array.from(
+      new Set(
+        ([] as number[]).concat(
+          a, 
+          b.filter(function (x) { 
+
+          })
+        )
+      )
+    )
+  }
+
+  console.log(
+    findCommonElements(
+      [1, 1.2, 1.5, 3, 0],
+      [1.9, 3, 0, 3.9],
+      (a, b) => Math.round(a) === Math.round(b)
+    )
+  );
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p " " response
+answer="return ( a.findIndex(function (y) { return comp(x, y); }) === -1 )"
+additional_feedback="
+
+  type Comp = { 
+    (x: number, y: number): boolean; 
+  };
+
+  function findCommonElements(a: number[], b: number[], comp: Comp) { 
+    return Array.from(
+      new Set(
+        ([] as number[]).concat(
+          a, 
+          b.filter(function (x) { 
+            return ( 
+              a.findIndex(function (y) { 
+                return comp(x, y); 
+              }) === -1 
+             )
+          })
+        )
+      )
+    )
+  }
+
+  console.log(
+    findCommonElements(
+      [1, 1.2, 1.5, 3, 0],
+      [1.9, 3, 0, 3.9],
+      (a, b) => Math.round(a) === Math.round(b)
+    )
+  );
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  let output = 0;
+  Array(1e6).forEach(function (_, i) {
+    output += i;
+  });
+
+Write a program to measure the time taken by a function to execute. " response
+answer="console.time('Execution time'); console.timeEnd('Execution time');"
+additional_feedback="
+
+  console.time('Execution time');
+
+  let output = 0;
+  Array(1e6).forEach(function (_, i) {
+    output += i;
+  });
+
+  console.timeEnd('Execution time');
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a curry function where the first function's parameters are functions in the form of a rest operator, then iterates, invoking each function with arguments passed from the inner function and returns the results. 
+
+  const minMax = over(Math.min, Math.max);
+  console.log(minMax(1, 2, 3, 4, 5));
+  console.log(minMax(1, 2, 5, 4, 3));
+  console.log(minMax(1, 2, 5, -4, 3));
+
+Enter the next line: " response
+answer="type Procedure = (...args: any[]) => number;"
+additional_feedback="
+
+  type Procedure = (...args: any[]) => number;
+
+  const minMax = over(Math.min, Math.max);
+  console.log(minMax(1, 2, 3, 4, 5));
+  console.log(minMax(1, 2, 5, 4, 3));
+  console.log(minMax(1, 2, 5, -4, 3));
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a curry function where the first function's parameters are functions in the form of a rest operator, then iterates, invoking each function with arguments passed from the inner function and returns the results. 
+
+
+  type Procedure = (...args: any[]) => number;
+
+  function over<F extends Procedure>(...fns: F[]) { 
+
+  }
+
+  const minMax = over(Math.min, Math.max);
+  console.log(minMax(1, 2, 3, 4, 5));
+  console.log(minMax(1, 2, 5, 4, 3));
+  console.log(minMax(1, 2, 5, -4, 3));
+
+Enter the next line: " response
+answer="function over<F extends Procedure>(...fns: F[]) { }"
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p " " response
+answer="return function (...args: Parameters<F>) {"
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p " " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+
 
 # const result = Object.keys(keyMap).reduce<Record<string, ValueType>>(
 #   (acc, cur) => {

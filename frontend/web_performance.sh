@@ -345,3 +345,256 @@ evaluate_answer "$response" "$answer"
 next_question
 
 
+read -p "What are some techniques for improving performance when using Webpack? " response
+answer="Use webpack-bundle-analyzer. Use production mode for built-in optimization. Add multiple entry points for bundle splitting. Separate application code and third-party libraries. "
+evaluate_answer "$response" "$answer"
+
+next_question
+
+
+read -p "
+
+    What are some important characteristics of code-splitting? 
+
+    * 
+    *
+    *
+    *
+
+Enter the next line: " response
+additional_feedback="
+
+    * Code splitting is based on heuristics that find candidates for splitting based on module duplication count and module category
+    *
+    *
+    *
+
+"
+answer="Code splitting is based on heuristics that find candidates for splitting based on module duplication count and module category"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+    What are some important characteristics of code-splitt
+
+    * Code splitting is based on heuristics that find candidates for splitting based on module duplication count and module category
+    *
+    *
+    *
+
+Enter the next line: " response
+additional_feedback="
+
+    * Code splitting is based on heuristics that find candidates for splitting based on module duplication count and module category
+    * The default behavior is that only dependencies of >= 30KB are picked as candidates for the vendor bundle
+    *
+    *
+
+"
+answer="The default behavior is that only dependencies of >= 30KB are picked as candidates for the vendor bundle"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+    What are some important characteristics of code-splitt
+
+    * Code splitting is based on heuristics that find candidates for splitting based on module duplication count and module category
+    * The default behavior is that only dependencies of >= 30KB are picked as candidates for the vendor bundle
+    *
+    *
+
+Enter the next line: " response
+additional_feedback="
+
+    * Code splitting is based on heuristics that find candidates for splitting based on module duplication count and module category
+    * The default behavior is that only dependencies of >= 30KB are picked as candidates for the vendor bundle
+    * Webpack duplicates code in bundles to minimize requests for additional bundles
+    *
+
+"
+answer="Webpack duplicates code in bundles to minimize requests for additional bundles"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+    What are some important characteristics of code-splitt
+
+    * Code splitting is based on heuristics that find candidates for splitting based on module duplication count and module category
+    * The default behavior is that only dependencies of >= 30KB are picked as candidates for the vendor bundle
+    *
+    *
+
+Enter the next line: " response
+additional_feedback="
+
+    * Code splitting is based on heuristics that find candidates for splitting based on module duplication count and module category
+    * The default behavior is that only dependencies of >= 30KB are picked as candidates for the vendor bundle
+    * Webpack duplicates code in bundles to minimize requests for additional bundles
+    * Extract webpack's manifest into a separate bundles
+
+"
+answer="Extract webpack's manifest into a separate bundles"
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "Write code splitting configuration that handles vendor bundles. " response
+answer="vendor: { name: 'vendor', test: /[\\\\/]node_modules[\\\\/]/, chunks: 'all', }"
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "Write code splitting configuration that handles common bundles. " response
+answer="common: { test: /[\\\\/]src[\\\\/]components[\\\\/]/, chunks: 'all', }"
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p " 
+
+    How would LazyParagraph be loaded on demand?
+
+    <div className=\"profile\">       
+        <Headline>Profile</Headline>       
+        <p>Lorem Ipsum</p>       
+         <LazyParagraph />       
+        <button onClick={() => setShowOnDemand(true)}>
+            click me
+        </button>     
+    </div>
+
+
+Enter the next line: " response
+answer="{showOnDemand && <LazyParagraph />}"
+additional_feedback="
+    <div className=\"profile\">       
+        <Headline>Profile</Headline>       
+        <p>Lorem Ipsum</p>       
+         {showOnDemand && <LazyParagraph />}     
+        <button onClick={() => setShowOnDemand(true)}>
+            click me
+        </button>     
+    </div>
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+
+read -p "How would the component be written for LazyParagraph? " response
+answer="const LazyParagraph = React.lazy(() => import('./LazyParagraph'));"
+additional_feedback="
+   const LazyParagraph = React.lazy(() => import('./LazyParagraph'));
+
+    <div className=\"profile\">       
+        <Headline>Profile</Headline>       
+        <p>Lorem Ipsum</p>       
+         {showOnDemand && <LazyParagraph />}     
+        <button onClick={() => setShowOnDemand(true)}>
+            click me
+        </button>     
+    </div>
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+
+next_question
+
+
+read -p "What the does the \"external\" property for webpack do? " response
+answer="Excludes dependencies from bundling when the dependencies are provided from another source."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "
+
+    [\"@babel/preset-env\", { \"modules\": false }]
+
+What does this configuration in babel do? " response
+answer="It disables the transformation of ES6 module syntax to another module type. ES6 modules can be statically analyzed by webpack, which isn't possible with other variants, such as require by CommonJS."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Write a performance hint configuration for Webpack. " response
+answer="performance: { hints: \"error\", maxAssetSize: 100 * 1024, maxEntrypointSize: 100 * 1024, }"
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is a good configuration option for source maps in production? " response
+answer="devtool: \"source-map\" is a good choice because only a comment is generated into the JS bundle. If your users do not open the browser's devtools, they do not load the corresponding source map file generated by webpack."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "
+    Explain when each generated hash changes. 
+
+    [hash] - 
+    [chunkhash] - 
+    [contenthash] - 
+
+Enter the next line: " response
+answer="if at least one chunk changes, a new hash value for the whole build is generate"
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+    Explain when each generated hash changes. 
+
+    [hash] - [hash] - if at least one chunk changes, a new hash value for the whole build is generated
+    [chunkhash] - 
+    [contenthash] - 
+
+Enter the next line: " response
+answer="if a chunk changes, a new hash value is generated, and any chunk during that build hash changes also"
+additional_feedback="
+
+    [hash] - if at least one chunk changes, a new hash value for the whole build is generated
+    [chunkhash] - if a chunk changes, a new hash value is generated, and any chunk during that build hash changes also
+    [contenthash] - 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+    Explain when each generated hash changes. 
+
+    [hash] - [hash] - if at least one chunk changes, a new hash value for the whole build is generated
+    [chunkhash] - if a chunk changes, a new hash value is generated, and any chunk during that build hash changes also
+    [contenthash] - 
+
+Enter the next line: " response
+answer="if the an asset changes, a new hash based on the asset's content is generated"
+additional_feedback="
+
+    [hash] - if at least one chunk changes, a new hash value for the whole build is generated
+    [chunkhash] - if a chunk changes, a new hash value is generated, and any chunk during that build hash changes also
+    [contenthash] - if the an asset changes, a new hash based on the asset's content is generated
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p " " response
+answer=""
+additional_feedback=""
+evaluate_answer "$response" "$answer"
+
+
+

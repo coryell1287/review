@@ -332,7 +332,7 @@ evaluate_answer "$response" "$answer" "$additional_feedback"
 next_question
 
 read -p "What are some limitations to casting? " response
-answer="When going from a subtype to a type, without casting, the problem is that TypeScript will only validate access to the public type from the desired interface. However, under the hood, the object still contains all the members. For example (see below), TypeB has two members; when casting, it only exposes (at design time) the first member, which is in TypeA. However, printing the object reveals that both members are still there. The lack of cohesion between the type’s schema and the actual object structure is an important detail."
+answer="When going from a subtype to a type, without casting, the problem is that TypeScript will only validate access to the public type from the desired interface. However, under the hood, the object still contains all the members. For example (see below), TypeB has two members; when casting, it only exposes (at design time) the first member, which is in TypeA. However, printing the object reveals that both members are still there. The lack of cohesion between the type's schema and the actual object structure is an important detail."
 additional_feedback="
 
   You cannot cast a typed object into something that is not a subtype 
@@ -384,7 +384,7 @@ evaluate_answer "$response" "$answer"
 next_question
 
 read -p "What is another limitation of type casting? " response
-answer="Because casting tells TypeScript that you know what you’re doing, it won’t complain. However, non-optional members that aren’t present will be undefined even if the contract specifies that the type must have the member."
+answer="Because casting tells TypeScript that you know what you're doing, it won't complain. However, non-optional members that aren't present will be undefined even if the contract specifies that the type must have the member."
 
 evaluate_answer "$response" "$answer"
 
@@ -801,14 +801,14 @@ evaluate_answer "$response" "$answer" "$additional_feedback"
 next_question
 
 read -p "What is never type? " response
-answer="It’s a special type that has no instances. In other words, it’s not possible to create an instance of this type. If we look at it from the perspective of set theory, never is associated with an empty set. Therefore, string | never is just a string because a union of any set with an empty set is just that set."
+answer="It's a special type that has no instances. In other words, it's not possible to create an instance of this type. If we look at it from the perspective of set theory, never is associated with an empty set. Therefore, string | never is just a string because a union of any set with an empty set is just that set."
 additional_feedback=""
 evaluate_answer "$response" "$answer"
 
 next_question
 
 read -p "What is use case for infer" response
-answer="A use case for infer is when a type extends a function that returns an unknown type. It’s possible to use infer to have the type be a generic variable."
+answer="A use case for infer is when a type extends a function that returns an unknown type. It's possible to use infer to have the type be a generic variable."
 evaluate_answer "$response" "$answer"
 
 next_question
@@ -949,7 +949,7 @@ evaluate_answer "$response" "$answer"
 next_question
 
 read -p "What does effect does calling push() on a readonly have? " response
-answer="Putting the readonly keyword before an array or object property name only ensures its reference won’t change. The array can mutate but it cannot be set to a different array"
+answer="Putting the readonly keyword before an array or object property name only ensures its reference won't change. The array can mutate but it cannot be set to a different array"
 additional_feedback=""
 evaluate_answer "$response" "$answer"
 
@@ -1265,7 +1265,7 @@ evaluate_answer "$response" "$answer"
 next_question
 
 read -p "What does creating a custom error require using Object.setPrototypeOf? " response
-answer="The reason is that with the introduction of TypeScript version 2.1 when using EcmaScript 6, the Error constructor uses new.target to handle the prototype chain. In prior versions of EcmaScript, it did not. By manually calling it or by using the class’s prototype to assign it, we restore the peace by being sure that the prototype chain is invoking new.target. Forgetting to do so will cause an issue when using instanceOf. The reason is that since TypeScript 2.1, the constructor functions Error, Array, and Map don’t propagate. The workaround is using the setPrototypeOf function in the constructor of each class in the hierarchy. The function sets the prototype to another object."
+answer="The reason is that with the introduction of TypeScript version 2.1 when using EcmaScript 6, the Error constructor uses new.target to handle the prototype chain. In prior versions of EcmaScript, it did not. By manually calling it or by using the class's prototype to assign it, we restore the peace by being sure that the prototype chain is invoking new.target. Forgetting to do so will cause an issue when using instanceOf. The reason is that since TypeScript 2.1, the constructor functions Error, Array, and Map don't propagate. The workaround is using the setPrototypeOf function in the constructor of each class in the hierarchy. The function sets the prototype to another object."
 additional_feedback="
 
     class MySpecificError extends Error {
@@ -1627,24 +1627,18 @@ read -p "
     filter<S extends T>(callbackfn: (value: T, index: number, array: T[]) => value is S, thisArg?: any): S[];
 
 Enter your answer: " response
-answer="It’s a generic function with type argument S, where S is a subtype of T. The type of the callbackFn parameter is (value: T, index: number, array: T[]) => value is S; it’s a type guard! All array elements for which callbackFn returns true can be typed as S instead of T. Therefore, the return type of the whole method is S[]."
+answer="It's a generic function with type argument S, where S is a subtype of T. The type of the callbackFn parameter is (value: T, index: number, array: T[]) => value is S; it's a type guard! All array elements for which callbackFn returns true can be typed as S instead of T. Therefore, the return type of the whole method is S[]."
 additional_feedback=""
 evaluate_answer "$response" "$answer" "$additional_feedback" 
 
 next_question
 
 read -p "Why would you pass a function to useState that returns the initial state instead of passing the initial state directly?" response
-answer="Computing the initial state can be expensive. It’s only needed when the component is mounted. However, in a function component it would be calculated on every render. Therefore, you have an option to pass a function that calculates initial state, meaning expensive computation will only be executed once, not on every render."
+answer="Computing the initial state can be expensive. It's only needed when the component is mounted. However, in a function component it would be calculated on every render. Therefore, you have an option to pass a function that calculates initial state, meaning expensive computation will only be executed once, not on every render."
 evaluate_answer "$response" "$answer" "$additional_feedback" 
 
 next_line
 
-
-type Person = { name: string } | string;
-
-class Mother implements Person {
-  name: string = "";
-}
 read -p "
     Will the following code compile?
 
@@ -2270,7 +2264,7 @@ read -p "
     const { theme, setTheme } = useTheme()!;
 
 Enter your answer: " response
-answer="Exclamation mark tells the TypeScript compiler that its return value won’t be undefined."
+answer="Exclamation mark tells the TypeScript compiler that its return value won't be undefined."
 evaluate_answer "$response" "$answer"
 
 next_question
@@ -2332,7 +2326,17 @@ next_question
 read -p "" response
 answer=""
 evaluate_answer "$response" "$answer"
- 
+type Procedure = (...args: any[]) => number;
 
+function over<F extends Procedure>(...fns: F[]) {
+  return function (...args: Parameters<F>) {
+    return fns.map(function (fn) {
+      return fn.apply(null, args);
+    });
+  };
+}
 
-
+const minMax = over(Math.min, Math.max);
+console.log(minMax(1, 2, 3, 4, 5));
+console.log(minMax(1, 2, 5, 4, 3));
+console.log(minMax(1, 2, 5, -4, 3));
