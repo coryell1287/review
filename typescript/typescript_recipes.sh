@@ -365,7 +365,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+next_question
 
 read -p "
 
@@ -1414,6 +1414,10 @@ additional_feedback="
 
   const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => );
 
+   console.log(csvToArray('a,b\nc,d')); 
+   console.log(csvToArray('a;b\nc;d', ';')); 
+   console.log(csvToArray('head1,head2\na,b\nc,d', ',', true));
+
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
@@ -1425,13 +1429,21 @@ read -p "
 
   const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => );
 
+  console.log(csvToArray('a,b\nc,d')); 
+  console.log(csvToArray('a;b\nc;d', ';')); 
+  console.log(csvToArray('head1,head2\na,b\nc,d', ',', true));
+
 Enter the next line: " response
 answer="data.slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)"
 additional_feedback="
 
   const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => 
      data
-      .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0));
+      .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
+
+  console.log(csvToArray('a,b\nc,d')); 
+  console.log(csvToArray('a;b\nc;d', ';')); 
+  console.log(csvToArray('head1,head2\na,b\nc,d', ',', true));
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -1444,7 +1456,11 @@ read -p "
 
   const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => 
      data
-      .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0));
+      .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
+  
+  console.log(csvToArray('a,b\nc,d')); 
+  console.log(csvToArray('a;b\nc;d', ';')); 
+  console.log(csvToArray('head1,head2\na,b\nc,d', ',', true));
   
 Enter the next line: " response
 answer=".split('\n')"
@@ -1453,7 +1469,11 @@ additional_feedback="
   const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => 
      data
       .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
-      .split('\n'));
+      .split('\n')
+
+  console.log(csvToArray('a,b\nc,d')); 
+  console.log(csvToArray('a;b\nc;d', ';')); 
+  console.log(csvToArray('head1,head2\na,b\nc,d', ',', true));
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -1466,11 +1486,15 @@ read -p "
 
   const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => 
      data
-      .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0));
-      .split('\n'));
+      .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
+      .split('\n')
+
+  console.log(csvToArray('a,b\nc,d')); 
+  console.log(csvToArray('a;b\nc;d', ';')); 
+  console.log(csvToArray('head1,head2\na,b\nc,d', ',', true));
   
 Enter the next line: " response
-answer=".map(v => v.split(delimiter)"
+answer=".map(v => v.split(delimiter));"
 additional_feedback="
 
   const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => 
@@ -1492,6 +1516,22 @@ read -p "
 
   Write a  program to convert an array of objects to a comma-separated values (CSV) string. 
 
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
+
+
 Enter the next line: " response
 answer="interface Data { x: number; y: number; z: number; }"
 additional_feedback="
@@ -1502,8 +1542,26 @@ additional_feedback="
     z: number;
   }
 
+
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
+
+
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
 
 next_line
 
@@ -1518,29 +1576,20 @@ read -p "
   }
 
 
-Enter the next line: " response
-answer=""
-additional_feedback="
-  interface Data {
-    x: number;
-    y: number;
-    z: number;
-  }
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-
-  Write a  program to convert an array of objects to a comma-separated values (CSV) string. 
-
-  interface Data {
-    x: number;
-    y: number;
-    z: number;
-  }
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
 
 
 Enter the next line: " response
@@ -1562,6 +1611,22 @@ read -p "
 
   type DataKey = keyof Data;
 
+
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
+
 Enter the next line: " response
 answer="const jsonToCsv = (arr: Data[], delimiter = ','): string => { };"
 additional_feedback="
@@ -1576,6 +1641,23 @@ additional_feedback="
   const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
 
   };
+
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
+
+
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
@@ -1597,6 +1679,22 @@ read -p "
 
   };
 
+
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
+
 Enter the next line: " response
 answer="const headings = Object.keys(arr[0]) as DataKey[];"
 additional_feedback="
@@ -1612,6 +1710,22 @@ additional_feedback="
     const headings = Object.keys(arr[0]) as DataKey[];
 
   };
+
+
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -1652,6 +1766,22 @@ additional_feedback="
     return [].join('');
   };
 
+
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
+
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
@@ -1675,6 +1805,21 @@ read -p "
     return [].join('');
   };
 
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
+
 Enter the next line: " response
 answer="headings.join(delimiter)"
 additional_feedback="
@@ -1693,6 +1838,22 @@ additional_feedback="
       headings.join(delimiter)
     ].join('');
   };
+
+
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -1718,6 +1879,22 @@ read -p "
       headings.join(delimiter)
     ].join('');
   };
+
+
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
 
 Enter the next line: " response
 answer="...arr.map((obj) => )"
@@ -1741,6 +1918,22 @@ additional_feedback="
     ].join('');
   };
 
+
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
+
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
@@ -1768,6 +1961,21 @@ read -p "
       )
     ].join('');
   };
+
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
 
 Enter the next line: " response
 answer="headings.reduce((acc, key: DataKey) => )"
@@ -1792,6 +2000,23 @@ additional_feedback="
       )
     ].join('');
   };
+
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
+
+
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
@@ -1822,8 +2047,25 @@ read -p "
     ].join('');
   };
 
+
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
+
+
 Enter the next line: " response
-answer="\`\${acc}\${!acc.length ? '' : delimiter}\${!obj[key] ? '' : obj[key]}\`,''"
+answer="\`\${acc}\${!acc.length ? '' : delimiter}\${!obj[key] ? '' : obj[key]}\`, ''"
 additional_feedback="
   interface Data {
     x: number;
@@ -3476,6 +3718,37 @@ read -p "
 
   type Procedure = (...args: any[]) => number;
 
+  const minMax = over(Math.min, Math.max);
+  console.log(minMax(1, 2, 3, 4, 5));
+  console.log(minMax(1, 2, 5, 4, 3));
+  console.log(minMax(1, 2, 5, -4, 3));
+
+Enter the next line: " response
+answer="function over<F extends Procedure>(...fns: F[]) { }"
+additional_feedback="
+
+  type Procedure = (...args: any[]) => number;
+
+  function over<F extends Procedure>(...fns: F[]) { 
+
+  }
+
+  const minMax = over(Math.min, Math.max);
+  console.log(minMax(1, 2, 3, 4, 5));
+  console.log(minMax(1, 2, 5, 4, 3));
+  console.log(minMax(1, 2, 5, -4, 3));
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a curry function where the first function's parameters are functions in the form of a rest operator, then iterates, invoking each function with arguments passed from the inner function and returns the results. 
+
+
+  type Procedure = (...args: any[]) => number;
+
   function over<F extends Procedure>(...fns: F[]) { 
 
   }
@@ -3486,15 +3759,108 @@ read -p "
   console.log(minMax(1, 2, 5, -4, 3));
 
 Enter the next line: " response
-answer="function over<F extends Procedure>(...fns: F[]) { }"
-additional_feedback=""
+answer="return function (...args: Parameters<F>) { }"
+additional_feedback="
+  type Procedure = (...args: any[]) => number;
+
+  function over<F extends Procedure>(...fns: F[]) { 
+    return function (...args: Parameters<F>) { 
+
+    }
+  }
+
+  const minMax = over(Math.min, Math.max);
+  console.log(minMax(1, 2, 3, 4, 5));
+  console.log(minMax(1, 2, 5, 4, 3));
+  console.log(minMax(1, 2, 5, -4, 3));
+
+"
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-read -p " " response
-answer="return function (...args: Parameters<F>) {"
-additional_feedback=""
+read -p "
+
+  Write a curry function where the first function's parameters are functions in the form of a rest operator, then iterates, invoking each function with arguments passed from the inner function and returns the results. 
+
+
+  type Procedure = (...args: any[]) => number;
+
+  function over<F extends Procedure>(...fns: F[]) { 
+    return function (...args: Parameters<F>) { 
+
+    }
+  }
+
+  const minMax = over(Math.min, Math.max);
+  console.log(minMax(1, 2, 3, 4, 5));
+  console.log(minMax(1, 2, 5, 4, 3));
+  console.log(minMax(1, 2, 5, -4, 3));
+
+Enter the next line: " response
+answer="return fns.map(function (fn) { });"
+additional_feedback="
+
+  type Procedure = (...args: any[]) => number;
+
+  function over<F extends Procedure>(...fns: F[]) { 
+    return function (...args: Parameters<F>) { 
+      return fns.map(function (fn) { 
+
+      });
+    }
+  }
+
+  const minMax = over(Math.min, Math.max);
+  console.log(minMax(1, 2, 3, 4, 5));
+  console.log(minMax(1, 2, 5, 4, 3));
+  console.log(minMax(1, 2, 5, -4, 3));
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a curry function where the first function's parameters are functions in the form of a rest operator, then iterates, invoking each function with arguments passed from the inner function and returns the results. 
+
+
+  type Procedure = (...args: any[]) => number;
+
+  function over<F extends Procedure>(...fns: F[]) { 
+    return function (...args: Parameters<F>) { 
+      return fns.map(function (fn) { 
+
+      });
+    }
+  }
+
+  const minMax = over(Math.min, Math.max);
+  console.log(minMax(1, 2, 3, 4, 5));
+  console.log(minMax(1, 2, 5, 4, 3));
+  console.log(minMax(1, 2, 5, -4, 3));
+
+Enter the next line: " response
+answer="return fn.apply(null, args);"
+additional_feedback="
+
+  type Procedure = (...args: any[]) => number;
+
+  function over<F extends Procedure>(...fns: F[]) { 
+    return function (...args: Parameters<F>) { 
+      return fns.map(function (fn) { 
+        return fn.apply(null, args);
+      });
+    }
+  }
+
+  const minMax = over(Math.min, Math.max);
+  console.log(minMax(1, 2, 3, 4, 5));
+  console.log(minMax(1, 2, 5, 4, 3));
+  console.log(minMax(1, 2, 5, -4, 3));
+
+"
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
