@@ -2838,7 +2838,7 @@ read -p "
   console.log(result);
 
 Enter the next line: " response
-answer="return Object.keys(details).reduce(function (acc, key: DetailKeys) { }, , {} as RenamedAttributes);"
+answer="return Object.keys(details).reduce(function (acc, key: DetailKeys) { }, {} as RenamedAttributes);"
 additional_feedback="
   interface CustomerDetails { 
     name: string; 
@@ -2866,7 +2866,7 @@ additional_feedback="
   function renameKeys(keyMap: Partial<CustomerDetails>, details: CustomerDetails) { 
     return Object.keys(details).reduce(function (acc, key: DetailKeys) { 
       
-    }, , {} as RenamedAttributes);
+    }, {} as RenamedAttributes);
   }
 
 
@@ -2917,7 +2917,7 @@ read -p "
   function renameKeys(keyMap: Partial<CustomerDetails>, details: CustomerDetails) { 
     return Object.keys(details).reduce(function (acc, key: DetailKeys) { 
       
-    }, , {} as RenamedAttributes);
+    }, {} as RenamedAttributes);
   }
 
 
@@ -2966,7 +2966,7 @@ additional_feedback="
         ...acc, 
         [keyMap[key] ?? key]: details[key] 
       }
-    }, , {} as RenamedAttributes);
+    }, {} as RenamedAttributes);
   }
 
 
@@ -3342,7 +3342,7 @@ additional_feedback="
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 
-next_line
+next_question
 
 read -p "
   Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
@@ -3623,7 +3623,36 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-read -p " " response
+
+read -p "
+  Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
+  
+  type Comp = { 
+    (x: number, y: number): boolean; 
+  };
+
+  function findCommonElements(a: number[], b: number[], comp: Comp) { 
+    return Array.from(
+      new Set(
+        ([] as number[]).concat(
+          a, 
+          b.filter(function (x) { 
+
+          })
+        )
+      )
+    )
+  }
+
+  console.log(
+    findCommonElements(
+      [1, 1.2, 1.5, 3, 0],
+      [1.9, 3, 0, 3.9],
+      (a, b) => Math.round(a) === Math.round(b)
+    )
+  );
+
+Enter the next line: " response
 answer="return ( a.findIndex(function (y) { return comp(x, y); }) === -1 )"
 additional_feedback="
 
@@ -3659,7 +3688,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+next_question
 
 read -p "
 

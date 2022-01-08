@@ -781,25 +781,3 @@ next_question
 read -p "What is the accessibility tree? " response
 answer="The accessibility object model (AOM) is like a semantic version of the DOM. The browser updates the accessibility tree when the DOM is updated."
 evaluate_answer "$response" "$answer"
-
-# next_question
-
-# read -p "" response
-# answer=""
-# evaluate_answer "$response" "$answer"
-
-########################################
-#         Calculate your score         #
-########################################
-
-((questions = questions + 1))
-
-if [[ correct -eq 0 ]]; then
-    echo "
-    You got nothing correct. Stop and go study.
-    
-    "
-else
-    score=$(((questions / correct) * 100))
-    echo "    You scored $score% on REST knowledge."
-fi
