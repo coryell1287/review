@@ -1594,7 +1594,31 @@ read -p "
 
 Enter the next line: " response
 answer="type DataKey = keyof Data;"
-additional_feedback=""
+additional_feedback="
+
+  interface Data {
+    x: number;
+    y: number;
+    z: number;
+  }
+
+  type DataKey = keyof Data;
+
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
+"
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
@@ -5283,7 +5307,16 @@ read -p "Reverse a string using a for-loop.
 
 Enter the next line: " response
 answer="reversed += str[i];"
-additional_feedback=""
+additional_feedback="
+
+   function reverse (str) { 
+    let reversed = '';
+    for (let i = str.length - 1; i >= 0; i--) {  
+      reversed += str[i];
+    }
+  }
+
+"
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
@@ -5552,15 +5585,13 @@ next_line
 
 read -p "Pick a random element from an array. " response
 answer="const randomValue = myArray[Math.floor(Math.random() * myArray.length)];"
-
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer"
 
 next_line
 
 read -p "Flip a coin. " response
 answer="const isHeads = Boolean(Math.round(Math.random()));"
-additional_feedback=""
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer"
 
 next_line
 
@@ -5584,7 +5615,7 @@ additional_feedback="
   // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
 
 "
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" ""
 
 next_line
 
@@ -5613,7 +5644,7 @@ additional_feedback="
   // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }  
 
 "
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" ""
 
 next_line
 
@@ -5646,7 +5677,7 @@ additional_feedback="
   // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }  
 
 "
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" ""
 
 next_line
 
@@ -5694,7 +5725,7 @@ additional_feedback="
   // }
 
 "
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" ""
 
 next_line
 
@@ -5749,7 +5780,7 @@ additional_feedback="
 
 
 "
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" ""
 
 next_line
 
@@ -5807,7 +5838,7 @@ additional_feedback="
   // }
 
 "
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" ""
 
 next_line
 
@@ -5869,7 +5900,7 @@ additional_feedback="
   // }
 
 "
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" ""
 
 next_line
 
@@ -5889,8 +5920,8 @@ read -p "Function composition enabling pipe.
 
 Enter the next line: " response
 answer="const pipe = (...functions) => input => functions.reduce((acc, fn) => fn(acc), input);"
-additional_feedback=""
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+evaluate_answer_written_with_code "$response" "$answer" ""
 
 next_line
 
@@ -6360,15 +6391,11 @@ next_line
 
 read -p "What is the difference between WeakMap and Map? " response
 answer="WeakMap is weakly set. If a key is set and no methods reference it, the key will be garbage collected. A Map will keep everything even when it is not in use. WeakMap also doesn't have any iterators."
-additional_feedback=""
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer"
 
 next_line
 
-read -p " " response
-answer=""
-additional_feedback=""
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
 # const result = Object.keys(keyMap).reduce<Record<string, ValueType>>(
 #   (acc, cur) => {
 #     const xmlProps = keyMap[key]
