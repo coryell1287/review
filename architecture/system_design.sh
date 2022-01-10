@@ -266,6 +266,106 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
+
+next_question
+
+read -p "What does memory bound mean? " response
+answer="Memory bound refers to a situation in which the time to complete a given computational problem is decided primarily by the amount of memory required to hold the working data."
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What techique does memory bound operations use? " response
+answer="Memory functions use a dynamic programming technique called memoization in order to relieve the inefficiency of recursion that might occur."
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is the basis behind memory bound's technique? " response
+answer="It is based on the simple idea of calculating and storing solutions to subproblems so that the solutions can be reused later without recalculating the subproblems again."
+additional_feedback="
+
+    The best known example that takes advantage of memoization is an algorithm 
+    that computes the Fibonacci numbers. The following pseudocode uses recursion 
+    and memoization, and runs in linear CPU time:
+
+     Fibonacci (n)
+     {
+        for i = 0 to n-1
+            results[i] = -1  // -1 means undefined
+
+        return Fibonacci_Results (results, n);
+     }
+
+     Fibonacci_Results (results, n)
+     {
+        if (results[n] != -1)  // If it has been solved before,
+            return results[n]  // look it up.
+        if (n == 0)
+            val = 0
+        else if (n == 1)
+            val = 1
+        else
+            val = Fibonacci_Results(results, n-2 ) + Fibonacci_Results(results, n-1)
+        results[n] = val  // Save this result for re-use.
+
+        return val
+     }
+
+
+     Compare the above to an algorithm that uses only recursion, and runs in exponential 
+     CPU time:
+
+    Recursive_Fibonacci (n)
+    {
+        if (n == 0)
+            return 0
+        if (n == 1)
+            return 1
+
+        return Recursive_Fibonacci (n-1) + Recursive_Fibonacci (n-2)
+    }
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+
+next_question
+
+read -p "What does I/O bound mean? " response
+answer="I/O bound refers to a condition in which the time it takes to complete a computation is determined principally by the period spent waiting for input/output operations to be completed."
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is the Von Neumann Bottleneck problem? " response
+answer="Von Neumann Bottleneck predicts that it is easier to make the CPU perform calculations faster than it is to supply it with data at the necessary rate for this to be possible."
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Why is the I/O bound state undesirable? " response
+answer="The I/O bound state is considered undesirable because it means that the CPU must stall its operation while waiting for data to be loaded or unloaded from main memory or secondary storage."
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What does this statement mean?
+
+        As CPU gets faster, processes tend to not increase in speed 
+        in proportion to CPU speed because they get more I/O-bound.
+
+Enter your answer: " response
+answer="This means that I/O bound processes are slower than non-I/O bound processes, not faster. This is due to increases in the rate of data processing in the core, while the rate at which data is transferred from storage to the processor does not increase with it."
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What does CPU-bound mean? " response
+answer="CPU-bound when the time for it to complete a task is determined principally by the speed of the central processor."
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+
 echo "
    ########################################
       Capacity Estimation and Constraints

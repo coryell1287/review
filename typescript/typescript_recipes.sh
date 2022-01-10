@@ -934,7 +934,7 @@ additional_feedback="
        }
     }
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
@@ -3717,7 +3717,9 @@ next_line
 
 read -p "
 
-  Write a curry function where the first function's parameters are functions in the form of a rest operator, then iterates, invoking each function with arguments passed from the inner function and returns the results. 
+  Write a curry function where the first function's parameters are functions 
+  in the form of a rest operator, then iterates, invoking each function with 
+  arguments passed from the inner function and returns the results. 
 
   const minMax = over(Math.min, Math.max);
   console.log(minMax(1, 2, 3, 4, 5));
@@ -3742,7 +3744,9 @@ next_line
 
 read -p "
 
-  Write a curry function where the first function's parameters are functions in the form of a rest operator, then iterates, invoking each function with arguments passed from the inner function and returns the results. 
+  Write a curry function where the first function's parameters are functions 
+  in the form of a rest operator, then iterates, invoking each function with 
+  arguments passed from the inner function and returns the results. 
 
 
   type Procedure = (...args: any[]) => number;
@@ -3773,7 +3777,9 @@ next_line
 
 read -p "
 
-  Write a curry function where the first function's parameters are functions in the form of a rest operator, then iterates, invoking each function with arguments passed from the inner function and returns the results. 
+  Write a curry function where the first function's parameters are functions 
+  in the form of a rest operator, then iterates, invoking each function with 
+  arguments passed from the inner function and returns the results. 
 
 
   type Procedure = (...args: any[]) => number;
@@ -3810,7 +3816,9 @@ next_line
 
 read -p "
 
-  Write a curry function where the first function's parameters are functions in the form of a rest operator, then iterates, invoking each function with arguments passed from the inner function and returns the results. 
+  Write a curry function where the first function's parameters are functions 
+  in the form of a rest operator, then iterates, invoking each function with 
+  arguments passed from the inner function and returns the results.  
 
 
   type Procedure = (...args: any[]) => number;
@@ -3852,7 +3860,9 @@ next_line
 
 read -p "
 
-  Write a curry function where the first function's parameters are functions in the form of a rest operator, then iterates, invoking each function with arguments passed from the inner function and returns the results. 
+  Write a curry function where the first function's parameters are functions 
+  in the form of a rest operator, then iterates, invoking each function with 
+  arguments passed from the inner function and returns the results.  
 
 
   type Procedure = (...args: any[]) => number;
@@ -3892,16 +3902,2473 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
+next_question
+
+read -p "
+
+  Remove a duplicate using Set and map.
+  
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+
+Enter the next line:" response
+answer="const uniqueAddresses = Array.from();"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+
+  const uniqueAddresses = Array.from();
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Remove a duplicate using Set and map.
+  
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueAddresses = Array.from();
+
+
+Enter the next line:" response
+answer="new Set()"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueAddresses = Array.from(
+    new Set()
+  );
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_question
+
+read -p "
+
+  Remove a duplicate using Set and map.
+  
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueAddresses = Array.from();
+
+  const uniqueAddresses = Array.from(
+    new Set()
+  );
+
+
+Enter the next line:" response
+answer="arr.map(function (a) { return a.id; }),"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueAddresses = Array.from();
+
+  const uniqueAddresses = Array.from(
+    new Set(
+      arr.map(function (a) { 
+        return a.id; 
+      }),
+    )
+  );
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Remove a duplicate using Set and map.
+  
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueAddresses = Array.from();
+
+  const uniqueAddresses = Array.from(
+    new Set(
+      arr.map(function (a) { 
+        return a.id; 
+      }),
+    )
+  );
+
+
+Enter the next line:" response
+answer=".map(function (id) { });"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueAddresses = Array.from();
+
+  const uniqueAddresses = Array.from(
+    new Set(
+      arr.map(function (a) { 
+        return a.id; 
+      }),
+    ).map(function (id) { 
+
+    });
+  ); 
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Remove a duplicate using Set and map.
+  
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueAddresses = Array.from();
+
+  const uniqueAddresses = Array.from(
+    new Set(
+      arr.map(function (a) { 
+        return a.id; 
+      }),
+    ).map(function (id) { 
+
+    });
+  );
+
+
+Enter the next line:" response
+answer="return arr.find(function (a) { });"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueAddresses = Array.from();
+
+  const uniqueAddresses = Array.from(
+    new Set(
+      arr.map(function (a) { 
+        return a.id; 
+      }),
+    ).map(function (id) { 
+      return arr.find(function (a) { 
+
+      });
+    });
+  ); 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Remove a duplicate using Set and map.
+  
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueAddresses = Array.from();
+
+  const uniqueAddresses = Array.from(
+    new Set(
+      arr.map(function (a) { 
+        return a.id; 
+      }),
+    ).map(function (id) { 
+
+    });
+  );
+
+
+Enter the next line:" response
+answer="return a.id === id;"
+additional_feedback="
+
+    const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueAddresses = Array.from();
+
+  const uniqueAddresses = Array.from(
+    new Set(
+      arr.map(function (a) { 
+        return a.id; 
+      }),
+    ).map(function (id) { 
+      return a.id === id;
+    });
+  );
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Remove duplicate using find and reduce.
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ]; 
+
+Enter the next line:" response
+
+answer="const filteredArr = arr.reduce(function (acc, current) { }, []);"
+additional_feedback="
+
+  const filteredArr = arr.reduce(function (acc, current) { 
+
+  }, []);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Remove duplicate using find and reduce.
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ]; 
+
+  const filteredArr = arr.reduce(function (acc, current) { 
+
+  }, []);
+
+Enter the next line:" response
+answer="const x = acc.find(function (item) { });"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ]; 
+
+  const filteredArr = arr.reduce(function (acc, current) { 
+    const x = acc.find(function (item) { 
+
+    });
+
+  }, []);
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Remove duplicate using find and reduce.
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ]; 
+
+  const filteredArr = arr.reduce(function (acc, current) { 
+    const x = acc.find(function (item) { 
+
+    });
+
+  }, []);
+
+Enter the next line:" response
+answer="return item.id === current.id;"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ]; 
+
+  const filteredArr = arr.reduce(function (acc, current) { 
+    const x = acc.find(function (item) { 
+      return item.id === current.id;
+    });
+
+  }, []);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Remove duplicate using find and reduce.
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ]; 
+
+  const filteredArr = arr.reduce(function (acc, current) { 
+    const x = acc.find(function (item) { 
+      return item.id === current.id;
+    });
+
+  }, []);
+
+Enter the next line:" response
+answer="if (!x) { return acc.concat([current]); }"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ]; 
+
+  const filteredArr = arr.reduce(function (acc, current) { 
+    const x = acc.find(function (item) { 
+      return item.id === current.id;
+    });
+
+    if (!x) { 
+      return acc.concat([current]); 
+    }
+
+  }, []);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Remove duplicate using find and reduce.
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ]; 
+
+  const filteredArr = arr.reduce(function (acc, current) { 
+    const x = acc.find(function (item) { 
+      return item.id === current.id;
+    });
+
+    if (!x) { 
+      return acc.concat([current]); 
+    }
+
+  }, []);
+
+Enter the next line:" response
+answer="else { return acc; }"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ]; 
+
+  const filteredArr = arr.reduce(function (acc, current) { 
+    const x = acc.find(function (item) { 
+      return item.id === current.id;
+    });
+
+    if (!x) { 
+      return acc.concat([current]); 
+    } else { 
+      return acc; 
+    }
+
+  }, []);
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Remove duplicates using Set and filter. 
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+  
+Enter the next line: " response
+answer="const seen = new Set();"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const seen = new Set();
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Remove duplicates using Set and filter. 
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const seen = new Set();
+  
+Enter the next line: " response
+answer="const filteredArr = arr.filter(function (el) { });"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const seen = new Set();
+  const filteredArr = arr.filter(function (el) { 
+
+  });
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Remove duplicates using Set and filter. 
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const seen = new Set();
+  const filteredArr = arr.filter(function (el) { 
+
+  });
+  
+Enter the next line: " response
+answer="const duplicate = seen.has(el.id);"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const seen = new Set();
+  const filteredArr = arr.filter(function (el) { 
+    const duplicate = seen.has(el.id);
+  });
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Remove duplicates using Set and filter. 
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const seen = new Set();
+  const filteredArr = arr.filter(function (el) { 
+    const duplicate = seen.has(el.id);
+  });
+  
+Enter the next line: " response
+answer="seen.add(el.id);"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const seen = new Set();
+  const filteredArr = arr.filter(function (el) { 
+    const duplicate = seen.has(el.id);
+    seen.add(el.id);
+  });
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Remove duplicates using Set and filter. 
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const seen = new Set();
+  const filteredArr = arr.filter(function (el) { 
+    const duplicate = seen.has(el.id);
+    seen.add(el.id);
+  });
+  
+Enter the next line: " response
+answer="return !duplicate;"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const seen = new Set();
+  const filteredArr = arr.filter(function (el) { 
+    const duplicate = seen.has(el.id);
+    seen.add(el.id);
+    return !duplicate;
+  });  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Remove duplicates using Map and map. 
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+Enter the next line: " response
+answer="const uniqueObjects = [].concat();"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueObjects = [].concat();
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+
+read -p "
+
+  Remove duplicates using Map and map.
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueObjects = [].concat();
+
+
+Enter the next line: " response
+answer="new Map().values(),"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueObjects = [].concat(
+    new Map().values(),
+  );
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Remove duplicates using Map and map.
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueObjects = [].concat(
+    new Map().values(),
+  );
+
+
+Enter the next line: " response
+answer="arr.map(function (item) { return [item.id, item]; }),"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueObjects = [].concat(
+    new Map().values(
+      arr.map(function (item) { 
+        return [item.id, item]; 
+      }),
+    ),
+  );
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Remove duplicates using Map and map.
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueObjects = [].concat(
+    new Map().values(
+      arr.map(function (item) { 
+        return [item.id, item]; 
+      }),
+    ),
+  );
+
+
+Enter the next line: " response
+answer="const iterator = uniqueObjects[0][Symbol.iterator]();"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueObjects = [].concat(
+    new Map().values(
+      arr.map(function (item) { 
+        return [item.id, item]; 
+      }),
+    ),
+  );
+
+  const iterator = uniqueObjects[0][Symbol.iterator]();
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Remove duplicates using Map and map.
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueObjects = [].concat(
+    new Map().values(
+      arr.map(function (item) { 
+        return [item.id, item]; 
+      }),
+    ),
+  );
+
+  const iterator = uniqueObjects[0][Symbol.iterator]();
+
+
+Enter the next line: " response
+answer="for (let i of iterator) { console.log(i, 'item'); }"
+additional_feedback="
+
+  const arr = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 2, name: 'test3' },
+    { id: 3, name: 'test4' },
+    { id: 4, name: 'test5' },
+    { id: 5, name: 'test6' },
+    { id: 5, name: 'test7' },
+    { id: 6, name: 'test8' }
+  ];
+
+  const uniqueObjects = [].concat(
+    new Map().values(
+      arr.map(function (item) { 
+        return [item.id, item]; 
+      }),
+    ),
+  ); 
+
+  const iterator = uniqueObjects[0][Symbol.iterator]();
+  for (let i of iterator) { 
+    console.log(i, 'item');
+  } 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Remove a duplicates by adding values to a map 
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  
+Enter the next line: " response
+answer="function hasDuplicates(array) { }"
+additional_feedback="
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  function hasDuplicates(array) { 
+
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Remove a duplicates by adding values to a map 
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  function hasDuplicates(array) { 
+
+  }
+  
+Enter the next line: " response
+answer="const words = new Map();"
+additional_feedback="
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  function hasDuplicates(array) { 
+    const words = new Map();
+  }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Remove a duplicates by adding values to a map 
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  function hasDuplicates(array) { 
+
+  }
+  
+Enter the next line: " response
+answer="for (let index = 0; index < array.length; index++) { }"
+additional_feedback="
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  function hasDuplicates(array) { 
+    for (let index = 0; index < array.length; index++) { 
+
+    }
+  }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Remove a duplicates by adding values to a map 
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  function hasDuplicates(array) { 
+    for (let index = 0; index < array.length; index++) { 
+
+    }
+  }
+  
+Enter the next line: " response
+answer="const word = array[index];"
+additional_feedback="
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  function hasDuplicates(array) { 
+    for (let index = 0; index < array.length; index++) { 
+      const word = array[index];
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Remove a duplicates by adding values to a map 
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  function hasDuplicates(array) { 
+    for (let index = 0; index < array.length; index++) { 
+      const word = array[index];
+    }
+  }
+  
+Enter the next line: " response
+answer="if (words.has(word)) { continue; }"
+additional_feedback="
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  function hasDuplicates(array) { 
+    for (let index = 0; index < array.length; index++) { 
+      const word = array[index];
+      if (words.has(word)) { 
+        continue;
+      }
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Remove a duplicates by adding values to a map 
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  function hasDuplicates(array) { 
+    for (let index = 0; index < array.length; index++) { 
+      const word = array[index];
+      if (words.has(word)) { 
+        continue;
+      }
+    }
+  }
+  
+Enter the next line: " response
+answer="words.set(word, true);"
+additional_feedback="
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  function hasDuplicates(array) { 
+    for (let index = 0; index < array.length; index++) { 
+      const word = array[index];
+      if (words.has(word)) { 
+        continue;
+      }
+      words.set(word, true);
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Remove a duplicates by adding values to a map 
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  function hasDuplicates(array) { 
+    for (let index = 0; index < array.length; index++) { 
+      const word = array[index];
+      if (words.has(word)) { 
+        continue;
+      }
+      words.set(word, true);
+    }
+  }
+  
+Enter the next line: " response
+answer="return words;"
+additional_feedback="
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  function hasDuplicates(array) { 
+    for (let index = 0; index < array.length; index++) { 
+      const word = array[index];
+      if (words.has(word)) { 
+        continue;
+      }
+      words.set(word, true);
+    }
+    return words;
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p " " response
+answer="console.log(Object.keys(Object.fromEntries(hasDuplicates(array))));"
+additional_feedback="
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  function hasDuplicates(array) { 
+    for (let index = 0; index < array.length; index++) { 
+      const word = array[index];
+      if (words.has(word)) { 
+        continue;
+      }
+      words.set(word, true);
+    }
+    return words;
+  }
+
+  console.log(Object.keys(Object.fromEntries(hasDuplicates(array))));
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Remove duplicate using reduce. 
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+Enter the next line: " response
+answer="const removeDuplicate = array.reduce(function (acc, cur) { }, []);"
+additional_feedback="
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+  const removeDuplicate = array.reduce(function (acc, cur) { 
+    
+  }, []);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Remove duplicate using reduce. 
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+  const removeDuplicate = array.reduce(function (acc, cur) { 
+    
+  }, []);
+
+Enter the next line: " response
+answer="if (!acc.includes(cur)) { acc.push(cur); }"
+additional_feedback="
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+  const removeDuplicate = array.reduce(function (acc, cur) { 
+    if (!acc.includes(cur)) { 
+      acc.push(cur);
+    }
+  }, []);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Remove duplicate using reduce. 
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+  const removeDuplicate = array.reduce(function (acc, cur) { 
+    if (!acc.includes(cur)) { 
+      acc.push(cur);
+    }
+  }, []);
+
+Enter the next line: " response
+answer="return accumulator;"
+additional_feedback="
+
+  const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+  const removeDuplicate = array.reduce(function (acc, cur) { 
+    if (!acc.includes(cur)) { 
+      acc.push(cur);
+    }
+    return accumulator;
+  }, []);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Reverse a string using a for-loop. 
+
+
+Enter the next line: " response
+answer="function reverse (str) { }"
+additional_feedback="
+
+  function reverse (str) { 
+
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Reverse a string using a for-loop. 
+
+  function reverse (str) { 
+    
+  }
+
+Enter the next line: " response
+answer="let reversed = '';"
+additional_feedback="
+
+  function reverse (str) { 
+    let reversed = '';
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Reverse a string using a for-loop. 
+
+  function reverse (str) { 
+    let reversed = '';
+  }
+
+Enter the next line: " response
+answer="for (let i = str.length - 1; i >= 0; i--) {  }"
+additional_feedback="reversed += str[i];"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Reverse a string using a for-loop. 
+
+  function reverse (str) { 
+    let reversed = '';
+    for (let i = str.length - 1; i >= 0; i--) {  
+
+    }
+  }
+
+Enter the next line: " response
+answer="reversed += str[i];"
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Reverse a string using a for-loop. 
+
+  function reverse (str) { 
+    let reversed = '';
+    for (let i = str.length - 1; i >= 0; i--) {  
+      reversed += str[i];
+    }
+  }
+
+Enter the next line: " response
+answer="return reversed;"
+additional_feedback="
+
+  function reverse (str) { 
+    let reversed = '';
+    for (let i = str.length - 1; i >= 0; i--) {  
+      reversed += str[i];
+    }
+    return reversed;
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Reverse a string using a for-loop. 
+
+Enter the next line: " response
+answer="function reverse(str) { }"
+additional_feedback="
+
+  function reverse(str) { 
+
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Reverse a string using for...of.
+
+  function reverse(str) { 
+
+  }
+
+Enter the next line: " response
+answer="let reversed = '';"
+additional_feedback="
+
+  function reverse(str) { 
+    let reversed = '';
+  }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Reverse a string using for...of.
+
+  function reverse(str) { 
+    let reversed = '';
+  }
+
+Enter the next line: " response
+answer="for(let char of str) { }"
+additional_feedback="
+
+  function reverse(str) { 
+    let reversed = '';
+    for(let char of str) { 
+
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Reverse a string using for...of.
+
+  function reverse(str) { 
+    let reversed = '';
+    for(let char of str) { 
+
+    }
+  }
+
+Enter the next line: " response
+answer="reversed = char + reversed;"
+additional_feedback="
+
+  function reverse(str) { 
+    let reversed = '';
+    for(let char of str) { 
+      reversed = char + reversed;
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Reverse a string using for...of.
+
+  function reverse(str) { 
+    let reversed = '';
+    for(let char of str) { 
+      reversed = char + reversed;
+    }
+  }
+
+Enter the next line: " response
+answer="return reversed;"
+additional_feedback="
+
+  function reverse(str) { 
+    let reversed = '';
+    for(let char of str) { 
+      reversed = char + reversed;
+    }
+    return reversed;
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Reverse a string using .split('') .reverse() and .join('') " response
+answer="return str.split('').reverse().join('');"
+additional_feedback="
+
+  function reverse(str) {
+    return str.split('').reverse().join('');
+  }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Reverse a string using .split('') .join() " response
+answer="return [...str].reverse().join('');"
+additional_feedback="
+
+  function reverse(str) {
+    return [...str].reverse().join('');
+  }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Reverse a string using .split('') .reduce() " response
+answer="return str.split('').reduce((rev, char) => char + rev, '');"
+additional_feedback="
+
+  function reverse(str) {
+    return str.split('').reduce((rev, char) => char + rev, '');
+  }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Reverse a string using branching logic and substr. " response
+answer="return str.trim().length === 0 ? str : reverse(str.substr(1)) + str[0];"
+additional_feedback="
+
+  function reverse(str) {
+    return str.trim().length === 0 ? str : reverse(str.substr(1)) + str[0];
+  } 
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "FizzBuzz. 
+
+Enter the next line: " response
+answer="for (let i = 1; i <= 100; i++) { }"
+additional_feedback="
+
+  for (let i = 1; i <= 100; i++) { 
+
+  }
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "FizzBuzz.
+
+  for (let i = 1; i <= 100; i++) { 
+
+  }
+
+Enter the next line: " response
+answer="const f = i % 3 == 0;"
+additional_feedback="
+
+  for (let i = 1; i <= 100; i++) { 
+    const f = i % 3 == 0;
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "FizzBuzz.
+
+  for (let i = 1; i <= 100; i++) { 
+   const f = i % 3 == 0; 
+  }
+
+Enter the next line: " response
+answer="const b = i % 5 == 0;"
+additional_feedback="
+
+  for (let i = 1; i <= 100; i++) { 
+    const f = i % 3 == 0;
+    const b = i % 5 == 0; 
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "FizzBuzz.
+
+  for (let i = 1; i <= 100; i++) { 
+    const f = i % 3 == 0; 
+    const b = i % 5 == 0; 
+  }
+
+Enter the next line: " response
+answer="const b = i % 5 == 0;"
+answer="console.log(f ? (b ? 'FizzBuzz' : 'Fizz') : b ? 'Buzz' : i);"
+additional_feedback="
+
+  for (let i = 1; i <= 100; i++) { 
+    const f = i % 3 == 0; 
+    const b = i % 5 == 0;
+    console.log(f ? (b ? 'FizzBuzz' : 'Fizz') : b ? 'Buzz' : i); 
+  }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Pick a random element from an array. " response
+answer="const randomValue = myArray[Math.floor(Math.random() * myArray.length)];"
+
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Flip a coin. " response
+answer="const isHeads = Boolean(Math.round(Math.random()));"
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Count the instance of an an item in array and create an array 
+  of the number of occurrences. 
+
+
+  // countedNames is:
+  // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+
+Enter the next line: " response
+answer="const countedNames = names.reduce(function (allNames, name) { }, {});"
+additional_feedback="
+
+  const countedNames = names.reduce(function (allNames, name) { 
+    
+  }, {});
+  
+  // countedNames is:
+  // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Count the instance of an an item in array and create an array 
+  of the number of occurrences. 
+
+  const countedNames = names.reduce(function (allNames, name) { 
+
+  }, {});
+
+  // countedNames is:
+  // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+
+Enter the next line: " response
+answer="if (name in allNames) { allNames[name]++ }"
+additional_feedback="
+
+  const countedNames = names.reduce(function (allNames, name) { 
+    if (name in allNames) { 
+      allNames[name]++ 
+    }
+  }, {});
+
+  // countedNames is:
+  // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Count the instance of an an item in array and create an array 
+  of the number of occurrences. 
+
+  const countedNames = names.reduce(function (allNames, name) { 
+    if (name in allNames) { 
+      allNames[name]++ 
+    }
+  }, {});
+
+  // countedNames is:
+  // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+
+Enter the next line: " response
+answer="else { allNames[name] = 1 }"
+additional_feedback="
+
+  const countedNames = names.reduce(function (allNames, name) { 
+    if (name in allNames) { 
+      allNames[name]++ 
+    } else { 
+      allNames[name] = 1 
+    }
+  }, {});
+
+  // countedNames is:
+  // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Group objects by property. 
+
+  const people = [
+    { name: 'Alice', age: 21 },
+    { name: 'Max', age: 20 },
+    { name: 'Jane', age: 20 }
+  ];
+
+  const groupedPeople = groupBy(people, 'age');
+  // groupedPeople is:
+  // { 
+  //   20: [
+  //     { name: 'Max', age: 20 }, 
+  //     { name: 'Jane', age: 20 }
+  //   ], 
+  //   21: [{ name: 'Alice', age: 21 }] 
+  // }
+
+Enter the next line: " response
+answer="function groupBy(objectArray, property) { }"
+additional_feedback="
+
+  const people = [
+    { name: 'Alice', age: 21 },
+    { name: 'Max', age: 20 },
+    { name: 'Jane', age: 20 }
+  ];
+
+  function groupBy(objectArray, property) { 
+    
+  }
+
+  const groupedPeople = groupBy(people, 'age');
+  // groupedPeople is:
+  // { 
+  //   20: [
+  //     { name: 'Max', age: 20 }, 
+  //     { name: 'Jane', age: 20 }
+  //   ], 
+  //   21: [{ name: 'Alice', age: 21 }] 
+  // }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Group objects by property. 
+
+  const people = [
+    { name: 'Alice', age: 21 },
+    { name: 'Max', age: 20 },
+    { name: 'Jane', age: 20 }
+  ];
+
+  function groupBy(objectArray, property) { 
+    
+  }
+
+  const groupedPeople = groupBy(people, 'age');
+  // groupedPeople is:
+  // { 
+  //   20: [
+  //     { name: 'Max', age: 20 }, 
+  //     { name: 'Jane', age: 20 }
+  //   ], 
+  //   21: [{ name: 'Alice', age: 21 }] 
+  // }
+
+Enter the next line: " response
+answer="return objectArray.reduce(function (acc, obj) { }, {});"
+additional_feedback="
+
+  const people = [
+    { name: 'Alice', age: 21 },
+    { name: 'Max', age: 20 },
+    { name: 'Jane', age: 20 }
+  ];
+
+  function groupBy(objectArray, property) { 
+    return objectArray.reduce(function (acc, obj) { 
+
+    }, {});
+  }
+
+  const groupedPeople = groupBy(people, 'age');
+  // groupedPeople is:
+  // { 
+  //   20: [
+  //     { name: 'Max', age: 20 }, 
+  //     { name: 'Jane', age: 20 }
+  //   ], 
+  //   21: [{ name: 'Alice', age: 21 }] 
+  // }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Group objects by property. 
+
+  const people = [
+    { name: 'Alice', age: 21 },
+    { name: 'Max', age: 20 },
+    { name: 'Jane', age: 20 }
+  ];
+
+  function groupBy(objectArray, property) { 
+    return objectArray.reduce(function (acc, obj) { 
+
+    }, {});
+  }
+
+  const groupedPeople = groupBy(people, 'age');
+  // groupedPeople is:
+  // { 
+  //   20: [
+  //     { name: 'Max', age: 20 }, 
+  //     { name: 'Jane', age: 20 }
+  //   ], 
+  //   21: [{ name: 'Alice', age: 21 }] 
+  // }
+
+Enter the next line: " response
+answer="if (!acc[key]) { acc[key] = []; }"
+additional_feedback="
+
+  const people = [
+    { name: 'Alice', age: 21 },
+    { name: 'Max', age: 20 },
+    { name: 'Jane', age: 20 }
+  ];
+
+  function groupBy(objectArray, property) { 
+    return objectArray.reduce(function (acc, obj) { 
+      if (!acc[key]) { 
+        acc[key] = []; 
+      }
+    }, {});
+  }
+
+  const groupedPeople = groupBy(people, 'age');
+  // groupedPeople is:
+  // { 
+  //   20: [
+  //     { name: 'Max', age: 20 }, 
+  //     { name: 'Jane', age: 20 }
+  //   ], 
+  //   21: [{ name: 'Alice', age: 21 }] 
+  // }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Group objects by property. 
+
+  const people = [
+    { name: 'Alice', age: 21 },
+    { name: 'Max', age: 20 },
+    { name: 'Jane', age: 20 }
+  ];
+
+  function groupBy(objectArray, property) { 
+    return objectArray.reduce(function (acc, obj) { 
+      if (!acc[key]) { 
+        acc[key] = []; 
+      }
+    }, {});
+  }
+
+  const groupedPeople = groupBy(people, 'age');
+  // groupedPeople is:
+  // { 
+  //   20: [
+  //     { name: 'Max', age: 20 }, 
+  //     { name: 'Jane', age: 20 }
+  //   ], 
+  //   21: [{ name: 'Alice', age: 21 }] 
+  // }
+
+Enter the next line: " response
+answer="acc[key].push(obj); return acc;"
+additional_feedback="
+
+  const people = [
+    { name: 'Alice', age: 21 },
+    { name: 'Max', age: 20 },
+    { name: 'Jane', age: 20 }
+  ];
+
+  function groupBy(objectArray, property) { 
+    return objectArray.reduce(function (acc, obj) { 
+      if (!acc[key]) { 
+        acc[key] = []; 
+      }
+      acc[key].push(obj); 
+      return acc;
+    }, {});
+  }
+
+  const groupedPeople = groupBy(people, 'age');
+  // groupedPeople is:
+  // { 
+  //   20: [
+  //     { name: 'Max', age: 20 }, 
+  //     { name: 'Jane', age: 20 }
+  //   ], 
+  //   21: [{ name: 'Alice', age: 21 }] 
+  // }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Function composition enabling pipe. 
+
+  // Composed functions for multiplication of specific values
+  const multiply6 = pipe(double, triple)
+  const multiply9 = pipe(triple, triple)
+  const multiply16 = pipe(quadruple, quadruple)
+  const multiply24 = pipe(double, triple, quadruple)
+
+  // Usage
+  multiply6(6)   // 36
+  multiply9(9)   // 81
+  multiply16(16) // 256
+  multiply24(10) // 240
+
+Enter the next line: " response
+answer="const pipe = (...functions) => input => functions.reduce((acc, fn) => fn(acc), input);"
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Recursively flatten an array using reduce.
+
+  flatDeep(arr, Infinity);
+  // [1, 2, 3, 4, 5, 6];
+
+Enter the next line: " response
+answer="function flatDeep(arr, d = 1) { }"
+additional_feedback="
+
+  function flatDeep(arr, d = 1) { 
+
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Recursively flatten an array using reduce.
+
+  function flatDeep(arr, d = 1) { 
+  
+  }
+
+  flatDeep(arr, Infinity);
+  // [1, 2, 3, 4, 5, 6];
+
+Enter the next line: " response
+answer="return d > 0 ? arr.reduce(function (acc, val) {  }, []) : arr.slice();"
+additional_feedback="
+
+  function flatDeep(arr, d = 1) { 
+    return d > 0 ? arr.reduce(function (acc, val) {  
+
+    }, []) : arr.slice();
+  }
+
+  flatDeep(arr, Infinity);
+  // [1, 2, 3, 4, 5, 6];
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Recursively flatten an array using reduce.
+
+  function flatDeep(arr, d = 1) { 
+    return d > 0 ? arr.reduce(function (acc, val) {  
+      
+    }, []) : arr.slice();
+  }
+
+  flatDeep(arr, Infinity);
+  // [1, 2, 3, 4, 5, 6];
+
+Enter the next line: " response
+answer="return acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) : val);"
+additional_feedback="
+
+  function flatDeep(arr, d = 1) { 
+    return d > 0 ? arr.reduce(function (acc, val) {  
+      return acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) : val);
+    }, []) : arr.slice();
+  }
+
+  flatDeep(arr, Infinity);
+  // [1, 2, 3, 4, 5, 6];
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Run promises in a sequence.
+
+  // promise function 1
+  function p1(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 5)
+    })
+  }
+
+  // promise function 2
+  function p2(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 2)
+    })
+  }
+
+
+Enter the next line: " response
+answer="function runPromiseInSequence(arr, input) { }"
+additional_feedback="
+
+  function runPromiseInSequence(arr, input) { 
+
+  }  
+
+  // promise function 1
+  function p1(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 5)
+    })
+  }
+
+  // promise function 2
+  function p2(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 2)
+    })
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Run promises in a sequence.
+
+  function runPromiseInSequence(arr, input) { 
+
+  } 
+
+  // promise function 1
+  function p1(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 5)
+    })
+  }
+
+  // promise function 2
+  function p2(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 2)
+    })
+  }
+
+
+Enter the next line: " response
+answer="return arr.reduce((promiseChain, currentFunction) => promiseChain.then(currentFunction), Promise.resolve(input));"
+additional_feedback="
+
+ function runPromiseInSequence(arr, input) { 
+   return arr.reduce((promiseChain, currentFunction) => promiseChain.then(currentFunction), 
+     Promise.resolve(input)
+   );
+  } 
+
+  // promise function 1
+  function p1(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 5)
+    })
+  }
+
+  // promise function 2
+  function p2(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 2)
+    })
+  } 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Use a WeakMap to track how often a method was called.
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2));
+
+Enter the next line: " response
+answer="const argCallsTracker = (() => { })();"
+additional_feedback="
+
+  const argCallsTracker = (() => { 
+
+  })();
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2));
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Use a WeakMap to track how often a method was called.
+
+  const argCallsTracker = (() => { 
+
+  })();
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2));
+
+Enter the next line: " response
+answer="const wm = new WeakMap();"
+additional_feedback="
+
+  const argCallsTracker = (() => { 
+   const wm = new WeakMap();
+
+  })();
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2));
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Use a WeakMap to track how often a method was called.
+
+  const argCallsTracker = (() => { 
+   const wm = new WeakMap();
+
+  })();
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2));
+
+Enter the next line: " response
+answer="return obj => { };"
+additional_feedback="
+
+  const argCallsTracker = (() => { 
+   const wm = new WeakMap();
+
+    return obj => { 
+
+    };
+  })();
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2)); 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Use a WeakMap to track how often a method was called.
+
+  const argCallsTracker = (() => { 
+   const wm = new WeakMap();
+
+    return obj => { 
+
+    };
+  })();
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2));
+
+Enter the next line: " response
+answer="wm.set(obj, (wm.get(obj) || 0) + 1);"
+additional_feedback="
+
+  const argCallsTracker = (() => { 
+   const wm = new WeakMap();
+
+    return obj => { 
+      wm.set(obj, (wm.get(obj) || 0) + 1);
+    };
+  })();
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2)); 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Use a WeakMap to track how often a method was called.
+
+  const argCallsTracker = (() => { 
+   const wm = new WeakMap();
+
+    return obj => { 
+      wm.set(obj, (wm.get(obj) || 0) + 1);
+    };
+  })();
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2));
+
+Enter the next line: " response
+answer="return wm.get(obj);"
+additional_feedback="
+
+  const argCallsTracker = (() => { 
+   const wm = new WeakMap();
+
+    return obj => { 
+      wm.set(obj, (wm.get(obj) || 0) + 1);
+      return wm.get(obj);
+    };
+  })();
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2));  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Use a WeakMap to track how often a method was called.
+
+  const argCallsTracker = (() => { 
+   const wm = new WeakMap();
+
+    return obj => { 
+      wm.set(obj, (wm.get(obj) || 0) + 1);
+      return wm.get(obj);
+    };
+  })();
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2));
+
+Enter the next line: " response
+answer="function foo(args) { }"
+additional_feedback="
+
+  const argCallsTracker = (() => { 
+   const wm = new WeakMap();
+
+    return obj => { 
+      wm.set(obj, (wm.get(obj) || 0) + 1);
+      return wm.get(obj);
+    };
+  })();
+
+  function foo(args) { 
+
+  }
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2));
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Use a WeakMap to track how often a method was called.
+
+  const argCallsTracker = (() => { 
+   const wm = new WeakMap();
+
+    return obj => { 
+      wm.set(obj, (wm.get(obj) || 0) + 1);
+      return wm.get(obj);
+    };
+  })();
+
+  function foo(args) { 
+
+  }
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2));
+
+Enter the next line: " response
+answer="const calls = argCallsTracker(args); console.log('foo called with ', JSON.stringify(args), calls, ' times');"
+additional_feedback="
+
+  const argCallsTracker = (() => { 
+   const wm = new WeakMap();
+
+    return obj => { 
+      wm.set(obj, (wm.get(obj) || 0) + 1);
+      return wm.get(obj);
+    };
+  })();
+
+  function foo(args) { 
+    const calls = argCallsTracker(args);
+    console.log('foo called with ', JSON.stringify(args), calls, ' times');
+  }
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2));
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What is the difference between WeakMap and Map? " response
+answer="WeakMap is weakly set. If a key is set and no methods reference it, the key will be garbage collected. A Map will keep everything even when it is not in use. WeakMap also doesn't have any iterators."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
 next_line
 
 read -p " " response
 answer=""
 additional_feedback=""
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-
-
-
 # const result = Object.keys(keyMap).reduce<Record<string, ValueType>>(
 #   (acc, cur) => {
 #     const xmlProps = keyMap[key]
