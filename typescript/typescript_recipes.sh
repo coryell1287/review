@@ -127,6 +127,8 @@ read -p "
 
         Sort the list in descending order.
 
+
+        
         let artists = [
             'John White Abbott',
             'Leonardo da Vinci',
