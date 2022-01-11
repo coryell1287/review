@@ -2323,20 +2323,4 @@ evaluate_answer "$response" "$answer" "$additional_feedback"
  
 next_question
 
-read -p "" response
-answer=""
-evaluate_answer "$response" "$answer"
-type Procedure = (...args: any[]) => number;
 
-function over<F extends Procedure>(...fns: F[]) {
-  return function (...args: Parameters<F>) {
-    return fns.map(function (fn) {
-      return fn.apply(null, args);
-    });
-  };
-}
-
-const minMax = over(Math.min, Math.max);
-console.log(minMax(1, 2, 3, 4, 5));
-console.log(minMax(1, 2, 5, 4, 3));
-console.log(minMax(1, 2, 5, -4, 3));

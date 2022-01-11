@@ -249,7 +249,18 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
-read -p " " response
+read -p "
+    What are the steps to solving the sliding window? 
+
+    * Remove the indices of all elements from the back of the deque,
+      which are smaller than or equal to the current element.
+    
+    * If the element no longer falls in the current window, remove 
+      the index of the element from the front.
+
+    * Push the current element index at the back of the window.  
+    
+Enter the next line: " response
 answer="The index of the current maximum element is at the front."
 additional_feedback="
 
@@ -284,10 +295,6 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
-read -p " " response
-answer=""
-additional_feedback=""
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 echo "
 
@@ -309,7 +316,7 @@ echo "
 next_question
 
 read -p "How do you begin to solve the above problem? " response
-answer="This problem follows the Cyclic Sort pattern. Because the input array contains unique numbers from the range 0 to n, use a similar strategy as the Cyclic Sort to place the numbers on their correct index."
+answer="This problem follows the Cyclic Sort pattern. Because the input array contains unique numbers from the range 0 to n, using the Cyclic Sort will place the numbers on their correct index."
 additional_feedback=""
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
@@ -330,22 +337,27 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_question
 
 read -p "What are the implications of this strategy being different from the Cyclic Sort? " response
-answer="In this problem, each number should be equal to its index, compared to index - 1 in the Cyclic Sort. Therefore => nums[i] == nums[nums[i]]"
-additional_feedback=""
+answer="In this problem, each number should be equal to its index, compared to index - 1 in the Cyclic Sort. Therefore, => nums[i] == nums[nums[i]]"
+additional_feedback="
+
+  * In this problem, each number should be equal to its index, compared to 
+      index - 1 in the Cyclic Sort. Therefore, => nums[i] == nums[nums[i]]
+
+"
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
 read -p "What are the implications of this strategy being different from the Cyclic Sort? " response
-answer="Because the array will have n numbers, which means array indices will range from 0 to n-1. Therefore, we will ignore the number n as we can't place it in the array, so => nums[i] < nums.length."
+answer="Because the array will have n numbers that means array indices will range from 0 to n-1. Therefore, ignore the number n as it can't be placed in the array, so => nums[i] < nums.length."
 additional_feedback="
 
     * In this problem, each number should be equal to its index, compared to 
-      index - 1 in the Cyclic Sort. Therefore => nums[i] == nums[nums[i]]
+      index - 1 in the Cyclic Sort. Therefore, => nums[i] == nums[nums[i]]
 
-    * Because the array will have n numbers, which means array indices will 
-      range from 0 to n-1. Therefore, we will ignore the number n as we can't 
-      place it in the array, so => nums[i] < nums.length.
+    * Because the array will have n numbers that means array indices will 
+      range from 0 to n-1. Therefore, ignore the number n as it can't be
+      placed in the array, so => nums[i] < nums.length.
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -357,11 +369,11 @@ answer="Because swapping the number at index i to place it at the correct index 
 additional_feedback="
 
     * In this problem, each number should be equal to its index, compared to 
-      index - 1 in the Cyclic Sort. Therefore => nums[i] == nums[nums[i]]
+      index - 1 in the Cyclic Sort. Therefore, => nums[i] == nums[nums[i]]
 
-    * Because the array will have n numbers, which means array indices will 
-      range from 0 to n-1. Therefore, we will ignore the number n as we can't 
-      place it in the array, so => nums[i] < nums.length.
+    * Because the array will have n numbers that means array indices will 
+      range from 0 to n-1. Therefore, ignore the number n as it can't be
+      placed in the array, so => nums[i] < nums.length.
 
     * Because swapping the number at index i to place it at the correct index 
       can still return the wrong number at index i, don't move to the next number 
@@ -378,19 +390,19 @@ read -p "
     Since the array has only n numbers out of the total n+1 numbers, find the 
     missing number. 
 
-    console.log(find_missing_number([4, 0, 3, 1]));
-    console.log(find_missing_number([8, 3, 5, 2, 4, 6, 0, 1]));
+    console.log(findMissingNumber([4, 0, 3, 1]));
+    console.log(findMissingNumber([8, 3, 5, 2, 4, 6, 0, 1]));
 
 Enter the next line: " response
-answer="function findMissingNumber(nums) { }"
+answer="function findMissingNumber (nums) { }"
 additional_feedback="
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
 
     }
 
-    console.log(find_missing_number([4, 0, 3, 1]));
-    console.log(find_missing_number([8, 3, 5, 2, 4, 6, 0, 1]));
+    console.log(findMissingNumber([4, 0, 3, 1]));
+    console.log(findMissingNumber([8, 3, 5, 2, 4, 6, 0, 1]));
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -403,7 +415,7 @@ read -p "
     Since the array has only n numbers out of the total n+1 numbers, find the 
     missing number. 
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
 
     }
 
@@ -411,15 +423,16 @@ read -p "
     console.log(findMissingNumber([8, 3, 5, 2, 4, 6, 0, 1]));
 
 Enter the next line: " response
-answer="let i = 0;"
+answer="let i = 0; let j = 0;"
 additional_feedback="
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
         let i = 0;
+        let j = 0;
     }
 
-    console.log(find_missing_number([4, 0, 3, 1]));
-    console.log(find_missing_number([8, 3, 5, 2, 4, 6, 0, 1]));
+    console.log(findMissingNumber([4, 0, 3, 1]));
+    console.log(findMissingNumber([8, 3, 5, 2, 4, 6, 0, 1]));
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -432,8 +445,9 @@ read -p "
     Since the array has only n numbers out of the total n+1 numbers, find the 
     missing number. 
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
         let i = 0;
+        let j = 0;
     }
 
     console.log(findMissingNumber([4, 0, 3, 1]));
@@ -443,8 +457,9 @@ Enter the next line: " response
 answer="const n = nums.length;"
 additional_feedback="
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
         let i = 0;
+        let j = 0;
         const n = nums.length;
     }
 
@@ -462,8 +477,9 @@ read -p "
     Since the array has only n numbers out of the total n+1 numbers, find the 
     missing number. 
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
         let i = 0;
+        let j = 0;
         const n = nums.length;
     }
 
@@ -474,8 +490,9 @@ Enter the next line: " response
 answer="while (i < n) { }"
 additional_feedback="
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
         let i = 0;
+        let j = 0;
         const n = nums.length;
 
         while (i < n) { 
@@ -498,8 +515,9 @@ read -p "
     Since the array has only n numbers out of the total n+1 numbers, find the 
     missing number. 
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
         let i = 0;
+        let j = 0;
         const n = nums.length;
 
         while (i < n) { 
@@ -514,8 +532,9 @@ Enter the next line: " response
 answer="j = nums[i];"
 additional_feedback="
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
         let i = 0;
+        let j = 0;
         const n = nums.length;
 
         while (i < n) { 
@@ -538,8 +557,9 @@ read -p "
     Since the array has only n numbers out of the total n+1 numbers, find the 
     missing number. 
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
         let i = 0;
+        let j = 0;
         const n = nums.length;
 
         while (i < n) { 
@@ -555,8 +575,9 @@ Enter the next line: " response
 answer="if (nums[i] < n && nums[i] !== nums[j]) { }"
 additional_feedback="
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
         let i = 0;
+        let j = 0;
         const n = nums.length;
 
         while (i < n) { 
@@ -581,8 +602,9 @@ read -p "
     Since the array has only n numbers out of the total n+1 numbers, find the 
     missing number. 
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
         let i = 0;
+        let j = 0;
         const n = nums.length;
 
         while (i < n) { 
@@ -600,8 +622,9 @@ Enter the next line: " response
 answer="[nums[i], nums[j]] = [nums[j], nums[i]];"
 additional_feedback="
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
         let i = 0;
+        let j = 0;
         const n = nums.length;
 
         while (i < n) { 
@@ -626,8 +649,9 @@ read -p "
     Since the array has only n numbers out of the total n+1 numbers, find the 
     missing number. 
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
         let i = 0;
+        let j = 0;
         const n = nums.length;
 
         while (i < n) { 
@@ -645,8 +669,9 @@ Enter the next line: " response
 answer="else { i += 1; }"
 additional_feedback="
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
         let i = 0;
+        let j = 0;
         const n = nums.length;
 
         while (i < n) { 
@@ -673,8 +698,9 @@ read -p "
     Since the array has only n numbers out of the total n+1 numbers, find the 
     missing number. 
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
         let i = 0;
+        let j = 0;
         const n = nums.length;
 
         while (i < n) { 
@@ -694,8 +720,9 @@ Enter the next line: " response
 answer="for (i = 0; i < n; i++) { }"
 additional_feedback="
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
       let i = 0;
+      let j = 0;
       const n = nums.length;
 
       while (i < n) { 
@@ -726,8 +753,9 @@ read -p "
     Since the array has only n numbers out of the total n+1 numbers, find the 
     missing number. 
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
       let i = 0;
+      let j = 0;
       const n = nums.length;
 
       while (i < n) { 
@@ -752,8 +780,9 @@ Enter the next line: " response
 answer="if (nums[i] !== i) { return i; } return n;"
 additional_feedback="
 
-    function findMissingNumber(nums) { 
+    function findMissingNumber (nums) { 
       let i = 0;
+      let j = 0;
       const n = nums.length;
 
       while (i < n) { 

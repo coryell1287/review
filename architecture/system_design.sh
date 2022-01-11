@@ -366,6 +366,10 @@ answer="CPU-bound when the time for it to complete a task is determined principa
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
 
+read -p "Define scalability. " response
+answer="A service is said to be scalable if when we increase the resources in a system, it results in increased performance in a manner proportional to resources added."
+evaluate_answer "$response" "$answer"
+
 echo "
    ########################################
       Capacity Estimation and Constraints

@@ -6395,6 +6395,795 @@ evaluate_answer_written_with_code "$response" "$answer"
 
 next_line
 
+read -p "Converting from Map to Object and from Object to Map. " response
+answer="const objMap = Object.fromEntries(myMap.entries()); const map = new Map(objMap.entries());"
+evaluate_answer_written_with_code "$response" "$answer"
+
+next_line
+
+
+read -p "Return the byte size of a given input.
+
+  byteSize('Hello World'); // 11
+
+Enter the next line: " response
+answer="const byteSize = str => new Blob([str]).size;"
+additional_feedback="
+
+  const byteSize = str => new Blob([str]).size;
+  byteSize('Hello World'); // 11
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Define a function, createPhoneNumber, that accepts an 
+  array of 10 integers (from 0-9) and returns a string of 
+  those numbers in the form of a phone number.
+
+  console.log(createPhoneNumber(1234561029));
+
+Enter the next line: " response
+answer="function createPhoneNumber (numbers) { }"
+additional_feedback="
+
+  function createPhoneNumber (numbers) { 
+
+  }
+
+  console.log(createPhoneNumber(1234561029));
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Define a function, createPhoneNumber, that accepts an 
+  array of 10 integers (from 0-9) and returns a string of 
+  those numbers in the form of a phone number.
+
+  console.log(createPhoneNumber(1234561029));
+
+Enter the next line: " response
+answer="let format = '(xxx) xxx-xxxx';"
+additional_feedback="
+
+  function createPhoneNumber (numbers) { 
+    let format = '(xxx) xxx-xxxx';
+  }
+
+  console.log(createPhoneNumber(1234561029));
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Define a function, createPhoneNumber, that accepts an 
+  array of 10 integers (from 0-9) and returns a string of 
+  those numbers in the form of a phone number.
+
+  function createPhoneNumber (numbers) { 
+    let format = '(xxx) xxx-xxxx';
+  }
+
+  console.log(createPhoneNumber(1234561029));
+
+Enter the next line: " response
+answer="const phoneNumbers = numbers.toString();"
+additional_feedback="
+
+  function createPhoneNumber (numbers) { 
+    let format = '(xxx) xxx-xxxx';
+    const phoneNumbers = numbers.toString();
+  }
+
+  console.log(createPhoneNumber(1234561029));  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Define a function, createPhoneNumber, that accepts an 
+  array of 10 integers (from 0-9) and returns a string of 
+  those numbers in the form of a phone number.
+
+  function createPhoneNumber (numbers) { 
+    let format = '(xxx) xxx-xxxx';
+    const phoneNumbers = numbers.toString();
+  }
+
+  console.log(createPhoneNumber(1234561029)); 
+
+Enter the next line: " response
+answer="for (let i = 0; i < phoneNumbers.length; i++) { }"
+additional_feedback="
+
+  function createPhoneNumber (numbers) { 
+    let format = '(xxx) xxx-xxxx';
+    const phoneNumbers = numbers.toString();
+
+    for (let i = 0; i < phoneNumbers.length; i++) { 
+
+    }
+  }
+
+  console.log(createPhoneNumber(1234561029));
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Define a function, createPhoneNumber, that accepts an 
+  array of 10 integers (from 0-9) and returns a string of 
+  those numbers in the form of a phone number.
+
+  function createPhoneNumber (numbers) { 
+    let format = '(xxx) xxx-xxxx';
+    const phoneNumbers = numbers.toString();
+
+    for (let i = 0; i < phoneNumbers.length; i++) { 
+
+    }
+  }
+
+  console.log(createPhoneNumber(1234561029)); 
+
+Enter the next line: " response
+answer="format = format.replace('x', phoneNumbers[i]);"
+additional_feedback="
+
+  function createPhoneNumber (numbers) { 
+    let format = '(xxx) xxx-xxxx';
+    const phoneNumbers = numbers.toString();
+
+    for (let i = 0; i < phoneNumbers.length; i++) { 
+      format = format.replace('x', phoneNumbers[i]);
+    }
+  }
+
+  console.log(createPhoneNumber(1234561029));
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Define a function, createPhoneNumber, that accepts an 
+  array of 10 integers (from 0-9) and returns a string of 
+  those numbers in the form of a phone number.
+
+  function createPhoneNumber (numbers) { 
+    let format = '(xxx) xxx-xxxx';
+    const phoneNumbers = numbers.toString();
+
+    for (let i = 0; i < phoneNumbers.length; i++) { 
+      format = format.replace('x', phoneNumbers[i]);
+    }
+  }
+
+  console.log(createPhoneNumber(1234561029)); 
+
+Enter the next line: " response
+answer="return format;"
+additional_feedback="
+
+  function createPhoneNumber (numbers) { 
+    let format = '(xxx) xxx-xxxx';
+    const phoneNumbers = numbers.toString();
+
+    for (let i = 0; i < phoneNumbers.length; i++) { 
+      format = format.replace('x', phoneNumbers[i]);
+    }
+    return format;
+  }
+
+  console.log(createPhoneNumber(1234561029));
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a countdown timer.
+
+Enter the next line: " response
+answer="const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();"
+additional_feedback="
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a countdown timer.
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+Enter the next line: " response
+answer="const x = setInterval(function () { }, 1000);"
+additional_feedback="
+
+    const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () { 
+
+    }, 1000);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a countdown timer.
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () { 
+
+    }, 1000);
+
+Enter the next line: " response
+answer="const now = new Date().getTime();"
+additional_feedback="
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () {
+
+      const now = new Date().getTime();
+
+    }, 1000);  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a countdown timer.
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () {
+
+      const now = new Date().getTime();
+
+    }, 1000); 
+
+Enter the next line: " response
+answer="const distance = countDownDate - now;"
+additional_feedback="
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () {
+
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+    }, 1000); 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a countdown timer.
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () {
+
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+    }, 1000); 
+
+Enter the next line: " response
+answer="const days = Math.floor(distance / (1000 * 60 * 60 * 24));"
+additional_feedback="
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () {
+
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    }, 1000);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a countdown timer.
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () {
+
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    }, 1000); 
+
+Enter the next line: " response
+answer="const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));"
+additional_feedback="
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () {
+
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      
+
+    }, 1000);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a countdown timer.
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () {
+
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      
+
+    }, 1000); 
+
+Enter the next line: " response
+answer="const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));"
+additional_feedback="
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () {
+
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      
+
+    }, 1000);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a countdown timer.
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () {
+
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      
+
+    }, 1000); 
+
+Enter the next line: " response
+answer="const seconds = Math.floor((distance % (1000 * 60)) / 1000);"
+additional_feedback="
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () {
+
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    }, 1000);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a countdown timer.
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () {
+
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    }, 1000);
+
+Enter the next line: " response
+answer="console.log(`${days}d ${hours}h ${minutes}m ${seconds}s`);"
+additional_feedback="
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () {
+
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      console.log(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+
+    }, 1000);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a countdown timer.
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () {
+
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    }, 1000);
+
+Enter the next line: " response
+answer="if (distance < 0) { clearInterval(x); console.log('Expired'); } "
+additional_feedback="
+
+  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+    const x = setInterval(function () {
+
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      if (distance < 0) { 
+        clearInterval(x); 
+        console.log('Expired'); 
+      }
+
+    }, 1000);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Extraction initials.
+
+  function extractInitials(value: string) {
+
+  }
+
+Enter the next line: " response
+answer="return value.match(/\b\w/g)!.join('').substring(0, 2);"
+additional_feedback="
+
+  function extractInitials(value: string) {
+    return value.match(/\b\w/g)!.join('').substring(0, 2);
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Create type writer function.
+
+  let i = 0;
+  const txt = 'Lorem ipsum dummy text blabla.';
+  const speed = 50;
+
+Enter the next line: " response
+answer="function typeWriter () { }"
+additional_feedback="
+
+  function typeWriter () { 
+
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Create type writer function.
+
+  let i = 0;
+  const txt = 'Lorem ipsum dummy text blabla.';
+  const speed = 50;
+
+  function typeWriter () { 
+
+  }
+
+Enter the next line: " response
+answer="if (i < txt.length) { }"
+additional_feedback="
+
+  let i = 0;
+  const txt = 'Lorem ipsum dummy text blabla.';
+  const speed = 50;
+
+  function typeWriter () { 
+    if (i < txt.length) { 
+
+    }
+  }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Create type writer function.
+
+  let i = 0;
+  const txt = 'Lorem ipsum dummy text blabla.';
+  const speed = 50;
+
+  function typeWriter () { 
+    if (i < txt.length) { 
+
+    }
+  } 
+
+Enter the next line: " response
+answer="document.getElementById('demo').innerHTML += txt.charAt(i);"
+additional_feedback="
+
+  let i = 0;
+  const txt = 'Lorem ipsum dummy text blabla.';
+  const speed = 50;
+
+  function typeWriter () { 
+    if (i < txt.length) {   
+      document.getElementById('demo').innerHTML += txt.charAt(i);
+    }
+  } 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Create type writer function.
+
+  let i = 0;
+  const txt = 'Lorem ipsum dummy text blabla.';
+  const speed = 50;
+
+  function typeWriter () { 
+    if (i < txt.length) {   
+      document.getElementById('demo').innerHTML += txt.charAt(i);
+    }
+  }  
+
+Enter the next line: " response
+answer="i++; setTimeout(typeWriter, speed);"
+additional_feedback="
+
+  let i = 0;
+  const txt = 'Lorem ipsum dummy text blabla.';
+  const speed = 50;
+
+  function typeWriter () { 
+    if (i < txt.length) {   
+      document.getElementById('demo').innerHTML += txt.charAt(i);
+      i++; 
+      setTimeout(typeWriter, speed);
+    }
+  } 
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Validate URL. 
+
+  const matchesURLPattern = (url: string): boolean => {
+  
+  } 
+
+
+Enter the next line: " response
+answer="return new RegExp('^(https?:\\\\/\\\\/)').test(url);"
+additional_feedback="
+
+  const matchesURLPattern = (url: string): boolean => {
+    return new RegExp('^(https?:\\/\\/)').test(url);
+  } 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Convert a string to camel case.
+
+Enter the next line: " response
+answer="function camelCase (str) { }"
+additional_feedback="
+
+  function camelCase(str) { 
+
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Convert a string to camel case.
+
+  function camelCase(str) { 
+
+  }
+
+Enter the next line: " response
+answer=".replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) { })"
+additional_feedback="
+
+  function camelCase(str) { 
+    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) { 
+
+    })
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Convert a string to camel case.
+
+  function camelCase(str) { 
+    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) { 
+
+    })
+  }
+
+Enter the next line: " response
+answer="return index == 0 ? word.toLowerCase() : word.toUpperCase();"
+additional_feedback="
+
+  function camelCase(str) { 
+    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) { 
+      return index == 0 ? word.toLowerCase() : word.toUpperCase();
+    })
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Convert a string to camel case.
+
+  function camelCase(str) { 
+    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) { 
+      return index == 0 ? word.toLowerCase() : word.toUpperCase();
+    })
+  }
+
+Enter the next line: " response
+answer=".replace(/\s+/g, "");"
+additional_feedback="
+
+  function camelCase(str) { 
+    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) { 
+      return index == 0 ? word.toLowerCase() : word.toUpperCase();
+    })
+    .replace(/\s+/g, "");
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Destructure undefined in JavaScript.
+
+
+  function pointValues(point) {
+   
+    console.log(n);
+    console.log(a);
+  }
+  pointValues({ name: 'jerry', age: 2 });
+  pointValues(undefined);
+
+Enter the next line: " response
+answer="const { name: n, age: a } = { ...point };"
+additional_feedback="
+
+  function pointValues(point) {
+    const { name: n, age: a } = { ...point };
+    console.log(n);
+    console.log(a);
+  }
+  pointValues({ name: 'jerry', age: 2 });
+  pointValues(undefined);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
 
 # const result = Object.keys(keyMap).reduce<Record<string, ValueType>>(
 #   (acc, cur) => {
