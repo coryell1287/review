@@ -370,9 +370,166 @@ answer="SSE is ideal for scenarios like a real-time Twitter feed, displaying sto
 additional_feedback=""
 evaluate_answer "$response" "$answer"
 
+
+next_question
+
+read -p "What is scalability? " response
+answer="Scalability means the ability of the application to handle and withstand increased workload without sacrificing the latency."
+additional_feedback=""
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is network latency? " response
+answer="Network latency is the amount of time that the network takes to send a data packet from point A to point B."
+additional_feedback=""
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is application latency? " response
+answer="Application latency is the amount of time the application takes to process a user request."
+additional_feedback=""
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "How do you test a system for latency? " response
+answer="The first step is to run stress and load tests on the application and scan for the bottlenecks that slow down the system as a whole."
+additional_feedback=""
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is vertical scaling? " response
+answer="Vertical scaling keeps your existing infrastructure but adds computing power."
+additional_feedback="Vertical scaling is also known as scaling up."
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is horizontal scaling? " response
+answer="Horizontal scaling simply adds more instances of machines without first implementing improvements to existing specifications."
+additional_feedback=""
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What are the advantages of horizontal scaling? " response
+answer="Horizontal scaling also provides us with the ability to dynamically scale in real-time as the traffic on our website increases and decreases over a period of time as opposed to vertical scaling which requires pre-planning and a stipulated time to be pulled off."
+additional_feedback=""
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What does it mean when a company has cloud elasticy? " response
+answer="It indicates the stretching and returning to the original infrastructural computational capacity."
+additional_feedback=""
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is high availability? " response
+answer="Hight availability means the application stays alive online all the time even if a few server nodes crash. "
+additional_feedback=""
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is a common architectural mistake that can hurt scalability? " response
+answer="A common architectural mistake is not using asynchronous processes and modules whereever required rather all the processes are scheduled sequentially."
+additional_feedback="
+
+    * A common architectural mistake is not using asynchronous 
+      processes and modules whereever required rather all the 
+      processes are scheduled sequentially.
+
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is a common architectural mistake that can hurt scalability?
+
+    * A common architectural mistake is not using asynchronous 
+      processes and modules whereever required rather all the 
+      processes are scheduled sequentially.
+
+
+Enter the next line: " response
+answer="Not using caching in the application wisely. Caching intercepts all the requests going to the database, reducing the overall load."
+additional_feedback="
+
+    * A common architectural mistake is not using asynchronous 
+      processes and modules whereever required rather all the 
+      processes are scheduled sequentially.
+    
+    * Not using caching in the application wisely. Caching 
+      intercepts all the requests going to the database, 
+      reducing the overall load.
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is a common architectural mistake that can hurt scalability?
+
+    * A common architectural mistake is not using asynchronous 
+      processes and modules whereever required rather all the 
+      processes are scheduled sequentially.
+    
+    * Not using caching in the application wisely. Caching 
+      intercepts all the requests going to the database, 
+      reducing the overall load.
+
+
+Enter the next line: " response
+answer="Inefficient configuration and setup of load balancers."
+additional_feedback="
+
+    * A common architectural mistake is not using asynchronous 
+      processes and modules whereever required rather all the 
+      processes are scheduled sequentially.
+    
+    * Not using caching in the application wisely. Caching 
+      intercepts all the requests going to the database, 
+      reducing the overall load.
+    
+    * Inefficient configuration and setup of load balancers.
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is profiling? " response
+answer="Profiling is the dynamic analysis of code. It helps us measure the space and the time complexity of our code and enables us to figure out issues like concurrency errors, memory errors and robustness and safety of the program."
+additional_feedback=""
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What are some techiques to improve scaliability? " response
+answer="* Use caching * Use a CDN * Use data compression"
+additional_feedback=""
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What does fault tolerance mean? " response
+answer="Fault tolerance refers to the ability of a system (computer, network, cloud cluster, etc.) to continue operating without interruption when one or more of its components fail."
+additional_feedback=""
+evaluate_answer "$response" "$answer"
+
 next_question
 
 read -p "" response
 answer=""
 additional_feedback=""
 evaluate_answer "$response" "$answer"
+  
+
+
+

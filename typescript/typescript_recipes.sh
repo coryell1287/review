@@ -235,7 +235,7 @@ read -p "
     
 
 Enter the next line: " response
-answer="users.sort(function(a, b) { });"
+answer="users.sort(function (a, b) { });"
 additional_feedback="
 
     let users = [
@@ -245,7 +245,7 @@ additional_feedback="
         {'name': 'Amanda', 'address': 'Lagos', 'dob':'March 19, 2001', 'income': 57753},
     ];
 
-    users.sort(function(a, b) { 
+    users.sort(function (a, b) { 
 
     });
 "
@@ -263,7 +263,7 @@ read -p "
         {'name': 'Amanda', 'address': 'Lagos', 'dob':'March 19, 2001', 'income': 57753},
     ];
 
-    users.sort(function(a, b) { 
+    users.sort(function (a, b) { 
 
     });
 
@@ -277,7 +277,7 @@ additional_feedback="
         {'name': 'Amanda', 'address': 'Lagos', 'dob':'March 19, 2001', 'income': 57753},
     ];
 
-    users.sort(function(a, b) { 
+    users.sort(function (a, b) { 
        return a.name === b.name ? 0 : a.name > b.name ? 1 : -1;
     });
 "
@@ -850,7 +850,7 @@ additional_feedback="
         arr.push(item);
      }
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
@@ -1410,6 +1410,10 @@ read -p "
 
   Write a program that takes a csv and returns an array. 
 
+  console.log(csvToArray('a,b\nc,d')); 
+  console.log(csvToArray('a;b\nc;d', ';')); 
+  console.log(csvToArray('head1,head2\na,b\nc,d', ',', true));
+  
 Enter the next line: " response
 answer="const csvToArray = (data: string, delimiter = ',', omitFirstRow = false): string[][] => );"
 additional_feedback="
@@ -1773,6 +1777,21 @@ read -p "
   const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
     const headings = Object.keys(arr[0]) as DataKey[];
   };
+
+  console.log(
+    jsonToCsv([
+      { x: 100, y: 200, z: 200 },
+      { x: 300, y: 400, z: 500 },
+      { x: 6, y: 40, z: 50 },
+      { x: 16, y: 88, z: 1 },
+    ])
+  );
+
+  // x,y,z
+  // 100,200,200
+  // 300,400,500
+  // 6,40,50
+  // 16,88,1
 
 Enter the next line: " response
 answer="return [].join('');"
@@ -3040,6 +3059,18 @@ additional_feedback="
     value: string; 
   }
 
+console.log(
+    findUniqueItem(
+      [
+        { id: 0, value: 'a' },
+        { id: 1, value: 'b' },
+        { id: 2, value: 'c' },
+        { id: 1, value: 'd' },
+        { id: 0, value: 'e' },
+      ],
+      (a, b) => a.id == b.id
+    )
+  );.
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
@@ -3120,7 +3151,7 @@ read -p "
         { id: 0, value: 'e' },
       ],
       (a, b) => a.id == b.id
-    )
+    )  
   );
 
 Enter the next line: " response
@@ -3462,7 +3493,7 @@ read -p "
   );
 
 Enter the next line: " response
-answer="return Array.from()"
+answer="return Array.from();"
 additional_feedback="
 
   type Comp = { 
@@ -3472,7 +3503,7 @@ additional_feedback="
   function findCommonElements(a: number[], b: number[], comp: Comp) { 
     return Array.from(
 
-    )
+    );
   }
 
   console.log(
@@ -3497,7 +3528,7 @@ read -p "
   function findCommonElements(a: number[], b: number[], comp: Comp) { 
     return Array.from(
 
-    )
+    );
   }
 
   console.log(
@@ -3520,7 +3551,7 @@ additional_feedback="
       new Set(
 
       )
-    )
+    );
   }
 
   console.log(
@@ -3548,7 +3579,7 @@ read -p "
       new Set(
 
       )
-    )
+    );
   }
 
   console.log(
@@ -3574,7 +3605,7 @@ additional_feedback="
 
         )
       )
-    )
+    );
   }
 
   console.log(
@@ -3604,7 +3635,7 @@ read -p "
 
         )
       )
-    )
+    );
   }
 
   console.log(
@@ -3614,6 +3645,7 @@ read -p "
       (a, b) => Math.round(a) === Math.round(b)
     )
   );
+  
 
 Enter the next line: " response
 answer="a, b.filter(function (x) { })"
@@ -3633,7 +3665,7 @@ additional_feedback="
           })
         )
       )
-    )
+    );
   }
 
   console.log(
@@ -3667,7 +3699,7 @@ read -p "
           })
         )
       )
-    )
+    );
   }
 
   console.log(
@@ -3700,7 +3732,7 @@ additional_feedback="
           })
         )
       )
-    )
+    );
   }
 
   console.log(
@@ -3946,8 +3978,8 @@ read -p "
   ];
 
 
-Enter the next line:" response
-answer="const uniqueAddresses = Array.from();"
+Enter the next line: " response
+answer="const filteredArr = Array.from()"
 additional_feedback="
 
   const arr = [
@@ -3962,7 +3994,7 @@ additional_feedback="
   ];
 
 
-  const uniqueAddresses = Array.from();
+  const filteredArr = Array.from()
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -3984,11 +4016,11 @@ read -p "
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueAddresses = Array.from();
+  const filteredArr = Array.from()
 
 
-Enter the next line:" response
-answer="new Set()"
+Enter the next line: " response
+answer="new Set(),"
 additional_feedback="
 
   const arr = [
@@ -4002,9 +4034,9 @@ additional_feedback="
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueAddresses = Array.from(
+  const filteredArr = Array.from(
     new Set()
-  );
+  )
 
 
 "
@@ -4028,14 +4060,13 @@ read -p "
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueAddresses = Array.from();
 
-  const uniqueAddresses = Array.from(
-    new Set()
-  );
+  const filteredArr = Array.from(
+    new Set(),
+  )
 
 
-Enter the next line:" response
+Enter the next line: " response
 answer="arr.map(function (a) { return a.id; }),"
 additional_feedback="
 
@@ -4050,15 +4081,14 @@ additional_feedback="
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueAddresses = Array.from();
 
-  const uniqueAddresses = Array.from(
+  const filteredArr = Array.from(
     new Set(
       arr.map(function (a) { 
         return a.id; 
       }),
-    )
-  );
+    ),
+  )
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -4080,18 +4110,16 @@ read -p "
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueAddresses = Array.from();
-
-  const uniqueAddresses = Array.from(
+  const filteredArr = Array.from(
     new Set(
       arr.map(function (a) { 
         return a.id; 
       }),
-    )
-  );
+    ),
+  )
 
 
-Enter the next line:" response
+Enter the next line: " response
 answer=".map(function (id) { });"
 additional_feedback="
 
@@ -4106,17 +4134,16 @@ additional_feedback="
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueAddresses = Array.from();
 
-  const uniqueAddresses = Array.from(
+  const filteredArr = Array.from(
     new Set(
       arr.map(function (a) { 
         return a.id; 
       }),
-    ).map(function (id) { 
+    ),
+  ).map(function (id) { 
 
-    });
-  ); 
+    }); 
 
 
 "
@@ -4139,20 +4166,19 @@ read -p "
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueAddresses = Array.from();
 
-  const uniqueAddresses = Array.from(
+  const filteredArr = Array.from(
     new Set(
       arr.map(function (a) { 
         return a.id; 
       }),
-    ).map(function (id) { 
+    ),
+  ).map(function (id) { 
 
-    });
-  );
+  });
 
 
-Enter the next line:" response
+Enter the next line: " response
 answer="return arr.find(function (a) { });"
 additional_feedback="
 
@@ -4167,19 +4193,18 @@ additional_feedback="
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueAddresses = Array.from();
 
-  const uniqueAddresses = Array.from(
+  const filteredArr = Array.from(
     new Set(
       arr.map(function (a) { 
         return a.id; 
       }),
-    ).map(function (id) { 
-      return arr.find(function (a) { 
+    ),
+  ).map(function (id) { 
+    return arr.find(function (a) { 
 
-      });
     });
-  ); 
+  });
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -4201,20 +4226,21 @@ read -p "
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueAddresses = Array.from();
 
-  const uniqueAddresses = Array.from(
+  const filteredArr = Array.from(
     new Set(
       arr.map(function (a) { 
         return a.id; 
       }),
-    ).map(function (id) { 
-
+    ),
+  ).map(function (id) { 
+    return arr.find(function (a) { 
+      
     });
-  );
+  });
 
 
-Enter the next line:" response
+Enter the next line: " response
 answer="return a.id === id;"
 additional_feedback="
 
@@ -4229,17 +4255,18 @@ additional_feedback="
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueAddresses = Array.from();
 
-  const uniqueAddresses = Array.from(
+  const filteredArr = Array.from(
     new Set(
       arr.map(function (a) { 
         return a.id; 
       }),
-    ).map(function (id) { 
+    ),
+  ).map(function (id) { 
+    return arr.find(function (a) { 
       return a.id === id;
     });
-  );
+  });
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -4261,12 +4288,12 @@ read -p "
     { id: 6, name: 'test8' }
   ]; 
 
-Enter the next line:" response
+Enter the next line: " response
 
-answer="const filteredArr = arr.reduce(function (acc, current) { }, []);"
+answer="const filteredArr = arr.reduce(function (acc, cur) { }, []);"
 additional_feedback="
 
-  const filteredArr = arr.reduce(function (acc, current) { 
+  const filteredArr = arr.reduce(function (acc, cur) { 
 
   }, []);
 
@@ -4290,11 +4317,11 @@ read -p "
     { id: 6, name: 'test8' }
   ]; 
 
-  const filteredArr = arr.reduce(function (acc, current) { 
+  const filteredArr = arr.reduce(function (acc, cur) { 
 
   }, []);
 
-Enter the next line:" response
+Enter the next line: " response
 answer="const x = acc.find(function (item) { });"
 additional_feedback="
 
@@ -4309,7 +4336,7 @@ additional_feedback="
     { id: 6, name: 'test8' }
   ]; 
 
-  const filteredArr = arr.reduce(function (acc, current) { 
+  const filteredArr = arr.reduce(function (acc, cur) { 
     const x = acc.find(function (item) { 
 
     });
@@ -4337,15 +4364,15 @@ read -p "
     { id: 6, name: 'test8' }
   ]; 
 
-  const filteredArr = arr.reduce(function (acc, current) { 
+  const filteredArr = arr.reduce(function (acc, cur) { 
     const x = acc.find(function (item) { 
 
     });
 
   }, []);
 
-Enter the next line:" response
-answer="return item.id === current.id;"
+Enter the next line: " response
+answer="return item.id === cur.id;"
 additional_feedback="
 
   const arr = [
@@ -4359,9 +4386,9 @@ additional_feedback="
     { id: 6, name: 'test8' }
   ]; 
 
-  const filteredArr = arr.reduce(function (acc, current) { 
+  const filteredArr = arr.reduce(function (acc, cur) { 
     const x = acc.find(function (item) { 
-      return item.id === current.id;
+      return item.id === cur.id;
     });
 
   }, []);
@@ -4386,15 +4413,15 @@ read -p "
     { id: 6, name: 'test8' }
   ]; 
 
-  const filteredArr = arr.reduce(function (acc, current) { 
+  const filteredArr = arr.reduce(function (acc, cur) { 
     const x = acc.find(function (item) { 
-      return item.id === current.id;
+      return item.id === cur.id;
     });
 
   }, []);
 
-Enter the next line:" response
-answer="if (!x) { return acc.concat([current]); }"
+Enter the next line: " response
+answer="if (!x) { return acc.concat([cur]  ); }"
 additional_feedback="
 
   const arr = [
@@ -4408,13 +4435,13 @@ additional_feedback="
     { id: 6, name: 'test8' }
   ]; 
 
-  const filteredArr = arr.reduce(function (acc, current) { 
+  const filteredArr = arr.reduce(function (acc, cur) { 
     const x = acc.find(function (item) { 
-      return item.id === current.id;
+      return item.id === cur.id;
     });
 
     if (!x) { 
-      return acc.concat([current]); 
+      return acc.concat([cur]  ); 
     }
 
   }, []);
@@ -4439,18 +4466,18 @@ read -p "
     { id: 6, name: 'test8' }
   ]; 
 
-  const filteredArr = arr.reduce(function (acc, current) { 
+  const filteredArr = arr.reduce(function (acc, cur) { 
     const x = acc.find(function (item) { 
-      return item.id === current.id;
+      return item.id === cur.id;
     });
 
     if (!x) { 
-      return acc.concat([current]); 
+      return acc.concat([cur]  ); 
     }
 
   }, []);
 
-Enter the next line:" response
+Enter the next line: " response
 answer="else { return acc; }"
 additional_feedback="
 
@@ -4465,13 +4492,13 @@ additional_feedback="
     { id: 6, name: 'test8' }
   ]; 
 
-  const filteredArr = arr.reduce(function (acc, current) { 
+  const filteredArr = arr.reduce(function (acc, cur) { 
     const x = acc.find(function (item) { 
-      return item.id === current.id;
+      return item.id === cur.id;
     });
 
     if (!x) { 
-      return acc.concat([current]); 
+      return acc.concat([cur]  ); 
     } else { 
       return acc; 
     }
@@ -4584,7 +4611,7 @@ read -p "
   });
   
 Enter the next line: " response
-answer="const duplicate = seen.has(el.id);"
+answer="const duplicate = seen.has(item.id);"
 additional_feedback="
 
   const arr = [
@@ -4600,7 +4627,7 @@ additional_feedback="
 
   const seen = new Set();
   const filteredArr = arr.filter(function (el) { 
-    const duplicate = seen.has(el.id);
+    const duplicate = seen.has(item.id);
   });
 
 "
@@ -4625,11 +4652,11 @@ read -p "
 
   const seen = new Set();
   const filteredArr = arr.filter(function (el) { 
-    const duplicate = seen.has(el.id);
+    const duplicate = seen.has(item.id);
   });
   
 Enter the next line: " response
-answer="seen.add(el.id);"
+answer="seen.add(item.id);"
 additional_feedback="
 
   const arr = [
@@ -4645,8 +4672,8 @@ additional_feedback="
 
   const seen = new Set();
   const filteredArr = arr.filter(function (el) { 
-    const duplicate = seen.has(el.id);
-    seen.add(el.id);
+    const duplicate = seen.has(item.id);
+    seen.add(item.id);
   });
 
 "
@@ -4671,8 +4698,8 @@ read -p "
 
   const seen = new Set();
   const filteredArr = arr.filter(function (el) { 
-    const duplicate = seen.has(el.id);
-    seen.add(el.id);
+    const duplicate = seen.has(item.id);
+    seen.add(item.id);
   });
   
 Enter the next line: " response
@@ -4692,8 +4719,8 @@ additional_feedback="
 
   const seen = new Set();
   const filteredArr = arr.filter(function (el) { 
-    const duplicate = seen.has(el.id);
-    seen.add(el.id);
+    const duplicate = seen.has(item.id);
+    seen.add(item.id);
     return !duplicate;
   });  
 
@@ -4718,7 +4745,7 @@ read -p "
   ];
 
 Enter the next line: " response
-answer="const uniqueObjects = [].concat();"
+answer="const filteredArr = [].concat();"
 additional_feedback="
 
   const arr = [
@@ -4732,7 +4759,7 @@ additional_feedback="
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueObjects = [].concat();
+  const filteredArr = [].concat();
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -4755,7 +4782,7 @@ read -p "
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueObjects = [].concat();
+  const filteredArr = [].concat();
 
 
 Enter the next line: " response
@@ -4773,7 +4800,7 @@ additional_feedback="
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueObjects = [].concat(
+  const filteredArr = [].concat(
     new Map().values(),
   );
 
@@ -4797,7 +4824,7 @@ read -p "
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueObjects = [].concat(
+  const filteredArr = [].concat(
     new Map().values(),
   );
 
@@ -4817,7 +4844,7 @@ additional_feedback="
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueObjects = [].concat(
+  const filteredArr = [].concat(
     new Map().values(
       arr.map(function (item) { 
         return [item.id, item]; 
@@ -4845,7 +4872,7 @@ read -p "
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueObjects = [].concat(
+  const filteredArr = [].concat(
     new Map().values(
       arr.map(function (item) { 
         return [item.id, item]; 
@@ -4855,7 +4882,7 @@ read -p "
 
 
 Enter the next line: " response
-answer="const iterator = uniqueObjects[0][Symbol.iterator]();"
+answer="const iterator = unique[0][Symbol.iterator]();"
 additional_feedback="
 
   const arr = [
@@ -4869,7 +4896,7 @@ additional_feedback="
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueObjects = [].concat(
+  const filteredArr = [].concat(
     new Map().values(
       arr.map(function (item) { 
         return [item.id, item]; 
@@ -4877,7 +4904,7 @@ additional_feedback="
     ),
   );
 
-  const iterator = uniqueObjects[0][Symbol.iterator]();
+  const iterator = unique[0][Symbol.iterator]();
 
 
 "
@@ -4900,7 +4927,7 @@ read -p "
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueObjects = [].concat(
+  const filteredArr = [].concat(
     new Map().values(
       arr.map(function (item) { 
         return [item.id, item]; 
@@ -4908,7 +4935,7 @@ read -p "
     ),
   );
 
-  const iterator = uniqueObjects[0][Symbol.iterator]();
+  const iterator = unique[0][Symbol.iterator]();
 
 
 Enter the next line: " response
@@ -4926,7 +4953,7 @@ additional_feedback="
     { id: 6, name: 'test8' }
   ];
 
-  const uniqueObjects = [].concat(
+  const filteredArr = [].concat(
     new Map().values(
       arr.map(function (item) { 
         return [item.id, item]; 
@@ -4934,7 +4961,7 @@ additional_feedback="
     ),
   ); 
 
-  const iterator = uniqueObjects[0][Symbol.iterator]();
+  const iterator = unique[0][Symbol.iterator]();
   for (let i of iterator) { 
     console.log(i, 'item');
   } 
@@ -4997,7 +5024,8 @@ read -p "
 
   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
 
-  function hasDuplicates(array) { 
+  function hasDuplicates(array) {
+    const words = new Map(); 
 
   }
   
@@ -5008,6 +5036,7 @@ additional_feedback="
   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
 
   function hasDuplicates(array) { 
+    const words = new Map();
     for (let index = 0; index < array.length; index++) { 
 
     }
@@ -5024,7 +5053,8 @@ read -p "
 
   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
 
-  function hasDuplicates(array) { 
+  function hasDuplicates(array) {
+    const words = new Map(); 
     for (let index = 0; index < array.length; index++) { 
 
     }
@@ -5037,6 +5067,7 @@ additional_feedback="
   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
 
   function hasDuplicates(array) { 
+    const words = new Map();
     for (let index = 0; index < array.length; index++) { 
       const word = array[index];
     }
@@ -5053,7 +5084,8 @@ read -p "
 
   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
 
-  function hasDuplicates(array) { 
+  function hasDuplicates(array) {
+    const words = new Map(); 
     for (let index = 0; index < array.length; index++) { 
       const word = array[index];
     }
@@ -5066,6 +5098,7 @@ additional_feedback="
   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
 
   function hasDuplicates(array) { 
+    const words = new Map();
     for (let index = 0; index < array.length; index++) { 
       const word = array[index];
       if (words.has(word)) { 
@@ -5085,7 +5118,8 @@ read -p "
 
   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
 
-  function hasDuplicates(array) { 
+  function hasDuplicates(array) {
+    const words = new Map(); 
     for (let index = 0; index < array.length; index++) { 
       const word = array[index];
       if (words.has(word)) { 
@@ -5101,6 +5135,7 @@ additional_feedback="
   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
 
   function hasDuplicates(array) { 
+    const words = new Map();
     for (let index = 0; index < array.length; index++) { 
       const word = array[index];
       if (words.has(word)) { 
@@ -5122,6 +5157,7 @@ read -p "
   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
 
   function hasDuplicates(array) { 
+    const words = new Map();
     for (let index = 0; index < array.length; index++) { 
       const word = array[index];
       if (words.has(word)) { 
@@ -5137,7 +5173,8 @@ additional_feedback="
 
   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
 
-  function hasDuplicates(array) { 
+  function hasDuplicates(array) {
+    const words = new Map(); 
     for (let index = 0; index < array.length; index++) { 
       const word = array[index];
       if (words.has(word)) { 
@@ -5153,13 +5190,32 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-read -p " " response
+read -p "
+
+  Remove a duplicates by adding values to a map 
+
+   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  function hasDuplicates(array) {
+    const words = new Map(); 
+    for (let index = 0; index < array.length; index++) { 
+      const word = array[index];
+      if (words.has(word)) { 
+        continue;
+      }
+      words.set(word, true);
+    }
+    return words;
+  }
+  
+Enter the next line: " response
 answer="console.log(Object.keys(Object.fromEntries(hasDuplicates(array))));"
 additional_feedback="
 
   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
 
-  function hasDuplicates(array) { 
+  function hasDuplicates(array) {
+    const words = new Map(); 
     for (let index = 0; index < array.length; index++) { 
       const word = array[index];
       if (words.has(word)) { 
@@ -5175,7 +5231,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+next_question
 
 read -p "
 
@@ -7187,6 +7243,223 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
+
+// German
+["ä", "b"].sort((a, b) => a.localeCompare(b, "de")); // ['ä', 'b', 'c']
+
+// Swedish
+["ä", "b"].sort((a, b) => a.localeCompare(b, "sv")); // ['b', 'c', 'ä']
+
+
+replaceString('World', 'Web', 'Brave New World');
+function replaceString(oldS, newS, fullS): string {
+  return fullS.split(oldS).join(newS);
+}
+
+
+function replaceString(oldS, newS, fullS) {
+  for (let i = 0; i < fullS.length; ++i) {
+    if (fullS.substring(i, i + oldS.length) == oldS) {
+      fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length)
+    }
+  }
+  return fullS
+}
+
+
+# // Replaces oldS with newS in the string fullS
+# function replaceString(oldS, newS, fullS) {
+#   for (let i = 0; i < fullS.length; ++i) {
+#     if (fullS.substring(i, i + oldS.length) == oldS) {
+#       fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length)
+#     }
+#   }
+#   return fullS
+# }
+
+# replaceString('World', 'Web', 'Brave New World');
+
+#
+useEffect(() => {
+            fetch("https://restcountries.eu/rest/v2/all")
+                .then((res) => res.json())
+                .then(
+                    (result) => {
+                        setIsLoaded(true);
+                        setItems(result);
+                    },
+                    // Note: it's important to handle errors here
+                    // instead of a catch() block so that we don't swallow
+                    // exceptions from actual bugs in components.
+                    (error) => {
+                        setIsLoaded(true);
+                        setError(error);
+                    }
+                );
+        }, []);
+
+
+
+        //     set search query to empty string
+        const [q, setQ] = useState("");
+        //     set search parameters
+        //     we only what to search countries by capital and name
+        //     this list can be longer if you want
+        //     you can search countries even by their population
+        // just add it to this array
+        const [searchParam] = useState(["capital", "name"]);
+
+import React from "https://cdn.skypack.dev/react@17.0.1";
+import ReactDOM from "https://cdn.skypack.dev/react-dom@17.0.1";
+
+import { useState, useEffect } from "https://cdn.skypack.dev/react";
+
+
+use the notes as prompts for the questions
+
+function App() {
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [items, setItems] = useState([]);
+
+    //     set search query to empty string
+           const [q, setQ] = useState("");
+    //     set search parameters
+    //     we only what to search countries by capital and name
+    //     this list can be longer if you want
+    //     you can search countries even by their population
+    // just add it to this array
+    const [searchParam] = useState(["capital", "name"]);
+
+    // Note: the empty deps array [] means
+    // this useEffect will run once
+    // similar to componentDidMount()
+
+    useEffect(() => {
+        fetch("https://restcountries.eu/rest/v2/all")
+            .then((res) => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(true);
+                    setItems(result);
+                },
+
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            );
+    }, []);
+
+    
+    function search(items) {
+        return items.filter((item) => {
+            return searchParam.some((newItem) => {
+                return (
+                    item[newItem]
+                        .toString()
+                        .toLowerCase()
+                        .indexOf(q.toLowerCase()) > -1
+                );
+            });
+        });
+    }
+
+    if (error) {
+        return <>{error.message}</>;
+    } else if (!isLoaded) {
+        return <>loading...</>;
+    } else {
+        return (
+            <div className="wrapper">
+                <div className="search-wrapper">
+                    <label htmlFor="search-form">
+                        <input
+                            type="search"
+                            name="search-form"
+                            id="search-form"
+                            className="search-input"
+                            placeholder="Search for..."
+                            value={q}
+                            /* 
+                            // set the value of our useState e
+                            //  anytime the user types in the search box
+                            */
+                            onChange={(e) => setQ(e.target.value)}
+                        />
+                        <span className="sr-only">Search countries here</span>
+                    </label>
+                </div>
+                <ul className="card-grid">
+                    {search(items).map((item) => (
+                        <li>
+                            <article className="card" key={item.callingCodes}>
+                                <div className="card-image">
+                                    <img src={item.flag} alt={item.name} />
+                                </div>
+                                <div className="card-content">
+                                    <h2 className="card-name">{item.name}</h2>
+                                    <ol className="card-list">
+                                        <li>
+                                            population:{" "}
+                                            <span>{item.population}</span>
+                                        </li>
+                                        <li>
+                                            Region: <span>{item.region}</span>
+                                        </li>
+                                        <li>
+                                            Capital: <span>{item.capital}</span>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </article>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+
+handle the case when the string is empty
+
+function isEmptyString(){
+  return search.trim().length;
+
+}
+
+Not includes will return substrings
+const filtered = !isEmptyString(search)
+    ? people
+    : people.filter((person) =>
+        person.name.toLowerCase().includes(search.toLowerCase())
+      );
+
+
+This uses startWith to filter search
+
+ const filter = (e) => {
+    const keyword = e.target.value;
+
+    if (keyword !== '') {
+      const results = USERS.filter((user) => {
+        return user.name.toLowerCase().startsWith(keyword.toLowerCase());
+        // Use the toLowerCase() method to make it case-insensitive
+      });
+      setFoundUsers(results);
+    } else {
+      setFoundUsers(USERS);
+      // If the text field is empty, show all users
+    }
+
+    setName(keyword);
+  };
 # const result = Object.keys(keyMap).reduce<Record<string, ValueType>>(
 #   (acc, cur) => {
 #     const xmlProps = keyMap[key]
@@ -7218,3 +7491,52 @@ next_line
 #             map[key] = value;
 #             return map;
 #           }, {} as FileReaderResults);
+
+
+const multiSort =
+  <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+  (a: Item, b: Item) => {
+    // Try each comparator in turn
+    for (let comparator of comparators) {
+      // Get its result
+      const comparatorResult = comparator(a, b);
+      // Return that result only if it is non-zero
+      if (comparatorResult !== 0) return comparatorResult;
+    }
+    // All comparators returned zero, so these items cannot be distinguished
+    return 0;
+  };
+
+const sortedBooks = books.sort(
+  multiSort(
+    (a, b) => a.title.localeCompare(b.title),
+    (a, b) => a.published - b.published,
+  )
+);
+
+
+Can you spot the mistake in this logic? What happens when both 
+a and b do not have a name? Then this comparator declares that a 
+should go before b, but that is not correct, they should be treated 
+as equal. In general, you should avoid checking something about one 
+of the values and not the other. Formally speaking this comparator 
+breaks the antisymmetric property of a total order. 
+
+// Sort users by name, but put all nameless users at the end.
+users.sort((a, b) => {
+  // If a doesn't have a name...
+  if (!a.name) return 1; // ...then a should go after b
+  // If b doesn't have a name...
+  if (!b.name) return -1; // ...then b should go after a
+  // Otherwise compare by name
+  return a.name.localeCompare(b.name);
+});
+
+
+The mathematical concept of a total order is what defines 
+whether an ordering is consistent. It consists of four rules:
+
+a <= a (reflexive)
+if a <= b and b <= c then a <= c (transitive)
+if a <= b and b <= a then a = b (antisymmetric)
+a <= b or b <= a (strongly connected)
