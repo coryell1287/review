@@ -134,7 +134,7 @@ next_question
 
 
 read -p "What are examples of components? " response
-answer="Database Backend application server User interface Messaging Caching"
+answer="* Database * Backend * Application server * User interface * Messaging * Caching"
 additional_feedback=""
 evaluate_answer "$response" "$answer"
 
@@ -148,8 +148,8 @@ echo "
 
 "
 
-read -p "Go the below link and draw the components " response
-answer="In a single-tier application, the user interface, backend business logic, and the database reside in the same machine."
+read -p "What is the structure of a single-tier application? " response
+answer="In a single-tier application, the user interface, the backend business logic, and the database reside in the same machine."
 additional_feedback="
 
     Typical examples of single-tier applications are desktop applications 
@@ -163,9 +163,75 @@ evaluate_answer "$response" "$answer" "$additional_feedback"
 next_question
 
 read -p "What is an example of two-tier application? " response
-answer="A two-tier application involves a client and a server. The client contains the user interface with the business logic in one machine. The backend server includes the database running on a different machine. The database server is hosted by the business and has control over it."
-additional_feedback=""
-evaluate_answer "$response" "$answer"
+answer="A two-tier application involves a client and a server."
+additional_feedback="
+
+    A two-tier application involves a client and a server.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What is an example of two-tier application? 
+
+    A two-tier application involves a client and a server.
+    
+Enter the next line: " response
+answer="The client contains the user interface with the business logic in one machine."
+additional_feedback="
+
+    A two-tier application involves a client and a server.
+    The client contains the user interface with the business 
+    logic in one machine. 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What is an example of two-tier application? 
+
+    A two-tier application involves a client and a server.
+    The client contains the user interface with the business 
+    logic in one machine. 
+
+Enter the next line: " response
+answer="The backend server includes the database running on a different machine."
+additional_feedback="
+
+    A two-tier application involves a client and a server.
+    The client contains the user interface with the business 
+    logic in one machine. The backend server includes the 
+    database running on a different machine.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What is an example of two-tier application? 
+
+    A two-tier application involves a client and a server.
+    The client contains the user interface with the business 
+    logic in one machine. The backend server includes the 
+    database running on a different machine. 
+
+Enter the next line: " response
+answer="The database server is hosted by the business who has control over it."
+additional_feedback="
+
+    A two-tier application involves a client and a server.
+    The client contains the user interface with the business 
+    logic in one machine. The backend server includes the 
+    database running on a different machine. The backend server 
+    includes the database running on a different machine. The 
+    database server is hosted by the business who has control 
+    over it.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 
 echo "
@@ -193,7 +259,7 @@ evaluate_answer "$response" "$answer"
 next_question
 
 read -p "What is the benefit of single responsibility principle in regards to software components? " response
-answer="With the single responsibility principle, the components are loosely coupled in terms of responsibility and making a change to one doesn’t impact the functionality of other components."
+answer="With the single responsibility principle, the components are loosely coupled in terms of responsibility and making a change to one doesn't impact the functionality of other components."
 additional_feedback=""
 evaluate_answer "$response" "$answer"
 

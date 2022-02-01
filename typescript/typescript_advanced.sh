@@ -67,8 +67,8 @@ evaluate_answer() {
        so get this right right now!
 
         
-       Your answer:     "$1"
-       Correct answer:  "$2"
+       Your answer:     $1
+       Correct answer:  $2
         
 
 ########################################
@@ -92,8 +92,8 @@ evaluate_answer_written_with_code() {
        so get this right right now!
 
         
-       Your answer:     "$1"
-       Correct answer:  "$2"
+       Your answer:     $1
+       Correct answer:  $2
 
 ########################################
              "
@@ -800,7 +800,7 @@ evaluate_answer "$response" "$answer" "$additional_feedback"
 
 next_question
 
-read -p "What is never type? " response
+read -p "What is Exhaustive type? " response
 answer="It's a special type that has no instances. In other words, it's not possible to create an instance of this type. If we look at it from the perspective of set theory, never is associated with an empty set. Therefore, string | never is just a string because a union of any set with an empty set is just that set."
 additional_feedback=""
 evaluate_answer "$response" "$answer"

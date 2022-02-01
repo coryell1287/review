@@ -801,7 +801,7 @@ next_question
 
 read -p "Write a function that removes a duplicate string value. " response
 answer="arr.filter((item, index) => arr.indexOf(item) === index);"
-evaluate_answer "$response" "$answer"
+evaluate_answer_written_with_code "$response" "$answer"
 
 next_question
 
@@ -4067,7 +4067,7 @@ read -p "
 
 
 Enter the next line: " response
-answer="arr.map(function (a) { return a.id; }),"
+answer="arr.map(function (item) { return item.id; }),"
 additional_feedback="
 
   const arr = [
@@ -4084,8 +4084,8 @@ additional_feedback="
 
   const filteredArr = Array.from(
     new Set(
-      arr.map(function (a) { 
-        return a.id; 
+      arr.map(function (item) { 
+        return item.id; 
       }),
     ),
   )
@@ -4112,8 +4112,8 @@ read -p "
 
   const filteredArr = Array.from(
     new Set(
-      arr.map(function (a) { 
-        return a.id; 
+      arr.map(function (item) { 
+        return item.id; 
       }),
     ),
   )
@@ -4137,8 +4137,8 @@ additional_feedback="
 
   const filteredArr = Array.from(
     new Set(
-      arr.map(function (a) { 
-        return a.id; 
+      arr.map(function (item) { 
+        return item.id; 
       }),
     ),
   ).map(function (id) { 
@@ -4169,8 +4169,8 @@ read -p "
 
   const filteredArr = Array.from(
     new Set(
-      arr.map(function (a) { 
-        return a.id; 
+      arr.map(function (item) { 
+        return item.id; 
       }),
     ),
   ).map(function (id) { 
@@ -4179,7 +4179,7 @@ read -p "
 
 
 Enter the next line: " response
-answer="return arr.find(function (a) { });"
+answer="return arr.find(function (item) { });"
 additional_feedback="
 
   const arr = [
@@ -4196,12 +4196,12 @@ additional_feedback="
 
   const filteredArr = Array.from(
     new Set(
-      arr.map(function (a) { 
-        return a.id; 
+      arr.map(function (item) { 
+        return item.id; 
       }),
     ),
   ).map(function (id) { 
-    return arr.find(function (a) { 
+    return arr.find(function (item) { 
 
     });
   });
@@ -4229,19 +4229,19 @@ read -p "
 
   const filteredArr = Array.from(
     new Set(
-      arr.map(function (a) { 
-        return a.id; 
+      arr.map(function (item) { 
+        return item.id; 
       }),
     ),
   ).map(function (id) { 
-    return arr.find(function (a) { 
+    return arr.find(function (item) { 
       
     });
   });
 
 
 Enter the next line: " response
-answer="return a.id === id;"
+answer="return item.id === id;"
 additional_feedback="
 
     const arr = [
@@ -4258,13 +4258,13 @@ additional_feedback="
 
   const filteredArr = Array.from(
     new Set(
-      arr.map(function (a) { 
-        return a.id; 
+      arr.map(function (item) { 
+        return item.id; 
       }),
     ),
   ).map(function (id) { 
-    return arr.find(function (a) { 
-      return a.id === id;
+    return arr.find(function (item) { 
+      return item.id === id;
     });
   });
 
@@ -4845,11 +4845,11 @@ additional_feedback="
   ];
 
   const filteredArr = [].concat(
-    new Map().values(
+    new Map(
       arr.map(function (item) { 
         return [item.id, item]; 
       }),
-    ),
+    ).values(),
   );
 
 "
@@ -4873,11 +4873,11 @@ read -p "
   ];
 
   const filteredArr = [].concat(
-    new Map().values(
+    new Map(
       arr.map(function (item) { 
         return [item.id, item]; 
       }),
-    ),
+    ).values(),
   );
 
 
@@ -4897,11 +4897,11 @@ additional_feedback="
   ];
 
   const filteredArr = [].concat(
-    new Map().values(
+    new Map(
       arr.map(function (item) { 
         return [item.id, item]; 
       }),
-    ),
+    ).values(),
   );
 
   const iterator = unique[0][Symbol.iterator]();
@@ -4928,11 +4928,11 @@ read -p "
   ];
 
   const filteredArr = [].concat(
-    new Map().values(
+    new Map(
       arr.map(function (item) { 
         return [item.id, item]; 
       }),
-    ),
+    ).values(),
   );
 
   const iterator = unique[0][Symbol.iterator]();
@@ -4954,12 +4954,12 @@ additional_feedback="
   ];
 
   const filteredArr = [].concat(
-    new Map().values(
+    new Map(
       arr.map(function (item) { 
         return [item.id, item]; 
       }),
-    ),
-  ); 
+    ).values(),
+  );
 
   const iterator = unique[0][Symbol.iterator]();
   for (let i of iterator) { 
@@ -5290,7 +5290,7 @@ read -p "
   }, []);
 
 Enter the next line: " response
-answer="return accumulator;"
+answer="return acc;"
 additional_feedback="
 
   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
@@ -5298,24 +5298,8 @@ additional_feedback="
     if (!acc.includes(cur)) { 
       acc.push(cur);
     }
-    return accumulator;
+    return acc;
   }, []);
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Reverse a string using a for-loop. 
-
-
-Enter the next line: " response
-answer="function reverse (str) { }"
-additional_feedback="
-
-  function reverse (str) { 
-
-  }
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -5348,8 +5332,17 @@ read -p "Reverse a string using a for-loop.
   }
 
 Enter the next line: " response
-answer="for (let i = str.length - 1; i >= 0; i--) {  }"
-additional_feedback="reversed += str[i];"
+answer="for (let i = str.length - 1; i >= 0; i--) { }"
+additional_feedback="
+
+  function reverse (str) { 
+    let reversed = '';
+    for (let i = str.length - 1; i >= 0; i--) {  
+
+    }
+  }
+
+"
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
@@ -5403,20 +5396,6 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
-
-read -p "Reverse a string using a for-loop. 
-
-Enter the next line: " response
-answer="function reverse(str) { }"
-additional_feedback="
-
-  function reverse(str) { 
-
-  }
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -5447,12 +5426,12 @@ read -p "Reverse a string using for...of.
   }
 
 Enter the next line: " response
-answer="for(let char of str) { }"
+answer="for (let char of str) { }"
 additional_feedback="
 
   function reverse(str) { 
     let reversed = '';
-    for(let char of str) { 
+    for (let char of str) { 
 
     }
   }
@@ -5466,7 +5445,7 @@ read -p "Reverse a string using for...of.
 
   function reverse(str) { 
     let reversed = '';
-    for(let char of str) { 
+    for (let char of str) { 
 
     }
   }
@@ -5477,7 +5456,7 @@ additional_feedback="
 
   function reverse(str) { 
     let reversed = '';
-    for(let char of str) { 
+    for (let char of str) { 
       reversed = char + reversed;
     }
   }
@@ -5491,7 +5470,7 @@ read -p "Reverse a string using for...of.
 
   function reverse(str) { 
     let reversed = '';
-    for(let char of str) { 
+    for (let char of str) { 
       reversed = char + reversed;
     }
   }
@@ -5502,7 +5481,7 @@ additional_feedback="
 
   function reverse(str) { 
     let reversed = '';
-    for(let char of str) { 
+    for (let char of str) { 
       reversed = char + reversed;
     }
     return reversed;
@@ -5513,7 +5492,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-read -p "Reverse a string using .split('') .reverse() and .join('') " response
+read -p "Reverse a string using .split('') .reverse() and .join(''):  " response
 answer="return str.split('').reverse().join('');"
 additional_feedback="
 
@@ -5526,7 +5505,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-read -p "Reverse a string using .split('') .join() " response
+read -p "Reverse a string using spread and .join(): " response
 answer="return [...str].reverse().join('');"
 additional_feedback="
 
@@ -5539,7 +5518,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-read -p "Reverse a string using .split('') .reduce() " response
+read -p "Reverse a string using .split('') .reduce():  " response
 answer="return str.split('').reduce((rev, char) => char + rev, '');"
 additional_feedback="
 
@@ -5586,11 +5565,11 @@ read -p "FizzBuzz.
   }
 
 Enter the next line: " response
-answer="const f = i % 3 == 0;"
+answer="const f = i % 3 === 0;"
 additional_feedback="
 
   for (let i = 1; i <= 100; i++) { 
-    const f = i % 3 == 0;
+    const f = i % 3 === 0;
   }
 
 "
@@ -5601,16 +5580,16 @@ next_line
 read -p "FizzBuzz.
 
   for (let i = 1; i <= 100; i++) { 
-   const f = i % 3 == 0; 
+   const f = i % 3 === 0; 
   }
 
 Enter the next line: " response
-answer="const b = i % 5 == 0;"
+answer="const b = i % 5 === 0;"
 additional_feedback="
 
   for (let i = 1; i <= 100; i++) { 
-    const f = i % 3 == 0;
-    const b = i % 5 == 0; 
+    const f = i % 3 === 0;
+    const b = i % 5 === 0; 
   }
 
 "
@@ -5621,18 +5600,18 @@ next_line
 read -p "FizzBuzz.
 
   for (let i = 1; i <= 100; i++) { 
-    const f = i % 3 == 0; 
-    const b = i % 5 == 0; 
+    const f = i % 3 === 0; 
+    const b = i % 5 === 0; 
   }
 
 Enter the next line: " response
-answer="const b = i % 5 == 0;"
+answer="const b = i % 5 === 0;"
 answer="console.log(f ? (b ? 'FizzBuzz' : 'Fizz') : b ? 'Buzz' : i);"
 additional_feedback="
 
   for (let i = 1; i <= 100; i++) { 
-    const f = i % 3 == 0; 
-    const b = i % 5 == 0;
+    const f = i % 3 === 0; 
+    const b = i % 5 === 0;
     console.log(f ? (b ? 'FizzBuzz' : 'Fizz') : b ? 'Buzz' : i); 
   }  
 
@@ -5735,7 +5714,7 @@ additional_feedback="
   // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }  
 
 "
-evaluate_answer_written_with_code "$response" "$answer" ""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -7265,7 +7244,9 @@ function replaceString(oldS, newS, fullS) {
   }
   return fullS
 }
-
+const sleep = (ms: number): Promise<ReturnType<typeof setTimeout>> => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
 
 # // Replaces oldS with newS in the string fullS
 # function replaceString(oldS, newS, fullS) {
@@ -7280,151 +7261,6 @@ function replaceString(oldS, newS, fullS) {
 # replaceString('World', 'Web', 'Brave New World');
 
 #
-useEffect(() => {
-            fetch("https://restcountries.eu/rest/v2/all")
-                .then((res) => res.json())
-                .then(
-                    (result) => {
-                        setIsLoaded(true);
-                        setItems(result);
-                    },
-                    // Note: it's important to handle errors here
-                    // instead of a catch() block so that we don't swallow
-                    // exceptions from actual bugs in components.
-                    (error) => {
-                        setIsLoaded(true);
-                        setError(error);
-                    }
-                );
-        }, []);
-
-
-
-        //     set search query to empty string
-        const [q, setQ] = useState("");
-        //     set search parameters
-        //     we only what to search countries by capital and name
-        //     this list can be longer if you want
-        //     you can search countries even by their population
-        // just add it to this array
-        const [searchParam] = useState(["capital", "name"]);
-
-import React from "https://cdn.skypack.dev/react@17.0.1";
-import ReactDOM from "https://cdn.skypack.dev/react-dom@17.0.1";
-
-import { useState, useEffect } from "https://cdn.skypack.dev/react";
-
-
-use the notes as prompts for the questions
-
-function App() {
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState([]);
-
-    //     set search query to empty string
-           const [q, setQ] = useState("");
-    //     set search parameters
-    //     we only what to search countries by capital and name
-    //     this list can be longer if you want
-    //     you can search countries even by their population
-    // just add it to this array
-    const [searchParam] = useState(["capital", "name"]);
-
-    // Note: the empty deps array [] means
-    // this useEffect will run once
-    // similar to componentDidMount()
-
-    useEffect(() => {
-        fetch("https://restcountries.eu/rest/v2/all")
-            .then((res) => res.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true);
-                    setItems(result);
-                },
-
-                // Note: it's important to handle errors here
-                // instead of a catch() block so that we don't swallow
-                // exceptions from actual bugs in components.
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            );
-    }, []);
-
-    
-    function search(items) {
-        return items.filter((item) => {
-            return searchParam.some((newItem) => {
-                return (
-                    item[newItem]
-                        .toString()
-                        .toLowerCase()
-                        .indexOf(q.toLowerCase()) > -1
-                );
-            });
-        });
-    }
-
-    if (error) {
-        return <>{error.message}</>;
-    } else if (!isLoaded) {
-        return <>loading...</>;
-    } else {
-        return (
-            <div className="wrapper">
-                <div className="search-wrapper">
-                    <label htmlFor="search-form">
-                        <input
-                            type="search"
-                            name="search-form"
-                            id="search-form"
-                            className="search-input"
-                            placeholder="Search for..."
-                            value={q}
-                            /* 
-                            // set the value of our useState e
-                            //  anytime the user types in the search box
-                            */
-                            onChange={(e) => setQ(e.target.value)}
-                        />
-                        <span className="sr-only">Search countries here</span>
-                    </label>
-                </div>
-                <ul className="card-grid">
-                    {search(items).map((item) => (
-                        <li>
-                            <article className="card" key={item.callingCodes}>
-                                <div className="card-image">
-                                    <img src={item.flag} alt={item.name} />
-                                </div>
-                                <div className="card-content">
-                                    <h2 className="card-name">{item.name}</h2>
-                                    <ol className="card-list">
-                                        <li>
-                                            population:{" "}
-                                            <span>{item.population}</span>
-                                        </li>
-                                        <li>
-                                            Region: <span>{item.region}</span>
-                                        </li>
-                                        <li>
-                                            Capital: <span>{item.capital}</span>
-                                        </li>
-                                    </ol>
-                                </div>
-                            </article>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        );
-    }
-}
-
-ReactDOM.render(<App />, document.getElementById("root"));
 
 
 handle the case when the string is empty
@@ -7460,6 +7296,62 @@ This uses startWith to filter search
 
     setName(keyword);
   };
+
+
+Can you spot the mistake in this logic? What happens when both 
+a and b do not have a name? Then this comparator declares that a 
+should go before b, but that is not correct, they should be treated 
+as equal. In general, you should avoid checking something about one 
+of the values and not the other. Formally speaking this comparator 
+breaks the antisymmetric property of a total order. 
+
+// Sort users by name, but put all nameless users at the end.
+users.sort((a, b) => {
+  // If a doesn't have a name...
+  if (!a.name) return 1; // ...then a should go after b
+  // If b doesn't have a name...
+  if (!b.name) return -1; // ...then b should go after a
+  // Otherwise compare by name
+  return a.name.localeCompare(b.name);
+});
+https://blog.fildon.me/sorting-in-javascript?utm_source=ESnextNews.com&utm_medium=Weekly+Newsletter&utm_campaign=2022-01-18
+
+how to fix the above issue
+// Sort users by name, but nameless users should go at the end
+users.sort((a, b) => {
+  // Both users have a name, so compare directly
+  if (a.name && b.name) return a.name.localeCompare(b.name);
+
+  // Otherwise we sort by having a name or not
+  return !!b.name - !!a.name;
+  // b goes first because we want names first, non-names second
+});
+
+
+The mathematical concept of a total order is what defines 
+whether an ordering is consistent. It consists of four rules:
+
+a <= a (reflexive)
+if a <= b and b <= c then a <= c (transitive)
+if a <= b and b <= a then a = b (antisymmetric)
+a <= b or b <= a (strongly connected)
+
+For example, 9 << 2 yields 36:
+
+.    9 (base 10): 00000000000000000000000000001001 (base 2)
+                  --------------------------------
+9 << 2 (base 10): 00000000000000000000000000100100 (base 2) = 36 (base 10)
+Copy to Clipboard
+Bitwise shifting any number x to the left by y bits yields x * 2 ** y. So e.g.: 9 << 3 translates to: 9 * (2 ** 3) = 9 * (8) = 72.
+
+
+9 << 3; // 72
+
+// 9 * (2 ** 3) = 9 * (8) = 72
+
+The left shift operator (<<) shifts the first operand the 
+specified number of bits to the left. Excess bits shifted off 
+to the left are discarded. Zero bits are shifted in from the right.
 # const result = Object.keys(keyMap).reduce<Record<string, ValueType>>(
 #   (acc, cur) => {
 #     const xmlProps = keyMap[key]
@@ -7493,50 +7385,5 @@ This uses startWith to filter search
 #           }, {} as FileReaderResults);
 
 
-const multiSort =
-  <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
-  (a: Item, b: Item) => {
-    // Try each comparator in turn
-    for (let comparator of comparators) {
-      // Get its result
-      const comparatorResult = comparator(a, b);
-      // Return that result only if it is non-zero
-      if (comparatorResult !== 0) return comparatorResult;
-    }
-    // All comparators returned zero, so these items cannot be distinguished
-    return 0;
-  };
-
-const sortedBooks = books.sort(
-  multiSort(
-    (a, b) => a.title.localeCompare(b.title),
-    (a, b) => a.published - b.published,
-  )
-);
 
 
-Can you spot the mistake in this logic? What happens when both 
-a and b do not have a name? Then this comparator declares that a 
-should go before b, but that is not correct, they should be treated 
-as equal. In general, you should avoid checking something about one 
-of the values and not the other. Formally speaking this comparator 
-breaks the antisymmetric property of a total order. 
-
-// Sort users by name, but put all nameless users at the end.
-users.sort((a, b) => {
-  // If a doesn't have a name...
-  if (!a.name) return 1; // ...then a should go after b
-  // If b doesn't have a name...
-  if (!b.name) return -1; // ...then b should go after a
-  // Otherwise compare by name
-  return a.name.localeCompare(b.name);
-});
-
-
-The mathematical concept of a total order is what defines 
-whether an ordering is consistent. It consists of four rules:
-
-a <= a (reflexive)
-if a <= b and b <= c then a <= c (transitive)
-if a <= b and b <= a then a = b (antisymmetric)
-a <= b or b <= a (strongly connected)

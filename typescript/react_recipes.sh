@@ -123,6 +123,7 @@ next_line() {
 read -p "
    
    Update the value on the array of objects.
+   
    const update = { id: 1, value: 'change' };
 
    setUserList();
@@ -1010,18 +1011,1341 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
+next_question
+
+read -p "
+
+  Use string interpolation to map to the tile property.
+
+      const [boardValues, setBoardValue] = useState([
+        { tile0: 'tile0', boardValue: '' },
+        { tile1: 'tile1', boardValue: '' },
+        { tile2: 'tile2', boardValue: '' },
+        { tile3: 'tile3', boardValue: '' },
+        { tile4: 'tile4', boardValue: '' },
+        { tile5: 'tile5', boardValue: '' },
+        { tile6: 'tile6', boardValue: '' },
+        { tile7: 'tile7', boardValue: '' },
+        { tile8: 'tile8', boardValue: '' },
+      ];
+
+      {
+        boardValues.map((item, index) => {
+          return (
+          <div 
+            key={index} 
+            data-tile=\"tile\"
+            onClick={handlePlayers(index)} 
+            >
+              {item.boardValue}
+          </div>
+          )
+        })
+      }
+
+Enter the next line: " response
+answer="data-tile={`${item[\`tile\${index}\`]}`}"
+additional_feedback="
+
+      const [boardValues, setBoardValue] = useState([
+        { tile0: 'tile0', boardValue: '' },
+        { tile1: 'tile1', boardValue: '' },
+        { tile2: 'tile2', boardValue: '' },
+        { tile3: 'tile3', boardValue: '' },
+        { tile4: 'tile4', boardValue: '' },
+        { tile5: 'tile5', boardValue: '' },
+        { tile6: 'tile6', boardValue: '' },
+        { tile7: 'tile7', boardValue: '' },
+        { tile8: 'tile8', boardValue: '' },
+      ];
+  
+      {
+        boardValues.map((item, index) => {
+          return (
+          <div 
+            key={index} 
+            data-tile={`${item[\`tile\${index}\`]}`}
+            onClick={handlePlayers(index)} 
+            >
+              {item.boardValue}
+          </div>
+          )
+        })
+      }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Complete the code that alternates between players and updates the
+  boardValue to either X or O.
+
+  const handlePlayers = (index) => {  
+
+  };
+
+
+Enter the next line: " response
+answer="return function (e) { }"
+additional_feedback="
+
+  const handlePlayers = (index) => {  
+    return function (e) { 
+
+    }
+  };
+  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
 next_line
 
 read -p "
 
-  Create a multi-sort utility for the array of books.
+  Complete the code that alternates between players and updates the
+  boardValue to either X or O.
+
+  const handlePlayers = (index) => {  
+    return function (e) { 
+
+    }
+  };
+
+
+Enter the next line: " response
+answer="let copyOfBoard = [...boardValues];"
+additional_feedback="
+
+  const handlePlayers = (index) => {  
+    return function (e) { 
+      let copyOfBoard = [...boardValues];
+    }
+  };    
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that alternates between players and updates the
+  boardValue to either X or O.
+
+  const handlePlayers = (index) => {  
+    return function (e) { 
+      let copyOfBoard = [...boardValues];
+    }
+  }; 
+
+
+Enter the next line: " response
+answer="if (player === 0) { }"
+additional_feedback="
+
+  const handlePlayers = (index) => {  
+    return function (e) { 
+      let copyOfBoard = [...boardValues];
+
+      if (player === 0) { 
+
+      }
+    }
+  }; 
+  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that alternates between players and updates the
+  boardValue to either X or O.
+
+  const handlePlayers = (index) => {  
+    return function (e) { 
+      let copyOfBoard = [...boardValues];
+
+      if (player === 0) { 
+
+      }
+    }
+  };
+
+
+Enter the next line: " response
+answer="copyOfBoard = copyOfBoard.map(function (item) { });"
+additional_feedback="
+
+  const handlePlayers = (index) => {  
+    return function (e) { 
+      let copyOfBoard = [...boardValues];
+
+      if (player === 0) { 
+       copyOfBoard = copyOfBoard.map(function (item) { 
+
+       });
+      }
+    }
+  };
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that alternates between players and updates the
+  boardValue to either X or O.
+
+  const handlePlayers = (index) => {  
+    return function (e) { 
+      let copyOfBoard = [...boardValues];
+
+      if (player === 0) { 
+       copyOfBoard = copyOfBoard.map(function (item) { 
+
+       });
+      }
+    }
+  };
+
+
+Enter the next line: " response
+answer="return item[\`tile\${index}\`] === e.target.dataset.tile ? { ...item, boardValue: 'X' } : item;"
+additional_feedback="
+
+  const handlePlayers = (index) => {  
+    return function (e) { 
+      let copyOfBoard = [...boardValues];
+
+      if (player === 0) { 
+       copyOfBoard = copyOfBoard.map(function (item) { 
+         return item[\`tile\${index}\`] === e.target.dataset.tile ? { ...item, boardValue: 'X' } : item;
+       });
+      }
+    }
+  };
+  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that alternates between players and updates the
+  boardValue to either X or O.
+
+  const handlePlayers = (index) => {  
+    return function (e) { 
+      let copyOfBoard = [...boardValues];
+
+      if (player === 0) { 
+       copyOfBoard = copyOfBoard.map(function (item) { 
+         return item[\`tile${index}\`] === e.target.dataset.tile ? { ...item, boardValue: 'X' } : item;
+       });
+      }
+    }
+  };
+
+
+Enter the next line: " response
+answer="setBoardValue(copyOfBoard); return setPlayer(1);"
+additional_feedback="
+
+  const handlePlayers = (index) => {  
+    return function (e) { 
+      let copyOfBoard = [...boardValues];
+
+      if (player === 0) { 
+       copyOfBoard = copyOfBoard.map(function (item) { 
+         return item[\`tile\${index}\`] === e.target.dataset.tile ? { ...item, boardValue: 'X' } : item;
+       });
+       setBoardValue(copyOfBoard); 
+       return setPlayer(1);
+      }
+    }
+  };
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+echo "
+
+  The rest of the logic works the same.
+
+  const handlePlayers = (index) => {  
+    return function (e) { 
+      let copyOfBoard = [...boardValues];
+
+      if (player === 0) { 
+       copyOfBoard = copyOfBoard.map(function (item) { 
+         return item[\`tile\${index}\`] === e.target.dataset.tile ? { ...item, boardValue: 'X' } : item;
+       });
+       setBoardValue(copyOfBoard); 
+       return setPlayer(1);
+      }
+
+      copyOfBoard.map(function (item) {
+        return item[\`tile\${index}\`] === e.target.dataset.tile ? { ...item, boardValue: 'O' } : item;
+      });
+      setBoardValue(copyOfBoard);
+      return setPlayer(0);
+    }
+  };
+
+"
+
+
+next_question
+
+read -p "
+
+  Complete the code that calculates the score in a tic tac toe game.
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+
+Enter the next line: " response
+answer="function calculateScore(row, column, player, sizeOfBoard = 3) { }"
+additional_feedback="
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+
+  }
+  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that calculates the score in a tic tac toe game.
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+
+  }
+
+
+Enter the next line: " response
+answer="players[player].rowsContainer[row] += 1;"
+additional_feedback="
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+  }
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that calculates the score in a tic tac toe game.
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+  }
+
+Enter the next line: " response
+answer="players[player].columnsContainer[column] += 1;"
+additional_feedback="
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+  }
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that calculates the score in a tic tac toe game.
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+  }
+
+
+Enter the next line: " response
+answer="if (row === column) { players[player].diagonalContainer[row] += 1; }"
+additional_feedback="
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+  }
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that calculates the score in a tic tac toe game.
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+  }
+
+
+Enter the next line: " response
+answer="if (row + column + 1 === sizeOfBoard) { players[player].oppositeDiagonalContainer[row] += 1; }"
+additional_feedback="
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+  }
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that calculates the score in a tic tac toe game.
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+  }
+
+
+Enter the next line: " response
+answer="if (players[player].rowsContainer[row] === sizeOfBoard) { console.log(`${player} wins`); }"
+additional_feedback="
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+
+    if (players[player].rowsContainer[row] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+  }
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that calculates the score in a tic tac toe game.
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+
+    if (players[player].rowsContainer[row] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+  }
+
+
+Enter the next line: " response
+answer="if (players[player].columnsContainer[column] === sizeOfBoard) { console.log(`${player} wins`); }"
+additional_feedback="
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+
+    if (players[player].rowsContainer[row] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    if (players[player].columnsContainer[column] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+  }
+
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that calculates the score in a tic tac toe game.
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+
+    if (players[player].rowsContainer[row] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    if (players[player].columnsContainer[column] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+  }
+
+
+Enter the next line: " response
+answer="let sumForRegularDiagonalElements = 0; let sumForOppositeDiagonalElements = 0;"
+additional_feedback="
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+
+    if (players[player].rowsContainer[row] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    if (players[player].columnsContainer[column] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    let sumForRegularDiagonalElements = 0; 
+    let sumForOppositeDiagonalElements = 0;
+  }
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that calculates the score in a tic tac toe game.
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+
+    if (players[player].rowsContainer[row] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    if (players[player].columnsContainer[column] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    let sumForRegularDiagonalElements = 0; 
+    let sumForOppositeDiagonalElements = 0;
+  }
+
+
+Enter the next line: " response
+answer="for (let i of players[player].diagonalContainer) { }"
+additional_feedback="
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+
+    if (players[player].rowsContainer[row] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    if (players[player].columnsContainer[column] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    let sumForRegularDiagonalElements = 0; 
+    let sumForOppositeDiagonalElements = 0;
+
+    for (let i of players[player].diagonalContainer) { 
+
+    }
+  }
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that calculates the score in a tic tac toe game.
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+
+Enter the next line: " response
+answer="sumForRegularDiagonalElements += players[player].diagonalContainer[i];"
+additional_feedback="
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+
+    if (players[player].rowsContainer[row] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    if (players[player].columnsContainer[column] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    let sumForRegularDiagonalElements = 0; 
+    let sumForOppositeDiagonalElements = 0;
+
+    for (let i of players[player].diagonalContainer) { 
+      sumForRegularDiagonalElements += players[player].diagonalContainer[i];
+    }
+  }
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that calculates the score in a tic tac toe game.
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+
+    if (players[player].rowsContainer[row] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    if (players[player].columnsContainer[column] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    let sumForRegularDiagonalElements = 0; 
+    let sumForOppositeDiagonalElements = 0;
+
+    for (let i of players[player].diagonalContainer) { 
+      sumForRegularDiagonalElements += players[player].diagonalContainer[i];
+    }
+  }
+
+
+Enter the next line: " response
+answer="sumForOppositeDiagonalElements += players[player].oppositeDiagonalContainer[i];"
+additional_feedback="
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+
+    if (players[player].rowsContainer[row] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    if (players[player].columnsContainer[column] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    let sumForRegularDiagonalElements = 0; 
+    let sumForOppositeDiagonalElements = 0;
+
+    for (let i of players[player].diagonalContainer) { 
+      sumForRegularDiagonalElements += players[player].diagonalContainer[i];
+      sumForOppositeDiagonalElements += players[player].oppositeDiagonalContainer[i];
+    }
+  }
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that calculates the score in a tic tac toe game.
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+
+    if (players[player].rowsContainer[row] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    if (players[player].columnsContainer[column] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    let sumForRegularDiagonalElements = 0; 
+    let sumForOppositeDiagonalElements = 0;
+
+    for (let i of players[player].diagonalContainer) { 
+      sumForRegularDiagonalElements += players[player].diagonalContainer[i];
+      sumForOppositeDiagonalElements += players[player].oppositeDiagonalContainer[i];
+    }
+  }
+
+
+Enter the next line: " response
+answer="if (sumForRegularDiagonalElements === sizeOfBoard) { console.log(`${player} wins`); }"
+additional_feedback="
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+
+    if (players[player].rowsContainer[row] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    if (players[player].columnsContainer[column] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    let sumForRegularDiagonalElements = 0; 
+    let sumForOppositeDiagonalElements = 0;
+
+    for (let i of players[player].diagonalContainer) { 
+      sumForRegularDiagonalElements += players[player].diagonalContainer[i];
+      sumForOppositeDiagonalElements += players[player].oppositeDiagonalContainer[i];
+    }
+
+    if (sumForRegularDiagonalElements === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+  }
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Complete the code that calculates the score in a tic tac toe game.
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+
+    if (players[player].rowsContainer[row] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    if (players[player].columnsContainer[column] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    let sumForRegularDiagonalElements = 0; 
+    let sumForOppositeDiagonalElements = 0;
+
+    for (let i of players[player].diagonalContainer) { 
+      sumForRegularDiagonalElements += players[player].diagonalContainer[i];
+      sumForOppositeDiagonalElements += players[player].oppositeDiagonalContainer[i];
+    }
+
+    if (sumForRegularDiagonalElements === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    if (sumForOppositeDiagonalElements === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+  }
+
+
+Enter the next line: " response
+answer="if (sumForOppositeDiagonalElements === sizeOfBoard) { console.log(`${player} wins`); }"
+additional_feedback="
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
+  function calculateScore(row, column, player, sizeOfBoard = 3) {
+    players[player].rowsContainer[row] += 1;
+    players[player].columnsContainer[column] += 1;
+
+    if (row === column) { 
+      players[player].diagonalContainer[row] += 1; 
+    }
+
+    if (row + column + 1 === sizeOfBoard) { 
+      players[player].oppositeDiagonalContainer[row] += 1; 
+    }
+
+    if (players[player].rowsContainer[row] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    if (players[player].columnsContainer[column] === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    let sumForRegularDiagonalElements = 0; 
+    let sumForOppositeDiagonalElements = 0;
+
+    for (let i of players[player].diagonalContainer) { 
+      sumForRegularDiagonalElements += players[player].diagonalContainer[i];
+      sumForOppositeDiagonalElements += players[player].oppositeDiagonalContainer[i];
+    }
+
+    if (sumForRegularDiagonalElements === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    if (sumForOppositeDiagonalElements === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+
+    if (sumForOppositeDiagonalElements === sizeOfBoard) { 
+      console.log(`${player} wins`); 
+    }
+  }
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Calcuate rows and columns on a 3 by 3 board. " response
+answer="const row =  Math.floor(index / 3); const column = Math.floor(index % 3);"
+additional_feedback="
+
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" 
+
+next_line
+
+read -p "
+
+  Complete the code that calculates the score in a tic tac toe game.
+
+  const players = {
+    X: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+    O: {
+        rowsContainer: [0, 0, 0],
+        columnsContainer: [0, 0, 0],
+        diagonalContainer: [0, 0, 0],
+        oppositeDiagonalContainer: [0, 0, 0],
+    },
+  };
+
 
 Enter the next line: " response
 answer=""
 additional_feedback="
 
   
-
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
@@ -1203,100 +2527,3 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 #       }));
 #     };
 #   }
-
-
-# string interpolation
-# data-tile={`${item[`tile${index}`]}`}
-
-
-#   import React, { useState } from "react";
-# import "./styles.css";
-# function Game() {
-#   const [player, setPlayer] = useState(0);
-#   const [boardValues, setBoardValue] = useState([{
-#     tile0: 'tile0', boardValue: ''},
-#     {tile1: 'tile1', boardValue: ''},
-#     {tile2: 'tile2', boardValue: ''},
-#    { tile3: 'tile3', boardValue: ''},
-#     {tile4: 'tile4', boardValue: ''},
-#     {tile5: 'tile5', boardValue: ''},
-#     {tile6: 'tile6', boardValue: ''},
-#     {tile7: 'tile7', boardValue: ''},
-#     {tile8: 'tile8', boardValue: ''},
-#   ]);
-
-#   const handlePlayers = (index) =>{
-#     return (e) => {
-#     const copyOfBoard = [...boardValues];
-    
-#     if(player === 0){
-#       copyOfBoard[index] = {
-#         ...copyOfBoard[index],
-#         boardValue: 'X'
-#       }
-#       setBoardValue(copyOfBoard)
-#        return setPlayer(1);
-#     }
-#     copyOfBoard[index] = {
-#       ...copyOfBoard[index],
-#       boardValue: 'O'
-#     }
-#     setBoardValue(copyOfBoard)
-#      return setPlayer(0);
-
-#     }
-#   }
-
-#   return (
-#     <div>
-#       Board:
-#       <h3> Player {player === 0 ? '0' : 'X'} is playing </h3>
-#       <div className="board">
-#         {
-#           boardValues.map((item, index)=>{
-#             return (
-#             <div 
-#             key={index} 
-#             data-tile={`${item[`tile${index}`]}`}
-#             onClick={handlePlayers(index)} 
-#             className={"tile"}>
-#                 {item.boardValue}
-#             </div>
-#             )
-#           })
-#         }
-        
-        
-#       </div>
-#       <button onClick={() => {}}>Reset</button>
-#     </div>
-#   );
-# }
-
-# export default function App() {
-#   return (
-#     <div className="App">
-#       <h1>Tic Tac Toe</h1>
-#       <Game />
-#     </div>
-#   );
-# }
-
-# //class syntax below is equivalent
-# // export default class Game extends React.Component {
-# //   constructor(props) {
-# //     super(props);
-# //     this.state = {
-# //       player: 0
-# //     };
-# //   }
-# //   render() {
-# //     return (
-# //       <div>
-# //         Board:
-# //         <div>...</div>
-# //         <button onClick={() => {}}>Reset</button>
-# //       </div>
-# //     );
-# //   }
-# // }
