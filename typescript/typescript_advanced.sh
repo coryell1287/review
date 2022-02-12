@@ -2274,19 +2274,19 @@ read -p "
    Define the type in useRef for the input variable.
 
     const Search = () => {
-    const input = React.useRef(null);
+      const input = React.useRef(null);
 
-    React.useEffect(() => {
-      if (input.current) {
-        input.current.focus();
-      }
-    }, []);
+        React.useEffect(() => {
+          if (input.current) {
+            input.current.focus();
+          }
+        }, []);
 
-      return (
-        <form>
-         <input ref={input} type=\"search\" />
-        </form>
-      );
+        return (
+           <form>
+             <input ref={input} type=\"search\" />
+           </form>
+        );
     };
 
 Enter your answer:" response
@@ -2296,23 +2296,20 @@ additional_feedback="
  const Search = () => {
   const input = React.useRef<HTMLInputElement>(null);
 
-  React.useEffect(() => {
+   React.useEffect(() => {
     if (input.current) {
       input.current.focus();
     }
    }, []);
 
-      return (
-        <form>
-         <input ref={input} type=\"search\" />
-        </form>
-      );
+   return (
+     <form>
+      <input ref={input} type=\"search\" />
+     </form>
+    );
  };
 "
 evaluate_answer "$response" "$answer" "$additional_feedback" 
-
-
-
 
 next_question
 

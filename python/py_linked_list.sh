@@ -4,101 +4,112 @@ correct=0
 questions=0
 
 calculate_float() {
-    awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
+  awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
 }
 
 calculate_score() {
 
-    if [[ correct -eq 0 ]]; then
-        echo "     
+  if [[ correct -eq 0 ]]; then
+    echo "     
+########################################
+
+       Wrong! There is no tommorrow, 
+       so get this right right now!
+
+########################################
+             "
+    echo "     
 ########################################
 
        You got nothing correct. Stop and go study.
 
 ########################################
              "
-    else
-        echo "########################################"
-        echo "          Progress                    "
-        echo "    $questions questions answered."
-        echo "    $correct answered correctly."
-        score=$(calculate_float $correct $questions)
-        echo "    You scored $score% on Python linked list."
-    fi
+  else
+    echo "########################################"
+    echo "          Progress                    "
+    echo "    $questions questions answered."
+    echo "    $correct answered correctly."
+    score=$(calculate_float $correct $questions)
+    echo "    You scored $score% on Python Linked List."
+  fi
 }
 
 increment_correct_responses() {
-    ((correct = correct + 1))
+  ((correct = correct + 1))
 }
 
 increment_questions_count() {
-    ((questions = questions + 1))
+  ((questions = questions + 1))
 }
 
 affirm_answer() {
-    if [[ -z "$1" ]]; then
-        echo "
+  if [[ -z "$1" ]]; then
+    echo "
 ########################################
               Correct
 ########################################
     "
-    else
-        echo "     
+  else
+    echo "     
 ########################################
               Correct
 ########################################
              "
-        echo "$1"
-    fi
+    echo "$1"
+  fi
 }
 
 evaluate_answer() {
-    increment_questions_count
-
-    if [ "$1" == "$2" ]; then
-        increment_correct_responses
-        affirm_answer "$3"
-    else
-        echo "     
+  increment_questions_count
+  if [ "$1" == "$2" ]; then
+    increment_correct_responses
+    affirm_answer "$3"
+  else
+    echo "     
 ########################################
-
+        
        Wrong! There is no tommorrow, 
        so get this right right now!
 
+        
+       Your answer:     $1
+       Correct answer:  $2
+
 ########################################
              "
-    fi
-    calculate_score
+  fi
+  calculate_score
 }
 
 evaluate_answer_written_with_code() {
-    increment_questions_count
+  increment_questions_count
 
-    if [[ "$1" == "$2" ]]; then
-        increment_correct_responses
-        affirm_answer "$3"
-    else
+  if [[ "$1" == "$2" ]]; then
+    increment_correct_responses
+    affirm_answer "$3"
+  else
 
-        echo "     
+    echo "     
 ########################################
         
        Wrong! There is no tommorrow, 
        so get this right right now!
 
         
-       Your answer:     "$1"
-       Correct answer:  "$2"
+       Your answer:     $1
+       Correct answer:  $2
 
 ########################################
              "
-        calculate_score
-        exit 1
-    fi
     calculate_score
+    exit 1
+  fi
+  calculate_score
 }
 
 next_question() {
-    echo "
+  echo "
  ########################################
              Next Question 
  ########################################
@@ -106,7 +117,7 @@ next_question() {
 }
 
 next_line() {
-    echo "
+  echo "
  ########################################
                 Next Line 
  ########################################
@@ -218,19 +229,14 @@ read -p "
     def remove_even(lst):
         odds = []  # Create a new empty list
         for number in lst:
-
-    # Enter code line by line unitl the solution is complete.
+             if number % 2 != 0:
+                odds.append(number)
 
     print(remove_even([3, 2, 41, 3, 34]))
 
 Enter code here: " response
 answer="odds.append(number)"
 additional_feedback="
-
-This solution starts with the first element of the list and checks 
-if it is not even. If it is odd, the element is appended to a new list. 
-Otherwise, it skips to the next element. This repeats until the end of 
-the list is reached.
 
     def remove_even(lst):
         odds = []  # Create a new empty list
@@ -250,7 +256,7 @@ evaluate_answer "$response" "$answer" "$additional_feedback"
 next_question
 
 read -p "What is the time complexity of the previous solution? " response
-answer="Because the entire list has to be iterated over, this solution is in O(n)O(n) time."
+answer="Because the entire list has to be iterated over, this solution is in O(n) time."
 evaluate_answer "$response" "$answer"
 
 next_question

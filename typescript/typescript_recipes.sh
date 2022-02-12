@@ -71,8 +71,8 @@ evaluate_answer() {
        so get this right right now!
 
         
-       Your answer:     "$1"
-       Correct answer:  "$2"
+       Your answer:     $1
+       Correct answer:  $2
 
 ########################################
              "
@@ -95,8 +95,8 @@ evaluate_answer_written_with_code() {
        so get this right right now!
 
         
-       Your answer:     "$1"
-       Correct answer:  "$2"
+       Your answer:     $1
+       Correct answer:  $2
 
 ########################################
              "
@@ -5519,11 +5519,11 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_line
 
 read -p "Reverse a string using .split('') .reduce():  " response
-answer="return str.split('').reduce((rev, char) => char + rev, '');"
+answer="return str.split('').reduce((acc, char) => char + acc, '');"
 additional_feedback="
 
   function reverse(str) {
-    return str.split('').reduce((rev, char) => char + rev, '');
+    return str.split('').reduce((acc, char) => char + acc, '');
   }  
 
 "
@@ -5621,7 +5621,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_line
 
 read -p "Pick a random element from an array. " response
-answer="const randomValue = myArray[Math.floor(Math.random() * myArray.length)];"
+answer="const randomValue = arr[Math.floor(Math.random() * arr.length)];"
 evaluate_answer_written_with_code "$response" "$answer"
 
 next_line
@@ -5652,7 +5652,7 @@ additional_feedback="
   // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
 
 "
-evaluate_answer_written_with_code "$response" "$answer" ""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -5681,7 +5681,7 @@ additional_feedback="
   // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }  
 
 "
-evaluate_answer_written_with_code "$response" "$answer" ""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -5738,7 +5738,7 @@ read -p "
   // }
 
 Enter the next line: " response
-answer="function groupBy(objectArray, property) { }"
+answer="function groupBy(objectArray, key) { }"
 additional_feedback="
 
   const people = [
@@ -5747,7 +5747,7 @@ additional_feedback="
     { name: 'Jane', age: 20 }
   ];
 
-  function groupBy(objectArray, property) { 
+  function groupBy(objectArray, key) { 
     
   }
 
@@ -5762,7 +5762,7 @@ additional_feedback="
   // }
 
 "
-evaluate_answer_written_with_code "$response" "$answer" ""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -5775,7 +5775,7 @@ read -p "
     { name: 'Jane', age: 20 }
   ];
 
-  function groupBy(objectArray, property) { 
+  function groupBy(objectArray, key) { 
     
   }
 
@@ -5790,7 +5790,7 @@ read -p "
   // }
 
 Enter the next line: " response
-answer="return objectArray.reduce(function (acc, obj) { }, {});"
+answer="return objectArray.reduce(function (acc, cur) { }, {});"
 additional_feedback="
 
   const people = [
@@ -5799,8 +5799,8 @@ additional_feedback="
     { name: 'Jane', age: 20 }
   ];
 
-  function groupBy(objectArray, property) { 
-    return objectArray.reduce(function (acc, obj) { 
+  function groupBy(objectArray, key) { 
+    return objectArray.reduce(function (acc, cur) { 
 
     }, {});
   }
@@ -5817,7 +5817,7 @@ additional_feedback="
 
 
 "
-evaluate_answer_written_with_code "$response" "$answer" ""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -5830,8 +5830,8 @@ read -p "
     { name: 'Jane', age: 20 }
   ];
 
-  function groupBy(objectArray, property) { 
-    return objectArray.reduce(function (acc, obj) { 
+  function groupBy(objectArray, key) { 
+    return objectArray.reduce(function (acc, cur) { 
 
     }, {});
   }
@@ -5856,8 +5856,8 @@ additional_feedback="
     { name: 'Jane', age: 20 }
   ];
 
-  function groupBy(objectArray, property) { 
-    return objectArray.reduce(function (acc, obj) { 
+  function groupBy(objectArray, key) { 
+    return objectArray.reduce(function (acc, cur) { 
       if (!acc[key]) { 
         acc[key] = []; 
       }
@@ -5875,7 +5875,7 @@ additional_feedback="
   // }
 
 "
-evaluate_answer_written_with_code "$response" "$answer" ""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -5888,8 +5888,8 @@ read -p "
     { name: 'Jane', age: 20 }
   ];
 
-  function groupBy(objectArray, property) { 
-    return objectArray.reduce(function (acc, obj) { 
+  function groupBy(objectArray, key) { 
+    return objectArray.reduce(function (acc, cur) { 
       if (!acc[key]) { 
         acc[key] = []; 
       }
@@ -5907,7 +5907,7 @@ read -p "
   // }
 
 Enter the next line: " response
-answer="acc[key].push(obj); return acc;"
+answer="acc[key].push(cur); return acc;"
 additional_feedback="
 
   const people = [
@@ -5916,12 +5916,12 @@ additional_feedback="
     { name: 'Jane', age: 20 }
   ];
 
-  function groupBy(objectArray, property) { 
-    return objectArray.reduce(function (acc, obj) { 
+  function groupBy(objectArray, key) { 
+    return objectArray.reduce(function (acc, cur) { 
       if (!acc[key]) { 
         acc[key] = []; 
       }
-      acc[key].push(obj); 
+      acc[key].push(cur); 
       return acc;
     }, {});
   }
@@ -5937,7 +5937,7 @@ additional_feedback="
   // }
 
 "
-evaluate_answer_written_with_code "$response" "$answer" ""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -5958,7 +5958,7 @@ read -p "Function composition enabling pipe.
 Enter the next line: " response
 answer="const pipe = (...functions) => input => functions.reduce((acc, fn) => fn(acc), input);"
 
-evaluate_answer_written_with_code "$response" "$answer" ""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -5990,11 +5990,11 @@ read -p "Recursively flatten an array using reduce.
   // [1, 2, 3, 4, 5, 6];
 
 Enter the next line: " response
-answer="return d > 0 ? arr.reduce(function (acc, val) {  }, []) : arr.slice();"
+answer="return d > 0 ? arr.reduce(function (acc, cur) { }, []) : arr.slice();"
 additional_feedback="
 
   function flatDeep(arr, d = 1) { 
-    return d > 0 ? arr.reduce(function (acc, val) {  
+    return d > 0 ? arr.reduce(function (acc, cur) {  
 
     }, []) : arr.slice();
   }
@@ -6010,7 +6010,7 @@ next_line
 read -p "Recursively flatten an array using reduce.
 
   function flatDeep(arr, d = 1) { 
-    return d > 0 ? arr.reduce(function (acc, val) {  
+    return d > 0 ? arr.reduce(function (acc, cur) {  
       
     }, []) : arr.slice();
   }
@@ -6019,12 +6019,70 @@ read -p "Recursively flatten an array using reduce.
   // [1, 2, 3, 4, 5, 6];
 
 Enter the next line: " response
-answer="return acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) : val);"
+answer="return acc.concat(Array.isArray(cur));"
 additional_feedback="
 
   function flatDeep(arr, d = 1) { 
-    return d > 0 ? arr.reduce(function (acc, val) {  
-      return acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) : val);
+    return d > 0 ? arr.reduce(function (acc, cur) {  
+      return acc.concat(Array.isArray(cur));
+    }, []) : arr.slice();
+  }
+
+  flatDeep(arr, Infinity);
+  // [1, 2, 3, 4, 5, 6];
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Recursively flatten an array using reduce.
+
+  function flatDeep(arr, d = 1) { 
+    return d > 0 ? arr.reduce(function (acc, cur) {  
+      return acc.concat(Array.isArray(cur));
+    }, []) : arr.slice();
+  }
+
+  flatDeep(arr, Infinity);
+  // [1, 2, 3, 4, 5, 6];
+
+Enter the next line: " response
+answer="? flatDeep(cur, d - 1)"
+additional_feedback="
+
+  function flatDeep(arr, d = 1) { 
+    return d > 0 ? arr.reduce(function (acc, cur) {  
+      return acc.concat(Array.isArray(cur) ? flatDeep(cur, d - 1));
+    }, []) : arr.slice();
+  }
+
+  flatDeep(arr, Infinity);
+  // [1, 2, 3, 4, 5, 6];
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Recursively flatten an array using reduce.
+
+  function flatDeep(arr, d = 1) { 
+    return d > 0 ? arr.reduce(function (acc, cur) {  
+      return acc.concat(Array.isArray(cur) ? flatDeep(cur, d - 1));
+    }, []) : arr.slice();
+  }
+
+  flatDeep(arr, Infinity);
+  // [1, 2, 3, 4, 5, 6];
+
+Enter the next line: " response
+answer=": cur"
+additional_feedback="
+
+  function flatDeep(arr, d = 1) { 
+    return d > 0 ? arr.reduce(function (acc, cur) {  
+      return acc.concat(Array.isArray(cur) ? flatDeep(cur, d - 1) : cur);
     }, []) : arr.slice();
   }
 
@@ -6052,6 +6110,11 @@ read -p "Run promises in a sequence.
     })
   }
 
+
+  const promiseArr = [p1, p2, f3, p4];
+
+  runPromiseInSequence(promiseArr, 10)
+    .then(console.log)   // 1200
 
 Enter the next line: " response
 answer="function runPromiseInSequence(arr, input) { }"
@@ -6075,6 +6138,11 @@ additional_feedback="
     })
   }
 
+  const promiseArr = [p1, p2, f3, p4];
+
+  runPromiseInSequence(promiseArr, 10)
+    .then(console.log)   // 1200
+
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
@@ -6100,9 +6168,127 @@ read -p "Run promises in a sequence.
     })
   }
 
+  const promiseArr = [p1, p2, f3, p4];
+
+  runPromiseInSequence(promiseArr, 10)
+    .then(console.log)   // 1200
 
 Enter the next line: " response
-answer="return arr.reduce((promiseChain, currentFunction) => promiseChain.then(currentFunction), Promise.resolve(input));"
+answer="return arr.reduce((promiseChain, currentFunction) => );"
+additional_feedback="
+
+ function runPromiseInSequence(arr, input) { 
+   return arr.reduce((promiseChain, currentFunction) => );
+  } 
+
+  // promise function 1
+  function p1(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 5)
+    })
+  }
+
+  // promise function 2
+  function p2(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 2)
+    })
+  } 
+
+  const promiseArr = [p1, p2, f3, p4];
+
+  runPromiseInSequence(promiseArr, 10)
+    .then(console.log)   // 1200
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Run promises in a sequence.
+
+  function runPromiseInSequence(arr, input) { 
+   return arr.reduce((promiseChain, currentFunction) => );
+  } 
+
+  // promise function 1
+  function p1(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 5)
+    })
+  }
+
+  // promise function 2
+  function p2(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 2)
+    })
+  } 
+
+  const promiseArr = [p1, p2, f3, p4];
+
+  runPromiseInSequence(promiseArr, 10)
+    .then(console.log)   // 1200
+
+Enter the next line: " response
+answer="promiseChain.then(currentFunction)"
+additional_feedback="
+
+ function runPromiseInSequence(arr, input) { 
+   return arr.reduce((promiseChain, currentFunction) => promiseChain.then(currentFunction));
+  } 
+
+  // promise function 1
+  function p1(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 5)
+    })
+  }
+
+  // promise function 2
+  function p2(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 2)
+    })
+  } 
+
+  const promiseArr = [p1, p2, f3, p4];
+
+  runPromiseInSequence(promiseArr, 10)
+    .then(console.log)   // 1200
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Run promises in a sequence.
+
+  function runPromiseInSequence(arr, input) { 
+   return arr.reduce((promiseChain, currentFunction) => promiseChain.then(currentFunction));
+  } 
+
+  // promise function 1
+  function p1(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 5)
+    })
+  }
+
+  // promise function 2
+  function p2(a) {
+    return new Promise((resolve, reject) => {
+      resolve(a * 2)
+    })
+  } 
+
+  const promiseArr = [p1, p2, f3, p4];
+
+  runPromiseInSequence(promiseArr, 10)
+    .then(console.log)   // 1200
+
+Enter the next line: " response
+answer="Promise.resolve(input)"
 additional_feedback="
 
  function runPromiseInSequence(arr, input) { 
@@ -6124,6 +6310,11 @@ additional_feedback="
       resolve(a * 2)
     })
   } 
+
+  const promiseArr = [p1, p2, f3, p4];
+
+  runPromiseInSequence(promiseArr, 10)
+    .then(console.log)   // 1200
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -6397,7 +6588,7 @@ read -p "Use a WeakMap to track how often a method was called.
   console.log(foo(obj2));
 
 Enter the next line: " response
-answer="const calls = argCallsTracker(args); console.log('foo called with ', JSON.stringify(args), calls, ' times');"
+answer="const calls = argCallsTracker(args);"
 additional_feedback="
 
   const argCallsTracker = (() => { 
@@ -6411,7 +6602,59 @@ additional_feedback="
 
   function foo(args) { 
     const calls = argCallsTracker(args);
-    console.log('foo called with ', JSON.stringify(args), calls, ' times');
+  }
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2));
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Use a WeakMap to track how often a method was called.
+
+  const argCallsTracker = (() => { 
+   const wm = new WeakMap();
+
+    return obj => { 
+      wm.set(obj, (wm.get(obj) || 0) + 1);
+      return wm.get(obj);
+    };
+  })();
+
+  function foo(args) { 
+    const calls = argCallsTracker(args);
+  }
+
+  const obj1 = { key: 1 };
+  const obj2 = { key: 2 };
+
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj1));
+  console.log(foo(obj2));
+
+Enter the next line: " response
+answer="console.log(JSON.stringify(args), calls);"
+additional_feedback="
+
+  const argCallsTracker = (() => { 
+   const wm = new WeakMap();
+
+    return obj => { 
+      wm.set(obj, (wm.get(obj) || 0) + 1);
+      return wm.get(obj);
+    };
+  })();
+
+  function foo(args) { 
+    const calls = argCallsTracker(args);
+    console.log(JSON.stringify(args));
   }
 
   const obj1 = { key: 1 };
@@ -6427,17 +6670,157 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_line
 
 read -p "What is the difference between WeakMap and Map? " response
-answer="WeakMap is weakly set. If a key is set and no methods reference it, the key will be garbage collected. A Map will keep everything even when it is not in use. WeakMap also doesn't have any iterators."
-evaluate_answer_written_with_code "$response" "$answer"
+answer="WeakMap is weakly set. If a key is set and no methods reference it, then the key will be garbage collected."
+additional_feedback="
+
+  WeakMap is weakly set. If a key is set and no methods reference it, 
+  then the key will be garbage collected.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-read -p "Converting from Map to Object and from Object to Map. " response
-answer="const objMap = Object.fromEntries(myMap.entries()); const map = new Map(objMap.entries());"
-evaluate_answer_written_with_code "$response" "$answer"
+read -p "What is the difference between WeakMap and Map? 
+
+  WeakMap is weakly set. If a key is set and no methods reference it, 
+  then the key will be garbage collected.
+
+Enter the next line: " response
+answer="A Map will keep everything in memory even when it is not in use."
+additional_feedback="
+
+  WeakMap is weakly set. If a key is set and no methods reference it, 
+  then the key will be garbage collected.
+
+  A Map will keep everything in memory even when it is not in use.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
+read -p "What is the difference between WeakMap and Map? 
+
+  WeakMap is weakly set. If a key is set and no methods reference it, 
+  then the key will be garbage collected.
+
+  A Map will keep everything in memory even when it is not in use.
+
+Enter the next line: " response
+answer="Because keys will be garbage collected if they are not referenced, WeakMap doesn't have any iterators"
+additional_feedback="
+
+  WeakMap is weakly set. If a key is set and no methods reference it, 
+  then the key will be garbage collected.
+
+  A Map will keep everything in memory even when it is not in use.
+
+  Because keys will be garbage collected if not they are not referenced, 
+  WeakMap doesn't have any iterators, 
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What is the difference between WeakMap and Map? 
+
+  WeakMap is weakly set. If a key is set and no methods reference it, 
+  then the key will be garbage collected.
+
+  A Map will keep everything in memory even when it is not in use.
+
+  Because keys will be garbage collected if not they are not referenced, 
+  WeakMap doesn't have any iterators, 
+
+Enter the next line: " response
+answer="thus developers are prevented from observing the liveness of its keys."
+additional_feedback="
+
+  WeakMap is weakly set. If a key is set and no methods reference it, 
+  then the key will be garbage collected.
+
+  A Map will keep everything in memory even when it is not in use.
+
+  Because keys will be garbage collected if not they are not referenced, 
+  WeakMap doesn't have any iterators, thus developers are prevented from 
+  observing the liveness of its keys. 
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What is the difference between WeakMap and Map? 
+
+  WeakMap is weakly set. If a key is set and no methods reference it, 
+  then the key will be garbage collected.
+
+  A Map will keep everything in memory even when it is not in use.
+
+  Because keys will be garbage collected if not they are not referenced, 
+  WeakMap doesn't have any iterators, thus developers are prevented from 
+  observing the liveness of its keys.
+
+Enter the next line: " response
+answer="If a WeakMap exposed any method to obtain a list of its keys"
+additional_feedback="
+
+  WeakMap is weakly set. If a key is set and no methods reference it, 
+  then the key will be garbage collected.
+
+  A Map will keep everything in memory even when it is not in use.
+
+  Because keys will be garbage collected if not they are not referenced, 
+  WeakMap doesn't have any iterators, thus developers are prevented from 
+  observing the liveness of its keys.  
+
+  If a WeakMap exposed any method to obtain a list of its keys,
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What is the difference between WeakMap and Map? 
+
+  WeakMap is weakly set. If a key is set and no methods reference it, 
+  then the key will be garbage collected.
+
+  A Map will keep everything in memory even when it is not in use.
+
+  Because keys will be garbage collected if not they are not referenced, 
+  WeakMap doesn't have any iterators, thus developers are prevented from 
+  observing the liveness of its keys.  
+
+  If a WeakMap exposed any method to obtain a list of its keys,
+
+Enter the next line: " response
+answer="the list would depend on the state of garbage collection, introducing non-determinism."
+additional_feedback="
+
+  WeakMap is weakly set. If a key is set and no methods reference it, 
+  then the key will be garbage collected.
+
+  A Map will keep everything in memory even when it is not in use.
+
+  Because keys will be garbage collected if not they are not referenced, 
+  WeakMap doesn't have any iterators, thus developers are prevented from 
+  observing the liveness of its keys.  
+
+  If a WeakMap exposed any method to obtain a list of its keys, the 
+  list would depend on the state of garbage collection, introducing 
+  non-determinism.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
 
 read -p "Return the byte size of a given input.
 
@@ -6514,12 +6897,12 @@ read -p "
   console.log(createPhoneNumber(1234561029));
 
 Enter the next line: " response
-answer="const phoneNumbers = numbers.toString();"
+answer="const phoneNumber = numbers.toString();"
 additional_feedback="
 
   function createPhoneNumber (numbers) { 
     let format = '(xxx) xxx-xxxx';
-    const phoneNumbers = numbers.toString();
+    const phoneNumber = numbers.toString();
   }
 
   console.log(createPhoneNumber(1234561029));  
@@ -6536,20 +6919,20 @@ read -p "
 
   function createPhoneNumber (numbers) { 
     let format = '(xxx) xxx-xxxx';
-    const phoneNumbers = numbers.toString();
+    const phoneNumber = numbers.toString();
   }
 
   console.log(createPhoneNumber(1234561029)); 
 
 Enter the next line: " response
-answer="for (let i = 0; i < phoneNumbers.length; i++) { }"
+answer="for (let i = 0; i < phoneNumber.length; i++) { }"
 additional_feedback="
 
   function createPhoneNumber (numbers) { 
     let format = '(xxx) xxx-xxxx';
-    const phoneNumbers = numbers.toString();
+    const phoneNumber = numbers.toString();
 
-    for (let i = 0; i < phoneNumbers.length; i++) { 
+    for (let i = 0; i < phoneNumber.length; i++) { 
 
     }
   }
@@ -6569,9 +6952,9 @@ read -p "
 
   function createPhoneNumber (numbers) { 
     let format = '(xxx) xxx-xxxx';
-    const phoneNumbers = numbers.toString();
+    const phoneNumber = numbers.toString();
 
-    for (let i = 0; i < phoneNumbers.length; i++) { 
+    for (let i = 0; i < phoneNumber.length; i++) { 
 
     }
   }
@@ -6579,15 +6962,15 @@ read -p "
   console.log(createPhoneNumber(1234561029)); 
 
 Enter the next line: " response
-answer="format = format.replace('x', phoneNumbers[i]);"
+answer="format = format.replace('x', phoneNumber[i]);"
 additional_feedback="
 
   function createPhoneNumber (numbers) { 
     let format = '(xxx) xxx-xxxx';
-    const phoneNumbers = numbers.toString();
+    const phoneNumber = numbers.toString();
 
-    for (let i = 0; i < phoneNumbers.length; i++) { 
-      format = format.replace('x', phoneNumbers[i]);
+    for (let i = 0; i < phoneNumber.length; i++) { 
+      format = format.replace('x', phoneNumber[i]);
     }
   }
 
@@ -6606,10 +6989,10 @@ read -p "
 
   function createPhoneNumber (numbers) { 
     let format = '(xxx) xxx-xxxx';
-    const phoneNumbers = numbers.toString();
+    const phoneNumber = numbers.toString();
 
-    for (let i = 0; i < phoneNumbers.length; i++) { 
-      format = format.replace('x', phoneNumbers[i]);
+    for (let i = 0; i < phoneNumber.length; i++) { 
+      format = format.replace('x', phoneNumber[i]);
     }
   }
 
@@ -6621,10 +7004,10 @@ additional_feedback="
 
   function createPhoneNumber (numbers) { 
     let format = '(xxx) xxx-xxxx';
-    const phoneNumbers = numbers.toString();
+    const phoneNumber = numbers.toString();
 
-    for (let i = 0; i < phoneNumbers.length; i++) { 
-      format = format.replace('x', phoneNumbers[i]);
+    for (let i = 0; i < phoneNumber.length; i++) { 
+      format = format.replace('x', phoneNumber[i]);
     }
     return format;
   }
@@ -6890,7 +7273,7 @@ read -p "
     }, 1000);
 
 Enter the next line: " response
-answer="console.log(`${days}d ${hours}h ${minutes}m ${seconds}s`);"
+answer="console.log(\`\${days}d \${hours}h \${minutes}m \${seconds}s\`);"
 additional_feedback="
 
   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
@@ -6905,7 +7288,7 @@ additional_feedback="
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      console.log(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+      console.log(\`\${days}d \${hours}h \${minutes}m \${seconds}s\`);
 
     }, 1000);
 
@@ -6929,10 +7312,12 @@ read -p "
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+      console.log(\`\${days}d \${hours}h \${minutes}m \${seconds}s\`);
+
     }, 1000);
 
 Enter the next line: " response
-answer="if (distance < 0) { clearInterval(x); console.log('Expired'); } "
+answer="if (distance < 0) { clearInterval(x); console.log('Expired'); }"
 additional_feedback="
 
   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
@@ -6946,6 +7331,8 @@ additional_feedback="
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      console.log(\`\${days}d \${hours}h \${minutes}m \${seconds}s\`);
 
       if (distance < 0) { 
         clearInterval(x); 
@@ -7099,11 +7486,11 @@ read -p "Validate URL.
 
 
 Enter the next line: " response
-answer="return new RegExp('^(https?:\\\\/\\\\/)').test(url);"
+answer="return new RegExp('^(https?:\\\/\\\/)').test(url);"
 additional_feedback="
 
   const matchesURLPattern = (url: string): boolean => {
-    return new RegExp('^(https?:\\/\\/)').test(url);
+    return new RegExp('^(https?:\\\/\\\/)').test(url);
   } 
 
 "
@@ -7113,12 +7500,16 @@ next_line
 
 read -p "Convert a string to camel case.
 
+  function camelCase(str) { 
+
+  }
+
 Enter the next line: " response
-answer="function camelCase (str) { }"
+answer="return str.replace(//g)"
 additional_feedback="
 
   function camelCase(str) { 
-
+    return str.replace(//g)
   }
 
 "
@@ -7129,15 +7520,91 @@ next_line
 read -p "Convert a string to camel case.
 
   function camelCase(str) { 
-
+    return str.replace(//g)
   }
 
 Enter the next line: " response
-answer=".replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) { })"
+answer="()"
 additional_feedback="
 
   function camelCase(str) { 
-    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) { 
+    return str.replace(/()/g)
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Convert a string to camel case.
+
+  function camelCase(str) { 
+    return str.replace(/()/g)
+  }
+
+Enter the next line: " response
+answer="?:^\\w"
+additional_feedback="
+
+  function camelCase(str) { 
+    return str.replace(/(?:^\\w)/g)
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Convert a string to camel case.
+
+  function camelCase(str) { 
+    return str.replace(/(?:^\\w)/g)
+  }
+
+Enter the next line: " response
+answer="|[A-Z]|"
+additional_feedback="
+
+  function camelCase(str) { 
+    return str.replace(/(?:^\\w|[A-Z]|)/g)
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Convert a string to camel case.
+
+  function camelCase(str) { 
+    return str.replace(/(?:^\\w|[A-Z]|)/g)
+  }
+
+Enter the next line: " response
+answer="\\b\\w"
+additional_feedback="
+
+  function camelCase(str) { 
+    return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g)
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Convert a string to camel case.
+
+  function camelCase(str) { 
+    return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g)
+  }
+
+Enter the next line: " response
+answer="function(word, index) { })"
+additional_feedback="
+
+  function camelCase(str) { 
+    return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, function(word, index) { 
 
     })
   }
@@ -7150,18 +7617,18 @@ next_line
 read -p "Convert a string to camel case.
 
   function camelCase(str) { 
-    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) { 
+    return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, function(word, index) { 
 
     })
   }
 
 Enter the next line: " response
-answer="return index == 0 ? word.toLowerCase() : word.toUpperCase();"
+answer="return index === 0 ? word.toLowerCase() : word.toUpperCase();"
 additional_feedback="
 
   function camelCase(str) { 
-    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) { 
-      return index == 0 ? word.toLowerCase() : word.toUpperCase();
+    return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, function(word, index) { 
+      return index === 0 ? word.toLowerCase() : word.toUpperCase();
     })
   }
 
@@ -7173,20 +7640,20 @@ next_line
 read -p "Convert a string to camel case.
 
   function camelCase(str) { 
-    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) { 
-      return index == 0 ? word.toLowerCase() : word.toUpperCase();
+    return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, function(word, index) { 
+      return index === 0 ? word.toLowerCase() : word.toUpperCase();
     })
   }
 
 Enter the next line: " response
-answer=".replace(/\s+/g, "");"
+answer=".replace(/\\s+/g, '');"
 additional_feedback="
 
   function camelCase(str) { 
-    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) { 
-      return index == 0 ? word.toLowerCase() : word.toUpperCase();
+    return return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, function(word, index) { 
+      return index === 0 ? word.toLowerCase() : word.toUpperCase();
     })
-    .replace(/\s+/g, "");
+    .replace(/\\s+/g, '');
   }
 
 "
@@ -7220,82 +7687,458 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
+next_question
+
+read -p "Sort the the following using the language locale for Germany.
+
+      ['ä', 'b']
+
+Enter the next line: " response
+answer="['ä', 'b'].sort((a, b) => a.localeCompare(b, 'de'));"
+additional_feedback="
+
+  ['ä', 'b'].sort((a, b) => a.localeCompare(b, 'de')); 
+  // ['ä', 'b', 'c']
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Write a function that replaces the World with Web.
+
+
+Enter the next line: " response
+answer="function replaceString(oldS: string, newS: string, phrase: string): string { }"
+additional_feedback="
+
+  function replaceString(oldS: string, newS: string, phrase: string): string {
+  
+  }
+
+  replaceString('World', 'Web', 'Brave New World');
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
 next_line
 
+read -p "Write a function that replaces the World with Web.
 
-// German
-["ä", "b"].sort((a, b) => a.localeCompare(b, "de")); // ['ä', 'b', 'c']
+  function replaceString(oldS: string, newS: string, fullS: string): string {
+  
+  }
 
-// Swedish
-["ä", "b"].sort((a, b) => a.localeCompare(b, "sv")); // ['b', 'c', 'ä']
+ replaceString('World', 'Web', 'Brave New World');
+  
+Enter the next line: " response
+answer="return phrase.split(oldS).join(newS);"
+additional_feedback="
 
+  function replaceString(oldS: string, newS: string, fullS: string): string {
+    return fullS.split(oldS).join(newS);
+  }
 
-replaceString('World', 'Web', 'Brave New World');
-function replaceString(oldS, newS, fullS): string {
-  return fullS.split(oldS).join(newS);
-}
+  replaceString('World', 'Web', 'Brave New World');
 
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-function replaceString(oldS, newS, fullS) {
-  for (let i = 0; i < fullS.length; ++i) {
-    if (fullS.substring(i, i + oldS.length) == oldS) {
-      fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length)
+next_question
+
+read -p "
+  
+  Solve using a for-loop
+
+  function replaceString(oldS: string, newS: string, fullS: string): string {
+    
+  }
+
+  replaceString('World', 'Web', 'Brave New World');
+
+Enter the next line: " response
+answer="for (let i = 0; i < fullS.length; ++i) { }"
+additional_feedback="
+
+  function replaceString(oldS: string, newS: string, fullS: string): string {
+    for (let i = 0; i < fullS.length; ++i) { 
+      
+    }
+  } 
+
+ replaceString('World', 'Web', 'Brave New World'); 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  
+  Solve using a for-loop
+
+  function replaceString(oldS: string, newS: string, fullS: string): string {
+    for (let i = 0; i < fullS.length; ++i) { 
+      
     }
   }
-  return fullS
-}
-const sleep = (ms: number): Promise<ReturnType<typeof setTimeout>> => {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-};
 
-# // Replaces oldS with newS in the string fullS
-# function replaceString(oldS, newS, fullS) {
-#   for (let i = 0; i < fullS.length; ++i) {
-#     if (fullS.substring(i, i + oldS.length) == oldS) {
-#       fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length)
-#     }
-#   }
-#   return fullS
-# }
+  replaceString('World', 'Web', 'Brave New World');
 
-# replaceString('World', 'Web', 'Brave New World');
+Enter the next line: " response
+answer="if (fullS.substring(i, i + oldS.length) === oldS) { }"
+additional_feedback="
+
+  function replaceString(oldS: string, newS: string, fullS: string): string {
+    for (let i = 0; i < fullS.length; ++i) { 
+      if (fullS.substring(i, i + oldS.length) === oldS) { 
+
+      }
+    }
+  }  
+
+  replaceString('World', 'Web', 'Brave New World');
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  
+  Solve using a for-loop
+
+  function replaceString(oldS: string, newS: string, fullS: string): string {
+    for (let i = 0; i < fullS.length; ++i) { 
+      if (fullS.substring(i, i + oldS.length) === oldS) { 
+        
+      }
+    }
+  }
+
+  
+ replaceString('World', 'Web', 'Brave New World');
+
+
+Enter the next line: " response
+answer="fullS = fullS.substring(0, i)"
+additional_feedback="
+
+  function replaceString(oldS: string, newS: string, fullS: string): string {
+    for (let i = 0; i < fullS.length; ++i) { 
+      if (fullS.substring(i, i + oldS.length) === oldS) { 
+        fullS = fullS.substring(0, i)
+      }
+    }
+  }  
+
+  replaceString('World', 'Web', 'Brave New World');
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  
+  Solve using a for-loop
+
+  function replaceString(oldS: string, newS: string, fullS: string): string {
+    for (let i = 0; i < fullS.length; ++i) { 
+      if (fullS.substring(i, i + oldS.length) === oldS) { 
+        fullS = fullS.substring(0, i)
+      }
+    }
+  }
+
+  replaceString('World', 'Web', 'Brave New World');
+
+Enter the next line: " response
+answer="+ newS + fullS.substring();"
+additional_feedback="
+
+  function replaceString(oldS: string, newS: string, fullS: string): string {
+    for (let i = 0; i < fullS.length; ++i) { 
+      if (fullS.substring(i, i + oldS.length) === oldS) { 
+        fullS = fullS.substring(0, i) + newS + fullS.substring();
+      }
+    }
+  }  
+
+  replaceString('World', 'Web', 'Brave New World');
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  
+  Solve using a for-loop
+
+  function replaceString(oldS: string, newS: string, fullS: string): string {
+    for (let i = 0; i < fullS.length; ++i) { 
+      if (fullS.substring(i, i + oldS.length) === oldS) { 
+        fullS = fullS.substring(0, i)
+      }
+    }
+  }
+
+  replaceString('World', 'Web', 'Brave New World');
+
+Enter the next line: " response
+answer="i + oldS.length, fullS.length"
+additional_feedback="
+
+  function replaceString(oldS: string, newS: string, fullS: string): string {
+    for (let i = 0; i < fullS.length; ++i) { 
+      if (fullS.substring(i, i + oldS.length) === oldS) { 
+        fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length);
+      }
+    }
+  }  
+  
+  replaceString('World', 'Web', 'Brave New World');
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  
+  Solve using a for-loop
+
+  function replaceString(oldS: string, newS: string, fullS: string): string {
+    for (let i = 0; i < fullS.length; ++i) { 
+      if (fullS.substring(i, i + oldS.length) === oldS) { 
+        fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length);
+      }
+    }
+  } 
+
+  replaceString('World', 'Web', 'Brave New World');
+
+Enter the next line: " response
+answer="return fullS;"
+additional_feedback="
+
+  function replaceString(oldS: string, newS: string, fullS: string): string {
+    for (let i = 0; i < fullS.length; ++i) { 
+      if (fullS.substring(i, i + oldS.length) === oldS) { 
+        fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length);
+      }
+    }
+    return fullS;
+  } 
+
+  replaceString('World', 'Web', 'Brave New World'); 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Write a sleep function that wraps a setTimeout in a Promise. " response
+answer="const sleep = (ms: number): Promise<ReturnType<typeof setTimeout>> => { };"
+additional_feedback="
+
+  const sleep = (ms: number): Promise<ReturnType<typeof setTimeout>> => { 
+
+  };
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Write a sleep function that wraps a setTimeout in a Promise.
+
+  const sleep = (ms: number): Promise<ReturnType<typeof setTimeout>> => { 
+
+  };
+
+Enter the next line: " response
+answer="return new Promise((resolve) => setTimeout(resolve, ms));"
+additional_feedback="
+
+  const sleep = (ms: number): Promise<ReturnType<typeof setTimeout>> => { 
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  };
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Write a curry function that accepts an number and returns a string from the curried function. " response
+answer="const func: (num: number) => string = (num: number) => num.toString();"
+additional_feedback="
+
+  const func: (num: number) => string = (num: number) => num.toString();
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Write a generic function to take a number to and an element and return an array. " response
+answer="function fillArray<T>(len: number, elem: T) { }"
+additional_feedback="
+
+  function fillArray<T>(len: number, elem: T) {
+
+  }
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Write a generic function to take a number to and an element and return an array. " response
+answer="return new Array<T>(len).fill(elem);"
+additional_feedback="
+
+  function fillArray<T>(len: number, elem: T) {
+    return new Array<T>(len).fill(elem);
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+  
+  Complete the curry function. 
+
+  const add10 = add(10);
+  const add20 = add(20);
+  const add30 = add(30);
+
+  console.log(add10(5)); // 15
+  console.log(add20(5)); // 25
+  console.log(add30(5)); // 35
+
+
+Enter the next line: " response
+answer="function add(x: number): (y: number) => number { }"
+additional_feedback="
+
+  function add(x: number): (y: number) => number {
+  
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  
+  Complete the curry function. 
+
+  const add10 = add(10);
+  const add20 = add(20);
+  const add30 = add(30);
+
+  console.log(add10(5)); // 15
+  console.log(add20(5)); // 25
+  console.log(add30(5)); // 35
+
+
+Enter the next line: " response
+answer="return (y: number): number => x + y;"
+additional_feedback="
+
+  function add(x: number): (y: number) => number {
+    return (y: number): number => x + y;
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+ Describe how the curry function works.
+
+  function add(x: number): (y: number) => number {
+    return (y: number): number => x + y;
+  } 
+
+Enter the next line: " response
+answer="A function is returned from a closure."
+additional_feedback="
+
+  A function is returned from a closure.
+
+  function add(x: number): (y: number) => number {
+    return (y: number): number => x + y;
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+ Describe how the curry function works.
+
+  function add(x: number): (y: number) => number {
+    return (y: number): number => x + y;
+  } 
+
+Enter the next line: " response
+answer="Variable x is obtained from the outer scope of this method and memorized in the closure."
+additional_feedback="
+
+  A function is returned from a closure. Variable x is obtained from 
+  the outer scope of this method and memorized in the closure.
+
+  function add(x: number): (y: number) => number {
+    return (y: number): number => x + y;
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 #
+const map1 = new Map();
 
+map1.set('0', 'foo');
+map1.set(1, 'bar');
+
+const iterator1 = map1.values();
+console.log(map1.values().next());
+console.log(iterator1.next().value);
+// expected output: "foo"
+
+console.log(iterator1.next().value);
+// expected output: "bar"
+
+
+const obj = new Map([['key1', 'value1'], ['key2', 'value2']])
+
+
+
+console.log(Array.from(obj))
+const objMap = Object.fromEntries(obj.entries()); 
+[ [ 'key1', 'value1' ], [ 'key2', 'value2' ] ]
+{ key1: 'value1', key2: 'value2' }
 
 handle the case when the string is empty
 
-function isEmptyString(){
-  return search.trim().length;
 
-}
 
 Not includes will return substrings
-const filtered = !isEmptyString(search)
-    ? people
-    : people.filter((person) =>
-        person.name.toLowerCase().includes(search.toLowerCase())
-      );
 
 
-This uses startWith to filter search
 
- const filter = (e) => {
-    const keyword = e.target.value;
 
-    if (keyword !== '') {
-      const results = USERS.filter((user) => {
-        return user.name.toLowerCase().startsWith(keyword.toLowerCase());
-        // Use the toLowerCase() method to make it case-insensitive
-      });
-      setFoundUsers(results);
-    } else {
-      setFoundUsers(USERS);
-      // If the text field is empty, show all users
-    }
-
-    setName(keyword);
-  };
 
 
 Can you spot the mistake in this logic? What happens when both 
@@ -7387,3 +8230,42 @@ to the left are discarded. Zero bits are shifted in from the right.
 
 
 
+
+# Given an array of items and an array of tests, this example determines whether all items pass all tests.
+
+# let allPass = true;
+# let i, j;
+
+# top:
+# for (i = 0; i < items.length; i++) {
+#   for (j = 0; j < tests.length; j++) {
+#     if (!tests[j].pass(items[i])) {
+#       allPass = false;
+#       break top;
+#     }
+#   }
+# }
+
+# print out the iterations
+# let i, j;
+
+# loop1:
+# for (i = 0; i < 3; i++) {      //The first for statement is labeled "loop1"
+#    loop2:
+#    for (j = 0; j < 3; j++) {   //The second for statement is labeled "loop2"
+#       if (i === 1 && j === 1) {
+#          continue loop1;
+#       }
+#       console.log('i = ' + i + ', j = ' + j);
+#    }
+# }
+
+# // Output is:
+# //   "i = 0, j = 0"
+# //   "i = 0, j = 1"
+# //   "i = 0, j = 2"
+# //   "i = 1, j = 0"
+# //   "i = 2, j = 0"
+# //   "i = 2, j = 1"
+# //   "i = 2, j = 2"
+# // Notice how it skips both "i = 1, j = 1" and "i = 1, j = 2"

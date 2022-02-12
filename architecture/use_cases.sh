@@ -3,11 +3,21 @@
 correct=0
 questions=0
 
-calculate_score() {
-    ((questions = questions + 1))
+evaluate_total_missed_questions() {
+  missed_questions=$(expr $questions - $correct)
+  if [ "$missed_questions" -eq 2 ]; then
+    exit 1
+  fi
+}
 
-    if [[ correct -eq 0 ]]; then
-        echo "     
+calculate_float() {
+  awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
+}
+
+calculate_score() {
+
+  if [[ correct -eq 0 ]]; then
+    echo "     
 ########################################
 
        Wrong! There is no tommorrow, 
@@ -15,57 +25,55 @@ calculate_score() {
 
 ########################################
              "
-        echo "     
+    echo "     
 ########################################
 
- You got nothing correct. Stop and go study.
-
-########################################
-             "
-    else
-        score=$(((questions / correct) * 100))
-        echo "     
-########################################
-
-   You scored $score% on Docker review.
+       You got nothing correct. Stop and go study.
 
 ########################################
              "
-    fi
+  else
+    echo "########################################"
+    echo "          Progress                    "
+    echo "    $questions questions answered."
+    echo "    $correct answered correctly."
+    score=$(calculate_float $correct $questions)
+    echo "    You scored $score% on Typescript recipes."
+  fi
 }
 
 increment_correct_responses() {
-    ((correct = correct + 1))
+  ((correct = correct + 1))
 }
 
 increment_questions_count() {
-    ((questions = questions + 1))
+  ((questions = questions + 1))
 }
 
 affirm_answer() {
-    if [[ -z "$1" ]]; then
-        echo "
+  if [[ -z "$1" ]]; then
+    echo "
 ########################################
               Correct
 ########################################
     "
-    else
-        echo "     
+  else
+    echo "     
 ########################################
               Correct
 ########################################
              "
-        echo "$1"
-    fi
+    echo "$1"
+  fi
 }
 
 evaluate_answer() {
-
-    if [ "$1" == "$2" ]; then
-        increment_correct_responses
-        affirm_answer "$3"
-    else
-        echo "     
+  increment_questions_count
+  if [ "$1" == "$2" ]; then
+    increment_correct_responses
+    affirm_answer "$3"
+  else
+    echo "     
 ########################################
         
        Wrong! There is no tommorrow, 
@@ -77,18 +85,20 @@ evaluate_answer() {
 
 ########################################
              "
-    fi
+  fi
+  calculate_score
+  evaluate_total_missed_questions
 }
 
 evaluate_answer_written_with_code() {
-    increment_questions_count
+  increment_questions_count
 
-    if [[ "$1" == "$2" ]]; then
-        increment_correct_responses
-        affirm_answer "$3"
-    else
+  if [[ "$1" == "$2" ]]; then
+    increment_correct_responses
+    affirm_answer "$3"
+  else
 
-        echo "     
+    echo "     
 ########################################
         
        Wrong! There is no tommorrow, 
@@ -100,14 +110,14 @@ evaluate_answer_written_with_code() {
 
 ########################################
              "
-        calculate_score
-        exit 1
-    fi
     calculate_score
+    exit 1
+  fi
+  calculate_score
 }
 
 next_question() {
-    echo "
+  echo "
  ########################################
              Next Question 
  ########################################
@@ -115,12 +125,20 @@ next_question() {
 }
 
 next_line() {
-    echo "
+  echo "
  ########################################
                 Next Line 
  ########################################
 "
 }
+
+echo "
+
+     ########################################
+                First Question
+    ########################################
+
+"
 
 
 echo "
