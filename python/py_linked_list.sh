@@ -3,6 +3,13 @@
 correct=0
 questions=0
 
+evaluate_total_missed_questions() {
+  missed_questions=$(expr $questions - $correct)
+  if [ "$missed_questions" -eq 2 ]; then
+    exit 1
+  fi
+}
+
 calculate_float() {
   awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
 }
@@ -31,7 +38,7 @@ calculate_score() {
     echo "    $questions questions answered."
     echo "    $correct answered correctly."
     score=$(calculate_float $correct $questions)
-    echo "    You scored $score% on Python Linked List."
+    echo "    You scored $score% on Python Linked list."
   fi
 }
 
@@ -80,6 +87,7 @@ evaluate_answer() {
              "
   fi
   calculate_score
+  evaluate_total_missed_questions
 }
 
 evaluate_answer_written_with_code() {
@@ -124,6 +132,13 @@ next_line() {
 "
 }
 
+echo "
+
+     ########################################
+                First Question
+    ########################################
+
+"
 read -p "
     Implement a function that removes all the even elements from a given list. Name it remove_even(lst).
 

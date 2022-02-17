@@ -1,66 +1,79 @@
 #!/bin/bash
 
-
 correct=0
 questions=0
 
+evaluate_total_missed_questions() {
+  missed_questions=$(expr $questions - $correct)
+  if [ "$missed_questions" -eq 2 ]; then
+    exit 1
+  fi
+}
+
 calculate_float() {
-    awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
+  awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
 }
 
 calculate_score() {
 
-    if [[ correct -eq 0 ]]; then
-        echo "     
-#################################################
+  if [[ correct -eq 0 ]]; then
+    echo "     
+########################################
 
-  You got nothing correct. Stop and go study.
+       Wrong! There is no tommorrow, 
+       so get this right right now!
 
-#################################################
+########################################
              "
-    else
-        echo "########################################"
-        echo "          Progress                    "
-        echo "    $questions questions answered."
-        echo "    $correct answered correctly."
-        score=$(calculate_float $correct $questions)
-        echo "    You scored $score% on React recipes."
-    fi
+    echo "     
+########################################
+
+       You got nothing correct. Stop and go study.
+
+########################################
+             "
+  else
+    echo "########################################"
+    echo "          Progress                    "
+    echo "    $questions questions answered."
+    echo "    $correct answered correctly."
+    score=$(calculate_float $correct $questions)
+    echo "    You scored $score% on React recipes."
+  fi
 }
 
 increment_correct_responses() {
-    ((correct = correct + 1))
+  ((correct = correct + 1))
 }
 
 increment_questions_count() {
-    ((questions = questions + 1))
+  ((questions = questions + 1))
 }
 
 affirm_answer() {
-    if [[ -z "$1" ]]; then
-        echo "
+  if [[ -z "$1" ]]; then
+    echo "
 ########################################
               Correct
 ########################################
     "
-    else
-        echo "     
+  else
+    echo "     
 ########################################
               Correct
 ########################################
              "
-        echo "$1"
-    fi
+    echo "$1"
+  fi
 }
 
 evaluate_answer() {
-    increment_questions_count
-
-    if [ "$1" == "$2" ]; then
-        increment_correct_responses
-        affirm_answer "$3"
-    else
-        echo "     
+  increment_questions_count
+  if [ "$1" == "$2" ]; then
+    increment_correct_responses
+    affirm_answer "$3"
+  else
+    echo "     
 ########################################
         
        Wrong! There is no tommorrow, 
@@ -69,12 +82,12 @@ evaluate_answer() {
         
        Your answer:     $1
        Correct answer:  $2
-        
 
 ########################################
              "
-    fi
-    calculate_score
+  fi
+  calculate_score
+  evaluate_total_missed_questions
 }
 
 evaluate_answer_written_with_code() {
@@ -104,7 +117,7 @@ evaluate_answer_written_with_code() {
 }
 
 next_question() {
-    echo "
+  echo "
  ########################################
              Next Question 
  ########################################
@@ -112,13 +125,20 @@ next_question() {
 }
 
 next_line() {
-    echo "
+  echo "
  ########################################
                 Next Line 
  ########################################
 "
 }
 
+echo "
+
+     ########################################
+                First Question
+    ########################################
+
+"
 
 read -p "
    
@@ -348,7 +368,7 @@ additional_feedback="
 
   useEffect(() => {
     fetch(\"https://restcountries.eu/rest/v2/all\")
-     
+     .then((res) => res.json())
   }, []);
 
 
@@ -1080,6 +1100,8 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
+next_question
+
 read -p "
 
   Complete the code that alternates between players and updates the
@@ -1091,11 +1113,11 @@ read -p "
 
 
 Enter the next line: " response
-answer="return function (e) { }"
+answer="return function(e) { }"
 additional_feedback="
 
   const handlePlayers = (index) => {  
-    return function (e) { 
+    return function(e) { 
 
     }
   };
@@ -1112,7 +1134,7 @@ read -p "
   boardValue to either X or O.
 
   const handlePlayers = (index) => {  
-    return function (e) { 
+    return function(e) { 
 
     }
   };
@@ -1123,7 +1145,7 @@ answer="let copyOfBoard = [...boardValues];"
 additional_feedback="
 
   const handlePlayers = (index) => {  
-    return function (e) { 
+    return function(e) { 
       let copyOfBoard = [...boardValues];
     }
   };    
@@ -1139,7 +1161,7 @@ read -p "
   boardValue to either X or O.
 
   const handlePlayers = (index) => {  
-    return function (e) { 
+    return function(e) { 
       let copyOfBoard = [...boardValues];
     }
   }; 
@@ -1150,7 +1172,7 @@ answer="if (player === 0) { }"
 additional_feedback="
 
   const handlePlayers = (index) => {  
-    return function (e) { 
+    return function(e) { 
       let copyOfBoard = [...boardValues];
 
       if (player === 0) { 
@@ -1171,67 +1193,29 @@ read -p "
   boardValue to either X or O.
 
   const handlePlayers = (index) => {  
-    return function (e) { 
+    return function(e) { 
       let copyOfBoard = [...boardValues];
 
       if (player === 0) { 
-
+    
       }
     }
   };
 
 
 Enter the next line: " response
-answer="copyOfBoard = copyOfBoard.map(function (item) { });"
+answer="copyOfBoard[index] = { ...copOfBoard[index], boardValue: 'O' };"
 additional_feedback="
 
   const handlePlayers = (index) => {  
-    return function (e) { 
+    return function(e) { 
       let copyOfBoard = [...boardValues];
 
       if (player === 0) { 
-       copyOfBoard = copyOfBoard.map(function (item) { 
-
-       });
-      }
-    }
-  };
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-
-  Complete the code that alternates between players and updates the
-  boardValue to either X or O.
-
-  const handlePlayers = (index) => {  
-    return function (e) { 
-      let copyOfBoard = [...boardValues];
-
-      if (player === 0) { 
-       copyOfBoard = copyOfBoard.map(function (item) { 
-
-       });
-      }
-    }
-  };
-
-
-Enter the next line: " response
-answer="return item[\`tile\${index}\`] === e.target.dataset.tile ? { ...item, boardValue: 'O' } : item;"
-additional_feedback="
-
-  const handlePlayers = (index) => {  
-    return function (e) { 
-      let copyOfBoard = [...boardValues];
-
-      if (player === 0) { 
-       copyOfBoard = copyOfBoard.map(function (item) { 
-         return item[\`tile\${index}\`] === e.target.dataset.tile ? { ...item, boardValue: 'X' } : item;
-       });
+       copyOfBoard[index] = {
+         ...copOfBoard[index],
+         boardValue: 'O'
+       };
       }
     }
   };
@@ -1248,13 +1232,14 @@ read -p "
   boardValue to either X or O.
 
   const handlePlayers = (index) => {  
-    return function (e) { 
+    return function(e) { 
       let copyOfBoard = [...boardValues];
 
       if (player === 0) { 
-       copyOfBoard = copyOfBoard.map(function (item) { 
-         return item[\`tile\${index}\`] === e.target.dataset.tile ? { ...item, boardValue: 'X' } : item;
-       });
+       copyOfBoard[index] = {
+         ...copOfBoard[index],
+         boardValue: 'O'
+       };
       }
     }
   };
@@ -1265,15 +1250,16 @@ answer="setBoardValue(copyOfBoard); return setPlayer(1);"
 additional_feedback="
 
   const handlePlayers = (index) => {  
-    return function (e) { 
+    return function(e) { 
       let copyOfBoard = [...boardValues];
 
       if (player === 0) { 
-       copyOfBoard = copyOfBoard.map(function (item) { 
-         return item[\`tile\${index}\`] === e.target.dataset.tile ? { ...item, boardValue: 'X' } : item;
-       });
-       setBoardValue(copyOfBoard); 
-       return setPlayer(1);
+       copyOfBoard[index] = {
+         ...copOfBoard[index],
+         boardValue: 'O'
+       };
+        setBoardValue(copyOfBoard); 
+        return setPlayer(1);
       }
     }
   };
@@ -1286,20 +1272,22 @@ echo "
   The rest of the logic works the same.
 
   const handlePlayers = (index) => {  
-    return function (e) { 
+    return function(e) { 
       let copyOfBoard = [...boardValues];
 
       if (player === 0) { 
-       copyOfBoard = copyOfBoard.map(function (item) { 
-         return item[\`tile\${index}\`] === e.target.dataset.tile ? { ...item, boardValue: 'X' } : item;
-       });
-       setBoardValue(copyOfBoard); 
-       return setPlayer(1);
+        copyOfBoard[index] = {
+          ...copOfBoard[index],
+          boardValue: 'O'
+        };
+         setBoardValue(copyOfBoard); 
+         return setPlayer(1);
       }
 
-      copyOfBoard.map(function (item) {
-        return item[\`tile\${index}\`] === e.target.dataset.tile ? { ...item, boardValue: 'X' } : item; 
-      });
+      copyOfBoard[index] = {
+         ...copOfBoard[index],
+         boardValue: 'X'
+      };
       setBoardValue(copyOfBoard);
       return setPlayer(0);
     }
@@ -2285,9 +2273,6 @@ read -p "
       console.log(\`\${player} wins\`); 
     }
 
-    if (sumForOppositeDiagonalElements === sizeOfBoard) { 
-      console.log(\`\${player} wins\`); 
-    }
   }
 
 
@@ -2344,10 +2329,6 @@ additional_feedback="
     if (sumForOppositeDiagonalElements === sizeOfBoard) { 
       console.log(\`\${player} wins\`); 
     }
-
-    if (sumForOppositeDiagonalElements === sizeOfBoard) { 
-      console.log(\`\${player} wins\`); 
-    }
   }
   
 "
@@ -2363,7 +2344,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" 
 
-# next_line
+next_question
 
 read -p "
 
@@ -3267,7 +3248,7 @@ read -p "
   }
 
 Enter the next line: " response
-answer=".then(res => res.json())"
+answer=".then((res) => res.json())"
 additional_feedback="
 
   function usePostsContextValue(): PostsContextData {
@@ -3277,7 +3258,7 @@ additional_feedback="
     const fetchPosts = useCallback(() => {
       setIsLoading(true);
       fetch('https://api/posts')
-        .then(res => res.json())
+        .then((res) => res.json())
 
     }, [setPosts]); 
 
@@ -3304,7 +3285,7 @@ read -p "
     const fetchPosts = useCallback(() => {
       setIsLoading(true);
       fetch('https://api/posts')
-        .then(res => res.json())
+        .then((res) => res.json())
 
     }, [setPosts]); 
 
@@ -3327,7 +3308,7 @@ additional_feedback="
       setIsLoading(true);
 
       fetch('https://api/posts')
-        .then(res => res.json())
+        .then((res) => res.json())
         .then((result) => { 
           setPosts(result); 
         }).finally(() => { 
@@ -3360,7 +3341,7 @@ read -p "
       setIsLoading(true);
 
       fetch('https://api/posts')
-        .then(res => res.json())
+        .then((res) => res.json())
         .then((result) => { 
           setPosts(result); 
         }).finally(() => { 
@@ -3389,7 +3370,7 @@ additional_feedback="
       setIsLoading(true);
 
       fetch('https://api/posts')
-        .then(res => res.json())
+        .then((res) => res.json())
         .then((result) => { 
           setPosts(result); 
         }).finally(() => { 

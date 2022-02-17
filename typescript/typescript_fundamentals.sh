@@ -1,80 +1,93 @@
 #!/bin/bash
 
-
 correct=0
 questions=0
 
+evaluate_total_missed_questions() {
+  missed_questions=$(expr $questions - $correct)
+  if [ "$missed_questions" -eq 2 ]; then
+    exit 1
+  fi
+}
+
 calculate_float() {
-    awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
+  awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
 }
 
 calculate_score() {
 
-    if [[ correct -eq 0 ]]; then
-        echo "     
-#################################################
+  if [[ correct -eq 0 ]]; then
+    echo "     
+########################################
 
-  You got nothing correct. Stop and go study.
+       Wrong! There is no tommorrow, 
+       so get this right right now!
 
-#################################################
+########################################
              "
-    else
-        echo "########################################"
-        echo "          Progress                    "
-        echo "    $questions questions answered."
-        echo "    $correct answered correctly."
-        score=$(calculate_float $correct $questions)
-        echo "    You scored $score% on Typescript fundamentals."
-    fi
+    echo "     
+########################################
+
+       You got nothing correct. Stop and go study.
+
+########################################
+             "
+  else
+    echo "########################################"
+    echo "          Progress                    "
+    echo "    $questions questions answered."
+    echo "    $correct answered correctly."
+    score=$(calculate_float $correct $questions)
+    echo "    You scored $score% on Typescript fundamentals."
+  fi
 }
 
 increment_correct_responses() {
-    ((correct = correct + 1))
+  ((correct = correct + 1))
 }
 
 increment_questions_count() {
-    ((questions = questions + 1))
+  ((questions = questions + 1))
 }
 
 affirm_answer() {
-    if [[ -z "$1" ]]; then
-        echo "
+  if [[ -z "$1" ]]; then
+    echo "
 ########################################
               Correct
 ########################################
     "
-    else
-        echo "     
+  else
+    echo "     
 ########################################
               Correct
 ########################################
              "
-        echo "$1"
-    fi
+    echo "$1"
+  fi
 }
 
 evaluate_answer() {
-    increment_questions_count
-
-    if [ "$1" == "$2" ]; then
-        increment_correct_responses
-        affirm_answer "$3"
-    else
-        echo "     
+  increment_questions_count
+  if [ "$1" == "$2" ]; then
+    increment_correct_responses
+    affirm_answer "$3"
+  else
+    echo "     
 ########################################
         
        Wrong! There is no tommorrow, 
        so get this right right now!
 
         
-       Your answer:     "$1"
-       Correct answer:  "$2"
-        
+       Your answer:     $1
+       Correct answer:  $2
 
 ########################################
              "
-    fi
-    calculate_score
+  fi
+  calculate_score
+  evaluate_total_missed_questions
 }
 
 evaluate_answer_written_with_code() {
@@ -92,8 +105,8 @@ evaluate_answer_written_with_code() {
        so get this right right now!
 
         
-       Your answer:     "$1"
-       Correct answer:  "$2"
+       Your answer:     $1
+       Correct answer:  $2
 
 ########################################
              "
@@ -104,7 +117,7 @@ evaluate_answer_written_with_code() {
 }
 
 next_question() {
-    echo "
+  echo "
  ########################################
              Next Question 
  ########################################
@@ -112,12 +125,20 @@ next_question() {
 }
 
 next_line() {
-    echo "
+  echo "
  ########################################
                 Next Line 
  ########################################
 "
 }
+
+echo "
+
+     ########################################
+                First Question
+    ########################################
+
+"
 
 
 read -p "What type goes in the greeter function?

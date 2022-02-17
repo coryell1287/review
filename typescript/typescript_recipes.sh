@@ -1,5 +1,14 @@
+#!/bin/bash
+
 correct=0
 questions=0
+
+evaluate_total_missed_questions() {
+  missed_questions=$(expr $questions - $correct)
+  if [ "$missed_questions" -eq 2 ]; then
+    exit 1
+  fi
+}
 
 calculate_float() {
   awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
@@ -78,6 +87,7 @@ evaluate_answer() {
              "
   fi
   calculate_score
+  evaluate_total_missed_questions
 }
 
 evaluate_answer_written_with_code() {
@@ -122,25 +132,17 @@ next_line() {
 "
 }
 
+echo "
+
+     ########################################
+                First Question
+    ########################################
+
+"
 read -p "
 
+    Sort the list in descending order.
 
-        Sort the list in descending order.
-
-
-        
-        let artists = [
-            'John White Abbott',
-            'Leonardo da Vinci',
-            'Charles Aubry',
-            'Anna Atkins',
-            'Barent Avercamp'
-        ];
-
-
-Enter your answer: " response
-answer="a === b ? 0 : a > b ? -1 : 1"
-additional_feedback="
     let artists = [
         'John White Abbott',
         'Leonardo da Vinci',
@@ -149,11 +151,103 @@ additional_feedback="
         'Barent Avercamp'
     ];
 
+Enter your answer: " response
+answer="a === b ? 0 : a > b ? -1 : 1"
+additional_feedback="
+    let artists = [
+      'John White Abbott',
+      'Leonardo da Vinci',
+      'Charles Aubry',
+      'Anna Atkins',
+      'Barent Avercamp'
+    ];
+
     artists.sort(function (a, b) {
         return a === b ? 0 : a > b ? -1 : 1;
     });
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "How does the ordering of sort() work? " response
+answer="If a should come before b then return a negative value"
+additional_feedback="
+
+  * If a should come before b then return a negative value
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does the ordering of sort() work? 
+
+  * If a should come before b then return a negative value.
+
+Enter the next line: " response
+answer="If a should come after b then return a positive value."
+additional_feedback="
+
+  * If a should come before b then return a negative value.
+  * If a should come before b then return a negative value. 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does the ordering of sort() work?" response
+answer="If a and b are of the same order then return zero"
+additional_feedback="
+
+  * If a should come before b then return a negative value.
+  * If a should come before b then return a negative value. 
+  * If a and b are of the same order then return zero. 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+  Write function that sorts users by name, but nameless users should go at the end. 
+  
+  users.sort((a, b) => {
+
+  });
+  
+Enter the next line: " response
+answer="if (a.name && b.name) return a.name.localeCompare(b.name);"
+additional_feedback="
+
+  users.sort((a, b) => {
+    if (a.name && b.name) return a.name.localeCompare(b.name);
+  });
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write function that sorts users by name, but nameless users should go at the end. 
+  
+  users.sort((a, b) => {
+    if (a.name && b.name) return a.name.localeCompare(b.name);
+  });
+  
+Enter the next line: " response
+answer="return !!b.name - !!a.name;"
+additional_feedback="
+
+  users.sort((a, b) => {
+    if (a.name && b.name) return a.name.localeCompare(b.name);
+    return !!b.name - !!a.name;
+  });
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
@@ -8106,7 +8200,1351 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-#
+next_question
+
+read -p "
+  
+  Write a program that cancel a inner loop when the both x and z equal 10.
+
+
+  let x = 0;
+  let z = 0;
+
+  while (true) {
+    while(true) {
+
+    }
+  }
+
+Enter the  next line: " response
+answer="labelCancelLoops: while (true) { }"
+additional_feedback="
+
+  let x = 0;
+  let z = 0;
+
+  labelCancelLoops: while(true) {
+    while(true) {
+
+    }
+  }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  
+  Write a program that cancel a inner loop when the both x and z equal 10.
+
+
+  let x = 0;
+  let z = 0;
+
+  labelCancelLoops: while(true) {
+    while(true) {
+
+    }
+  }
+
+Enter the  next line: " response
+answer="console.log('Outer loops: ' + x);"
+additional_feedback="
+
+    let x = 0;
+    let z = 0;
+
+    labelCancelLoops: while(true) {
+      console.log('Outer loops: ' + x);
+      while(true) {
+
+      }
+    }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  
+  Write a program that cancel a inner loop when the both x and z equal 10.
+
+
+    let x = 0;
+    let z = 0;
+
+    labelCancelLoops: while(true) {
+      console.log('Outer loops: ' + x);
+      while(true) {
+
+      }
+    }
+
+Enter the  next line: " response
+answer="x += 1; z = 1;"
+additional_feedback="
+
+    let x = 0;
+    let z = 0;
+
+    labelCancelLoops: while(true) {
+      console.log('Outer loops: ' + x);
+      x += 1; 
+      z = 1;
+      while(true) {
+
+      }
+    }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  
+  Write a program that cancel a inner loop when the both x and z equal 10.
+
+
+    let x = 0;
+    let z = 0;
+
+    labelCancelLoops: while(true) {
+      console.log('Outer loops: ' + x);
+      x += 1; 
+      z = 1;
+      while(true) {
+
+      }
+    }
+
+Enter the  next line: " response
+answer="console.log('Inner loops: ' + z);"
+additional_feedback="
+
+    let x = 0;
+    let z = 0;
+
+    labelCancelLoops: while(true) {
+      console.log('Outer loops: ' + x);
+      x += 1; 
+      z = 1;
+      while(true) {
+        console.log('Inner loops: ' + z);
+      }
+    }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  
+  Write a program that cancel a inner loop when the both x and z equal 10.
+
+
+    let x = 0;
+    let z = 0;
+
+    labelCancelLoops: while(true) {
+      console.log('Outer loops: ' + x);
+      x += 1; 
+      z = 1;
+      while(true) {
+        console.log('Inner loops: ' + z);
+      }
+    }
+
+Enter the  next line: " response
+answer="z += 1;"
+additional_feedback="
+
+    let x = 0;
+    let z = 0;
+
+    labelCancelLoops: while(true) {
+      console.log('Outer loops: ' + x);
+      x += 1; 
+      z = 1;
+      while(true) {
+        console.log('Inner loops: ' + z);
+        z += 1;
+      }
+    }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  
+  Write a program that cancel a inner loop when the both x and z equal 10.
+
+
+    let x = 0;
+    let z = 0;
+
+    labelCancelLoops: while(true) {
+      console.log('Outer loops: ' + x);
+      x += 1; 
+      z = 1;
+      while(true) {
+        console.log('Inner loops: ' + z);
+        z += 1;
+      }
+    }
+
+Enter the  next line: " response
+answer="if (z === 10 && x === 10) { }"
+additional_feedback="
+
+    let x = 0;
+    let z = 0;
+
+    labelCancelLoops: while(true) {
+      console.log('Outer loops: ' + x);
+      x += 1; 
+      z = 1;
+      while(true) {
+        console.log('Inner loops: ' + z);
+        z += 1;
+        if (z === 10 && x === 10) { 
+          
+        }
+      }
+    }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  
+  Write a program that cancel a inner loop when the both x and z equal 10.
+
+
+    let x = 0;
+    let z = 0;
+
+    labelCancelLoops: while(true) {
+      console.log('Outer loops: ' + x);
+      x += 1; 
+      z = 1;
+      while(true) {
+        console.log('Inner loops: ' + z);
+        z += 1;
+      }
+    }
+
+Enter the  next line: " response
+answer="break labelCancelLoops;"
+additional_feedback="
+
+    let x = 0;
+    let z = 0;
+
+    labelCancelLoops: while(true) {
+      console.log('Outer loops: ' + x);
+      x += 1; 
+      z = 1;
+      while(true) {
+        console.log('Inner loops: ' + z);
+        z += 1;
+        if (z === 10 && x === 10) { 
+          break labelCancelLoops;
+        }
+      }
+    }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  
+  Write a program that cancel a inner loop when the both x and z equal 10.
+
+
+    let x = 0;
+    let z = 0;
+
+    labelCancelLoops: while(true) {
+      console.log('Outer loops: ' + x);
+      x += 1; 
+      z = 1;
+      while(true) {
+        console.log('Inner loops: ' + z);
+        z += 1;
+        if (z === 10 && x === 10) { 
+          break labelCancelLoops;
+        }
+      }
+    }
+
+Enter the  next line: " response
+answer="else if (z === 10) { break; }"
+additional_feedback="
+
+    let x = 0;
+    let z = 0;
+
+    labelCancelLoops: while(true) {
+      console.log('Outer loops: ' + x);
+      x += 1; 
+      z = 1;
+      while(true) {
+        console.log('Inner loops: ' + z);
+        z += 1;
+        if (z === 10 && x === 10) { 
+          break labelCancelLoops;
+        } else if (z === 10) { 
+          break; 
+        }
+      }
+    }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Skip an increment when i equals 3.
+
+  let i = 0;
+  let n = 0;
+
+Enter the next line: " response
+answer="while (i < 5) { }"
+additional_feedback="
+
+  let i = 0;
+  let n = 0;
+
+  while (i < 5) { 
+
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Skip an increment when i equals 3.
+
+  let i = 0;
+  let n = 0;
+
+Enter the next line: " response
+answer="i++;"
+additional_feedback="
+
+  let i = 0;
+  let n = 0;
+
+  while (i < 5) { 
+    i++;
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Skip an increment when i equals 3.
+
+  let i = 0;
+  let n = 0;
+
+Enter the next line: " response
+answer="if (i === 3) { continue; }"
+additional_feedback="
+
+  let i = 0;
+  let n = 0;
+
+  while (i < 5) { 
+    i++;
+    if (i === 3) { 
+      continue; 
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Skip an increment when i equals 3.
+
+  let i = 0;
+  let n = 0;
+
+Enter the next line: " response
+answer="n += i; console.log(n);"
+additional_feedback="
+
+  let i = 0;
+  let n = 0;
+
+  while (i < 5) { 
+    i++;
+    if (i === 3) { 
+      continue; 
+    }
+    n += i;
+    console.log(n);
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Describe what n and x are on each iteration.
+
+  let n = 0;
+  let x = 0;
+
+  while (n < 3) {
+    n++;
+    x += n;
+  }
+
+Enter the next line: " response
+answer="After the first pass: n = 1 and x = 1"
+additional_feedback="
+
+  let n = 0;
+  let x = 0;
+
+  while (n < 3) {
+    n++;
+    x += n;
+  }
+
+  After the first pass: n = 1 and x = 1
+  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Describe what n and x are on each iteration.
+
+  let n = 0;
+  let x = 0;
+
+  while (n < 3) {
+    n++;
+    x += n;
+  }
+
+  After the first pass: n = 1 and x = 1
+
+Enter the next line: " response
+answer="After the second pass: n = 2 and x = 3"
+additional_feedback="
+
+  let n = 0;
+  let x = 0;
+
+  while (n < 3) {
+    n++;
+    x += n;
+  }
+
+  After the first pass: n = 1 and x = 1
+  After the second pass: n = 2 and x = 3
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Describe what n and x are on each iteration.
+
+  let n = 0;
+  let x = 0;
+
+  while (n < 3) {
+    n++;
+    x += n;
+  }
+
+  After the first pass: n = 1 and x = 1
+  After the second pass: n = 2 and x = 3
+
+Enter the next line: " response
+answer="After the third pass: n = 3 and x = 6"
+additional_feedback="
+
+  let n = 0;
+  let x = 0;
+
+  while (n < 3) {
+    n++;
+    x += n;
+  }
+
+  After the first pass: n = 1 and x = 1
+  After the second pass: n = 2 and x = 3
+  After the third pass: n = 3 and x = 6
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p " " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Describe what n and x are on each iteration.
+
+  let n = 0;
+  let x = 0;
+
+  while (n < 3) {
+    n++;
+    x += n;
+  }
+
+  After the first pass: n = 1 and x = 1
+  After the second pass: n = 2 and x = 3
+
+Enter the next line: " response
+answer="After completing the third pass, the condition n < 3 is no longer true, so the loop terminates."
+additional_feedback="
+
+  let n = 0;
+  let x = 0;
+
+  while (n < 3) {
+    n++;
+    x += n;
+  }
+
+  After the first pass: n = 1 and x = 1
+  After the second pass: n = 2 and x = 3
+  After the third pass: n = 3 and x = 6
+
+  After completing the third pass, the condition n < 3 
+  is no longer true, so the loop terminates.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What will be the output on each iteration?
+
+  let i, j;
+
+  loop1: for (i = 0; i < 3; i++) {
+    loop2: for (j = 0; j < 3; j++) {
+      if (i === 1 && j === 1) {
+        break loop1;
+      }
+      console.log('i = ' + i + ', j = ' + j);
+    }
+  }
+
+Enter the next line: " response
+answer="i = 0, j = 0"
+additional_feedback="
+
+  let i, j;
+
+  loop1: for (i = 0; i < 3; i++) {
+    loop2: for (j = 0; j < 3; j++) {
+      if (i === 1 && j === 1) {
+        break loop1;
+      }
+      console.log('i = ' + i + ', j = ' + j);
+    }
+  }
+
+  Output: 
+    i = 0, j = 0
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What will be the output on each iteration?
+
+  let i, j;
+
+  loop1: for (i = 0; i < 3; i++) {
+    loop2: for (j = 0; j < 3; j++) {
+      if (i === 1 && j === 1) {
+        break loop1;
+      }
+      console.log('i = ' + i + ', j = ' + j);
+    }
+  }
+
+  Output: 
+    i = 0, j = 0
+
+Enter the next line: " response
+answer="i = 0, j = 1"
+additional_feedback="
+
+  let i, j;
+
+  loop1: for (i = 0; i < 3; i++) {
+    loop2: for (j = 0; j < 3; j++) {
+      if (i === 1 && j === 1) {
+        break loop1;
+      }
+      console.log('i = ' + i + ', j = ' + j);
+    }
+  }
+
+  Output: 
+    i = 0, j = 0
+    i = 0, j = 1
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What will be the output on each iteration?
+
+  let i, j;
+
+  loop1: for (i = 0; i < 3; i++) {
+    loop2: for (j = 0; j < 3; j++) {
+      if (i === 1 && j === 1) {
+        break loop1;
+      }
+      console.log('i = ' + i + ', j = ' + j);
+    }
+  }
+
+  Output: 
+    i = 0, j = 0
+    i = 0, j = 1
+
+Enter the next line: " response
+answer="i = 0, j = 2"
+additional_feedback="
+
+  let i, j;
+
+  loop1: for (i = 0; i < 3; i++) {
+    loop2: for (j = 0; j < 3; j++) {
+      if (i === 1 && j === 1) {
+        break loop1;
+      }
+      console.log('i = ' + i + ', j = ' + j);
+    }
+  }
+
+  Output: 
+    i = 0, j = 0
+    i = 0, j = 1
+    i = 0, j = 2
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What will be the output on each iteration?
+
+  let i, j;
+
+  loop1: for (i = 0; i < 3; i++) {
+    loop2: for (j = 0; j < 3; j++) {
+      if (i === 1 && j === 1) {
+        break loop1;
+      }
+      console.log('i = ' + i + ', j = ' + j);
+    }
+  }
+
+  Output: 
+    i = 0, j = 0
+    i = 0, j = 1
+    i = 0, j = 2
+
+Enter the next line: " response
+answer="i = 1, j = 0"
+additional_feedback="
+
+  let i, j;
+
+  loop1: for (i = 0; i < 3; i++) {
+    loop2: for (j = 0; j < 3; j++) {
+      if (i === 1 && j === 1) {
+        break loop1;
+      }
+      console.log('i = ' + i + ', j = ' + j);
+    }
+  }
+
+  Output: 
+    i = 0, j = 0
+    i = 0, j = 1
+    i = 0, j = 2
+    i = 1, j = 0
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Given an array of items and an array of tests, write for loop 
+  that determines whether all items pass all tests: " response
+answer="let allPass = true;"
+additional_feedback="
+
+  let allPass = true;
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Given an array of items and an array of tests, write for loop 
+  that determines whether all items pass all tests: 
+
+  let allPass = true;
+
+  
+Enter the next line: " response
+answer="let i, j;"
+additional_feedback="
+
+  let allPass = true;
+  let i, j;
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Given an array of items and an array of tests, write for loop 
+  that determines whether all items pass all tests: 
+
+  let allPass = true;
+
+  
+Enter the next line: " response
+answer="top: for (i = 0; i < items.length; i++) { }"
+additional_feedback="
+
+  let allPass = true;
+  let i, j;
+
+  top: for (i = 0; i < items.length; i++) { 
+    
+  }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Given an array of items and an array of tests, write for loop 
+  that determines whether all items pass all tests: 
+
+  let allPass = true;
+
+  
+Enter the next line: " response
+answer="for (j = 0; j < tests.length; j++) { }"
+additional_feedback="
+
+  let allPass = true;
+  let i, j;
+
+  top: for (i = 0; i < items.length; i++) { 
+    for (j = 0; j < tests.length; j++) { 
+      
+    }
+  }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Given an array of items and an array of tests, write for loop 
+  that determines whether all items pass all tests: 
+
+  let allPass = true;
+
+  
+Enter the next line: " response
+answer="if (!tests[j].pass(items[i])) { }"
+additional_feedback="
+
+  let allPass = true;
+  let i, j;
+
+  top: for (i = 0; i < items.length; i++) { 
+    for (j = 0; j < tests.length; j++) { 
+      if (!tests[j].pass(items[i])) { 
+        
+      }
+    }
+  }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Given an array of items and an array of tests, write for loop 
+  that determines whether all items pass all tests: 
+
+  let allPass = true;
+
+  
+Enter the next line: " response
+answer="allPass = false; break top;"
+additional_feedback="
+
+  let allPass = true;
+  let i, j;
+
+  top: for (i = 0; i < items.length; i++) { 
+    for (j = 0; j < tests.length; j++) { 
+      if (!tests[j].pass(items[i])) { 
+        allPass = false; 
+        break top;
+      }
+    }
+  }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Write a program where i is 0 j is 10. There are two while loops. 
+        The top loop increments by 1 the inner loop decrements by 1 and 
+        only prints odd numbers: " response
+answer="let i = 0; let j = 10;"
+additional_feedback="
+
+  let i = 0;
+  let j = 10;
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Write a program where i is 0 j is 10. There are two while loops. 
+        The top loop increments by 1 the inner loop decrements by 1 and 
+        only prints odd numbers: 
+        
+Enter the next line: " response
+answer="checkiandj: while (i < 4) { }"
+additional_feedback="
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+  
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Write a program where i is 0 j is 10. There are two while loops. 
+        The top loop increments by 1 the inner loop decrements by 1 and 
+        only prints odd numbers: 
+        
+Enter the next line: " response
+answer="i += 1;"
+additional_feedback="
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Write a program where i is 0 j is 10. There are two while loops. 
+        The top loop increments by 1 the inner loop decrements by 1 and 
+        only prints odd numbers: 
+        
+Enter the next line: " response
+answer="checkj: while (j > 4) { }"
+additional_feedback="
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Write a program where i is 0 j is 10. There are two while loops. 
+        The top loop increments by 1 the inner loop decrements by 1 and 
+        only prints odd numbers: 
+        
+Enter the next line: " response
+answer="j -= 1;"
+additional_feedback="
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Write a program where i is 0 j is 10. There are two while loops. 
+        The top loop increments by 1 the inner loop decrements by 1 and 
+        only prints odd numbers: 
+        
+Enter the next line: " response
+answer="if (j % 2 === 0) { continue checkj; }"
+additional_feedback="
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Write a program where i is 0 j is 10. There are two while loops. 
+        The top loop increments by 1 the inner loop decrements by 1 and 
+        only prints odd numbers: 
+        
+Enter the next line: " response
+answer="console.log(j + ' is odd.');"
+additional_feedback="
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+      console.log(j + ' is odd.');
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Explain how the program works. 
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+      console.log(j + ' is odd.');
+    }
+  }
+
+Enter the next line: " response
+answer="A statement labeled checkiandj contains a statement labeled checkj."
+additional_feedback="
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+      console.log(j + ' is odd.');
+    }
+  }
+
+
+  A statement labeled checkiandj contains a statement labeled checkj.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Explain how the program works. 
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+      console.log(j + ' is odd.');
+    }
+  }
+
+Enter the next line: " response
+answer="If continue is encountered, the program continues the current iteration"
+additional_feedback="
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+      console.log(j + ' is odd.');
+    }
+  }
+
+
+  A statement labeled checkiandj contains a statement labeled checkj.
+  If continue is encountered, the program continues the current iteration
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Explain how the program works. 
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+      console.log(j + ' is odd.');
+    }
+  }
+
+Enter the next line: " response
+answer="of checkj and the next iteration. Each time continue is encountered"
+additional_feedback="
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+      console.log(j + ' is odd.');
+    }
+  }
+
+
+  A statement labeled checkiandj contains a statement labeled checkj.
+  If continue is encountered, the program continues the current iteration
+  of checkj and the next iteration. Each time continue is encountered,
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Explain how the program works. 
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+      console.log(j + ' is odd.');
+    }
+  }
+
+Enter the next line: " response
+answer="checkj reiterates until its condition returns false."
+additional_feedback="
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+      console.log(j + ' is odd.');
+    }
+  }
+
+
+  A statement labeled checkiandj contains a statement labeled checkj.
+  If continue is encountered, the program continues the current iteration
+  of checkj and the next iteration. Each time continue is encountered,
+  checkj reiterates until its condition returns false.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Explain how the program works. 
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+      console.log(j + ' is odd.');
+    }
+  }
+
+Enter the next line: " response
+answer="When false is returned, the remainder of the checkiandj statement is completed"
+additional_feedback="
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+      console.log(j + ' is odd.');
+    }
+  }
+
+
+  A statement labeled checkiandj contains a statement labeled checkj.
+  If continue is encountered, the program continues the current iteration
+  of checkj and the next iteration. Each time continue is encountered,
+  checkj reiterates until its condition returns false.
+
+  When false is returned, the remainder of the checkiandj statement is 
+  completed,
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Explain how the program works. 
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+      console.log(j + ' is odd.');
+    }
+  }
+
+Enter the next line: " response
+answer="and checkiandj reiterates until its condition returns false."
+additional_feedback="
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+      console.log(j + ' is odd.');
+    }
+  }
+
+
+  A statement labeled checkiandj contains a statement labeled checkj.
+  If continue is encountered, the program continues the current iteration
+  of checkj and the next iteration. Each time continue is encountered,
+  checkj reiterates until its condition returns false.
+
+  When false is returned, the remainder of the checkiandj statement is 
+  completed, and checkiandj reiterates until its condition returns false. 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Explain how the program works. 
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+      console.log(j + ' is odd.');
+    }
+  }
+
+Enter the next line: " response
+answer="When false is returned, the program continues at the statement following checkiandj."
+additional_feedback="
+
+  let i = 0;
+  let j = 10;
+
+  checkiandj: while (i < 4) {
+    i += 1;
+    checkj: while (j > 4) { 
+      j -= 1;
+      if (j % 2 === 0) { 
+        continue checkj; 
+      }
+      console.log(j + ' is odd.');
+    }
+  }
+
+
+  A statement labeled checkiandj contains a statement labeled checkj.
+  If continue is encountered, the program continues the current iteration
+  of checkj and the next iteration. Each time continue is encountered,
+  checkj reiterates until its condition returns false.
+
+  When false is returned, the remainder of the checkiandj statement is 
+  completed, and checkiandj reiterates until its condition returns false.
+  When false is returned, the program continues at the statement following 
+  checkiandj. 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What is the difference between for...in and for...of " response
+answer="While for...in iterates over property names, for...of iterates over property values."
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p " " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+ 
 const map1 = new Map();
 
 map1.set('0', 'foo');
@@ -8229,43 +9667,3 @@ to the left are discarded. Zero bits are shifted in from the right.
 
 
 
-
-
-# Given an array of items and an array of tests, this example determines whether all items pass all tests.
-
-# let allPass = true;
-# let i, j;
-
-# top:
-# for (i = 0; i < items.length; i++) {
-#   for (j = 0; j < tests.length; j++) {
-#     if (!tests[j].pass(items[i])) {
-#       allPass = false;
-#       break top;
-#     }
-#   }
-# }
-
-# print out the iterations
-# let i, j;
-
-# loop1:
-# for (i = 0; i < 3; i++) {      //The first for statement is labeled "loop1"
-#    loop2:
-#    for (j = 0; j < 3; j++) {   //The second for statement is labeled "loop2"
-#       if (i === 1 && j === 1) {
-#          continue loop1;
-#       }
-#       console.log('i = ' + i + ', j = ' + j);
-#    }
-# }
-
-# // Output is:
-# //   "i = 0, j = 0"
-# //   "i = 0, j = 1"
-# //   "i = 0, j = 2"
-# //   "i = 1, j = 0"
-# //   "i = 2, j = 0"
-# //   "i = 2, j = 1"
-# //   "i = 2, j = 2"
-# // Notice how it skips both "i = 1, j = 1" and "i = 1, j = 2"

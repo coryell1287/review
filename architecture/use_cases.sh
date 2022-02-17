@@ -434,6 +434,413 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
+
+read -p "How does LinkedIn' Presence Platform handle jittery connections? " response
+answer="When members open their LinkedIn application, they establish a persistent connection with the Real-time Platform."
+additional_feedback="
+
+    When members open their LinkedIn application, they establish a persistent
+    connection with the Real-time Platform.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does LinkedIn' Presence Platform handle jittery connections?
+
+    When members open their LinkedIn application, they establish a persistent
+    connection with the Real-time Platform.
+
+Enter the next line: " response
+answer="The Real-time Platform, in turn, starts emitting periodic heartbeats with the member's ID with a fixed duration of d seconds between successive heartbeats."
+additional_feedback="
+
+   When members open their LinkedIn application, they establish a persistent
+   connection with the Real-time Platform. The Real-time Platform, in turn, 
+   starts emitting periodic heartbeats with the member's ID with a fixed duration 
+   of d seconds between successive heartbeats.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does LinkedIn' Presence Platform handle jittery connections?
+
+    When members open their LinkedIn application, they establish a persistent
+    connection with the Real-time Platform. The Real-time Platform, in turn, 
+    starts emitting periodic heartbeats with the member's ID with a fixed duration 
+    of d seconds between successive heartbeats.
+
+Enter the next line: " response
+answer="This duration guard against fluctuations in a member's presence status. As long as a heartbeat is received every d seconds"
+additional_feedback="
+
+    When members open their LinkedIn application, they establish a persistent
+    connection with the Real-time Platform. The Real-time Platform, in turn, 
+    starts emitting periodic heartbeats with the member's ID with a fixed duration 
+    of d seconds between successive heartbeats. Fixed duration of periodic heartbeats 
+    guards against fluctuations in a member's presence status. against fluctuations 
+    in a member's presence status. As long as a heartbeat is received every d seconds,
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_line
+
+read -p "How does LinkedIn' Presence Platform handle jittery connections?
+
+    When members open their LinkedIn application, they establish a persistent
+    connection with the Real-time Platform. The Real-time Platform, in turn, 
+    starts emitting periodic heartbeats with the member's ID with a fixed duration 
+    of d seconds between successive heartbeats. Fixed duration of periodic heartbeats 
+    guards against fluctuations in a member's presence status. against fluctuations 
+    in a member's presence status. As long as a heartbeat is received every d seconds,
+
+Enter the next line: " response
+answer="our Presence Platform will deem the member online."
+additional_feedback="
+
+    When members open their LinkedIn application, they establish a persistent
+    connection with the Real-time Platform. The Real-time Platform, in turn, 
+    starts emitting periodic heartbeats with the member's ID with a fixed duration 
+    of d seconds between successive heartbeats. Fixed duration of periodic heartbeats 
+    guards against fluctuations in a member's presence status. against fluctuations 
+    in a member's presence status. As long as a heartbeat is received every d seconds, 
+    our Presence Platform will deem the member online.   
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does LinkedIn' Presence Platform handle jittery connections?
+
+    When members open their LinkedIn application, they establish a persistent
+    connection with the Real-time Platform. The Real-time Platform, in turn, 
+    starts emitting periodic heartbeats with the member's ID with a fixed duration 
+    of d seconds between successive heartbeats. Fixed duration of periodic heartbeats 
+    guards against fluctuations in a member's presence status. against fluctuations 
+    in a member's presence status. As long as a heartbeat is received every d seconds, 
+    our Presence Platform will deem the member online.
+
+Enter the next line: " response
+answer="Thus, if a member runs into a bad network condition, drops their connection"
+additional_feedback="
+
+    When members open their LinkedIn application, they establish a persistent
+    connection with the Real-time Platform. The Real-time Platform, in turn, 
+    starts emitting periodic heartbeats with the member's ID with a fixed duration 
+    of d seconds between successive heartbeats. Fixed duration of periodic heartbeats 
+    guards against fluctuations in a member's presence status. against fluctuations 
+    in a member's presence status. As long as a heartbeat is received every d seconds, 
+    our Presence Platform will deem the member online.
+
+    Thus, if a member runs into a bad network condition, drops their connection,
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does LinkedIn' Presence Platform handle jittery connections?
+
+    When members open their LinkedIn application, they establish a persistent
+    connection with the Real-time Platform. The Real-time Platform, in turn, 
+    starts emitting periodic heartbeats with the member's ID with a fixed duration 
+    of d seconds between successive heartbeats. Fixed duration of periodic heartbeats 
+    guards against fluctuations in a member's presence status. against fluctuations 
+    in a member's presence status. As long as a heartbeat is received every d seconds, 
+    our Presence Platform will deem the member online.
+
+    Thus, if a member runs into a bad network condition, drops their connection,
+
+Enter the next line: " response
+answer="and then reconnects within d seconds, we will continue to deem them as online," 
+additional_feedback="
+
+    When members open their LinkedIn application, they establish a persistent
+    connection with the Real-time Platform. The Real-time Platform, in turn, 
+    starts emitting periodic heartbeats with the member's ID with a fixed duration 
+    of d seconds between successive heartbeats. Fixed duration of periodic heartbeats 
+    guards against fluctuations in a member's presence status. against fluctuations 
+    in a member's presence status. As long as a heartbeat is received every d seconds, 
+    our Presence Platform will deem the member online.
+
+    Thus, if a member runs into a bad network condition, drops their connection, and then 
+    reconnects within d seconds, we will continue to deem them as online,
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does LinkedIn' Presence Platform handle jittery connections?
+
+    When members open their LinkedIn application, they establish a persistent
+    connection with the Real-time Platform. The Real-time Platform, in turn, 
+    starts emitting periodic heartbeats with the member's ID with a fixed duration 
+    of d seconds between successive heartbeats. Fixed duration of periodic heartbeats 
+    guards against fluctuations in a member's presence status. against fluctuations 
+    in a member's presence status. As long as a heartbeat is received every d seconds, 
+    our Presence Platform will deem the member online.
+
+    Thus, if a member runs into a bad network condition, drops their connection,
+
+Enter the next line: " response
+answer="as long as the next heartbeat emits for their connection." 
+additional_feedback="
+
+    When members open their LinkedIn application, they establish a persistent
+    connection with the Real-time Platform. The Real-time Platform, in turn, 
+    starts emitting periodic heartbeats with the member's ID with a fixed duration 
+    of d seconds between successive heartbeats. Fixed duration of periodic heartbeats 
+    guards against fluctuations in a member's presence status. against fluctuations 
+    in a member's presence status. As long as a heartbeat is received every d seconds, 
+    our Presence Platform will deem the member online.
+
+    Thus, if a member runs into a bad network condition, drops their connection, as 
+    long as the next heartbeat emits for their connection.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "How does LinkedIn's Presence Platform determine when a user went offline? " response
+answer="To determine that a member went offline, we need to detect the absence of a heartbeat."
+additional_feedback="
+
+    To determine that a member went offline, we need to detect the 
+    absence of a heartbeat.    
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does LinkedIn's Presence Platform determine when a user went offline? 
+
+    To determine that a member went offline, we need to detect the 
+    absence of a heartbeat.
+
+Enter the next line: " response
+answer="For this, we built what we called a delayed trigger for each member that is currently online."
+additional_feedback="
+
+    To determine that a member went offline, we need to detect the 
+    absence of a heartbeat. For this, we built what we called a delayed 
+    trigger for each member that is currently online.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does LinkedIn's Presence Platform determine when a user went offline? 
+
+    To determine that a member went offline, we need to detect the 
+    absence of a heartbeat. For this, we built what we called a delayed 
+    trigger for each member that is currently online.
+
+Enter the next line: " response
+answer="For each online member, we can start a timer that will fire later to allow us to check whether the heartbeat stored for that member has expired or not."
+additional_feedback="
+
+    To determine that a member went offline, we need to detect the 
+    absence of a heartbeat. For this, we built what we called a delayed 
+    trigger for each member that is currently online. 
+
+    For each online member, we can start a timer that will fire later 
+    to allow us to check whether the heartbeat stored for that member 
+    has expired or not.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does LinkedIn's Presence Platform determine when a user went offline? 
+
+    To determine that a member went offline, we need to detect the 
+    absence of a heartbeat. For this, we built what we called a delayed 
+    trigger for each member that is currently online. 
+
+    For each online member, we can start a timer that will fire later 
+    to allow us to check whether the heartbeat stored for that member 
+    has expired or not.
+
+Enter the next line: " response
+answer="Since heartbeats expire in d + ε seconds, we need the timer to fire a little after that or in d + 2ε seconds."
+additional_feedback="
+
+    To determine that a member went offline, we need to detect the 
+    absence of a heartbeat. For this, we built what we called a delayed 
+    trigger for each member that is currently online. 
+
+    For each online member, we can start a timer that will fire later 
+    to allow us to check whether the heartbeat stored for that member 
+    has expired or not.
+
+    Since heartbeats expire in d + ε seconds, we need the timer to fire 
+    a little after that or in d + 2ε seconds.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does LinkedIn's Presence Platform determine when a user went offline? 
+
+    To determine that a member went offline, we need to detect the 
+    absence of a heartbeat. For this, we built what we called a delayed 
+    trigger for each member that is currently online. 
+
+    For each online member, we can start a timer that will fire later 
+    to allow us to check whether the heartbeat stored for that member 
+    has expired or not.
+
+    Since heartbeats expire in d + ε seconds, we need the timer to fire 
+    a little after that or in d + 2ε seconds.
+
+Enter the next line: " response
+answer="Thus, during the process heartbeat step, we create this delayed trigger if it doesn't yet exist for the member."
+additional_feedback="
+
+    To determine that a member went offline, we need to detect the 
+    absence of a heartbeat. For this, we built what we called a delayed 
+    trigger for each member that is currently online. 
+
+    For each online member, we can start a timer that will fire later 
+    to allow us to check whether the heartbeat stored for that member 
+    has expired or not.
+
+    Since heartbeats expire in d + ε seconds, we need the timer to fire 
+    a little after that or in d + 2ε seconds.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_line
+
+read -p "How does LinkedIn's Presence Platform determine when a user went offline? 
+
+    To determine that a member went offline, we need to detect the 
+    absence of a heartbeat. For this, we built what we called a delayed 
+    trigger for each member that is currently online. 
+
+    For each online member, we can start a timer that will fire later 
+    to allow us to check whether the heartbeat stored for that member 
+    has expired or not.
+
+    Since heartbeats expire in d + ε seconds, we need the timer to fire 
+    a little after that or in d + 2ε seconds.
+
+Enter the next line: " response
+answer="We reset it to fire in another d + 2ε seconds if it already exists."
+additional_feedback="
+
+    To determine that a member went offline, we need to detect the 
+    absence of a heartbeat. For this, we built what we called a delayed 
+    trigger for each member that is currently online. 
+
+    For each online member, we can start a timer that will fire later 
+    to allow us to check whether the heartbeat stored for that member 
+    has expired or not.
+
+    Since heartbeats expire in d + ε seconds, we need the timer to fire 
+    a little after that or in d + 2ε seconds. We reset it to fire in 
+    another d + 2ε seconds if it already exists.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does LinkedIn's Presence Platform determine when a user went offline? 
+
+    To determine that a member went offline, we need to detect the 
+    absence of a heartbeat. For this, we built what we called a delayed 
+    trigger for each member that is currently online. 
+
+    For each online member, we can start a timer that will fire later 
+    to allow us to check whether the heartbeat stored for that member 
+    has expired or not.
+
+    Since heartbeats expire in d + ε seconds, we need the timer to fire 
+    a little after that or in d + 2ε seconds. We reset it to fire in 
+    another d + 2ε seconds if it already exists.
+
+Enter the next line: " response
+answer="When the delayed trigger for an online member fires, we check whether the member's heartbeat has expired in our K/V store."
+additional_feedback="
+
+    To determine that a member went offline, we need to detect the 
+    absence of a heartbeat. For this, we built what we called a delayed 
+    trigger for each member that is currently online. 
+
+    For each online member, we can start a timer that will fire later 
+    to allow us to check whether the heartbeat stored for that member 
+    has expired or not.
+
+    Since heartbeats expire in d + ε seconds, we need the timer to fire 
+    a little after that or in d + 2ε seconds. We reset it to fire in 
+    another d + 2ε seconds if it already exists.
+
+    When the delayed trigger for an online member fires, we check whether 
+    the member's heartbeat has expired in our K/V store.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does LinkedIn's Presence Platform determine when a user went offline? 
+
+    To determine that a member went offline, we need to detect the 
+    absence of a heartbeat. For this, we built what we called a delayed 
+    trigger for each member that is currently online. 
+
+    For each online member, we can start a timer that will fire later 
+    to allow us to check whether the heartbeat stored for that member 
+    has expired or not.
+
+    Since heartbeats expire in d + ε seconds, we need the timer to fire 
+    a little after that or in d + 2ε seconds. We reset it to fire in 
+    another d + 2ε seconds if it already exists.
+
+    When the delayed trigger for an online member fires, we check whether 
+    the member's heartbeat has expired in our K/V store.
+
+Enter the next line: " response
+answer="If it has, we publish an offline event on the presence status topic for that member on the Real-time Platform to distribute the fact that the member has gone offline to the member's connections." 
+additional_feedback="
+
+    To determine that a member went offline, we need to detect the 
+    absence of a heartbeat. For this, we built what we called a delayed 
+    trigger for each member that is currently online. 
+
+    For each online member, we can start a timer that will fire later 
+    to allow us to check whether the heartbeat stored for that member 
+    has expired or not.
+
+    Since heartbeats expire in d + ε seconds, we need the timer to fire 
+    a little after that or in d + 2ε seconds. We reset it to fire in 
+    another d + 2ε seconds if it already exists.
+
+    When the delayed trigger for an online member fires, we check whether 
+    the member's heartbeat has expired in our K/V store. If it has, we 
+    publish an offline event on the presence status topic for that member 
+    on the Real-time Platform to distribute the fact that the member has 
+    gone offline to the member's connections.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
 read -p "Why would the Play framework be a better option for real-time communication over Spring MVC? " response
 answer="Play supports a non-blocking IO inherently unlike Spring MVC."
 evaluate_answer "$response" "$answer"
