@@ -1858,18 +1858,1871 @@ read -p "Why is the previous answer correct? " response
 answer="Big O Notation only takes into account the highest order of N when we have multiple orders added together."
 
 
+next_question
+ 
+read -p "In a best- and worst-case scenario, selection take the same amount of steps. Why is that? " response
+answer="Selection Sort doesn't have any mechanism for ending a pass-through early at any point. Each pass-through compares every value to the right of the chosen index."
+additional_feedback=""
+evaluate_answer "$response" "$answer" 
+
+next_question
+
+read -p "What is an intersection between two arrays? " response
+answer="The intersection is a list of all the values that occur in both of the arrays."
+evaluate_answer
+
+next_question
+
+
+read -p "Analyze the following code describe it's Big O Notation. 
+
+   function intersection(firstArray, secondArray) {
+      let result = [];
+
+      for (let i = 0; i < firstArray.length; i++) {
+         for (let i = 0; i < secondArray.length; i++) {
+            if (firstArray[i] === secondArray[i]) {
+               result.push(firstArray[i]);
+            }
+         }
+      }
+      return result
+   }
+
+
+Enter the next line: " response
+answer="If the two arrays are of equal size, and say that N is the size of either array, the number of comparisons performed are N2."
+additional_feedback="
+
+   If the two arrays are of equal size, and say that N is the size of 
+   either array, the number of comparisons performed are N2.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Analyze the following code describe it's Big O Notation. 
+
+   function intersection(firstArray, secondArray) {
+      let result = [];
+
+      for (let i = 0; i < firstArray.length; i++) {
+         for (let i = 0; i < secondArray.length; i++) {
+            if (firstArray[i] === secondArray[i]) {
+               result.push(firstArray[i]);
+            }
+         }
+      }
+      return result
+   }
+
+   If the two arrays are of equal size, and say that N is the size of 
+   either array, the number of comparisons performed are N2.
+
+
+Enter the next line: " response
+answer="This is because we compare each element of the first array to each element of the second array."
+additional_feedback="
+
+   If the two arrays are of equal size, and say that N is the size of 
+   either array, the number of comparisons performed are N2. This is 
+   because we compare each element of the first array to each element 
+   of the second array.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_line
+
+
+read -p "Analyze the following code describe it's Big O Notation. 
+
+   function intersection(firstArray, secondArray) {
+      let result = [];
+
+      for (let i = 0; i < firstArray.length; i++) {
+         for (let i = 0; i < secondArray.length; i++) {
+            if (firstArray[i] === secondArray[i]) {
+               result.push(firstArray[i]);
+            }
+         }
+      }
+      return result
+   }
+
+   If the two arrays are of equal size, and say that N is the size of 
+   either array, the number of comparisons performed are N2. This is 
+   because we compare each element of the first array to each element 
+   of the second array.
+
+
+Enter the next line: " response
+answer="Thus, if we have two arrays that each contain five elements, we'd end up making 25 comparisons."
+additional_feedback="
+
+   If the two arrays are of equal size, and say that N is the size of 
+   either array, the number of comparisons performed are N2. This is 
+   because we compare each element of the first array to each element 
+   of the second array. Thus, if we have two arrays that each contain 
+   five elements, we'd end up making 25 comparisons.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Analyze the following code describe it's Big O Notation. 
+
+   function intersection(firstArray, secondArray) {
+      let result = [];
+
+      for (let i = 0; i < firstArray.length; i++) {
+         for (let i = 0; i < secondArray.length; i++) {
+            if (firstArray[i] === secondArray[i]) {
+               result.push(firstArray[i]);
+            }
+         }
+      }
+      return result
+   }
+
+   If the two arrays are of equal size, and say that N is the size of 
+   either array, the number of comparisons performed are N2. This is 
+   because we compare each element of the first array to each element 
+   of the second array. Thus, if we have two arrays that each contain 
+   five elements, we'd end up making 25 comparisons.
+
+
+Enter the next line: " response
+answer="So, this intersection algorithm has an efficiency of O(N2). "
+additional_feedback="
+
+   If the two arrays are of equal size, and say that N is the size of 
+   either array, the number of comparisons performed are N2. This is 
+   because we compare each element of the first array to each element 
+   of the second array. Thus, if we have two arrays that each contain 
+   five elements, we'd end up making 25 comparisons. So, this intersection 
+   algorithm has an efficiency of O(N2). 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Analyze the following code describe it's Big O Notation. 
+
+   function intersection(firstArray, secondArray) {
+      let result = [];
+
+      for (let i = 0; i < firstArray.length; i++) {
+         for (let i = 0; i < secondArray.length; i++) {
+            if (firstArray[i] === secondArray[i]) {
+               result.push(firstArray[i]);
+            }
+         }
+      }
+      return result
+   }
+
+   If the two arrays are of equal size, and say that N is the size of 
+   either array, the number of comparisons performed are N2. This is 
+   because we compare each element of the first array to each element 
+   of the second array. Thus, if we have two arrays that each contain 
+   five elements, we'd end up making 25 comparisons. So, this intersection 
+   algorithm has an efficiency of O(N2).
+
+
+Enter the next line: " response
+answer="The insertions, at most, would take N steps (if the two arrays happened to be identical)."
+additional_feedback="
+
+   If the two arrays are of equal size, and say that N is the size of 
+   either array, the number of comparisons performed are N2. This is 
+   because we compare each element of the first array to each element 
+   of the second array. Thus, if we have two arrays that each contain 
+   five elements, we'd end up making 25 comparisons. So, this intersection 
+   algorithm has an efficiency of O(N2).
+
+   The insertions, at most, would take N steps (if the two arrays happened 
+   to be identical). 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Analyze the following code describe it's Big O Notation. 
+
+   function intersection(firstArray, secondArray) {
+      let result = [];
+
+      for (let i = 0; i < firstArray.length; i++) {
+         for (let i = 0; i < secondArray.length; i++) {
+            if (firstArray[i] === secondArray[i]) {
+               result.push(firstArray[i]);
+            }
+         }
+      }
+      return result
+   }
+
+   If the two arrays are of equal size, and say that N is the size of 
+   either array, the number of comparisons performed are N2. This is 
+   because we compare each element of the first array to each element 
+   of the second array. Thus, if we have two arrays that each contain 
+   five elements, we'd end up making 25 comparisons. So, this intersection 
+   algorithm has an efficiency of O(N2).
+
+   The insertions, at most, would take N steps (if the two arrays happened 
+   to be identical).
+
+
+Enter the next line: " response
+answer="This is a lower order compared to N2, so we'd still consider the algorithm to be O(N2)."
+additional_feedback="
+
+   If the two arrays are of equal size, and say that N is the size of 
+   either array, the number of comparisons performed are N2. This is 
+   because we compare each element of the first array to each element 
+   of the second array. Thus, if we have two arrays that each contain 
+   five elements, we'd end up making 25 comparisons. So, this intersection 
+   algorithm has an efficiency of O(N2).
+
+   The insertions, at most, would take N steps (if the two arrays happened 
+   to be identical). This is a lower order compared to N2, so we'd still 
+   consider the algorithm to be O(N2).
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Analyze the following code describe it's Big O Notation. 
+
+   function intersection(firstArray, secondArray) {
+      let result = [];
+
+      for (let i = 0; i < firstArray.length; i++) {
+         for (let i = 0; i < secondArray.length; i++) {
+            if (firstArray[i] === secondArray[i]) {
+               result.push(firstArray[i]);
+            }
+         }
+      }
+      return result
+   }
+
+   If the two arrays are of equal size, and say that N is the size of 
+   either array, the number of comparisons performed are N2. This is 
+   because we compare each element of the first array to each element 
+   of the second array. Thus, if we have two arrays that each contain 
+   five elements, we'd end up making 25 comparisons. So, this intersection 
+   algorithm has an efficiency of O(N2).
+
+   The insertions, at most, would take N steps (if the two arrays happened 
+   to be identical). This is a lower order compared to N2, so we'd still 
+   consider the algorithm to be O(N2).
+
+
+Enter the next line: " response
+answer="If the arrays are different sizes—say N and M—we'd say that the efficiency of this function is O(N * M)."
+additional_feedback="
+
+   If the two arrays are of equal size, and say that N is the size of 
+   either array, the number of comparisons performed are N2. This is 
+   because we compare each element of the first array to each element 
+   of the second array. Thus, if we have two arrays that each contain 
+   five elements, we'd end up making 25 comparisons. So, this intersection 
+   algorithm has an efficiency of O(N2).
+
+   The insertions, at most, would take N steps (if the two arrays happened 
+   to be identical). This is a lower order compared to N2, so we'd still 
+   consider the algorithm to be O(N2). If the arrays are different sizes—say
+   N and M—we'd say that the efficiency of this function is O(N * M).
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Use Big O Notation to describe the efficiency of an algorithm that takes 3N2 + 2N + 1 steps." response
+answer="" 
+additional_feedback=""
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "Use Big O Notation to describe the efficiency of an algorithm that takes N + log N steps." response
+answer=""
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "The following function checks whether an array of numbers contains a pair of two numbers that add up to 10.
+
+   function twoSum(array) {
+      for (let i = 0; array.length; i++) {
+         for (let j = 0; array.length; j++) {
+            if (i !== j && array[i] + array[j] === 10) {
+               return true;
+            }
+         }
+      }
+      return false;
+   }
+
+What are the best-, average-, and worst-case scenarios? Then, express the worst-case scenario in terms of Big O Notation. " response
+answer=""
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "The following function returns whether or not a capital “X” is present within a string.
+
+   functin contains(string) {
+      let foundX = false;
+
+      for (let i = 0; i < string.length; i++){
+         if (string[i] === 'x') {
+            foundX = true;
+         }
+      }
+      return foundX;
+   }
+   
+   What is this function's time complexity in terms of Big O Notation?
+    
+   Then, modify the code to improve the algorithm's efficiency for best- 
+   and average-case scenarios. " response
+answer=""
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "" response
+answer=""
+evaluate_answer "$response" "$answer"
+
+next_question
+ 
  
 
+read -p "
+
+   def average_of_even_numbers(array)
+
+      sum = 0.0
+      count_of_even_numbers = 0
+
+      array.each do |number|
+       if number.even?
+         sum += number
+         count_of_even_numbers += 1
+        end
+      end
+
+      return sum / count_of_even_numbers
+    end
+
+
+    Remember that Big O is all about answering the key question: if there are N data elements, how many steps will the algorithm take? Therefore, the first thing we want to do is determine what the “N” data elements are. 
+
+
+In this case, the algorithm is processing the array of numbers passed 
+into this method. These, then, would be the “N” data elements, with N 
+being the size of the array.
+
+Next, we have to determine how many steps the algorithm takes to 
+process these N values. 
+
+We can see that the guts of the algorithm is the loop that iterates 
+over each number inside the array, so we’ll want to analyze that first. 
+Since the loop iterates over each of the N elements, we know that the 
+algorithm takes at least N steps. 
+
+Looking inside the loop, though, we can see that a varying number of 
+steps occur within each round of the loop. For each and every number, 
+we check whether the number is even. Then, if the number is even, we 
+perform two more steps: we modify the sum variable, and we modify the 
+count_of_even_numbers variable. So, we execute three more steps for 
+even numbers than we do for odd numbers. 
+
+As you’ve learned, Big O focuses primarily on worst-case scenarios. 
+In our case, the worst case is when all the numbers are even, in which 
+case we perform three steps during each round of the loop. Because of 
+this, we can say that for N data elements, our algorithm takes 3N steps. 
+That is, for each of the N numbers, our algorithm executes three steps.
+ 
+Now, our method performs a few other steps outside of the loop as well. 
+Before the loop, we initialize the two variables and set them to 0. 
+Technically, these are two steps. After the loop, we perform another 
+step: the division of sum / count_of_even_numbers. Technically, then, our 
+algorithm takes three extra steps in addition to the 3N steps, so the total 
+number of steps is 3N + 3. 
+
+However, you also learned that Big O notation ignores constant numbers, 
+so instead of calling our algorithm O(3N + 3), we simply call it O(N).
+
+
+" response
+   
 
  
+read -p "
+
+   Use Big O Notation to describe the time complexity of the following 
+   function. The function returns true if the array is a “100-Sum Array,” 
+   and false if it is not. 
+
+   A “100-Sum Array” meets the following criteria: 
+      Its first and last numbers add up to 100. 
+      Its second and second-to-last numbers add up to 100. 
+      Its third and third-to-last numbers add up to 100, and so on.
+
+
+   def one_hundred_sum?(array)
+      left_index = 0
+      right_index = array.length - 1
+
+
+      while left_index < array.length / 2
+         if array[left_index] + array[right_index] != 100
+         return false
+         end
+
+
+         left_index += 1
+         right_index += 1
+      end 
+      return true
+   end
+
+Enter the next line: " response
+answer="Here, N is the size of the array. The loop runs for N / 2 times, as it processes two values each round of the loop."
+additional_feedback="
+
+   Here, N is the size of the array. The loop runs for N / 2 times, 
+   as it processes two values each round of the loop.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
  
+read -p "
+
+   Use Big O Notation to describe the time complexity of the following 
+   function. The function returns true if the array is a “100-Sum Array,” 
+   and false if it is not. 
+
+   A “100-Sum Array” meets the following criteria: 
+      Its first and last numbers add up to 100. 
+      Its second and second-to-last numbers add up to 100. 
+      Its third and third-to-last numbers add up to 100, and so on.
 
 
+   def one_hundred_sum?(array)
+      left_index = 0
+      right_index = array.length - 1
 
 
+      while left_index < array.length / 2
+         if array[left_index] + array[right_index] != 100
+         return false
+         end
 
+
+         left_index += 1
+         right_index += 1
+      end 
+      return true
+   end
+
+   ####################################
+   ##            Answer:             ##
+   ####################################
+
+   Here, N is the size of the array. The loop runs for N / 2 times, 
+   as it processes two values each round of the loop.
+
+Enter the next line: " response
+answer="However, this is expressed as O(N) because we drop the constant."
+additional_feedback="
+
+   Here, N is the size of the array. The loop runs for N / 2 times, 
+   as it processes two values each round of the loop. However, this 
+   is expressed as O(N) because we drop the constant.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use Big O Notation to describe the time complexity of the following function. 
+   It merges two sorted arrays together to create a new sorted array containing
+   all the values from both arrays:
+
+
+ def merge(array_1, array_2)
+   new_array = []
+   array_1_pointer = 0 
+   array_2_pointer = 0
+
+   while array_1_pointer < array_1.length || 
+      array_2_pointer < array_2.length
+
+   # If we already reached the end of the first array,
+   # add item from second array:
+   if !array_1[array_1_pointer] 
+    new_array << array_2[array_2_pointer] 
+    array_2_pointer += 1
+
+   # If we already reached the end of the second array,
+   # add item from first array:
+
+   elsif !array_2[array_2_pointer] 
+     new_array << array_1[array_1_pointer] 
+     array_1_pointer += 1 
+
+     # If the current number in first array is less than current
+     # number in second array, add from first array:
+
+      elsif array_1[array_1_pointer] < array_2[array_2_pointer] 
+         new_array << array_1[array_1_pointer] 
+         array_1_pointer += 1
+
+         # If the current number in second array is less than or equal
+         # to current number in first array, add from second array:
+
+      else
+         new_array << array_2[array_2_pointer]
+         array_2_pointer += 1
+       end 
+      end 
+   return new_array
+ end
+
+
+Enter the next line: " response
+answer="There are two separate arrays, so you could express the algorithm as O(N + M), where N and M represent each array, respectively."
+additional_feedback="
+
+   There are two separate arrays, so you could express the algorithm as O(N + M), 
+   where N and M represent each array, respectively.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+   Use Big O Notation to describe the time complexity of the following function. 
+   It merges two sorted arrays together to create a new sorted array containing
+   all the values from both arrays:
+
+
+ def merge(array_1, array_2)
+   new_array = []
+   array_1_pointer = 0 
+   array_2_pointer = 0
+
+   while array_1_pointer < array_1.length || 
+      array_2_pointer < array_2.length
+
+   # If we already reached the end of the first array,
+   # add item from second array:
+   if !array_1[array_1_pointer] 
+    new_array << array_2[array_2_pointer] 
+    array_2_pointer += 1
+
+   # If we already reached the end of the second array,
+   # add item from first array:
+
+   elsif !array_2[array_2_pointer] 
+     new_array << array_1[array_1_pointer] 
+     array_1_pointer += 1 
+
+     # If the current number in first array is less than current
+     # number in second array, add from first array:
+
+      elsif array_1[array_1_pointer] < array_2[array_2_pointer] 
+         new_array << array_1[array_1_pointer] 
+         array_1_pointer += 1
+
+         # If the current number in second array is less than or equal
+         # to current number in first array, add from second array:
+
+      else
+         new_array << array_2[array_2_pointer]
+         array_2_pointer += 1
+       end 
+      end 
+   return new_array
+ end
+
+   ####################################
+   ##            Answer:             ##
+   ####################################
+
+
+   There are two separate arrays, so you could express the algorithm as O(N + M), 
+   where N and M represent each array, respectively.
+
+Enter the next line: " response
+answer="However, the algorithm only processes each value once."
+additional_feedback="
+
+   There are two separate arrays, so you could express the algorithm as O(N + M), 
+   where N and M represent each array, respectively. However, the algorithm only 
+   processes each value once.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+   Use Big O Notation to describe the time complexity of the following function. 
+   It merges two sorted arrays together to create a new sorted array containing
+   all the values from both arrays:
+
+
+ def merge(array_1, array_2)
+   new_array = []
+   array_1_pointer = 0 
+   array_2_pointer = 0
+
+   while array_1_pointer < array_1.length || 
+      array_2_pointer < array_2.length
+
+   # If we already reached the end of the first array,
+   # add item from second array:
+   if !array_1[array_1_pointer] 
+    new_array << array_2[array_2_pointer] 
+    array_2_pointer += 1
+
+   # If we already reached the end of the second array,
+   # add item from first array:
+
+   elsif !array_2[array_2_pointer] 
+     new_array << array_1[array_1_pointer] 
+     array_1_pointer += 1 
+
+     # If the current number in first array is less than current
+     # number in second array, add from first array:
+
+      elsif array_1[array_1_pointer] < array_2[array_2_pointer] 
+         new_array << array_1[array_1_pointer] 
+         array_1_pointer += 1
+
+         # If the current number in second array is less than or equal
+         # to current number in first array, add from second array:
+
+      else
+         new_array << array_2[array_2_pointer]
+         array_2_pointer += 1
+       end 
+      end 
+   return new_array
+ end
+
+
+   ####################################
+   ##            Answer:             ##
+   ####################################
+
+   There are two separate arrays, so you could express the algorithm as O(N + M), 
+   where N and M represent each array, respectively. However, the algorithm only 
+   processes each value once.
+
+Enter the next line: " response
+answer="In this case, N is the total number of values between both arrays, and the time complexity is O(N)."
+additional_feedback="
+
+   There are two separate arrays, so you could express the algorithm as O(N + M), 
+   where N and M represent each array, respectively. However, the algorithm only 
+   processes each value once. In this case, N is the total number of values between 
+   both arrays, and the time complexity is O(N).
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use Big O Notation to describe the time complexity of the following function. 
+   This function solves a famous problem known as \"finding a needle in the haystack.\" 
  
+   Both the needle and haystack are strings. For example, if the needle is \"def\" and 
+   the haystack is \"abcdefghi\", the needle is contained somewhere in the haystack, as
+   \"def\" is a substring of \"abcdefghi\". However, if the needle is \"dd\", it cannot be 
+   found in the haystack of \"abcdefghi\". 
+   
+   This function returns true or false, depending on whether the needle can be 
+   found in the haystack:
+
+
+   def find_needle (needle, haystack) 
+      needle_index = 0 
+      haystack_index = 0 
+      while haystack_index < haystack.length 
+         if needle[needle_index] == haystack[haystack_index]
+            found_needle = true
+               while needle_index < needle.length
+                  if needle[needle_index] != haystack[haystack_index + needle_index]   found_needle = false
+                     break
+                  end
+                  needle_index += 1 
+               end
+               
+               return true if found_needle
+               needle_index = 0 
+               end
+               
+         
+               haystack_index += 1 
+         end 
+         
+         return false 
+      end
+
+
+Enter the next line: " response
+answer="In a worst-case scenario, this algorithm runs for the number of characters in the \"needle\" multiplied by the number of characters in the \"haystack.\""
+additional_feedback="
+
+   In a worst-case scenario, this algorithm runs for the number of characters 
+   in the \"needle\" multiplied by the number of characters in the \"haystack.\"
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+   Use Big O Notation to describe the time complexity of the following function. 
+   This function solves a famous problem known as \"finding a needle in the haystack.\" 
  
+   Both the needle and haystack are strings. For example, if the needle is \"def\" and 
+   the haystack is \"abcdefghi\", the needle is contained somewhere in the haystack, as
+   \"def\" is a substring of \"abcdefghi\". However, if the needle is \"dd\", it cannot be 
+   found in the haystack of \"abcdefghi\". 
+   
+   This function returns true or false, depending on whether the needle can be 
+   found in the haystack:
 
 
+   def find_needle (needle, haystack) 
+      needle_index = 0 
+      haystack_index = 0 
+      while haystack_index < haystack.length 
+         if needle[needle_index] == haystack[haystack_index]
+            found_needle = true
+               while needle_index < needle.length
+                  if needle[needle_index] != haystack[haystack_index + needle_index]   found_needle = false
+                     break
+                  end
+                  needle_index += 1 
+               end
+               
+               return true if found_needle
+               needle_index = 0 
+               end
+               
+         
+               haystack_index += 1 
+         end 
+         
+         return false 
+      end
+
+   ####################################
+   ##            Answer:             ##
+   ####################################
+
+   In a worst-case scenario, this algorithm runs for the number of characters 
+   in the \"needle\" multiplied by the number of characters in the \"haystack.\"
+
+Enter the next line: " response
+answer="Because the needle and haystack may have different numbers of characters, 
+ the Big O Notation is O(N * M)."
+additional_feedback="
+
+   In a worst-case scenario, this algorithm runs for the number of characters 
+   in the \"needle\" multiplied by the number of characters in the \"haystack.\"
+
+   Because the needle and haystack may have different numbers of characters, 
+   the Big O Notation is O(N * M).
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p " 
+
+   Use Big O Notation to describe the time complexity of the following function. 
+   This function finds the greatest product of three numbers from a given array:
+
+   def largest_product(array)  
+      largest_product_so_far = array[0] * array[1] * array[2] 
+      i = 0  
+      while i < array.length
+         j = i + 1 
+         while j < array.length
+         k = j + 1 
+         while k < array.length
+            
+            if array[i] * array[j] * array[k] > largest_product_so_far
+               
+               largest_product_so_far = array[i] * array[j] * array[k] 
+               end
+               k += 1 
+            end 
+            j += 1 
+         end  
+         i += 1 
+      end 
+      return largest_product_so_far
+   end
+
+Enter the next line: " response
+answer="N is the size of the array, and the time complexity is O(N3), as the program process through triply-nested loops."
+additional_feedback="
+
+   N is the size of the array, and the time complexity is O(N3), as 
+   the program process through triply-nested loops.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p " 
+
+   Use Big O Notation to describe the time complexity of the following function. 
+   This function finds the greatest product of three numbers from a given array:
+
+   def largest_product(array)  
+      largest_product_so_far = array[0] * array[1] * array[2] 
+      i = 0  
+      while i < array.length
+         j = i + 1 
+         while j < array.length
+         k = j + 1 
+         while k < array.length
+            
+            if array[i] * array[j] * array[k] > largest_product_so_far
+               
+               largest_product_so_far = array[i] * array[j] * array[k] 
+               end
+               k += 1 
+            end 
+            j += 1 
+         end  
+         i += 1 
+      end 
+      return largest_product_so_far
+   end
+
+   ####################################
+   ##            Answer:             ##
+   ####################################
+
+   N is the size of the array, and the time complexity is O(N3), as 
+   the program process through triply-nested loops.
+
+Enter the next line: " response
+answer="The middle loop runs N / 2 times, and the innermost loop runs N / 4 times"
+additional_feedback="
+
+   N is the size of the array, and the time complexity is O(N3), as 
+   the program process through triply-nested loops. The middle loop 
+   runs N / 2 times, and the innermost loop runs N / 4 times,
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p " 
+
+   Use Big O Notation to describe the time complexity of the following function. 
+   This function finds the greatest product of three numbers from a given array:
+
+   def largest_product(array)  
+      largest_product_so_far = array[0] * array[1] * array[2] 
+      i = 0  
+      while i < array.length
+         j = i + 1 
+         while j < array.length
+         k = j + 1 
+         while k < array.length
+            
+            if array[i] * array[j] * array[k] > largest_product_so_far
+               
+               largest_product_so_far = array[i] * array[j] * array[k] 
+               end
+               k += 1 
+            end 
+            j += 1 
+         end  
+         i += 1 
+      end 
+      return largest_product_so_far
+   end
+
+   ####################################
+   ##            Answer:             ##
+   ####################################
+
+   N is the size of the array, and the time complexity is O(N3), as 
+   the program process through triply-nested loops. The middle loop 
+   runs N / 2 times, and the innermost loop runs N / 4 times,
+
+Enter the next line: " response
+answer="so the algorithm is N * (N / 2) * (N / 4), which is N3 / 8 steps."
+additional_feedback="
+
+   N is the size of the array, and the time complexity is O(N3), as 
+   the program process through triply-nested loops. The middle loop 
+   runs N / 2 times, and the innermost loop runs N / 4 times, so the 
+   algorithm is N * (N / 2) * (N / 4), which is N3 / 8 steps.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p " 
+
+   Use Big O Notation to describe the time complexity of the following function. 
+   This function finds the greatest product of three numbers from a given array:
+
+   def largest_product(array)  
+      largest_product_so_far = array[0] * array[1] * array[2] 
+      i = 0  
+      while i < array.length
+         j = i + 1 
+         while j < array.length
+         k = j + 1 
+         while k < array.length
+            
+            if array[i] * array[j] * array[k] > largest_product_so_far
+               
+               largest_product_so_far = array[i] * array[j] * array[k] 
+               end
+               k += 1 
+            end 
+            j += 1 
+         end  
+         i += 1 
+      end 
+      return largest_product_so_far
+   end
+
+   ####################################
+   ##            Answer:             ##
+   ####################################
+
+   N is the size of the array, and the time complexity is O(N3), as 
+   the program process through triply-nested loops. The middle loop 
+   runs N / 2 times, and the innermost loop runs N / 4 times, so the 
+   algorithm is N * (N / 2) * (N / 4), which is N3 / 8 steps.
+
+Enter the next line: " response
+answer="so the algorithm is N * (N / 2) * (N / 4), which is N3 / 8 steps."
+additional_feedback="
+
+    N is the size of the array, and the time complexity is O(N3), as 
+   the program process through triply-nested loops. The middle loop 
+   runs N / 2 times, and the innermost loop runs N / 4 times, so the 
+   algorithm is N * (N / 2) * (N / 4), which is N3 / 8 steps.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p " 
+
+   Use Big O Notation to describe the time complexity of the following function. 
+   This function finds the greatest product of three numbers from a given array:
+
+   def largest_product(array)  
+      largest_product_so_far = array[0] * array[1] * array[2] 
+      i = 0  
+      while i < array.length
+         j = i + 1 
+         while j < array.length
+         k = j + 1 
+         while k < array.length
+            
+            if array[i] * array[j] * array[k] > largest_product_so_far
+               
+               largest_product_so_far = array[i] * array[j] * array[k] 
+               end
+               k += 1 
+            end 
+            j += 1 
+         end  
+         i += 1 
+      end 
+      return largest_product_so_far
+   end
+
+   ####################################
+   ##            Answer:             ##
+   ####################################
+
+   N is the size of the array, and the time complexity is O(N3), as 
+   the program process through triply-nested loops. The middle loop 
+   runs N / 2 times, and the innermost loop runs N / 4 times, so the 
+   algorithm is N * (N / 2) * (N / 4), which is N3 / 8 steps.
+
+Enter the next line: " response
+answer="But we drop the constant, leaving us with O(N3)."
+additional_feedback="
+
+   N is the size of the array, and the time complexity is O(N3), as 
+   the program process through triply-nested loops. The middle loop 
+   runs N / 2 times, and the innermost loop runs N / 4 times, so the 
+   algorithm is N * (N / 2) * (N / 4), which is N3 / 8 steps. But we 
+   drop the constant, leaving us with O(N3).
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_question
+
+read -p "
+
+   If there were a program that kept reducing a pile of resumes until 
+   it had one left, it might take the approach of alternating between 
+   throwing out the top half and the bottom half. That is, it will first 
+   eliminate the top half of the pile, and then proceed to eliminate 
+   the bottom half of what remains. It keeps alternating between eliminating 
+   the top and bottom until one lucky resume remains, and that's who is 
+   hired. Describe the efficiency of this function in terms of Big O:
+
+      
+
+def pick_resume(resumes) 
+    eliminate = \"top\"
+
+ while resumes.length > 1
+    if eliminate == \"top\"
+      resumes = resumes[resumes.length / 2, resumes.length - 1]
+      eliminate = \"bottom\" 
+    elsif eliminate == \"bottom\"
+        resumes = resumes[0, resumes.length / 2] 
+        eliminate = \"top\"
+        end 
+      end
+      
+      return resumes[0] 
+     end
+
+
+Enter the next line: " response
+answer="N is the size of the resumes array."
+additional_feedback="
+
+   N is the size of the resumes array.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   If there were a program that kept reducing a pile of resumes until 
+   it had one left, it might take the approach of alternating between 
+   throwing out the top half and the bottom half. That is, it will first 
+   eliminate the top half of the pile, and then proceed to eliminate 
+   the bottom half of what remains. It keeps alternating between eliminating 
+   the top and bottom until one lucky resume remains, and that's who is 
+   hired. Describe the efficiency of this function in terms of Big O:
+
+      
+
+def pick_resume(resumes) 
+    eliminate = \"top\"
+
+ while resumes.length > 1
+    if eliminate == \"top\"
+      resumes = resumes[resumes.length / 2, resumes.length - 1]
+      eliminate = \"bottom\" 
+    elsif eliminate == \"bottom\"
+        resumes = resumes[0, resumes.length / 2] 
+        eliminate = \"top\"
+        end 
+      end
+      
+      return resumes[0] 
+     end
+
+   ####################################
+   ##            Answer:             ##
+   ####################################
+   
+   N is the size of the resumes array.
+
+Enter the next line: " response
+answer="Because in each round of the loop we eliminate half of the resumes"
+additional_feedback="
+
+   N is the size of the resumes array. Because in each round of the loop 
+   we eliminate half of the resumes,
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   If there were a program that kept reducing a pile of resumes until 
+   it had one left, it might take the approach of alternating between 
+   throwing out the top half and the bottom half. That is, it will first 
+   eliminate the top half of the pile, and then proceed to eliminate 
+   the bottom half of what remains. It keeps alternating between eliminating 
+   the top and bottom until one lucky resume remains, and that's who is 
+   hired. Describe the efficiency of this function in terms of Big O:
+      
+
+def pick_resume(resumes) 
+    eliminate = \"top\"
+
+ while resumes.length > 1
+    if eliminate == \"top\"
+      resumes = resumes[resumes.length / 2, resumes.length - 1]
+      eliminate = \"bottom\" 
+    elsif eliminate == \"bottom\"
+        resumes = resumes[0, resumes.length / 2] 
+        eliminate = \"top\"
+        end 
+      end
+      
+      return resumes[0] 
+     end
+
+     ####################################
+     ##            Answer:             ##
+     ####################################
+
+   N is the size of the resumes array. Because in each round of the loop 
+   we eliminate half of the resumes,
+
+Enter the next line: " response
+answer="we have an algorithm of O(log N)."
+additional_feedback="
+
+   N is the size of the resumes array. Because in each round of the loop 
+   we eliminate half of the resumes, we have an algorithm of O(log N).
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+read -p "What is a definition of hashing? " response
+answer="This process of taking characters and converting them to numbers."
+evaluate_answer "$response" "$answer" 
+
+next_question
+
+read -p "What is the defintion of hash function? " response
+answer="Code that is used to convert letters into numbers."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is a valid hash function? " response
+answer="function must convert the same string to the same number every single time it's applied."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is an approach to handling collision? " response
+answer="When a collision occurs, instead of placing a single value in the cell, it places in it a reference to an array."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "How does the process of handling collision work? " response
+answer="The computer hashes the key. It looks at the cell that the hash generated."
+additional_feedback="
+
+   The computer hashes the key. It looks at the cell that the hash generated.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does the process of handling collision work? " response
+answer="If the cell containts more than on value it will be in an array of arrays rather than a single value."
+additional_feedback="
+
+   The computer hashes the key. It looks at the cell that the hash generated.
+   If the cell containts more than on value it will be in an array of arrays 
+   rather than a single value.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does the process of handling collision work? " response
+answer="If the cell contains more than one value, it will be in an array of arrays rather than a single value."
+additional_feedback="
+
+   The computer hashes the key. It looks at the cell that the hash generated.
+   If the cell contains more than one value, it will be in an array of arrays 
+   rather than a single value.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does the process of handling collision work? " response
+answer="The computer will then search through the array linearly, looking at index 0 of each subarray until it finds the key."
+additional_feedback="
+
+   The computer hashes the key. It looks at the cell that the hash generated.
+   If the cell contains more than one value, it will be in an array of arrays 
+   rather than a single value. The computer will then search through the array 
+   linearly, looking at index 0 of each subarray until it finds the key.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "How does the process of handling collision work? " response
+answer="It then returns the value at index 1 of the correct subarray."
+additional_feedback="
+
+   The computer hashes the key. It looks at the cell that the hash generated.
+   If the cell contains more than one value, it will be in an array of arrays 
+   rather than a single value. The computer will then search through the array 
+   linearly, looking at index 0 of each subarray until it finds the key. It then 
+   returns the value at index 1 of the correct subarray.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Explain the worst-case performance for a hash table. " response
+answer="If somehow all of the data ended up within a single hash table cell, the hash table would be no better than an array."
+additional_feedback="
+
+   If somehow all of the data ended up within a single hash table cell, 
+   the hash table would be no better than an array.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Explain the worst-case performance for a hash table. 
+
+   If somehow all of the data ended up within a single hash table cell, 
+   the hash table would be no better than an array.
+
+Enter the next line: " response
+answer="Therefore, the worst-case performance for a hash table lookup is O(N)."
+additional_feedback="
+
+   If somehow all of the data ended up within a single hash table cell, 
+   the hash table would be no better than an array. Therefore, the worst-case 
+   performance for a hash table lookup is O(N).
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What are good characteristics of a hash function? " response
+answer="A good hash function is one that distributes its data across all available cells."
+additional_feedback="A good hash function is one that distributes its data across all available cells."
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What are good characteristics of a hash function? 
+
+   A good hash function is one that distributes its data across all available cells.
+
+Enter the next line: " response
+answer="The more we can spread out our data, the fewer collisions we will have."
+additional_feedback="
+
+   A good hash function is one that distributes its data across all available cells.
+   The more we can spread out our data, the fewer collisions we will have.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What are good characteristics of a hash function? 
+
+   A good hash function is one that distributes its data across all available cells.
+   The more we can spread out our data, the fewer collisions we will have.
+
+Enter the next line: " response
+answer="Furthermore, while avoiding collision, a hash table should maintain low memory consumption and limit the number of cells."
+additional_feedback="
+
+   A good hash function is one that distributes its data across all available cells.
+   The more we can spread out our data, the fewer collisions we will have. Furthermore,
+   while avoiding collision, a hash table should maintain low memory consumption and limit the number of cells.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is the rule of thumb regarding the load factor for a hash table? " response
+answer="For every 7 data elements stored in a hash table, it should have 10 cells."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "
+
+   How do you optimize the following code?
+
+   function isSubset(array1, array2) {
+      let largerArray;
+      let smallerArray;
+      // Determine which array is smaller:
+      if (array1.length > array2.length) {
+         largerArray = array1;
+         smallerArray = array2;
+      } else {
+         largerArray = array2;
+         smallerArray = array1;
+      }
+
+      for (let i = 0; i < smallerArray.length; i++) {
+         let foundMatch = false;
+
+         for (let j = 0; j < largerArray.length; j++) {
+            if (smallerArray[i] === largerArray[i]) {
+            foundMatch = true;
+            break;
+            }
+         }
+         if (foundMatch === false) {
+            return false;
+         }
+      }
+      return true;
+   }
+
+Enter the next line: " response
+answer="let hashTable = {};"
+additional_feedback="
+
+   function isSubset(array1, array2) {
+      let largerArray;
+      let smallerArray;
+      // Determine which array is smaller:
+      if (array1.length > array2.length) {
+         largerArray = array1;
+         smallerArray = array2;
+      } else {
+         largerArray = array2;
+         smallerArray = array1;
+      }
+
+      let hashTable = {};
+      
+   }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+   How do you optimize the following code?
+
+   function isSubset(array1, array2) {
+      let largerArray;
+      let smallerArray;
+      // Determine which array is smaller:
+      if (array1.length > array2.length) {
+         largerArray = array1;
+         smallerArray = array2;
+      } else {
+         largerArray = array2;
+         smallerArray = array1;
+      }
+
+      let hashTable = {};
+      
+   }
+
+Enter the next line: " response
+answer="for(const value of largerArray) { hashTable[value] = true; }"
+additional_feedback="
+
+   function isSubset(array1, array2) {
+      let largerArray;
+      let smallerArray;
+      // Determine which array is smaller:
+      if (array1.length > array2.length) {
+         largerArray = array1;
+         smallerArray = array2;
+      } else {
+         largerArray = array2;
+         smallerArray = array1;
+      }
+
+      let hashTable = {};
+      for(const value of largerArray) { 
+         hashTable[value] = true; 
+      }
+      
+   }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+   How do you optimize the following code?
+
+   function isSubset(array1, array2) {
+      let largerArray;
+      let smallerArray;
+      // Determine which array is smaller:
+      if (array1.length > array2.length) {
+         largerArray = array1;
+         smallerArray = array2;
+      } else {
+         largerArray = array2;
+         smallerArray = array1;
+      }
+
+      let hashTable = {};
+      for(const value of largerArray) { 
+         hashTable[value] = true; 
+      }
+      
+   }
+
+Enter the next line: " response
+answer="for(const value of smallerArray) { }"
+additional_feedback="
+
+   function isSubset(array1, array2) {
+      let largerArray;
+      let smallerArray;
+      // Determine which array is smaller:
+      if (array1.length > array2.length) {
+         largerArray = array1;
+         smallerArray = array2;
+      } else {
+         largerArray = array2;
+         smallerArray = array1;
+      }
+
+      let hashTable = {};
+      for(const value of largerArray) { 
+         hashTable[value] = true; 
+      }
+
+      for(const value of smallerArray) { 
+
+      }
+   }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+   How do you optimize the following code?
+
+   function isSubset(array1, array2) {
+      let largerArray;
+      let smallerArray;
+      // Determine which array is smaller:
+      if (array1.length > array2.length) {
+         largerArray = array1;
+         smallerArray = array2;
+      } else {
+         largerArray = array2;
+         smallerArray = array1;
+      }
+
+      let hashTable = {};
+      for(const value of largerArray) { 
+         hashTable[value] = true; 
+      }
+      
+   }
+
+Enter the next line: " response
+answer="if(!hashTable[value]) { return false; }"
+additional_feedback="
+
+   function isSubset(array1, array2) {
+      let largerArray;
+      let smallerArray;
+      // Determine which array is smaller:
+      if (array1.length > array2.length) {
+         largerArray = array1;
+         smallerArray = array2;
+      } else {
+         largerArray = array2;
+         smallerArray = array1;
+      }
+
+      let hashTable = {};
+      for(const value of largerArray) { 
+         hashTable[value] = true; 
+      }
+
+      for(const value of smallerArray) { 
+         if(!hashTable[value]) { 
+            return false; 
+         }
+      }
+
+      return true;
+   }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+
+ Write a function that returns the intersection of two arrays. The intersection 
+ is a third array that contains all values contained within the first two arrays. 
+ For example, the intersection of [1, 2, 3, 4, 5] and [0, 2, 4, 6, 8] is [2, 4]. 
+ Your function should have a complexity of O(N). (If your programming language 
+ has a built-in way of doing this, don't use it. The idea is to build the algorithm 
+ yourself.)
+
+
+ Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+ Write a function that accepts an array of strings and returns the 
+ first duplicate value it finds. For example, if the array is 
+ [\"a\", \"b\", \"c\", \"d\", \"c\", \"e\", \"f\"], the function should 
+ return \"c\", since it's duplicated within the array. (You can assume 
+ that there's one pair of duplicates within the array.) Make sure the 
+ function has an efficiency of O(N).
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+ Write a function that accepts a string that contains all the letters 
+ of the alphabet except one and returns the missing letter. For example, 
+ the string, \"the quick brown box jumps over a lazy dog\" contains all the 
+ letters of the alphabet except the letter, \"f\". The function should have 
+ a time complexity of O(N).
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+ Write a function that returns the first non-duplicated character 
+ in a string. For example, the string, \"minimum\" has two characters 
+ that only exist once—the \"n\" and the \"u\", so your function should 
+ return the \"n\", since it occurs first. The function should have an 
+ efficiency of O(N).
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What are the three constraints regarding Stacks? " response
+answer="Data can be inserted only at the end of a stack."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What are the three constraints regarding Stacks? 
+
+   • Data can be inserted only at the end of a stack.
+
+Enter the next line: " response
+answer="Data can be deleted only from the end of a stack."
+additional_feedback="
+
+   • Data can be inserted only at the end of a stack.
+   • Data can be deleted only from the end of a stack.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What are the three constraints regarding Stacks? 
+
+   • Data can be inserted only at the end of a stack.
+   • Data can be deleted only from the end of a stack.
+
+Enter the next line: " response
+answer="Only the last element of a stack can be read."
+additional_feedback="
+
+   • Data can be inserted only at the end of a stack.
+   • Data can be deleted only from the end of a stack.
+   • Only the last element of a stack can be read.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+read -p "What are the three constraints regarding Queue? " response
+answer="Data can be inserted only at the end of a queue."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What are the three constraints regarding Stacks? 
+
+   • Data can be inserted only at the end of a queue.
+
+Enter the next line: " response
+answer="Data can be deleted only from the front of a queue."
+additional_feedback="
+
+   • Data can be inserted only at the end of a queue.
+   • Data can be deleted only from the front of a queue.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What are the three constraints regarding Stacks? 
+
+   • Data can be inserted only at the end of a queue.
+   • Data can be deleted only from the front of a queue.
+
+Enter the next line: " response
+answer="Only the element at the front of a queue can be read."
+additional_feedback="
+
+   • Data can be inserted only at the end of a queue.
+   • Data can be deleted only from the front of a queue.
+   • Only the element at the front of a queue can be read.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   If you were writing software for a call center that places 
+   callers on hold and then assigns them to \"the next available 
+   representative,\" would you use a stack or a queue?
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   If you pushed numbers onto a stack in the following order: 
+   1, 2, 3, 4, 5, 6, and then popped two items, which number 
+   would you be able to read from the stack?
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  If you inserted numbers into a queue in the following order: 
+  1, 2, 3, 4, 5, 6, and then dequeued two items, which number 
+  would you be able to read from the queue?
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Write a function that uses a stack to reverse a string. (For example, 
+  \"abcde\" would become \"edcba\".) You can work with our earlier implementation 
+  of the Stack class.
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+read -p "What is a base case in a recursive function? " response
+answer="A base case is the condition in which a recursive function will not recurse."
+additional_feedback=""
+evaluate_answer "$response" "$answer"
+
+
+read -p "
+
+      The following function prints every other number from a low 
+      number to a high number. For example, if low is 0 and high is 
+      10, it would print:
+         
+         0 
+         2 
+         4  
+         6  
+         8 
+         10
+
+      Identify the base case in the function:
+
+      def print_every_other(low, high) 
+         return if low > high
+         puts low
+         print_every_other(low + 2, high) 
+       end
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+      My kid was playing with my computer and changed my factorial function so 
+      that it computes factorial based on (n - 2) instead of (n - 1). Predict 
+      what will happen when we run factorial(10) using this function:
+
+         def factorial(n) 
+            return 1 if n == 1 
+            return n * factorial(n - 2)
+           end
+
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+      Following is a function in which we pass in two numbers called 
+      low and high. The function returns the sum of all the numbers from 
+      low to high. For example, if low is 1, and high is 10, the function 
+      will return the sum of all numbers from 1 to 10, which is 55. However, 
+      our code is missing the base case, and will run indefinitely! 
+      Fix the code by adding the correct base case:
+
+      def sum(low, high) 
+         return high + sum(low, high - 1) 
+      end
+
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+
+read -p "
+
+   Here is an array containing both numbers as well as other arrays, 
+   which in turn contain numbers and arrays:
+
+   array = [  
+      1, 
+      2,  
+      3,  
+      [4, 5, 6], 
+      7, 
+      [8,  
+      [9, 10, 11, 
+      [12, 13, 14]  
+      ]  
+      ],  
+      [15, 16, 17, 18, 19,  
+      [20, 21, 22,  
+      [23, 24, 25,  
+      [26, 27, 29]  
+      ], 30, 31  
+      ], 32  
+      ], 33
+    ]
+
+   Write a recursive function that prints all the numbers (and just numbers).
+
+
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_total_missed_questions "$response" "$answer" "$additional_feedback"
