@@ -1,79 +1,66 @@
 #!/bin/bash
 
+
 correct=0
 questions=0
 
-evaluate_total_missed_questions() {
-  missed_questions=$(expr $questions - $correct)
-  if [ "$missed_questions" -eq 2 ]; then
-    exit 1
-  fi
-}
-
 calculate_float() {
-  awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
+    awk "BEGIN {printf \"%.2f\n\", $1 / $2}"
 }
 
 calculate_score() {
 
-  if [[ correct -eq 0 ]]; then
-    echo "     
-########################################
+    if [[ correct -eq 0 ]]; then
+        echo "     
+#################################################
 
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+  You got nothing correct. Stop and go study.
 
-########################################
+#################################################
              "
-    echo "     
-########################################
-
-       You got nothing correct. Stop and go study.
-
-########################################
-             "
-  else
-    echo "########################################"
-    echo "          Progress                    "
-    echo "    $questions questions answered."
-    echo "    $correct answered correctly."
-    score=$(calculate_float $correct $questions)
-    echo "    You scored $score% on React recipes."
-  fi
+    else
+        echo "########################################"
+        echo "          Progress                    "
+        echo "    $questions questions answered."
+        echo "    $correct answered correctly."
+        score=$(calculate_float $correct $questions)
+        echo "    You scored $score% on React recipes."
+    fi
 }
 
 increment_correct_responses() {
-  ((correct = correct + 1))
+    ((correct = correct + 1))
 }
 
 increment_questions_count() {
-  ((questions = questions + 1))
+    ((questions = questions + 1))
 }
 
 affirm_answer() {
-  if [[ -z "$1" ]]; then
-    echo "
+    if [[ -z "$1" ]]; then
+        echo "
 ########################################
               Correct
 ########################################
     "
-  else
-    echo "     
+    else
+        echo "     
 ########################################
               Correct
 ########################################
              "
-    echo "$1"
-  fi
+        echo "$1"
+    fi
 }
 
 evaluate_answer() {
-  increment_questions_count
-  if [ "$1" == "$2" ]; then
-    increment_correct_responses
-    affirm_answer "$3"
-  else
-    echo "     
+    increment_questions_count
+
+    if [ "$1" == "$2" ]; then
+        increment_correct_responses
+        affirm_answer "$3"
+    else
+        echo "     
 ########################################
         
        Wrong! There is no tommorrow, 
@@ -82,12 +69,12 @@ evaluate_answer() {
         
        Your answer:     $1
        Correct answer:  $2
+        
 
 ########################################
              "
-  fi
-  calculate_score
-  evaluate_total_missed_questions
+    fi
+    calculate_score
 }
 
 evaluate_answer_written_with_code() {
@@ -117,7 +104,7 @@ evaluate_answer_written_with_code() {
 }
 
 next_question() {
-  echo "
+    echo "
  ########################################
              Next Question 
  ########################################
@@ -125,20 +112,13 @@ next_question() {
 }
 
 next_line() {
-  echo "
+    echo "
  ########################################
                 Next Line 
  ########################################
 "
 }
 
-echo "
-
-     ########################################
-                First Question
-    ########################################
-
-"
 
 read -p "
    
@@ -218,6 +198,130 @@ additional_feedback="
         : a;
     });
   });
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Write a curry function that updates an array of user with a given index. " response
+answer="const handleUserUpdate = (index: number) => { };"
+additional_feedback="
+
+  const handleUserUpdate = (index: number) => { 
+    
+  };
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Write a curry function that updates an array of user with a given index. 
+
+  const handleUserUpdate = (index: number) => { 
+    
+  };
+
+
+Enter the next line: " response
+answer="const tempArr = [...users];"
+additional_feedback="
+
+  const handleUserUpdate = (index: number) => {
+    const tempArr = [...users];
+  };
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Write a curry function that updates an array of user with a given index. 
+
+  const handleUserUpdate = (index: number) => { 
+    const tempArr = [...users];
+  };
+
+
+Enter the next line: " response
+answer="return (e: React.ChangeEvent<HTMLInputElement>) => { };"
+additional_feedback="
+
+  const handleUserUpdate = (index: number) => {
+    const tempArr = [...users];
+
+    return (e: React.ChangeEvent<HTMLInputElement>) => { 
+
+    };
+  };
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Write a curry function that updates an array of user with a given index. 
+
+  const handleUserUpdate = (index: number) => {
+    const tempArr = [...users];
+
+    return (e: React.ChangeEvent<HTMLInputElement>) => { 
+
+    };
+  };
+
+
+Enter the next line: " response
+answer="tempArr[index] = { ...tempArr[index], value: e.target.value };"
+additional_feedback="
+
+  const handleUserUpdate = (index: number) => { 
+    const tempArr = [...users];
+
+    return (e: React.ChangeEvent<HTMLInputElement>) => { 
+      tempArr[index] = { 
+        ...tempArr[index], 
+        value: e.target.value 
+      };
+    };
+  };
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "Write a curry function that updates an array of user with a given index. 
+
+  const handleUserUpdate = (index: number) => { 
+    const tempArr = [...users];
+
+    return (e: React.ChangeEvent<HTMLInputElement>) => { 
+      tempArr[index] = { 
+        ...tempArr[index], 
+        value: e.target.value 
+      };
+    };
+  };
+
+
+Enter the next line: " response
+answer="setUserInput(e.target.value); setUserList(tempArr);"
+additional_feedback="
+
+  const handleUserUpdate = (index: number) { 
+    const tempArr = [...users];
+
+    return (e: React.ChangeEvent<HTMLInputElement>) => { 
+      tempArr[index] = { 
+        ...tempArr[index], 
+        value: e.target.value 
+      };
+      setUserInput(e.target.value);
+      setUserList(tempArr);
+    }
+  };
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -368,7 +472,7 @@ additional_feedback="
 
   useEffect(() => {
     fetch(\"https://restcountries.eu/rest/v2/all\")
-     .then((res) => res.json())
+     
   }, []);
 
 
@@ -1100,8 +1204,6 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
-next_question
-
 read -p "
 
   Complete the code that alternates between players and updates the
@@ -1204,7 +1306,7 @@ read -p "
 
 
 Enter the next line: " response
-answer="copyOfBoard[index] = { ...copOfBoard[index], boardValue: 'O' };"
+answer="copyOfBoard[index] = { ...copyOfBoard[index], boardValue: 'O' };"
 additional_feedback="
 
   const handlePlayers = (index) => {  
@@ -1213,7 +1315,7 @@ additional_feedback="
 
       if (player === 0) { 
        copyOfBoard[index] = {
-         ...copOfBoard[index],
+         ...coypOfBoard[index],
          boardValue: 'O'
        };
       }
@@ -1237,7 +1339,7 @@ read -p "
 
       if (player === 0) { 
        copyOfBoard[index] = {
-         ...copOfBoard[index],
+         ...copyOfBoard[index],
          boardValue: 'O'
        };
       }
@@ -1255,7 +1357,7 @@ additional_feedback="
 
       if (player === 0) { 
        copyOfBoard[index] = {
-         ...copOfBoard[index],
+         ...copyOfBoard[index],
          boardValue: 'O'
        };
         setBoardValue(copyOfBoard); 
@@ -1277,7 +1379,7 @@ echo "
 
       if (player === 0) { 
         copyOfBoard[index] = {
-          ...copOfBoard[index],
+          ...copyOfBoard[index],
           boardValue: 'O'
         };
          setBoardValue(copyOfBoard); 
@@ -1285,7 +1387,7 @@ echo "
       }
 
       copyOfBoard[index] = {
-         ...copOfBoard[index],
+         ...copyOfBoard[index],
          boardValue: 'X'
       };
       setBoardValue(copyOfBoard);
@@ -2344,7 +2446,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" 
 
-next_question
+next_line
 
 read -p "
 
@@ -2416,42 +2518,42 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  Write a curry function that handles the change event on a form element.
+#   Write a curry function that handles the change event on a form element.
 
-  function handleInput(type: keyof FormInput): (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void {
-    return function (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) { 
-      setInput(prev => ({ 
-        ...prev, fields: { 
-          ...prev.fields, 
-          [type]: e.target.value 
-        }
-      }));
-    }
-  }
+#   function handleInput(type: keyof FormInput): (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void {
+#     return function (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) { 
+#       setInput(prev => ({ 
+#         ...prev, fields: { 
+#           ...prev.fields, 
+#           [type]: e.target.value 
+#         }
+#       }));
+#     }
+#   }
 
-Enter the next line: " response
-answer="...prev, fields: { ...prev.fields, [type]: e.target.value }"
-additional_feedback="
+# Enter the next line: " response
+# answer="...prev, fields: { ...prev.fields, [type]: e.target.value }"
+# additional_feedback="
 
-  function handleInput(type: keyof FormInput): (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void {
-    return function (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) { 
-      setInput(prev => ({ 
-        ...prev, fields: { 
-          ...prev.fields, 
-          [type]: e.target.value 
-        }
-      }));
-    }
-  }
+#   function handleInput(type: keyof FormInput): (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void {
+#     return function (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) { 
+#       setInput(prev => ({ 
+#         ...prev, fields: { 
+#           ...prev.fields, 
+#           [type]: e.target.value 
+#         }
+#       }));
+#     }
+#   }
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+next_question
 
 read -p "
 
@@ -2887,7 +2989,110 @@ read -p "
   export const PostsContext = createContext(postsContextDefaultValue);
   
 Enter the next line: " response
-answer="interface PostsContextData { posts: Post[]; isLoading: boolean; fetchPosts: () => void; removePost: (postId: number) => void; }"
+answer="interface PostsContextData { }"
+additional_feedback="
+
+  interface PostsContextData { 
+  
+  }  
+
+  export const PostsContext = createContext(postsContextDefaultValue);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Create a interfaces for the PostsContext API.
+
+  interface PostsContextData { 
+  
+  } 
+
+  export const PostsContext = createContext(postsContextDefaultValue);
+  
+Enter the next line: " response
+answer="posts: Post[];"
+additional_feedback="
+
+  interface PostsContextData { 
+    posts: Post[]; 
+  }  
+
+  export const PostsContext = createContext(postsContextDefaultValue);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+next_line
+
+read -p "
+
+  Create a interfaces for the PostsContext API.
+
+  interface PostsContextData { 
+    posts: Post[]; 
+  }
+
+  export const PostsContext = createContext(postsContextDefaultValue);
+  
+Enter the next line: " response
+answer="isLoading: boolean;"
+additional_feedback="
+
+  interface PostsContextData { 
+    posts: Post[]; 
+    isLoading: boolean; 
+  }  
+
+  export const PostsContext = createContext(postsContextDefaultValue);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+next_line
+
+read -p "
+
+  Create a interfaces for the PostsContext API.
+
+  interface PostsContextData { 
+    posts: Post[]; 
+    isLoading: boolean; 
+  }  
+
+  export const PostsContext = createContext(postsContextDefaultValue);
+  
+Enter the next line: " response
+answer="fetchPosts: () => void;"
+additional_feedback="
+
+  interface PostsContextData { 
+    posts: Post[]; 
+    isLoading: boolean; 
+    fetchPosts: () => void;  
+  }  
+
+  export const PostsContext = createContext(postsContextDefaultValue);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+next_line
+
+read -p "
+
+  Create a interfaces for the PostsContext API.
+
+  interface PostsContextData { 
+    posts: Post[]; 
+    isLoading: boolean; 
+    fetchPosts: () => void;  
+  }
+
+  export const PostsContext = createContext(postsContextDefaultValue);
+  
+Enter the next line: " response
+answer="removePost: (postId: number) => void;"
 additional_feedback="
 
   interface PostsContextData { 
@@ -2919,7 +3124,7 @@ read -p "
   export const PostsContext = createContext(postsContextDefaultValue);
 
 Enter the next line: " response
-answer="const postsContextDefaultValue: PostsContextData = { posts: [], isLoading: false, fetchPosts: () => null, removePost: (postId: number) => null };"
+answer="const postsContextDefaultValue: PostsContextData = { };"
 additional_feedback="
 
   interface PostsContextData { 
@@ -2930,10 +3135,7 @@ additional_feedback="
   }  
 
   const postsContextDefaultValue: PostsContextData = { 
-    posts: [], 
-    isLoading: false, 
-    fetchPosts: () => null, 
-    removePost: (postId: number) => null 
+    
   };
 
   export const PostsContext = createContext<PostsContextData>(postsContextDefaultValue);
@@ -2941,21 +3143,42 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_question
+next_line
+
 
 read -p "
-  Write a function that uses the PostsContext.
 
+  Create a interfaces for the PostsContext API.
 
-Enter the line next line: " response
-answer="function usePostsContext() { }"
-additional_feedback="
+  interface PostsContextData { 
+    posts: Post[]; 
+    isLoading: boolean; 
+    fetchPosts: () => void; 
+    removePost: (postId: number) => void; 
+  }  
 
-  function usePostsContext() { 
+  const postsContextDefaultValue: PostsContextData = { 
     
-  }
+  };
 
+  export const PostsContext = createContext(postsContextDefaultValue);
 
+Enter the next line: " response
+answer="posts: [],"
+additional_feedback="
+
+  interface PostsContextData { 
+    posts: Post[]; 
+    isLoading: boolean; 
+    fetchPosts: () => void; 
+    removePost: (postId: number) => void; 
+  }  
+
+  const postsContextDefaultValue: PostsContextData = { 
+    posts: [],
+  };
+
+  export const PostsContext = createContext<PostsContextData>(postsContextDefaultValue);
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -2964,131 +3187,127 @@ next_line
 
 
 read -p "
-  Write a function that uses the PostsContext.
 
-  function usePostsContext() { 
-    
-  }
+  Create a interfaces for the PostsContext API.
 
-Enter the line next line: " response
-answer="const postsContext = useContext(PostsContext);"
+  interface PostsContextData { 
+    posts: Post[]; 
+    isLoading: boolean; 
+    fetchPosts: () => void; 
+    removePost: (postId: number) => void; 
+  }  
+
+  const postsContextDefaultValue: PostsContextData = { 
+    posts: [],
+  };
+
+  export const PostsContext = createContext(postsContextDefaultValue);
+
+Enter the next line: " response
+answer="isLoading: false,"
 additional_feedback="
 
-  function usePostsContext() { 
-    const postsContext = useContext(PostsContext);
-  }
+  interface PostsContextData { 
+    posts: Post[]; 
+    isLoading: boolean; 
+    fetchPosts: () => void; 
+    removePost: (postId: number) => void; 
+  }  
 
+  const postsContextDefaultValue: PostsContextData = { 
+    posts: [],
+    isLoading: false,
+  };
 
+  export const PostsContext = createContext<PostsContextData>(postsContextDefaultValue);
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
+
 read -p "
-  Write a function that uses the PostsContext.
 
-  function usePostsContext() { 
-    const postsContext = useContext(PostsContext);
-  }
+  Create a interfaces for the PostsContext API.
 
-Enter the line next line: " response
-answer="if (!postsContext) { }"
+  interface PostsContextData { 
+    posts: Post[]; 
+    isLoading: boolean; 
+    fetchPosts: () => void; 
+    removePost: (postId: number) => void; 
+  }  
+
+  const postsContextDefaultValue: PostsContextData = { 
+    posts: [],
+    isLoading: false,
+  };
+
+  export const PostsContext = createContext(postsContextDefaultValue);
+
+Enter the next line: " response
+answer="fetchPosts: () => null,"
 additional_feedback="
 
-  function usePostsContext() { 
-    const postsContext = useContext(PostsContext);
-    if (!postsContext) {
+  interface PostsContextData { 
+    posts: Post[]; 
+    isLoading: boolean; 
+    fetchPosts: () => void; 
+    removePost: (postId: number) => void; 
+  }  
 
-    }
-  }
+  const postsContextDefaultValue: PostsContextData = { 
+    posts: [],
+    isLoading: false,
+    fetchPosts: () => null,
+  };
 
+  export const PostsContext = createContext<PostsContextData>(postsContextDefaultValue);
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-read -p "
-  Write a function that uses the PostsContext.
-
-  function usePostsContext() { 
-    const postsContext = useContext(PostsContext);
-    if (!postsContext) {
-
-    }
-  }
-
-Enter the line next line: " response
-answer="throw new Error('usePostsContext must be used within the PostsContext.Provider');"
-additional_feedback="
-
-  function usePostsContext() { 
-    const postsContext = useContext(PostsContext);
-    if (!postsContext) {
-      throw new Error('usePostsContext must be used within the PostsContext.Provider');
-    }
-  }
-
-
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
 
 read -p "
-  Write a function that uses the PostsContext.
 
-  function usePostsContext() { 
-    const postsContext = useContext(PostsContext);
-    if (!postsContext) {
-      throw new Error('usePostsContext must be used within the PostsContext.Provider');
-    }
-  }
+  Create a interfaces for the PostsContext API.
 
-Enter the line next line: " response
-answer="return postsContext;"
+  interface PostsContextData { 
+    posts: Post[]; 
+    isLoading: boolean; 
+    fetchPosts: () => void; 
+    removePost: (postId: number) => void; 
+  }  
+
+  const postsContextDefaultValue: PostsContextData = { 
+    posts: [],
+    isLoading: false,
+    fetchPosts: () => null,
+  };
+
+  export const PostsContext = createContext(postsContextDefaultValue);
+
+Enter the next line: " response
+answer="removePost: (postId: number) => null"
 additional_feedback="
 
-  function usePostsContext() { 
-    const postsContext = useContext(PostsContext);
-    if (!postsContext) {
-      throw new Error('usePostsContext must be used within the PostsContext.Provider');
-    }
-    return postsContext;
-  }
+  interface PostsContextData { 
+    posts: Post[]; 
+    isLoading: boolean; 
+    fetchPosts: () => void; 
+    removePost: (postId: number) => void; 
+  }  
 
+  const postsContextDefaultValue: PostsContextData = { 
+    posts: [],
+    isLoading: false,
+    fetchPosts: () => null,
+    removePost: (postId: number) => null
+  };
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Write a function that uses the PostsContext.
-
-  function usePostsContext() { 
-    const postsContext = useContext(PostsContext);
-    if (!postsContext) {
-      throw new Error('usePostsContext must be used within the PostsContext.Provider');
-    }
-    return postsContext;
-  }
-
-Enter the line next line: " response
-answer="export { PostsProvider, usePostsContext };"
-additional_feedback="
-
-  function usePostsContext() { 
-    const postsContext = useContext(PostsContext);
-    if (!postsContext) {
-      throw new Error('usePostsContext must be used within the PostsContext.Provider');
-    }
-    return postsContext;
-  }
-
-  export { PostsProvider, usePostsContext }
+  export const PostsContext = createContext<PostsContextData>(postsContextDefaultValue);
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -3201,7 +3420,7 @@ read -p "
   }
 
 Enter the next line: " response
-answer="fetch('https://api/posts')"
+answer="fetch('api')"
 additional_feedback="
 
   function usePostsContextValue(): PostsContextData {
@@ -3297,7 +3516,62 @@ read -p "
   }
 
 Enter the next line: " response
-answer=".then((result) => { setPosts(result); }).finally(() => { setIsLoading(false); });"
+answer=".then((result) => { setPosts(result); })"
+additional_feedback="
+
+  function usePostsContextValue(): PostsContextData {
+    const [posts, setPosts] = useState<Post[]>([]);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const fetchPosts = useCallback(() => {
+      setIsLoading(true);
+
+      fetch('https://api/posts')
+        .then((res) => res.json())
+        .then((result) => { 
+          setPosts(result); 
+        })
+
+    }, [setPosts]); 
+
+    const removePost = useCallback((postId: number) => {
+      // remove logic
+      }, [setPosts, posts]);
+    
+      return { }
+  }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+ Complete the functionality for fetchPosts.
+
+ function usePostsContextValue(): PostsContextData {
+    const [posts, setPosts] = useState<Post[]>([]);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const fetchPosts = useCallback(() => {
+      setIsLoading(true);
+      fetch('https://api/posts')
+        .then((result) => { 
+          setPosts(result); 
+        })
+
+    }, [setPosts]); 
+
+    const removePost = useCallback((postId: number) => {
+      // remove logic
+      }, [setPosts, posts]);
+    
+      return { }
+  }
+
+Enter the next line: " response
+answer=".finally(() => { setIsLoading(false); });"
 additional_feedback="
 
   function usePostsContextValue(): PostsContextData {
@@ -3449,7 +3723,37 @@ read -p "
   };
 
 Enter the next line: " response
-answer="return useMemo(() => postsContextValues, [posts, isLoading, fetchPosts, removePost]);"
+answer="return useMemo(() => );"
+additional_feedback="
+
+  const postsContextValues = { 
+    posts, 
+    isLoading, 
+    fetchPosts, 
+    removePost 
+  };
+
+  return useMemo(() => );
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Memoize the return value.
+
+  const postsContextValues = { 
+    posts, 
+    isLoading, 
+    fetchPosts, 
+    removePost 
+  };
+
+  return useMemo(() => );
+
+Enter the next line: " response
+answer="postsContextValues, [posts, isLoading, fetchPosts, removePost]"
 additional_feedback="
 
   const postsContextValues = { 
@@ -3516,8 +3820,159 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
+next_question
+
+read -p "
+  Write a function that uses the PostsContext.
+
+
+Enter the line next line: " response
+answer="function usePostsContext() { }"
+additional_feedback="
+
+  function usePostsContext() { 
+    
+  }
+
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
+
+
+read -p "
+  Write a function that uses the PostsContext.
+
+  function usePostsContext() { 
+    
+  }
+
+Enter the line next line: " response
+answer="const postsContext = useContext(PostsContext);"
+additional_feedback="
+
+  function usePostsContext() { 
+    const postsContext = useContext(PostsContext);
+  }
+
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a function that uses the PostsContext.
+
+  function usePostsContext() { 
+    const postsContext = useContext(PostsContext);
+  }
+
+Enter the line next line: " response
+answer="if (!postsContext) { }"
+additional_feedback="
+
+  function usePostsContext() { 
+    const postsContext = useContext(PostsContext);
+    if (!postsContext) {
+
+    }
+  }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a function that uses the PostsContext.
+
+  function usePostsContext() { 
+    const postsContext = useContext(PostsContext);
+    if (!postsContext) {
+
+    }
+  }
+
+Enter the line next line: " response
+answer="throw new Error('usePostsContext must be used within the PostsContext.Provider');"
+additional_feedback="
+
+  function usePostsContext() { 
+    const postsContext = useContext(PostsContext);
+    if (!postsContext) {
+      throw new Error('usePostsContext must be used within the PostsContext.Provider');
+    }
+  }
+
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a function that uses the PostsContext.
+
+  function usePostsContext() { 
+    const postsContext = useContext(PostsContext);
+    if (!postsContext) {
+      throw new Error('usePostsContext must be used within the PostsContext.Provider');
+    }
+  }
+
+Enter the line next line: " response
+answer="return postsContext;"
+additional_feedback="
+
+  function usePostsContext() { 
+    const postsContext = useContext(PostsContext);
+    if (!postsContext) {
+      throw new Error('usePostsContext must be used within the PostsContext.Provider');
+    }
+    return postsContext;
+  }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a function that uses the PostsContext.
+
+  function usePostsContext() { 
+    const postsContext = useContext(PostsContext);
+    if (!postsContext) {
+      throw new Error('usePostsContext must be used within the PostsContext.Provider');
+    }
+    return postsContext;
+  }
+
+Enter the line next line: " response
+answer="export { PostsProvider, usePostsContext };"
+additional_feedback="
+
+  function usePostsContext() { 
+    const postsContext = useContext(PostsContext);
+    if (!postsContext) {
+      throw new Error('usePostsContext must be used within the PostsContext.Provider');
+    }
+    return postsContext;
+  }
+
+  export { PostsProvider, usePostsContext };
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
 
 read -p "
   Complete the function that deletes the user.
@@ -3645,6 +4100,8 @@ next_question
 read -p "
   Create a Class API for the following code.
 
+  const api = new API('my-auth-token');
+
   api.get('https://api/users/1')
     .then(data => {
       console.log('User data', data);
@@ -3661,6 +4118,8 @@ read -p "
 Enter the next line: " response
 answer="constructor(authToken) { this.authToken = authToken; }"
 additional_feedback="
+
+  const api = new API('my-auth-token');
 
   api.get('https://api/users/1')
     .then(data => {
@@ -3685,6 +4144,8 @@ next_line
 read -p "
   Create a Class API for the following code.
 
+  const api = new API('my-auth-token');
+
   api.get('https://api/users/1')
     .then(data => {
       console.log('User data', data);
@@ -3703,6 +4164,8 @@ read -p "
 Enter the next line: " response
 answer="constructHeaders() { }"
 additional_feedback="
+
+  const api = new API('my-auth-token');
 
   api.get('https://api/users/1')
     .then(data => {
@@ -3732,6 +4195,8 @@ next_line
 read -p "
   Create a Class API for the following code.
 
+  const api = new API('my-auth-token');
+
   api.get('https://api/users/1')
     .then(data => {
       console.log('User data', data);
@@ -3757,6 +4222,8 @@ Enter the next line: " response
 answer="const headers = new Headers();"
 additional_feedback="
 
+  const api = new API('my-auth-token');
+
   api.get('https://api/users/1')
     .then(data => {
       console.log('User data', data);
@@ -3785,6 +4252,8 @@ next_line
 
 read -p "
   Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
 
   api.get('https://api/users/1')
     .then(data => {
@@ -3809,6 +4278,8 @@ Enter the next line: " response
 answer="headers.set('Authorization', this.authToken);"
 additional_feedback="
 
+  const api = new API('my-auth-token');
+
   api.get('https://api/users/1')
     .then(data => {
       console.log('User data', data);
@@ -3840,6 +4311,8 @@ next_line
 read -p "
   Create a Class API for the following code.
 
+  const api = new API('my-auth-token');
+
   api.get('https://api/users/1')
     .then(data => {
       console.log('User data', data);
@@ -3863,6 +4336,8 @@ read -p "
 Enter the next line: " response
 answer="return headers;"
 additional_feedback="
+
+  const api = new API('my-auth-token');
 
   api.get('https://api/users/1')
     .then(data => {
@@ -3893,6 +4368,8 @@ next_line
 
 read -p "
   Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
 
   api.get('https://api/users/1')
     .then(data => {
@@ -3952,6 +4429,8 @@ next_line
 read -p "
   Create a Class API for the following code.
 
+  const api = new API('my-auth-token');
+
   api.get('https://api/users/1')
     .then(data => {
       console.log('User data', data);
@@ -3981,6 +4460,8 @@ Enter the next line: " response
 answer="if (response.ok) { return response.json(); }"
 additional_feedback="
 
+  const api = new API('my-auth-token');
+
   api.get('https://api/users/1')
     .then(data => {
       console.log('User data', data);
@@ -4015,6 +4496,8 @@ next_line
 
 read -p "
   Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
 
   api.get('https://api/users/1')
     .then(data => {
@@ -4044,8 +4527,84 @@ read -p "
   }
 
 Enter the next line: " response
-answer="else { return Promise.reject({ status: response.status, statusText: response.statusText }); }"
+answer="else { return Promise.reject({ }); }"
 additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ });
+      }
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+     handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ });
+      }
+    }
+  }
+
+Enter the next line: " response
+answer="status: response.status,"
+additional_feedback="
+
+  const api = new API('my-auth-token');
 
   api.get('https://api/users/1')
     .then(data => {
@@ -4072,8 +4631,7 @@ additional_feedback="
         return response.json(); 
       } else { 
         return Promise.reject({ 
-          status: response.status, 
-          statusText: response.statusText 
+          status: response.status,
         });
       }
     }
@@ -4086,6 +4644,87 @@ next_line
 
 read -p "
   Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status,
+        });
+      }
+    }
+  }
+
+Enter the next line: " response
+answer="statusText: response.statusText"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status,
+          statusText: response.statusText
+        });
+      }
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
 
   api.get('https://api/users/1')
     .then(data => {
@@ -4123,6 +4762,8 @@ Enter the next line: " response
 answer="get(url, options) { }"
 additional_feedback="
 
+  const api = new API('my-auth-token');
+
   api.get('https://api/users/1')
     .then(data => {
       console.log('User data', data);
@@ -4162,8 +4803,12 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
+next_line
+
 read -p "
   Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
 
   api.get('https://api/users/1')
     .then(data => {
@@ -4202,7 +4847,281 @@ read -p "
   }
 
 Enter the next line: " response
-answer="return fetch(url, { headers: this.constructHeaders(), ...options }).then(this.handleResponse);"
+answer="return fetch(url, { })"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
+
+    get(url, options) { 
+      return fetch(url, { })
+    } 
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
+
+    get(url, options) { 
+      return fetch(url, { })
+    } 
+  }
+
+Enter the next line: " response
+answer="headers: this.constructHeaders()"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
+
+    get(url, options) { 
+      return fetch(url, { 
+        headers: this.constructHeaders() 
+      })
+    } 
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
+
+    get(url, options) { 
+      return fetch(url, { 
+        headers: this.constructHeaders() 
+      })
+    } 
+  }
+
+Enter the next line: " response
+answer="...options"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
+
+    get(url, options) { 
+      return fetch(url, { 
+        headers: this.constructHeaders(), 
+        ...options 
+      })
+    } 
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
+
+    get(url, options) { 
+      return fetch(url, { 
+        headers: this.constructHeaders(), 
+        ...options 
+      })
+    } 
+  }
+
+Enter the next line: " response
+answer=".then(this.handleResponse);"
 additional_feedback="
 
   const api = new API('my-auth-token');
@@ -4275,7 +5194,7 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+next_question
 
 read -p "
  Optimize the list component.
@@ -4422,7 +5341,7 @@ read -p "What is the issue with this component
   };
 
 Enter your answer: " response
-answer="But the onChange function, as an anonymous function, is always a new reference every time this component renders."
+answer="The onChange function has an anonymous function and is always a new reference every time the component renders."
 additional_feedback="
 
   Even if you make it not anonymous, because it uses scoped 
@@ -4438,6 +5357,7 @@ next_question
 read -p "
 
   The following function constructs data to pass to the submit function. How can it be optimized?
+
   import { callApi } from './actions';
 
   const FormWrapper = () => {  
@@ -4463,8 +5383,42 @@ additional_feedback="
       callApi({ ...data.fields, name, country });
     }, []);
 
-    // \"submit\" is cached and since we specified no
-    // dependencies, it will never change.
+    
+      return <Form submit={submit} />;
+  });
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Why is this an improvement?
+
+  import { callApi } from './actions';
+
+  const FormWrapper = () => {  
+    const submit = useCallback((data) => {
+      const name = \`\${ data.fields.firstname } \${ data.fields.lastname }\`;
+      const country = data.fields.country || 'USA';
+      callApi({ ...data.fields, name, country });
+    }, []);
+
+      return <Form submit={submit} />;
+  });
+
+Enter your answer: " response
+answer="submit function is cached and because no dependencies are specified, it will never change."
+additional_feedback="
+
+  const FormWrapper = () => {  
+    const submit = useCallback((data) => {
+      const name = \`\${ data.fields.firstname } \${ data.fields.lastname }\`;
+      const country = data.fields.country || 'USA';
+      callApi({ ...data.fields, name, country });
+    }, []);
+
       return <Form submit={submit} />;
   });
 
@@ -4635,7 +5589,7 @@ read -p "
   }
 
 Enter the next line: " response
-answer="throw new Error('Not character');"
+answer="throw new Error('Not Character');"
 additional_feedback="
 
   type Character = {
@@ -4733,7 +5687,7 @@ read -p "
   }
 
 Enter the next line: " response
-answer="const response = await fetch('https://api/people/\${id}/', { });"
+answer="const response = await fetch('api', { });"
 additional_feedback="
 
   function getCharacter(id: number) {
@@ -4967,50 +5921,6 @@ read -p "
   }
 
 Enter the next line: " response
-answer="promise.cancel = () => controller.abort();"
-additional_feedback="
-
-  function getCharacter(id: number) {
-    const controller = new AbortController();
-    const signal = controller.signal;
-
-    const promise = new Promise(async (resolve) => {
-      const response = await fetch('https://api/people/\${id}/', { 
-        method: 'get',
-        signal,
-      });
-      const data = await response.json();
-      assertIsCharacter(data); 
-      resolve(data);
-    });
-    promise.cancel = () => controller.abort();
-  }  
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Write a program that fetch data and aborts the request.
-
-  function getCharacter(id: number) {
-    const controller = new AbortController();
-    const signal = controller.signal;
-
-    const promise = new Promise(async (resolve) => {
-      const response = await fetch('https://api/people/\${id}/', { 
-        method: 'get',
-        signal,
-      });
-      const data = await response.json();
-      assertIsCharacter(data); 
-      resolve(data);
-    });
-    promise.cancel = () => controller.abort();
-  }
-
-Enter the next line: " response
 answer="return promise;"
 additional_feedback="
 
@@ -5030,6 +5940,169 @@ additional_feedback="
     promise.cancel = () => controller.abort();
     return promise;
   }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+      
+read -p "Create the isAbortError function. " response
+answer="function isAbortError(error: any): error is DOMException { }"
+additional_feedback="
+
+  function isAbortError(error: any): error is DOMException { 
+     
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+      
+read -p "Create the isAbortError function. 
+
+  function isAbortError(error: any): error is DOMException { 
+     
+  }
+
+Enter the next line: " response
+answer="if (error && error.name === 'AbortError') { }"
+additional_feedback="
+
+  function isAbortError(error: any): error is DOMException { 
+    if (error && error.name === 'AbortError') {
+
+    }  
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+      
+read -p "Create the isAbortError function. 
+
+  function isAbortError(error: any): error is DOMException { 
+    if (error && error.name === 'AbortError') {
+
+    }  
+  }
+
+Enter the next line: " response
+answer="return true;"
+additional_feedback="
+
+  function isAbortError(error: any): error is DOMException { 
+    if (error && error.name === 'AbortError') {
+      return true;
+    }  
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+      
+read -p "Create the isAbortError function. 
+
+  function isAbortError(error: any): error is DOMException { 
+    if (error && error.name === 'AbortError') {
+      return true;
+    }  
+  }
+
+Enter the next line: " response
+answer="return false;"
+additional_feedback="
+
+  function isAbortError(error: any): error is DOMException { 
+    if (error && error.name === 'AbortError') {
+      return true;
+    } 
+    return false; 
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  Complete the code that catches the error if the fetch call is aborted.
+
+   const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data); 
+      resolve(data);
+    });
+    promise.cancel = () => controller.abort();
+    return promise;
+
+Enter the next line: " response
+answer="try { } catch (ex: unknown) { }"
+additional_feedback="
+
+  const promise = new Promise(async (resolve) => {
+    try {
+      const response = await fetch('https://api/people/\${id}/', {
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data);
+      resolve(data);
+     } catch (ex: unknown) {
+       
+     }
+  });
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+Complete the code that catches the error if the fetch call is aborted.
+
+const promise = new Promise(async (resolve) => {
+    try {
+      const response = await fetch('https://api/people/\${id}/', {
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data);
+      resolve(data);
+     } catch (ex: unknown) {
+       
+     }
+  });
+
+Enter the next line: " response
+answer="if (isAbortError(ex)) { console.log(ex.message); }"
+additional_feedback="
+
+  const promise = new Promise(async (resolve) => {
+    try {
+      const response = await fetch('https://api/people/${id}/', {
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data);
+      resolve(data);
+    } catch (ex: unknown) {
+      if (isAbortError(ex)) {
+        console.log(ex.message);
+      }
+    }
+  });
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -5072,6 +6145,31 @@ read -p "
     cancel: () => void;
   } 
 
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+     try { 
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data); 
+      resolve(data);
+    });
+    promise.cancel = () => controller.abort();
+    return promise;
+
+    catch (ex: unknown) {
+      if (isAbortError(ex)) {
+        console.log(ex.message);
+      }
+    }
+  } 
+
 Enter the next line: " response
 answer="(promise as PromiseWithCancel<Character>).cancel = () => controller.abort();"
 additional_feedback="
@@ -5091,6 +6189,7 @@ additional_feedback="
     const signal = controller.signal;
 
     const promise = new Promise(async (resolve) => {
+     try { 
       const response = await fetch('https://api/people/\${id}/', { 
         method: 'get',
         signal,
@@ -5101,6 +6200,12 @@ additional_feedback="
     });
     (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
     return promise;
+
+    catch (ex: unknown) {
+      if (isAbortError(ex)) {
+        console.log(ex.message);
+      }
+    }
   } 
 
 "
@@ -5124,6 +6229,30 @@ read -p "
     cancel: () => void;
   } 
 
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+     try { 
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data); 
+      resolve(data);
+    });
+    (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
+    return promise;
+
+    catch (ex: unknown) {
+      if (isAbortError(ex)) {
+        console.log(ex.message);
+      }
+    }
+  }
+
 Enter the next line: " response
 answer="return promise as PromiseWithCancel<Character>;"
 additional_feedback="
@@ -5143,6 +6272,7 @@ additional_feedback="
     const signal = controller.signal;
 
     const promise = new Promise(async (resolve) => {
+     try { 
       const response = await fetch('https://api/people/\${id}/', { 
         method: 'get',
         signal,
@@ -5153,28 +6283,18 @@ additional_feedback="
     });
     (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
     return promise as PromiseWithCancel<Character>;
+
+    catch (ex: unknown) {
+      if (isAbortError(ex)) {
+        console.log(ex.message);
+      }
+    }
   } 
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
-
-read -p "
-
-  Complete this component to use the PromiseWithCancel interface for querying data.
-
-  export function App() {
-    const [data, setData] = React.useState<Character | undefined>(undefined);
-
-  }
-
-Enter the next line: " response
-answer=""
-additional_feedback=""
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
+next_question
 
 read -p "
 
@@ -5453,155 +6573,6 @@ additional_feedback="
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
-
-read -p "
-
-const promise = new Promise(async (resolve) => {
-  const response = await fetch('https://api/people/\${id}/', {
-    method: 'get',
-    signal,
-   });
-    const data = await response.json();
-    assertIsCharacter(data);
-    resolve(data);
-  });
-
-Enter the next line: " response
-answer="try { } catch (ex: unknown) { }"
-additional_feedback="
-
-  const promise = new Promise(async (resolve) => {
-    try {
-      const response = await fetch('https://api/people/\${id}/', {
-        method: 'get',
-        signal,
-      });
-      const data = await response.json();
-      assertIsCharacter(data);
-      resolve(data);
-     } catch (ex: unknown) {
-       
-     }
-  });
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-
-const promise = new Promise(async (resolve) => {
-    try {
-      const response = await fetch('https://api/people/\${id}/', {
-        method: 'get',
-        signal,
-      });
-      const data = await response.json();
-      assertIsCharacter(data);
-      resolve(data);
-     } catch (ex: unknown) {
-       
-     }
-  });
-
-Enter the next line: " response
-answer="if (isAbortError(ex)) { console.log(ex.message); }"
-additional_feedback="
-
-  const promise = new Promise(async (resolve) => {
-    try {
-      const response = await fetch('https://api/people/${id}/', {
-        method: 'get',
-        signal,
-      });
-      const data = await response.json();
-      assertIsCharacter(data);
-      resolve(data);
-    } catch (ex: unknown) {
-      if (isAbortError(ex)) {
-        console.log(ex.message);
-      }
-    }
-  });
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_question
-      
-read -p "Create the isAbortError function. " response
-answer="function isAbortError(error: any): error is DOMException { }"
-additional_feedback="
-
-  function isAbortError(error: any): error is DOMException { 
-     
-  }
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-      
-read -p "Create the isAbortError function. 
-
-  function isAbortError(error: any): error is DOMException { 
-     
-  }
-
-Enter the next line: " response
-answer="if (error && error.name === 'AbortError') { }"
-additional_feedback="
-
-  function isAbortError(error: any): error is DOMException { 
-    if (error && error.name === 'AbortError') {
-
-    }  
-  }
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-      
-read -p "Create the isAbortError function. 
-
-  function isAbortError(error: any): error is DOMException { 
-    if (error && error.name === 'AbortError') {
-
-    }  
-  }
-
-Enter the next line: " response
-answer="return true;"
-additional_feedback="
-
-  function isAbortError(error: any): error is DOMException { 
-    if (error && error.name === 'AbortError') {
-      return true;
-    }  
-  }
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-      
-read -p "Create the isAbortError function. " response
-answer="return false;"
-additional_feedback="
-
-  function isAbortError(error: any): error is DOMException { 
-    if (error && error.name === 'AbortError') {
-      return true;
-    } 
-    return false; 
-  }
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
       
 read -p "Write a filter that doesn't get substrings. 
 
@@ -5808,7 +6779,7 @@ next_line
       
 read -p "Write a function that searches for substrings. 
   
-  function isEmptyString() {
+  function isEmptyString(search) {
     return search.trim().length;
   }
 
@@ -5816,7 +6787,7 @@ Enter the next line: " response
 answer="const filtered = !isEmptyString(search)"
 additional_feedback="
 
-  function isEmptyString() {
+  function isEmptyString(search) {
     return search.trim().length;
   }
 
@@ -5829,7 +6800,7 @@ next_line
       
 read -p "Write a function that searches for substrings.
 
-  function isEmptyString() {
+  function isEmptyString(search) {
     return search.trim().length;
   }
 
@@ -5839,7 +6810,7 @@ Enter the next line: " response
 answer="? users"
 additional_feedback="
 
-  function isEmptyString() {
+  function isEmptyString(search) {
     return search.trim().length;
   }
 
@@ -5853,7 +6824,7 @@ next_line
       
 read -p "Write a function that searches for substrings.
 
-  function isEmptyString() {
+  function isEmptyString(search) {
     return search.trim().length;
   }
 
@@ -5861,16 +6832,16 @@ read -p "Write a function that searches for substrings.
       ? users
 
 Enter the next line: " response
-answer=": users.filter((person) => );"
+answer=": users.filter((user) => );"
 additional_feedback="
 
-  function isEmptyString() {
+  function isEmptyString(search) {
     return search.trim().length;
   }
 
   const filtered = !isEmptyString(search)
       ? users
-      : users.filter((person) => );
+      : users.filter((user) => );
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -5879,37 +6850,38 @@ next_line
       
 read -p "Write a function that searches for substrings.
 
-  function isEmptyString() {
+  function isEmptyString(search) {
     return search.trim().length;
   }
 
   const filtered = !isEmptyString(search)
       ? users
-      : users.filter((person) => );
+      : users.filter((user) => );
 
 Enter the next line: " response
-answer="users.name.toLowerCase().includes(search.toLowerCase())"
+answer="user.name.toLowerCase().includes(search.toLowerCase())"
 additional_feedback="
 
-  function isEmptyString() {
+  function isEmptyString(search) {
     return search.trim().length;
   }
 
   const filtered = !isEmptyString(search)
       ? users
-      : users.filter((person) => users.name.toLowerCase().includes(search.toLowerCase()));
+      : users.filter((user) => user.name.toLowerCase().includes(search.toLowerCase()));
   
   setFoundUsers(filtered);
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
-      
-read -p "" response
-answer=""
-additional_feedback=""
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# read -p "" response
+# answer=""
+# additional_feedback=""
+# evaluate_answer "$response" "$answer"
+
+
 
 # cache the team object to safely use as a dependency
 # import React, { useState, useEffect, useMemo } from 'react'
@@ -5920,7 +6892,6 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 # const Team = ({ id, name, active }) => {
 #   // memoize calling `createTeam` because it's
 #   // an expensive operation
-
 #   const team = useMemo(() => createTeam({ id, name, active }), [
 #     id,
 #     name,
@@ -5938,6 +6909,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 # }
 
 
+
 # type Props = { children: React.ReactNode; type: "submit" | "button" };
 # export type Ref = HTMLButtonElement;
 # export const FancyButton = React.forwardRef((
@@ -5953,10 +6925,8 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 
 
-
-
 # Type mapping over children
-#   {React.Children.map<ReactNode, ReactNode>(mainMenu, (child) => {
+#         {React.Children.map<ReactNode, ReactNode>(mainMenu, (child) => {
 #     const menu = child as ReactElement<PropsWithChildren<SidebarProps>>;
 #     const props = menu.props.navItems.map((prop) => {
 #         return {
@@ -5971,31 +6941,6 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 #           });
 #         }
 #       })}
-
-
-
-# import React, { useState, useEffect, useRef } from 'react'
-# import isDeepEqual from 'fast-deep-equal/react'
-# import { getPlayers } from '../api'
-# import Players from '../components/Players'
-
-# const Team = ({ team }) => {
-#   const [players, setPlayers] = useState([])
-#   const teamRef = useRef(team)
-
-#   if (!isDeepEqual(teamRef.current, team)) {
-#     teamRef.current = team
-#   }
-
-#   useEffect(() => {
-#     if (team.active) {
-#       getPlayers(team).then(setPlayers)
-#     }
-#   }, [teamRef.current])
-
-#   return <Players team={team} players={players} />
-# }
-
 
 
 
@@ -6018,6 +6963,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 # function usePostsListManagement() {
 #   const { removePost, posts } = useContext(PostsContext);
+ 
 #   const handlePostRemove = useCallback((postId: number) => () => {
 #     removePost(postId);
 #   }, [removePost]);
