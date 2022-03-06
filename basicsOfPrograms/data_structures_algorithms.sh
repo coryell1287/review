@@ -1742,7 +1742,7 @@ answer="Big O Notation ignores constants."
 answer="This is simply a mathematical way of saying that Big O Notation never includes regular numbers"
 answer="that aren't an exponent. We simply drop these regular numbers from the expression."
 answer="In our case, then, even though the algorithm takes N2 / 2 steps," 
-answer="we drop the “/ 2” because it’s a regular number, and express the efficiency as O(N2)."
+answer="we drop the “/ 2” because it's a regular number, and express the efficiency as O(N2)."
 
 
 read -p "Use Big O Notation to describe the time complexity of an algorithm that takes 4N + 16 steps."
@@ -3575,7 +3575,7 @@ read -p "
    representative,\" would you use a stack or a queue?
 
 Enter the next line: " response
-answer=""
+answer="For this, use a queue, which processes data FIFO (First In, First Out)."
 additional_feedback=""
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
@@ -3588,7 +3588,7 @@ read -p "
    would you be able to read from the stack?
 
 Enter the next line: " response
-answer=""
+answer="We would be able to read the 4, which is now the top element in the stack. This is because we will have popped the 6 and the 5, which were previously sitting on top of the 4."
 additional_feedback=""
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
@@ -3601,7 +3601,7 @@ read -p "
   would you be able to read from the queue?
 
 Enter the next line: " response
-answer=""
+answer="We would be able to read the 3, which is now at the front of the queue, after having dequeued the 1 and the 2."
 additional_feedback=""
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
@@ -3614,15 +3614,268 @@ read -p "
   of the Stack class.
 
 Enter the next line: " response
-answer=""
-additional_feedback=""
+answer="def reverse(string)"
+additional_feedback="
+
+   def reverse(string)
+
+"
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a function that uses a stack to reverse a string. (For example, 
+  \"abcde\" would become \"edcba\".) You can work with our earlier implementation 
+  of the Stack class.
+
+  def reverse(string)
+    
+
+Enter the next line: " response
+answer="stack = Stack.new"
+additional_feedback="
+
+   def reverse(string)
+      stack = Stack.new
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a function that uses a stack to reverse a string. (For example, 
+  \"abcde\" would become \"edcba\".) You can work with our earlier implementation 
+  of the Stack class.
+
+  def reverse(string)
+     stack = Stack.new
+    
+
+Enter the next line: " response
+answer="string.each_char do |char|"
+additional_feedback="
+
+   def reverse(string)
+      stack = Stack.new
+
+      string.each_char do |char|
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a function that uses a stack to reverse a string. (For example, 
+  \"abcde\" would become \"edcba\".) You can work with our earlier implementation 
+  of the Stack class.
+
+  def reverse(string)
+      stack = Stack.new
+
+      string.each_char do |char|
+    
+
+Enter the next line: " response
+answer="stack.push(char) end"
+additional_feedback="
+
+   def reverse(string)
+      stack = Stack.new
+
+      string.each_char do |char|
+         stack.push(char)
+      end
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a function that uses a stack to reverse a string. (For example, 
+  \"abcde\" would become \"edcba\".) You can work with our earlier implementation 
+  of the Stack class.
+
+  def reverse(string)
+      stack = Stack.new
+
+      string.each_char do |char|
+         stack.push(char)
+      end
+
+Enter the next line: " response
+answer="new_string = """
+additional_feedback="
+
+   def reverse(string)
+      stack = Stack.new
+
+      string.each_char do |char|
+         stack.push(char)
+      end
+
+      new_string = ""
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a function that uses a stack to reverse a string. (For example, 
+  \"abcde\" would become \"edcba\".) You can work with our earlier implementation 
+  of the Stack class.
+
+  def reverse(string)
+      stack = Stack.new
+
+      string.each_char do |char|
+         stack.push(char)
+      end
+
+Enter the next line: " response
+answer="new_string = """
+additional_feedback="
+
+   def reverse(string)
+      stack = Stack.new
+
+      string.each_char do |char|
+         stack.push(char)
+      end
+
+      new_string = ""
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a function that uses a stack to reverse a string. (For example, 
+  \"abcde\" would become \"edcba\".) You can work with our earlier implementation 
+  of the Stack class.
+
+  def reverse(string)
+      stack = Stack.new
+
+      string.each_char do |char|
+         stack.push(char)
+      end
+
+      new_string = ""
+
+Enter the next line: " response
+answer="while stack.read"
+additional_feedback="
+
+   def reverse(string)
+      stack = Stack.new
+
+      string.each_char do |char|
+         stack.push(char)
+      end
+
+      new_string = ""
+
+      while stack.read
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a function that uses a stack to reverse a string. (For example, 
+  \"abcde\" would become \"edcba\".) You can work with our earlier implementation 
+  of the Stack class.
+
+  def reverse(string)
+      stack = Stack.new
+
+      string.each_char do |char|
+         stack.push(char)
+      end
+
+      new_string = ""
+
+Enter the next line: " response
+answer="new_string += stack.pop end"
+additional_feedback="
+
+   def reverse(string)
+      stack = Stack.new
+
+      string.each_char do |char|
+         stack.push(char)
+      end
+
+      new_string = ""
+
+      while stack.read
+         new_string += stack.pop 
+      end
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  Write a function that uses a stack to reverse a string. (For example, 
+  \"abcde\" would become \"edcba\".) You can work with our earlier implementation 
+  of the Stack class.
+
+  def reverse(string)
+      stack = Stack.new
+
+      string.each_char do |char|
+         stack.push(char)
+      end
+
+      new_string = ""
+
+Enter the next line: " response
+answer="return new_string end"
+additional_feedback="
+
+   def reverse(string)
+      stack = Stack.new
+
+      string.each_char do |char|
+         stack.push(char)
+      end
+
+      new_string = ""
+
+      while stack.read
+         new_string += stack.pop 
+      end
+
+      return new_string 
+     end
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
 
 read -p "What is a base case in a recursive function? " response
 answer="A base case is the condition in which a recursive function will not recurse."
 additional_feedback=""
 evaluate_answer "$response" "$answer"
 
+next_question
 
 read -p "
 
@@ -3646,7 +3899,7 @@ read -p "
        end
 
 Enter the next line: " response
-answer=""
+answer="The base case is if low > high. We want to stop the recursion once low value has exceeded high value."
 additional_feedback=""
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
@@ -3654,19 +3907,157 @@ next_question
 
 read -p "
 
-      My kid was playing with my computer and changed my factorial function so 
-      that it computes factorial based on (n - 2) instead of (n - 1). Predict 
-      what will happen when we run factorial(10) using this function:
+   My kid was playing with my computer and changed my factorial function so 
+   that it computes factorial based on (n - 2) instead of (n - 1). Predict 
+   what will happen when we run factorial(10) using this function:
 
-         def factorial(n) 
-            return 1 if n == 1 
-            return n * factorial(n - 2)
-           end
+      def factorial(n) 
+         return 1 if n == 1 
+         return n * factorial(n - 2)
+      end
 
 
 Enter the next line: " response
-answer=""
-additional_feedback=""
+answer="We would have infinite recursion. factorial(10) calls factorial(8)"
+additional_feedback="
+
+   We would have infinite recursion. factorial(10) calls factorial(8),
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   My kid was playing with my computer and changed my factorial function so 
+   that it computes factorial based on (n - 2) instead of (n - 1). Predict 
+   what will happen when we run factorial(10) using this function:
+
+      def factorial(n) 
+         return 1 if n == 1 
+         return n * factorial(n - 2)
+      end
+
+   ***************************
+             Answer: 
+   ***************************
+
+   We would have infinite recursion. factorial(10) calls factorial(8),
+
+
+Enter the next line: " response
+answer="which calls factorial(6), which calls factorial(4), which calls factorial(2)"
+additional_feedback="
+
+   We would have infinite recursion. factorial(10) calls factorial(8),
+   which calls factorial(6), which calls factorial(4), which calls 
+   factorial(2),
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   My kid was playing with my computer and changed my factorial function so 
+   that it computes factorial based on (n - 2) instead of (n - 1). Predict 
+   what will happen when we run factorial(10) using this function:
+
+      def factorial(n) 
+         return 1 if n == 1 
+         return n * factorial(n - 2)
+      end
+
+   ***************************
+             Answer: 
+   ***************************
+
+   We would have infinite recursion. factorial(10) calls factorial(8),
+   which calls factorial(6), which calls factorial(4), which calls 
+   factorial(2),
+
+
+Enter the next line: " response
+answer="which calls factorial(0). Since our base case is if n == 1"
+additional_feedback="
+
+   We would have infinite recursion. factorial(10) calls factorial(8),
+   which calls factorial(6), which calls factorial(4), which calls 
+   factorial(2), which calls factorial(0). Since our base case is if 
+   n == 1,
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   My kid was playing with my computer and changed my factorial function so 
+   that it computes factorial based on (n - 2) instead of (n - 1). Predict 
+   what will happen when we run factorial(10) using this function:
+
+      def factorial(n) 
+         return 1 if n == 1 
+         return n * factorial(n - 2)
+      end
+
+   ***************************
+             Answer: 
+   ***************************
+
+   We would have infinite recursion. factorial(10) calls factorial(8),
+   which calls factorial(6), which calls factorial(4), which calls 
+   factorial(2),
+
+
+Enter the next line: " response
+answer="we never end up with n ever being 1, so the recursion continues."
+additional_feedback="
+
+   We would have infinite recursion. factorial(10) calls factorial(8),
+   which calls factorial(6), which calls factorial(4), which calls 
+   factorial(2), which calls factorial(0). Since our base case is if 
+   n == 1, we never end up with n ever being 1, so the recursion continues.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   My kid was playing with my computer and changed my factorial function so 
+   that it computes factorial based on (n - 2) instead of (n - 1). Predict 
+   what will happen when we run factorial(10) using this function:
+
+      def factorial(n) 
+         return 1 if n == 1 
+         return n * factorial(n - 2)
+      end
+
+   ***************************
+             Answer: 
+   ***************************
+
+   We would have infinite recursion. factorial(10) calls factorial(8),
+   which calls factorial(6), which calls factorial(4), which calls 
+   factorial(2),
+
+
+Enter the next line: " response
+answer="we never end up with n ever being 1, so the recursion continues."
+additional_feedback="
+
+   We would have infinite recursion. factorial(10) calls factorial(8),
+   which calls factorial(6), which calls factorial(4), which calls 
+   factorial(2), which calls factorial(0). Since our base case is if 
+   n == 1, we never end up with n ever being 1, so the recursion continues.
+   factorial(0) calls factorial(-2), and so on.
+
+"
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
@@ -3686,12 +4077,331 @@ read -p "
 
 
 Enter the next line: " response
-answer=""
-additional_feedback=""
+answer="If low is 1 and high is 10, then when we call sum(1, 10), that in turn returns 10 + sum(1, 9)."
+additional_feedback="
+
+   If low is 1 and high is 10, then when we call sum(1, 10), that in 
+   turn returns 10 + sum(1, 9).
+
+"
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
+read -p "
+
+      Following is a function in which we pass in two numbers called 
+      low and high. The function returns the sum of all the numbers from 
+      low to high. For example, if low is 1, and high is 10, the function 
+      will return the sum of all numbers from 1 to 10, which is 55. However, 
+      our code is missing the base case, and will run indefinitely! 
+      Fix the code by adding the correct base case:
+
+      def sum(low, high) 
+         return high + sum(low, high - 1) 
+      end
+
+      ***************************
+               Answer: 
+      ***************************
+
+      If low is 1 and high is 10, then when we call sum(1, 10), that in 
+      turn returns 10 + sum(1, 9).
+
+Enter the next line: " response
+answer="If low is 1 and high is 10, then when we call sum(1, 10), that in turn returns 10 + sum(1, 9)."
+additional_feedback="
+
+   If low is 1 and high is 10, then when we call sum(1, 10), that in 
+   turn returns 10 + sum(1, 9).
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+      Following is a function in which we pass in two numbers called 
+      low and high. The function returns the sum of all the numbers from 
+      low to high. For example, if low is 1, and high is 10, the function 
+      will return the sum of all numbers from 1 to 10, which is 55. However, 
+      our code is missing the base case, and will run indefinitely! 
+      Fix the code by adding the correct base case:
+
+      def sum(low, high) 
+         return high + sum(low, high - 1) 
+      end
+
+      ***************************
+               Answer: 
+      ***************************
+
+      If low is 1 and high is 10, then when we call sum(1, 10), that in 
+      turn returns 10 + sum(1, 9).
+
+Enter the next line: " response
+answer="That is, we return the sum of 10 plus whatever the sum of 1 through 9 is."
+additional_feedback="
+
+   If low is 1 and high is 10, then when we call sum(1, 10), that in 
+   turn returns 10 + sum(1, 9). That is, we return the sum of 10 plus 
+   whatever the sum of 1 through 9 is.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+      Following is a function in which we pass in two numbers called 
+      low and high. The function returns the sum of all the numbers from 
+      low to high. For example, if low is 1, and high is 10, the function 
+      will return the sum of all numbers from 1 to 10, which is 55. However, 
+      our code is missing the base case, and will run indefinitely! 
+      Fix the code by adding the correct base case:
+
+      def sum(low, high) 
+         return high + sum(low, high - 1) 
+      end
+
+      ***************************
+               Answer: 
+      ***************************
+
+      If low is 1 and high is 10, then when we call sum(1, 10), that in 
+      turn returns 10 + sum(1, 9). That is, we return the sum of 10 plus 
+      whatever the sum of 1 through 9 is.
+
+Enter the next line: " response
+answer="sum(1, 9) ends up calling sum(1, 8), which in turn calls sum(1, 7), and so on."
+additional_feedback="
+
+   If low is 1 and high is 10, then when we call sum(1, 10), that in 
+   turn returns 10 + sum(1, 9). That is, we return the sum of 10 plus 
+   whatever the sum of 1 through 9 is. sum(1, 9) ends up calling sum(1, 8), 
+   which in turn calls sum(1, 7), and so on.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+      Following is a function in which we pass in two numbers called 
+      low and high. The function returns the sum of all the numbers from 
+      low to high. For example, if low is 1, and high is 10, the function 
+      will return the sum of all numbers from 1 to 10, which is 55. However, 
+      our code is missing the base case, and will run indefinitely! 
+      Fix the code by adding the correct base case:
+
+      def sum(low, high) 
+         return high + sum(low, high - 1) 
+      end
+
+      ***************************
+               Answer: 
+      ***************************
+
+      If low is 1 and high is 10, then when we call sum(1, 10), that in 
+      turn returns 10 + sum(1, 9). That is, we return the sum of 10 plus 
+      whatever the sum of 1 through 9 is.
+
+Enter the next line: " response
+answer="We want the last call to be sum(1, 1), in which we simply want to return the number 1. This becomes our base case:"
+additional_feedback="
+
+   If low is 1 and high is 10, then when we call sum(1, 10), that in 
+   turn returns 10 + sum(1, 9). That is, we return the sum of 10 plus 
+   whatever the sum of 1 through 9 is. sum(1, 9) ends up calling sum(1, 8), 
+   which in turn calls sum(1, 7), and so on.
+
+   We want the last call to be sum(1, 1), in which we simply want to return 
+   the number 1. This becomes our base case:
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+      Following is a function in which we pass in two numbers called 
+      low and high. The function returns the sum of all the numbers from 
+      low to high. For example, if low is 1, and high is 10, the function 
+      will return the sum of all numbers from 1 to 10, which is 55. However, 
+      our code is missing the base case, and will run indefinitely! 
+      Fix the code by adding the correct base case:
+
+      def sum(low, high) 
+         return high + sum(low, high - 1) 
+      end
+
+      ***************************
+               Answer: 
+      ***************************
+
+      If low is 1 and high is 10, then when we call sum(1, 10), that in 
+      turn returns 10 + sum(1, 9). That is, we return the sum of 10 plus 
+      whatever the sum of 1 through 9 is.
+
+      We want the last call to be sum(1, 1), in which we simply want to return 
+      the number 1. This becomes our base case:
+
+Enter the next line: " response
+answer="def sum(low, high)"
+additional_feedback="
+
+   If low is 1 and high is 10, then when we call sum(1, 10), that in 
+   turn returns 10 + sum(1, 9). That is, we return the sum of 10 plus 
+   whatever the sum of 1 through 9 is. sum(1, 9) ends up calling sum(1, 8), 
+   which in turn calls sum(1, 7), and so on.
+
+   We want the last call to be sum(1, 1), in which we simply want to return 
+   the number 1. This becomes our base case:
+
+   def sum(low, high)
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+      Following is a function in which we pass in two numbers called 
+      low and high. The function returns the sum of all the numbers from 
+      low to high. For example, if low is 1, and high is 10, the function 
+      will return the sum of all numbers from 1 to 10, which is 55. However, 
+      our code is missing the base case, and will run indefinitely! 
+      Fix the code by adding the correct base case:
+
+      def sum(low, high) 
+         return high + sum(low, high - 1) 
+      end
+
+      ***************************
+               Answer: 
+      ***************************
+
+      We want the last call to be sum(1, 1), in which we simply want to return 
+      the number 1. This becomes our base case:
+
+      def sum(low, high)
+
+Enter the next line: " response
+answer="if high == low:"
+additional_feedback="
+
+   If low is 1 and high is 10, then when we call sum(1, 10), that in 
+   turn returns 10 + sum(1, 9). That is, we return the sum of 10 plus 
+   whatever the sum of 1 through 9 is. sum(1, 9) ends up calling sum(1, 8), 
+   which in turn calls sum(1, 7), and so on.
+
+   We want the last call to be sum(1, 1), in which we simply want to return 
+   the number 1. This becomes our base case:
+
+   def sum(low, high)
+      if high == low:
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+      Following is a function in which we pass in two numbers called 
+      low and high. The function returns the sum of all the numbers from 
+      low to high. For example, if low is 1, and high is 10, the function 
+      will return the sum of all numbers from 1 to 10, which is 55. However, 
+      our code is missing the base case, and will run indefinitely! 
+      Fix the code by adding the correct base case:
+
+      def sum(low, high) 
+         return high + sum(low, high - 1) 
+      end
+
+      ***************************
+               Answer: 
+      ***************************
+
+      We want the last call to be sum(1, 1), in which we simply want to return 
+      the number 1. This becomes our base case:
+
+      def sum(low, high)
+         if high == low:   
+           return low
+
+Enter the next line: " response
+answer="return low"
+additional_feedback="
+
+   If low is 1 and high is 10, then when we call sum(1, 10), that in 
+   turn returns 10 + sum(1, 9). That is, we return the sum of 10 plus 
+   whatever the sum of 1 through 9 is. sum(1, 9) ends up calling sum(1, 8), 
+   which in turn calls sum(1, 7), and so on.
+
+   We want the last call to be sum(1, 1), in which we simply want to return 
+   the number 1. This becomes our base case:
+
+   def sum(low, high)
+     if high == low:   
+       return low
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+      Following is a function in which we pass in two numbers called 
+      low and high. The function returns the sum of all the numbers from 
+      low to high. For example, if low is 1, and high is 10, the function 
+      will return the sum of all numbers from 1 to 10, which is 55. However, 
+      our code is missing the base case, and will run indefinitely! 
+      Fix the code by adding the correct base case:
+
+      def sum(low, high) 
+         return high + sum(low, high - 1) 
+      end
+
+      ***************************
+               Answer: 
+      ***************************
+
+      We want the last call to be sum(1, 1), in which we simply want to return 
+      the number 1. This becomes our base case:
+
+      def sum(low, high)
+         if high == low:   
+           return low
+
+Enter the next line: " response
+answer="return high + sum(low, high - 1)"
+additional_feedback="
+
+   If low is 1 and high is 10, then when we call sum(1, 10), that in 
+   turn returns 10 + sum(1, 9). That is, we return the sum of 10 plus 
+   whatever the sum of 1 through 9 is. sum(1, 9) ends up calling sum(1, 8), 
+   which in turn calls sum(1, 7), and so on.
+
+   We want the last call to be sum(1, 1), in which we simply want to return 
+   the number 1. This becomes our base case:
+
+   def sum(low, high)
+     if high == low:   
+       return low
+
+      return high + sum(low, high - 1)
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
 
 read -p "
 
@@ -3721,8 +4431,4751 @@ read -p "
    Write a recursive function that prints all the numbers (and just numbers).
 
 
+Enter the next line: " response
+answer="This approach is similar to the file directory example from the text:"
+additional_feedback="
+
+   This approach is similar to the file directory example from the text:
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is an array containing both numbers as well as other arrays, 
+   which in turn contain numbers and arrays:
+
+   array = [  
+      1, 
+      2,  
+      3,  
+      [4, 5, 6], 
+      7, 
+      [8,  
+      [9, 10, 11, 
+      [12, 13, 14]  
+      ]  
+      ],  
+      [15, 16, 17, 18, 19,  
+      [20, 21, 22,  
+      [23, 24, 25,  
+      [26, 27, 29]  
+      ], 30, 31  
+      ], 32  
+      ], 33
+    ]
+
+   Write a recursive function that prints all the numbers (and just numbers).
+
+
+Enter the next line: " response
+answer="def print_all_items(array):"
+additional_feedback="
+
+   This approach is similar to the file directory example from the text:
+
+   def print_all_items(array):
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is an array containing both numbers as well as other arrays, 
+   which in turn contain numbers and arrays:
+
+   array = [  
+      1, 
+      2,  
+      3,  
+      [4, 5, 6], 
+      7, 
+      [8,  
+      [9, 10, 11, 
+      [12, 13, 14]  
+      ]  
+      ],  
+      [15, 16, 17, 18, 19,  
+      [20, 21, 22,  
+      [23, 24, 25,  
+      [26, 27, 29]  
+      ], 30, 31  
+      ], 32  
+      ], 33
+    ]
+
+   Write a recursive function that prints all the numbers (and just numbers).
+
+
+   *******************
+         Answer
+   ********************
+
+   def print_all_items(array):
+
+Enter the next line: " response
+answer="for value in array:"
+additional_feedback="
+
+   This approach is similar to the file directory example from the text:
+
+   def print_all_items(array):
+     for value in array:
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is an array containing both numbers as well as other arrays, 
+   which in turn contain numbers and arrays:
+
+   array = [  
+      1, 
+      2,  
+      3,  
+      [4, 5, 6], 
+      7, 
+      [8,  
+      [9, 10, 11, 
+      [12, 13, 14]  
+      ]  
+      ],  
+      [15, 16, 17, 18, 19,  
+      [20, 21, 22,  
+      [23, 24, 25,  
+      [26, 27, 29]  
+      ], 30, 31  
+      ], 32  
+      ], 33
+    ]
+
+   Write a recursive function that prints all the numbers (and just numbers).
+
+
+   *******************
+         Answer
+   ********************
+
+   def print_all_items(array):
+     for value in array:
+
+Enter the next line: " response
+answer="if isinstance(value, list):"
+additional_feedback="
+
+   This approach is similar to the file directory example from the text:
+
+   def print_all_items(array):
+     for value in array:
+       # if the current item is a \"list\", i.e array:
+       if isinstance(value, list):
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is an array containing both numbers as well as other arrays, 
+   which in turn contain numbers and arrays:
+
+   array = [  
+      1, 
+      2,  
+      3,  
+      [4, 5, 6], 
+      7, 
+      [8,  
+      [9, 10, 11, 
+      [12, 13, 14]  
+      ]  
+      ],  
+      [15, 16, 17, 18, 19,  
+      [20, 21, 22,  
+      [23, 24, 25,  
+      [26, 27, 29]  
+      ], 30, 31  
+      ], 32  
+      ], 33
+    ]
+
+   Write a recursive function that prints all the numbers (and just numbers).
+
+
+   *******************
+         Answer
+   ********************
+
+   def print_all_items(array):
+     for value in array:
+       # if the current item is a \"list\", i.e array:
+       if isinstance(value, list):
+
+Enter the next line: " response
+answer="print_all_items(value)"
+additional_feedback="
+
+   This approach is similar to the file directory example from the text:
+
+   def print_all_items(array):
+     for value in array:
+       # if the current item is a \"list\", i.e array:
+       if isinstance(value, list):
+         print_all_items(value)
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is an array containing both numbers as well as other arrays, 
+   which in turn contain numbers and arrays:
+
+   array = [  
+      1, 
+      2,  
+      3,  
+      [4, 5, 6], 
+      7, 
+      [8,  
+      [9, 10, 11, 
+      [12, 13, 14]  
+      ]  
+      ],  
+      [15, 16, 17, 18, 19,  
+      [20, 21, 22,  
+      [23, 24, 25,  
+      [26, 27, 29]  
+      ], 30, 31  
+      ], 32  
+      ], 33
+    ]
+
+   Write a recursive function that prints all the numbers (and just numbers).
+
+
+   *******************
+         Answer
+   ********************
+
+   def print_all_items(array):
+     for value in array:
+       # if the current item is a \"list\", i.e array:
+       if isinstance(value, list):
+         print_all_items(value)
+
+Enter the next line: " response
+answer="else: print(value)"
+additional_feedback="
+
+   This approach is similar to the file directory example from the text:
+
+   def print_all_items(array):
+     for value in array:
+       # if the current item is a \"list\", i.e array:
+       if isinstance(value, list):
+         print_all_items(value)
+       else:
+         print(value)
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is an array containing both numbers as well as other arrays, 
+   which in turn contain numbers and arrays:
+
+   array = [  
+      1, 
+      2,  
+      3,  
+      [4, 5, 6], 
+      7, 
+      [8,  
+      [9, 10, 11, 
+      [12, 13, 14]  
+      ]  
+      ],  
+      [15, 16, 17, 18, 19,  
+      [20, 21, 22,  
+      [23, 24, 25,  
+      [26, 27, 29]  
+      ], 30, 31  
+      ], 32  
+      ], 33
+    ]
+
+   Write a recursive function that prints all the numbers (and just numbers).
+
+
+   *******************
+         Answer
+   ********************
+
+   def print_all_items(array):
+     for value in array:
+       # if the current item is a \"list\", i.e array:
+       if isinstance(value, list):
+         print_all_items(value)
+
+Enter the next line: " response
+answer="We iterate over each item within the outer array."
+additional_feedback="
+
+   This approach is similar to the file directory example from the text:
+
+   def print_all_items(array):
+     for value in array:
+       # if the current item is a \"list\", i.e array:
+       if isinstance(value, list):
+         print_all_items(value)
+       else:
+         print(value)
+
+    We iterate over each item within the outer array. 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is an array containing both numbers as well as other arrays, 
+   which in turn contain numbers and arrays:
+
+   array = [  
+      1, 
+      2,  
+      3,  
+      [4, 5, 6], 
+      7, 
+      [8,  
+      [9, 10, 11, 
+      [12, 13, 14]  
+      ]  
+      ],  
+      [15, 16, 17, 18, 19,  
+      [20, 21, 22,  
+      [23, 24, 25,  
+      [26, 27, 29]  
+      ], 30, 31  
+      ], 32  
+      ], 33
+    ]
+
+   Write a recursive function that prints all the numbers (and just numbers).
+
+
+   *******************
+         Answer
+   ********************
+
+   def print_all_items(array):
+     for value in array:
+       # if the current item is a \"list\", i.e array:
+       if isinstance(value, list):
+         print_all_items(value)
+
+Enter the next line: " response
+answer="If the value is itself another array, we recursively call the function on that subarray."
+additional_feedback="
+
+   This approach is similar to the file directory example from the text:
+
+   def print_all_items(array):
+     for value in array:
+       # if the current item is a \"list\", i.e array:
+       if isinstance(value, list):
+         print_all_items(value)
+       else:
+         print(value)
+
+    We iterate over each item within the outer array. If the value is 
+    itself another array, we recursively call the function on that 
+    subarray.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is an array containing both numbers as well as other arrays, 
+   which in turn contain numbers and arrays:
+
+   array = [  
+      1, 
+      2,  
+      3,  
+      [4, 5, 6], 
+      7, 
+      [8,  
+      [9, 10, 11, 
+      [12, 13, 14]  
+      ]  
+      ],  
+      [15, 16, 17, 18, 19,  
+      [20, 21, 22,  
+      [23, 24, 25,  
+      [26, 27, 29]  
+      ], 30, 31  
+      ], 32  
+      ], 33
+    ]
+
+   Write a recursive function that prints all the numbers (and just numbers).
+
+
+   *******************
+         Answer
+   ********************
+
+   def print_all_items(array):
+     for value in array:
+       # if the current item is a \"list\", i.e array:
+       if isinstance(value, list):
+         print_all_items(value)
+
+Enter the next line: " response
+answer="Otherwise, it's the base case where we simply print the value to the screen."
+additional_feedback="
+
+   This approach is similar to the file directory example from the text:
+
+   def print_all_items(array):
+     for value in array:
+       # if the current item is a \"list\", i.e array:
+       if isinstance(value, list):
+         print_all_items(value)
+       else:
+         print(value)
+
+    We iterate over each item within the outer array. If the value is 
+    itself another array, we recursively call the function on that 
+    subarray. Otherwise, it's the base case where we simply print 
+    the value to the screen.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of strings 
+   and returns the total number of characters across all the strings. 
+   For example, if the input array is [\"ab\", \"c\", \"def\", \"ghij\"], 
+   the output should be 10 since there are 10 characters in total.
+
+Enter the next line: " response
+answer="Define a function called our function character_count. Assume the character_count function has already been implemented."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of strings 
+   and returns the total number of characters across all the strings. 
+   For example, if the input array is [\"ab\", \"c\", \"def\", \"ghij\"], 
+   the output should be 10 since there are 10 characters in total.
+
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+Enter the next line: " response
+answer="Next, we need to identify the subproblem. If our problem is the array, then our subproblem can be the same array missing one string."
+additional_feedback="
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+   Next, we need to identify the subproblem. If our problem is the array, 
+   [\"ab\", \"c\", \"def\", \"ghij\"], then our subproblem can be the same 
+   array missing one string.
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of strings 
+   and returns the total number of characters across all the strings. 
+   For example, if the input array is [\"ab\", \"c\", \"def\", \"ghij\"], 
+   the output should be 10 since there are 10 characters in total.
+
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+Enter the next line: " response
+answer="The subproblem is the array minus the first string, which would be [\"c\"]."
+additional_feedback="
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+   Next, we need to identify the subproblem. If our problem is the array, 
+   [\"ab\", \"c\", \"def\", \"ghij\"], then our subproblem can be the same 
+   array missing one string. The subproblem is the array minus the first 
+   string, which would be [\"c\", \"def\", \"ghij\"].
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of strings 
+   and returns the total number of characters across all the strings. 
+   For example, if the input array is [\"ab\", \"c\", \"def\", \"ghij\"], 
+   the output should be 10 since there are 10 characters in total.
+
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+Enter the next line: " response
+answer="If we were to call character_count(array), we would get a return value of 8, since there are eight characters in total."
+additional_feedback="
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+   Next, we need to identify the subproblem. If our problem is the array, 
+   [\"ab\", \"c\", \"def\", \"ghij\"], then our subproblem can be the same 
+   array missing one string. The subproblem is the array minus the first 
+   string, which would be [\"c\", \"def\", \"ghij\"]. If we were to call 
+   character_count([\"c\", \"def\", \"ghij\"]), we would get a return value of 8, 
+   since there are eight characters in total.
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of strings 
+   and returns the total number of characters across all the strings. 
+   For example, if the input array is [\"ab\", \"c\", \"def\", \"ghij\"], 
+   the output should be 10 since there are 10 characters in total.
+
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+Enter the next line: " response
+answer="To solve our original problem, all we have to do is add the length of the first string (\"ab\")"
+additional_feedback="
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+   Next, we need to identify the subproblem. If our problem is the array, 
+   [\"ab\", \"c\", \"def\", \"ghij\"], then our subproblem can be the same 
+   array missing one string. The subproblem is the array minus the first 
+   string, which would be [\"c\", \"def\", \"ghij\"]. If we were to call 
+   character_count([\"c\", \"def\", \"ghij\"]), we would get a return value of 8, 
+   since there are eight characters in total.
+
+   To solve our original problem, all we have to do is add the length of the 
+   first string (\"ab\")
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of strings 
+   and returns the total number of characters across all the strings. 
+   For example, if the input array is [\"ab\", \"c\", \"def\", \"ghij\"], 
+   the output should be 10 since there are 10 characters in total.
+
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+Enter the next line: " response
+answer="to the result of calling the character_count function on the subproblem."
+additional_feedback="
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+   Next, we need to identify the subproblem. If our problem is the array, 
+   [\"ab\", \"c\", \"def\", \"ghij\"], then our subproblem can be the same 
+   array missing one string. The subproblem is the array minus the first 
+   string, which would be [\"c\", \"def\", \"ghij\"]. If we were to call 
+   character_count([\"c\", \"def\", \"ghij\"]), we would get a return value of 8, 
+   since there are eight characters in total.
+
+   To solve our original problem, all we have to do is add the length of the 
+   first string (\"ab\") to the result of calling the character_count function 
+   on the subproblem.
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of strings 
+   and returns the total number of characters across all the strings. 
+   For example, if the input array is [\"ab\", \"c\", \"def\", \"ghij\"], 
+   the output should be 10 since there are 10 characters in total.
+
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+Enter the next line: " response
+answer="def character_count(array)"
+additional_feedback="
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+   Next, we need to identify the subproblem. If our problem is the array, 
+   [\"ab\", \"c\", \"def\", \"ghij\"], then our subproblem can be the same 
+   array missing one string. The subproblem is the array minus the first 
+   string, which would be [\"c\", \"def\", \"ghij\"]. If we were to call 
+   character_count([\"c\", \"def\", \"ghij\"]), we would get a return value of 8, 
+   since there are eight characters in total.
+
+   To solve our original problem, all we have to do is add the length of the 
+   first string (\"ab\") to the result of calling the character_count function 
+   on the subproblem.
+
+
+   def character_count(array) 
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of strings 
+   and returns the total number of characters across all the strings. 
+   For example, if the input array is [\"ab\", \"c\", \"def\", \"ghij\"], 
+   the output should be 10 since there are 10 characters in total.
+
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+Enter the next line: " response
+answer="return 0 if array.length == 0"
+additional_feedback="
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+   Next, we need to identify the subproblem. If our problem is the array, 
+   [\"ab\", \"c\", \"def\", \"ghij\"], then our subproblem can be the same 
+   array missing one string. The subproblem is the array minus the first 
+   string, which would be [\"c\", \"def\", \"ghij\"]. If we were to call 
+   character_count([\"c\", \"def\", \"ghij\"]), we would get a return value of 8, 
+   since there are eight characters in total.
+
+   To solve our original problem, all we have to do is add the length of the 
+   first string (\"ab\") to the result of calling the character_count function 
+   on the subproblem.
+
+
+   def character_count(array) 
+     # Alternative base case:
+     # return array[0].length if array.length == 1
+
+     # Base case: when the array is empty: 
+     return 0 if array.length == 0
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of strings 
+   and returns the total number of characters across all the strings. 
+   For example, if the input array is [\"ab\", \"c\", \"def\", \"ghij\"], 
+   the output should be 10 since there are 10 characters in total.
+
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+Enter the next line: " response
+answer="return array[0].length + character_count(array[1, array.length -1])"
+additional_feedback="
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+   Next, we need to identify the subproblem. If our problem is the array, 
+   [\"ab\", \"c\", \"def\", \"ghij\"], then our subproblem can be the same 
+   array missing one string. The subproblem is the array minus the first 
+   string, which would be [\"c\", \"def\", \"ghij\"]. If we were to call 
+   character_count([\"c\", \"def\", \"ghij\"]), we would get a return value of 8, 
+   since there are eight characters in total.
+
+   To solve our original problem, all we have to do is add the length of the 
+   first string (\"ab\") to the result of calling the character_count function 
+   on the subproblem.
+
+
+   def character_count(array) 
+     # Alternative base case:
+     # return array[0].length if array.length == 1
+
+     # Base case: when the array is empty: 
+     return 0 if array.length == 0
+     return array[0].length + character_count(array[1, array.length -1])
+    end
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of strings 
+   and returns the total number of characters across all the strings. 
+   For example, if the input array is [\"ab\", \"c\", \"def\", \"ghij\"], 
+   the output should be 10 since there are 10 characters in total.
+
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+Enter the next line: " response
+answer="return array[0].length + character_count(array[1, array.length -1])"
+additional_feedback="
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+   Next, we need to identify the subproblem. If our problem is the array, 
+   [\"ab\", \"c\", \"def\", \"ghij\"], then our subproblem can be the same 
+   array missing one string. The subproblem is the array minus the first 
+   string, which would be [\"c\", \"def\", \"ghij\"]. If we were to call 
+   character_count([\"c\", \"def\", \"ghij\"]), we would get a return value of 8, 
+   since there are eight characters in total.
+
+   To solve our original problem, all we have to do is add the length of the 
+   first string (\"ab\") to the result of calling the character_count function 
+   on the subproblem.
+
+
+   def character_count(array) 
+     # Alternative base case:
+     # return array[0].length if array.length == 1
+
+     # Base case: when the array is empty: 
+     return 0 if array.length == 0
+     return array[0].length + character_count(array[1, array.length -1])
+    end
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of strings 
+   and returns the total number of characters across all the strings. 
+   For example, if the input array is [\"ab\", \"c\", \"def\", \"ghij\"], 
+   the output should be 10 since there are 10 characters in total.
+
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+Enter the next line: " response
+answer="Note that we made our base case to be when the array is empty, in which case there are zero string characters."
+additional_feedback="
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+   Next, we need to identify the subproblem. If our problem is the array, 
+   [\"ab\", \"c\", \"def\", \"ghij\"], then our subproblem can be the same 
+   array missing one string. The subproblem is the array minus the first 
+   string, which would be [\"c\", \"def\", \"ghij\"]. If we were to call 
+   character_count([\"c\", \"def\", \"ghij\"]), we would get a return value of 8, 
+   since there are eight characters in total.
+
+   To solve our original problem, all we have to do is add the length of the 
+   first string (\"ab\") to the result of calling the character_count function 
+   on the subproblem.
+
+
+   def character_count(array) 
+     # Alternative base case:
+     # return array[0].length if array.length == 1
+
+     # Base case: when the array is empty: 
+     return 0 if array.length == 0
+     return array[0].length + character_count(array[1, array.length -1])
+    end
+
+   Note that we made our base case to be when the array is empty, in which case 
+   there are zero string characters. 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of strings 
+   and returns the total number of characters across all the strings. 
+   For example, if the input array is [\"ab\", \"c\", \"def\", \"ghij\"], 
+   the output should be 10 since there are 10 characters in total.
+
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+Enter the next line: " response
+answer="We mention an alternative and equally viable base case in the comments, which is when the array contains one string."
+additional_feedback="
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+   Next, we need to identify the subproblem. If our problem is the array, 
+   [\"ab\", \"c\", \"def\", \"ghij\"], then our subproblem can be the same 
+   array missing one string. The subproblem is the array minus the first 
+   string, which would be [\"c\", \"def\", \"ghij\"]. If we were to call 
+   character_count([\"c\", \"def\", \"ghij\"]), we would get a return value of 8, 
+   since there are eight characters in total.
+
+   To solve our original problem, all we have to do is add the length of the 
+   first string (\"ab\") to the result of calling the character_count function 
+   on the subproblem.
+
+
+   def character_count(array) 
+     # Alternative base case:
+     # return array[0].length if array.length == 1
+
+     # Base case: when the array is empty: 
+     return 0 if array.length == 0
+     return array[0].length + character_count(array[1, array.length -1])
+    end
+
+   Note that we made our base case to be when the array is empty, in which case 
+   there are zero string characters. We mention an alternative and equally viable 
+   base case in the comments, which is when the array contains one string. 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of strings 
+   and returns the total number of characters across all the strings. 
+   For example, if the input array is [\"ab\", \"c\", \"def\", \"ghij\"], 
+   the output should be 10 since there are 10 characters in total.
+
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+Enter the next line: " response
+answer="In that case, we return the length of that single string."
+additional_feedback="
+
+   Define a function called our function character_count. Assume the 
+   character_count function has already been implemented.
+
+   Next, we need to identify the subproblem. If our problem is the array, 
+   [\"ab\", \"c\", \"def\", \"ghij\"], then our subproblem can be the same 
+   array missing one string. The subproblem is the array minus the first 
+   string, which would be [\"c\", \"def\", \"ghij\"]. If we were to call 
+   character_count([\"c\", \"def\", \"ghij\"]), we would get a return value of 8, 
+   since there are eight characters in total.
+
+   To solve our original problem, all we have to do is add the length of the 
+   first string (\"ab\") to the result of calling the character_count function 
+   on the subproblem.
+
+
+   def character_count(array) 
+     # Alternative base case:
+     # return array[0].length if array.length == 1
+
+     # Base case: when the array is empty: 
+     return 0 if array.length == 0
+     return array[0].length + character_count(array[1, array.length -1])
+    end
+
+   Note that we made our base case to be when the array is empty, in which case 
+   there are zero string characters. We mention an alternative and equally viable 
+   base case in the comments, which is when the array contains one string. In that
+   case, we return the length of that single string.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of numbers 
+   and returns a new array containing just the even numbers.
+
+Enter the next line: " response
+answer="we could say that the subproblem is all the numbers in the array beside the first one."
+additional_feedback="
+
+   First, let's pretend the select_even function already works. Next, 
+   let's identify the subproblem. If we try to select all the even 
+   numbers in the example array, [1, 2, 3, 4, 5], we could say that 
+   the subproblem is all the numbers in the array beside the first one.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of numbers 
+   and returns a new array containing just the even numbers.
+
+Enter the next line: " response
+answer="First, let's pretend the select_even function already works."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of numbers 
+   and returns a new array containing just the even numbers.
+
+Enter the next line: " response
+answer="So, let's imagine select_even(array) already works and returns [2, 4]."
+additional_feedback="
+
+   First, let's pretend the select_even function already works. Next, 
+   let's identify the subproblem. If we try to select all the even 
+   numbers in the example array, [1, 2, 3, 4, 5], we could say that 
+   the subproblem is all the numbers in the array beside the first one.
+   So, let's imagine select_even([2, 3, 4, 5]) already works and returns 
+   [2, 4].
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of numbers 
+   and returns a new array containing just the even numbers.
+
+Enter the next line: " response
+answer="Since the first number in the array is 1, we actually don't want to do anything other than return the [2, 4]."
+additional_feedback="
+
+   First, let's pretend the select_even function already works. Next, 
+   let's identify the subproblem. If we try to select all the even 
+   numbers in the example array, [1, 2, 3, 4, 5], we could say that 
+   the subproblem is all the numbers in the array beside the first one.
+   So, let's imagine select_even([2, 3, 4, 5]) already works and returns 
+   [2, 4].
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of numbers 
+   and returns a new array containing just the even numbers.
+
+Enter the next line: " response
+answer="However, if the first number in the array was a 0, we'd want to return the [2, 4] with the 0 added to it."
+additional_feedback="
+
+   First, let's pretend the select_even function already works. Next, 
+   let's identify the subproblem. If we try to select all the even 
+   numbers in the example array, [1, 2, 3, 4, 5], we could say that 
+   the subproblem is all the numbers in the array beside the first one.
+   So, let's imagine select_even([2, 3, 4, 5]) already works and returns 
+   [2, 4].
+
+   However, if the first number in the array was a 0, we'd want to return 
+   the [2, 4] with the 0 added to it.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of numbers 
+   and returns a new array containing just the even numbers.
+
+Enter the next line: " response
+answer="The base case can be when the array is empty."
+additional_feedback="
+
+   First, let's pretend the select_even function already works. Next, 
+   let's identify the subproblem. If we try to select all the even 
+   numbers in the example array, [1, 2, 3, 4, 5], we could say that 
+   the subproblem is all the numbers in the array beside the first one.
+   So, let's imagine select_even([2, 3, 4, 5]) already works and returns 
+   [2, 4].
+
+   However, if the first number in the array was a 0, we'd want to return 
+   the [2, 4] with the 0 added to it.
+
+   The base case can be when the array is empty.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of numbers 
+   and returns a new array containing just the even numbers.
+
+Enter the next line: " response
+answer="def select_even(array)"
+additional_feedback="
+
+   First, let's pretend the select_even function already works. Next, 
+   let's identify the subproblem. If we try to select all the even 
+   numbers in the example array, [1, 2, 3, 4, 5], we could say that 
+   the subproblem is all the numbers in the array beside the first one.
+   So, let's imagine select_even([2, 3, 4, 5]) already works and returns 
+   [2, 4].
+
+   However, if the first number in the array was a 0, we'd want to return 
+   the [2, 4] with the 0 added to it.
+
+   The base case can be when the array is empty.
+
+   def select_even(array)
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of numbers 
+   and returns a new array containing just the even numbers.
+
+Enter the next line: " response
+answer="return [] if array.empty?"
+additional_feedback="
+
+   First, let's pretend the select_even function already works. Next, 
+   let's identify the subproblem. If we try to select all the even 
+   numbers in the example array, [1, 2, 3, 4, 5], we could say that 
+   the subproblem is all the numbers in the array beside the first one.
+   So, let's imagine select_even([2, 3, 4, 5]) already works and returns 
+   [2, 4].
+
+   However, if the first number in the array was a 0, we'd want to return 
+   the [2, 4] with the 0 added to it.
+
+   The base case can be when the array is empty.
+
+   def select_even(array)
+     return [] if array.empty?
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of numbers 
+   and returns a new array containing just the even numbers.
+
+Enter the next line: " response
+answer="if array[0].even?"
+additional_feedback="
+
+   First, let's pretend the select_even function already works. Next, 
+   let's identify the subproblem. If we try to select all the even 
+   numbers in the example array, [1, 2, 3, 4, 5], we could say that 
+   the subproblem is all the numbers in the array beside the first one.
+   So, let's imagine select_even([2, 3, 4, 5]) already works and returns 
+   [2, 4].
+
+   However, if the first number in the array was a 0, we'd want to return 
+   the [2, 4] with the 0 added to it.
+
+   The base case can be when the array is empty.
+
+   def select_even(array)
+     return [] if array.empty?
+
+     if array[0].even?
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of numbers 
+   and returns a new array containing just the even numbers.
+
+Enter the next line: " response
+answer="return [array[0]] + select_even(array[1, array.length - 1])"
+additional_feedback="
+
+   First, let's pretend the select_even function already works. Next, 
+   let's identify the subproblem. If we try to select all the even 
+   numbers in the example array, [1, 2, 3, 4, 5], we could say that 
+   the subproblem is all the numbers in the array beside the first one.
+   So, let's imagine select_even([2, 3, 4, 5]) already works and returns 
+   [2, 4].
+
+   However, if the first number in the array was a 0, we'd want to return 
+   the [2, 4] with the 0 added to it.
+
+   The base case can be when the array is empty.
+
+   def select_even(array)
+     return [] if array.empty?
+
+     if array[0].even?
+      return [array[0]] + select_even(array[1, array.length - 1])
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts an array of numbers 
+   and returns a new array containing just the even numbers.
+
+Enter the next line: " response
+answer="else return select_even(array[1, array.length - 1])"
+additional_feedback="
+
+   First, let's pretend the select_even function already works. Next, 
+   let's identify the subproblem. If we try to select all the even 
+   numbers in the example array, [1, 2, 3, 4, 5], we could say that 
+   the subproblem is all the numbers in the array beside the first one.
+   So, let's imagine select_even([2, 3, 4, 5]) already works and returns 
+   [2, 4].
+
+   However, if the first number in the array was a 0, we'd want to return 
+   the [2, 4] with the 0 added to it.
+
+   The base case can be when the array is empty.
+
+   def select_even(array)
+     return [] if array.empty?
+
+     if array[0].even?
+      return [array[0]] + select_even(array[1, array.length - 1])
+     else 
+      return select_even(array[1, array.length - 1])
+     end
+    end
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   There is a numerical sequence known as \"Triangular Numbers.\" 
+   The pattern begins as 1, 3, 6, 10, 15, 21, and continues onward 
+   with the Nth number in the pattern, which is N plus the previous 
+   number. For example, the 7th number in the sequence is 28, since 
+   it's 7 (which is N) plus 21 (the previous number in the sequence). 
+   Write a function that accepts a number for N and returns the correct 
+   number from the series. That is, if the function was passed the number 
+   7, the function would return 28.
+
+
+Enter the next line: " response
+answer="The definition of a triangular number was given as n plus the previous number from the pattern."
+additional_feedback="
+
+   The definition of a triangular number was given as n plus the previous 
+   number from the pattern.
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   There is a numerical sequence known as \"Triangular Numbers.\" 
+   The pattern begins as 1, 3, 6, 10, 15, 21, and continues onward 
+   with the Nth number in the pattern, which is N plus the previous 
+   number. For example, the 7th number in the sequence is 28, since 
+   it's 7 (which is N) plus 21 (the previous number in the sequence). 
+   Write a function that accepts a number for N and returns the correct 
+   number from the series. That is, if the function was passed the number 
+   7, the function would return 28.
+
+
+Enter the next line: " response
+answer="If the name of our function is triangle, we can express this simply as n + triangle(n - 1). The base case is when n is 1."
+additional_feedback="
+
+   The definition of a triangular number was given as n plus the previous 
+   number from the pattern. If the name of our function is triangle, we can 
+   express this simply as n + triangle(n - 1). The base case is when n is 1.
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   There is a numerical sequence known as \"Triangular Numbers.\" 
+   The pattern begins as 1, 3, 6, 10, 15, 21, and continues onward 
+   with the Nth number in the pattern, which is N plus the previous 
+   number. For example, the 7th number in the sequence is 28, since 
+   it's 7 (which is N) plus 21 (the previous number in the sequence). 
+   Write a function that accepts a number for N and returns the correct 
+   number from the series. That is, if the function was passed the number 
+   7, the function would return 28.
+
+
+Enter the next line: " response
+answer="def triangle(n)"
+additional_feedback="
+
+   The definition of a triangular number was given as n plus the previous 
+   number from the pattern. If the name of our function is triangle, we can 
+   express this simply as n + triangle(n - 1). The base case is when n is 1.
+
+   def triangle(n)
+   
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   There is a numerical sequence known as \"Triangular Numbers.\" 
+   The pattern begins as 1, 3, 6, 10, 15, 21, and continues onward 
+   with the Nth number in the pattern, which is N plus the previous 
+   number. For example, the 7th number in the sequence is 28, since 
+   it's 7 (which is N) plus 21 (the previous number in the sequence). 
+   Write a function that accepts a number for N and returns the correct 
+   number from the series. That is, if the function was passed the number 
+   7, the function would return 28.
+
+
+Enter the next line: " response
+answer="return 1 if n == 1"
+additional_feedback="
+
+   The definition of a triangular number was given as n plus the previous 
+   number from the pattern. If the name of our function is triangle, we can 
+   express this simply as n + triangle(n - 1). The base case is when n is 1.
+
+   def triangle(n)
+     return 1 if n == 1
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   There is a numerical sequence known as \"Triangular Numbers.\" 
+   The pattern begins as 1, 3, 6, 10, 15, 21, and continues onward 
+   with the Nth number in the pattern, which is N plus the previous 
+   number. For example, the 7th number in the sequence is 28, since 
+   it's 7 (which is N) plus 21 (the previous number in the sequence). 
+   Write a function that accepts a number for N and returns the correct 
+   number from the series. That is, if the function was passed the number 
+   7, the function would return 28.
+
+
+Enter the next line: " response
+answer="return n + triangle(n - 1)"
+additional_feedback="
+
+   The definition of a triangular number was given as n plus the previous 
+   number from the pattern. If the name of our function is triangle, we can 
+   express this simply as n + triangle(n - 1). The base case is when n is 1.
+
+   def triangle(n)
+     return 1 if n == 1
+     return n + triangle(n - 1)
+    end
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts a string and returns the 
+   first index that contains the character \"x.\" For example, the string, 
+   \"abcdefghijklmnopqrstuvwxyz\" has an \"x\" at index 23. To keep things 
+   simple, assume the string definitely has at least one \"x.\"
+
+
+Enter the next line: " response
+answer="Assume index_of_x, has already been implemented. Next, define the subproblem as string minus its first character."
+additional_feedback="
+
+   Assume index_of_x, has already been implemented. Next, define the 
+   subproblem as string minus its first character.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts a string and returns the 
+   first index that contains the character \"x.\" For example, the string, 
+   \"abcdefghijklmnopqrstuvwxyz\" has an \"x\" at index 23. To keep things 
+   simple, assume the string definitely has at least one \"x.\"
+
+
+Enter the next line: " response
+answer="For example, if our input string is \"hex\", the subproblem is \"ex\"."
+additional_feedback="
+
+   Assume index_of_x, has already been implemented. Next, define the 
+   subproblem as string minus its first character. For example, if our 
+   input string is \"hex\", the subproblem is \"ex\".
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts a string and returns the 
+   first index that contains the character \"x.\" For example, the string, 
+   \"abcdefghijklmnopqrstuvwxyz\" has an \"x\" at index 23. To keep things 
+   simple, assume the string definitely has at least one \"x.\"
+
+
+Enter the next line: " response
+answer="Now, index_of_x(\"ex\") would return 1. To calculate the index of the \"x\" for the original string"
+additional_feedback="
+
+   Assume index_of_x, has already been implemented. Next, define the 
+   subproblem as string minus its first character. For example, if our 
+   input string is \"hex\", the subproblem is \"ex\". Now, index_of_x(\"ex\") 
+   would return 1. To calculate the index of the \"x\" for the original string,
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts a string and returns the 
+   first index that contains the character \"x.\" For example, the string, 
+   \"abcdefghijklmnopqrstuvwxyz\" has an \"x\" at index 23. To keep things 
+   simple, assume the string definitely has at least one \"x.\"
+
+
+Enter the next line: " response
+answer="we would add 1 to this since the additional \"h\" at the front of the string moves the \"x\" down one index."
+additional_feedback="
+
+   Assume index_of_x, has already been implemented. Next, define the 
+   subproblem as string minus its first character. For example, if our 
+   input string is \"hex\", the subproblem is \"ex\". 
+   
+   Now, index_of_x(\"ex\") would return 1. To calculate the index of 
+   the \"x\" for the original string, we would add 1 to this since the 
+   additional \"h\" at the front of the string moves the \"x\" down one 
+   index.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts a string and returns the 
+   first index that contains the character \"x.\" For example, the string, 
+   \"abcdefghijklmnopqrstuvwxyz\" has an \"x\" at index 23. To keep things 
+   simple, assume the string definitely has at least one \"x.\"
+
+
+Enter the next line: " response
+answer="def index_of_x(string)"
+additional_feedback="
+
+   Assume index_of_x, has already been implemented. Next, define the 
+   subproblem as string minus its first character. For example, if our 
+   input string is \"hex\", the subproblem is \"ex\". 
+   
+   Now, index_of_x(\"ex\") would return 1. To calculate the index of 
+   the \"x\" for the original string, we would add 1 to this since the 
+   additional \"h\" at the front of the string moves the \"x\" down one 
+   index.
+
+   def index_of_x(string)
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts a string and returns the 
+   first index that contains the character \"x.\" For example, the string, 
+   \"abcdefghijklmnopqrstuvwxyz\" has an \"x\" at index 23. To keep things 
+   simple, assume the string definitely has at least one \"x.\"
+
+
+Enter the next line: " response
+answer="return 0 if string[0] == 'x'"
+additional_feedback="
+
+   Assume index_of_x, has already been implemented. Next, define the 
+   subproblem as string minus its first character. For example, if our 
+   input string is \"hex\", the subproblem is \"ex\". 
+   
+   Now, index_of_x(\"ex\") would return 1. To calculate the index of 
+   the \"x\" for the original string, we would add 1 to this since the 
+   additional \"h\" at the front of the string moves the \"x\" down one 
+   index.
+
+   def index_of_x(string)
+     return 0 if string[0] == 'x'
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Use recursion to write a function that accepts a string and returns the 
+   first index that contains the character \"x.\" For example, the string, 
+   \"abcdefghijklmnopqrstuvwxyz\" has an \"x\" at index 23. To keep things 
+   simple, assume the string definitely has at least one \"x.\"
+
+
+Enter the next line: " response
+answer="return index_of_x(string[1, string.length - 1]) + 1"
+additional_feedback="
+
+   Assume index_of_x, has already been implemented. Next, define the 
+   subproblem as string minus its first character. For example, if our 
+   input string is \"hex\", the subproblem is \"ex\". 
+   
+   Now, index_of_x(\"ex\") would return 1. To calculate the index of 
+   the \"x\" for the original string, we would add 1 to this since the 
+   additional \"h\" at the front of the string moves the \"x\" down one 
+   index.
+
+   def index_of_x(string)
+     return 0 if string[0] == 'x'
+     return index_of_x(string[1, string.length - 1]) + 1
+    end
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_question
+
+read -p "
+
+   This problem is known as the \"Unique Paths\" problem: Let's 
+   say you have a grid of rows and columns. Write a function that 
+   accepts a number of rows and a number of columns, and calculates 
+   the number of possible \"shortest\" paths from the upper-leftmost 
+   square to the lower-rightmost square.
+
+Enter the next line: " response
+answer="From the starting position, we have only two choices of movement. We can either move one space to the right or one space downward."
+additional_feedback="
+
+   From the starting position, we have only two choices of movement. We 
+   can either move one space to the right or one space downward.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   This problem is known as the \"Unique Paths\" problem: Let's 
+   say you have a grid of rows and columns. Write a function that 
+   accepts a number of rows and a number of columns, and calculates 
+   the number of possible \"shortest\" paths from the upper-leftmost 
+   square to the lower-rightmost square.
+
+Enter the next line: " response
+answer="What this means is that the total number of unique shortest paths will be the number of paths"
+additional_feedback="
+
+   From the starting position, we have only two choices of movement. We 
+   can either move one space to the right or one space downward. What 
+   this means is that the total number of unique shortest paths will be 
+   the number of paths
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   This problem is known as the \"Unique Paths\" problem: Let's 
+   say you have a grid of rows and columns. Write a function that 
+   accepts a number of rows and a number of columns, and calculates 
+   the number of possible \"shortest\" paths from the upper-leftmost 
+   square to the lower-rightmost square.
+
+Enter the next line: " response
+answer="from space to the right of S + the number of paths from space below S."
+additional_feedback="
+
+   From the starting position, we have only two choices of movement. We 
+   can either move one space to the right or one space downward. What 
+   this means is that the total number of unique shortest paths will be 
+   the number of paths from space to the right of S + the number of paths 
+   from space below S.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   This problem is known as the \"Unique Paths\" problem: Let's 
+   say you have a grid of rows and columns. Write a function that 
+   accepts a number of rows and a number of columns, and calculates 
+   the number of possible \"shortest\" paths from the upper-leftmost 
+   square to the lower-rightmost square.
+
+Enter the next line: " response
+answer="The number of paths from the space to the right of S is the same as calculating the paths in a grid of six columns and three rows."
+additional_feedback="
+
+   From the starting position, we have only two choices of movement. We 
+   can either move one space to the right or one space downward. What 
+   this means is that the total number of unique shortest paths will be 
+   the number of paths from space to the right of S + the number of paths 
+   from space below S.
+
+   The number of paths from the space to the right of S is the same as 
+   calculating the paths in a grid of six columns and three rows.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   This problem is known as the \"Unique Paths\" problem: Let's 
+   say you have a grid of rows and columns. Write a function that 
+   accepts a number of rows and a number of columns, and calculates 
+   the number of possible \"shortest\" paths from the upper-leftmost 
+   square to the lower-rightmost square.
+
+Enter the next line: " response
+answer="The number of paths from the space below the S is the equivalent of the paths in a grid of seven columns and two rows."
+additional_feedback="
+
+   From the starting position, we have only two choices of movement. We 
+   can either move one space to the right or one space downward. What 
+   this means is that the total number of unique shortest paths will be 
+   the number of paths from space to the right of S + the number of paths 
+   from space below S.
+
+   The number of paths from the space to the right of S is the same as 
+   calculating the paths in a grid of six columns and three rows.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   This problem is known as the \"Unique Paths\" problem: Let's 
+   say you have a grid of rows and columns. Write a function that 
+   accepts a number of rows and a number of columns, and calculates 
+   the number of possible \"shortest\" paths from the upper-leftmost 
+   square to the lower-rightmost square.
+
+Enter the next line: " response
+answer="Now add the base case. Possible base cases include when we have just one row or one column"
+additional_feedback="
+
+   From the starting position, we have only two choices of movement. We 
+   can either move one space to the right or one space downward. What 
+   this means is that the total number of unique shortest paths will be 
+   the number of paths from space to the right of S + the number of paths 
+   from space below S.
+
+   The number of paths from the space to the right of S is the same as 
+   calculating the paths in a grid of six columns and three rows. Now add 
+   the base case. Possible base cases include when we have just one row or 
+   one column,
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   This problem is known as the \"Unique Paths\" problem: Let's 
+   say you have a grid of rows and columns. Write a function that 
+   accepts a number of rows and a number of columns, and calculates 
+   the number of possible \"shortest\" paths from the upper-leftmost 
+   square to the lower-rightmost square.
+
+Enter the next line: " response
+answer="since in such cases, there's only one path available to us."
+additional_feedback="
+
+   From the starting position, we have only two choices of movement. We 
+   can either move one space to the right or one space downward. What 
+   this means is that the total number of unique shortest paths will be 
+   the number of paths from space to the right of S + the number of paths 
+   from space below S.
+
+   The number of paths from the space to the right of S is the same as 
+   calculating the paths in a grid of six columns and three rows. Now add 
+   the base case. Possible base cases include when we have just one row or 
+   one column, since in such cases, there's only one path available to us.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   This problem is known as the \"Unique Paths\" problem: Let's 
+   say you have a grid of rows and columns. Write a function that 
+   accepts a number of rows and a number of columns, and calculates 
+   the number of possible \"shortest\" paths from the upper-leftmost 
+   square to the lower-rightmost square.
+
+Enter the next line: " response
+answer="def unique_paths(rows, columns)"
+additional_feedback="
+
+   From the starting position, we have only two choices of movement. We 
+   can either move one space to the right or one space downward. What 
+   this means is that the total number of unique shortest paths will be 
+   the number of paths from space to the right of S + the number of paths 
+   from space below S.
+
+   The number of paths from the space to the right of S is the same as 
+   calculating the paths in a grid of six columns and three rows. Now add 
+   the base case. Possible base cases include when we have just one row or 
+   one column, since in such cases, there's only one path available to us.
+
+   def unique_paths(rows, columns)
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   This problem is known as the \"Unique Paths\" problem: Let's 
+   say you have a grid of rows and columns. Write a function that 
+   accepts a number of rows and a number of columns, and calculates 
+   the number of possible \"shortest\" paths from the upper-leftmost 
+   square to the lower-rightmost square.
+
+Enter the next line: " response
+answer="return 1 if rows == 1 || columns == 1"
+additional_feedback="
+
+   From the starting position, we have only two choices of movement. We 
+   can either move one space to the right or one space downward. What 
+   this means is that the total number of unique shortest paths will be 
+   the number of paths from space to the right of S + the number of paths 
+   from space below S.
+
+   The number of paths from the space to the right of S is the same as 
+   calculating the paths in a grid of six columns and three rows. Now add 
+   the base case. Possible base cases include when we have just one row or 
+   one column, since in such cases, there's only one path available to us.
+
+   def unique_paths(rows, columns)
+     return 1 if rows == 1 || columns == 1
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+read -p "
+
+   This problem is known as the \"Unique Paths\" problem: Let's 
+   say you have a grid of rows and columns. Write a function that 
+   accepts a number of rows and a number of columns, and calculates 
+   the number of possible \"shortest\" paths from the upper-leftmost 
+   square to the lower-rightmost square.
+
+Enter the next line: " response
+answer="return unique_paths(rows - 1, columns) + unique_paths(rows, columns - 1)"
+additional_feedback="
+
+   From the starting position, we have only two choices of movement. We 
+   can either move one space to the right or one space downward. What 
+   this means is that the total number of unique shortest paths will be 
+   the number of paths from space to the right of S + the number of paths 
+   from space below S.
+
+   The number of paths from the space to the right of S is the same as 
+   calculating the paths in a grid of six columns and three rows. Now add 
+   the base case. Possible base cases include when we have just one row or 
+   one column, since in such cases, there's only one path available to us.
+
+   def unique_paths(rows, columns)
+     return 1 if rows == 1 || columns == 1
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function accepts an array of numbers and returns the sum, 
+   as long as a particular number doesn't bring the sum above 100. If adding 
+   a particular number will make the sum higher than 100, that number is ignored. 
+   However, this function makes unnecessary recursive calls. Fix the code to 
+   eliminate the unnecessary recursion:
+
+   def add_until_100(array)
+      return 0 if array.length == 0
+      if array[0] + add_until_100(array[1, array.length - 1]) > 100
+         return add_until_100(array[1, array.length - 1])
+      else
+         return array[0] + add_until_100(array[1, array.length - 1])
+      end
+    end
+   
+
+Enter the next line: " response
+answer="The problem here is that there are two recursive calls to the function within itself can easily reduce it to one."
+additional_feedback="
+
+   The problem here is that there are two recursive calls to the function 
+   within itself can easily reduce it to one.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function accepts an array of numbers and returns the sum, 
+   as long as a particular number doesn't bring the sum above 100. If adding 
+   a particular number will make the sum higher than 100, that number is ignored. 
+   However, this function makes unnecessary recursive calls. Fix the code to 
+   eliminate the unnecessary recursion:
+
+   def add_until_100(array)
+      return 0 if array.length == 0
+      if array[0] + add_until_100(array[1, array.length - 1]) > 100
+         return add_until_100(array[1, array.length - 1])
+      else
+         return array[0] + add_until_100(array[1, array.length - 1])
+      end
+    end
+   
+
+Enter the next line: " response
+answer="def add_until_100(array)"
+additional_feedback="
+
+   The problem here is that there are two recursive calls to the function within 
+   itself can easily reduce it to one.
+
+   def add_until_100(array)
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function accepts an array of numbers and returns the sum, 
+   as long as a particular number doesn't bring the sum above 100. If adding 
+   a particular number will make the sum higher than 100, that number is ignored. 
+   However, this function makes unnecessary recursive calls. Fix the code to 
+   eliminate the unnecessary recursion:
+
+   def add_until_100(array)
+      return 0 if array.length == 0
+      if array[0] + add_until_100(array[1, array.length - 1]) > 100
+         return add_until_100(array[1, array.length - 1])
+      else
+         return array[0] + add_until_100(array[1, array.length - 1])
+      end
+    end
+   
+
+Enter the next line: " response
+answer="return 0 if array.length == 0"
+additional_feedback="
+
+   The problem here is that there are two recursive calls to the function within 
+   itself can easily reduce it to one.
+
+   def add_until_100(array)
+     return 0 if array.length == 0
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function accepts an array of numbers and returns the sum, 
+   as long as a particular number doesn't bring the sum above 100. If adding 
+   a particular number will make the sum higher than 100, that number is ignored. 
+   However, this function makes unnecessary recursive calls. Fix the code to 
+   eliminate the unnecessary recursion:
+
+   def add_until_100(array)
+      return 0 if array.length == 0
+      if array[0] + add_until_100(array[1, array.length - 1]) > 100
+         return add_until_100(array[1, array.length - 1])
+      else
+         return array[0] + add_until_100(array[1, array.length - 1])
+      end
+    end
+   
+
+Enter the next line: " response
+answer="sum_of_remaining_numbers = add_until_100(array[1, array.length - 1])"
+additional_feedback="
+
+   The problem here is that there are two recursive calls to the function within 
+   itself can easily reduce it to one.
+
+   def add_until_100(array)
+     return 0 if array.length == 0
+     sum_of_remaining_numbers = add_until_100(array[1, array.length - 1])
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function accepts an array of numbers and returns the sum, 
+   as long as a particular number doesn't bring the sum above 100. If adding 
+   a particular number will make the sum higher than 100, that number is ignored. 
+   However, this function makes unnecessary recursive calls. Fix the code to 
+   eliminate the unnecessary recursion:
+
+   def add_until_100(array)
+      return 0 if array.length == 0
+      if array[0] + add_until_100(array[1, array.length - 1]) > 100
+         return add_until_100(array[1, array.length - 1])
+      else
+         return array[0] + add_until_100(array[1, array.length - 1])
+      end
+    end
+   
+
+Enter the next line: " response
+answer="if array[0] + sum_of_remaining_numbers > 100"
+additional_feedback="
+
+   The problem here is that there are two recursive calls to the function within 
+   itself can easily reduce it to one.
+
+   def add_until_100(array)
+     return 0 if array.length == 0
+     sum_of_remaining_numbers = add_until_100(array[1, array.length - 1])
+     if array[0] + sum_of_remaining_numbers > 100
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function accepts an array of numbers and returns the sum, 
+   as long as a particular number doesn't bring the sum above 100. If adding 
+   a particular number will make the sum higher than 100, that number is ignored. 
+   However, this function makes unnecessary recursive calls. Fix the code to 
+   eliminate the unnecessary recursion:
+
+   def add_until_100(array)
+      return 0 if array.length == 0
+      if array[0] + add_until_100(array[1, array.length - 1]) > 100
+         return add_until_100(array[1, array.length - 1])
+      else
+         return array[0] + add_until_100(array[1, array.length - 1])
+      end
+    end
+   
+
+Enter the next line: " response
+answer="return sum_of_remaining_numbers"
+additional_feedback="
+
+   The problem here is that there are two recursive calls to the function within 
+   itself can easily reduce it to one.
+
+   def add_until_100(array)
+     return 0 if array.length == 0
+     sum_of_remaining_numbers = add_until_100(array[1, array.length - 1])
+     if array[0] + sum_of_remaining_numbers > 100
+      return sum_of_remaining_numbers
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function accepts an array of numbers and returns the sum, 
+   as long as a particular number doesn't bring the sum above 100. If adding 
+   a particular number will make the sum higher than 100, that number is ignored. 
+   However, this function makes unnecessary recursive calls. Fix the code to 
+   eliminate the unnecessary recursion:
+
+   def add_until_100(array)
+      return 0 if array.length == 0
+      if array[0] + add_until_100(array[1, array.length - 1]) > 100
+         return add_until_100(array[1, array.length - 1])
+      else
+         return array[0] + add_until_100(array[1, array.length - 1])
+      end
+    end
+   
+
+Enter the next line: " response
+answer="else return array[0] + sum_of_remaining_numbers"
+additional_feedback="
+
+   The problem here is that there are two recursive calls to the function within 
+   itself can easily reduce it to one.
+
+   def add_until_100(array)
+     return 0 if array.length == 0
+     sum_of_remaining_numbers = add_until_100(array[1, array.length - 1])
+     if array[0] + sum_of_remaining_numbers > 100
+      return sum_of_remaining_numbers
+     else 
+       return array[0] + sum_of_remaining_numbers
+      end
+     end
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function uses recursion to calculate the Nth number 
+   from a mathematical sequence known as the \"Golomb sequence.\" 
+   It's terribly inefficient, though! Use memoization to optimize it. 
+   (You don't have to actually understand how the Golomb sequence works 
+   to do this exercise.)
+
+   def golomb(n)
+      return 1 if n == 1
+      return 1 + golomb(n - golomb(golomb(n - 1)));
+    end
+
+Enter the next line: " response
+answer="def golmob(n, memo={})"
+additional_feedback="
+
+   def golmob(n, memo={})
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function uses recursion to calculate the Nth number 
+   from a mathematical sequence known as the \"Golomb sequence.\" 
+   It's terribly inefficient, though! Use memoization to optimize it. 
+   (You don't have to actually understand how the Golomb sequence works 
+   to do this exercise.)
+
+   def golomb(n)
+      return 1 if n == 1
+      return 1 + golomb(n - golomb(golomb(n - 1)));
+    end
+
+Enter the next line: " response
+answer="return 1 if n == 1"
+additional_feedback="
+
+   def golmob(n, memo={})
+    return 1 if n == 1
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function uses recursion to calculate the Nth number 
+   from a mathematical sequence known as the \"Golomb sequence.\" 
+   It's terribly inefficient, though! Use memoization to optimize it. 
+   (You don't have to actually understand how the Golomb sequence works 
+   to do this exercise.)
+
+   def golomb(n)
+      return 1 if n == 1
+      return 1 + golomb(n - golomb(golomb(n - 1)));
+    end
+
+Enter the next line: " response
+answer="if !memo[n]"
+additional_feedback="
+
+   def golmob(n, memo={})
+    return 1 if n == 1
+   
+    if !memo[n]
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function uses recursion to calculate the Nth number 
+   from a mathematical sequence known as the \"Golomb sequence.\" 
+   It's terribly inefficient, though! Use memoization to optimize it. 
+   (You don't have to actually understand how the Golomb sequence works 
+   to do this exercise.)
+
+   def golomb(n)
+      return 1 if n == 1
+      return 1 + golomb(n - golomb(golomb(n - 1)));
+    end
+
+Enter the next line: " response
+answer="memo[n] = 1 + golmob(n - golmob(golmob(n - 1, memo), memo), memo)"
+additional_feedback="
+
+   def golmob(n, memo={})
+    return 1 if n == 1
+   
+    if !memo[n]
+      memo[n] = 1 + golmob(n - golmob(golmob(n - 1, memo), memo), memo)
+    end
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function uses recursion to calculate the Nth number 
+   from a mathematical sequence known as the \"Golomb sequence.\" 
+   It's terribly inefficient, though! Use memoization to optimize it. 
+   (You don't have to actually understand how the Golomb sequence works 
+   to do this exercise.)
+
+   def golomb(n)
+      return 1 if n == 1
+      return 1 + golomb(n - golomb(golomb(n - 1)));
+    end
+
+Enter the next line: " response
+answer="return memo[n]"
+additional_feedback="
+
+   def golmob(n, memo={})
+    return 1 if n == 1
+   
+    if !memo[n]
+      memo[n] = 1 + golmob(n - golmob(golmob(n - 1, memo), memo), memo)
+    end
+   return memo[n]
+  end
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is a solution to the \"Unique Paths\" problem from an exercise 
+   in the previous chapter. Use memoization to improve its efficiency:
+
+   def unique_paths(rows, columns)
+      return 1 if rows == 1 || columns == 1
+      return unique_paths(rows - 1, columns) + unique_paths(rows, columns - 1)
+     end
 
 Enter the next line: " response
 answer=""
 additional_feedback=""
-evaluate_total_missed_questions "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is a solution to the \"Unique Paths\" problem from an exercise 
+   in the previous chapter. Use memoization to improve its efficiency:
+
+   def unique_paths(rows, columns)
+      return 1 if rows == 1 || columns == 1
+      return unique_paths(rows - 1, columns) + unique_paths(rows, columns - 1)
+     end
+
+Enter the next line: " response
+answer="To accomplish memoization here, we need to make a key out of both the number of 
+rows and number of columns."
+additional_feedback="
+
+   To accomplish memoization here, we need to make a key out of both the number of 
+   rows and number of columns.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is a solution to the \"Unique Paths\" problem from an exercise 
+   in the previous chapter. Use memoization to improve its efficiency:
+
+   def unique_paths(rows, columns)
+      return 1 if rows == 1 || columns == 1
+      return unique_paths(rows - 1, columns) + unique_paths(rows, columns - 1)
+     end
+
+Enter the next line: " response
+answer="We can make our key a simple array of [rows, columns]."
+additional_feedback="
+
+   To accomplish memoization here, we need to make a key out of both the number of 
+   rows and number of columns. We can make our key a simple array of [rows, columns].
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is a solution to the \"Unique Paths\" problem from an exercise 
+   in the previous chapter. Use memoization to improve its efficiency:
+
+   def unique_paths(rows, columns)
+      return 1 if rows == 1 || columns == 1
+      return unique_paths(rows - 1, columns) + unique_paths(rows, columns - 1)
+     end
+
+Enter the next line: " response
+answer="def unique_paths(rows, columns, memo={})"
+additional_feedback="
+
+   To accomplish memoization here, we need to make a key out of both the number of 
+   rows and number of columns. We can make our key a simple array of [rows, columns].
+
+   def unique_paths(rows, columns, memo={})
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is a solution to the \"Unique Paths\" problem from an exercise 
+   in the previous chapter. Use memoization to improve its efficiency:
+
+   def unique_paths(rows, columns)
+      return 1 if rows == 1 || columns == 1
+      return unique_paths(rows - 1, columns) + unique_paths(rows, columns - 1)
+     end
+
+Enter the next line: " response
+answer="return 1 if rows == 1 || columns == 1"
+additional_feedback="
+
+   To accomplish memoization here, we need to make a key out of both the number of 
+   rows and number of columns. We can make our key a simple array of [rows, columns].
+
+   def unique_paths(rows, columns, memo={})
+     return 1 if rows == 1 || columns == 1
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is a solution to the \"Unique Paths\" problem from an exercise 
+   in the previous chapter. Use memoization to improve its efficiency:
+
+   def unique_paths(rows, columns)
+      return 1 if rows == 1 || columns == 1
+      return unique_paths(rows - 1, columns) + unique_paths(rows, columns - 1)
+     end
+
+Enter the next line: " response
+answer="if !memo[[rows, columns]]"
+additional_feedback="
+
+   To accomplish memoization here, we need to make a key out of both the number of 
+   rows and number of columns. We can make our key a simple array of [rows, columns].
+
+   def unique_paths(rows, columns, memo={})
+     return 1 if rows == 1 || columns == 1
+     if !memo[[rows, columns]]
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is a solution to the \"Unique Paths\" problem from an exercise 
+   in the previous chapter. Use memoization to improve its efficiency:
+
+   def unique_paths(rows, columns)
+      return 1 if rows == 1 || columns == 1
+      return unique_paths(rows - 1, columns) + unique_paths(rows, columns - 1)
+     end
+
+Enter the next line: " response
+answer="memo[[rows, columns]] = unique_paths(rows - 1, columns, memo)"
+additional_feedback="
+
+   To accomplish memoization here, we need to make a key out of both the number of 
+   rows and number of columns. We can make our key a simple array of [rows, columns].
+
+   def unique_paths(rows, columns, memo={})
+     return 1 if rows == 1 || columns == 1
+     if !memo[[rows, columns]]
+       memo[[rows, columns]] = unique_paths(rows - 1, columns, memo)
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is a solution to the \"Unique Paths\" problem from an exercise 
+   in the previous chapter. Use memoization to improve its efficiency:
+
+   def unique_paths(rows, columns)
+      return 1 if rows == 1 || columns == 1
+      return unique_paths(rows - 1, columns) + unique_paths(rows, columns - 1)
+     end
+
+Enter the next line: " response
+answer="+ unique_paths(rows, columns - 1, memo)"
+additional_feedback="
+
+   To accomplish memoization here, we need to make a key out of both the number of 
+   rows and number of columns. We can make our key a simple array of [rows, columns].
+
+   def unique_paths(rows, columns, memo={})
+     return 1 if rows == 1 || columns == 1
+     if !memo[[rows, columns]]
+       memo[[rows, columns]] = unique_paths(rows - 1, columns, memo) + unique_paths(rows, columns - 1, memo)
+      end
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Here is a solution to the \"Unique Paths\" problem from an exercise 
+   in the previous chapter. Use memoization to improve its efficiency:
+
+   def unique_paths(rows, columns)
+      return 1 if rows == 1 || columns == 1
+      return unique_paths(rows - 1, columns) + unique_paths(rows, columns - 1)
+     end
+
+Enter the next line: " response
+answer="return memo[[rows, columns]]"
+additional_feedback="
+
+   To accomplish memoization here, we need to make a key out of both the number of 
+   rows and number of columns. We can make our key a simple array of [rows, columns].
+
+   def unique_paths(rows, columns, memo={})
+     return 1 if rows == 1 || columns == 1
+     if !memo[[rows, columns]]
+       memo[[rows, columns]] = unique_paths(rows - 1, columns, memo) + unique_paths(rows, columns - 1, memo)
+      end
+     return memo[[rows, columns]]
+    end
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is the process of partitioning an array? " response
+answer="To partition an array is to take a random value from the array called the pivot"
+additional_feedback="
+
+      To partition an array is to take a random value from the 
+      array called the pivot
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   What is the process of partitioning an array? 
+
+   To partition an array is to take a random value from the 
+   array called the pivot
+
+Enter the next line: " response
+answer="then move every number less than the pivot to the left"
+additional_feedback="
+
+      To partition an array is to take a random value from the 
+      array called the pivot, then move every number less than 
+      the pivot to the left
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   What is the process of partitioning an array? 
+
+   To partition an array is to take a random value from the 
+   array called the pivot, then move every number less than 
+   the pivot to the left
+
+Enter the next line: " response
+answer="and move every number greater than the pivot to the right."
+additional_feedback="
+
+      To partition an array is to take a random value from the 
+      array called the pivot, then move every number less than 
+      the pivot to the left and move every number greater than 
+      the pivot to the right.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_question
+
+read -p "
+
+   Given an array of positive numbers, write a function that returns 
+   the greatest product of any three numbers. The approach of using 
+   three nested loops would clock in at O(N3), which is very slow. 
+   Use sorting to implement the function in a way that it computes 
+   at O(N log N) speed. (There are even faster implementations, but 
+   we're focusing on using sorting as a technique to make code faster.)
+
+Enter the next line: " response
+answer="If we sort the numbers, we know that the three greatest numbers will be at the 
+end of the array"
+additional_feedback="
+
+   If we sort the numbers, we know that the three greatest numbers will be at the 
+   end of the array,
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Given an array of positive numbers, write a function that returns 
+   the greatest product of any three numbers. The approach of using 
+   three nested loops would clock in at O(N3), which is very slow. 
+   Use sorting to implement the function in a way that it computes 
+   at O(N log N) speed. (There are even faster implementations, but 
+   we're focusing on using sorting as a technique to make code faster.)
+
+Enter the next line: " response
+answer="and we can just multiply them together. The sorting will take O(N log N)."
+additional_feedback="
+
+   If we sort the numbers, we know that the three greatest numbers will be at the 
+   end of the array, and we can just multiply them together. The sorting will take
+   O(N log N).
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Given an array of positive numbers, write a function that returns 
+   the greatest product of any three numbers. The approach of using 
+   three nested loops would clock in at O(N3), which is very slow. 
+   Use sorting to implement the function in a way that it computes 
+   at O(N log N) speed. (There are even faster implementations, but 
+   we're focusing on using sorting as a technique to make code faster.)
+
+Enter the next line: " response
+answer="function greatestProductOf3(array) { }"
+additional_feedback="
+
+   If we sort the numbers, we know that the three greatest numbers will be at the 
+   end of the array, and we can just multiply them together. The sorting will take
+   O(N log N).
+
+   function greatestProductOf3(array) { 
+   
+   }
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Given an array of positive numbers, write a function that returns 
+   the greatest product of any three numbers. The approach of using 
+   three nested loops would clock in at O(N3), which is very slow. 
+   Use sorting to implement the function in a way that it computes 
+   at O(N log N) speed. (There are even faster implementations, but 
+   we're focusing on using sorting as a technique to make code faster.)
+
+Enter the next line: " response
+answer="array.sort((a, b) => (a < b) ? -1 : 1);"
+additional_feedback="
+
+   If we sort the numbers, we know that the three greatest numbers will be at the 
+   end of the array, and we can just multiply them together. The sorting will take
+   O(N log N).
+
+   function greatestProductOf3(array) { 
+      array.sort((a, b) => (a < b) ? -1 : 1);
+   }
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Given an array of positive numbers, write a function that returns 
+   the greatest product of any three numbers. The approach of using 
+   three nested loops would clock in at O(N3), which is very slow. 
+   Use sorting to implement the function in a way that it computes 
+   at O(N log N) speed. (There are even faster implementations, but 
+   we're focusing on using sorting as a technique to make code faster.)
+
+Enter the next line: " response
+answer="return array[array.length - 1]"
+additional_feedback="
+
+   If we sort the numbers, we know that the three greatest numbers will be at the 
+   end of the array, and we can just multiply them together. The sorting will take
+   O(N log N).
+
+   function greatestProductOf3(array) { 
+      array.sort((a, b) => (a < b) ? -1 : 1);
+
+      return array[array.length - 1]
+   }
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Given an array of positive numbers, write a function that returns 
+   the greatest product of any three numbers. The approach of using 
+   three nested loops would clock in at O(N3), which is very slow. 
+   Use sorting to implement the function in a way that it computes 
+   at O(N log N) speed. (There are even faster implementations, but 
+   we're focusing on using sorting as a technique to make code faster.)
+
+Enter the next line: " response
+answer="* array[array.length - 2]"
+additional_feedback="
+
+   If we sort the numbers, we know that the three greatest numbers will be at the 
+   end of the array, and we can just multiply them together. The sorting will take
+   O(N log N).
+
+   function greatestProductOf3(array) { 
+      array.sort((a, b) => (a < b) ? -1 : 1);
+
+      return array[array.length - 1] * array[array.length - 2]
+   }
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Given an array of positive numbers, write a function that returns 
+   the greatest product of any three numbers. The approach of using 
+   three nested loops would clock in at O(N3), which is very slow. 
+   Use sorting to implement the function in a way that it computes 
+   at O(N log N) speed. (There are even faster implementations, but 
+   we're focusing on using sorting as a technique to make code faster.)
+
+Enter the next line: " response
+answer="* array[array.length -3];"
+additional_feedback="
+
+   If we sort the numbers, we know that the three greatest numbers will be at the 
+   end of the array, and we can just multiply them together. The sorting will take
+   O(N log N).
+
+   function greatestProductOf3(array) { 
+      array.sort((a, b) => (a < b) ? -1 : 1);
+
+      return array[array.length - 1] * array[array.length - 2] * array[array.length -3];
+   }
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function finds the “missing number” from an array 
+   of integers. That is, the array is expected to have all integers 
+   from 0 up to the array's length, but one is missing. As examples, 
+   the array, [5, 2, 4, 1, 0] is missing the number 3, and the array, 
+   [9, 3, 2, 5, 6, 7, 1, 0, 4] is missing the number 8. 
+   
+   Here's an implementation that is O(N2) (the includes method alone 
+   is already O(N), since the computer needs to search the entire array 
+   to find n):
+
+   function findMissingNumber(array) {
+      for (let i = 0; i < array.length; i++) {
+         if (!array.includes(i)) {
+            return i;
+         }
+      }
+
+      return null;
+   }
+
+   Use sorting to write a new implementation of this function that only 
+   takes O(N log N). (There are even faster implementations, but we're 
+   focusing on using sorting as a technique to make code faster.)
+
+
+Enter the next line: " response
+answer="If we presort the array, we can then expect each number to be at its own index."
+additional_feedback="
+
+   If we presort the array, we can then expect each number to be at its own index.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function finds the “missing number” from an array 
+   of integers. That is, the array is expected to have all integers 
+   from 0 up to the array's length, but one is missing. As examples, 
+   the array, [5, 2, 4, 1, 0] is missing the number 3, and the array, 
+   [9, 3, 2, 5, 6, 7, 1, 0, 4] is missing the number 8. 
+   
+   Here's an implementation that is O(N2) (the includes method alone 
+   is already O(N), since the computer needs to search the entire array 
+   to find n):
+
+   function findMissingNumber(array) {
+      for (let i = 0; i < array.length; i++) {
+         if (!array.includes(i)) {
+            return i;
+         }
+      }
+
+      return null;
+   }
+
+   Use sorting to write a new implementation of this function that only 
+   takes O(N log N). (There are even faster implementations, but we're 
+   focusing on using sorting as a technique to make code faster.)
+
+
+Enter the next line: " response
+answer="That is, the 0 should be at index 0, the 1 should be at index 1, and so on."
+additional_feedback="
+
+   If we presort the array, we can then expect each number to be at its own index.
+   That is, the 0 should be at index 0, the 1 should be at index 1, and so on.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function finds the “missing number” from an array 
+   of integers. That is, the array is expected to have all integers 
+   from 0 up to the array's length, but one is missing. As examples, 
+   the array, [5, 2, 4, 1, 0] is missing the number 3, and the array, 
+   [9, 3, 2, 5, 6, 7, 1, 0, 4] is missing the number 8. 
+   
+   Here's an implementation that is O(N2) (the includes method alone 
+   is already O(N), since the computer needs to search the entire array 
+   to find n):
+
+   function findMissingNumber(array) {
+      for (let i = 0; i < array.length; i++) {
+         if (!array.includes(i)) {
+            return i;
+         }
+      }
+
+      return null;
+   }
+
+   Use sorting to write a new implementation of this function that only 
+   takes O(N log N). (There are even faster implementations, but we're 
+   focusing on using sorting as a technique to make code faster.)
+
+
+Enter the next line: " response
+answer="We can then iterate through the array looking for a number that doesn't equal the index."
+additional_feedback="
+
+   If we presort the array, we can then expect each number to be at its own index.
+   That is, the 0 should be at index 0, the 1 should be at index 1, and so on.
+   We can then iterate through the array looking for a number that doesn't equal 
+   the index.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function finds the “missing number” from an array 
+   of integers. That is, the array is expected to have all integers 
+   from 0 up to the array's length, but one is missing. As examples, 
+   the array, [5, 2, 4, 1, 0] is missing the number 3, and the array, 
+   [9, 3, 2, 5, 6, 7, 1, 0, 4] is missing the number 8. 
+   
+   Here's an implementation that is O(N2) (the includes method alone 
+   is already O(N), since the computer needs to search the entire array 
+   to find n):
+
+   function findMissingNumber(array) {
+      for (let i = 0; i < array.length; i++) {
+         if (!array.includes(i)) {
+            return i;
+         }
+      }
+
+      return null;
+   }
+
+   Use sorting to write a new implementation of this function that only 
+   takes O(N log N). (There are even faster implementations, but we're 
+   focusing on using sorting as a technique to make code faster.)
+
+
+Enter the next line: " response
+answer="Once we find it, we know that we just skipped over the missing number."
+additional_feedback="
+
+   If we presort the array, we can then expect each number to be at its own index.
+   That is, the 0 should be at index 0, the 1 should be at index 1, and so on.
+   We can then iterate through the array looking for a number that doesn't equal 
+   the index. Once we find it, we know that we just skipped over the missing number.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function finds the “missing number” from an array 
+   of integers. That is, the array is expected to have all integers 
+   from 0 up to the array's length, but one is missing. As examples, 
+   the array, [5, 2, 4, 1, 0] is missing the number 3, and the array, 
+   [9, 3, 2, 5, 6, 7, 1, 0, 4] is missing the number 8. 
+   
+   Here's an implementation that is O(N2) (the includes method alone 
+   is already O(N), since the computer needs to search the entire array 
+   to find n):
+
+   function findMissingNumber(array) {
+      for (let i = 0; i < array.length; i++) {
+         if (!array.includes(i)) {
+            return i;
+         }
+      }
+
+      return null;
+   }
+
+   Use sorting to write a new implementation of this function that only 
+   takes O(N log N). (There are even faster implementations, but we're 
+   focusing on using sorting as a technique to make code faster.)
+
+
+Enter the next line: " response
+answer="function findMissingNumber(array) { }"
+additional_feedback="
+
+   If we presort the array, we can then expect each number to be at its own index.
+   That is, the 0 should be at index 0, the 1 should be at index 1, and so on.
+   We can then iterate through the array looking for a number that doesn't equal 
+   the index. Once we find it, we know that we just skipped over the missing number.
+
+   function findMissingNumber(array) { 
+      
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function finds the “missing number” from an array 
+   of integers. That is, the array is expected to have all integers 
+   from 0 up to the array's length, but one is missing. As examples, 
+   the array, [5, 2, 4, 1, 0] is missing the number 3, and the array, 
+   [9, 3, 2, 5, 6, 7, 1, 0, 4] is missing the number 8. 
+   
+   Here's an implementation that is O(N2) (the includes method alone 
+   is already O(N), since the computer needs to search the entire array 
+   to find n):
+
+   function findMissingNumber(array) {
+      for (let i = 0; i < array.length; i++) {
+         if (!array.includes(i)) {
+            return i;
+         }
+      }
+
+      return null;
+   }
+
+   Use sorting to write a new implementation of this function that only 
+   takes O(N log N). (There are even faster implementations, but we're 
+   focusing on using sorting as a technique to make code faster.)
+
+
+Enter the next line: " response
+answer="array.sort((a, b) => (a < b) ? -1 : 1);"
+additional_feedback="
+
+   If we presort the array, we can then expect each number to be at its own index.
+   That is, the 0 should be at index 0, the 1 should be at index 1, and so on.
+   We can then iterate through the array looking for a number that doesn't equal 
+   the index. Once we find it, we know that we just skipped over the missing number.
+
+   function findMissingNumber(array) { 
+     array.sort((a, b) => (a < b) ? -1 : 1);
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function finds the “missing number” from an array 
+   of integers. That is, the array is expected to have all integers 
+   from 0 up to the array's length, but one is missing. As examples, 
+   the array, [5, 2, 4, 1, 0] is missing the number 3, and the array, 
+   [9, 3, 2, 5, 6, 7, 1, 0, 4] is missing the number 8. 
+   
+   Here's an implementation that is O(N2) (the includes method alone 
+   is already O(N), since the computer needs to search the entire array 
+   to find n):
+
+   function findMissingNumber(array) {
+      for (let i = 0; i < array.length; i++) {
+         if (!array.includes(i)) {
+            return i;
+         }
+      }
+
+      return null;
+   }
+
+   Use sorting to write a new implementation of this function that only 
+   takes O(N log N). (There are even faster implementations, but we're 
+   focusing on using sorting as a technique to make code faster.)
+
+
+Enter the next line: " response
+answer="for (let i = 0; i < array.length; i++) { }"
+additional_feedback="
+
+   If we presort the array, we can then expect each number to be at its own index.
+   That is, the 0 should be at index 0, the 1 should be at index 1, and so on.
+   We can then iterate through the array looking for a number that doesn't equal 
+   the index. Once we find it, we know that we just skipped over the missing number.
+
+   function findMissingNumber(array) { 
+     array.sort((a, b) => (a < b) ? -1 : 1);
+
+     for (let i = 0; i < array.length; i++) { 
+
+     }
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function finds the “missing number” from an array 
+   of integers. That is, the array is expected to have all integers 
+   from 0 up to the array's length, but one is missing. As examples, 
+   the array, [5, 2, 4, 1, 0] is missing the number 3, and the array, 
+   [9, 3, 2, 5, 6, 7, 1, 0, 4] is missing the number 8. 
+   
+   Here's an implementation that is O(N2) (the includes method alone 
+   is already O(N), since the computer needs to search the entire array 
+   to find n):
+
+   function findMissingNumber(array) {
+      for (let i = 0; i < array.length; i++) {
+         if (!array.includes(i)) {
+            return i;
+         }
+      }
+
+      return null;
+   }
+
+   Use sorting to write a new implementation of this function that only 
+   takes O(N log N). (There are even faster implementations, but we're 
+   focusing on using sorting as a technique to make code faster.)
+
+
+Enter the next line: " response
+answer="if (array[i] !== i) { return i; }"
+additional_feedback="
+
+   If we presort the array, we can then expect each number to be at its own index.
+   That is, the 0 should be at index 0, the 1 should be at index 1, and so on.
+   We can then iterate through the array looking for a number that doesn't equal 
+   the index. Once we find it, we know that we just skipped over the missing number.
+
+   function findMissingNumber(array) { 
+     array.sort((a, b) => (a < b) ? -1 : 1);
+
+     for (let i = 0; i < array.length; i++) { 
+       if (array[i] !== i) { 
+          return i; 
+       }
+     }
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   The following function finds the “missing number” from an array 
+   of integers. That is, the array is expected to have all integers 
+   from 0 up to the array's length, but one is missing. As examples, 
+   the array, [5, 2, 4, 1, 0] is missing the number 3, and the array, 
+   [9, 3, 2, 5, 6, 7, 1, 0, 4] is missing the number 8. 
+   
+   Here's an implementation that is O(N2) (the includes method alone 
+   is already O(N), since the computer needs to search the entire array 
+   to find n):
+
+   function findMissingNumber(array) {
+      for (let i = 0; i < array.length; i++) {
+         if (!array.includes(i)) {
+            return i;
+         }
+      }
+
+      return null;
+   }
+
+   Use sorting to write a new implementation of this function that only 
+   takes O(N log N). (There are even faster implementations, but we're 
+   focusing on using sorting as a technique to make code faster.)
+
+
+Enter the next line: " response
+answer="return null;"
+additional_feedback="
+
+   If we presort the array, we can then expect each number to be at its own index.
+   That is, the 0 should be at index 0, the 1 should be at index 1, and so on.
+   We can then iterate through the array looking for a number that doesn't equal 
+   the index. Once we find it, we know that we just skipped over the missing number.
+
+   function findMissingNumber(array) { 
+     array.sort((a, b) => (a < b) ? -1 : 1);
+
+     for (let i = 0; i < array.length; i++) { 
+       if (array[i] !== i) { 
+          return i; 
+       }
+     }
+     return null;
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="This implementation uses nested loops and is O(N2)."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="function max(array) { }"
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+   function max(array) { 
+      
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="for (let i = 0; i < array.length; i++) { }"
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+   function max(array) { 
+    for (let i = 0; i < array.length; i++) {
+    
+    }     
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="let iIsGreatestNumber = true;"
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+   function max(array) { 
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;  
+    }     
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="for (let = 0; j < array.length; j++) { }"
+additional_feedback="
+  This implementation uses nested loops and is O(N2).
+
+  function max(array) {
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;
+
+      for (let = 0; j < array.length; j++) {
+         
+      }
+    }
+  }      
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="if (array[j] > array[i]) { iIsGreatestNumber = false; }"
+additional_feedback="
+  This implementation uses nested loops and is O(N2).
+
+  function max(array) {
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;
+
+      for (let = 0; j < array.length; j++) {
+        if (array[j] > array[i]) {
+          iIsGreatestNumber = false;
+        } 
+      }
+    }
+  }      
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="if (iIsGreatestNumber) { return array[i]; }"
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+  function max(array) {
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;
+
+      for (let = 0; j < array.length; j++) {
+        if (array[j] > array[i]) {
+          iIsGreatestNumber = false;
+        }
+      }
+       if (iIsGreatestNumber) {
+         return array[i];
+       }
+     }
+   }      
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="This implementation simply sorts the array and returns the last number. The sorting is O(N log N)."
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+  function max(array) {
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;
+
+      for (let = 0; j < array.length; j++) {
+        if (array[j] > array[i]) {
+          iIsGreatestNumber = false;
+        }
+      }
+       if (iIsGreatestNumber) {
+         return array[i];
+       }
+     }
+   }
+
+   This implementation simply sorts the array and returns the last number. 
+   The sorting is O(N log N).      
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="function max(array) { }"
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+  function max(array) {
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;
+
+      for (let = 0; j < array.length; j++) {
+        if (array[j] > array[i]) {
+          iIsGreatestNumber = false;
+        }
+      }
+       if (iIsGreatestNumber) {
+         return array[i];
+       }
+     }
+   }
+
+   This implementation simply sorts the array and returns the last number. 
+   The sorting is O(N log N). 
+
+   function max(array) { 
+      
+   }     
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="array.sort((a, b) => (a < b) ? -1 : 1);"
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+  function max(array) {
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;
+
+      for (let = 0; j < array.length; j++) {
+        if (array[j] > array[i]) {
+          iIsGreatestNumber = false;
+        }
+      }
+       if (iIsGreatestNumber) {
+         return array[i];
+       }
+     }
+   }
+
+   This implementation simply sorts the array and returns the last number. 
+   The sorting is O(N log N). 
+
+   function max(array) { 
+     array.sort((a, b) => (a < b) ? -1 : 1);
+   }     
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="return array[array.length -1];"
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+  function max(array) {
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;
+
+      for (let = 0; j < array.length; j++) {
+        if (array[j] > array[i]) {
+          iIsGreatestNumber = false;
+        }
+      }
+       if (iIsGreatestNumber) {
+         return array[i];
+       }
+     }
+   }
+
+   This implementation simply sorts the array and returns the last number. 
+   The sorting is O(N log N). 
+
+   function max(array) { 
+     array.sort((a, b) => (a < b) ? -1 : 1);
+     return array[array.length -1];
+   }     
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="This implementation is O(N) as we loop once through the array."
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+  function max(array) {
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;
+
+      for (let = 0; j < array.length; j++) {
+        if (array[j] > array[i]) {
+          iIsGreatestNumber = false;
+        }
+      }
+       if (iIsGreatestNumber) {
+         return array[i];
+       }
+     }
+   }
+
+   This implementation simply sorts the array and returns the last number. 
+   The sorting is O(N log N). 
+
+   function max(array) { 
+     array.sort((a, b) => (a < b) ? -1 : 1);
+     return array[array.length -1];
+   }     
+
+   This implementation is O(N) as we loop once through the array.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="This implementation is O(N) as we loop once through the array."
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+  function max(array) {
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;
+
+      for (let = 0; j < array.length; j++) {
+        if (array[j] > array[i]) {
+          iIsGreatestNumber = false;
+        }
+      }
+       if (iIsGreatestNumber) {
+         return array[i];
+       }
+     }
+   }
+
+   This implementation simply sorts the array and returns the last number. 
+   The sorting is O(N log N). 
+
+   function max(array) { 
+     array.sort((a, b) => (a < b) ? -1 : 1);
+     return array[array.length -1];
+   }     
+
+   This implementation is O(N) as we loop once through the array.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="function max(array) { }"
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+  function max(array) {
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;
+
+      for (let = 0; j < array.length; j++) {
+        if (array[j] > array[i]) {
+          iIsGreatestNumber = false;
+        }
+      }
+       if (iIsGreatestNumber) {
+         return array[i];
+       }
+     }
+   }
+
+   This implementation simply sorts the array and returns the last number. 
+   The sorting is O(N log N). 
+
+   function max(array) { 
+     array.sort((a, b) => (a < b) ? -1 : 1);
+     return array[array.length -1];
+   }     
+
+   This implementation is O(N) as we loop once through the array.
+
+   function max(array) { 
+      
+   }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="let greatestNumberSoFar = array[0];"
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+  function max(array) {
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;
+
+      for (let = 0; j < array.length; j++) {
+        if (array[j] > array[i]) {
+          iIsGreatestNumber = false;
+        }
+      }
+       if (iIsGreatestNumber) {
+         return array[i];
+       }
+     }
+   }
+
+   This implementation simply sorts the array and returns the last number. 
+   The sorting is O(N log N). 
+
+   function max(array) { 
+     array.sort((a, b) => (a < b) ? -1 : 1);
+     return array[array.length -1];
+   }     
+
+   This implementation is O(N) as we loop once through the array.
+
+   function max(array) { 
+     let greatestNumberSoFar = array[0];
+   }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="for (let i = 0; i < array.length; i++) { }"
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+  function max(array) {
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;
+
+      for (let = 0; j < array.length; j++) {
+        if (array[j] > array[i]) {
+          iIsGreatestNumber = false;
+        }
+      }
+       if (iIsGreatestNumber) {
+         return array[i];
+       }
+     }
+   }
+
+   This implementation simply sorts the array and returns the last number. 
+   The sorting is O(N log N). 
+
+   function max(array) { 
+     array.sort((a, b) => (a < b) ? -1 : 1);
+     return array[array.length -1];
+   }     
+
+   This implementation is O(N) as we loop once through the array.
+
+   function max(array) { 
+     let greatestNumberSoFar = array[0];
+     
+     for (let i = 0; i < array.length; i++) { 
+        
+     }
+   }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="if (array[i] > greatestNumberSoFar) { }"
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+  function max(array) {
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;
+
+      for (let = 0; j < array.length; j++) {
+        if (array[j] > array[i]) {
+          iIsGreatestNumber = false;
+        }
+      }
+       if (iIsGreatestNumber) {
+         return array[i];
+       }
+     }
+   }
+
+   This implementation simply sorts the array and returns the last number. 
+   The sorting is O(N log N). 
+
+   function max(array) { 
+     array.sort((a, b) => (a < b) ? -1 : 1);
+     return array[array.length -1];
+   }     
+
+   This implementation is O(N) as we loop once through the array.
+
+   function max(array) { 
+     let greatestNumberSoFar = array[0];
+     
+     for (let i = 0; i < array.length; i++) { 
+       if (array[i] > greatestNumberSoFar) { 
+          
+       }
+     }
+   }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="greatestNumberSoFar = array[i];"
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+  function max(array) {
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;
+
+      for (let = 0; j < array.length; j++) {
+        if (array[j] > array[i]) {
+          iIsGreatestNumber = false;
+        }
+      }
+       if (iIsGreatestNumber) {
+         return array[i];
+       }
+     }
+   }
+
+   This implementation simply sorts the array and returns the last number. 
+   The sorting is O(N log N). 
+
+   function max(array) { 
+     array.sort((a, b) => (a < b) ? -1 : 1);
+     return array[array.length -1];
+   }     
+
+   This implementation is O(N) as we loop once through the array.
+
+   function max(array) { 
+     let greatestNumberSoFar = array[0];
+     
+     for (let i = 0; i < array.length; i++) { 
+       if (array[i] > greatestNumberSoFar) { 
+         greatestNumberSoFar = array[i];
+       }
+     }
+   }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write three different implementations of a function that finds 
+   the greatest number within an array. Write one function that is 
+   O(N2), one that is O(N log N), and one that is O(N).
+
+
+Enter the next line: " response
+answer="return greatestNumberSoFar;"
+additional_feedback="
+   This implementation uses nested loops and is O(N2).
+
+  function max(array) {
+    for (let i = 0; i < array.length; i++) {
+      let iIsGreatestNumber = true;
+
+      for (let = 0; j < array.length; j++) {
+        if (array[j] > array[i]) {
+          iIsGreatestNumber = false;
+        }
+      }
+       if (iIsGreatestNumber) {
+         return array[i];
+       }
+     }
+   }
+
+   This implementation simply sorts the array and returns the last number. 
+   The sorting is O(N log N). 
+
+   function max(array) { 
+     array.sort((a, b) => (a < b) ? -1 : 1);
+     return array[array.length -1];
+   }     
+
+   This implementation is O(N) as we loop once through the array.
+
+   function max(array) { 
+     let greatestNumberSoFar = array[0];
+     
+     for (let i = 0; i < array.length; i++) { 
+       if (array[i] > greatestNumberSoFar) { 
+         greatestNumberSoFar = array[i]; 
+       }
+     }
+     return greatestNumberSoFar;
+   }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+
+next_question
+
+read -p "What are nodes? " response
+answer="Nodes are pieces of data that may be dispersed throughout the computer's memory."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is the difference between a linked list and an array? " response
+answer="The array is a contiguous block of memory, but the data from linked lists can be scattered across different cells throughout the computer's memory."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "If the nodes are not next to each other in memory, how does the 
+         computer know which nodes are part of the same linked list? " response
+answer="The node keeps a pointer to the next node's memory address. The pointer is called a link."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Add a method to the classic LinkedList class that prints all the elements of the list. " response
+answer="def print"
+additional_feedback="
+
+   def print
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Add a method to the classic LinkedList class that prints all the elements of the list. " response
+answer="current_node = first_node"
+additional_feedback="
+
+   def print
+    current_node = first_node
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Add a method to the classic LinkedList class that prints all the elements of the list. " response
+answer="while current_node"
+additional_feedback="
+
+   def print
+    current_node = first_node
+
+    while current_node
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Add a method to the classic LinkedList class that prints all the elements of the list. " response
+answer="puts current_node.data"
+additional_feedback="
+
+   def print
+    current_node = first_node
+
+    while current_node
+      puts current_node.data
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Add a method to the classic LinkedList class that prints all the elements of the list. " response
+answer="current_node  = current_node.next_node"
+additional_feedback="
+
+   def print
+    current_node = first_node
+
+    while current_node
+      puts current_node.data
+      current_node  = current_node.next_node
+     end
+    end  
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Add a method to the DoublyLinkedList class that prints all the elements of the list in reverse order.  " response
+answer="With a doubly linked list, we have immediate access to the last nodes and 
+can follow their previous node links to access the previous nodes."
+additional_feedback="
+
+   With a doubly linked list, we have immediate access to the last nodes and 
+   can follow their previous node links to access the previous nodes.
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Add a method to the DoublyLinkedList class that prints all the elements of the list in reverse order.  " response
+answer="This code is simply the inverse of the previous exercise."
+additional_feedback="
+
+   With a doubly linked list, we have immediate access to the last nodes and 
+   can follow their previous node links to access the previous nodes. This 
+   code is simply the inverse of the previous exercise.
+
+   def print_in_reverse
+    current_node = first_node
+
+    while current_node
+      puts current_node.data
+      current_node  = current_node.previous_node
+     end
+    end
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+ 
+next_question
+
+read -p "Add a method to the classic LinkedList class that returns the last element from the list. Assume you don't know how many elements are in the list. " response
+answer="Use a while loop to move through each node. However, before we move forward"
+additional_feedback="
+
+   def last
+    current_node = first_node
+
+    while current_node.next_node
+      current_node  = current_node.next_node
+     end
+
+      return current_node.data
+    end
+
+   Use a while loop to move through each node. However, before we move forward,
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Add a method to the classic LinkedList class that returns the last element from the list. Assume you don't know how many elements are in the list. " response
+answer="we check ahead using the node's link to ensure that there is a next node."
+additional_feedback="
+
+   def last
+    current_node = first_node
+
+    while current_node.next_node
+      current_node  = current_node.next_node
+     end
+
+      return current_node.data
+    end
+
+   Use a while loop to move through each node. However, before we move forward,
+   we check ahead using the node's link to ensure that there is a next node.
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="One way to reverse a classic linked list is to iterate through the list while keeping track of three variables."
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="The primary variable is the current_node, which is the primary node we're iterating over."
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="We also keep track of the next_node, which is the node immediately after the current_node."
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="And we also keep track of the previous_node, which is the node immediately before the current_node."
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="When we first begin and the current_node is the first node, the previous_node points to null; there are no nodes before the first node."
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+   When we first begin and the current_node is the first node, the previous_node 
+   points to null; there are no nodes before the first node.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="Once we have our three variables set up, we proceed with our algorithm, which begins a loop."
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+   When we first begin and the current_node is the first node, the previous_node 
+   points to null; there are no nodes before the first node.
+
+   Once we have our three variables set up, we proceed with our algorithm, which 
+   begins a loop.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="Inside the loop, we first change the current_node's link to point to the previous_node."
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+   When we first begin and the current_node is the first node, the previous_node 
+   points to null; there are no nodes before the first node.
+
+   Once we have our three variables set up, we proceed with our algorithm, which 
+   begins a loop.
+
+   Inside the loop, we first change the current_node's link to point to the 
+   previous_node.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="Then, we shift all our variables to the right."
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+   When we first begin and the current_node is the first node, the previous_node 
+   points to null; there are no nodes before the first node.
+
+   Once we have our three variables set up, we proceed with our algorithm, which 
+   begins a loop.
+
+   Inside the loop, we first change the current_node's link to point to the 
+   previous_node.
+
+   Then, we shift all our variables to the right.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="We begin the loop again, repeating this process of changing the current_node's link to the point to the previous_node"
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+   When we first begin and the current_node is the first node, the previous_node 
+   points to null; there are no nodes before the first node.
+
+   Once we have our three variables set up, we proceed with our algorithm, which 
+   begins a loop.
+
+   Inside the loop, we first change the current_node's link to point to the 
+   previous_node.
+
+   Then, we shift all our variables to the right.
+
+   We begin the loop again, repeating this process of changing the current_node's 
+   link to the point to the previous_node,
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="until we reach the end of the list. Once we reach the end, the list will have been fully reversed."
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+   When we first begin and the current_node is the first node, the previous_node 
+   points to null; there are no nodes before the first node.
+
+   Once we have our three variables set up, we proceed with our algorithm, which 
+   begins a loop.
+
+   Inside the loop, we first change the current_node's link to point to the 
+   previous_node.
+
+   Then, we shift all our variables to the right.
+
+   We begin the loop again, repeating this process of changing the current_node's 
+   link to the point to the previous_node, until we reach the end of the list. Once 
+   we reach the end, the list will have been fully reversed.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="def reverse!"
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+   When we first begin and the current_node is the first node, the previous_node 
+   points to null; there are no nodes before the first node.
+
+   Once we have our three variables set up, we proceed with our algorithm, which 
+   begins a loop.
+
+   Inside the loop, we first change the current_node's link to point to the 
+   previous_node.
+
+   Then, we shift all our variables to the right.
+
+   We begin the loop again, repeating this process of changing the current_node's 
+   link to the point to the previous_node, until we reach the end of the list. Once 
+   we reach the end, the list will have been fully reversed.
+
+   def reverse!
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="previous_node = nil"
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+   When we first begin and the current_node is the first node, the previous_node 
+   points to null; there are no nodes before the first node.
+
+   Once we have our three variables set up, we proceed with our algorithm, which 
+   begins a loop.
+
+   Inside the loop, we first change the current_node's link to point to the 
+   previous_node.
+
+   Then, we shift all our variables to the right.
+
+   We begin the loop again, repeating this process of changing the current_node's 
+   link to the point to the previous_node, until we reach the end of the list. Once 
+   we reach the end, the list will have been fully reversed.
+
+   def reverse!
+     previous_node = nil
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="current_node = first_node"
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+   When we first begin and the current_node is the first node, the previous_node 
+   points to null; there are no nodes before the first node.
+
+   Once we have our three variables set up, we proceed with our algorithm, which 
+   begins a loop.
+
+   Inside the loop, we first change the current_node's link to point to the 
+   previous_node.
+
+   Then, we shift all our variables to the right.
+
+   We begin the loop again, repeating this process of changing the current_node's 
+   link to the point to the previous_node, until we reach the end of the list. Once 
+   we reach the end, the list will have been fully reversed.
+
+   def reverse!
+     previous_node = nil
+     current_node = first_node
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="while current_node"
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+   When we first begin and the current_node is the first node, the previous_node 
+   points to null; there are no nodes before the first node.
+
+   Once we have our three variables set up, we proceed with our algorithm, which 
+   begins a loop.
+
+   Inside the loop, we first change the current_node's link to point to the 
+   previous_node.
+
+   Then, we shift all our variables to the right.
+
+   We begin the loop again, repeating this process of changing the current_node's 
+   link to the point to the previous_node, until we reach the end of the list. Once 
+   we reach the end, the list will have been fully reversed.
+
+   def reverse!
+     previous_node = nil
+     current_node = first_node
+
+     while current_node
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="next_node = current_node.next_node"
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+   When we first begin and the current_node is the first node, the previous_node 
+   points to null; there are no nodes before the first node.
+
+   Once we have our three variables set up, we proceed with our algorithm, which 
+   begins a loop.
+
+   Inside the loop, we first change the current_node's link to point to the 
+   previous_node.
+
+   Then, we shift all our variables to the right.
+
+   We begin the loop again, repeating this process of changing the current_node's 
+   link to the point to the previous_node, until we reach the end of the list. Once 
+   we reach the end, the list will have been fully reversed.
+
+   def reverse!
+     previous_node = nil
+     current_node = first_node
+
+     while current_node
+       next_node = current_node.next_node
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="current_node.next_node = previous_node"
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+   When we first begin and the current_node is the first node, the previous_node 
+   points to null; there are no nodes before the first node.
+
+   Once we have our three variables set up, we proceed with our algorithm, which 
+   begins a loop.
+
+   Inside the loop, we first change the current_node's link to point to the 
+   previous_node.
+
+   Then, we shift all our variables to the right.
+
+   We begin the loop again, repeating this process of changing the current_node's 
+   link to the point to the previous_node, until we reach the end of the list. Once 
+   we reach the end, the list will have been fully reversed.
+
+   def reverse!
+     previous_node = nil
+     current_node = first_node
+
+     while current_node
+       next_node = current_node.next_node
+       current_node.next_node = previous_node
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="previous_node = current_node"
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+   When we first begin and the current_node is the first node, the previous_node 
+   points to null; there are no nodes before the first node.
+
+   Once we have our three variables set up, we proceed with our algorithm, which 
+   begins a loop.
+
+   Inside the loop, we first change the current_node's link to point to the 
+   previous_node.
+
+   Then, we shift all our variables to the right.
+
+   We begin the loop again, repeating this process of changing the current_node's 
+   link to the point to the previous_node, until we reach the end of the list. Once 
+   we reach the end, the list will have been fully reversed.
+
+   def reverse!
+     previous_node = nil
+     current_node = first_node
+
+     while current_node
+       next_node = current_node.next_node
+       current_node.next_node = previous_node
+
+       previous_node = current_node
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="current_node = next_node end"
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+   When we first begin and the current_node is the first node, the previous_node 
+   points to null; there are no nodes before the first node.
+
+   Once we have our three variables set up, we proceed with our algorithm, which 
+   begins a loop.
+
+   Inside the loop, we first change the current_node's link to point to the 
+   previous_node.
+
+   Then, we shift all our variables to the right.
+
+   We begin the loop again, repeating this process of changing the current_node's 
+   link to the point to the previous_node, until we reach the end of the list. Once 
+   we reach the end, the list will have been fully reversed.
+
+   def reverse!
+     previous_node = nil
+     current_node = first_node
+
+     while current_node
+       next_node = current_node.next_node
+       current_node.next_node = previous_node
+
+       previous_node = current_node
+       current_node = next_node
+      end
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Here's a tricky one. Add a method to the classic LinkedList class that reverses the list. That is, if the original list is A -> B -> C, all of the list's links should change so that C -> B -> A.  " response
+answer="self.first_node = previous_node end"
+additional_feedback="
+
+   One way to reverse a classic linked list is to iterate through the list 
+   while keeping track of three variables.
+
+   The primary variable is the current_node, which is the primary node we're 
+   iterating over. We also keep track of the next_node, which is the node 
+   immediately after the current_node. And we also keep track of the previous_node, 
+   which is the node immediately before the current_node.
+
+   When we first begin and the current_node is the first node, the previous_node 
+   points to null; there are no nodes before the first node.
+
+   Once we have our three variables set up, we proceed with our algorithm, which 
+   begins a loop.
+
+   Inside the loop, we first change the current_node's link to point to the 
+   previous_node.
+
+   Then, we shift all our variables to the right.
+
+   We begin the loop again, repeating this process of changing the current_node's 
+   link to the point to the previous_node, until we reach the end of the list. Once 
+   we reach the end, the list will have been fully reversed.
+
+   def reverse!
+     previous_node = nil
+     current_node = first_node
+
+     while current_node
+       next_node = current_node.next_node
+       current_node.next_node = previous_node
+
+       previous_node = current_node
+       current_node = next_node
+      end
+
+      self.first_node = previous_node
+     end
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+      Here's a brilliant little linked list puzzle for you. Let's say you 
+      have access to a node from somewhere in the middle of a classic linked 
+      list, but not the linked list itself. That is, you have a variable that 
+      points to an instance of Node, but you don't have access to the LinkedList 
+      instance. In this situation, if you follow this node's link, you can find 
+      all the items from this middle node until the end, but you have no way to 
+      find the nodes that precede this node in the list. 
+
+      Write code that will effectively delete this node from the list. The entire 
+      remaining list should remain complete, with only this node removed.
+
+Enter the next line: " response
+answer="There are four nodes, but we only have access to node b."
+additional_feedback="
+
+   There are four nodes, but we only have access to node b.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+      Here's a brilliant little linked list puzzle for you. Let's say you 
+      have access to a node from somewhere in the middle of a classic linked 
+      list, but not the linked list itself. That is, you have a variable that 
+      points to an instance of Node, but you don't have access to the LinkedList 
+      instance. In this situation, if you follow this node's link, you can find 
+      all the items from this middle node until the end, but you have no way to 
+      find the nodes that precede this node in the list. 
+
+      Write code that will effectively delete this node from the list. The entire 
+      remaining list should remain complete, with only this node removed.
+
+Enter the next line: " response
+answer="This means we don't have access to node a, since links only point forward in a classic linked list."
+additional_feedback="
+
+   There are four nodes, but we only have access to node b. This means we 
+   don't have access to node a, since links only point forward in a classic 
+   linked list.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+      Here's a brilliant little linked list puzzle for you. Let's say you 
+      have access to a node from somewhere in the middle of a classic linked 
+      list, but not the linked list itself. That is, you have a variable that 
+      points to an instance of Node, but you don't have access to the LinkedList 
+      instance. In this situation, if you follow this node's link, you can find 
+      all the items from this middle node until the end, but you have no way to 
+      find the nodes that precede this node in the list. 
+
+      Write code that will effectively delete this node from the list. The entire 
+      remaining list should remain complete, with only this node removed.
+
+Enter the next line: " response
+answer="First, we take next node beyond the access node and copy its data into the access node, overwriting the access node's data."
+additional_feedback="
+
+   There are four nodes, but we only have access to node b. This means we 
+   don't have access to node a, since links only point forward in a classic 
+   linked list.
+
+   First, we take next node beyond the access node and copy its data into the access 
+   node, overwriting the access node's data.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+      Here's a brilliant little linked list puzzle for you. Let's say you 
+      have access to a node from somewhere in the middle of a classic linked 
+      list, but not the linked list itself. That is, you have a variable that 
+      points to an instance of Node, but you don't have access to the LinkedList 
+      instance. In this situation, if you follow this node's link, you can find 
+      all the items from this middle node until the end, but you have no way to 
+      find the nodes that precede this node in the list. 
+
+      Write code that will effectively delete this node from the list. The entire 
+      remaining list should remain complete, with only this node removed.
+
+Enter the next line: " response
+answer="In our example, this means copying the string c into our access node."
+additional_feedback="
+
+   There are four nodes, but we only have access to node b. This means we 
+   don't have access to node a, since links only point forward in a classic 
+   linked list.
+
+   First, we take next node beyond the access node and copy its data into the access 
+   node, overwriting the access node's data. In our example, this means copying the 
+   string c into our access node.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+      Here's a brilliant little linked list puzzle for you. Let's say you 
+      have access to a node from somewhere in the middle of a classic linked 
+      list, but not the linked list itself. That is, you have a variable that 
+      points to an instance of Node, but you don't have access to the LinkedList 
+      instance. In this situation, if you follow this node's link, you can find 
+      all the items from this middle node until the end, but you have no way to 
+      find the nodes that precede this node in the list. 
+
+      Write code that will effectively delete this node from the list. The entire 
+      remaining list should remain complete, with only this node removed.
+
+Enter the next line: " response
+answer="We then change the link of the access node and have it point to the node that is two nodes to the right of it."
+additional_feedback="
+
+   There are four nodes, but we only have access to node b. This means we 
+   don't have access to node a, since links only point forward in a classic 
+   linked list.
+
+   First, we take next node beyond the access node and copy its data into the access 
+   node, overwriting the access node's data. In our example, this means copying the 
+   string c into our access node.
+
+   We then change the link of the access node and have it point to the node 
+   that is two nodes to the right of it.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+      Here's a brilliant little linked list puzzle for you. Let's say you 
+      have access to a node from somewhere in the middle of a classic linked 
+      list, but not the linked list itself. That is, you have a variable that 
+      points to an instance of Node, but you don't have access to the LinkedList 
+      instance. In this situation, if you follow this node's link, you can find 
+      all the items from this middle node until the end, but you have no way to 
+      find the nodes that precede this node in the list. 
+
+      Write code that will effectively delete this node from the list. The entire 
+      remaining list should remain complete, with only this node removed.
+
+Enter the next line: " response
+answer="This effectively deletes the original c node."
+additional_feedback="
+
+   There are four nodes, but we only have access to node b. This means we 
+   don't have access to node a, since links only point forward in a classic 
+   linked list.
+
+   First, we take next node beyond the access node and copy its data into the access 
+   node, overwriting the access node's data. In our example, this means copying the 
+   string c into our access node.
+
+   We then change the link of the access node and have it point to the node 
+   that is two nodes to the right of it. This effectively deletes the original 
+   c node.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+      Here's a brilliant little linked list puzzle for you. Let's say you 
+      have access to a node from somewhere in the middle of a classic linked 
+      list, but not the linked list itself. That is, you have a variable that 
+      points to an instance of Node, but you don't have access to the LinkedList 
+      instance. In this situation, if you follow this node's link, you can find 
+      all the items from this middle node until the end, but you have no way to 
+      find the nodes that precede this node in the list. 
+
+      Write code that will effectively delete this node from the list. The entire 
+      remaining list should remain complete, with only this node removed.
+
+Enter the next line: " response
+answer="def delete_middle_node(node)"
+additional_feedback="
+
+   There are four nodes, but we only have access to node b. This means we 
+   don't have access to node a, since links only point forward in a classic 
+   linked list.
+
+   First, we take next node beyond the access node and copy its data into the access 
+   node, overwriting the access node's data. In our example, this means copying the 
+   string c into our access node.
+
+   We then change the link of the access node and have it point to the node 
+   that is two nodes to the right of it. This effectively deletes the original 
+   c node.
+
+   def delete_middle_node(node)
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+      Here's a brilliant little linked list puzzle for you. Let's say you 
+      have access to a node from somewhere in the middle of a classic linked 
+      list, but not the linked list itself. That is, you have a variable that 
+      points to an instance of Node, but you don't have access to the LinkedList 
+      instance. In this situation, if you follow this node's link, you can find 
+      all the items from this middle node until the end, but you have no way to 
+      find the nodes that precede this node in the list. 
+
+      Write code that will effectively delete this node from the list. The entire 
+      remaining list should remain complete, with only this node removed.
+
+Enter the next line: " response
+answer="node.data = node.next_node.data"
+additional_feedback="
+
+   There are four nodes, but we only have access to node b. This means we 
+   don't have access to node a, since links only point forward in a classic 
+   linked list.
+
+   First, we take next node beyond the access node and copy its data into the access 
+   node, overwriting the access node's data. In our example, this means copying the 
+   string c into our access node.
+
+   We then change the link of the access node and have it point to the node 
+   that is two nodes to the right of it. This effectively deletes the original 
+   c node.
+
+   def delete_middle_node(node)
+     node.data = node.next_node.data
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+      Here's a brilliant little linked list puzzle for you. Let's say you 
+      have access to a node from somewhere in the middle of a classic linked 
+      list, but not the linked list itself. That is, you have a variable that 
+      points to an instance of Node, but you don't have access to the LinkedList 
+      instance. In this situation, if you follow this node's link, you can find 
+      all the items from this middle node until the end, but you have no way to 
+      find the nodes that precede this node in the list. 
+
+      Write code that will effectively delete this node from the list. The entire 
+      remaining list should remain complete, with only this node removed.
+
+Enter the next line: " response
+answer="node.next_node = node.next_node.next_node"
+additional_feedback="
+
+   There are four nodes, but we only have access to node b. This means we 
+   don't have access to node a, since links only point forward in a classic 
+   linked list.
+
+   First, we take next node beyond the access node and copy its data into the access 
+   node, overwriting the access node's data. In our example, this means copying the 
+   string c into our access node.
+
+   We then change the link of the access node and have it point to the node 
+   that is two nodes to the right of it. This effectively deletes the original 
+   c node.
+
+   def delete_middle_node(node)
+     node.data = node.next_node.data
+     node.next_node = node.next_node.next_node
+    end
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p " " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+

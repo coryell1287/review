@@ -171,10 +171,10 @@ evaluate_answer "$response" "$answer" "$additional_feedback"
 next_question
 
 read -p "How does the ordering of sort() work? " response
-answer="If a should come before b then return a negative value"
+answer="If a should come before b then return a negative value."
 additional_feedback="
 
-  * If a should come before b then return a negative value
+  * If a should come before b then return a negative value.
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -198,7 +198,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_line
 
 read -p "How does the ordering of sort() work?" response
-answer="If a and b are of the same order then return zero"
+answer="If a and b are of the same order then return zero."
 additional_feedback="
 
   * If a should come before b then return a negative value.
