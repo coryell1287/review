@@ -1296,7 +1296,7 @@ read -p "
     }, {});
 
 Enter your answer: " response
-answer="entries<K extends keyof Breakpoints, T>(o: { [s in K]: T } | ArrayLike<T>): [K, T][];"
+answer="entries<K extends keyof Breakpoints, T>(): [K, T][];"
 additional_feedback="
 
     type Breakpoints = {
@@ -1320,9 +1320,7 @@ additional_feedback="
     type Stringify<T> = { [key in keyof T]?: string; };
 
     interface CustomObject extends ObjectConstructor {
-      entries<K extends keyof Breakpoints, T>(
-        o: { [s in K]: T } | ArrayLike<T>
-      ): [K, T][];
+      entries<K extends keyof Breakpoints, T>(): [K, T][];
     }
 
     const mediaQueries = Object.keys(size).reduce((acc, cur) => {

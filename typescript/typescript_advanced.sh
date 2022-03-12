@@ -141,7 +141,7 @@ echo "
 "
 
 read -p "When was Typescript made public? " response
-answer="TypeScript was made public on October 1st 2012"
+answer="Typescript was made public on October 1, 2012."
 evaluate_answer "$response" "$answer"
 
 next_question
@@ -161,7 +161,7 @@ additional_feedback="
     /usr/lib/node_modules/ts-node/src/index.ts:245
     return new TSError(diagnosticText, diagnosticCodes)
            ^
-    TSError: ⨯ Unable to compile TypeScript:
+    TSError: x Unable to compile TypeScript:
     index.ts(1,1): error TS2448: Block-scoped variable 'y' used before its declaration.
     index.ts(4,1): error TS2448: Block-scoped variable 'z' used before its declaration.
     index.ts(4,1): error TS2588: Cannot assign to 'z' because it is a constant.
@@ -180,17 +180,22 @@ next_question
 read -p "What will be the output of the following code? 
 
     function f1(i2: number) {
+
       // i will be shadowed
       console.log('Parameter value:', i2);
       let i: number = 10; // Shadow #1
+
       console.log('Variable value:', i);
+
       for (let i = 100; i < 101; i++) {
+
           // Shadow #2
           console.log('For-statement value:', i);
-          for (let i = 200; i < 201; i++) {
-              // Shadow #3
-              console.log('For-statement value 2:', i);
-          }
+          
+            for (let i = 200; i < 201; i++) {
+                // Shadow #3
+                console.log('For-statement value 2:', i);
+            }
         }
         console.log('Variable value:', i);
     }
@@ -241,14 +246,17 @@ read -p "
   let multipleTypeArray = [1, true, 3];
 
 Enter you answer: " response
-answer="let multipleTypeArrayExplicit: (number | boolean)[] = [1, true, 3];"
+answer="let multipleTypeArray: (number | boolean)[] = [1, true, 3];"
 evaluate_answer "$response" "$answer"
 
 next_question
 
-read -p "What is the difference between a constant array and a read-only array?" response
-answer="A developer can assign values to an array while a read-only array values cannot be changed."
+read -p "What is the difference between a constant array and a read-only array? " response
+answer="A developer can assign values to an array declared with const, updating the values stored in the reference."
 additional_feedback="
+
+  A developer can assign values to an array declared with const, 
+  updating the values stored in the reference.
 
   const list1: number[] = [1, 2];
   list1.push(3); // Legit because list1 is not re-assigned.
@@ -261,7 +269,32 @@ additional_feedback="
   list1 = [4, 5]; // Legit, content is not mutated, we create a new list
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What is the difference between a constant array and a read-only array? " response
+answer="A developer cannot change read-only array values; a developer can only change the reference if the developer declares the value with let."
+additional_feedback="
+
+  A developer can assign values to an array declared with const, 
+  updating the values stored in the reference.
+
+  const list1: number[] = [1, 2];
+  list1.push(3); // Legit because list1 is not re-assigned.
+  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
+    
+  A developer cannot change read-only array values; a developer 
+  can only change the reference if the developer declares the 
+  value with let.
+  
+  read-only:
+  let list1: readonly number[] = [1, 2];
+  // list1.push(3); // Error, cannot mutate the content 
+  list1 = [4, 5]; // Legit, content is not mutated, we create a new list
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
