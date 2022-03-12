@@ -9174,8 +9174,1497 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
+read -p "What are the rules to a binary search tree? " response
+answer="Each node can have at most one left child and one right child."
+additional_feedback="
+
+   • Each node can have at most one left child and one right child. 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What are the rules to a binary search tree? 
+
+   • Each node can have at most one left child and one right child.
+
+Enter the next line: " response
+answer="A node's left descendants can only contain values that are less than the node itself."
+additional_feedback="
+
+   • Each node can have at most one left child and one right child. 
+   • A node's left descendants can only contain values that are less than the node itself.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What are the rules to a binary search tree? 
+
+   • Each node can have at most one left child and one right child. 
+   • A node's left descendants can only contain values that are less than the node itself.
+
+Enter the next line: " response
+answer="A node's right descendants can only contain values that are greater than the node itself."
+additional_feedback="
+
+   • Each node can have at most one left child and one right child. 
+   • A node's left descendants can only contain values that are less than the node itself.
+   • A node's right descendants can only contain values that are greater than the node itself.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What are the characteristics of a valid binary search tree? " response
+answer="For a binary search tree to be valid, it can have at most one left (lesser) child and one right (greater) child."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What are the rules for deletion in a binary search. " response
+answer="If the node being deleted has no children, simply delete it."
+additional_feedback="
+
+   • If the node being deleted has no children, simply delete it. 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What are the rules for deletion in a binary search. 
+
+   • If the node being deleted has no children, simply delete it. 
+
+Enter the next line: " response
+answer="If the node being deleted has one child, delete the node and plug the child into the spot where the deleted node was."
+additional_feedback="
+
+   • If the node being deleted has no children, simply delete it. 
+   • If the node being deleted has one child, delete the node and plug the child into the spot where the deleted node was.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What are the rules for deletion in a binary search. 
+
+   • If the node being deleted has no children, simply delete it. 
+   • If the node being deleted has one child, delete the node and plug the child into the spot where the deleted node was. 
+
+Enter the next line: " response
+answer="When deleting a node with two children, replace the deleted node with the successor node."
+additional_feedback="
+
+   • If the node being deleted has no children, simply delete it. 
+   • If the node being deleted has one child, delete the node and plug the child into the spot where the deleted node was.
+   • When deleting a node with two children, replace the deleted node with the successor node.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What are the rules for deletion in a binary search. 
+
+   • If the node being deleted has no children, simply delete it. 
+   • If the node being deleted has one child, delete the node and plug the child into the spot where the deleted node was.
+   • When deleting a node with two children, replace the deleted node with the successor node. 
+
+Enter the next line: " response
+answer="If deleted node and all of its descendants are in ascending order, the successor node would be the next number after the one we just deleted."
+additional_feedback="
+
+   • If the node being deleted has no children, simply delete it. 
+   • If the node being deleted has one child, delete the node and plug the child into the spot where the deleted node was.
+   • When deleting a node with two children, replace the deleted node with the successor node. 
+     If deleted node and all of its descendants are in ascending order, the successor node would 
+     be the next number after the one we just deleted.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "How do you find the successor node? " response
+answer="To find the successor node, visit the right child of the deleted value, and then keep on visiting the left child of each subsequent child until there are no more left children. The bottom value is the successor node."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_question
+
+read -p " 
+
+   Imagine you were to take an empty binary search tree and insert the following 
+   sequence of numbers in this order: [1, 5, 9, 2, 4, 10, 6, 3, 8]. 
+   
+   Draw a diagram showing what the binary search tree would look like. Remember, 
+   the numbers are being inserted in the order presented here.
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   If a well-balanced binary search tree contains 1,000 values, 
+   what is the maximum number of steps it would take to search 
+   for a value within it?
+
+Enter the next line: " response
+answer="Search within a balanced binary search tree takes a maximum of about log(N) steps."
+additional_feedback="
+
+   Search within a balanced binary search tree takes a maximum of about log(N) steps. 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   If a well-balanced binary search tree contains 1,000 values, 
+   what is the maximum number of steps it would take to search 
+   for a value within it?
+
+Enter the next line: " response
+answer="If N is 1,000, search should take a maximum of about 10 steps."
+additional_feedback="
+
+   Search within a balanced binary search tree takes a maximum of about log(N) steps.
+   If N is 1,000, search should take a maximum of about 10 steps. 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Write an algorithm that finds the greatest value within a binary search tree."
+answer="The greatest value within a binary search tree will always be the bottom rightmost node."
+additional_feedback="
+
+   The greatest value within a binary search tree will always be the bottom 
+   rightmost node.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Write an algorithm that finds the greatest value within a binary search tree."
+answer="We can find it by recursively following each node's right child until we hit the bottom."
+additional_feedback="
+
+   The greatest value within a binary search tree will always be the bottom 
+   rightmost node. We can find it by recursively following each node's right 
+   child until we hit the bottom.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Write an algorithm that finds the greatest value within a binary search tree."
+answer="def max(node)"
+additional_feedback="
+
+   The greatest value within a binary search tree will always be the bottom 
+   rightmost node. We can find it by recursively following each node's right 
+   child until we hit the bottom.
+
+   def max(node)
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Write an algorithm that finds the greatest value within a binary search tree."
+answer="if node.rightChild"
+additional_feedback="
+
+   The greatest value within a binary search tree will always be the bottom 
+   rightmost node. We can find it by recursively following each node's right 
+   child until we hit the bottom.
+
+   def max(node)
+      if node.rightChild
+      
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Write an algorithm that finds the greatest value within a binary search tree."
+answer="return max(node.rightChild)"
+additional_feedback="
+
+   The greatest value within a binary search tree will always be the bottom 
+   rightmost node. We can find it by recursively following each node's right 
+   child until we hit the bottom.
+
+   def max(node)
+      if node.rightChild
+         return max(node.rightChild
+      
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Write an algorithm that finds the greatest value within a binary search tree."
+answer="else: return node.value"
+additional_feedback="
+
+   The greatest value within a binary search tree will always be the bottom 
+   rightmost node. We can find it by recursively following each node's right 
+   child until we hit the bottom.
+
+   def max(node)
+      if node.rightChild
+        return max(node.rightChild
+      else: 
+        return node.value
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+
+read -p "
+
+   In the text I demonstrated how to use inorder traversal to print a list of 
+   all the book titles. Another way to traverse a tree is known as preorder 
+   traversal. Here is the code for it as applied to our book app:
+
+   def travers_and_print(node):
+      if node is None:
+         return
+      print(node.value)
+      traverse_and_print(node.leftNode)
+      traverse_and_print(node.rightNode)  
+
+    For the example tree in the text (the one with Moby Dick and the other book 
+    titles), write out the order in which the book titles are printed with preorder 
+    traversal. As a reminder, here is the example tree as shown in the diagram.
+
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   There is yet another form of traversal called postorder traversal. 
+   Here is the code as applied to our book app:
+
+   def travers_and_print(node):
+      if node is None:
+         return
+      print(node.value)
+      traverse_and_print(node.leftNode)
+      traverse_and_print(node.rightNode) 
+
+   For the example tree in the text (which also appears in the previous 
+   exercise), write out the order in which the book titles are printed 
+   with postorder traversal.
+
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What are the characteristics of a priority queue? " response
+answer="A priority queue is a list whose deletions and access are just like a classic queue, but whose insertions are like an ordered array."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What are the characteristics of a priority queue? " response
+answer="That is, we only delete and access data from the front of the priority queue,"
+additional_feedback="
+
+   A priority queue is a list whose deletions and access are just like a 
+   classic queue, but whose insertions are like an ordered array.
+   That is, we only delete and access data from the front of the priority queue,
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What are the characteristics of a priority queue? " response
+answer="but when we insert data, we always make sure the data remains sorted in a specific order."
+additional_feedback="
+
+   A priority queue is a list whose deletions and access are just like a 
+   classic queue, but whose insertions are like an ordered array. That is, 
+   we only delete and access data from the front of the priority queue, but 
+   when we insert data, we always make sure the data remains sorted in a 
+   specific order.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What are the characteristics of a heap? " response
+answer="The value of each node must be greater than each of its descendant nodes. This rule is known as the heap condition."
+additional_feedback="
+
+  • The value of each node must be greater than each of its descendant nodes. 
+    This rule is known as the heap condition.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What are the characteristics of a heap? " response
+answer="The tree must be complete."
+additional_feedback="
+
+  • The value of each node must be greater than each of its descendant nodes. 
+    This rule is known as the heap condition.
+
+  • The tree must be complete. 
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is a min-heap? " response
+answer="Min heap is when each node contains a smaller value than any of its descendants."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is a complete tree? " response
+answer="A complete tree is a tree that is completely filled with nodes; no nodes are missing."
+additional_feedback="
+
+   A complete tree is a tree that is completely filled with nodes; 
+   no nodes are missing.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is a complete tree? " response
+answer="If you read each level of the tree from left to right, all of the nodes are there."
+additional_feedback="
+
+   A complete tree is a tree that is completely filled with nodes; 
+   no nodes are missing. If you read each level of the tree from 
+   left to right, all of the nodes are there.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is a complete tree? " response
+answer="If you read each level of the tree from left to right, all of the nodes are there."
+additional_feedback="
+
+   A complete tree is a tree that is completely filled with nodes; 
+   no nodes are missing. If you read each level of the tree from 
+   left to right, all of the nodes are there. However, the bottom 
+   row can have empty positions, as long as there aren't any nodes to the right of these empty positions.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What does the root node represent? " response
+answer="The root node will represent the item with the highest priority."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Imagine you've built a brand-new heap by inserting the following numbers 
+   into the heap in this particular order: 55, 22, 34, 10, 2, 99, 68. If you 
+   then pop them from the heap one at a time and insert the numbers into a 
+   new array, in what order would the numbers now appear?
+
+Enter the next line: " response
+answer="The numbers would be in perfect descending order. (This is for a max-heap. For a min-heap, they would be in ascending order.)"
+additional_feedback="
+
+   The numbers would be in perfect descending order. (This is for a max-heap. For a min-heap, they would be in ascending order.)
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Imagine you've built a brand-new heap by inserting the following numbers 
+   into the heap in this particular order: 55, 22, 34, 10, 2, 99, 68. If you 
+   then pop them from the heap one at a time and insert the numbers into a 
+   new array, in what order would the numbers now appear?
+
+
+   The numbers would be in perfect descending order. (This is for a max-heap. 
+   For a min-heap, they would be in ascending order.)
+
+Enter the next line: " response
+answer="Like Quicksort, Heapsort is O(N log N). This is because we need to insert N values into the heap, and each insertion takes log N steps."
+additional_feedback="
+
+   The numbers would be in perfect descending order. (This is for a max-heap. For a min-heap, they would be in ascending order.)
+
+   Like Quicksort, Heapsort is O(N log N). This is because we need to insert N values into the heap, and each insertion takes log N steps.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is the Big O Notation for a trie data structure? " response
+answer="O(K), where K is tied to the input, therefore, the only factor that affects the algorithm's speed is the size of our input, rather than all the available data."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is the Big O Notation for measuring a graph " response
+answer="O(V+E)"
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What do the variables V + E stand for? " response
+answer="V stands for vertex, and represents the number of vertices in the graph."
+additional_feedback="
+
+   • V stands for vertex, and represents the number of vertices in the graph.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What do the variables V + E stand for? 
+
+   • V stands for vertex, and represents the number of vertices in the graph.
+
+Enter the next line: " response
+answer="E stands for edge, meaning the number of edges in the graph."
+additional_feedback="
+
+   • V stands for vertex, and represents the number of vertices in the graph.
+   • E stands for edge, meaning the number of edges in the graph.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What does space complexity measure? " response
+answer="How many units of memory will the algorithm consume."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What is the space efficiency for a function that takes an array and generates a new array. " response
+answer="Because the function generated an additional N data elements in the form of a new array, then the function has a space efficiency of O(N)."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write a function that checks for duplicates and has a space complexity of O(log N) 
+   and a time complexity of 0(N log N)?
+
+Enter the next line: " response
+answer="function hasDuplicateValue(array) { }"
+additional_feedback="
+
+   function hasDuplicateValue(array) { 
+
+   }
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write a function that checks for duplicates and has a space complexity of O(log N) 
+   and a time complexity of 0(N log N)?
+
+   function hasDuplicateValue(array) { 
+      
+   }
+
+Enter the next line: " response
+answer="array.sort((a, b) => (a < b ? -1 : 1));"
+additional_feedback="
+
+   function hasDuplicateValue(array) { 
+     array.sort((a, b) => (a < b ? -1 : 1));
+      
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write a function that checks for duplicates and has a space complexity of O(log N) 
+   and a time complexity of 0(N log N)?
+
+   function hasDuplicateValue(array) { 
+     array.sort((a, b) => (a < b ? -1 : 1));
+      
+   }
+
+Enter the next line: " response
+answer="for (let i = 0; i < array.length - 1; i++) { }"
+additional_feedback="
+
+   function hasDuplicateValue(array) { 
+     array.sort((a, b) => (a < b ? -1 : 1));
+
+     for (let i = 0; i < array.length - 1; i++) { 
+        
+     }
+      
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write a function that checks for duplicates and has a space complexity of O(log N) 
+   and a time complexity of 0(N log N)?
+
+   function hasDuplicateValue(array) { 
+     array.sort((a, b) => (a < b ? -1 : 1));
+
+     for (let i = 0; i < array.length - 1; i++) { 
+        
+     }
+      
+   }
+
+Enter the next line: " response
+answer="if (array[i] === array[i] + 1) { return true; }"
+additional_feedback="
+
+   function hasDuplicateValue(array) { 
+     array.sort((a, b) => (a < b ? -1 : 1));
+
+     for (let i = 0; i < array.length - 1; i++) { 
+       if (array[i] === array[i] + 1) { 
+         return true;
+       }
+     }
+     
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Write a function that checks for duplicates and has a space complexity of O(log N) 
+   and a time complexity of 0(N log N)?
+
+   function hasDuplicateValue(array) { 
+     array.sort((a, b) => (a < b ? -1 : 1));
+
+     for (let i = 0; i < array.length - 1; i++) { 
+       if (array[i] === array[i] + 1) { 
+         return true;
+       }
+     }
+     
+   }
+
+Enter the next line: " response
+answer="return false;"
+additional_feedback="
+
+   function hasDuplicateValue(array) { 
+     array.sort((a, b) => (a < b ? -1 : 1));
+
+     for (let i = 0; i < array.length - 1; i++) { 
+       if (array[i] === array[i] + 1) { 
+         return true;
+       }
+     }
+     return false;
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "As far as memory goes, what is important to note about recursion calls? " response
+answer="A recursive function takes up a unit of space for each recursive call it makes."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Describe its space complexity in terms of Big O:
+
+   function wordBuilder(array) {
+      let collection = [];
+
+      for (let i = 0; i < array.length; i++) {
+         for (let j = 0; j < array.length; j++) {
+            if (i !== j) {
+            collection.push(array[i] + array[j]);
+            }
+         }
+      }
+      return collection;
+    }
+
+Enter the next line: " response
+answer="The space complexity is O(N2) because the function creates the array called collection, which will hold N2 strings."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_question
+
+read -p "
+
+   Describe its space complexity in terms of Big O:
+
+   function reverse(array) {
+     let newArray = [];
+
+     for (let i = array.length - 1; i >= 0; i--) {
+       newArray.push(array[i]);
+     }
+     return newArray;
+   }
+
+Enter the next line: " response
+answer="This implementation takes up O(N) space as we create a newArray containing N items."
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_question
+
+read -p "
+
+   Following are three different implementations of a function that accepts 
+   an array of numbers and returns an array containing those numbers multiplied 
+   by 2. For example, if the input is [5, 4, 3, 2, 1], the output will be 
+   [10, 8, 6, 4, 2].
+
+
+Enter the next line: " response
+answer="The following implementation uses this algorithm: swap the first item with the last item in place."
+additional_feedback="
+
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_question
+
+read -p "
+
+   Following are three different implementations of a function that accepts 
+   an array of numbers and returns an array containing those numbers multiplied 
+   by 2. For example, if the input is [5, 4, 3, 2, 1], the output will be 
+   [10, 8, 6, 4, 2].
+
+   ******************
+   *     Answer     *
+   ******************
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place.
+
+Enter the next line: " response
+answer="Then, swap the second item with the second-to-last item in place."
+additional_feedback="
+
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Following are three different implementations of a function that accepts 
+   an array of numbers and returns an array containing those numbers multiplied 
+   by 2. For example, if the input is [5, 4, 3, 2, 1], the output will be 
+   [10, 8, 6, 4, 2].
+
+   ******************
+   *     Answer     *
+   ******************
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place.
+
+Enter the next line: " response
+answer="Then proceed to swap the third item with the third-to-last item in place, and so on."
+additional_feedback="
+
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+next_question
+
+read -p "
+
+   Following are three different implementations of a function that accepts 
+   an array of numbers and returns an array containing those numbers multiplied 
+   by 2. For example, if the input is [5, 4, 3, 2, 1], the output will be 
+   [10, 8, 6, 4, 2].
+
+   ******************
+   *     Answer     *
+   ******************
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on.
+
+Enter the next line: " response
+answer="Because the program swaps in place and doesn't create new data, this has a space complexity of O(1)."
+additional_feedback="
+
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on. Because the program swaps in place and doesn't 
+   create new data, this has a space complexity of O(1).
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Following are three different implementations of a function that accepts 
+   an array of numbers and returns an array containing those numbers multiplied 
+   by 2. For example, if the input is [5, 4, 3, 2, 1], the output will be 
+   [10, 8, 6, 4, 2].
+
+   ******************
+   *     Answer     *
+   ******************
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on.
+
+Enter the next line: " response
+answer="function reverse(array) { }"
+additional_feedback="
+
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on. Because the program swaps in place and doesn't 
+   create new data, this has a space complexity of O(1).
+
+
+   function reverse(array) {
+   }   
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Following are three different implementations of a function that accepts 
+   an array of numbers and returns an array containing those numbers multiplied 
+   by 2. For example, if the input is [5, 4, 3, 2, 1], the output will be 
+   [10, 8, 6, 4, 2].
+
+   ******************
+   *     Answer     *
+   ******************
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on.
+
+   function reverse(array) {
+   }
+
+Enter the next line: " response
+answer="for (let i = 0; i < array.length / 2; i++) { }"
+additional_feedback="
+
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on. Because the program swaps in place and doesn't 
+   create new data, this has a space complexity of O(1).
+
+
+   function reverse(array) {
+     for (let i = 0; i < array.length / 2; i++) {
+     }
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Following are three different implementations of a function that accepts 
+   an array of numbers and returns an array containing those numbers multiplied 
+   by 2. For example, if the input is [5, 4, 3, 2, 1], the output will be 
+   [10, 8, 6, 4, 2].
+
+   ******************
+   *     Answer     *
+   ******************
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on.
+
+   function reverse(array) {
+   }
+
+Enter the next line: " response
+answer="[array[i], array[array.length - 1 - i]]"
+additional_feedback="
+
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on. Because the program swaps in place and doesn't 
+   create new data, this has a space complexity of O(1).
+
+
+   function reverse(array) {
+     for (let i = 0; i < array.length / 2; i++) {
+      [array[i], array[array.length - 1 - i]]  
+     }
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Following are three different implementations of a function that accepts 
+   an array of numbers and returns an array containing those numbers multiplied 
+   by 2. For example, if the input is [5, 4, 3, 2, 1], the output will be 
+   [10, 8, 6, 4, 2].
+
+   ******************
+   *     Answer     *
+   ******************
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on.
+
+   function reverse(array) {
+   }
+
+Enter the next line: " response
+answer="[array[array.length - 1]]"
+additional_feedback="
+
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on. Because the program swaps in place and doesn't 
+   create new data, this has a space complexity of O(1).
+
+
+   function reverse(array) {
+     for (let i = 0; i < array.length / 2; i++) {
+      [array[i], array[array.length - 1 - i]]  
+     }
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Following are three different implementations of a function that accepts 
+   an array of numbers and returns an array containing those numbers multiplied 
+   by 2. For example, if the input is [5, 4, 3, 2, 1], the output will be 
+   [10, 8, 6, 4, 2].
+
+   ******************
+   *     Answer     *
+   ******************
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on.
+
+   function reverse(array) {
+   }
+
+Enter the next line: " response
+answer="[array[array.length - 1]]"
+additional_feedback="
+
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on. Because the program swaps in place and doesn't 
+   create new data, this has a space complexity of O(1).
+
+
+   function reverse(array) {
+     for (let i = 0; i < array.length / 2; i++) {
+       [array[i], array[array.length - 1 - i]] = [
+         array[array.length - 1],
+       ];
+     }
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Following are three different implementations of a function that accepts 
+   an array of numbers and returns an array containing those numbers multiplied 
+   by 2. For example, if the input is [5, 4, 3, 2, 1], the output will be 
+   [10, 8, 6, 4, 2].
+
+   ******************
+   *     Answer     *
+   ******************
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on.
+
+   function reverse(array) {
+   }
+
+Enter the next line: " response
+answer="array[i]"
+additional_feedback="
+
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on. Because the program swaps in place and doesn't 
+   create new data, this has a space complexity of O(1).
+
+
+   function reverse(array) {
+     for (let i = 0; i < array.length / 2; i++) {
+       [array[i], array[array.length - 1 - i]] = [
+         array[array.length - 1],
+         array[i],
+       ];
+     }
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   Following are three different implementations of a function that accepts 
+   an array of numbers and returns an array containing those numbers multiplied 
+   by 2. For example, if the input is [5, 4, 3, 2, 1], the output will be 
+   [10, 8, 6, 4, 2].
+
+   ******************
+   *     Answer     *
+   ******************
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on.
+
+   function reverse(array) {
+   }
+
+Enter the next line: " response
+answer="return array;"
+additional_feedback="
+
+   The following implementation uses this algorithm: swap the first item with 
+   the last item in place. Then, swap the second item with the second-to-last 
+   item in place. Then proceed to swap the third item with the third-to-last 
+   item in place, and so on. Because the program swaps in place and doesn't 
+   create new data, this has a space complexity of O(1).
+
+
+   function reverse(array) {
+     for (let i = 0; i < array.length / 2; i++) {
+       [array[i], array[array.length - 1 - i]] = [
+         array[array.length - 1],
+         array[i],
+       ];
+     }
+     return array;
+   }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+function doubleArray1(array) {
+  let newArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    newArray.push(array[i] * 2);
+  }
+
+  return newArray;
+}
+
+function doubleArray2(array) {
+  for (let i = 0; i < array.length; i++) {
+    array[i] *= 2;
+  }
+
+  return array;
+}
+
+function doubleArray3(array, index = 0) {
+  if (index >= array.length) {
+    return;
+  }
+
+  array[index] *= 2;
+  doubleArray3(array, index + 1);
+
+  return array;
+}
+
+    Fill in the table that follows to describe the efficiency of these 
+    three versions in terms of both time and space:
+
+
+    Version       Time Complexity      Space Complexity
+    Version #1          ?                    ?
+    Version #2          ?                    ?
+    Verion  #3          ?                    ?
+
+
+Enter the next line: " response
+answer="Version #1 creates a brand-new array to store the doubled numbers. This array will have the same length as the original array, taking up O(N) space."
+additional_feedback="
+
+    Version       Time Complexity      Space Complexity
+    Version #1          O(N)                 O(N)
+    Version #2          ?                    ?
+    Verion  #3          ?                    ?
+
+   Version #1 creates a brand-new array to store the doubled numbers. This 
+   array will have the same length as the original array, taking up O(N) 
+   space.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+function doubleArray1(array) {
+  let newArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    newArray.push(array[i] * 2);
+  }
+
+  return newArray;
+}
+
+function doubleArray2(array) {
+  for (let i = 0; i < array.length; i++) {
+    array[i] *= 2;
+  }
+
+  return array;
+}
+
+function doubleArray3(array, index = 0) {
+  if (index >= array.length) {
+    return;
+  }
+
+  array[index] *= 2;
+  doubleArray3(array, index + 1);
+
+  return array;
+}
+
+    Fill in the table that follows to describe the efficiency of these 
+    three versions in terms of both time and space:
+
+
+    Version       Time Complexity      Space Complexity
+    Version #1          ?                    ?
+    Version #2          ?                    ?
+    Verion  #3          ?                    ?
+
+
+Enter the next line: " response
+answer="Version #2 modifies the original array in place, taking up zero extra space. Therefore, Express the algorithm as O(1)."
+additional_feedback="
+
+    Version       Time Complexity      Space Complexity
+    Version #1          O(N)                 O(N)
+    Version #2          O(N)                 O(1)
+    Verion  #3          ?                    ?
+
+   Version #1 creates a brand-new array to store the doubled numbers. This 
+   array will have the same length as the original array, taking up O(N) 
+   space.
+
+   Version #2 modifies the original array in place, taking up zero extra 
+   space. Therefore, Express the algorithm as O(1).
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+function doubleArray1(array) {
+  let newArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    newArray.push(array[i] * 2);
+  }
+
+  return newArray;
+}
+
+function doubleArray2(array) {
+  for (let i = 0; i < array.length; i++) {
+    array[i] *= 2;
+  }
+
+  return array;
+}
+
+function doubleArray3(array, index = 0) {
+  if (index >= array.length) {
+    return;
+  }
+
+  array[index] *= 2;
+  doubleArray3(array, index + 1);
+
+  return array;
+}
+
+    Fill in the table that follows to describe the efficiency of these 
+    three versions in terms of both time and space:
+
+
+    Version       Time Complexity      Space Complexity
+    Version #1          O(N)                 O(N)
+    Version #2          O(N)                 O(1)
+    Verion  #3          ?                    ?
+
+
+Enter the next line: " response
+answer="Version #3 also modifies the original array in place. However, since the function is recursive, the call stack at its peak will have N calls on it, taking up O(N) space."
+additional_feedback="
+
+    Version       Time Complexity      Space Complexity
+    Version #1          O(N)                 O(N)
+    Version #2          O(N)                 O(1)
+    Verion  #3          O(N)                 O(N)
+
+   Version #1 creates a brand-new array to store the doubled numbers. This 
+   array will have the same length as the original array, taking up O(N) 
+   space.
+
+   Version #2 modifies the original array in place, taking up zero extra 
+   space. Therefore, Express the algorithm as O(1).
+
+   Version #3 also modifies the original array in place. However, since the 
+   function is recursive, the call stack at its peak will have N calls on it, 
+   taking up O(N) space.
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   You're working on software that analyzes sports players. Following 
+   are two arrays of players of different sports:
+
+   basketball_players = [ 
+      { first_name: \"Jill\", last_name: \"Huang\", team: \"Gators\" },
+      { first_name: \"Janko\", last_name: \"Barton\", team: \"Sharks\" },
+      { first_name: \"Wanda\", last_name:  \"Vakulskas\", team: \"Sharks\" },
+      { first_name: \"Jill\", last_name: \"Moloney\", team: \"Gators\"},
+      { first_name: \"Luuk\", last_name: \"Watkins\", team: \"Gators\" } 
+   ] 
+
+ football_players = [ 
+	{ first_name: \"Hanzla\", last_name: \"Radosti\", team: \"32ers\"},
+   { first_name: \"Tina\", last_name: \"Watkins\", team: \"Barleycorns\"},
+	{ first_name: \"Alex\", last_name: \"Patel\", team: \"32ers\"},
+	{ first_name: \"Jill\", last_name: \"Huang\", team: \"Barleycorns\"},							
+	{ first_name: \"Wanda\", last_name: \"Vakulskas\", team: \"Barleycorns\"} 
+] 
+
+   If you look carefully, you'll see that some players participate in more 
+   than one kind of sport. Jill Huang and Wanda Vakulskas play both basketball 
+   and football.
+
+   You are to write a function that accepts two arrays of players and returns 
+   an array of the players who play in both sports. In this case, that would be:
+
+   [\"Jill Huang\", \"Wanda Vakulskas\"]
+
+   While there are players who share first names and players who share last names, 
+   we can assume there's only one person who has a particular full name (meaning 
+   first and last name). 
+
+   We can use a nested-loops approach, comparing each player from one array against 
+   each player from the other array, but this would have a runtime of O(N * M). Your 
+   job is to optimize the function to run in just O(N + M).
+
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   You're writing a function that accepts an array of distinct integers from 
+   0, 1, 2, 3…up to N. However, the array will be missing one integer, and 
+   your function is to return the missing one.
+
+   For example, this array has all the integers from 0 to 6, but is missing the 4:
+
+   [2, 3, 0, 6, 1, 5]
+
+   Therefore, the function should return 4. 
+
+   The next example has all the integers from 0 to 9, but is missing the 1: 
+
+   [8, 2, 3, 9, 4, 7, 5, 0, 6] 
+
+   In this case, the function should return the 1. 
+
+   Using a nested-loops approach would take up to O(N2). Your job is to optimize the 
+   code to have a runtime of O(N).
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   You're working on some more stock-prediction software. The function you're 
+   writing accepts an array of predicted prices for a particular stock over time. 
+
+   For example, this array of seven prices:
+
+   [10, 7, 5, 8, 11, 2, 6] 
+
+   predicts that a given stock will have these prices over the next seven days. 
+   (On Day 1, the stock will close at $10; on Day 2, the stock will close at $7; 
+   and so on.) 
+
+   Your function should calculate the greatest profit that stock could make from 
+   a single \"buy\" transaction followed by a single \"sell\" transaction. 
+
+   In the previous example, the stock could make the most money if we bought the 
+   stock worth $5 and sold it when it was worth $11. This yields a profit of $6 
+   per share. 
+
+   Note that we could make even more money if we buy and sell multiple times, but 
+   for now, this function focuses on the most profit that stock could make from 
+   just one purchase followed by one sale. 
+
+   Now, we could use nested loops to find the profit of every possible buy-and-sell 
+   combination. However, this would be O(N2) and too slow for our hotshot trading 
+   platform. Your job is to optimize the code to clock in at just O(N).
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   You're writing a function that accepts an array of numbers and computes the 
+   highest product of any two numbers in the array. At first glance, this is easy, 
+   as we can find the two greatest numbers and multiply them. However, our array 
+   can contain negative numbers and look like this:
+
+   [5, -10, -6, 9, 4]
+
+   In this case, the product of the two lowest numbers, -10 and -6, yields the 
+   highest product of 60. 
+
+   We could use nested loops to multiply every possible pair of numbers, but 
+   this would take O(N2) time. Your job is to optimize the function to be a 
+   speedy O(N).
+
+Enter the line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
 read -p " " response
 answer=""
 additional_feedback=""
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+   You're creating software that analyzes the data of body temperature readings 
+   taken from hundreds of human patients. These readings are taken from healthy 
+   people and range from 97.0 degrees Fahrenheit to 99.0 degrees Fahrenheit. An 
+   important point: the decimal point never goes beyond the tenth place within 
+   this application. 
+
+   Here's a sample array of temperature readings:  
+
+   [98.6, 98.0, 97.1, 99.0, 98.9, 97.8, 98.5, 98.2, 98.0, 97.1] 
+
+   You must write a function that sorts these readings from lowest to highest. 
+
+   Using a classic sorting algorithm such as Quicksort would take O(N log N). 
+   However, it's possible to write a faster sorting algorithm in this case.
+
+   Yes, that's right. Even though you've learned that the fastest sorts are O(N log N), 
+   this case is different. Why? There's a limited number of possibilities of what the 
+   readings will be in this case. We can sort these values in O(N) in such a case. It 
+   may be N multiplied by a constant, but that's still considered O(N).
+
+Enter the next line: " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p " " response
+answer=""
+additional_feedback=""
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+
+
+ 
+
+
+
+
+
+
+
+  
+
+ 
+
+
+
+
+ 
 
