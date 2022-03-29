@@ -20,8 +20,8 @@ calculate_score() {
     echo "     
 ########################################
 
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
 ########################################
              "
@@ -76,8 +76,8 @@ evaluate_answer() {
     echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
        Your answer:     $1
@@ -101,8 +101,8 @@ evaluate_answer_written_with_code() {
     echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
        Your answer:     $1
@@ -1229,7 +1229,7 @@ additional_feedback="
       age: number;
     }
 
-    type PersonKeys = keyof Person; // ‘name’ | ‘age’
+    type PersonKeys = keyof Person; // 'name' | 'age'
 
     function get<T, K extends keyof T>(object: T, key: K): T[K] {
         return object[key];
@@ -2076,12 +2076,12 @@ next_question
 read -p "
     Create a type defintion for the following code.
 
-    const sayHello = (name: string, age: number) => `Hello ${name}, your age is ${age}`;
+    const sayHello = (name: string, age: number) => $(Hello "${name}", your age is ${age});
 Enter your answer: " response
 answer="type SayHelloParams = Parameters<typeof sayHello>;"
 additional_feedback="
 
-    const sayHello = (name: string, age: number) => `Hello ${name}, your age is ${age}`;
+    const sayHello = (name: string, age: number) => $(Hello "${name}", your age is ${age});
     type SayHelloParams = Parameters<typeof sayHello>; // [name: string, age: number]
 "
 evaluate_answer "$response" "$answer"
@@ -2165,8 +2165,8 @@ additional_feedback="
     }>;
 
     Unfortunately, this type does not provide immutability for nested arrays, 
-    Maps, Sets, or some other types. It’s actually quite complex to properly 
-    implement such types, so it’s best to use a library instead https://github.com/krzkaczor/ts-essentials
+    Maps, Sets, or some other types. It's actually quite complex to properly 
+    implement such types, so it's best to use a library instead https://github.com/krzkaczor/ts-essentials
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -2480,9 +2480,9 @@ read -p "
           case 'empty':
               return 'Empty';
           case 'leaf':
-              return `Leaf(${tree.value})`;
+              return \$(Leaf(\${tree.value}));
           case 'node':
-              return `Node(${toString(tree.left)}, ${toString(tree.right)}})`;
+              return \$(Node(\${toString(tree.left)}, \${toString(tree.right)}}));
       }
   }
 
@@ -2500,9 +2500,9 @@ additional_feedback="
           case 'empty':
               return 'Empty';
           case 'leaf':
-              return `Leaf(${tree.value})`;
+              return \$(Leaf(\${tree.value}));
           case 'node':
-              return `Node(${toString(tree.left)}, ${toString(tree.right)}})`;
+              return \$(Node(\${toString(tree.left)}, \${toString(tree.right)}}));
       }
   }
 
@@ -2530,9 +2530,9 @@ read -p "
           case 'empty':
               return 'Empty';
           case 'leaf':
-              return `Leaf(${tree.value})`;
+              return \$(Leaf(\${tree.value}));
           case 'node':
-              return `Node(${toString(tree.left)}, ${toString(tree.right)}})`;
+              return \$(Node(\${toString(tree.left)}, \${toString(tree.right)}}));
       }
   }
 
@@ -2561,9 +2561,9 @@ additional_feedback="
             case 'empty':
                 return 'Empty';
             case 'leaf':
-                return `Leaf(${tree.value})`;
+                return \$(Leaf(\${tree.value}));
             case 'node':
-                return `Node(${toString(tree.left)}, ${toString(tree.right)}})`;
+                return \$(Node(\${toString(tree.left)}, \${toString(tree.right)}}));
         }
     }
 
@@ -2595,9 +2595,9 @@ read -p "
           case 'empty':
               return 'Empty';
           case 'leaf':
-              return `Leaf(${tree.value})`;
+              return \$(Leaf(\${tree.value}));
           case 'node':
-              return `Node(${toString(tree.left)}, ${toString(tree.right)}})`;
+              return \$(Node(\${toString(tree.left)}, \${toString(tree.right)}}));
       }
   }
 
@@ -2625,9 +2625,9 @@ additional_feedback="
             case 'empty':
                 return 'Empty';
             case 'leaf':
-                return `Leaf(${tree.value})`;
+                return \$(Leaf(\${tree.value}));
             case 'node':
-                return `Node(${toString(tree.left)}, ${toString(tree.right)}})`;
+                return \$(Node(\${toString(tree.left)}, \${toString(tree.right)}}));
         }
     }
 
@@ -2663,9 +2663,9 @@ read -p "
           case 'empty':
               return 'Empty';
           case 'leaf':
-              return `Leaf(${tree.value})`;
+              return \$(Leaf(\${tree.value}));
           case 'node':
-              return `Node(${toString(tree.left)}, ${toString(tree.right)}})`;
+              return \$(Node(\${toString(tree.left)}, \${toString(tree.right)}}));
       }
   }
 
@@ -2698,9 +2698,9 @@ additional_feedback="
             case 'empty':
                 return 'Empty';
             case 'leaf':
-                return `Leaf(${tree.value})`;
+                return \$(Leaf(\${tree.value}));
             case 'node':
-                return `Node(${toString(tree.left)}, ${toString(tree.right)}})`;
+                return \$(Node(\${toString(tree.left)}, \${toString(tree.right)}}));
         }
     }
 
@@ -2739,9 +2739,9 @@ read -p "
             case 'empty':
                 return 'Empty';
             case 'leaf':
-                return `Leaf(${tree.value})`;
+                return \$(Leaf(\${tree.value}));
             case 'node':
-                return `Node(${toString(tree.left)}, ${toString(tree.right)}})`;
+                return \$(Node(\${toString(tree.left)}, \${toString(tree.right)}}));
         }
     }
 
@@ -2763,7 +2763,7 @@ read -p "
     }
 
 Enter the next line: " response
-answer="toString() { return `Leaf(${this.value})`; }"
+answer="toString() { return $(Leaf(${this.value})); }"
 additional_feedback="
   type Tree = 
           | { type: 'empty' }
@@ -2775,9 +2775,9 @@ additional_feedback="
             case 'empty':
                 return 'Empty';
             case 'leaf':
-                return `Leaf(${tree.value})`;
+                return \$(Leaf(\${tree.value}));
             case 'node':
-                return `Node(${toString(tree.left)}, ${toString(tree.right)}})`;
+                return \$(Node(\${toString(tree.left)}, \${toString(tree.right)}}));
         }
     }
 
@@ -2798,7 +2798,7 @@ additional_feedback="
       }
 
       toString() { 
-        return `Leaf(${this.value})`; 
+        return $(Leaf(${this.value})); 
       }
     }
 "
@@ -2819,9 +2819,9 @@ read -p "
             case 'empty':
                 return 'Empty';
             case 'leaf':
-                return `Leaf(${tree.value})`;
+                return \$(Leaf(\${tree.value}));
             case 'node':
-                return `Node(${toString(tree.left)}, ${toString(tree.right)}})`;
+                return \$(Node(\${toString(tree.left)}, \${toString(tree.right)}}));
         }
     }
 
@@ -2842,7 +2842,7 @@ read -p "
       }
 
       toString() { 
-        return `Leaf(${this.value})`; 
+        return $(Leaf(${this.value})); 
       }
     }
 
@@ -2852,7 +2852,7 @@ read -p "
       }
 
       toString() { 
-        return `Leaf(${this.value})`; 
+        return $(Leaf(${this.value})); 
       }
     }
 
@@ -2876,9 +2876,9 @@ read -p "
             case 'empty':
                 return 'Empty';
             case 'leaf':
-                return `Leaf(${tree.value})`;
+                return \$(Leaf(\${tree.value}));
             case 'node':
-                return `Node(${toString(tree.left)}, ${toString(tree.right)}})`;
+                return \$(Node(\${toString(tree.left)}, \${toString(tree.right)}}));
         }
     }
 
@@ -2899,7 +2899,7 @@ read -p "
       }
 
       toString() { 
-        return `Leaf(${this.value})`; 
+        return $(Leaf(${this.value})); 
       }
     }
 
@@ -2909,7 +2909,7 @@ read -p "
       }
 
       toString() { 
-        return `Leaf(${this.value})`; 
+        return $(Leaf(${this.value})); 
       }
     }
 
@@ -2930,9 +2930,9 @@ additional_feedback="
             case 'empty':
                 return 'Empty';
             case 'leaf':
-                return `Leaf(${tree.value})`;
+                return \$(Leaf(\${tree.value}));
             case 'node':
-                return `Node(${toString(tree.left)}, ${toString(tree.right)}})`;
+                return \$(Node(\${toString(tree.left)}, \${toString(tree.right)}}));
         }
     }
 
@@ -2953,7 +2953,7 @@ additional_feedback="
       }
 
       toString() { 
-        return `Leaf(${this.value})`; 
+        return $(Leaf(${this.value})); 
       }
     }
 
@@ -2981,9 +2981,9 @@ read -p "
             case 'empty':
                 return 'Empty';
             case 'leaf':
-                return `Leaf(${tree.value})`;
+                return \$(Leaf(\${tree.value}));
             case 'node':
-                return `Node(${toString(tree.left)}, ${toString(tree.right)}})`;
+                return \$(Node(\${toString(tree.left)}, \${toString(tree.right)}}));
         }
     }
 
@@ -3004,7 +3004,7 @@ read -p "
       }
 
       toString() { 
-        return `Leaf(${this.value})`; 
+        return $(Leaf(${this.value})); 
       }
     }
 
@@ -3015,7 +3015,7 @@ read -p "
     }
 
 Enter the next line: " response
-answer="toString() { return \`Node(${this.left.toString()}, ${this.right.toString()}})\`; }"
+answer="toString() { return \`Node(\${this.left.toString()}, \${this.right.toString()}})\`; }"
 additional_feedback="
   type Tree = 
           | { type: 'empty' }
@@ -3027,9 +3027,9 @@ additional_feedback="
             case 'empty':
                 return 'Empty';
             case 'leaf':
-                return `Leaf(${tree.value})`;
+                return \$(Leaf(\${tree.value}));
             case 'node':
-                return `Node(${toString(tree.left)}, ${toString(tree.right)}})`;
+                return \$(Node(\${toString(tree.left)}, \${toString(tree.right)}}));
         }
     }
 
@@ -3050,7 +3050,7 @@ additional_feedback="
       }
 
       toString() { 
-        return `Leaf(${this.value})`; 
+        return $(Leaf(${this.value})); 
       }
     }
 
@@ -3060,7 +3060,7 @@ additional_feedback="
       }
 
       toString() { 
-        return \`Node(${this.left.toString()}, ${this.right.toString()}})\`; 
+        return \`Node(\${this.left.toString()}, \${this.right.toString()}})\`; 
       }
     }
 
@@ -3070,7 +3070,7 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 next_question
 
 read -p "What are the advantages of functional approach versus OOP approach? " response
-answer="The most important difference is how these two approaches cope with change.  In OOP approach, we need to modify every concrete class extending from Tree. This can be difficult, especially if we don’t own all of these classes. In the Algebraic Data Types (ADT) approach, all we need to do is write another standalone function with a switch statement."
+answer="The most important difference is how these two approaches cope with change.  In OOP approach, we need to modify every concrete class extending from Tree. This can be difficult, especially if we don't own all of these classes. In the Algebraic Data Types (ADT) approach, all we need to do is write another standalone function with a switch statement."
 evaluate_answer "$response" "$answer"
 
 

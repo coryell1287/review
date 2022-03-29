@@ -20,8 +20,8 @@ calculate_score() {
     echo "     
 ########################################
 
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
 ########################################
              "
@@ -67,7 +67,7 @@ affirm_answer() {
   fi
 }
 
-evaluate_answer() {
+evaluate_answer_written_with_code() {
   increment_questions_count
   if [ "$1" == "$2" ]; then
     increment_correct_responses
@@ -76,8 +76,8 @@ evaluate_answer() {
     echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
        Your answer:     $1
@@ -90,7 +90,7 @@ evaluate_answer() {
   evaluate_total_missed_questions
 }
 
-evaluate_answer_written_with_code() {
+evaluate_answer_written_with_code_written_with_code() {
   increment_questions_count
 
   if [[ "$1" == "$2" ]]; then
@@ -101,8 +101,8 @@ evaluate_answer_written_with_code() {
     echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
        Your answer:     $1
@@ -158,7 +158,7 @@ additional_feedback="
     print(remove_even([3, 2, 41, 3, 34]))
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -182,7 +182,7 @@ additional_feedback="
     print(remove_even([3, 2, 41, 3, 34]))
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -207,7 +207,7 @@ additional_feedback="
     print(remove_even([3, 2, 41, 3, 34]))
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -234,7 +234,7 @@ additional_feedback="
     print(remove_even([3, 2, 41, 3, 34]))
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -266,13 +266,13 @@ additional_feedback="
     print(remove_even([3, 2, 41, 3, 34]))
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
 read -p "What is the time complexity of the previous solution? " response
 answer="Because the entire list has to be iterated over, this solution is in O(n) time."
-evaluate_answer "$response" "$answer"
+evaluate_answer_written_with_code "$response" "$answer"
 
 next_question
 
@@ -285,13 +285,13 @@ additional_feedback="
 
     print(remove_even([3, 2, 41, 3, 34]))
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
 read -p "What is the time complexity of the previous solution? " response
 answer="The time complexity of this solution is also O(n), since only the syntax has changed while the algorithm still iterates over all elements of the list."
-evaluate_answer "$response" "$answer"
+evaluate_answer_written_with_code "$response" "$answer"
 
 next_question
 
@@ -311,7 +311,7 @@ additional_feedback="
         index_arr1 = 0
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -332,7 +332,7 @@ additional_feedback="
         index_arr2 = 0
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -355,7 +355,7 @@ additional_feedback="
         index_result = 0
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -379,7 +379,7 @@ additional_feedback="
         result = []
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -406,7 +406,7 @@ additional_feedback="
         for i in range(len(lst1)+len(lst2)):
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -436,7 +436,7 @@ additional_feedback="
         for i in range(len(lst1)+len(lst2)):
             result.append(i)
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -469,7 +469,7 @@ additional_feedback="
         while (index_arr1 < len(lst1)) and (index_arr2 < len(lst2)):
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -505,7 +505,7 @@ additional_feedback="
             if (lst1[index_arr1] < lst2[index_arr2]):
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -543,7 +543,7 @@ additional_feedback="
                 result[index_result] = lst1[index_arr1]
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -583,7 +583,7 @@ additional_feedback="
                 index_result += 1
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -625,7 +625,7 @@ additional_feedback="
                 index_arr1 += 1
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -669,7 +669,7 @@ additional_feedback="
             else:
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -714,7 +714,7 @@ additional_feedback="
             else:
                 result[index_result] = lst2[index_arr2]
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -762,7 +762,7 @@ additional_feedback="
                 result[index_result] = lst2[index_arr2]
                 index_result += 1
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -811,7 +811,7 @@ additional_feedback="
                 index_result += 1
                 index_arr2 += 1
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -864,7 +864,7 @@ additional_feedback="
         while (index_arr1 < len(lst1)):
             
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -919,7 +919,7 @@ additional_feedback="
             result[index_result] = lst1[index_arr1]
             
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -974,7 +974,7 @@ additional_feedback="
             result[index_result] = lst1[index_arr1]
             index_result += 1
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -1032,7 +1032,7 @@ additional_feedback="
             index_arr1 += 1
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -1092,7 +1092,7 @@ additional_feedback="
         while (index_arr2 < len(lst2)):
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -1154,7 +1154,7 @@ additional_feedback="
             result[index_result] = lst2[index_arr2]
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -1218,7 +1218,7 @@ additional_feedback="
             index_result += 1
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -1283,7 +1283,7 @@ additional_feedback="
             index_result += 1
             index_arr2 += 1
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
@@ -1367,17 +1367,56 @@ additional_feedback="
     the lists is reached and append the other list to the merged list.
 
 "
-evaluate_answer "$response" "$answer" "$additional_feedback"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
 read -p "What is the time complexity of the previous solution? " response
-answer="The time complexity for this algorithm is O(n+m) where nn and mm are the lengths of the lists. This is because both lists are iterated over at least once."
+answer="The time complexity for this algorithm is O(n+m) where n and m are the lengths of the lists. This is because both lists are iterated over at least once."
+evaluate_answer "$response" "$answer"
 
 next_question
 
-########################################
-#         Calculate your score         #
-########################################
+read -p "Write a program that get items a through c in the list. 
 
-calculate_score
+    l = ['a', 'b', 'c', 'd', 'e']
+
+Enter the line: " response
+answer="print(l[0:3])"
+additional_feedback="
+
+    l = ['a', 'b', 'c', 'd', 'e']
+    print(l[0:3])
+    // ['a', 'b', 'c']
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Concatenate items in a list. " response
+answer="print([1,2] + [3,4])"
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "Iterate over items in a list
+
+    l=[1, 2, 4, 8, 10]
+    
+
+Enter the next line: " response
+answer="for val in l: print(val)"
+additional_feedback="
+
+    l=[1, 2, 4, 8, 10]
+    for val in l:
+       print(val)
+
+"
+evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Write a program that get items a through c in the list. " response
+answer=""
+evaluate_answer "$response" "$answer"

@@ -20,8 +20,8 @@ calculate_score() {
     echo "     
 ########################################
 
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
 ########################################
              "
@@ -76,8 +76,8 @@ evaluate_answer() {
     echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
        Your answer:     $1
@@ -101,8 +101,8 @@ evaluate_answer_written_with_code() {
     echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
        Your answer:     $1
@@ -155,7 +155,7 @@ read -p "What error is thrown in the following code?
     const z = 'The line before forbid this line'; 
 
 Enter your answer: " response
-answer="Block-scoped variable 'y' used before its declaration. Block-scoped variable 'z' used before its declaration."
+answer="Block-scoped variable 'y' used before its declaration. Block-scoped variable 'z' used before its declaration. Cannot assign to 'z' because it is a constant."
 additional_feedback="
 
     /usr/lib/node_modules/ts-node/src/index.ts:245
@@ -168,6 +168,30 @@ additional_feedback="
 
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
+
+next_question
+
+
+read -p "
+
+    How do you resolve the following error?
+
+    Type 'Element[]' is missing the following properties from type 
+    'ReactElement<any, string | JSXElementConstructor<any>>': type, props, key
+
+    export const NavList = ({ menuitems }: NavListProps): ReactElement => {
+        return menuitems.map(({ label, href }, index) => {
+           return (
+             <li key={index + label}>
+                <a href={href}>{label}</a>
+             </li>
+           );
+       });
+    };
+
+"
+answer="return <>{menuitems.map()}</>"
+evaluate_answer "$response" "$answer"
 
 next_question
 
@@ -251,7 +275,18 @@ evaluate_answer "$response" "$answer"
 
 next_question
 
-read -p "What is the difference between a constant array and a read-only array? " response
+read -p "What is the difference between a constant array and a read-only array? 
+
+  const list1: number[] = [1, 2];
+  list1.push(3); // Legit because list1 is not re-assigned.
+  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
+
+  read-only:
+  let list1: readonly number[] = [1, 2];
+  // list1.push(3); // Error, cannot mutate the content 
+  list1 = [4, 5]; // Legit, content is not mutated, we create a new list
+
+Enter the next line: " response
 answer="A developer can assign values to an array declared with const, updating the values stored in the reference."
 additional_feedback="
 
@@ -273,7 +308,21 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
 
-read -p "What is the difference between a constant array and a read-only array? " response
+read -p "What is the difference between a constant array and a read-only array? 
+
+  A developer can assign values to an array declared with const, 
+  updating the values stored in the reference.
+
+  const list1: number[] = [1, 2];
+  list1.push(3); // Legit because list1 is not re-assigned.
+  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
+
+  read-only:
+  let list1: readonly number[] = [1, 2];
+  // list1.push(3); // Error, cannot mutate the content 
+  list1 = [4, 5]; // Legit, content is not mutated, we create a new list
+
+Enter next line: " response
 answer="A developer cannot change read-only array values; a developer can only change the reference if the developer declares the value with let."
 additional_feedback="
 
@@ -315,45 +364,43 @@ next_question
 read -p "
     Add an exhaustiveCheck for the default statement. 
     
-    enum EnumWithChoices {
-      ChoiceA,
-      ChoiceB,
-      ChoiceC,
-    }
+  enum EnumWithChoices {
+    ChoiceA,
+    ChoiceB,
+    ChoiceC,
+  }
 
-    function functionReturnStringFromEnum(c: EnumWithChoices): string {
-        switch (c) {
-            case EnumWithChoices.ChoiceA:
-                return 'A';
-            case EnumWithChoices.ChoiceB:
-                return 'B';
-            default:
-              
-              
-        }
+  function functionReturnStringFromEnum(c: EnumWithChoices): string {
+    switch (c) {
+      case EnumWithChoices.ChoiceA:
+        return \"A\";
+      case EnumWithChoices.ChoiceB:
+        return \"B\";
+      default:
     }
+  }
 
 Enter your answer: " response
 answer="const exhaustiveCheck: never = c; throw new Error(exhaustiveCheck);"
 additional_feedback="
 
   enum EnumWithChoices {
-      ChoiceA,
-      ChoiceB,
-      ChoiceC,
-    }
+    ChoiceA,
+    ChoiceB,
+    ChoiceC,
+  }
 
-    function functionReturnStringFromEnum(c: EnumWithChoices): string {
-        switch (c) {
-            case EnumWithChoices.ChoiceA:
-                return 'A';
-            case EnumWithChoices.ChoiceB:
-                return 'B';
-            default:
-              const exhaustiveCheck: never = c; 
-              throw new Error(exhaustiveCheck);
-        }
+  function functionReturnStringFromEnum(c: EnumWithChoices): string {
+    switch (c) {
+      case EnumWithChoices.ChoiceA:
+        return \"A\";
+      case EnumWithChoices.ChoiceB:
+        return \"B\";
+      default:
+        const exhaustiveCheck: never = c; 
+        throw new Error(exhaustiveCheck);
     }
+  }
 
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
@@ -374,7 +421,7 @@ additional_feedback="
   /usr/lib/node_modules/ts-node/src/index.ts:245
     return new TSError(diagnosticText, diagnosticCodes)
            ^
-  TSError: ⨯ Unable to compile TypeScript:
+  TSError: x Unable to compile TypeScript:
   index.ts(3,13): error TS2571: Object is of type 'unknown'.
   index.ts(5,13): error TS2571: Object is of type 'unknown'.
 
@@ -569,7 +616,7 @@ evaluate_answer "$response" "$answer"
 
 next_question
 
-read -p "Use Pick<T, U> and Exclude<T, U> to have a Humen type without a nickname. " response
+read -p "Use Pick<T, U> and Exclude<T, U> to have a Human type without a nickname. " response
 answer="type LivingThing = Exclude<keyof Animal, keyof NoisyLivingSpecies>; type HumanWithoutNickname = Pick<Human, LivingThing>;"
 additional_feedback="
 
@@ -1713,7 +1760,7 @@ additional_feedback="
     /usr/lib/node_modules/ts-node/src/index.ts:245
     return new TSError(diagnosticText, diagnosticCodes)
            ^
-    TSError: ⨯ Unable to compile TypeScript:
+    TSError: x Unable to compile TypeScript:
     index.ts(3,25): error TS2422: A class can only implement an object type or intersection of object types with statically known members.
 
 "

@@ -20,8 +20,8 @@ calculate_score() {
     echo "     
 ########################################
 
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
 ########################################
              "
@@ -76,8 +76,8 @@ evaluate_answer() {
     echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
        Your answer:     $1
@@ -101,8 +101,8 @@ evaluate_answer_written_with_code() {
     echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
        Your answer:     $1

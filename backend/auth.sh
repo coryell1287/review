@@ -20,8 +20,8 @@ calculate_score() {
     echo "     
 ########################################
 
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
 ########################################
              "
@@ -76,8 +76,8 @@ evaluate_answer() {
     echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
        Your answer:     $1
@@ -101,8 +101,8 @@ evaluate_answer_written_with_code() {
     echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
        Your answer:     $1
@@ -171,11 +171,11 @@ evaluate_answer "$response" "$answer"
 next_question
 
 read -p "What does federated identity mean? " response
-answer="Federated identity is the ability to link a user’s digital identity across separate security domains."
+answer="Federated identity is the ability to link a user's digital identity across separate security domains."
 additional_feedback="
     Correct. 
     
-    Federated identity is the ability to link a user’s digital identity 
+    Federated identity is the ability to link a user's digital identity 
     across separate security domains. 
 
 "

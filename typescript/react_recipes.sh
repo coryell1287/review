@@ -63,8 +63,8 @@ evaluate_answer() {
         echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
        Your answer:     $1
@@ -88,8 +88,8 @@ evaluate_answer_written_with_code() {
     echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
        Your answer:     $1
@@ -120,1089 +120,1089 @@ next_line() {
 }
 
 
-read -p "
+# read -p "
    
-   Update the value on the array of objects.
+#    Update the value on the array of objects.
 
-   const update = { id: 1, value: 'change' };
+#    const update = { id: 1, value: 'change' };
 
-   setUserList();
-
-
-Enter the next line: " response
-answer="setUserList((prev) => { });"
-additional_feedback="
-
-  setUserList((prev) => {
-
-  });
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
-
-next_line
+#    setUserList();
 
 
-read -p "
+# Enter the next line: " response
+# answer="setUserList((prev) => { });"
+# additional_feedback="
+
+#   setUserList((prev) => {
+
+#   });
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback" 
+
+# next_line
+
+
+# read -p "
    
-   Update the value on the array of objects.
+#    Update the value on the array of objects.
 
-   const update = { id: 1, value: 'change' };
+#    const update = { id: 1, value: 'change' };
 
-   setUserList((prev) => {
+#    setUserList((prev) => {
 
-   });
+#    });
 
 
-Enter the next line: " response
-answer="return prev.map((a) => { });"
-additional_feedback="
+# Enter the next line: " response
+# answer="return prev.map((a) => { });"
+# additional_feedback="
 
-  const update = { id: 1, value: 'change' };
+#   const update = { id: 1, value: 'change' };
 
-  setUserList((prev) => {
-    return prev.map((a) => {
+#   setUserList((prev) => {
+#     return prev.map((a) => {
     
-    });
-  });
+#     });
+#   });
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
 
-read -p "
+# read -p "
    
-   Update the value on the array of objects.
+#    Update the value on the array of objects.
 
-   const update = { id: 1, value: 'change' };
+#    const update = { id: 1, value: 'change' };
 
-   setUserList((prev) => {
-      return prev.map((a) => {
+#    setUserList((prev) => {
+#       return prev.map((a) => {
     
-      });
-   });
+#       });
+#    });
 
 
-Enter the next line: " response
-answer="return a.id === update.id ? { ...a, value: update.value } : a;"
-additional_feedback="
+# Enter the next line: " response
+# answer="return a.id === update.id ? { ...a, value: update.value } : a;"
+# additional_feedback="
 
-  const update = { id: 1, value: 'change' };
+#   const update = { id: 1, value: 'change' };
 
-  setUserList((prev) => {
-    return prev.map((a) => {
-      return a.id === update.id
-        ? { ...a, value: update.value }
-        : a;
-    });
-  });
+#   setUserList((prev) => {
+#     return prev.map((a) => {
+#       return a.id === update.id
+#         ? { ...a, value: update.value }
+#         : a;
+#     });
+#   });
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_question
+# next_question
 
-read -p "Write a curry function that updates an array of user with a given index. " response
-answer="const handleUserUpdate = (index: number) => { };"
-additional_feedback="
+# read -p "Write a curry function that updates an array of user with a given index. " response
+# answer="const handleUserUpdate = (index: number) => { };"
+# additional_feedback="
 
-  const handleUserUpdate = (index: number) => { 
+#   const handleUserUpdate = (index: number) => { 
     
-  };
+#   };
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "Write a curry function that updates an array of user with a given index. 
+# read -p "Write a curry function that updates an array of user with a given index. 
 
-  const handleUserUpdate = (index: number) => { 
+#   const handleUserUpdate = (index: number) => { 
     
-  };
+#   };
 
 
-Enter the next line: " response
-answer="const tempArr = [...users];"
-additional_feedback="
+# Enter the next line: " response
+# answer="const tempArr = [...users];"
+# additional_feedback="
 
-  const handleUserUpdate = (index: number) => {
-    const tempArr = [...users];
-  };
+#   const handleUserUpdate = (index: number) => {
+#     const tempArr = [...users];
+#   };
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "Write a curry function that updates an array of user with a given index. 
+# read -p "Write a curry function that updates an array of user with a given index. 
 
-  const handleUserUpdate = (index: number) => { 
-    const tempArr = [...users];
-  };
-
-
-Enter the next line: " response
-answer="return (e: React.ChangeEvent<HTMLInputElement>) => { };"
-additional_feedback="
-
-  const handleUserUpdate = (index: number) => {
-    const tempArr = [...users];
-
-    return (e: React.ChangeEvent<HTMLInputElement>) => { 
-
-    };
-  };
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Write a curry function that updates an array of user with a given index. 
-
-  const handleUserUpdate = (index: number) => {
-    const tempArr = [...users];
-
-    return (e: React.ChangeEvent<HTMLInputElement>) => { 
-
-    };
-  };
+#   const handleUserUpdate = (index: number) => { 
+#     const tempArr = [...users];
+#   };
 
 
-Enter the next line: " response
-answer="tempArr[index] = { ...tempArr[index], value: e.target.value };"
-additional_feedback="
+# Enter the next line: " response
+# answer="return (e: React.ChangeEvent<HTMLInputElement>) => { };"
+# additional_feedback="
 
-  const handleUserUpdate = (index: number) => { 
-    const tempArr = [...users];
+#   const handleUserUpdate = (index: number) => {
+#     const tempArr = [...users];
 
-    return (e: React.ChangeEvent<HTMLInputElement>) => { 
-      tempArr[index] = { 
-        ...tempArr[index], 
-        value: e.target.value 
-      };
-    };
-  };
+#     return (e: React.ChangeEvent<HTMLInputElement>) => { 
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+#     };
+#   };
 
-next_line
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-read -p "Write a curry function that updates an array of user with a given index. 
+# next_line
 
-  const handleUserUpdate = (index: number) => { 
-    const tempArr = [...users];
+# read -p "Write a curry function that updates an array of user with a given index. 
 
-    return (e: React.ChangeEvent<HTMLInputElement>) => { 
-      tempArr[index] = { 
-        ...tempArr[index], 
-        value: e.target.value 
-      };
-    };
-  };
+#   const handleUserUpdate = (index: number) => {
+#     const tempArr = [...users];
+
+#     return (e: React.ChangeEvent<HTMLInputElement>) => { 
+
+#     };
+#   };
 
 
-Enter the next line: " response
-answer="setUserInput(e.target.value); setUserList(tempArr);"
-additional_feedback="
+# Enter the next line: " response
+# answer="tempArr[index] = { ...tempArr[index], value: e.target.value };"
+# additional_feedback="
 
-  const handleUserUpdate = (index: number) { 
-    const tempArr = [...users];
+#   const handleUserUpdate = (index: number) => { 
+#     const tempArr = [...users];
 
-    return (e: React.ChangeEvent<HTMLInputElement>) => { 
-      tempArr[index] = { 
-        ...tempArr[index], 
-        value: e.target.value 
-      };
-      setUserInput(e.target.value);
-      setUserList(tempArr);
-    }
-  };
+#     return (e: React.ChangeEvent<HTMLInputElement>) => { 
+#       tempArr[index] = { 
+#         ...tempArr[index], 
+#         value: e.target.value 
+#       };
+#     };
+#   };
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_question
+# next_line
 
-read -p "
+# read -p "Write a curry function that updates an array of user with a given index. 
 
-  Write a function in Typescript that handles detecting when 
-  a user has scrolled to the bottom of the screen. 
+#   const handleUserUpdate = (index: number) => { 
+#     const tempArr = [...users];
 
-Enter the next line: " response
-answer="const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => { };"
-additional_feedback="
+#     return (e: React.ChangeEvent<HTMLInputElement>) => { 
+#       tempArr[index] = { 
+#         ...tempArr[index], 
+#         value: e.target.value 
+#       };
+#     };
+#   };
 
-  const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
 
-  };
+# Enter the next line: " response
+# answer="setUserInput(e.target.value); setUserList(tempArr);"
+# additional_feedback="
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+#   const handleUserUpdate = (index: number) { 
+#     const tempArr = [...users];
 
-next_line
+#     return (e: React.ChangeEvent<HTMLInputElement>) => { 
+#       tempArr[index] = { 
+#         ...tempArr[index], 
+#         value: e.target.value 
+#       };
+#       setUserInput(e.target.value);
+#       setUserList(tempArr);
+#     }
+#   };
 
-read -p "
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-  Write a function in Typescript that handles detecting when 
-  a user has scrolled to the bottom of the screen. 
+# next_question
 
-  const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
+# read -p "
 
-  };
+#   Write a function in Typescript that handles detecting when 
+#   a user has scrolled to the bottom of the screen. 
 
-Enter the next line: " response
-answer="const scrollTop = e.currentTarget?.scrollTop;"
-additional_feedback="
+# Enter the next line: " response
+# answer="const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => { };"
+# additional_feedback="
 
-  const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
-    const scrollTop = e.currentTarget?.scrollTop;
-  };
+#   const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
+
+#   };
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Write a function in Typescript that handles detecting when 
+#   a user has scrolled to the bottom of the screen. 
+
+#   const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
+
+#   };
+
+# Enter the next line: " response
+# answer="const scrollTop = e.currentTarget?.scrollTop;"
+# additional_feedback="
+
+#   const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
+#     const scrollTop = e.currentTarget?.scrollTop;
+#   };
   
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  Write a function in Typescript that handles detecting when 
-  a user has scrolled to the bottom of the screen. 
+#   Write a function in Typescript that handles detecting when 
+#   a user has scrolled to the bottom of the screen. 
 
-  const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
-    const scrollTop = e.currentTarget?.scrollTop;
-  };
+#   const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
+#     const scrollTop = e.currentTarget?.scrollTop;
+#   };
 
-Enter the next line: " response
-answer="const scrollHeight = e.currentTarget?.scrollHeight;"
-additional_feedback="
+# Enter the next line: " response
+# answer="const scrollHeight = e.currentTarget?.scrollHeight;"
+# additional_feedback="
 
-  const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
-    const scrollTop = e.currentTarget?.scrollTop;
-    const scrollHeight = e.currentTarget?.scrollHeight;
-  };  
+#   const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
+#     const scrollTop = e.currentTarget?.scrollTop;
+#     const scrollHeight = e.currentTarget?.scrollHeight;
+#   };  
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  Write a function in Typescript that handles detecting when 
-  a user has scrolled to the bottom of the screen. 
+#   Write a function in Typescript that handles detecting when 
+#   a user has scrolled to the bottom of the screen. 
 
-  const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
-    const scrollTop = e.currentTarget?.scrollTop;
-    const scrollHeight = e.currentTarget?.scrollHeight;
-  }; 
+#   const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
+#     const scrollTop = e.currentTarget?.scrollTop;
+#     const scrollHeight = e.currentTarget?.scrollHeight;
+#   }; 
 
-Enter the next line: " response
-answer="const clientHeight = e.currentTarget?.clientHeight;"
-additional_feedback="
+# Enter the next line: " response
+# answer="const clientHeight = e.currentTarget?.clientHeight;"
+# additional_feedback="
 
-  const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
-    const scrollTop = e.currentTarget?.scrollTop;
-    const scrollHeight = e.currentTarget?.scrollHeight;
-    const clientHeight = e.currentTarget?.clientHeight;
-  };
+#   const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
+#     const scrollTop = e.currentTarget?.scrollTop;
+#     const scrollHeight = e.currentTarget?.scrollHeight;
+#     const clientHeight = e.currentTarget?.clientHeight;
+#   };
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  Write a function in Typescript that handles detecting when 
-  a user has scrolled to the bottom of the screen. 
+#   Write a function in Typescript that handles detecting when 
+#   a user has scrolled to the bottom of the screen. 
 
-  const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
-    const scrollTop = e.currentTarget?.scrollTop;
-    const scrollHeight = e.currentTarget?.scrollHeight;
-    const clientHeight = e.currentTarget?.clientHeight;
-  };
+#   const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
+#     const scrollTop = e.currentTarget?.scrollTop;
+#     const scrollHeight = e.currentTarget?.scrollHeight;
+#     const clientHeight = e.currentTarget?.clientHeight;
+#   };
 
-Enter the next line: " response
-answer="if (scrollTop + clientHeight >= scrollHeight) { setBottom(true); }"
-additional_feedback="
+# Enter the next line: " response
+# answer="if (scrollTop + clientHeight >= scrollHeight) { setBottom(true); }"
+# additional_feedback="
 
-  const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
-    const scrollTop = e.currentTarget?.scrollTop;
-    const scrollHeight = e.currentTarget?.scrollHeight;
-    const clientHeight = e.currentTarget?.clientHeight;
+#   const handleScroll = (e: React.SyntheticEvent<HTMLDivElement>): void => {
+#     const scrollTop = e.currentTarget?.scrollTop;
+#     const scrollHeight = e.currentTarget?.scrollHeight;
+#     const clientHeight = e.currentTarget?.clientHeight;
 
-    if (scrollTop + clientHeight >= scrollHeight) { 
-      setBottom(true); 
-    }
-  };
+#     if (scrollTop + clientHeight >= scrollHeight) { 
+#       setBottom(true); 
+#     }
+#   };
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  How would you handle exceptions in the following code so that
-  exception aren't hidden?
+#   How would you handle exceptions in the following code so that
+#   exception aren't hidden?
 
-  setIsLoaded(true);
-  setItems(result);
-  setError(error);
+#   setIsLoaded(true);
+#   setItems(result);
+#   setError(error);
 
-  useEffect(() => {
-    fetch(\"https://restcountries.eu/rest/v2/all\")
+#   useEffect(() => {
+#     fetch(\"https://restcountries.eu/rest/v2/all\")
      
-  }, []);
+#   }, []);
 
 
-Enter the next line: " response
-answer=".then((res) => res.json())"
-additional_feedback="
+# Enter the next line: " response
+# answer=".then((res) => res.json())"
+# additional_feedback="
 
-  setIsLoaded(true);
-  setItems(result);
-  setError(error);
+#   setIsLoaded(true);
+#   setItems(result);
+#   setError(error);
 
-  useEffect(() => {
-    fetch(\"https://restcountries.eu/rest/v2/all\")
+#   useEffect(() => {
+#     fetch(\"https://restcountries.eu/rest/v2/all\")
      
-  }, []);
+#   }, []);
 
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  How would you handle exceptions in the following code so that
-  exception aren't hidden?
+#   How would you handle exceptions in the following code so that
+#   exception aren't hidden?
 
-  setIsLoaded(true);
-  setItems(result);
-  setError(error);
+#   setIsLoaded(true);
+#   setItems(result);
+#   setError(error);
 
-  useEffect(() => {
-    fetch(\"https://restcountries.eu/rest/v2/all\")
-       .then((res) => res.json())
-  }, []);
+#   useEffect(() => {
+#     fetch(\"https://restcountries.eu/rest/v2/all\")
+#        .then((res) => res.json())
+#   }, []);
 
 
-Enter the next line: " response
-answer=".then((result) => { });"
-additional_feedback="
+# Enter the next line: " response
+# answer=".then((result) => { });"
+# additional_feedback="
 
-  setIsLoaded(true);
-  setItems(result);
-  setError(error);
+#   setIsLoaded(true);
+#   setItems(result);
+#   setError(error);
 
-  useEffect(() => {
-    fetch(\"https://restcountries.eu/rest/v2/all\")
-       .then((res) => res.json())
-       .then((result) => { 
+#   useEffect(() => {
+#     fetch(\"https://restcountries.eu/rest/v2/all\")
+#        .then((res) => res.json())
+#        .then((result) => { 
 
-       });
-  }, []);
+#        });
+#   }, []);
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  How would you handle exceptions in the following code so that
-  exception aren't hidden?
+#   How would you handle exceptions in the following code so that
+#   exception aren't hidden?
 
-  setIsLoaded(true);
-  setItems(result);
-  setError(error);
+#   setIsLoaded(true);
+#   setItems(result);
+#   setError(error);
 
-  useEffect(() => {
-    fetch(\"https://restcountries.eu/rest/v2/all\")
-       .then((res) => res.json())
-       .then((result) => { 
+#   useEffect(() => {
+#     fetch(\"https://restcountries.eu/rest/v2/all\")
+#        .then((res) => res.json())
+#        .then((result) => { 
          
-       });
-  }, []);
+#        });
+#   }, []);
 
 
-Enter the next line: " response
-answer="setIsLoaded(true); setItems(result);"
-additional_feedback="
+# Enter the next line: " response
+# answer="setIsLoaded(true); setItems(result);"
+# additional_feedback="
 
-  setError(error);
+#   setError(error);
 
-  useEffect(() => {
-    fetch(\"https://restcountries.eu/rest/v2/all\")
-       .then((res) => res.json())
-       .then((result) => { 
-          setIsLoaded(true);
-          setItems(result);
-       });
-  }, []);
-
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-
-  How would you handle exceptions in the following code so that
-  exception aren't hidden?
-
-  setError(error);
-
-  useEffect(() => {
-    fetch(\"https://restcountries.eu/rest/v2/all\")
-       .then((res) => res.json())
-       .then((result) => { 
-          setIsLoaded(true);
-          setItems(result);
-       });
-  }, []);
+#   useEffect(() => {
+#     fetch(\"https://restcountries.eu/rest/v2/all\")
+#        .then((res) => res.json())
+#        .then((result) => { 
+#           setIsLoaded(true);
+#           setItems(result);
+#        });
+#   }, []);
 
 
-Enter the next line: " response
-answer="(error) => { setIsLoaded(true); setError(error); }"
-additional_feedback="
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-  useEffect(() => {
-    fetch(\"https://restcountries.eu/rest/v2/all\")
-       .then((res) => res.json())
-       .then((result) => { 
-          setIsLoaded(true);
-          setItems(result);
-       },
-       (error) => { 
-          setIsLoaded(true); 
-          setError(error); 
-       });
-  }, []);
+# next_line
+
+# read -p "
+
+#   How would you handle exceptions in the following code so that
+#   exception aren't hidden?
+
+#   setError(error);
+
+#   useEffect(() => {
+#     fetch(\"https://restcountries.eu/rest/v2/all\")
+#        .then((res) => res.json())
+#        .then((result) => { 
+#           setIsLoaded(true);
+#           setItems(result);
+#        });
+#   }, []);
 
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# Enter the next line: " response
+# answer="(error) => { setIsLoaded(true); setError(error); }"
+# additional_feedback="
 
-next_question
+#   useEffect(() => {
+#     fetch(\"https://restcountries.eu/rest/v2/all\")
+#        .then((res) => res.json())
+#        .then((result) => { 
+#           setIsLoaded(true);
+#           setItems(result);
+#        },
+#        (error) => { 
+#           setIsLoaded(true); 
+#           setError(error); 
+#        });
+#   }, []);
 
-read -p "
 
-  Finish writing the logic on the following component that will
-  perform a search on an array of items using search params.
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-  function App() {
-    const [items, setItems] = useState([]);
-    const [q, setQ] = useState('');
-    const [searchParam] = useState(['capital', 'name']);
+# next_question
+
+# read -p "
+
+#   Finish writing the logic on the following component that will
+#   perform a search on an array of items using search params.
+
+#   function App() {
+#     const [items, setItems] = useState([]);
+#     const [q, setQ] = useState('');
+#     const [searchParam] = useState(['capital', 'name']);
               
-    <ul>
-        {search(items).map((item) => (
-        <li>
-        <article key=\"{item.id}\">
-            <h2>{item.name}</h2>
-            <ol >
-                <li>
-                population:{\" \"}
-                <span>{item.population}</span>
-                </li>
-                <li>Region: <span>{item.region}</span></li>
-                <li>Capital: <span>{item.capital}</span></li>
-            </ol>
-        </article>
-        </li>
-        ))}
-    </ul>
+#     <ul>
+#         {search(items).map((item) => (
+#         <li>
+#         <article key=\"{item.id}\">
+#             <h2>{item.name}</h2>
+#             <ol >
+#                 <li>
+#                 population:{\" \"}
+#                 <span>{item.population}</span>
+#                 </li>
+#                 <li>Region: <span>{item.region}</span></li>
+#                 <li>Capital: <span>{item.capital}</span></li>
+#             </ol>
+#         </article>
+#         </li>
+#         ))}
+#     </ul>
 
-  }
+#   }
 
 
-Enter the next line: " response
-answer="function search(items) { }"
-additional_feedback="
+# Enter the next line: " response
+# answer="function search(items) { }"
+# additional_feedback="
 
-  function App() {
-    const [items, setItems] = useState([]);
-    const [q, setQ] = useState('');
-    const [searchParam] = useState(['capital', 'name']);
+#   function App() {
+#     const [items, setItems] = useState([]);
+#     const [q, setQ] = useState('');
+#     const [searchParam] = useState(['capital', 'name']);
               
-    <ul>
-        {search(items).map((item) => (
-        <li>
-        <article key=\"{item.id}\">
-            <h2>{item.name}</h2>
-            <ol >
-                <li>
-                population:{\" \"}
-                <span>{item.population}</span>
-                </li>
-                <li>Region: <span>{item.region}</span></li>
-                <li>Capital: <span>{item.capital}</span></li>
-            </ol>
-        </article>
-        </li>
-        ))}
-    </ul>
+#     <ul>
+#         {search(items).map((item) => (
+#         <li>
+#         <article key=\"{item.id}\">
+#             <h2>{item.name}</h2>
+#             <ol >
+#                 <li>
+#                 population:{\" \"}
+#                 <span>{item.population}</span>
+#                 </li>
+#                 <li>Region: <span>{item.region}</span></li>
+#                 <li>Capital: <span>{item.capital}</span></li>
+#             </ol>
+#         </article>
+#         </li>
+#         ))}
+#     </ul>
 
-   }
+#    }
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  Finish writing the logic on the following component that will
-  perform a search on an array of items using search params.
+#   Finish writing the logic on the following component that will
+#   perform a search on an array of items using search params.
 
-  function App() {
-    const [items, setItems] = useState([]);
-    const [q, setQ] = useState('');
-    const [searchParam] = useState(['capital', 'name']);
+#   function App() {
+#     const [items, setItems] = useState([]);
+#     const [q, setQ] = useState('');
+#     const [searchParam] = useState(['capital', 'name']);
 
-     function search(items) { 
+#      function search(items) { 
 
-     }   
+#      }   
 
-    <ul>
-        {search(items).map((item) => (
-        <li>
-        <article key=\"{item.id}\">
-            <h2>{item.name}</h2>
-            <ol >
-                <li>
-                population:{\" \"}
-                <span>{item.population}</span>
-                </li>
-                <li>Region: <span>{item.region}</span></li>
-                <li>Capital: <span>{item.capital}</span></li>
-            </ol>
-        </article>
-        </li>
-        ))}
-    </ul>
+#     <ul>
+#         {search(items).map((item) => (
+#         <li>
+#         <article key=\"{item.id}\">
+#             <h2>{item.name}</h2>
+#             <ol >
+#                 <li>
+#                 population:{\" \"}
+#                 <span>{item.population}</span>
+#                 </li>
+#                 <li>Region: <span>{item.region}</span></li>
+#                 <li>Capital: <span>{item.capital}</span></li>
+#             </ol>
+#         </article>
+#         </li>
+#         ))}
+#     </ul>
 
-  }
+#   }
 
 
-Enter the next line: " response
-answer="return items.filter((item) => { });"
-additional_feedback="
+# Enter the next line: " response
+# answer="return items.filter((item) => { });"
+# additional_feedback="
 
- function App() {
-    const [items, setItems] = useState([]);
-    const [q, setQ] = useState('');
-    const [searchParam] = useState(['capital', 'name']);
+#  function App() {
+#     const [items, setItems] = useState([]);
+#     const [q, setQ] = useState('');
+#     const [searchParam] = useState(['capital', 'name']);
 
-     function search(items) { 
-       return items.filter((item) => { 
+#      function search(items) { 
+#        return items.filter((item) => { 
 
-       });
-     }   
+#        });
+#      }   
 
-    <ul>
-        {search(items).map((item) => (
-        <li>
-        <article key=\"{item.id}\">
-            <h2>{item.name}</h2>
-            <ol >
-                <li>
-                population:{\" \"}
-                <span>{item.population}</span>
-                </li>
-                <li>Region: <span>{item.region}</span></li>
-                <li>Capital: <span>{item.capital}</span></li>
-            </ol>
-        </article>
-        </li>
-        ))}
-    </ul>
+#     <ul>
+#         {search(items).map((item) => (
+#         <li>
+#         <article key=\"{item.id}\">
+#             <h2>{item.name}</h2>
+#             <ol >
+#                 <li>
+#                 population:{\" \"}
+#                 <span>{item.population}</span>
+#                 </li>
+#                 <li>Region: <span>{item.region}</span></li>
+#                 <li>Capital: <span>{item.capital}</span></li>
+#             </ol>
+#         </article>
+#         </li>
+#         ))}
+#     </ul>
 
-  }
+#   }
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  Finish writing the logic on the following component that will
-  perform a search on an array of items using search params.
+#   Finish writing the logic on the following component that will
+#   perform a search on an array of items using search params.
 
-  function App() {
-    const [items, setItems] = useState([]);
-    const [q, setQ] = useState('');
-    const [searchParam] = useState(['capital', 'name']);
+#   function App() {
+#     const [items, setItems] = useState([]);
+#     const [q, setQ] = useState('');
+#     const [searchParam] = useState(['capital', 'name']);
 
-     function search(items) { 
-       return items.filter((item) => { 
+#      function search(items) { 
+#        return items.filter((item) => { 
 
-       });
-     }
+#        });
+#      }
               
-    <ul>
-      {search(items).map((item) => (
-      <li>
-        <article key=\"{item.id}\">
-            <h2>{item.name}</h2>
-            <ol >
-              <li>
-                population:{\" \"}
-                <span>{item.population}</span>
-              </li>
-              <li>Region: <span>{item.region}</span></li>
-              <li>Capital: <span>{item.capital}</span></li>
-            </ol>
-        </article>
-      </li>
-      ))}
-    </ul> 
-  }
+#     <ul>
+#       {search(items).map((item) => (
+#       <li>
+#         <article key=\"{item.id}\">
+#             <h2>{item.name}</h2>
+#             <ol >
+#               <li>
+#                 population:{\" \"}
+#                 <span>{item.population}</span>
+#               </li>
+#               <li>Region: <span>{item.region}</span></li>
+#               <li>Capital: <span>{item.capital}</span></li>
+#             </ol>
+#         </article>
+#       </li>
+#       ))}
+#     </ul> 
+#   }
 
 
-Enter the next line: " response
-answer="return searchParam.some((param) => { });"
-additional_feedback="
+# Enter the next line: " response
+# answer="return searchParam.some((param) => { });"
+# additional_feedback="
 
-  function App() {
-    const [items, setItems] = useState([]);
-    const [q, setQ] = useState('');
-    const [searchParam] = useState(['capital', 'name']);
+#   function App() {
+#     const [items, setItems] = useState([]);
+#     const [q, setQ] = useState('');
+#     const [searchParam] = useState(['capital', 'name']);
 
-     function search(items) { 
-       return items.filter((item) => { 
-         return searchParam.some((param) => { 
+#      function search(items) { 
+#        return items.filter((item) => { 
+#          return searchParam.some((param) => { 
 
-         });
-       });
-     }
+#          });
+#        });
+#      }
               
-    <ul>
-      {search(items).map((item) => (
-      <li>
-        <article key=\"{item.id}\">
-            <h2>{item.name}</h2>
-            <ol >
-              <li>
-                population:{\" \"}
-                <span>{item.population}</span>
-              </li>
-              <li>Region: <span>{item.region}</span></li>
-              <li>Capital: <span>{item.capital}</span></li>
-            </ol>
-        </article>
-      </li>
-      ))}
-    </ul> 
-  }
+#     <ul>
+#       {search(items).map((item) => (
+#       <li>
+#         <article key=\"{item.id}\">
+#             <h2>{item.name}</h2>
+#             <ol >
+#               <li>
+#                 population:{\" \"}
+#                 <span>{item.population}</span>
+#               </li>
+#               <li>Region: <span>{item.region}</span></li>
+#               <li>Capital: <span>{item.capital}</span></li>
+#             </ol>
+#         </article>
+#       </li>
+#       ))}
+#     </ul> 
+#   }
 
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  Finish writing the logic on the following component that will
-  perform a search on an array of items using search params.
+#   Finish writing the logic on the following component that will
+#   perform a search on an array of items using search params.
 
-  function App() {
-    const [items, setItems] = useState([]);
-    const [q, setQ] = useState('');
-    const [searchParam] = useState(['capital', 'name']);
+#   function App() {
+#     const [items, setItems] = useState([]);
+#     const [q, setQ] = useState('');
+#     const [searchParam] = useState(['capital', 'name']);
 
-      function search(items) { 
-       return items.filter((item) => { 
-         return searchParam.some((param) => { 
+#       function search(items) { 
+#        return items.filter((item) => { 
+#          return searchParam.some((param) => { 
 
-         });
-       });
-     }
+#          });
+#        });
+#      }
               
-    <ul>
-      {search(items).map((item) => (
-      <li>
-        <article key=\"{item.id}\">
-            <h2>{item.name}</h2>
-            <ol >
-              <li>
-                population:{\" \"}
-                <span>{item.population}</span>
-              </li>
-              <li>Region: <span>{item.region}</span></li>
-              <li>Capital: <span>{item.capital}</span></li>
-            </ol>
-        </article>
-      </li>
-      ))}
-    </ul>
-  }
+#     <ul>
+#       {search(items).map((item) => (
+#       <li>
+#         <article key=\"{item.id}\">
+#             <h2>{item.name}</h2>
+#             <ol >
+#               <li>
+#                 population:{\" \"}
+#                 <span>{item.population}</span>
+#               </li>
+#               <li>Region: <span>{item.region}</span></li>
+#               <li>Capital: <span>{item.capital}</span></li>
+#             </ol>
+#         </article>
+#       </li>
+#       ))}
+#     </ul>
+#   }
 
 
 
-Enter the next line: " response
-answer="return item[param].toString().toLowerCase().indexOf(q.toLowerCase()) > -1;"
-additional_feedback="
+# Enter the next line: " response
+# answer="return item[param].toString().toLowerCase().indexOf(q.toLowerCase()) > -1;"
+# additional_feedback="
 
-  function App() {
-    const [items, setItems] = useState([]);
-    const [q, setQ] = useState('');
-    const [searchParam] = useState(['capital', 'name']);
+#   function App() {
+#     const [items, setItems] = useState([]);
+#     const [q, setQ] = useState('');
+#     const [searchParam] = useState(['capital', 'name']);
 
-     function search(items) { 
-       return items.filter((item) => { 
-         return searchParam.some((param) => { 
-           return item[param].toString().toLowerCase().indexOf(q.toLowerCase()) > -1;
-         });
-       });
-     }
+#      function search(items) { 
+#        return items.filter((item) => { 
+#          return searchParam.some((param) => { 
+#            return item[param].toString().toLowerCase().indexOf(q.toLowerCase()) > -1;
+#          });
+#        });
+#      }
               
-    <ul>
-      {search(items).map((item) => (
-      <li>
-        <article key=\"{item.id}\">
-            <h2>{item.name}</h2>
-            <ol >
-              <li>
-                population:{\" \"}
-                <span>{item.population}</span>
-              </li>
-              <li>Region: <span>{item.region}</span></li>
-              <li>Capital: <span>{item.capital}</span></li>
-            </ol>
-        </article>
-      </li>
-      ))}
-    </ul> 
-  }
+#     <ul>
+#       {search(items).map((item) => (
+#       <li>
+#         <article key=\"{item.id}\">
+#             <h2>{item.name}</h2>
+#             <ol >
+#               <li>
+#                 population:{\" \"}
+#                 <span>{item.population}</span>
+#               </li>
+#               <li>Region: <span>{item.region}</span></li>
+#               <li>Capital: <span>{item.capital}</span></li>
+#             </ol>
+#         </article>
+#       </li>
+#       ))}
+#     </ul> 
+#   }
 
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  Create a multi-sort utility for the array of books.
+#   Create a multi-sort utility for the array of books.
 
-Enter the next line: " response
-answer="const multiSort = <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>"
-additional_feedback="
+# Enter the next line: " response
+# answer="const multiSort = <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>"
+# additional_feedback="
 
-  const multiSort = <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+#   const multiSort = <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  Create a multi-sort utility for the array of books.
+#   Create a multi-sort utility for the array of books.
 
-  const multiSort = <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+#   const multiSort = <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
 
-Enter the next line: " response
-answer="(a: Item, b: Item) => { };"
-additional_feedback="
+# Enter the next line: " response
+# answer="(a: Item, b: Item) => { };"
+# additional_feedback="
 
-  const multiSort =
-    <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
-    (a: Item, b: Item) => {
+#   const multiSort =
+#     <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+#     (a: Item, b: Item) => {
   
-  };
+#   };
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  Create a multi-sort utility for the array of books.
+#   Create a multi-sort utility for the array of books.
 
-  const multiSort =
-    <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
-    (a: Item, b: Item) => {
+#   const multiSort =
+#     <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+#     (a: Item, b: Item) => {
   
-  };
+#   };
 
-Enter the next line: " response
-answer="for (let comparator of comparators) { }"
-additional_feedback="
+# Enter the next line: " response
+# answer="for (let comparator of comparators) { }"
+# additional_feedback="
 
-  const multiSort =
-    <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
-    (a: Item, b: Item) => {
+#   const multiSort =
+#     <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+#     (a: Item, b: Item) => {
 
-      for (let comparator of comparators) { 
+#       for (let comparator of comparators) { 
 
-      }
-  };
+#       }
+#   };
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  Create a multi-sort utility for the array of books.
+#   Create a multi-sort utility for the array of books.
 
-  const multiSort =
-    <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
-    (a: Item, b: Item) => {
+#   const multiSort =
+#     <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+#     (a: Item, b: Item) => {
 
-      for (let comparator of comparators) { 
+#       for (let comparator of comparators) { 
 
-      }
-  };
+#       }
+#   };
 
-Enter the next line: " response
-answer="const comparatorResult = comparator(a, b);"
-additional_feedback="
+# Enter the next line: " response
+# answer="const comparatorResult = comparator(a, b);"
+# additional_feedback="
 
-    const multiSort =
-      <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
-      (a: Item, b: Item) => {
+#     const multiSort =
+#       <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+#       (a: Item, b: Item) => {
 
-      for (let comparator of comparators) { 
-        const comparatorResult = comparator(a, b);
-      }
-    };
+#       for (let comparator of comparators) { 
+#         const comparatorResult = comparator(a, b);
+#       }
+#     };
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  Create a multi-sort utility for the array of books.
+#   Create a multi-sort utility for the array of books.
 
-  const multiSort =
-      <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
-      (a: Item, b: Item) => {
+#   const multiSort =
+#       <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+#       (a: Item, b: Item) => {
 
-      for (let comparator of comparators) { 
-        const comparatorResult = comparator(a, b);
-      }
-   };
+#       for (let comparator of comparators) { 
+#         const comparatorResult = comparator(a, b);
+#       }
+#    };
 
-Enter the next line: " response
-answer="if (comparatorResult !== 0) return comparatorResult;"
-additional_feedback="
+# Enter the next line: " response
+# answer="if (comparatorResult !== 0) return comparatorResult;"
+# additional_feedback="
 
-  const multiSort =
-      <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
-      (a: Item, b: Item) => {
+#   const multiSort =
+#       <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+#       (a: Item, b: Item) => {
 
-      for (let comparator of comparators) { 
-        const comparatorResult = comparator(a, b);
-        if (comparatorResult !== 0) return comparatorResult;
-      }
-   };
+#       for (let comparator of comparators) { 
+#         const comparatorResult = comparator(a, b);
+#         if (comparatorResult !== 0) return comparatorResult;
+#       }
+#    };
   
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  Create a multi-sort utility for the array of books.
+#   Create a multi-sort utility for the array of books.
 
-  const multiSort =
-      <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
-      (a: Item, b: Item) => {
+#   const multiSort =
+#       <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+#       (a: Item, b: Item) => {
 
-      for (let comparator of comparators) { 
-        const comparatorResult = comparator(a, b);
-        if (comparatorResult !== 0) return comparatorResult;
-      }
-   };
+#       for (let comparator of comparators) { 
+#         const comparatorResult = comparator(a, b);
+#         if (comparatorResult !== 0) return comparatorResult;
+#       }
+#    };
 
-Enter the next line: " response
-answer="return 0;"
-additional_feedback="
+# Enter the next line: " response
+# answer="return 0;"
+# additional_feedback="
 
-  const multiSort =
-      <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
-      (a: Item, b: Item) => {
+#   const multiSort =
+#       <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+#       (a: Item, b: Item) => {
 
-      for (let comparator of comparators) { 
-        const comparatorResult = comparator(a, b);
-        if (comparatorResult !== 0) return comparatorResult;
-      }
-      return 0;
-   };
+#       for (let comparator of comparators) { 
+#         const comparatorResult = comparator(a, b);
+#         if (comparatorResult !== 0) return comparatorResult;
+#       }
+#       return 0;
+#    };
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  Create a multi-sort utility for the array of books.
+#   Create a multi-sort utility for the array of books.
 
-  const multiSort =
-      <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
-      (a: Item, b: Item) => {
+#   const multiSort =
+#       <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+#       (a: Item, b: Item) => {
 
-      for (let comparator of comparators) { 
-        const comparatorResult = comparator(a, b);
-        if (comparatorResult !== 0) return comparatorResult;
-      }
-      return 0;
-   };
+#       for (let comparator of comparators) { 
+#         const comparatorResult = comparator(a, b);
+#         if (comparatorResult !== 0) return comparatorResult;
+#       }
+#       return 0;
+#    };
 
-Enter the next line: " response
-answer="const sortedBooks = books.sort();"
-additional_feedback="
+# Enter the next line: " response
+# answer="const sortedBooks = books.sort();"
+# additional_feedback="
 
-  const multiSort =
-      <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
-      (a: Item, b: Item) => {
+#   const multiSort =
+#       <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+#       (a: Item, b: Item) => {
 
-      for (let comparator of comparators) { 
-        const comparatorResult = comparator(a, b);
-        if (comparatorResult !== 0) return comparatorResult;
-      }
-      return 0;
-   };
+#       for (let comparator of comparators) { 
+#         const comparatorResult = comparator(a, b);
+#         if (comparatorResult !== 0) return comparatorResult;
+#       }
+#       return 0;
+#    };
   
-  const sortedBooks = books.sort();
+#   const sortedBooks = books.sort();
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
 
-  Create a multi-sort utility for the array of books.
+#   Create a multi-sort utility for the array of books.
 
-  const multiSort =
-      <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
-      (a: Item, b: Item) => {
+#   const multiSort =
+#       <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+#       (a: Item, b: Item) => {
 
-      for (let comparator of comparators) { 
-        const comparatorResult = comparator(a, b);
-        if (comparatorResult !== 0) return comparatorResult;
-      }
-      return 0;
-   };
+#       for (let comparator of comparators) { 
+#         const comparatorResult = comparator(a, b);
+#         if (comparatorResult !== 0) return comparatorResult;
+#       }
+#       return 0;
+#    };
   
-  const sortedBooks = books.sort();
+#   const sortedBooks = books.sort();
 
 
-Enter the next line: " response
-answer="multiSort((a, b) => a.title.localeCompare(b.title), (a, b) => a.published - b.published);"
-additional_feedback="
+# Enter the next line: " response
+# answer="multiSort((a, b) => a.title.localeCompare(b.title), (a, b) => a.published - b.published);"
+# additional_feedback="
 
-  const multiSort =
-      <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
-      (a: Item, b: Item) => {
+#   const multiSort =
+#       <Item>(...comparators: Array<(a: Item, b: Item) => number>) =>
+#       (a: Item, b: Item) => {
 
-      for (let comparator of comparators) { 
-        const comparatorResult = comparator(a, b);
-        if (comparatorResult !== 0) return comparatorResult;
-      }
-      return 0;
-   };
+#       for (let comparator of comparators) { 
+#         const comparatorResult = comparator(a, b);
+#         if (comparatorResult !== 0) return comparatorResult;
+#       }
+#       return 0;
+#    };
   
-  const sortedBooks = books.sort(
-    multiSort(
-      (a, b) => a.title.localeCompare(b.title), 
-      (a, b) => a.published - b.published
-    ),
-  );
+#   const sortedBooks = books.sort(
+#     multiSort(
+#       (a, b) => a.title.localeCompare(b.title), 
+#       (a, b) => a.published - b.published
+#     ),
+#   );
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_question
+# next_question
 
-read -p "
+# read -p "
 
-  Use string interpolation to map to the tile property.
+#   Use string interpolation to map to the tile property.
 
-      const [boardValues, setBoardValue] = useState([
-        { tile0: 'tile0', boardValue: '' },
-        { tile1: 'tile1', boardValue: '' },
-        { tile2: 'tile2', boardValue: '' },
-        { tile3: 'tile3', boardValue: '' },
-        { tile4: 'tile4', boardValue: '' },
-        { tile5: 'tile5', boardValue: '' },
-        { tile6: 'tile6', boardValue: '' },
-        { tile7: 'tile7', boardValue: '' },
-        { tile8: 'tile8', boardValue: '' },
-      ];
+#       const [boardValues, setBoardValue] = useState([
+#         { tile0: 'tile0', boardValue: '' },
+#         { tile1: 'tile1', boardValue: '' },
+#         { tile2: 'tile2', boardValue: '' },
+#         { tile3: 'tile3', boardValue: '' },
+#         { tile4: 'tile4', boardValue: '' },
+#         { tile5: 'tile5', boardValue: '' },
+#         { tile6: 'tile6', boardValue: '' },
+#         { tile7: 'tile7', boardValue: '' },
+#         { tile8: 'tile8', boardValue: '' },
+#       ];
 
-      {
-        boardValues.map((item, index) => {
-          return (
-          <div 
-            key={index} 
-            data-tile=\"tile\"
-            onClick={handlePlayers(index)} 
-            >
-              {item.boardValue}
-          </div>
-          )
-        })
-      }
+#       {
+#         boardValues.map((item, index) => {
+#           return (
+#           <div 
+#             key={index} 
+#             data-tile=\"tile\"
+#             onClick={handlePlayers(index)} 
+#             >
+#               {item.boardValue}
+#           </div>
+#           )
+#         })
+#       }
 
-Enter the next line: " response
-answer="data-tile={\`\${item[\`tile\${index}\`]}\`}"
-additional_feedback="
+# Enter the next line: " response
+# answer="data-tile={\`\${item[\`tile\${index}\`]}\`}"
+# additional_feedback="
 
-      const [boardValues, setBoardValue] = useState([
-        { tile0: 'tile0', boardValue: '' },
-        { tile1: 'tile1', boardValue: '' },
-        { tile2: 'tile2', boardValue: '' },
-        { tile3: 'tile3', boardValue: '' },
-        { tile4: 'tile4', boardValue: '' },
-        { tile5: 'tile5', boardValue: '' },
-        { tile6: 'tile6', boardValue: '' },
-        { tile7: 'tile7', boardValue: '' },
-        { tile8: 'tile8', boardValue: '' },
-      ];
+#       const [boardValues, setBoardValue] = useState([
+#         { tile0: 'tile0', boardValue: '' },
+#         { tile1: 'tile1', boardValue: '' },
+#         { tile2: 'tile2', boardValue: '' },
+#         { tile3: 'tile3', boardValue: '' },
+#         { tile4: 'tile4', boardValue: '' },
+#         { tile5: 'tile5', boardValue: '' },
+#         { tile6: 'tile6', boardValue: '' },
+#         { tile7: 'tile7', boardValue: '' },
+#         { tile8: 'tile8', boardValue: '' },
+#       ];
   
-      {
-        boardValues.map((item, index) => {
-          return (
-          <div 
-            key={index} 
-            data-tile={\`\${item[\`tile\${index}\`]}\`}
-            onClick={handlePlayers(index)} 
-            >
-              {item.boardValue}
-          </div>
-          )
-        })
-      }
+#       {
+#         boardValues.map((item, index) => {
+#           return (
+#           <div 
+#             key={index} 
+#             data-tile={\`\${item[\`tile\${index}\`]}\`}
+#             onClick={handlePlayers(index)} 
+#             >
+#               {item.boardValue}
+#           </div>
+#           )
+#         })
+#       }
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_question
+# next_question
 
 read -p "
 
@@ -2440,10 +2440,6 @@ next_line
 
 read -p "Calcuate rows and columns on a 3 by 3 board. " response
 answer="const row = Math.floor(index / 3); const column = Math.floor(index % 3);"
-additional_feedback="
-
-  
-"
 evaluate_answer_written_with_code "$response" "$answer" 
 
 next_line
@@ -2518,40 +2514,40 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
+read -p "
 
-#   Write a curry function that handles the change event on a form element.
+  Write a curry function that handles the change event on a form element.
 
-#   function handleInput(type: keyof FormInput): (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void {
-#     return function (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) { 
-#       setInput(prev => ({ 
-#         ...prev, fields: { 
-#           ...prev.fields, 
-#           [type]: e.target.value 
-#         }
-#       }));
-#     }
-#   }
+  function handleInput(type: keyof FormInput): (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void {
+    return function (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) { 
+      setInput(prev => ({ 
+        ...prev, fields: { 
+          ...prev.fields, 
+          [type]: e.target.value 
+        }
+      }));
+    }
+  }
 
-# Enter the next line: " response
-# answer="...prev, fields: { ...prev.fields, [type]: e.target.value }"
-# additional_feedback="
+Enter the next line: " response
+answer="...prev, fields: { ...prev.fields, [type]: e.target.value }"
+additional_feedback="
 
-#   function handleInput(type: keyof FormInput): (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void {
-#     return function (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) { 
-#       setInput(prev => ({ 
-#         ...prev, fields: { 
-#           ...prev.fields, 
-#           [type]: e.target.value 
-#         }
-#       }));
-#     }
-#   }
+  function handleInput(type: keyof FormInput): (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void {
+    return function (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) { 
+      setInput(prev => ({ 
+        ...prev, fields: { 
+          ...prev.fields, 
+          [type]: e.target.value 
+        }
+      }));
+    }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 

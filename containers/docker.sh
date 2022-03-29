@@ -10,8 +10,8 @@ calculate_score() {
         echo "     
 ########################################
 
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
 ########################################
              "
@@ -68,12 +68,12 @@ evaluate_answer() {
         echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
-       Your answer:     "$1"
-       Correct answer:  "$2"
+       Your answer:     ""$1""
+       Correct answer:  ""$2""
 
 ########################################
              "
@@ -91,12 +91,12 @@ evaluate_answer_written_with_code() {
         echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
-       Your answer:     "$1"
-       Correct answer:  "$2"
+       Your answer:     ""$1""
+       Correct answer:  ""$2""
 
 ########################################
              "
@@ -156,7 +156,7 @@ read -p "What is a container image? " response
 answer="A container image is an isolated filesystem containing everything needed to run an application - all dependencies, configuration, scripts, binaries, and other configurations for the container, such as environment variables, a default command to run, and other metadata."
 additional_feedback="
 
-    If you’re familiar with chroot, think of a container as an 
+    If you're familiar with chroot, think of a container as an 
     extended version of chroot. The filesystem is simply coming 
     from the image. But, a container adds additional isolation 
     not available when simply using chroot.

@@ -20,8 +20,8 @@ calculate_score() {
     echo "     
 ########################################
 
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
 ########################################
              "
@@ -76,8 +76,8 @@ evaluate_answer() {
     echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
        Your answer:     $1
@@ -101,8 +101,8 @@ evaluate_answer_written_with_code() {
     echo "     
 ########################################
         
-       Wrong! There is no tommorrow, 
-       so get this right right now!
+       Wrong! There is no tomorrow, 
+       so get this right now!
 
         
        Your answer:     $1
@@ -141,6 +141,13 @@ echo "
 "
 
 
+
+read -p "Why is measuring an operation in terms of time undependable? " response
+answer="Because the time will always change depending on the hardware it runs on."
+evaluate_answer "$response" "$answer"
+
+next_question
+
 read -p "
 
     Which function runs the fastest.
@@ -162,28 +169,14 @@ read -p "
 
          number += 2
 
-"
+Enter the next line: " response
+answer="Version 2 is the fastest because Version 1 loops 100 times while Version 2 loops 50 times." 
+evaluate_answer "$response" "$answer" "$additional_feedback"
 
-
-read -p "Why is measuring an operation in terms of time undependable? " response
-answer="Measuring the speed of an operation in terms of time is undependable because the time will always change depending on the hardware it runs on."
-additional_feedback=""
-evaluate_answer "$response" "$answer"
-
-answer="This is because Version 1 ends up looping 100 times" response
-answer="while Version 2 only loops 50 times." response
-answer="The first version then, takes twice as many steps as the second version." response
-answer="This is because Version 1 ends up looping 100 times" response
-answer="while Version 2 only loops 50 times." response
-answer="The first version then, takes twice as many steps as the second version." response
-answer=""
-additional_feedback
-evaluate_answer "$response" "$answer"
-
-
+next_question
 
 read -p "What is reading from an array? " response
-answer="Reading means providing the computer an index and the computer returning a value."
+answer="Reading is providing the computer an index and the computer returning a value."
 evaluate_answer "$response" "$answer"
 
 next_question
@@ -196,8 +189,55 @@ evaluate_answer "$response" "$answer"
 next_question
 
 read -p "Does insertion take more time to perform on an array? " response
-answer="Depending on where the insertion is, inserting an item into an array will take time. Inserting at the end of the array is a quick step because the computer only has to allocate an additional cell at the end. Inserting an item into the array in another location means moving the existing items in the array to make room for the new item."
-evaluate_answer "$response" "$answer"
+answer="Depending on where the insertion is, inserting an item into an array will take time."
+additional_feedback="
+
+   Depending on where the insertion is, inserting an item into an array 
+   will take time. 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Does insertion take more time to perform on an array? 
+
+   Depending on where the insertion is, inserting an item into an array 
+   will take time.
+
+Enter the line: " response
+answer="Inserting at the end of the array is a quick step because the computer only has to allocate an additional cell at the end."
+additional_feedback="
+
+   Depending on where the insertion is, inserting an item into an array 
+   will take time. Inserting at the end of the array is a quick step 
+   because the computer only has to allocate an additional cell at the 
+   end. 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "Does insertion take more time to perform on an array? 
+
+   Depending on where the insertion is, inserting an item into an array 
+   will take time. Inserting at the end of the array is a quick step 
+   because the computer only has to allocate an additional cell at the 
+   end.
+
+Enter the next line: " response
+answer="Inserting an item into the array in another location means moving the existing items in the array to make room for the new item."
+additional_feedback="
+
+   Depending on where the insertion is, inserting an item into an array 
+   will take time. Inserting at the end of the array is a quick step 
+   because the computer only has to allocate an additional cell at the 
+   end. Inserting an item into the array in another location means moving 
+   the existing items in the array to make room for the new item. 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
