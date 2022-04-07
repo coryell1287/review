@@ -140,168 +140,166 @@ echo "
 
 "
 
-read -p "When was Typescript made public? " response
-answer="Typescript was made public on October 1, 2012."
-evaluate_answer "$response" "$answer"
+# read -p "When was Typescript made public? " response
+# answer="October 1, 2012"
+# evaluate_answer "$response" "$answer"
 
-next_question
+# next_question
 
-read -p "What error is thrown in the following code?
+# read -p "What error is thrown in the following code?
 
-    y = 'not declared before assignments'; 
-    let y = 'The line before forbid this line';
+#     y = 'not declared before assignments'; 
+#     let y = 'The line before forbid this line';
  
-    z = 'not declared before assignments';
-    const z = 'The line before forbid this line'; 
+#     z = 'not declared before assignments';
+#     const z = 'The line before forbid this line'; 
 
-Enter your answer: " response
-answer="Block-scoped variable 'y' used before its declaration. Block-scoped variable 'z' used before its declaration. Cannot assign to 'z' because it is a constant."
-additional_feedback="
+# Enter your answer: " response
+# answer="Block-scoped variable 'y' used before its declaration. Block-scoped variable 'z' used before its declaration. Cannot assign to 'z' because it is a constant."
+# additional_feedback="
 
-    /usr/lib/node_modules/ts-node/src/index.ts:245
-    return new TSError(diagnosticText, diagnosticCodes)
-           ^
-    TSError: x Unable to compile TypeScript:
-    index.ts(1,1): error TS2448: Block-scoped variable 'y' used before its declaration.
-    index.ts(4,1): error TS2448: Block-scoped variable 'z' used before its declaration.
-    index.ts(4,1): error TS2588: Cannot assign to 'z' because it is a constant.
+#     /usr/lib/node_modules/ts-node/src/index.ts:245
+#     return new TSError(diagnosticText, diagnosticCodes)
+#            ^
+#     TSError: x Unable to compile TypeScript:
+#     index.ts(1,1): error TS2448: Block-scoped variable 'y' used before its declaration.
+#     index.ts(4,1): error TS2448: Block-scoped variable 'z' used before its declaration.
+#     index.ts(4,1): error TS2588: Cannot assign to 'z' because it is a constant.
 
-"
-evaluate_answer "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer "$response" "$answer" "$additional_feedback"
 
-next_question
+# next_question
 
 
-read -p "
+# read -p "
 
-    How do you resolve the following error?
+#     How do you resolve the following error?
 
-    Type 'Element[]' is missing the following properties from type 
-    'ReactElement<any, string | JSXElementConstructor<any>>': type, props, key
+#     Type 'Element[]' is missing the following properties from type 
+#     'ReactElement<any, string | JSXElementConstructor<any>>': type, props, key
 
-    export const NavList = ({ menuitems }: NavListProps): ReactElement => {
-        return menuitems.map(({ label, href }, index) => {
-           return (
-             <li key={index + label}>
-                <a href={href}>{label}</a>
-             </li>
-           );
-       });
-    };
+#     export const NavList = ({ menuitems }: NavListProps): ReactElement => {
+#         return menuitems.map(({ label, href }, index) => {
+#            return (
+#              <li key={index + label}>
+#                 <a href={href}>{label}</a>
+#              </li>
+#            );
+#        });
+#     };
 
-"
-answer="return <>{menuitems.map()}</>"
-evaluate_answer "$response" "$answer"
+# Enter the next line: " response
+# answer="<>{menuitems.map()}</>"
+# evaluate_answer "$response" "$answer"
 
-next_question
+# next_question
 
-read -p "What will setting the tsconfig to noEmitOnError true do? " response
-answer="The Typescript compiler will not produce JavaScript files if an error occurs."
-evaluate_answer "$response" "$answer"
+# read -p "What will setting the tsconfig to noEmitOnError true do? " response
+# answer="The Typescript compiler will not produce JavaScript files if an error occurs."
+# evaluate_answer "$response" "$answer"
 
-next_question
+# next_question
 
-read -p "What will be the output of the following code? 
+# read -p "What will be the output of the following code? 
 
-    function f1(i2: number) {
+#     function f1(i2: number) {
 
-      // i will be shadowed
-      console.log('Parameter value:', i2);
-      let i: number = 10; // Shadow #1
+#       // i will be shadowed
+#       console.log('Parameter value:', i2);
+#       let i: number = 10; // Shadow #1
 
-      console.log('Variable value:', i);
+#       console.log('Variable value:', i);
 
-      for (let i = 100; i < 101; i++) {
+#       for (let i = 100; i < 101; i++) {
 
-          // Shadow #2
-          console.log('For-statement value:', i);
+#           // Shadow #2
+#           console.log('For-statement value:', i);
           
-            for (let i = 200; i < 201; i++) {
-                // Shadow #3
-                console.log('For-statement value 2:', i);
-            }
-        }
-        console.log('Variable value:', i);
-    }
-    f1(0);
+#             for (let i = 200; i < 201; i++) {
+#                 // Shadow #3
+#                 console.log('For-statement value 2:', i);
+#             }
+#         }
+#         console.log('Variable value:', i);
+#     }
+#     f1(0);
 
 
-Enter your answer? " response
-answer="Parameter value: 0 Variable value: 10 For-statement value: 100 For-statement value 2: 200 Variable value: 10"
-evaluate_answer "$response" "$answer"
+# Enter your answer? " response
+# answer="Parameter value: 0 Variable value: 10 For-statement value: 100 For-statement value 2: 200 Variable value: 10"
+# evaluate_answer "$response" "$answer"
 
-next_question
+# next_question
 
-read -p "What will be the output of the following code? 
+# read -p "What will be the output of the following code? 
 
-  function mainFunction2() {
-    let innerFunction;
-    let listFunctions = [];
-    for (let i = 10; i < 15; i++) {
-        innerFunction = (function(param1: number) {
-            let f = function() {
-                return param1;
-            };
-            return f;
-        })(i * 100);
-          listFunctions.push(innerFunction);
-      }
-      for (let k = 0; k < 5; k++) {
-          console.log(listFunctions[k]());
-      }
-  }
-  mainFunction2();
+#   function mainFunction2() {
+#     let innerFunction;
+#     let listFunctions = [];
+#     for (let i = 10; i < 15; i++) {
+#         innerFunction = (function(param1: number) {
+#             let f = function() {
+#                 return param1;
+#             };
+#             return f;
+#         })(i * 100);
+#           listFunctions.push(innerFunction);
+#       }
+#       for (let k = 0; k < 5; k++) {
+#           console.log(listFunctions[k]());
+#       }
+#   }
+#   mainFunction2();
 
-Enter your answer: " response 
-answer="1000 1100 1200 1300 1400"
-evaluate_answer "$response" "$answer"
+# Enter your answer: " response 
+# answer="1000 1100 1200 1300 1400"
+# evaluate_answer "$response" "$answer"
 
-next_question
+# next_question
 
-read -p "Write 560000067 using a separator. " response
-answer="560_000_067"
-evaluate_answer "$response" "$answer"
+# read -p "Write 560000067 using a separator. " response
+# answer="560_000_067"
+# evaluate_answer "$response" "$answer"
 
-next_question
+# next_question
 
-read -p "
-  Apply the correct typing to the array.
+# read -p "
+#   Apply the correct typing to the array.
 
-  let multipleTypeArray = [1, true, 3];
+#   let multipleTypeArray = [1, true, 3];
 
-Enter you answer: " response
-answer="let multipleTypeArray: (number | boolean)[] = [1, true, 3];"
-evaluate_answer "$response" "$answer"
+# Enter you answer: " response
+# answer="let multipleTypeArray: (number | boolean)[] = [1, true, 3];"
+# evaluate_answer "$response" "$answer"
 
-next_question
+# next_question
 
 read -p "What is the difference between a constant array and a read-only array? 
 
-  const list1: number[] = [1, 2];
-  list1.push(3); // Legit because list1 is not re-assigned.
-  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
-
   read-only:
   let list1: readonly number[] = [1, 2];
   // list1.push(3); // Error, cannot mutate the content 
   list1 = [4, 5]; // Legit, content is not mutated, we create a new list
+
+  const list1: number[] = [1, 2];
+  list1.push(3); // Legit because list1 is not re-assigned.
+  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
 
 Enter the next line: " response
-answer="A developer can assign values to an array declared with const, updating the values stored in the reference."
+answer="A developer can redeclare an array and assign it new values"
 additional_feedback="
 
-  A developer can assign values to an array declared with const, 
-  updating the values stored in the reference.
-
-  const list1: number[] = [1, 2];
-  list1.push(3); // Legit because list1 is not re-assigned.
-  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
-
+  A developer can redeclare an array and assign it new values
 
   read-only:
   let list1: readonly number[] = [1, 2];
   // list1.push(3); // Error, cannot mutate the content 
   list1 = [4, 5]; // Legit, content is not mutated, we create a new list
+
+  const list1: number[] = [1, 2];
+  list1.push(3); // Legit because list1 is not re-assigned.
+  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -310,37 +308,192 @@ next_line
 
 read -p "What is the difference between a constant array and a read-only array? 
 
-  A developer can assign values to an array declared with const, 
-  updating the values stored in the reference.
-
-  const list1: number[] = [1, 2];
-  list1.push(3); // Legit because list1 is not re-assigned.
-  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
+  A developer can redeclare an array and assign it new values
 
   read-only:
   let list1: readonly number[] = [1, 2];
   // list1.push(3); // Error, cannot mutate the content 
   list1 = [4, 5]; // Legit, content is not mutated, we create a new list
 
-Enter next line: " response
-answer="A developer cannot change read-only array values; a developer can only change the reference if the developer declares the value with let."
+  const list1: number[] = [1, 2];
+  list1.push(3); // Legit because list1 is not re-assigned.
+  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
+
+Enter the next line: " response
+answer="creating a new memory address if the developer declares the array with let."
 additional_feedback="
 
-  A developer can assign values to an array declared with const, 
-  updating the values stored in the reference.
+  A developer can redeclare an array and assign it new values, creating a 
+  new memory address if the developer declares the array with let. 
 
-  const list1: number[] = [1, 2];
-  list1.push(3); // Legit because list1 is not re-assigned.
-  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
-    
-  A developer cannot change read-only array values; a developer 
-  can only change the reference if the developer declares the 
-  value with let.
-  
   read-only:
   let list1: readonly number[] = [1, 2];
   // list1.push(3); // Error, cannot mutate the content 
   list1 = [4, 5]; // Legit, content is not mutated, we create a new list
+
+  const list1: number[] = [1, 2];
+  list1.push(3); // Legit because list1 is not re-assigned.
+  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What is the difference between a constant array and a read-only array? 
+
+  A developer can redeclare an array and assign it new values, creating a 
+  new memory address if the developer declares the array with let. 
+
+  read-only:
+  let list1: readonly number[] = [1, 2];
+  // list1.push(3); // Error, cannot mutate the content 
+  list1 = [4, 5]; // Legit, content is not mutated, we create a new list
+
+  const list1: number[] = [1, 2];
+  list1.push(3); // Legit because list1 is not re-assigned.
+  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
+
+Enter the next line: " response
+answer="However, the developer cannot mutate the array if it is read-only."
+additional_feedback="
+
+  A developer can redeclare an array and assign it new values, creating a 
+  new memory address if the developer declares the array with let. However, 
+  the developer cannot mutate the array if it is read-only.
+
+  read-only:
+  let list1: readonly number[] = [1, 2];
+  // list1.push(3); // Error, cannot mutate the content 
+  list1 = [4, 5]; // Legit, content is not mutated, we create a new list
+
+  const list1: number[] = [1, 2];
+  list1.push(3); // Legit because list1 is not re-assigned.
+  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What is the difference between a constant array and a read-only array? 
+
+  A developer can redeclare an array and assign it new values, creating a 
+  new memory address if the developer declares the array with let. However, 
+  the developer cannot mutate the array if it is read-only.
+
+  read-only:
+  let list1: readonly number[] = [1, 2];
+  // list1.push(3); // Error, cannot mutate the content 
+  list1 = [4, 5]; // Legit, content is not mutated, we create a new list
+
+  const list1: number[] = [1, 2];
+  list1.push(3); // Legit because list1 is not re-assigned.
+  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
+
+Enter next line: " response
+answer="A developer cannot reassign an array declared with const"
+additional_feedback="
+
+  A developer can redeclare an array, creating a new memory address if the developer 
+  declares the array with let. However, the developer cannot mutate the array if it is 
+  read-only.
+
+  read-only:
+  let list1: readonly number[] = [1, 2];
+  // list1.push(3); // Error, cannot mutate the content 
+  list1 = [4, 5]; // Legit, content is not mutated, we create a new list
+
+  A developer cannot reassgin an array declared with const, 
+
+  const list1: number[] = [1, 2];
+  list1.push(3); // Legit because list1 is not re-assigned.
+  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What is the difference between a constant array and a read-only array? 
+
+  A developer can redeclare an array and assign it new values, creating a 
+  new memory address if the developer declares the array with let. However, 
+  the developer cannot mutate the array if it is read-only.
+
+  read-only:
+  let list1: readonly number[] = [1, 2];
+  // list1.push(3); // Error, cannot mutate the content 
+  list1 = [4, 5]; // Legit, content is not mutated, we create a new list
+
+  A developer cannot reassgin an array declared with const,
+
+  const list1: number[] = [1, 2];
+  list1.push(3); // Legit because list1 is not re-assigned.
+  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
+
+Enter next line: " response
+answer="but the developer can mutate it"
+additional_feedback="
+
+  A developer can redeclare an array, creating a new memory address if the developer 
+  declares the array with let. However, the developer cannot mutate the array if it is 
+  read-only.
+
+  read-only:
+  let list1: readonly number[] = [1, 2];
+  // list1.push(3); // Error, cannot mutate the content 
+  list1 = [4, 5]; // Legit, content is not mutated, we create a new list
+
+  A developer cannot reassgin an array declared with const, but the developer can mutate 
+  it, 
+
+  const list1: number[] = [1, 2];
+  list1.push(3); // Legit because list1 is not re-assigned.
+  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "What is the difference between a constant array and a read-only array? 
+
+  A developer can redeclare an array and assign it new values, creating a 
+  new memory address if the developer declares the array with let. However, 
+  the developer cannot mutate the array if it is read-only.
+
+  read-only:
+  let list1: readonly number[] = [1, 2];
+  // list1.push(3); // Error, cannot mutate the content 
+  list1 = [4, 5]; // Legit, content is not mutated, we create a new list
+
+  A developer cannot reassgin an array declared with const, but the developer can mutate 
+  it,
+
+  const list1: number[] = [1, 2];
+  list1.push(3); // Legit because list1 is not re-assigned.
+  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
+
+Enter next line: " response
+answer="thus changing the values stored in the reference."
+additional_feedback="
+
+  A developer can redeclare an array, creating a new memory address if the developer 
+  declares the array with let. However, the developer cannot mutate the array if it is 
+  read-only.
+
+  read-only:
+  let list1: readonly number[] = [1, 2];
+  // list1.push(3); // Error, cannot mutate the content 
+  list1 = [4, 5]; // Legit, content is not mutated, we create a new list
+
+  A developer cannot reassgin an array declared with const, but the developer can mutate 
+  it, thus changing the values stored in the reference.
+
+  const list1: number[] = [1, 2];
+  list1.push(3); // Legit because list1 is not re-assigned.
+  // list1 = [4, 5]; // ERROR: We cannot reassign a constant
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -428,89 +581,89 @@ additional_feedback="
 "
 evaluate_answer "$response" "$answer" "$additional_feedback"
 
-next_question
+# next_question
 
-read -p "What are some limitations to casting? " response
-answer="When going from a subtype to a type, without casting, the problem is that TypeScript will only validate access to the public type from the desired interface. However, under the hood, the object still contains all the members. For example (see below), TypeB has two members; when casting, it only exposes (at design time) the first member, which is in TypeA. However, printing the object reveals that both members are still there. The lack of cohesion between the type's schema and the actual object structure is an important detail."
-additional_feedback="
+# read -p "What are some limitations to casting? " response
+# answer="When going from a subtype to a type, without casting, the problem is that TypeScript will only validate access to the public type from the desired interface. However, under the hood, the object still contains all the members. For example (see below), TypeB has two members; when casting, it only exposes (at design time) the first member, which is in TypeA. However, printing the object reveals that both members are still there. The lack of cohesion between the type's schema and the actual object structure is an important detail."
+# additional_feedback="
 
-  You cannot cast a typed object into something that is not a subtype 
-  of the original type. If you have a TypeC that inherits TypeB which 
-  inherits TypeA, you can cast a TypeC to TypeA or TypeB without problem 
-  or TypeB to TypeA without casting.
+#   You cannot cast a typed object into something that is not a subtype 
+#   of the original type. If you have a TypeC that inherits TypeB which 
+#   inherits TypeA, you can cast a TypeC to TypeA or TypeB without problem 
+#   or TypeB to TypeA without casting.
 
-    interface ICast1 { m1: string } 
-    interface ICast2 { m1: string, m2: string } 
-    let icast1: ICast1 = { m1: 'm1' }; 
-    let icast2: ICast2 = { m1: 'm1', m2: 'm2' }; 
-    let icast3: ICast1 = icast2; // work without cast because of the structure 
+#     interface ICast1 { m1: string } 
+#     interface ICast2 { m1: string, m2: string } 
+#     let icast1: ICast1 = { m1: 'm1' }; 
+#     let icast2: ICast2 = { m1: 'm1', m2: 'm2' }; 
+#     let icast3: ICast1 = icast2; // work without cast because of the structure 
 
-    console.log(icast1);
-    console.log(icast2);
-    console.log(icast3);
+#     console.log(icast1);
+#     console.log(icast2);
+#     console.log(icast3);
 
-    //icast2 = icast1; // doesn't work, miss a member 
-    let icast4: ICast2 = icast1 as ICast2; // work but m2 undefined 
-    console.log(icast4); // { m1: 'm1' } // m2 is missing even if not optional 
+#     //icast2 = icast1; // doesn't work, miss a member 
+#     let icast4: ICast2 = icast1 as ICast2; // work but m2 undefined 
+#     console.log(icast4); // { m1: 'm1' } // m2 is missing even if not optional 
 
-"
-evaluate_answer "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer "$response" "$answer" "$additional_feedback"
 
-next_question
+# next_question
 
-read -p "
-      What happens when you uncomment icast2 = icast1;
-
-
-      interface ICast1 { m1: string } 
-      interface ICast2 { m1: string, m2: string } 
-      let icast1: ICast1 = { m1: 'm1' }; 
-      let icast2: ICast2 = { m1: 'm1', m2: 'm2' }; 
-      let icast3: ICast1 = icast2; // work without cast because of the structure 
-
-      console.log(icast1);
-      console.log(icast2);
-      console.log(icast3);
-
-      //icast2 = icast1; // doesn't work, miss a member 
-      let icast4: ICast2 = icast1 as ICast2; // work but m2 undefined 
-      console.log(icast4); // { m1: 'm1' } // m2 is missing even if not optional 
-
-Enter your answer: " response
-answer="Uncommenting shows that without casting, when the structure is not similar, TypeScript blocks the transpilation."
-evaluate_answer "$response" "$answer"
-
-next_question
-
-read -p "What is another limitation of type casting? " response
-answer="Because casting tells TypeScript that you know what you're doing, it won't complain. However, non-optional members that aren't present will be undefined even if the contract specifies that the type must have the member."
-
-evaluate_answer "$response" "$answer"
-
-next_question
-
-read -p "
-
-    Explain what is taking place in regards to casting in the following code.
-
-      interface ITypeA { m1: string } 
-      interface ITypeB extends ITypeA { m2: string } 
-      interface ITypeC extends ITypeB { m3: string } 
-      const typea: ITypeA = { m1: 'm1' }; 
-      const typeb: ITypeB = { m1: 'm1', m2: 'm2' }; 
-      let typeb2: ITypeB = typea as ITypeB; // Work (m2 will be missing!!!) 
-      let typea2: ITypeA = typeb; // No cast needed 
-      console.log(typea2); // { m1: 'm1', m2: 'm2' } However, only m1 is accessible at compilation 
-      // let m2 = typea2.m2;
+# read -p "
+#       What happens when you uncomment icast2 = icast1;
 
 
-Enter your answer: " response
-answer="You can see an example below of when an object of TypeA (base interface) is cast down to TypeB. The cast coerces the change of type, but m2 is still not present.
+#       interface ICast1 { m1: string } 
+#       interface ICast2 { m1: string, m2: string } 
+#       let icast1: ICast1 = { m1: 'm1' }; 
+#       let icast2: ICast2 = { m1: 'm1', m2: 'm2' }; 
+#       let icast3: ICast1 = icast2; // work without cast because of the structure 
 
-While it is good enough for TypeScript that you manually override the validation, it can be problematic if later in the code, you try to access m2 and believe that it cannot be undefined. In fact, this can cause a runtime error if you try to access a function of the member. The example below has line 9 commented. It demonstrates that the member is not available at design time. While it is good enough for TypeScript that you manually override the validation, it can be problematic if later in the code, you try to access m2 and believe that it cannot be undefined. In fact, this can cause a runtime error if you try to access a function of the member. The example below has line 9 commented. It demonstrates that the member is not available at design time. However, when commented, you can see that it is present at runtime (JavaScript)."
-evaluate_answer "$response" "$answer"
+#       console.log(icast1);
+#       console.log(icast2);
+#       console.log(icast3);
 
-next_question
+#       //icast2 = icast1; // doesn't work, miss a member 
+#       let icast4: ICast2 = icast1 as ICast2; // work but m2 undefined 
+#       console.log(icast4); // { m1: 'm1' } // m2 is missing even if not optional 
+
+# Enter your answer: " response
+# answer="Uncommenting shows that without casting, when the structure is not similar, TypeScript blocks the transpilation."
+# evaluate_answer "$response" "$answer"
+
+# next_question
+
+# read -p "What is another limitation of type casting? " response
+# answer="Because casting tells TypeScript that you know what you're doing, it won't complain. However, non-optional members that aren't present will be undefined even if the contract specifies that the type must have the member."
+
+# evaluate_answer "$response" "$answer"
+
+# next_question
+
+# read -p "
+
+#     Explain what is taking place in regards to casting in the following code.
+
+#       interface ITypeA { m1: string } 
+#       interface ITypeB extends ITypeA { m2: string } 
+#       interface ITypeC extends ITypeB { m3: string } 
+#       const typea: ITypeA = { m1: 'm1' }; 
+#       const typeb: ITypeB = { m1: 'm1', m2: 'm2' }; 
+#       let typeb2: ITypeB = typea as ITypeB; // Work (m2 will be missing!!!) 
+#       let typea2: ITypeA = typeb; // No cast needed 
+#       console.log(typea2); // { m1: 'm1', m2: 'm2' } However, only m1 is accessible at compilation 
+#       // let m2 = typea2.m2;
+
+
+# Enter your answer: " response
+# answer="You can see an example below of when an object of TypeA (base interface) is cast down to TypeB. The cast coerces the change of type, but m2 is still not present.
+
+# While it is good enough for TypeScript that you manually override the validation, it can be problematic if later in the code, you try to access m2 and believe that it cannot be undefined. In fact, this can cause a runtime error if you try to access a function of the member. The example below has line 9 commented. It demonstrates that the member is not available at design time. While it is good enough for TypeScript that you manually override the validation, it can be problematic if later in the code, you try to access m2 and believe that it cannot be undefined. In fact, this can cause a runtime error if you try to access a function of the member. The example below has line 9 commented. It demonstrates that the member is not available at design time. However, when commented, you can see that it is present at runtime (JavaScript)."
+# evaluate_answer "$response" "$answer"
+
+# next_question
 
 read -p "Is there a Date type in JavaScript? " response
 answer="No. There is a Date object in JavaScript but unfortunately there is no Date type."
