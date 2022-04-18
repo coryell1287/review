@@ -3738,350 +3738,442 @@ echo "
 
 # next_question
 
-# read -p "
-#   Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
+read -p "
+  Write a program to find every element that exists in any of the two given arrays once.
   
-#   console.log(
-#     findCommonElements(
-#       [1, 1.2, 1.5, 3, 0],
-#       [1.9, 3, 0, 3.9],
-#       (a, b) => Math.round(a) === Math.round(b)
-#     )
-#   );
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
 
-# Enter the next line: " response
-# answer="type Comp = { (a: number, b: number): boolean; };"
-# additional_feedback="
 
-#   type Comp = { 
-#     (a: number, b: number): boolean; 
-#   };
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
 
-#   console.log(
-#     findCommonElements(
-#       [1, 1.2, 1.5, 3, 0],
-#       [1.9, 3, 0, 3.9],
-#       (a, b) => Math.round(a) === Math.round(b)
-#     )
-#   );
+Enter the next line: " response
+answer="function getCommon(arr1: number[], arr2:number): number[] { }"
+additional_feedback="
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+  function getCommon(arr1: number[], arr2:number): number[] { 
 
-# next_line
+  }
 
-# read -p "
-#   Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a program to find every element that exists in any of the two given arrays once.
   
-#   type Comp = { 
-#     (a: number, b: number): boolean; 
-#   };
+  function getCommon(arr1: number[], arr2:number): number[] { 
 
-#   console.log(
-#     findCommonElements(
-#       [1, 1.2, 1.5, 3, 0],
-#       [1.9, 3, 0, 3.9],
-#       (a, b) => Math.round(a) === Math.round(b)
-#     )
-#   );
+  }
 
-# Enter the next line: " response
-# answer="function findCommonElements(a: number[], b: number[], comp: Comp) { }"
-# additional_feedback="
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
 
-#   type Comp = { 
-#     (a: number, b: number): boolean; 
-#   };
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
 
-#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
+Enter the next line: " response
+answer="arr1.sort(); arr2.sort();"
+additional_feedback="
 
-#   }
+  function getCommon(arr1: number[], arr2:number): number[] { 
+    arr1.sort(); 
+    arr2.sort();
+  }
 
-#   console.log(
-#     findCommonElements(
-#       [1, 1.2, 1.5, 3, 0],
-#       [1.9, 3, 0, 3.9],
-#       (a, b) => Math.round(a) === Math.round(b)
-#     )
-#   );
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
 
-# next_line
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# read -p "
-#   Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
+next_line
+
+read -p "
+  Write a program to find every element that exists in any of the two given arrays once.
   
-#   type Comp = { 
-#     (a: number, b: number): boolean; 
-#   };
+  function getCommon(arr1: number[], arr2:number): number[] { 
+    arr1.sort(); 
+    arr2.sort();
+  }
 
-#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
 
-#   }
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
 
-#   console.log(
-#     findCommonElements(
-#       [1, 1.2, 1.5, 3, 0],
-#       [1.9, 3, 0, 3.9],
-#       (a, b) => Math.round(a) === Math.round(b)
-#     )
-#   );
+Enter the next line: " response
+answer="let common = []; let i = 0; let j = 0;"
+additional_feedback="
 
-# Enter the next line: " response
-# answer="return Array.from();"
-# additional_feedback="
+  function getCommon(arr1: number[], arr2:number): number[] { 
+    arr1.sort(); 
+    arr2.sort();
 
-#   type Comp = { 
-#     (a: number, b: number): boolean; 
-#   };
+    let common = []; 
+    let i = 0; 
+    let j = 0;
+  }
 
-#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
-#     return Array.from(
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
 
-#     );
-#   }
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-#   console.log(
-#     findCommonElements(
-#       [1, 1.2, 1.5, 3, 0],
-#       [1.9, 3, 0, 3.9],
-#       (a, b) => Math.round(a) === Math.round(b)
-#     )
-#   );
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+next_line
 
-# next_line
-
-# read -p "
-#   Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
+read -p "
+  Write a program to find every element that exists in any of the two given arrays once.
   
-#   type Comp = { 
-#     (a: number, b: number): boolean; 
-#   };
+  function getCommon(arr1: number[], arr2:number): number[] { 
+    arr1.sort(); 
+    arr2.sort();
 
-#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
-#     return Array.from(
+    let common = []; 
+    let i = 0; 
+    let j = 0;
+  }
 
-#     );
-#   }
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
 
-#   console.log(
-#     findCommonElements(
-#       [1, 1.2, 1.5, 3, 0],
-#       [1.9, 3, 0, 3.9],
-#       (a, b) => Math.round(a) === Math.round(b)
-#     )
-#   );
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
 
-# Enter the next line: " response
-# answer="new Set()"
-# additional_feedback="
-#   type Comp = { 
-#     (a: number, b: number): boolean; 
-#   };
+Enter the next line: " response
+answer="while (i < arr1.length && j < arr2.length) { }"
+additional_feedback="
+  function getCommon(arr1: number[], arr2:number): number[] { 
+    arr1.sort(); 
+    arr2.sort();
 
-#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
-#     return Array.from(
-#       new Set(
+    let common = []; 
+    let i = 0; 
+    let j = 0;
 
-#       )
-#     );
-#   }
+    while (i < arr1.length && j < arr2.length) { 
 
-#   console.log(
-#     findCommonElements(
-#       [1, 1.2, 1.5, 3, 0],
-#       [1.9, 3, 0, 3.9],
-#       (a, b) => Math.round(a) === Math.round(b)
-#     )
-#   );
+    }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
 
-# next_line
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
 
-# read -p "
-#   Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a program to find every element that exists in any of the two given arrays once.
   
-#   type Comp = { 
-#     (a: number, b: number): boolean; 
-#   };
+  function getCommon(arr1: number[], arr2:number): number[] { 
+    arr1.sort(); 
+    arr2.sort();
 
-#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
-#     return Array.from(
-#       new Set(
+    let common = []; 
+    let i = 0; 
+    let j = 0;
 
-#       )
-#     );
-#   }
+    while (i < arr1.length && j < arr2.length) { 
 
-#   console.log(
-#     findCommonElements(
-#       [1, 1.2, 1.5, 3, 0],
-#       [1.9, 3, 0, 3.9],
-#       (a, b) => Math.round(a) === Math.round(b)
-#     )
-#   );
+    }
+  }
 
-# Enter the next line: " response
-# answer="([] as number[]).concat()"
-# additional_feedback="
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
 
-#   type Comp = { 
-#     (a: number, b: number): boolean; 
-#   };
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
 
-#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
-#     return Array.from(
-#       new Set(
-#         ([] as number[]).concat(
+Enter the next line: " response
+answer="if (arr1[i] !== arr2[j]) { }"
+additional_feedback="
 
-#         )
-#       )
-#     );
-#   }
+  function getCommon(arr1: number[], arr2:number): number[] { 
+    arr1.sort(); 
+    arr2.sort();
 
-#   console.log(
-#     findCommonElements(
-#       [1, 1.2, 1.5, 3, 0],
-#       [1.9, 3, 0, 3.9],
-#       (a, b) => Math.round(a) === Math.round(b)
-#     )
-#   );
+    let common = []; 
+    let i = 0; 
+    let j = 0;
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+    while (i < arr1.length && j < arr2.length) { 
+      if (arr1[i] !== arr2[j]) { 
 
-# next_line
+      }
+    }
+  }
 
-# read -p "
-#   Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a program to find every element that exists in any of the two given arrays once.
   
-#   type Comp = { 
-#     (a: number, b: number): boolean; 
-#   };
+  function getCommon(arr1: number[], arr2:number): number[] { 
+    arr1.sort(); 
+    arr2.sort();
 
-#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
-#     return Array.from(
-#       new Set(
-#         ([] as number[]).concat(
+    let common = []; 
+    let i = 0; 
+    let j = 0;
 
-#         )
-#       )
-#     );
-#   }
+    while (i < arr1.length && j < arr2.length) { 
+      if (arr1[i] !== arr2[j]) { 
 
-#   console.log(
-#     findCommonElements(
-#       [1, 1.2, 1.5, 3, 0],
-#       [1.9, 3, 0, 3.9],
-#       (a, b) => Math.round(a) === Math.round(b)
-#     )
-#   );
+      }
+    }
+  }
+
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
   
 
-# Enter the next line: " response
-# answer="a, b.filter(function (x) { })"
-# additional_feedback="
+Enter the next line: " response
+answer="common.push(arr2[i]); i++; j++;"
+additional_feedback="
 
-#   type Comp = { 
-#     (a: number, b: number): boolean; 
-#   };
+  function getCommon(arr1: number[], arr2:number): number[] { 
+    arr1.sort(); 
+    arr2.sort();
 
-#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
-#     return Array.from(
-#       new Set(
-#         ([] as number[]).concat(
-#           a, 
-#           b.filter(function (x) { 
+    let common = []; 
+    let i = 0; 
+    let j = 0;
 
-#           })
-#         )
-#       )
-#     );
-#   }
+    while (i < arr1.length && j < arr2.length) { 
+      if (arr1[i] !== arr2[j]) {
+        common.push(arr2[i]); 
+        i++; 
+        j++; 
+      }
+    }
+  }
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
 
-#   console.log(
-#     findCommonElements(
-#       [1, 1.2, 1.5, 3, 0],
-#       [1.9, 3, 0, 3.9],
-#       (a, b) => Math.round(a) === Math.round(b)
-#     )
-#   );
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
 
-# read -p "
-#   Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
+read -p "
+  Write a program to find every element that exists in any of the two given arrays once.
   
-#   type Comp = { 
-#     (a: number, b: number): boolean; 
-#   };
+  function getCommon(arr1: number[], arr2:number): number[] { 
+    arr1.sort(); 
+    arr2.sort();
 
-#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
-#     return Array.from(
-#       new Set(
-#         ([] as number[]).concat(
-#           a, 
-#           b.filter(function (x) { 
+    let common = []; 
+    let i = 0; 
+    let j = 0;
 
-#           })
-#         )
-#       )
-#     );
-#   }
+    while (i < arr1.length && j < arr2.length) { 
+      if (arr1[i] !== arr2[j]) {
+        common.push(arr2[i]); 
+        i++; 
+        j++; 
+      }
+    }
+  }
 
-#   console.log(
-#     findCommonElements(
-#       [1, 1.2, 1.5, 3, 0],
-#       [1.9, 3, 0, 3.9],
-#       (a, b) => Math.round(a) === Math.round(b)
-#     )
-#   );
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
 
-# Enter the next line: " response
-# answer="return ( a.findIndex(function (y) { return comp(x, y); }) === -1 )"
-# additional_feedback="
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
 
-#   type Comp = { 
-#     (a: number, b: number): boolean; 
-#   };
+Enter the next line: " response
+answer="else if (arr1[i] < arr2[j]) { i++; }"
+additional_feedback="
+function getCommon(arr1: number[], arr2:number): number[] { 
+    arr1.sort(); 
+    arr2.sort();
 
-#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
-#     return Array.from(
-#       new Set(
-#         ([] as number[]).concat(
-#           a, 
-#           b.filter(function (x) { 
-#             return ( 
-#               a.findIndex(function (y) { 
-#                 return comp(x, y); 
-#               }) === -1 
-#              )
-#           })
-#         )
-#       )
-#     );
-#   }
+    let common = []; 
+    let i = 0; 
+    let j = 0;
 
-#   console.log(
-#     findCommonElements(
-#       [1, 1.2, 1.5, 3, 0],
-#       [1.9, 3, 0, 3.9],
-#       (a, b) => Math.round(a) === Math.round(b)
-#     )
-#   );
+    while (i < arr1.length && j < arr2.length) { 
+      if (arr1[i] !== arr2[j]) {
+        common.push(arr2[i]); 
+        i++; 
+        j++; 
+      } else if (arr1[i] < arr2[j]) { 
+        i++; 
+      }
+    }
+   }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a program to find every element that exists in any of the two given arrays once.
+  
+  function getCommon(arr1: number[], arr2:number): number[] { 
+    arr1.sort(); 
+    arr2.sort();
+
+    let common = []; 
+    let i = 0; 
+    let j = 0;
+
+    while (i < arr1.length && j < arr2.length) { 
+      if (arr1[i] !== arr2[j]) {
+        common.push(arr2[i]); 
+        i++; 
+        j++; 
+      } else if (arr1[i] < arr2[j]) { 
+        i++; 
+     }
+    }
+  }
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
+
+Enter the next line: " response
+answer="return Array.from(new Set(arr1.concat(common)));"
+additional_feedback="
+
+function getCommon(arr1: number[], arr2:number): number[] { 
+    arr1.sort(); 
+    arr2.sort();
+
+    let common = []; 
+    let i = 0; 
+    let j = 0;
+
+    while (i < arr1.length && j < arr2.length) { 
+      if (arr1[i] !== arr2[j]) {
+        common.push(arr2[i]); 
+        i++; 
+        j++; 
+      } else if (arr1[i] < arr2[j]) { 
+        i++; 
+      } else { 
+        j++; 
+      }
+    } 
+    return Array.from(new Set(arr1.concat(common)));   
+  }
+  const arr1 = [45, 99, 55, 15, 17, 93, 23];
+  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+
+  const commonElements = getCommon(arr1, arr2);
+  console.log(commonElements);
+  // [
+  //   15, 17, 23, 45, 55,
+  //   93, 99,  1, 18,  7
+  // ]
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 # next_question
 
@@ -4843,1934 +4935,1953 @@ echo "
 
 # next_question
 
-read -p "
-  Count the instance of an an item in array and create an array 
-  of the number of occurrences. 
+# read -p "
+#   Count the instance of an an item in array and create an array 
+#   of the number of occurrences. 
 
-  const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
+#   const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
 
-  // countedNames is:
-  // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+#   // countedNames is:
+#   // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
 
-Enter the next line: " response
-answer="const countedNames = names.reduce(function (allNames, name) { }, {});"
-additional_feedback="
+# Enter the next line: " response
+# answer="const countedNames = names.reduce(function (allNames, name) { }, {});"
+# additional_feedback="
 
-  const countedNames = names.reduce(function (allNames, name) { 
+#   const countedNames = names.reduce(function (allNames, name) { 
     
-  }, {});
+#   }, {});
   
-  // countedNames is:
-  // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+#   // countedNames is:
+#   // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
-  Count the instance of an an item in array and create an array 
-  of the number of occurrences. 
+# read -p "
+#   Count the instance of an an item in array and create an array 
+#   of the number of occurrences. 
 
-  const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
+#   const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
 
-  const countedNames = names.reduce(function (allNames, name) { 
+#   const countedNames = names.reduce(function (allNames, name) { 
 
-  }, {});
+#   }, {});
 
-  // countedNames is:
-  // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+#   // countedNames is:
+#   // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
 
-Enter the next line: " response
-answer="if (name in allNames) { allNames[name]++ }"
-additional_feedback="
+# Enter the next line: " response
+# answer="if (name in allNames) { allNames[name]++ }"
+# additional_feedback="
 
-  const countedNames = names.reduce(function (allNames, name) { 
-    if (name in allNames) { 
-      allNames[name]++ 
-    }
-  }, {});
+#   const countedNames = names.reduce(function (allNames, name) { 
+#     if (name in allNames) { 
+#       allNames[name]++ 
+#     }
+#   }, {});
 
-  // countedNames is:
-  // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }  
+#   // countedNames is:
+#   // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }  
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
-  Count the instance of an an item in array and create an array 
-  of the number of occurrences. 
+# read -p "
+#   Count the instance of an an item in array and create an array 
+#   of the number of occurrences. 
 
-  const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
+#   const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
 
-  const countedNames = names.reduce(function (allNames, name) { 
-    if (name in allNames) { 
-      allNames[name]++ 
-    }
-  }, {});
+#   const countedNames = names.reduce(function (allNames, name) { 
+#     if (name in allNames) { 
+#       allNames[name]++ 
+#     }
+#   }, {});
 
-  // countedNames is:
-  // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+#   // countedNames is:
+#   // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
 
-Enter the next line: " response
-answer="else { allNames[name] = 1 }"
-additional_feedback="
+# Enter the next line: " response
+# answer="else { allNames[name] = 1 }"
+# additional_feedback="
 
-  const countedNames = names.reduce(function (allNames, name) { 
-    if (name in allNames) { 
-      allNames[name]++ 
-    } else { 
-      allNames[name] = 1 
-    }
-  }, {});
+#   const countedNames = names.reduce(function (allNames, name) { 
+#     if (name in allNames) { 
+#       allNames[name]++ 
+#     } else { 
+#       allNames[name] = 1 
+#     }
+#   }, {});
 
-  // countedNames is:
-  // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }  
+#   // countedNames is:
+#   // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }  
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
-  Group objects by property. 
+# read -p "
+#   Group objects by property. 
 
-  const people = [
-    { name: 'Alice', age: 21 },
-    { name: 'Max', age: 20 },
-    { name: 'Jane', age: 20 }
-  ];
+#   const people = [
+#     { name: 'Alice', age: 21 },
+#     { name: 'Max', age: 20 },
+#     { name: 'Jane', age: 20 }
+#   ];
 
-  const groupedPeople = groupBy(people, 'age');
-  // groupedPeople is:
-  // { 
-  //   20: [
-  //     { name: 'Max', age: 20 }, 
-  //     { name: 'Jane', age: 20 }
-  //   ], 
-  //   21: [{ name: 'Alice', age: 21 }] 
-  // }
+#   const groupedPeople = groupBy(people, 'age');
+#   // groupedPeople is:
+#   // { 
+#   //   20: [
+#   //     { name: 'Max', age: 20 }, 
+#   //     { name: 'Jane', age: 20 }
+#   //   ], 
+#   //   21: [{ name: 'Alice', age: 21 }] 
+#   // }
 
-Enter the next line: " response
-answer="function groupBy(objectArray, property) { }"
-additional_feedback="
+# Enter the next line: " response
+# answer="function groupBy(objectArray, property) { }"
+# additional_feedback="
 
-  const people = [
-    { name: 'Alice', age: 21 },
-    { name: 'Max', age: 20 },
-    { name: 'Jane', age: 20 }
-  ];
+#   const people = [
+#     { name: 'Alice', age: 21 },
+#     { name: 'Max', age: 20 },
+#     { name: 'Jane', age: 20 }
+#   ];
 
-  function groupBy(objectArray, property) { 
+#   function groupBy(objectArray, property) { 
     
-  }
+#   }
 
-  const groupedPeople = groupBy(people, 'age');
-  // groupedPeople is:
-  // { 
-  //   20: [
-  //     { name: 'Max', age: 20 }, 
-  //     { name: 'Jane', age: 20 }
-  //   ], 
-  //   21: [{ name: 'Alice', age: 21 }] 
-  // }
+#   const groupedPeople = groupBy(people, 'age');
+#   // groupedPeople is:
+#   // { 
+#   //   20: [
+#   //     { name: 'Max', age: 20 }, 
+#   //     { name: 'Jane', age: 20 }
+#   //   ], 
+#   //   21: [{ name: 'Alice', age: 21 }] 
+#   // }
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
-  Group objects by property. 
+# read -p "
+#   Group objects by property. 
 
-  const people = [
-    { name: 'Alice', age: 21 },
-    { name: 'Max', age: 20 },
-    { name: 'Jane', age: 20 }
-  ];
+#   const people = [
+#     { name: 'Alice', age: 21 },
+#     { name: 'Max', age: 20 },
+#     { name: 'Jane', age: 20 }
+#   ];
 
-  function groupBy(objectArray, property) { 
+#   function groupBy(objectArray, property) { 
     
-  }
+#   }
 
-  const groupedPeople = groupBy(people, 'age');
-  // groupedPeople is:
-  // { 
-  //   20: [
-  //     { name: 'Max', age: 20 }, 
-  //     { name: 'Jane', age: 20 }
-  //   ], 
-  //   21: [{ name: 'Alice', age: 21 }] 
-  // }
+#   const groupedPeople = groupBy(people, 'age');
+#   // groupedPeople is:
+#   // { 
+#   //   20: [
+#   //     { name: 'Max', age: 20 }, 
+#   //     { name: 'Jane', age: 20 }
+#   //   ], 
+#   //   21: [{ name: 'Alice', age: 21 }] 
+#   // }
 
-Enter the next line: " response
-answer="return objectArray.reduce(function (acc, cur) { }, {});"
-additional_feedback="
+# Enter the next line: " response
+# answer="return objectArray.reduce(function (acc, cur) { }, {});"
+# additional_feedback="
 
-  const people = [
-    { name: 'Alice', age: 21 },
-    { name: 'Max', age: 20 },
-    { name: 'Jane', age: 20 }
-  ];
+#   const people = [
+#     { name: 'Alice', age: 21 },
+#     { name: 'Max', age: 20 },
+#     { name: 'Jane', age: 20 }
+#   ];
 
-  function groupBy(objectArray, property) { 
-    return objectArray.reduce(function (acc, cur) { 
+#   function groupBy(objectArray, property) { 
+#     return objectArray.reduce(function (acc, cur) { 
 
-    }, {});
-  }
+#     }, {});
+#   }
 
-  const groupedPeople = groupBy(people, 'age');
-  // groupedPeople is:
-  // { 
-  //   20: [
-  //     { name: 'Max', age: 20 }, 
-  //     { name: 'Jane', age: 20 }
-  //   ], 
-  //   21: [{ name: 'Alice', age: 21 }] 
-  // }
-
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Group objects by property. 
-
-  const people = [
-    { name: 'Alice', age: 21 },
-    { name: 'Max', age: 20 },
-    { name: 'Jane', age: 20 }
-  ];
-
-  function groupBy(objectArray, property) { 
-    
-  }
-
-  const groupedPeople = groupBy(people, 'age');
-  // groupedPeople is:
-  // { 
-  //   20: [
-  //     { name: 'Max', age: 20 }, 
-  //     { name: 'Jane', age: 20 }
-  //   ], 
-  //   21: [{ name: 'Alice', age: 21 }] 
-  // }
-
-Enter the next line: " response
-answer="const key = cur[property];"
-additional_feedback="
-
-  const people = [
-    { name: 'Alice', age: 21 },
-    { name: 'Max', age: 20 },
-    { name: 'Jane', age: 20 }
-  ];
-
-  function groupBy(objectArray, property) { 
-    return objectArray.reduce(function (acc, cur) { 
-      const key = cur[property];
-    }, {});
-  }
-
-  const groupedPeople = groupBy(people, 'age');
-  // groupedPeople is:
-  // { 
-  //   20: [
-  //     { name: 'Max', age: 20 }, 
-  //     { name: 'Jane', age: 20 }
-  //   ], 
-  //   21: [{ name: 'Alice', age: 21 }] 
-  // }
+#   const groupedPeople = groupBy(people, 'age');
+#   // groupedPeople is:
+#   // { 
+#   //   20: [
+#   //     { name: 'Max', age: 20 }, 
+#   //     { name: 'Jane', age: 20 }
+#   //   ], 
+#   //   21: [{ name: 'Alice', age: 21 }] 
+#   // }
 
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
-  Group objects by property. 
+# read -p "
+#   Group objects by property. 
 
-  const people = [
-    { name: 'Alice', age: 21 },
-    { name: 'Max', age: 20 },
-    { name: 'Jane', age: 20 }
-  ];
+#   const people = [
+#     { name: 'Alice', age: 21 },
+#     { name: 'Max', age: 20 },
+#     { name: 'Jane', age: 20 }
+#   ];
 
-  function groupBy(objectArray, property) { 
-    return objectArray.reduce(function (acc, cur) { 
-      const key = cur[property];
-    }, {});
-  }
+#   function groupBy(objectArray, property) { 
+#     return objectArray.reduce(function (acc, cur) { 
 
-  const groupedPeople = groupBy(people, 'age');
-  // groupedPeople is:
-  // { 
-  //   20: [
-  //     { name: 'Max', age: 20 }, 
-  //     { name: 'Jane', age: 20 }
-  //   ], 
-  //   21: [{ name: 'Alice', age: 21 }] 
-  // }
+#     }, {});
+#   }
 
-Enter the next line: " response
-answer="if (!acc[key]) { acc[key] = []; }"
-additional_feedback="
+#   const groupedPeople = groupBy(people, 'age');
+#   // groupedPeople is:
+#   // { 
+#   //   20: [
+#   //     { name: 'Max', age: 20 }, 
+#   //     { name: 'Jane', age: 20 }
+#   //   ], 
+#   //   21: [{ name: 'Alice', age: 21 }] 
+#   // }
 
-  const people = [
-    { name: 'Alice', age: 21 },
-    { name: 'Max', age: 20 },
-    { name: 'Jane', age: 20 }
-  ];
+# Enter the next line: " response
+# answer="const key = cur[property];"
+# additional_feedback="
 
-  function groupBy(objectArray, property) { 
-    return objectArray.reduce(function (acc, cur) { 
-      const key = cur[property];
-      if (!acc[key]) { 
-        acc[key] = []; 
-      }
-    }, {});
-  }
+#   const people = [
+#     { name: 'Alice', age: 21 },
+#     { name: 'Max', age: 20 },
+#     { name: 'Jane', age: 20 }
+#   ];
 
-  const groupedPeople = groupBy(people, 'age');
-  // groupedPeople is:
-  // { 
-  //   20: [
-  //     { name: 'Max', age: 20 }, 
-  //     { name: 'Jane', age: 20 }
-  //   ], 
-  //   21: [{ name: 'Alice', age: 21 }] 
-  // }
+#   function groupBy(objectArray, property) { 
+#     return objectArray.reduce(function (acc, cur) { 
+#       const key = cur[property];
+#     }, {});
+#   }
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+#   const groupedPeople = groupBy(people, 'age');
+#   // groupedPeople is:
+#   // { 
+#   //   20: [
+#   //     { name: 'Max', age: 20 }, 
+#   //     { name: 'Jane', age: 20 }
+#   //   ], 
+#   //   21: [{ name: 'Alice', age: 21 }] 
+#   // }
 
-next_line
 
-read -p "
-  Group objects by property. 
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-  const people = [
-    { name: 'Alice', age: 21 },
-    { name: 'Max', age: 20 },
-    { name: 'Jane', age: 20 }
-  ];
+# next_line
 
-  function groupBy(objectArray, property) { 
-    return objectArray.reduce(function (acc, cur) { 
-      const key = cur[property];
-      if (!acc[key]) { 
-        acc[key] = []; 
-      }
-    }, {});
-  }
+# read -p "
+#   Group objects by property. 
 
-  const groupedPeople = groupBy(people, 'age');
-  // groupedPeople is:
-  // { 
-  //   20: [
-  //     { name: 'Max', age: 20 }, 
-  //     { name: 'Jane', age: 20 }
-  //   ], 
-  //   21: [{ name: 'Alice', age: 21 }] 
-  // }
+#   const people = [
+#     { name: 'Alice', age: 21 },
+#     { name: 'Max', age: 20 },
+#     { name: 'Jane', age: 20 }
+#   ];
 
-Enter the next line: " response
-answer="acc[key].push(cur); return acc;"
-additional_feedback="
+#   function groupBy(objectArray, property) { 
+#     return objectArray.reduce(function (acc, cur) { 
+#       const key = cur[property];
+#     }, {});
+#   }
 
-  const people = [
-    { name: 'Alice', age: 21 },
-    { name: 'Max', age: 20 },
-    { name: 'Jane', age: 20 }
-  ];
+#   const groupedPeople = groupBy(people, 'age');
+#   // groupedPeople is:
+#   // { 
+#   //   20: [
+#   //     { name: 'Max', age: 20 }, 
+#   //     { name: 'Jane', age: 20 }
+#   //   ], 
+#   //   21: [{ name: 'Alice', age: 21 }] 
+#   // }
 
-  function groupBy(objectArray, property) { 
-    return objectArray.reduce(function (acc, cur) { 
-      const key = cur[property];
-      if (!acc[key]) { 
-        acc[key] = []; 
-      }
-      acc[key].push(cur); 
-      return acc;
-    }, {});
-  }
+# Enter the next line: " response
+# answer="if (!acc[key]) { acc[key] = []; }"
+# additional_feedback="
 
-  const groupedPeople = groupBy(people, 'age');
-  // groupedPeople is:
-  // { 
-  //   20: [
-  //     { name: 'Max', age: 20 }, 
-  //     { name: 'Jane', age: 20 }
-  //   ], 
-  //   21: [{ name: 'Alice', age: 21 }] 
-  // }
+#   const people = [
+#     { name: 'Alice', age: 21 },
+#     { name: 'Max', age: 20 },
+#     { name: 'Jane', age: 20 }
+#   ];
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+#   function groupBy(objectArray, property) { 
+#     return objectArray.reduce(function (acc, cur) { 
+#       const key = cur[property];
+#       if (!acc[key]) { 
+#         acc[key] = []; 
+#       }
+#     }, {});
+#   }
 
-next_line
+#   const groupedPeople = groupBy(people, 'age');
+#   // groupedPeople is:
+#   // { 
+#   //   20: [
+#   //     { name: 'Max', age: 20 }, 
+#   //     { name: 'Jane', age: 20 }
+#   //   ], 
+#   //   21: [{ name: 'Alice', age: 21 }] 
+#   // }
 
-read -p "Function composition enabling pipe. 
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-  // Composed functions for multiplication of specific values
-  const multiply6 = pipe(double, triple)
-  const multiply9 = pipe(triple, triple)
-  const multiply16 = pipe(quadruple, quadruple)
-  const multiply24 = pipe(double, triple, quadruple)
+# next_line
 
-  // Usage
-  multiply6(6)   // 36
-  multiply9(9)   // 81
-  multiply16(16) // 256
-  multiply24(10) // 240
+# read -p "
+#   Group objects by property. 
 
-Enter the next line: " response
-answer="const pipe = (...functions) => input => functions.reduce((acc, fn) => fn(acc), input);"
+#   const people = [
+#     { name: 'Alice', age: 21 },
+#     { name: 'Max', age: 20 },
+#     { name: 'Jane', age: 20 }
+#   ];
 
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+#   function groupBy(objectArray, property) { 
+#     return objectArray.reduce(function (acc, cur) { 
+#       const key = cur[property];
+#       if (!acc[key]) { 
+#         acc[key] = []; 
+#       }
+#     }, {});
+#   }
 
-next_line
+#   const groupedPeople = groupBy(people, 'age');
+#   // groupedPeople is:
+#   // { 
+#   //   20: [
+#   //     { name: 'Max', age: 20 }, 
+#   //     { name: 'Jane', age: 20 }
+#   //   ], 
+#   //   21: [{ name: 'Alice', age: 21 }] 
+#   // }
 
-read -p "Recursively flatten an array using reduce.
+# Enter the next line: " response
+# answer="acc[key].push(cur); return acc;"
+# additional_feedback="
 
-  flatDeep(arr, Infinity);
-  // [1, 2, 3, 4, 5, 6];
+#   const people = [
+#     { name: 'Alice', age: 21 },
+#     { name: 'Max', age: 20 },
+#     { name: 'Jane', age: 20 }
+#   ];
 
-Enter the next line: " response
-answer="function flatDeep(arr, d = 1) { }"
-additional_feedback="
+#   function groupBy(objectArray, property) { 
+#     return objectArray.reduce(function (acc, cur) { 
+#       const key = cur[property];
+#       if (!acc[key]) { 
+#         acc[key] = []; 
+#       }
+#       acc[key].push(cur); 
+#       return acc;
+#     }, {});
+#   }
 
-  function flatDeep(arr, d = 1) { 
+#   const groupedPeople = groupBy(people, 'age');
+#   // groupedPeople is:
+#   // { 
+#   //   20: [
+#   //     { name: 'Max', age: 20 }, 
+#   //     { name: 'Jane', age: 20 }
+#   //   ], 
+#   //   21: [{ name: 'Alice', age: 21 }] 
+#   // }
 
-  }
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# next_question
 
-next_line
+# read -p "Function composition enabling pipe. 
 
-read -p "Recursively flatten an array using reduce.
+#   const double = x => x + x
+#   const triple = x => 3 * x
+#   const quadruple = x => 4 * x
 
-  function flatDeep(arr, d = 1) { 
+#   // Composed functions for multiplication of specific values
+#   const multiply6 = pipe(double, triple)
+#   const multiply9 = pipe(triple, triple)
+#   const multiply16 = pipe(quadruple, quadruple)
+#   const multiply24 = pipe(double, triple, quadruple)
+
+#   // Usage
+#   multiply6(6)   // 36
+#   multiply9(9)   // 81
+#   multiply16(16) // 256
+#   multiply24(10) // 240
+
+# Enter the next line: " response
+# answer="const pipe = (...functions) => input => functions.reduce((acc, fn) => fn(acc), input);"
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Recursively flatten an array using reduce.
+
+#   const arr = [1, 2, [3, 4, [5, 6]]];
+
+#   flatDeep(arr, Infinity);
+#   // [1, 2, 3, 4, 5, 6];
+
+# Enter the next line: " response
+# answer="function flatDeep(arr, d = 1) { }"
+# additional_feedback="
+
+#   function flatDeep(arr, d = 1) { 
+
+#   }
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Recursively flatten an array using reduce.
   
-  }
+#   const arr = [1, 2, [3, 4, [5, 6]]];
 
-  flatDeep(arr, Infinity);
-  // [1, 2, 3, 4, 5, 6];
-
-Enter the next line: " response
-answer="return d > 0 ? arr.reduce(function (acc, cur) { }, []) : arr.slice();"
-additional_feedback="
-
-  function flatDeep(arr, d = 1) { 
-    return d > 0 ? arr.reduce(function (acc, cur) {  
-
-    }, []) : arr.slice();
-  }
-
-  flatDeep(arr, Infinity);
-  // [1, 2, 3, 4, 5, 6];
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Recursively flatten an array using reduce.
-
-  function flatDeep(arr, d = 1) { 
-    return d > 0 ? arr.reduce(function (acc, cur) {  
-      
-    }, []) : arr.slice();
-  }
-
-  flatDeep(arr, Infinity);
-  // [1, 2, 3, 4, 5, 6];
-
-Enter the next line: " response
-answer="return acc.concat(Array.isArray(cur));"
-additional_feedback="
-
-  function flatDeep(arr, d = 1) { 
-    return d > 0 ? arr.reduce(function (acc, cur) {  
-      return acc.concat(Array.isArray(cur));
-    }, []) : arr.slice();
-  }
-
-  flatDeep(arr, Infinity);
-  // [1, 2, 3, 4, 5, 6];
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Recursively flatten an array using reduce.
-
-  function flatDeep(arr, d = 1) { 
-    return d > 0 ? arr.reduce(function (acc, cur) {  
-      return acc.concat(Array.isArray(cur));
-    }, []) : arr.slice();
-  }
-
-  flatDeep(arr, Infinity);
-  // [1, 2, 3, 4, 5, 6];
-
-Enter the next line: " response
-answer="? flatDeep(cur, d - 1)"
-additional_feedback="
-
-  function flatDeep(arr, d = 1) { 
-    return d > 0 ? arr.reduce(function (acc, cur) {  
-      return acc.concat(Array.isArray(cur) ? flatDeep(cur, d - 1));
-    }, []) : arr.slice();
-  }
-
-  flatDeep(arr, Infinity);
-  // [1, 2, 3, 4, 5, 6];
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Recursively flatten an array using reduce.
-
-  function flatDeep(arr, d = 1) { 
-    return d > 0 ? arr.reduce(function (acc, cur) {  
-      return acc.concat(Array.isArray(cur) ? flatDeep(cur, d - 1));
-    }, []) : arr.slice();
-  }
-
-  flatDeep(arr, Infinity);
-  // [1, 2, 3, 4, 5, 6];
-
-Enter the next line: " response
-answer=": cur"
-additional_feedback="
-
-  function flatDeep(arr, d = 1) { 
-    return d > 0 ? arr.reduce(function (acc, cur) {  
-      return acc.concat(Array.isArray(cur) ? flatDeep(cur, d - 1) : cur);
-    }, []) : arr.slice();
-  }
-
-  flatDeep(arr, Infinity);
-  // [1, 2, 3, 4, 5, 6];
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Run promises in a sequence.
-
-  // promise function 1
-  function p1(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 5)
-    })
-  }
-
-  // promise function 2
-  function p2(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 2)
-    })
-  }
-
-
-  const promiseArr = [p1, p2, f3, p4];
-
-  runPromiseInSequence(promiseArr, 10)
-    .then(console.log)   // 1200
-
-Enter the next line: " response
-answer="function runPromiseInSequence(arr, input) { }"
-additional_feedback="
-
-  function runPromiseInSequence(arr, input) { 
-
-  }  
-
-  // promise function 1
-  function p1(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 5)
-    })
-  }
-
-  // promise function 2
-  function p2(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 2)
-    })
-  }
-
-  const promiseArr = [p1, p2, f3, p4];
-
-  runPromiseInSequence(promiseArr, 10)
-    .then(console.log)   // 1200
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Run promises in a sequence.
-
-  function runPromiseInSequence(arr, input) { 
-
-  } 
-
-  // promise function 1
-  function p1(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 5)
-    })
-  }
-
-  // promise function 2
-  function p2(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 2)
-    })
-  }
-
-  const promiseArr = [p1, p2, f3, p4];
-
-  runPromiseInSequence(promiseArr, 10)
-    .then(console.log)   // 1200
-
-Enter the next line: " response
-answer="return arr.reduce((promiseChain, currentFunction) => );"
-additional_feedback="
-
- function runPromiseInSequence(arr, input) { 
-   return arr.reduce((promiseChain, currentFunction) => );
-  } 
-
-  // promise function 1
-  function p1(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 5)
-    })
-  }
-
-  // promise function 2
-  function p2(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 2)
-    })
-  } 
-
-  const promiseArr = [p1, p2, f3, p4];
-
-  runPromiseInSequence(promiseArr, 10)
-    .then(console.log)   // 1200
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Run promises in a sequence.
-
-  function runPromiseInSequence(arr, input) { 
-   return arr.reduce((promiseChain, currentFunction) => );
-  } 
-
-  // promise function 1
-  function p1(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 5)
-    })
-  }
-
-  // promise function 2
-  function p2(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 2)
-    })
-  } 
-
-  const promiseArr = [p1, p2, f3, p4];
-
-  runPromiseInSequence(promiseArr, 10)
-    .then(console.log)   // 1200
-
-Enter the next line: " response
-answer="promiseChain.then(currentFunction)"
-additional_feedback="
-
- function runPromiseInSequence(arr, input) { 
-   return arr.reduce((promiseChain, currentFunction) => promiseChain.then(currentFunction));
-  } 
-
-  // promise function 1
-  function p1(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 5)
-    })
-  }
-
-  // promise function 2
-  function p2(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 2)
-    })
-  } 
-
-  const promiseArr = [p1, p2, f3, p4];
-
-  runPromiseInSequence(promiseArr, 10)
-    .then(console.log)   // 1200
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Run promises in a sequence.
-
-  function runPromiseInSequence(arr, input) { 
-   return arr.reduce((promiseChain, currentFunction) => promiseChain.then(currentFunction));
-  } 
-
-  // promise function 1
-  function p1(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 5)
-    })
-  }
-
-  // promise function 2
-  function p2(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 2)
-    })
-  } 
-
-  const promiseArr = [p1, p2, f3, p4];
-
-  runPromiseInSequence(promiseArr, 10)
-    .then(console.log)   // 1200
-
-Enter the next line: " response
-answer="Promise.resolve(input)"
-additional_feedback="
-
- function runPromiseInSequence(arr, input) { 
-   return arr.reduce((promiseChain, currentFunction) => promiseChain.then(currentFunction), 
-     Promise.resolve(input)
-   );
-  } 
-
-  // promise function 1
-  function p1(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 5)
-    })
-  }
-
-  // promise function 2
-  function p2(a) {
-    return new Promise((resolve, reject) => {
-      resolve(a * 2)
-    })
-  } 
-
-  const promiseArr = [p1, p2, f3, p4];
-
-  runPromiseInSequence(promiseArr, 10)
-    .then(console.log)   // 1200
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Use a WeakMap to track how often a method was called.
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2));
-
-Enter the next line: " response
-answer="const argCallsTracker = (() => { })();"
-additional_feedback="
-
-  const argCallsTracker = (() => { 
-
-  })();
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2));
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Use a WeakMap to track how often a method was called.
-
-  const argCallsTracker = (() => { 
-
-  })();
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2));
-
-Enter the next line: " response
-answer="const wm = new WeakMap();"
-additional_feedback="
-
-  const argCallsTracker = (() => { 
-   const wm = new WeakMap();
-
-  })();
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2));
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Use a WeakMap to track how often a method was called.
-
-  const argCallsTracker = (() => { 
-   const wm = new WeakMap();
-
-  })();
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2));
-
-Enter the next line: " response
-answer="return obj => { };"
-additional_feedback="
-
-  const argCallsTracker = (() => { 
-   const wm = new WeakMap();
-
-    return obj => { 
-
-    };
-  })();
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2)); 
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Use a WeakMap to track how often a method was called.
-
-  const argCallsTracker = (() => { 
-   const wm = new WeakMap();
-
-    return obj => { 
-
-    };
-  })();
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2));
-
-Enter the next line: " response
-answer="wm.set(obj, (wm.get(obj) || 0) + 1);"
-additional_feedback="
-
-  const argCallsTracker = (() => { 
-   const wm = new WeakMap();
-
-    return obj => { 
-      wm.set(obj, (wm.get(obj) || 0) + 1);
-    };
-  })();
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2)); 
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Use a WeakMap to track how often a method was called.
-
-  const argCallsTracker = (() => { 
-   const wm = new WeakMap();
-
-    return obj => { 
-      wm.set(obj, (wm.get(obj) || 0) + 1);
-    };
-  })();
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2));
-
-Enter the next line: " response
-answer="return wm.get(obj);"
-additional_feedback="
-
-  const argCallsTracker = (() => { 
-   const wm = new WeakMap();
-
-    return obj => { 
-      wm.set(obj, (wm.get(obj) || 0) + 1);
-      return wm.get(obj);
-    };
-  })();
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2));  
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Use a WeakMap to track how often a method was called.
-
-  const argCallsTracker = (() => { 
-   const wm = new WeakMap();
-
-    return obj => { 
-      wm.set(obj, (wm.get(obj) || 0) + 1);
-      return wm.get(obj);
-    };
-  })();
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2));
-
-Enter the next line: " response
-answer="function foo(args) { }"
-additional_feedback="
-
-  const argCallsTracker = (() => { 
-   const wm = new WeakMap();
-
-    return obj => { 
-      wm.set(obj, (wm.get(obj) || 0) + 1);
-      return wm.get(obj);
-    };
-  })();
-
-  function foo(args) { 
-
-  }
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2));
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Use a WeakMap to track how often a method was called.
-
-  const argCallsTracker = (() => { 
-   const wm = new WeakMap();
-
-    return obj => { 
-      wm.set(obj, (wm.get(obj) || 0) + 1);
-      return wm.get(obj);
-    };
-  })();
-
-  function foo(args) { 
-
-  }
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2));
-
-Enter the next line: " response
-answer="const calls = argCallsTracker(args);"
-additional_feedback="
-
-  const argCallsTracker = (() => { 
-   const wm = new WeakMap();
-
-    return obj => { 
-      wm.set(obj, (wm.get(obj) || 0) + 1);
-      return wm.get(obj);
-    };
-  })();
-
-  function foo(args) { 
-    const calls = argCallsTracker(args);
-  }
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2));
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Use a WeakMap to track how often a method was called.
-
-  const argCallsTracker = (() => { 
-   const wm = new WeakMap();
-
-    return obj => { 
-      wm.set(obj, (wm.get(obj) || 0) + 1);
-      return wm.get(obj);
-    };
-  })();
-
-  function foo(args) { 
-    const calls = argCallsTracker(args);
-  }
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2));
-
-Enter the next line: " response
-answer="console.log(JSON.stringify(args), calls);"
-additional_feedback="
-
-  const argCallsTracker = (() => { 
-   const wm = new WeakMap();
-
-    return obj => { 
-      wm.set(obj, (wm.get(obj) || 0) + 1);
-      return wm.get(obj);
-    };
-  })();
-
-  function foo(args) { 
-    const calls = argCallsTracker(args);
-    console.log(JSON.stringify(args));
-  }
-
-  const obj1 = { key: 1 };
-  const obj2 = { key: 2 };
-
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj1));
-  console.log(foo(obj2));
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "What is the difference between WeakMap and Map? " response
-answer="WeakMap is weakly set. If a key is set and no methods reference it, then the key will be garbage collected."
-additional_feedback="
-
-  WeakMap is weakly set. If a key is set and no methods reference it, 
-  then the key will be garbage collected.
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "What is the difference between WeakMap and Map? 
-
-  WeakMap is weakly set. If a key is set and no methods reference it, 
-  then the key will be garbage collected.
-
-Enter the next line: " response
-answer="A Map will keep everything in memory even when it is not in use."
-additional_feedback="
-
-  WeakMap is weakly set. If a key is set and no methods reference it, 
-  then the key will be garbage collected.
-
-  A Map will keep everything in memory even when it is not in use.
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "What is the difference between WeakMap and Map? 
-
-  WeakMap is weakly set. If a key is set and no methods reference it, 
-  then the key will be garbage collected.
-
-  A Map will keep everything in memory even when it is not in use.
-
-Enter the next line: " response
-answer="Because keys will be garbage collected if they are not referenced, WeakMap doesn't have any iterators"
-additional_feedback="
-
-  WeakMap is weakly set. If a key is set and no methods reference it, 
-  then the key will be garbage collected.
-
-  A Map will keep everything in memory even when it is not in use.
-
-  Because keys will be garbage collected if not they are not referenced, 
-  WeakMap doesn't have any iterators, 
-
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "What is the difference between WeakMap and Map? 
-
-  WeakMap is weakly set. If a key is set and no methods reference it, 
-  then the key will be garbage collected.
-
-  A Map will keep everything in memory even when it is not in use.
-
-  Because keys will be garbage collected if not they are not referenced, 
-  WeakMap doesn't have any iterators, 
-
-Enter the next line: " response
-answer="thus developers are prevented from observing the liveness of its keys."
-additional_feedback="
-
-  WeakMap is weakly set. If a key is set and no methods reference it, 
-  then the key will be garbage collected.
-
-  A Map will keep everything in memory even when it is not in use.
-
-  Because keys will be garbage collected if not they are not referenced, 
-  WeakMap doesn't have any iterators, thus developers are prevented from 
-  observing the liveness of its keys. 
-
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "What is the difference between WeakMap and Map? 
-
-  WeakMap is weakly set. If a key is set and no methods reference it, 
-  then the key will be garbage collected.
-
-  A Map will keep everything in memory even when it is not in use.
-
-  Because keys will be garbage collected if not they are not referenced, 
-  WeakMap doesn't have any iterators, thus developers are prevented from 
-  observing the liveness of its keys.
-
-Enter the next line: " response
-answer="If a WeakMap exposed any method to obtain a list of its keys"
-additional_feedback="
-
-  WeakMap is weakly set. If a key is set and no methods reference it, 
-  then the key will be garbage collected.
-
-  A Map will keep everything in memory even when it is not in use.
-
-  Because keys will be garbage collected if not they are not referenced, 
-  WeakMap doesn't have any iterators, thus developers are prevented from 
-  observing the liveness of its keys.  
-
-  If a WeakMap exposed any method to obtain a list of its keys,
-
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "What is the difference between WeakMap and Map? 
-
-  WeakMap is weakly set. If a key is set and no methods reference it, 
-  then the key will be garbage collected.
-
-  A Map will keep everything in memory even when it is not in use.
-
-  Because keys will be garbage collected if not they are not referenced, 
-  WeakMap doesn't have any iterators, thus developers are prevented from 
-  observing the liveness of its keys.  
-
-  If a WeakMap exposed any method to obtain a list of its keys,
-
-Enter the next line: " response
-answer="the list would depend on the state of garbage collection, introducing non-determinism."
-additional_feedback="
-
-  WeakMap is weakly set. If a key is set and no methods reference it, 
-  then the key will be garbage collected.
-
-  A Map will keep everything in memory even when it is not in use.
-
-  Because keys will be garbage collected if not they are not referenced, 
-  WeakMap doesn't have any iterators, thus developers are prevented from 
-  observing the liveness of its keys.  
-
-  If a WeakMap exposed any method to obtain a list of its keys, the 
-  list would depend on the state of garbage collection, introducing 
-  non-determinism.
-
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_question
-
-read -p "Return the byte size of a given input.
-
-  byteSize('Hello World'); // 11
-
-Enter the next line: " response
-answer="const byteSize = str => new Blob([str]).size;"
-additional_feedback="
-
-  const byteSize = str => new Blob([str]).size;
-  byteSize('Hello World'); // 11
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-
-  Define a function, createPhoneNumber, that accepts an 
-  array of 10 integers (from 0-9) and returns a string of 
-  those numbers in the form of a phone number.
-
-  console.log(createPhoneNumber(1234561029));
-
-Enter the next line: " response
-answer="function createPhoneNumber (numbers) { }"
-additional_feedback="
-
-  function createPhoneNumber (numbers) { 
-
-  }
-
-  console.log(createPhoneNumber(1234561029));
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-
-  Define a function, createPhoneNumber, that accepts an 
-  array of 10 integers (from 0-9) and returns a string of 
-  those numbers in the form of a phone number.
-
-  console.log(createPhoneNumber(1234561029));
-
-Enter the next line: " response
-answer="let format = '(xxx) xxx-xxxx';"
-additional_feedback="
-
-  function createPhoneNumber (numbers) { 
-    let format = '(xxx) xxx-xxxx';
-  }
-
-  console.log(createPhoneNumber(1234561029));
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-
-  Define a function, createPhoneNumber, that accepts an 
-  array of 10 integers (from 0-9) and returns a string of 
-  those numbers in the form of a phone number.
-
-  function createPhoneNumber (numbers) { 
-    let format = '(xxx) xxx-xxxx';
-  }
-
-  console.log(createPhoneNumber(1234561029));
-
-Enter the next line: " response
-answer="const phoneNumber = numbers.toString();"
-additional_feedback="
-
-  function createPhoneNumber (numbers) { 
-    let format = '(xxx) xxx-xxxx';
-    const phoneNumber = numbers.toString();
-  }
-
-  console.log(createPhoneNumber(1234561029));  
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-
-  Define a function, createPhoneNumber, that accepts an 
-  array of 10 integers (from 0-9) and returns a string of 
-  those numbers in the form of a phone number.
-
-  function createPhoneNumber (numbers) { 
-    let format = '(xxx) xxx-xxxx';
-    const phoneNumber = numbers.toString();
-  }
-
-  console.log(createPhoneNumber(1234561029)); 
-
-Enter the next line: " response
-answer="for (let i = 0; i < phoneNumber.length; i++) { }"
-additional_feedback="
-
-  function createPhoneNumber (numbers) { 
-    let format = '(xxx) xxx-xxxx';
-    const phoneNumber = numbers.toString();
-
-    for (let i = 0; i < phoneNumber.length; i++) { 
-
-    }
-  }
-
-  console.log(createPhoneNumber(1234561029));
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-
-  Define a function, createPhoneNumber, that accepts an 
-  array of 10 integers (from 0-9) and returns a string of 
-  those numbers in the form of a phone number.
-
-  function createPhoneNumber (numbers) { 
-    let format = '(xxx) xxx-xxxx';
-    const phoneNumber = numbers.toString();
-
-    for (let i = 0; i < phoneNumber.length; i++) { 
-
-    }
-  }
-
-  console.log(createPhoneNumber(1234561029)); 
-
-Enter the next line: " response
-answer="format = format.replace('x', phoneNumber[i]);"
-additional_feedback="
-
-  function createPhoneNumber (numbers) { 
-    let format = '(xxx) xxx-xxxx';
-    const phoneNumber = numbers.toString();
-
-    for (let i = 0; i < phoneNumber.length; i++) { 
-      format = format.replace('x', phoneNumber[i]);
-    }
-  }
-
-  console.log(createPhoneNumber(1234561029));
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-
-  Define a function, createPhoneNumber, that accepts an 
-  array of 10 integers (from 0-9) and returns a string of 
-  those numbers in the form of a phone number.
-
-  function createPhoneNumber (numbers) { 
-    let format = '(xxx) xxx-xxxx';
-    const phoneNumber = numbers.toString();
-
-    for (let i = 0; i < phoneNumber.length; i++) { 
-      format = format.replace('x', phoneNumber[i]);
-    }
-  }
-
-  console.log(createPhoneNumber(1234561029)); 
-
-Enter the next line: " response
-answer="return format;"
-additional_feedback="
-
-  function createPhoneNumber (numbers) { 
-    let format = '(xxx) xxx-xxxx';
-    const phoneNumber = numbers.toString();
-
-    for (let i = 0; i < phoneNumber.length; i++) { 
-      format = format.replace('x', phoneNumber[i]);
-    }
-    return format;
-  }
-
-  console.log(createPhoneNumber(1234561029));
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Create a countdown timer.
-
-Enter the next line: " response
-answer="const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();"
-additional_feedback="
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Create a countdown timer.
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-Enter the next line: " response
-answer="const x = setInterval(function () { }, 1000);"
-additional_feedback="
-
-    const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () { 
-
-    }, 1000);
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Create a countdown timer.
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () { 
-
-    }, 1000);
-
-Enter the next line: " response
-answer="const now = new Date().getTime();"
-additional_feedback="
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () {
-
-      const now = new Date().getTime();
-
-    }, 1000);  
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Create a countdown timer.
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () {
-
-      const now = new Date().getTime();
-
-    }, 1000); 
-
-Enter the next line: " response
-answer="const distance = countDownDate - now;"
-additional_feedback="
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () {
-
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-    }, 1000); 
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Create a countdown timer.
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () {
-
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-    }, 1000); 
-
-Enter the next line: " response
-answer="const days = Math.floor(distance / (1000 * 60 * 60 * 24));"
-additional_feedback="
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () {
-
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-    }, 1000);
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Create a countdown timer.
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () {
-
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-    }, 1000); 
-
-Enter the next line: " response
-answer="const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));"
-additional_feedback="
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () {
-
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      
-
-    }, 1000);
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Create a countdown timer.
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () {
-
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      
-
-    }, 1000); 
-
-Enter the next line: " response
-answer="const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));"
-additional_feedback="
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () {
-
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      
-
-    }, 1000);
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Create a countdown timer.
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () {
-
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      
-
-    }, 1000); 
-
-Enter the next line: " response
-answer="const seconds = Math.floor((distance % (1000 * 60)) / 1000);"
-additional_feedback="
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () {
-
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    }, 1000);
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Create a countdown timer.
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () {
-
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    }, 1000);
-
-Enter the next line: " response
-answer="console.log(\`\${days}d \${hours}h \${minutes}m \${seconds}s\`);"
-additional_feedback="
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () {
-
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      console.log(\`\${days}d \${hours}h \${minutes}m \${seconds}s\`);
-
-    }, 1000);
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Create a countdown timer.
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () {
-
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      console.log(\`\${days}d \${hours}h \${minutes}m \${seconds}s\`);
-
-    }, 1000);
-
-Enter the next line: " response
-answer="if (distance < 0) { clearInterval(x); console.log('Expired'); }"
-additional_feedback="
-
-  const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
-
-    const x = setInterval(function () {
-
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      console.log(\`\${days}d \${hours}h \${minutes}m \${seconds}s\`);
-
-      if (distance < 0) { 
-        clearInterval(x); 
-        console.log('Expired'); 
-      }
-
-    }, 1000);
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Extraction initials.
-
-  function extractInitials(value: string) {
-
-  }
-
-Enter the next line: " response
-answer="return value.match(/\b\w/g)!.join('').substring(0, 2);"
-additional_feedback="
-
-  function extractInitials(value: string) {
-    return value.match(/\b\w/g)!.join('').substring(0, 2);
-  }
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Create type writer function.
-
-  let i = 0;
-  const txt = 'Lorem ipsum dummy text blabla.';
-  const speed = 50;
-
-Enter the next line: " response
-answer="function typeWriter () { }"
-additional_feedback="
-
-  function typeWriter () { 
-
-  }
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Create type writer function.
-
-  let i = 0;
-  const txt = 'Lorem ipsum dummy text blabla.';
-  const speed = 50;
-
-  function typeWriter () { 
-
-  }
-
-Enter the next line: " response
-answer="if (i < txt.length) { }"
-additional_feedback="
-
-  let i = 0;
-  const txt = 'Lorem ipsum dummy text blabla.';
-  const speed = 50;
-
-  function typeWriter () { 
-    if (i < txt.length) { 
-
-    }
-  }  
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Create type writer function.
-
-  let i = 0;
-  const txt = 'Lorem ipsum dummy text blabla.';
-  const speed = 50;
-
-  function typeWriter () { 
-    if (i < txt.length) { 
-
-    }
-  } 
-
-Enter the next line: " response
-answer="document.getElementById('demo').innerHTML += txt.charAt(i);"
-additional_feedback="
-
-  let i = 0;
-  const txt = 'Lorem ipsum dummy text blabla.';
-  const speed = 50;
-
-  function typeWriter () { 
-    if (i < txt.length) {   
-      document.getElementById('demo').innerHTML += txt.charAt(i);
-    }
-  } 
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Create type writer function.
-
-  let i = 0;
-  const txt = 'Lorem ipsum dummy text blabla.';
-  const speed = 50;
-
-  function typeWriter () { 
-    if (i < txt.length) {   
-      document.getElementById('demo').innerHTML += txt.charAt(i);
-    }
-  }  
-
-Enter the next line: " response
-answer="i++; setTimeout(typeWriter, speed);"
-additional_feedback="
-
-  let i = 0;
-  const txt = 'Lorem ipsum dummy text blabla.';
-  const speed = 50;
-
-  function typeWriter () { 
-    if (i < txt.length) {   
-      document.getElementById('demo').innerHTML += txt.charAt(i);
-      i++; 
-      setTimeout(typeWriter, speed);
-    }
-  } 
-
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Validate URL. 
-
-  const matchesURLPattern = (url: string): boolean => {
+#   function flatDeep(arr, d = 1) { 
   
-  } 
+#   }
+
+#   flatDeep(arr, Infinity);
+#   // [1, 2, 3, 4, 5, 6];
+
+# Enter the next line: " response
+# answer="return d > 0 ? arr.reduce(function (acc, cur) { }, []) : arr.slice();"
+# additional_feedback="
+
+#   function flatDeep(arr, d = 1) { 
+#     return d > 0 ? arr.reduce(function (acc, cur) {  
+
+#     }, []) : arr.slice();
+#   }
+
+#   flatDeep(arr, Infinity);
+#   // [1, 2, 3, 4, 5, 6];
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Recursively flatten an array using reduce.
+
+#   const arr = [1, 2, [3, 4, [5, 6]]];
+
+#   function flatDeep(arr, d = 1) { 
+#     return d > 0 ? arr.reduce(function (acc, cur) {  
+      
+#     }, []) : arr.slice();
+#   }
+
+#   flatDeep(arr, Infinity);
+#   // [1, 2, 3, 4, 5, 6];
+
+# Enter the next line: " response
+# answer="return acc.concat(Array.isArray(cur));"
+# additional_feedback="
+
+#   function flatDeep(arr, d = 1) { 
+#     return d > 0 ? arr.reduce(function (acc, cur) {  
+#       return acc.concat(Array.isArray(cur));
+#     }, []) : arr.slice();
+#   }
+
+#   flatDeep(arr, Infinity);
+#   // [1, 2, 3, 4, 5, 6];
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Recursively flatten an array using reduce.
+
+#   const arr = [1, 2, [3, 4, [5, 6]]];
+
+#   function flatDeep(arr, d = 1) { 
+#     return d > 0 ? arr.reduce(function (acc, cur) {  
+#       return acc.concat(Array.isArray(cur));
+#     }, []) : arr.slice();
+#   }
+
+#   flatDeep(arr, Infinity);
+#   // [1, 2, 3, 4, 5, 6];
+
+# Enter the next line: " response
+# answer="? flatDeep(cur, d - 1)"
+# additional_feedback="
+
+#   function flatDeep(arr, d = 1) { 
+#     return d > 0 ? arr.reduce(function (acc, cur) {  
+#       return acc.concat(Array.isArray(cur) ? flatDeep(cur, d - 1));
+#     }, []) : arr.slice();
+#   }
+
+#   flatDeep(arr, Infinity);
+#   // [1, 2, 3, 4, 5, 6];
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Recursively flatten an array using reduce.
+
+#   const arr = [1, 2, [3, 4, [5, 6]]];
+
+#   function flatDeep(arr, d = 1) { 
+#     return d > 0 ? arr.reduce(function (acc, cur) {  
+#       return acc.concat(Array.isArray(cur) ? flatDeep(cur, d - 1));
+#     }, []) : arr.slice();
+#   }
+
+#   flatDeep(arr, Infinity);
+#   // [1, 2, 3, 4, 5, 6];
+
+# Enter the next line: " response
+# answer=": cur"
+# additional_feedback="
+
+#   function flatDeep(arr, d = 1) { 
+#     return d > 0 ? arr.reduce(function (acc, cur) {  
+#       return acc.concat(Array.isArray(cur) ? flatDeep(cur, d - 1) : cur);
+#     }, []) : arr.slice();
+#   }
+
+#   flatDeep(arr, Infinity);
+#   // [1, 2, 3, 4, 5, 6];
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Run promises in a sequence.
+
+#   // promise function 1
+#   function p1(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 5)
+#     })
+#   }
+
+#   // promise function 2
+#   function p2(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 2)
+#     })
+#   }
 
 
-Enter the next line: " response
-answer="return new RegExp('^(https?:\\\/\\\/)').test(url);"
-additional_feedback="
+#   const promiseArr = [p1, p2, f3, p4];
 
-  const matchesURLPattern = (url: string): boolean => {
-    return new RegExp('^(https?:\\\/\\\/)').test(url);
-  } 
+#   runPromiseInSequence(promiseArr, 10)
+#     .then(console.log)   // 1200
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# Enter the next line: " response
+# answer="function runPromiseInSequence(arr, input) { }"
+# additional_feedback="
 
-next_line
+#   function runPromiseInSequence(arr, input) { 
+
+#   }  
+
+#   // promise function 1
+#   function p1(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 5)
+#     })
+#   }
+
+#   // promise function 2
+#   function p2(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 2)
+#     })
+#   }
+
+#   const promiseArr = [p1, p2, f3, p4];
+
+#   runPromiseInSequence(promiseArr, 10)
+#     .then(console.log)   // 1200
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Run promises in a sequence.
+
+#   function runPromiseInSequence(arr, input) { 
+
+#   } 
+
+#   // promise function 1
+#   function p1(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 5)
+#     })
+#   }
+
+#   // promise function 2
+#   function p2(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 2)
+#     })
+#   }
+
+#   const promiseArr = [p1, p2, f3, p4];
+
+#   runPromiseInSequence(promiseArr, 10)
+#     .then(console.log)   // 1200
+
+# Enter the next line: " response
+# answer="return arr.reduce((promiseChain, currentFunction) => );"
+# additional_feedback="
+
+#  function runPromiseInSequence(arr, input) { 
+#    return arr.reduce((promiseChain, currentFunction) => );
+#   } 
+
+#   // promise function 1
+#   function p1(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 5)
+#     })
+#   }
+
+#   // promise function 2
+#   function p2(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 2)
+#     })
+#   } 
+
+#   const promiseArr = [p1, p2, f3, p4];
+
+#   runPromiseInSequence(promiseArr, 10)
+#     .then(console.log)   // 1200
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Run promises in a sequence.
+
+#   function runPromiseInSequence(arr, input) { 
+#    return arr.reduce((promiseChain, currentFunction) => );
+#   } 
+
+#   // promise function 1
+#   function p1(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 5)
+#     })
+#   }
+
+#   // promise function 2
+#   function p2(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 2)
+#     })
+#   } 
+
+#   const promiseArr = [p1, p2, f3, p4];
+
+#   runPromiseInSequence(promiseArr, 10)
+#     .then(console.log)   // 1200
+
+# Enter the next line: " response
+# answer="promiseChain.then(currentFunction)"
+# additional_feedback="
+
+#  function runPromiseInSequence(arr, input) { 
+#    return arr.reduce((promiseChain, currentFunction) => promiseChain.then(currentFunction));
+#   } 
+
+#   // promise function 1
+#   function p1(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 5)
+#     })
+#   }
+
+#   // promise function 2
+#   function p2(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 2)
+#     })
+#   } 
+
+#   const promiseArr = [p1, p2, f3, p4];
+
+#   runPromiseInSequence(promiseArr, 10)
+#     .then(console.log)   // 1200
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Run promises in a sequence.
+
+#   function runPromiseInSequence(arr, input) { 
+#    return arr.reduce((promiseChain, currentFunction) => promiseChain.then(currentFunction));
+#   } 
+
+#   // promise function 1
+#   function p1(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 5)
+#     })
+#   }
+
+#   // promise function 2
+#   function p2(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 2)
+#     })
+#   } 
+
+#   const promiseArr = [p1, p2, f3, p4];
+
+#   runPromiseInSequence(promiseArr, 10)
+#     .then(console.log)   // 1200
+
+# Enter the next line: " response
+# answer="Promise.resolve(input)"
+# additional_feedback="
+
+#  function runPromiseInSequence(arr, input) { 
+#    return arr.reduce((promiseChain, currentFunction) => promiseChain.then(currentFunction), 
+#      Promise.resolve(input)
+#    );
+#   } 
+
+#   // promise function 1
+#   function p1(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 5)
+#     })
+#   }
+
+#   // promise function 2
+#   function p2(a) {
+#     return new Promise((resolve, reject) => {
+#       resolve(a * 2)
+#     })
+#   } 
+
+#   const promiseArr = [p1, p2, f3, p4];
+
+#   runPromiseInSequence(promiseArr, 10)
+#     .then(console.log)   // 1200
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "Use a WeakMap to track how often a method was called.
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2));
+
+# Enter the next line: " response
+# answer="const argCallsTracker = (() => { })();"
+# additional_feedback="
+
+#   const argCallsTracker = (() => { 
+
+#   })();
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2));
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Use a WeakMap to track how often a method was called.
+
+#   const argCallsTracker = (() => { 
+
+#   })();
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2));
+
+# Enter the next line: " response
+# answer="const wm = new WeakMap();"
+# additional_feedback="
+
+#   const argCallsTracker = (() => { 
+#    const wm = new WeakMap();
+
+#   })();
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2));
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Use a WeakMap to track how often a method was called.
+
+#   const argCallsTracker = (() => { 
+#    const wm = new WeakMap();
+
+#   })();
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2));
+
+# Enter the next line: " response
+# answer="return obj => { };"
+# additional_feedback="
+
+#   const argCallsTracker = (() => { 
+#    const wm = new WeakMap();
+
+#     return obj => { 
+
+#     };
+#   })();
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2)); 
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Use a WeakMap to track how often a method was called.
+
+#   const argCallsTracker = (() => { 
+#    const wm = new WeakMap();
+
+#     return obj => { 
+
+#     };
+#   })();
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2));
+
+# Enter the next line: " response
+# answer="wm.set(obj, (wm.get(obj) || 0) + 1);"
+# additional_feedback="
+
+#   const argCallsTracker = (() => { 
+#    const wm = new WeakMap();
+
+#     return obj => { 
+#       wm.set(obj, (wm.get(obj) || 0) + 1);
+#     };
+#   })();
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2)); 
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Use a WeakMap to track how often a method was called.
+
+#   const argCallsTracker = (() => { 
+#    const wm = new WeakMap();
+
+#     return obj => { 
+#       wm.set(obj, (wm.get(obj) || 0) + 1);
+#     };
+#   })();
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2));
+
+# Enter the next line: " response
+# answer="return wm.get(obj);"
+# additional_feedback="
+
+#   const argCallsTracker = (() => { 
+#    const wm = new WeakMap();
+
+#     return obj => { 
+#       wm.set(obj, (wm.get(obj) || 0) + 1);
+#       return wm.get(obj);
+#     };
+#   })();
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2));  
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Use a WeakMap to track how often a method was called.
+
+#   const argCallsTracker = (() => { 
+#    const wm = new WeakMap();
+
+#     return obj => { 
+#       wm.set(obj, (wm.get(obj) || 0) + 1);
+#       return wm.get(obj);
+#     };
+#   })();
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2));
+
+# Enter the next line: " response
+# answer="function foo(args) { }"
+# additional_feedback="
+
+#   const argCallsTracker = (() => { 
+#    const wm = new WeakMap();
+
+#     return obj => { 
+#       wm.set(obj, (wm.get(obj) || 0) + 1);
+#       return wm.get(obj);
+#     };
+#   })();
+
+#   function foo(args) { 
+
+#   }
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2));
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Use a WeakMap to track how often a method was called.
+
+#   const argCallsTracker = (() => { 
+#    const wm = new WeakMap();
+
+#     return obj => { 
+#       wm.set(obj, (wm.get(obj) || 0) + 1);
+#       return wm.get(obj);
+#     };
+#   })();
+
+#   function foo(args) { 
+
+#   }
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2));
+
+# Enter the next line: " response
+# answer="const calls = argCallsTracker(args);"
+# additional_feedback="
+
+#   const argCallsTracker = (() => { 
+#    const wm = new WeakMap();
+
+#     return obj => { 
+#       wm.set(obj, (wm.get(obj) || 0) + 1);
+#       return wm.get(obj);
+#     };
+#   })();
+
+#   function foo(args) { 
+#     const calls = argCallsTracker(args);
+#   }
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2));
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Use a WeakMap to track how often a method was called.
+
+#   const argCallsTracker = (() => { 
+#    const wm = new WeakMap();
+
+#     return obj => { 
+#       wm.set(obj, (wm.get(obj) || 0) + 1);
+#       return wm.get(obj);
+#     };
+#   })();
+
+#   function foo(args) { 
+#     const calls = argCallsTracker(args);
+#   }
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2));
+
+# Enter the next line: " response
+# answer="console.log(JSON.stringify(args), calls);"
+# additional_feedback="
+
+#   const argCallsTracker = (() => { 
+#    const wm = new WeakMap();
+
+#     return obj => { 
+#       wm.set(obj, (wm.get(obj) || 0) + 1);
+#       return wm.get(obj);
+#     };
+#   })();
+
+#   function foo(args) { 
+#     const calls = argCallsTracker(args);
+#     console.log(JSON.stringify(args));
+#   }
+
+#   const obj1 = { key: 1 };
+#   const obj2 = { key: 2 };
+
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj1));
+#   console.log(foo(obj2));
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "What is the difference between WeakMap and Map? " response
+# answer="WeakMap is weakly set. If a key is set and no methods reference it, then the key will be garbage collected."
+# additional_feedback="
+
+#   WeakMap is weakly set. If a key is set and no methods reference it, 
+#   then the key will be garbage collected.
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "What is the difference between WeakMap and Map? 
+
+#   WeakMap is weakly set. If a key is set and no methods reference it, 
+#   then the key will be garbage collected.
+
+# Enter the next line: " response
+# answer="A Map will keep everything in memory even when it is not in use."
+# additional_feedback="
+
+#   WeakMap is weakly set. If a key is set and no methods reference it, 
+#   then the key will be garbage collected.
+
+#   A Map will keep everything in memory even when it is not in use.
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "What is the difference between WeakMap and Map? 
+
+#   WeakMap is weakly set. If a key is set and no methods reference it, 
+#   then the key will be garbage collected.
+
+#   A Map will keep everything in memory even when it is not in use.
+
+# Enter the next line: " response
+# answer="Because keys will be garbage collected if they are not referenced, WeakMap doesn't have any iterators"
+# additional_feedback="
+
+#   WeakMap is weakly set. If a key is set and no methods reference it, 
+#   then the key will be garbage collected.
+
+#   A Map will keep everything in memory even when it is not in use.
+
+#   Because keys will be garbage collected if they are not referenced, 
+#   WeakMap doesn't have any iterators, 
+
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "What is the difference between WeakMap and Map? 
+
+#   WeakMap is weakly set. If a key is set and no methods reference it, 
+#   then the key will be garbage collected.
+
+#   A Map will keep everything in memory even when it is not in use.
+
+#   Because keys will be garbage collected if they are not referenced, 
+#   WeakMap doesn't have any iterators, 
+
+# Enter the next line: " response
+# answer="thus developers are prevented from observing the liveness of its keys."
+# additional_feedback="
+
+#   WeakMap is weakly set. If a key is set and no methods reference it, 
+#   then the key will be garbage collected.
+
+#   A Map will keep everything in memory even when it is not in use.
+
+#   Because keys will be garbage collected if they are not referenced, 
+#   WeakMap doesn't have any iterators, thus developers are prevented from 
+#   observing the liveness of its keys. 
+
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "What is the difference between WeakMap and Map? 
+
+#   WeakMap is weakly set. If a key is set and no methods reference it, 
+#   then the key will be garbage collected.
+
+#   A Map will keep everything in memory even when it is not in use.
+
+#   Because keys will be garbage collected if they are not referenced, 
+#   WeakMap doesn't have any iterators, thus developers are prevented from 
+#   observing the liveness of its keys.
+
+# Enter the next line: " response
+# answer="If a WeakMap exposed any method to obtain a list of its keys"
+# additional_feedback="
+
+#   WeakMap is weakly set. If a key is set and no methods reference it, 
+#   then the key will be garbage collected.
+
+#   A Map will keep everything in memory even when it is not in use.
+
+#   Because keys will be garbage collected if they are not referenced, 
+#   WeakMap doesn't have any iterators, thus developers are prevented from 
+#   observing the liveness of its keys.  
+
+#   If a WeakMap exposed any method to obtain a list of its keys,
+
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "What is the difference between WeakMap and Map? 
+
+#   WeakMap is weakly set. If a key is set and no methods reference it, 
+#   then the key will be garbage collected.
+
+#   A Map will keep everything in memory even when it is not in use.
+
+#   Because keys will be garbage collected if they are not referenced, 
+#   WeakMap doesn't have any iterators, thus developers are prevented from 
+#   observing the liveness of its keys.  
+
+#   If a WeakMap exposed any method to obtain a list of its keys,
+
+# Enter the next line: " response
+# answer="the list would depend on the state of garbage collection, introducing non-determinism."
+# additional_feedback="
+
+#   WeakMap is weakly set. If a key is set and no methods reference it, 
+#   then the key will be garbage collected.
+
+#   A Map will keep everything in memory even when it is not in use.
+
+#   Because keys will be garbage collected if they are not referenced, 
+#   WeakMap doesn't have any iterators, thus developers are prevented from 
+#   observing the liveness of its keys.  
+
+#   If a WeakMap exposed any method to obtain a list of its keys, the 
+#   list would depend on the state of garbage collection, introducing 
+#   non-determinism.
+
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "Return the byte size of a given input.
+
+#   byteSize('Hello World'); // 11
+
+# Enter the next line: " response
+# answer="const byteSize = str => new Blob([str]).size;"
+# additional_feedback="
+
+#   const byteSize = str => new Blob([str]).size;
+#   byteSize('Hello World'); // 11
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Define a function, createPhoneNumber, that accepts an 
+#   array of 10 integers (from 0-9) and returns a string of 
+#   those numbers in the form of a phone number.
+
+#   console.log(createPhoneNumber(1234561029));
+
+# Enter the next line: " response
+# answer="function createPhoneNumber(numbers) { }" 
+# additional_feedback="
+
+#   function createPhoneNumber(numbers) { 
+
+#   }
+
+#   console.log(createPhoneNumber(1234561029));
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Define a function, createPhoneNumber, that accepts an 
+#   array of 10 integers (from 0-9) and returns a string of 
+#   those numbers in the form of a phone number.
+
+#   function createPhoneNumber(numbers) { 
+
+#   }
+
+#   console.log(createPhoneNumber(1234561029));
+
+# Enter the next line: " response
+# answer="let format = '(xxx) xxx-xxxx';"
+# additional_feedback="
+
+#   function createPhoneNumber(numbers) { 
+#     let format = '(xxx) xxx-xxxx';
+#   }
+
+#   console.log(createPhoneNumber(1234561029));
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Define a function, createPhoneNumber, that accepts an 
+#   array of 10 integers (from 0-9) and returns a string of 
+#   those numbers in the form of a phone number.
+
+#   function createPhoneNumber(numbers) { 
+#     let format = '(xxx) xxx-xxxx';
+#   }
+
+#   console.log(createPhoneNumber(1234561029));
+
+# Enter the next line: " response
+# answer="const phoneNumber = numbers.toString();"
+# additional_feedback="
+
+#   function createPhoneNumber(numbers) { 
+#     let format = '(xxx) xxx-xxxx';
+#     const phoneNumber = numbers.toString();
+#   }
+
+#   console.log(createPhoneNumber(1234561029));  
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Define a function, createPhoneNumber, that accepts an 
+#   array of 10 integers (from 0-9) and returns a string of 
+#   those numbers in the form of a phone number.
+
+#   function createPhoneNumber(numbers) { 
+#     let format = '(xxx) xxx-xxxx';
+#     const phoneNumber = numbers.toString();
+#   }
+
+#   console.log(createPhoneNumber(1234561029)); 
+
+# Enter the next line: " response
+# answer="for (let i = 0; i < phoneNumber.length; i++) { }"
+# additional_feedback="
+
+#   function createPhoneNumber(numbers) { 
+#     let format = '(xxx) xxx-xxxx';
+#     const phoneNumber = numbers.toString();
+
+#     for (let i = 0; i < phoneNumber.length; i++) { 
+
+#     }
+#   }
+
+#   console.log(createPhoneNumber(1234561029));
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Define a function, createPhoneNumber, that accepts an 
+#   array of 10 integers (from 0-9) and returns a string of 
+#   those numbers in the form of a phone number.
+
+#   function createPhoneNumber(numbers) { 
+#     let format = '(xxx) xxx-xxxx';
+#     const phoneNumber = numbers.toString();
+
+#     for (let i = 0; i < phoneNumber.length; i++) { 
+
+#     }
+#   }
+
+#   console.log(createPhoneNumber(1234561029)); 
+
+# Enter the next line: " response
+# answer="format = format.replace('x', phoneNumber[i]);"
+# additional_feedback="
+
+#   function createPhoneNumber(numbers) { 
+#     let format = '(xxx) xxx-xxxx';
+#     const phoneNumber = numbers.toString();
+
+#     for (let i = 0; i < phoneNumber.length; i++) { 
+#       format = format.replace('x', phoneNumber[i]);
+#     }
+#   }
+
+#   console.log(createPhoneNumber(1234561029));
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Define a function, createPhoneNumber, that accepts an 
+#   array of 10 integers (from 0-9) and returns a string of 
+#   those numbers in the form of a phone number.
+
+#   function createPhoneNumber(numbers) { 
+#     let format = '(xxx) xxx-xxxx';
+#     const phoneNumber = numbers.toString();
+
+#     for (let i = 0; i < phoneNumber.length; i++) { 
+#       format = format.replace('x', phoneNumber[i]);
+#     }
+#   }
+
+#   console.log(createPhoneNumber(1234561029)); 
+
+# Enter the next line: " response
+# answer="return format;"
+# additional_feedback="
+
+#   function createPhoneNumber(numbers) { 
+#     let format = '(xxx) xxx-xxxx';
+#     const phoneNumber = numbers.toString();
+
+#     for (let i = 0; i < phoneNumber.length; i++) { 
+#       format = format.replace('x', phoneNumber[i]);
+#     }
+#     return format;
+#   }
+
+#   console.log(createPhoneNumber(1234561029));
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+#   Create a countdown timer.
+
+# Enter the next line: " response
+# answer="const countDownDate = new Date().getTime();"
+# additional_feedback="
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+#   Create a countdown timer.
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+# Enter the next line: " response
+# answer="const x = setInterval(function () { }, 1000);"
+# additional_feedback="
+
+#     const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () { 
+
+#     }, 1000);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+#   Create a countdown timer.
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () { 
+
+#     }, 1000);
+
+# Enter the next line: " response
+# answer="const now = new Date().getTime();"
+# additional_feedback="
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () {
+
+#       const now = new Date().getTime();
+
+#     }, 1000);  
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+#   Create a countdown timer.
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () {
+
+#       const now = new Date().getTime();
+
+#     }, 1000); 
+
+# Enter the next line: " response
+# answer="const distance = countDownDate - now;"
+# additional_feedback="
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () {
+
+#       const now = new Date().getTime();
+#       const distance = countDownDate - now;
+
+#     }, 1000); 
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+#   Create a countdown timer.
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () {
+
+#       const now = new Date().getTime();
+#       const distance = countDownDate - now;
+
+#     }, 1000); 
+
+# Enter the next line: " response
+# answer="const days = Math.floor(distance / (1000 * 60 * 60 * 24));"
+# additional_feedback="
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () {
+
+#       const now = new Date().getTime();
+#       const distance = countDownDate - now;
+
+#       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+#     }, 1000);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+#   Create a countdown timer.
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () {
+
+#       const now = new Date().getTime();
+#       const distance = countDownDate - now;
+
+#       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+#     }, 1000); 
+
+# Enter the next line: " response
+# answer="const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));"
+# additional_feedback="
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () {
+
+#       const now = new Date().getTime();
+#       const distance = countDownDate - now;
+
+#       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+#       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      
+
+#     }, 1000);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+#   Create a countdown timer.
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () {
+
+#       const now = new Date().getTime();
+#       const distance = countDownDate - now;
+
+#       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+#       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      
+
+#     }, 1000); 
+
+# Enter the next line: " response
+# answer="const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));"
+# additional_feedback="
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () {
+
+#       const now = new Date().getTime();
+#       const distance = countDownDate - now;
+
+#       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+#       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+#       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      
+
+#     }, 1000);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+#   Create a countdown timer.
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () {
+
+#       const now = new Date().getTime();
+#       const distance = countDownDate - now;
+
+#       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+#       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+#       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      
+
+#     }, 1000); 
+
+# Enter the next line: " response
+# answer="const seconds = Math.floor((distance % (1000 * 60)) / 1000);"
+# additional_feedback="
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () {
+
+#       const now = new Date().getTime();
+#       const distance = countDownDate - now;
+
+#       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+#       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+#       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+#       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+#     }, 1000);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+#   Create a countdown timer.
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () {
+
+#       const now = new Date().getTime();
+#       const distance = countDownDate - now;
+
+#       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+#       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+#       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+#       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+#     }, 1000);
+
+# Enter the next line: " response
+# answer="console.log(\`\${days}d \${hours}h \${minutes}m \${seconds}s\`);"
+# additional_feedback="
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () {
+
+#       const now = new Date().getTime();
+#       const distance = countDownDate - now;
+
+#       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+#       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+#       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+#       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+#       console.log(\`\${days}d \${hours}h \${minutes}m \${seconds}s\`);
+
+#     }, 1000);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+#   Create a countdown timer.
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () {
+
+#       const now = new Date().getTime();
+#       const distance = countDownDate - now;
+
+#       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+#       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+#       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+#       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+#       console.log(\`\${days}d \${hours}h \${minutes}m \${seconds}s\`);
+
+#     }, 1000);
+
+# Enter the next line: " response
+# answer="if (distance < 0) { clearInterval(x); console.log('Expired'); }"
+# additional_feedback="
+
+#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+
+#     const x = setInterval(function () {
+
+#       const now = new Date().getTime();
+#       const distance = countDownDate - now;
+
+#       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+#       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+#       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+#       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+#       console.log(\`\${days}d \${hours}h \${minutes}m \${seconds}s\`);
+
+#       if (distance < 0) { 
+#         clearInterval(x); 
+#         console.log('Expired'); 
+#       }
+
+#     }, 1000);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "Extraction initials.
+
+#   function extractInitials(value: string) {
+
+#   }
+
+# Enter the next line: " response
+# answer="return value.match(/\b\w/g)!.join('').substring(0, 2);"
+# additional_feedback="
+
+#   function extractInitials(value: string) {
+#     return value.match(/\b\w/g)!.join('').substring(0, 2);
+#   }
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Create type writer function.
+
+#   let i = 0;
+#   const txt = 'Lorem ipsum dummy text blabla.';
+#   const speed = 50;
+
+# Enter the next line: " response
+# answer="function typeWriter() { }"
+# additional_feedback="
+
+#   function typeWriter() { 
+
+#   }
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Create type writer function.
+
+#   let i = 0;
+#   const txt = 'Lorem ipsum dummy text blabla.';
+#   const speed = 50;
+
+#   function typeWriter() { 
+
+#   }
+
+# Enter the next line: " response
+# answer="if (i < txt.length) { }"
+# additional_feedback="
+
+#   let i = 0;
+#   const txt = 'Lorem ipsum dummy text blabla.';
+#   const speed = 50;
+
+#   function typeWriter() { 
+#     if (i < txt.length) { 
+
+#     }
+#   }  
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Create type writer function.
+
+#   let i = 0;
+#   const txt = 'Lorem ipsum dummy text blabla.';
+#   const speed = 50;
+
+#   function typeWriter() { 
+#     if (i < txt.length) { 
+
+#     }
+#   } 
+
+# Enter the next line: " response
+# answer="document.getElementById('demo').innerHTML += txt.charAt(i);"
+# additional_feedback="
+
+#   let i = 0;
+#   const txt = 'Lorem ipsum dummy text blabla.';
+#   const speed = 50;
+
+#   function typeWriter() { 
+#     if (i < txt.length) {   
+#       document.getElementById('demo').innerHTML += txt.charAt(i);
+#     }
+#   } 
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Create type writer function.
+
+#   let i = 0;
+#   const txt = 'Lorem ipsum dummy text blabla.';
+#   const speed = 50;
+
+#   function typeWriter() { 
+#     if (i < txt.length) {   
+#       document.getElementById('demo').innerHTML += txt.charAt(i);
+#     }
+#   }  
+
+# Enter the next line: " response
+# answer="i++; setTimeout(typeWriter, speed);"
+# additional_feedback="
+
+#   let i = 0;
+#   const txt = 'Lorem ipsum dummy text blabla.';
+#   const speed = 50;
+
+#   function typeWriter() { 
+#     if (i < txt.length) {   
+#       document.getElementById('demo').innerHTML += txt.charAt(i);
+#       i++; 
+#       setTimeout(typeWriter, speed);
+#     }
+#   } 
+
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Validate URL. 
+
+#   const matchesURLPattern = (url: string): boolean => {
+  
+#   } 
+
+
+# Enter the next line: " response
+# answer="return new RegExp('^(https?:\\\/\\\/)').test(url);"
+# additional_feedback="
+
+#   const matchesURLPattern = (url: string): boolean => {
+#     return new RegExp('^(https?:\\\/\\\/)').test(url);
+#   } 
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
 
 read -p "Convert a string to camel case.
 
@@ -6963,16 +7074,18 @@ evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_question
 
-read -p "Sort the the following using the language locale for Germany.
+read -p "Sort the the following using the language locale for Mexico.
 
-      ['ä', 'b']
+      const letters = ['n', 'm', 'ñ', 'l', 'll']
 
 Enter the next line: " response
-answer="['ä', 'b'].sort((a, b) => a.localeCompare(b, 'de'));"
+answer="letters.sort((a, b) => a.localeCompare(b, 'es-MX'));"
 additional_feedback="
 
-  ['ä', 'b'].sort((a, b) => a.localeCompare(b, 'de')); 
-  // ['ä', 'b', 'c']
+  const letters = ['n', 'm', 'ñ', 'l', 'll']
+
+  letters.sort((a, b) => a.localeCompare(b, 'es-MX'));
+  // ['l', 'll', 'm', 'n', 'ñ']
 
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
