@@ -174,7 +174,7 @@ echo "
 # answer="If a should come before b then return a negative value."
 # additional_feedback="
 
-#   * If a should come before b then return a negative value.
+#   • If a should come before b then return a negative value.
 
 # "
 # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -183,14 +183,14 @@ echo "
 
 # read -p "How does the ordering of sort() work? 
 
-#   * If a should come before b then return a negative value.
+#   • If a should come before b then return a negative value.
 
 # Enter the next line: " response
 # answer="If a should come after b then return a positive value."
 # additional_feedback="
 
-#   * If a should come before b then return a negative value.
-#   * If a should come after b then return a positive value. 
+#   • If a should come before b then return a negative value.
+#   • If a should come after b then return a positive value. 
 
 # "
 # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -201,9 +201,9 @@ echo "
 # answer="If a and b are of the same order then return zero."
 # additional_feedback="
 
-#   * If a should come before b then return a negative value.
-#   * If a should come after b then return a positive value. 
-#   * If a and b are of the same order then return zero. 
+#   • If a should come before b then return a negative value.
+#   • If a should come after b then return a positive value. 
+#   • If a and b are of the same order then return zero. 
 
 # "
 # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -927,74 +927,74 @@ echo "
 # answer="const mostExpensiveItem = cart.reduce((acc, next) => acc.price > next.price ? acc : next);"
 # evaluate_answer "$response" "$answer"
 
-  # next_question
+# next_question
 
-  # read -p "Write a program that generates random color is hexadecimals. " response
-  # answer="const color = '#'+Math.random().toString(16).slice(-6);"
-  # evaluate_answer "$response" "$answer"
+# read -p "Write a program that generates random color is hexadecimals. " response
+# answer="const color = '#'+Math.random().toString(16).slice(-6);"
+# evaluate_answer "$response" "$answer"
 
-  # next_question
+# next_question
 
-  # read -p "Check for duplicate before adding it to an array. " response
-  # answer="if (!arr.includes(item)) { arr.push(item); }"
-  # additional_feedback="
-  #     const arr = ['hamber', 'coal'];
-  #     const item = 'coal';
-  #     if (!arr.includes(item)) {
-  #         arr.push(item);
-  #      }
-  # "
-  # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# read -p "Check for duplicate before adding it to an array. " response
+# answer="if (!arr.includes(item)) { arr.push(item); }"
+# additional_feedback="
+#     const arr = ['hamber', 'coal'];
+#     const item = 'coal';
+#     if (!arr.includes(item)) {
+#         arr.push(item);
+#      }
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-  # next_question
+# next_question
 
-  # read -p "
+# read -p "
 
-  #     Write an function to iterate over an array and remove items 
-  #     referenced in the second array.
+#     Write an function to iterate over an array and remove items 
+#     referenced in the second array.
 
-  #     const s1 = [ 1, 2, 3, 4, 5 ];
-  #     const s2 = [ 2, 4 ];
-      
-  #     console.log(subtracted) //[ 1, 3, 5 ]
+#     const s1 = [ 1, 2, 3, 4, 5 ];
+#     const s2 = [ 2, 4 ];
+    
+#     console.log(subtracted) //[ 1, 3, 5 ]
 
-  # Enter your answer: " response
-  # answer="const subtracted = s1.filter(x => s2.indexOf(x) < 0);"
-  # additional_feedback="
-  #     const s1 = [ 1, 2, 3, 4, 5 ];
-  #     const s2 = [ 2, 4 ];
-      
-  #     const subtracted = s1.filter(x => s2.indexOf(x) < 0);
-  #     console.log(subtracted) //[ 1, 3, 5 ]
+# Enter your answer: " response
+# answer="const subtracted = s1.filter(x => s2.indexOf(x) < 0);"
+# additional_feedback="
+#     const s1 = [ 1, 2, 3, 4, 5 ];
+#     const s2 = [ 2, 4 ];
+    
+#     const subtracted = s1.filter(x => s2.indexOf(x) < 0);
+#     console.log(subtracted) //[ 1, 3, 5 ]
 
-  # "
-  # evaluate_answer "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer "$response" "$answer" "$additional_feedback"
 
-  # next_question
+# next_question
 
-  # read -p "
+# read -p "
 
-  #     Write an interface that changes the string type to a number. 
+#     Write an interface that changes the string type to a number. 
 
-  #      interface A {
-  #        x: string;
-  #      }
+#      interface A {
+#        x: string;
+#      }
 
-  # Enter your answer: " response
-  # answer="interface B extends Omit<A, 'x'> { x: number; }"
-  # additional_feedback="
-  #     interface A {
-  #        x: string;
-  #      }
+# Enter your answer: " response
+# answer="interface B extends Omit<A, 'x'> { x: number; }"
+# additional_feedback="
+#     interface A {
+#        x: string;
+#      }
 
-  #     interface B extends Omit<A, 'x'> {
-  #        x: number;
-  #     }
+#     interface B extends Omit<A, 'x'> {
+#        x: number;
+#     }
 
-  # "
-  # evaluate_answer "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer "$response" "$answer" "$additional_feedback"
 
-  # next_question
+# next_question
 
 # read -p "
 
@@ -1371,6 +1371,7 @@ echo "
 # Enter your answer: " response
 # answer="o: { [s in K]: T } | ArrayLike<T>"
 # additional_feedback="
+
 #     type Breakpoints = {
 #       small: number;
 #       medium: number;
@@ -1396,9 +1397,6 @@ echo "
 #         o: { [s in K]: T } | ArrayLike<T>
 #       ): [K, T][];
 #     }
-    
-#     // Let's use this interface now:
-#     const obj: CustomObject = Object;
 
 #     const mediaQueries = Object.keys(size).reduce((acc, cur) => {
 #        const [key, value] = cur;
@@ -1408,6 +1406,8 @@ echo "
 
 # "
 # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
 
 # read -p "
     
@@ -1528,7 +1528,95 @@ echo "
 #     }, {});
 
 # Enter your answer: " response
-# answer="const mediaQueries = obj.entries(size).reduce<Stringify<Breakpoints>>((acc, cur: BreakpointEntry) => { }, {});"
+# answer="const mediaQueries = obj.entries(size).reduce((acc, cur: BreakpointEntry) => { }, {});"
+# additional_feedback="
+#     type Breakpoints = {
+#       small: number;
+#       medium: number;
+#       large: number;
+#       extra: number;
+#     };
+
+#     const size: Breakpoints = {
+#       small: 576,
+#       medium: 768,
+#       large: 992,
+#       extra: 1200
+#     };
+
+#     // Type of entry after Object.entries() is used
+#     type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
+
+#     // Generic helper to make all of the properties' types: string | undefined
+#     type Stringify<T> = { [key in keyof T]?: string; };
+
+#     interface CustomObject extends ObjectConstructor {
+#       entries<K extends keyof Breakpoints, T>(
+#         o: { [s in K]: T } | ArrayLike<T>
+#       ): [K, T][];
+#     }
+    
+#     // Let's use this interface now:
+#     const obj: CustomObject = Object;
+
+#     const mediaQueries = obj
+#       .entries(size)
+#       .reduce((acc, cur: BreakpointEntry) => {
+#         const [key, value] = cur;
+#         acc[key] = \`(min-width: \${value}px)\`;
+
+#         return acc;
+#       }, {});
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+    
+#     Write a strongly-type function for the following code.
+
+#     type Breakpoints = {
+#       small: number;
+#       medium: number;
+#       large: number;
+#       extra: number;
+#     };
+
+#     const size: Breakpoints = {
+#       small: 576,
+#       medium: 768,
+#       large: 992,
+#       extra: 1200
+#     };
+
+#     // Type of entry after Object.entries() is used
+#     type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
+
+#     // Generic helper to make all of the properties' types: string | undefined
+#     type Stringify<T> = { [key in keyof T]?: string; };
+
+#     interface CustomObject extends ObjectConstructor {
+#       entries<K extends keyof Breakpoints, T>(
+#         o: { [s in K]: T } | ArrayLike<T>
+#       ): [K, T][];
+#     }
+    
+#     // Let's use this interface now:
+#     const obj: CustomObject = Object;
+
+#     const mediaQueries = obj
+#       .entries(size)
+#       .reduce((acc, cur: BreakpointEntry) => {
+#         const [key, value] = cur;
+#         acc[key] = \`(min-width: \${value}px)\`;
+
+#         return acc;
+#       }, {});
+
+# Enter your answer: " response
+# answer="<Stringify<Breakpoints>>"
 # additional_feedback="
 #     type Breakpoints = {
 #       small: number;
@@ -1894,7 +1982,7 @@ echo "
 
 # Enter the next line: " response
 # answer="const headings = Object.keys(arr[0]) as DataKey[];"
-# additional_feedback=" 
+# additional_feedback="
 #    interface Data {
 #     x: number;
 #     y: number;
@@ -1961,7 +2049,7 @@ echo "
 #   // 16,88,1
 
 # Enter the next line: " response
-# answer="return [].join('\\n');"
+# answer="return [].join('');"
 # additional_feedback="
 
 #   interface Data {
@@ -1975,7 +2063,7 @@ echo "
 #   const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
 #     const headings = Object.keys(arr[0]) as DataKey[];
 
-#     return [].join('\\n');
+#     return [].join('');
 #   };
 
 
@@ -2014,7 +2102,7 @@ echo "
 #   const jsonToCsv = (arr: Data[], delimiter = ','): string => { 
 #     const headings = Object.keys(arr[0]) as DataKey[];
 
-#     return [].join('\\n');
+#     return [].join('');
 #   };
 
 #   console.log(
@@ -2048,7 +2136,7 @@ echo "
 
 #     return [
 #       headings.join(delimiter)
-#     ].join('\\n');
+#     ].join('');
 #   };
 
 
@@ -2089,7 +2177,7 @@ echo "
 
 #     return [
 #       headings.join(delimiter)
-#     ].join('\\n');
+#     ].join('');
 #   };
 
 
@@ -2127,7 +2215,7 @@ echo "
 #       ...arr.map((obj) =>
      
 #       )
-#     ].join('\\n');
+#     ].join('');
 #   };
 
 
@@ -2171,7 +2259,7 @@ echo "
 #       ...arr.map((obj) =>
      
 #       )
-#     ].join('\\n');
+#     ].join('');
 #   };
 
 #   console.log(
@@ -2210,7 +2298,7 @@ echo "
 
 #         )
 #       )
-#     ].join('\\n');
+#     ].join('');
 #   };
 
 #   console.log(
@@ -2256,7 +2344,7 @@ echo "
 
 #         )
 #       )
-#     ].join('\\n');
+#     ].join('');
 #   };
 
 
@@ -2298,7 +2386,7 @@ echo "
 #         ''
 #         )
 #       )
-#     ].join('\\n');
+#     ].join('');
 #   };
 
 
@@ -2321,301 +2409,7 @@ echo "
 # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 # next_question
-
-# read -p "
-
-#   Write a  program to target a given value in a nested JSON object. 
-  
-#   const update = {
-#     status: 'success',
-#     message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
-#   };
-
-# Enter the next line: " response
-# answer="interface Update { status: string; message: string; }"
-# additional_feedback="
-
-#   interface Update { 
-#     status: string; 
-#     message: string; 
-#   }
-
-#   const update: Update = {
-#     status: 'success',
-#     message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
-#   };
-
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   Write a  program to target a given value in a nested JSON object. 
-  
-#   interface Update { 
-#     status: string; 
-#     message: string; 
-#   }
-
-#   const update: Update = {
-#     status: 'success',
-#     message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
-#   };
-
-# Enter the next line: " response
-# answer="function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { }"
-# additional_feedback="
-
-#   interface Update { 
-#     status: string; 
-#     message: string; 
-#   }
-
-#   const update: Update = {
-#     status: 'success',
-#     message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
-#   };
-
-#   function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
-
-#   }
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   Write a  program to target a given value in a nested JSON object. 
-  
-#   interface Update { 
-#     status: string; 
-#     message: string; 
-#   }
-
-#   const update: Update = {
-#     status: 'success',
-#     message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
-#   };
-
-#   function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
-
-#   }
-
-# Enter the next line: " response
-# answer="return target in obj"
-# additional_feedback="
-
-#   interface Update { 
-#     status: string; 
-#     message: string; 
-#   }
-
-#   const update: Update = {
-#     status: 'success',
-#     message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
-#   };
-
-#   function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
-#     return target in obj
-#   }
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   Write a  program to target a given value in a nested JSON object. 
-  
-#   interface Update { 
-#     status: string; 
-#     message: string; 
-#   }
-
-#   const update: Update = {
-#     status: 'success',
-#     message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
-#   };
-
-#   function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
-#     return target in obj
-#   }
-
-# Enter the next line: " response
-# answer="? obj[target]"
-# additional_feedback="
-
-#   interface Update { 
-#     status: string; 
-#     message: string; 
-#   }
-
-#   const update: Update = {
-#     status: 'success',
-#     message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
-#   };
-
-#   function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
-#     return target in obj
-#       ? obj[target]
-#   }
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   Write a  program to target a given value in a nested JSON object. 
-  
-#   interface Update { 
-#     status: string; 
-#     message: string; 
-#   }
-
-#   const update: Update = {
-#     status: 'success',
-#     message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
-#   };
-
-#   function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
-#     return target in obj
-#       ? obj[target]
-#   }
-
-# Enter the next line: " response
-# answer=": Object.values(obj).reduce((acc, val) => { }, undefined);"
-# additional_feedback="
-
-#   interface Update { 
-#     status: string; 
-#     message: string; 
-#   }
-
-#   const update: Update = {
-#     status: 'success',
-#     message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
-#   };
-
-#   function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
-#     return target in obj
-#       ? obj[target]
-#       : Object.values(obj).reduce((acc, val) => { 
-
-#       }, undefined);
-#   }
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   Write a  program to target a given value in a nested JSON object. 
-  
-#   interface Update { 
-#     status: string; 
-#     message: string; 
-#   }
-
-#   const update: Update = {
-#     status: 'success',
-#     message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
-#   };
-
-#   function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
-#     return target in obj
-#       ? obj[target]
-#       : Object.values(obj).reduce((acc, val) => { 
-          
-#       }, undefined);
-#   }
-
-# Enter the next line: " response
-# answer="if (acc !== undefined) return acc;"
-# additional_feedback="
-#   interface Update { 
-#     status: string; 
-#     message: string; 
-#   }
-
-#   const update: Update = {
-#     status: 'success',
-#     message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
-#   };
-
-#   function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
-#     return target in obj
-#       ? obj[target]
-#       : Object.values(obj).reduce((acc, val) => { 
-#           if (acc !== undefined) return acc;
-#       }, undefined);
-#   }
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   Write a program to target a given value in a nested JSON object. 
-  
-#   interface Update { 
-#     status: string; 
-#     message: string; 
-#   }
-
-#   const update: Update = {
-#     status: 'success',
-#     message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
-#   };
-
-#   function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
-#     return target in obj
-#       ? obj[target]
-#       : Object.values(obj).reduce((acc, val) => { 
-#           if (acc !== undefined) return acc;
-#       }, undefined);
-#   }
-
-# Enter the next line: " response
-# answer="if (typeof val === 'object') return getValueFromKey(val, target);"
-# additional_feedback="
-#     interface Update { 
-#     status: string; 
-#     message: string; 
-#   }
-
-#   const update: Update = {
-#     status: 'success',
-#     message: 'https://images.dog.ceo/breeds/african/n02116738_1105.jpg',
-#   };
-
-#   function getValueFromKey<T, K extends keyof T>(obj: T, target: K): K { 
-#     return target in obj
-#       ? obj[target]
-#       : Object.values(obj).reduce((acc, val) => { 
-#           if (acc !== undefined) return acc;
-#           if (typeof val === 'object') return getValueFromKey(val, target);
-#       }, undefined);
-#   }
-
-#   console.log(getValueFromKey(update, 'status'));
-#   console.log(getValueFromKey(update, 'message'));
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_question
-
+ 
 # read -p "
 
 #   Write a program to replace the names of multiple object keys with the values provided. 
@@ -2817,6 +2611,7 @@ echo "
 
 #   type ObjectKeys<T> = 
 #     T extends object ? (keyof T)[] :
+  
 
 #   const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
 
@@ -2854,6 +2649,7 @@ echo "
 
 #   type ObjectKeys<T> = 
 #     T extends object ? (keyof T)[] :
+  
 
 #   const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
 
@@ -2888,6 +2684,7 @@ echo "
 #     T extends object ? (keyof T)[] :
 #     T extends number ? [] :
 
+
 #   const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
 
 #   console.log('Original Object');
@@ -2925,6 +2722,7 @@ echo "
 #   type ObjectKeys<T> = 
 #     T extends object ? (keyof T)[] :
 #     T extends number ? [] :
+
 
 #   const customer: CustomerDetails = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
 
@@ -3342,844 +3140,716 @@ echo "
 
 # read -p "
 
-#   const items = [
-#     { id: 0, value: 'a' },
-#     { id: 1, value: 'b' },
-#     { id: 2, value: 'c' },
-#     { id: 1, value: 'd' },
-#     { id: 0, value: 'e' },
-#   ];
+#   Write a program that finds the unique item.
 
-#   const uniqueItem = findUniqueElement(arr);
-#   console.log(uniqueItem);
-
-# Enter the next line: " response
-# answer="const findUniqueElement = (array) => { };"
-# additional_feedback="
-
-#   const findUniqueElement = (array) => { 
-
-#   };
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   const items = [
-#     { id: 0, value: 'a' },
-#     { id: 1, value: 'b' },
-#     { id: 2, value: 'c' },
-#     { id: 1, value: 'd' },
-#     { id: 0, value: 'e' },
-#   ];
-
-#   const findUniqueElement = (array) => { 
-
-#   };
-
-#   const uniqueItem = findUniqueElement(arr);
-#   console.log(uniqueItem);
+#   console.log(
+#     findUniqueItem(
+#       [
+#         { id: 0, value: 'a' },
+#         { id: 1, value: 'b' },
+#         { id: 2, value: 'c' },
+#         { id: 1, value: 'd' },
+#         { id: 0, value: 'e' },
+#       ],
+#       (a, b) => a.id == b.id
+#     )
+#   );
 
 # Enter the next line: " response
-# answer="const unique = [];"
+# answer="interface Items { id: number; value: string; }"
 # additional_feedback="
 
-#   const findUniqueElement = (array) => { 
-#     const unique = [];
-#   };
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   const items = [
-#     { id: 0, value: 'a' },
-#     { id: 1, value: 'b' },
-#     { id: 2, value: 'c' },
-#     { id: 1, value: 'd' },
-#     { id: 0, value: 'e' },
-#   ];
-
-#   const findUniqueElement = (array) => { 
-#     const unique = [];
-#   };
-
-#   const uniqueItem = findUniqueElement(arr);
-#   console.log(uniqueItem);
-
-# Enter the next line: " response
-# answer="const map = new Map();"
-# additional_feedback="
-
-#   const findUniqueElement = (array) => { 
-#     const unique = [];
-
-#     const map = new Map();
-#   };
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   const items = [
-#     { id: 0, value: 'a' },
-#     { id: 1, value: 'b' },
-#     { id: 2, value: 'c' },
-#     { id: 1, value: 'd' },
-#     { id: 0, value: 'e' },
-#   ];
-
-#   const findUniqueElement = (array) => { 
-#     const unique = [];
-
-#     const map = new Map();
-#   };
-
-#   const uniqueItem = findUniqueElement(arr);
-#   console.log(uniqueItem);
-
-# Enter the next line: " response
-# answer="for (let val of array) { }"
-# additional_feedback="
-
-#   const findUniqueElement = (array) => { 
-#     const unique = [];
-
-#     const map = new Map();
-
-#     for (let val of array) { 
-      
-#     }
-
-
-#   };
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   const items = [
-#     { id: 0, value: 'a' },
-#     { id: 1, value: 'b' },
-#     { id: 2, value: 'c' },
-#     { id: 1, value: 'd' },
-#     { id: 0, value: 'e' },
-#   ];
-
-#   const findUniqueElement = (array) => { 
-#     const unique = [];
-
-#     const map = new Map();
-
-#     for (let val of array) { 
-      
-#     }
-#   };
-
-#   const uniqueItem = findUniqueElement(arr);
-#   console.log(uniqueItem);
-
-# Enter the next line: " response
-# answer="if (map.has(val.id)) { }"
-# additional_feedback="
-
-#   const findUniqueElement = (array) => { 
-#     const unique = [];
-
-#     const map = new Map();
-
-#     for (let val of array) { 
-#       if (map.has(val.id)) { 
-        
-#       }
-#     }
-#   };
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   const items = [
-#     { id: 0, value: 'a' },
-#     { id: 1, value: 'b' },
-#     { id: 2, value: 'c' },
-#     { id: 1, value: 'd' },
-#     { id: 0, value: 'e' },
-#   ];
-
-#   const findUniqueElement = (array) => { 
-#     const unique = [];
-
-#     const map = new Map();
-
-#     for (let val of array) { 
-#       if (map.has(val.id)) { 
-        
-#       }
-#     }
-#   };
-
-#   const uniqueItem = findUniqueElement(arr);
-#   console.log(uniqueItem);
-
-# Enter the next line: " response
-# answer="unique.splice(val.id, 1); continue;"
-# additional_feedback="
-
-#   const findUniqueElement = (array) => { 
-#     const unique = [];
-
-#     const map = new Map();
-
-#     for (let val of array) { 
-#       if (map.has(val.id)) { 
-#         unique.splice(val.id, 1); 
-#         continue;
-#       }
-#     }
-#   };
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   const items = [
-#     { id: 0, value: 'a' },
-#     { id: 1, value: 'b' },
-#     { id: 2, value: 'c' },
-#     { id: 1, value: 'd' },
-#     { id: 0, value: 'e' },
-#   ];
-
-#   const findUniqueElement = (array) => { 
-#     const unique = [];
-
-#     const map = new Map();
-
-#     for (let val of array) { 
-#       if (map.has(val.id)) { 
-#         unique.splice(val.id, 1); 
-#         continue;
-#       }
-#     }
-#   };
-
-#   const uniqueItem = findUniqueElement(arr);
-#   console.log(uniqueItem);
-
-# Enter the next line: " response
-# answer="unique.push(val);"
-# additional_feedback="
-
-#   const findUniqueElement = (array) => { 
-#     const unique = [];
-
-#     const map = new Map();
-
-#     for (let val of array) { 
-#       if (map.has(val.id)) { 
-#         unique.splice(val.id, 1); 
-#         continue;
-#       }
-
-#       unique.push(val);
-#     }
-#   };
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   const items = [
-#     { id: 0, value: 'a' },
-#     { id: 1, value: 'b' },
-#     { id: 2, value: 'c' },
-#     { id: 1, value: 'd' },
-#     { id: 0, value: 'e' },
-#   ];
-
-#   const findUniqueElement = (array) => { 
-#     const unique = [];
-
-#     const map = new Map();
-
-#     for (let val of array) { 
-#       if (map.has(val.id)) { 
-#         unique.splice(val.id, 1); 
-#         continue;
-#       }
-
-#       unique.push(val);
-#     }
-#   };
-
-#   const uniqueItem = findUniqueElement(arr);
-#   console.log(uniqueItem);
-
-# Enter the next line: " response
-# answer="map.set(val.id, true);"
-# additional_feedback="
-
-#   const findUniqueElement = (array) => { 
-#     const unique = [];
-
-#     const map = new Map();
-
-#     for (let val of array) { 
-#       if (map.has(val.id)) { 
-#         unique.splice(val.id, 1); 
-#         continue;
-#       }
-
-#       unique.push(val);
-
-#       map.set(val.id, true);
-#     }
-#   };
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   const items = [
-#     { id: 0, value: 'a' },
-#     { id: 1, value: 'b' },
-#     { id: 2, value: 'c' },
-#     { id: 1, value: 'd' },
-#     { id: 0, value: 'e' },
-#   ];
-
-#   const findUniqueElement = (array) => { 
-#     const unique = [];
-
-#     const map = new Map();
-
-#     for (let val of array) { 
-#       if (map.has(val.id)) { 
-#         unique.splice(val.id, 1); 
-#         continue;
-#       }
-
-#       unique.push(val);
-
-#       map.set(val.id, true);
-#     }
-#   };
-
-#   const uniqueItem = findUniqueElement(arr);
-#   console.log(uniqueItem);
-
-# Enter the next line: " response
-# answer="return unique;"
-# additional_feedback="
-
-#   const items = [
-#     { id: 0, value: 'a' },
-#     { id: 1, value: 'b' },
-#     { id: 2, value: 'c' },
-#     { id: 1, value: 'd' },
-#     { id: 0, value: 'e' },
-#   ];
-
-
-#   const findUniqueElement = (array) => {
-#     //Store the unique
-#     const unique = [];
-
-#     //Track the items added to the uniques
-#     const map = new Map();
-#     for (let val of array) {
-#      //If item is already added then move to the next item
-#       if (map.has(val.id)) {
-#         unique.splice(val.id, 1);
-#         continue;
-#       }
-
-#     //Else push it to the unique list
-#     unique.push(val);
-
-#     //Mark it as added
-#     map.set(val.id, true);
+#   interface Items { 
+#     id: number; 
+#     value: string; 
 #   }
 
-#     //Return the unique
-#     return unique;
-#   };
+# console.log(
+#     findUniqueItem(
+#       [
+#         { id: 0, value: 'a' },
+#         { id: 1, value: 'b' },
+#         { id: 2, value: 'c' },
+#         { id: 1, value: 'd' },
+#         { id: 0, value: 'e' },
+#       ],
+#       (a, b) => a.id == b.id
+#     )
+#   );.
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-#   const uniqueItem = findUniqueElement(arr);
-#   console.log(uniqueItem);
+# next_line
+
+# read -p "
+
+#   Write a program that finds the unique item.
+
+#   interface Items { 
+#     id: number; 
+#     value: string; 
+#   }
+
+#   console.log(
+#     findUniqueItem(
+#       [
+#         { id: 0, value: 'a' },
+#         { id: 1, value: 'b' },
+#         { id: 2, value: 'c' },
+#         { id: 1, value: 'd' },
+#         { id: 0, value: 'e' },
+#       ],
+#       (a, b) => a.id == b.id
+#     )
+#   );
+
+# Enter the next line: " response
+# answer="interface CompareFunc { (a: Items, b: Items): boolean; }"
+# additional_feedback="
+
+#   interface Items { 
+#     id: number; 
+#     value: string; 
+#   }
+
+#   interface CompareFunc { 
+#     (a: Items, b: Items): boolean; 
+#   }
+
+#   console.log(
+#     findUniqueItem(
+#       [
+#         { id: 0, value: 'a' },
+#         { id: 1, value: 'b' },
+#         { id: 2, value: 'c' },
+#         { id: 1, value: 'd' },
+#         { id: 0, value: 'e' },
+#       ],
+#       (a, b) => a.id == b.id
+#     )
+#   );
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Write a program that finds the unique item.
+
+#   interface Items { 
+#     id: number; 
+#     value: string; 
+#   }
+
+#   interface CompareFunc { 
+#     (a: Items, b: Items): boolean; 
+#   }
+
+#   console.log(
+#     findUniqueItem(
+#       [
+#         { id: 0, value: 'a' },
+#         { id: 1, value: 'b' },
+#         { id: 2, value: 'c' },
+#         { id: 1, value: 'd' },
+#         { id: 0, value: 'e' },
+#       ],
+#       (a, b) => a.id == b.id
+#     )  
+#   );
+
+# Enter the next line: " response
+# answer="function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { }"
+# additional_feedback="
+
+#   interface Items { 
+#     id: number; 
+#     value: string; 
+#   }
+
+#   interface CompareFunc { 
+#     (a: Items, b: Items): boolean; 
+#   }
+
+#   function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { 
+
+#   }
+
+#   console.log(
+#     findUniqueItem(
+#       [
+#         { id: 0, value: 'a' },
+#         { id: 1, value: 'b' },
+#         { id: 2, value: 'c' },
+#         { id: 1, value: 'd' },
+#         { id: 0, value: 'e' },
+#       ],
+#       (a, b) => a.id == b.id
+#     )
+#   );  
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Write a program that finds the unique item.
+
+#   interface Items { 
+#     id: number; 
+#     value: string; 
+#   }
+
+#   interface CompareFunc { 
+#     (a: Items, b: Items): boolean; 
+#   }
+
+#   function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { 
+
+#   }
+
+#   console.log(
+#     findUniqueItem(
+#       [
+#         { id: 0, value: 'a' },
+#         { id: 1, value: 'b' },
+#         { id: 2, value: 'c' },
+#         { id: 1, value: 'd' },
+#         { id: 0, value: 'e' },
+#       ],
+#       (a, b) => a.id == b.id
+#     )
+#   );
+
+# Enter the next line: " response
+# answer="return arr.filter(function (v, i) { });"
+# additional_feedback="
+
+#   interface Items { 
+#     id: number; 
+#     value: string; 
+#   }
+
+#   interface CompareFunc { 
+#     (a: Items, b: Items): boolean; 
+#   }
+
+#   function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { 
+#     return arr.filter(function (v, i) { 
+
+#     });
+#   }
+  
+#   console.log(
+#     findUniqueItem(
+#       [
+#         { id: 0, value: 'a' },
+#         { id: 1, value: 'b' },
+#         { id: 2, value: 'c' },
+#         { id: 1, value: 'd' },
+#         { id: 0, value: 'e' },
+#       ],
+#       (a, b) => a.id == b.id
+#     )
+#   );  
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Write a program that finds the unique item.
+
+#   interface Items { 
+#     id: number; 
+#     value: string; 
+#   }
+
+#   interface CompareFunc { 
+#     (a: Items, b: Items): boolean; 
+#   }
+
+#   function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { 
+#     return arr.filter(function (v, i) { 
+
+#     });
+#   }
+
+#   console.log(
+#     findUniqueItem(
+#       [
+#         { id: 0, value: 'a' },
+#         { id: 1, value: 'b' },
+#         { id: 2, value: 'c' },
+#         { id: 1, value: 'd' },
+#         { id: 0, value: 'e' },
+#       ],
+#       (a, b) => a.id == b.id
+#     )
+#   );
+
+# Enter the next line: " response
+# answer="return arr.every(function (x, j) { });"
+# additional_feedback="
+
+#   interface Items { 
+#     id: number; 
+#     value: string; 
+#   }
+
+#   interface CompareFunc { 
+#     (a: Items, b: Items): boolean; 
+#   }
+
+#   function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { 
+#     return arr.filter(function (v, i) { 
+#       return arr.every(function (x, j) { 
+
+#       });
+#     });
+#   }
+
+#   console.log(
+#     findUniqueItem(
+#       [
+#         { id: 0, value: 'a' },
+#         { id: 1, value: 'b' },
+#         { id: 2, value: 'c' },
+#         { id: 1, value: 'd' },
+#         { id: 0, value: 'e' },
+#       ],
+#       (a, b) => a.id == b.id
+#     )
+#   );
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Write a program that finds the unique item.
+
+#   interface Items { 
+#     id: number; 
+#     value: string; 
+#   }
+
+#   interface CompareFunc { 
+#     (a: Items, b: Items): boolean; 
+#   }
+
+#   function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { 
+#     return arr.filter(function (v, i) { 
+#       return arr.every(function (x, j) { 
+
+#       });
+#     });
+#   }
+
+#   console.log(
+#     findUniqueItem(
+#       [
+#         { id: 0, value: 'a' },
+#         { id: 1, value: 'b' },
+#         { id: 2, value: 'c' },
+#         { id: 1, value: 'd' },
+#         { id: 0, value: 'e' },
+#       ],
+#       (a, b) => a.id == b.id
+#     )
+#   );
+
+# Enter the next line: " response
+# answer="return (i === j) === fn(v, x);"
+# additional_feedback="
+
+#   interface Items { 
+#     id: number; 
+#     value: string; 
+#   }
+
+#   interface CompareFunc { 
+#     (a: Items, b: Items): boolean; 
+#   }
+
+#   function findUniqueItem(arr: Items[], fn: CompareFunc): Items[] { 
+#     return arr.filter(function (v, i) { 
+#       return arr.every(function (x, j) { 
+#         return (i === j) === fn(v, x);
+#       });
+#     });
+#   }
+
+#   console.log(
+#     findUniqueItem(
+#       [
+#         { id: 0, value: 'a' },
+#         { id: 1, value: 'b' },
+#         { id: 2, value: 'c' },
+#         { id: 1, value: 'd' },
+#         { id: 0, value: 'e' },
+#       ],
+#       (a, b) => a.id == b.id
+#     )
+#   );
 
 # "
 # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 # next_question
 
-read -p "
-  Write a program to find every element that exists in any of the two given arrays once.
+# read -p "
+#   Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
   
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+#   console.log(
+#     findCommonElements(
+#       [1, 1.2, 1.5, 3, 0],
+#       [1.9, 3, 0, 3.9],
+#       (a, b) => Math.round(a) === Math.round(b)
+#     )
+#   );
 
+# Enter the next line: " response
+# answer="type Comp = { (x: number, y: number): boolean; };"
+# additional_feedback="
 
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
+#   type Comp = { 
+#     (x: number, y: number): boolean; 
+#   };
 
-Enter the next line: " response
-answer="function getCommon(arr1: number[], arr2:number): number[] { }"
-additional_feedback="
+#   console.log(
+#     findCommonElements(
+#       [1, 1.2, 1.5, 3, 0],
+#       [1.9, 3, 0, 3.9],
+#       (a, b) => Math.round(a) === Math.round(b)
+#     )
+#   );
 
-  function getCommon(arr1: number[], arr2:number): number[] { 
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-  }
+# next_line
 
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
-
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Write a program to find every element that exists in any of the two given arrays once.
+# read -p "
+#   Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
   
-  function getCommon(arr1: number[], arr2:number): number[] { 
+#   type Comp = { 
+#     (x: number, y: number): boolean; 
+#   };
 
-  }
+#   console.log(
+#     findCommonElements(
+#       [1, 1.2, 1.5, 3, 0],
+#       [1.9, 3, 0, 3.9],
+#       (a, b) => Math.round(a) === Math.round(b)
+#     )
+#   );
 
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+# Enter the next line: " response
+# answer="function findCommonElements(a: number[], b: number[], comp: Comp) { }"
+# additional_feedback="
 
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
+#   type Comp = { 
+#     (x: number, y: number): boolean; 
+#   };
 
-Enter the next line: " response
-answer="arr1.sort(); arr2.sort();"
-additional_feedback="
+#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
 
-  function getCommon(arr1: number[], arr2:number): number[] { 
-    arr1.sort(); 
-    arr2.sort();
-  }
+#   }
 
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+#   console.log(
+#     findCommonElements(
+#       [1, 1.2, 1.5, 3, 0],
+#       [1.9, 3, 0, 3.9],
+#       (a, b) => Math.round(a) === Math.round(b)
+#     )
+#   );
 
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# next_line
 
-next_line
-
-read -p "
-  Write a program to find every element that exists in any of the two given arrays once.
+# read -p "
+#   Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
   
-  function getCommon(arr1: number[], arr2:number): number[] { 
-    arr1.sort(); 
-    arr2.sort();
-  }
+#   type Comp = { 
+#     (x: number, y: number): boolean; 
+#   };
 
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
 
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
+#   }
 
-Enter the next line: " response
-answer="let common = []; let i = 0; let j = 0;"
-additional_feedback="
+#   console.log(
+#     findCommonElements(
+#       [1, 1.2, 1.5, 3, 0],
+#       [1.9, 3, 0, 3.9],
+#       (a, b) => Math.round(a) === Math.round(b)
+#     )
+#   );
 
-  function getCommon(arr1: number[], arr2:number): number[] { 
-    arr1.sort(); 
-    arr2.sort();
+# Enter the next line: " response
+# answer="return Array.from();"
+# additional_feedback="
 
-    let common = []; 
-    let i = 0; 
-    let j = 0;
-  }
+#   type Comp = { 
+#     (x: number, y: number): boolean; 
+#   };
 
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
+#     return Array.from(
 
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+#     );
+#   }
 
-next_line
+#   console.log(
+#     findCommonElements(
+#       [1, 1.2, 1.5, 3, 0],
+#       [1.9, 3, 0, 3.9],
+#       (a, b) => Math.round(a) === Math.round(b)
+#     )
+#   );
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-read -p "
-  Write a program to find every element that exists in any of the two given arrays once.
+# next_line
+
+# read -p "
+#   Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
   
-  function getCommon(arr1: number[], arr2:number): number[] { 
-    arr1.sort(); 
-    arr2.sort();
+#   type Comp = { 
+#     (x: number, y: number): boolean; 
+#   };
 
-    let common = []; 
-    let i = 0; 
-    let j = 0;
-  }
+#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
+#     return Array.from(
 
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+#     );
+#   }
 
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
+#   console.log(
+#     findCommonElements(
+#       [1, 1.2, 1.5, 3, 0],
+#       [1.9, 3, 0, 3.9],
+#       (a, b) => Math.round(a) === Math.round(b)
+#     )
+#   );
 
-Enter the next line: " response
-answer="while (i < arr1.length && j < arr2.length) { }"
-additional_feedback="
-  function getCommon(arr1: number[], arr2:number): number[] { 
-    arr1.sort(); 
-    arr2.sort();
+# Enter the next line: " response
+# answer="new Set()"
+# additional_feedback="
+#   type Comp = { 
+#     (x: number, y: number): boolean; 
+#   };
 
-    let common = []; 
-    let i = 0; 
-    let j = 0;
+#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
+#     return Array.from(
+#       new Set(
 
-    while (i < arr1.length && j < arr2.length) { 
+#       )
+#     );
+#   }
 
-    }
-  }
+#   console.log(
+#     findCommonElements(
+#       [1, 1.2, 1.5, 3, 0],
+#       [1.9, 3, 0, 3.9],
+#       (a, b) => Math.round(a) === Math.round(b)
+#     )
+#   );
 
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
+# next_line
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Write a program to find every element that exists in any of the two given arrays once.
+# read -p "
+#   Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
   
-  function getCommon(arr1: number[], arr2:number): number[] { 
-    arr1.sort(); 
-    arr2.sort();
+#   type Comp = { 
+#     (x: number, y: number): boolean; 
+#   };
 
-    let common = []; 
-    let i = 0; 
-    let j = 0;
+#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
+#     return Array.from(
+#       new Set(
 
-    while (i < arr1.length && j < arr2.length) { 
+#       )
+#     );
+#   }
 
-    }
-  }
+#   console.log(
+#     findCommonElements(
+#       [1, 1.2, 1.5, 3, 0],
+#       [1.9, 3, 0, 3.9],
+#       (a, b) => Math.round(a) === Math.round(b)
+#     )
+#   );
 
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+# Enter the next line: " response
+# answer="([] as number[]).concat()"
+# additional_feedback="
 
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
+#   type Comp = { 
+#     (x: number, y: number): boolean; 
+#   };
 
-Enter the next line: " response
-answer="if (arr1[i] !== arr2[j]) { }"
-additional_feedback="
+#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
+#     return Array.from(
+#       new Set(
+#         ([] as number[]).concat(
 
-  function getCommon(arr1: number[], arr2:number): number[] { 
-    arr1.sort(); 
-    arr2.sort();
+#         )
+#       )
+#     );
+#   }
 
-    let common = []; 
-    let i = 0; 
-    let j = 0;
+#   console.log(
+#     findCommonElements(
+#       [1, 1.2, 1.5, 3, 0],
+#       [1.9, 3, 0, 3.9],
+#       (a, b) => Math.round(a) === Math.round(b)
+#     )
+#   );
 
-    while (i < arr1.length && j < arr2.length) { 
-      if (arr1[i] !== arr2[j]) { 
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-      }
-    }
-  }
+# next_line
 
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
-
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Write a program to find every element that exists in any of the two given arrays once.
+# read -p "
+#   Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
   
-  function getCommon(arr1: number[], arr2:number): number[] { 
-    arr1.sort(); 
-    arr2.sort();
+#   type Comp = { 
+#     (x: number, y: number): boolean; 
+#   };
 
-    let common = []; 
-    let i = 0; 
-    let j = 0;
+#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
+#     return Array.from(
+#       new Set(
+#         ([] as number[]).concat(
 
-    while (i < arr1.length && j < arr2.length) { 
-      if (arr1[i] !== arr2[j]) { 
+#         )
+#       )
+#     );
+#   }
 
-      }
-    }
-  }
-
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
-
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
+#   console.log(
+#     findCommonElements(
+#       [1, 1.2, 1.5, 3, 0],
+#       [1.9, 3, 0, 3.9],
+#       (a, b) => Math.round(a) === Math.round(b)
+#     )
+#   );
   
 
-Enter the next line: " response
-answer="common.push(arr2[i]); i++; j++;"
-additional_feedback="
+# Enter the next line: " response
+# answer="a, b.filter(function (x) { })"
+# additional_feedback="
 
-  function getCommon(arr1: number[], arr2:number): number[] { 
-    arr1.sort(); 
-    arr2.sort();
+#   type Comp = { 
+#     (x: number, y: number): boolean; 
+#   };
 
-    let common = []; 
-    let i = 0; 
-    let j = 0;
+#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
+#     return Array.from(
+#       new Set(
+#         ([] as number[]).concat(
+#           a, 
+#           b.filter(function (x) { 
 
-    while (i < arr1.length && j < arr2.length) { 
-      if (arr1[i] !== arr2[j]) {
-        common.push(arr2[i]); 
-        i++; 
-        j++; 
-      }
-    }
-  }
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+#           })
+#         )
+#       )
+#     );
+#   }
 
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
+#   console.log(
+#     findCommonElements(
+#       [1, 1.2, 1.5, 3, 0],
+#       [1.9, 3, 0, 3.9],
+#       (a, b) => Math.round(a) === Math.round(b)
+#     )
+#   );
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
 
-read -p "
-  Write a program to find every element that exists in any of the two given arrays once.
+# read -p "
+#   Write a program to find every element that exists in any of the two given arrays once, using a provided comparator function.
   
-  function getCommon(arr1: number[], arr2:number): number[] { 
-    arr1.sort(); 
-    arr2.sort();
+#   type Comp = { 
+#     (x: number, y: number): boolean; 
+#   };
 
-    let common = []; 
-    let i = 0; 
-    let j = 0;
+#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
+#     return Array.from(
+#       new Set(
+#         ([] as number[]).concat(
+#           a, 
+#           b.filter(function (x) { 
 
-    while (i < arr1.length && j < arr2.length) { 
-      if (arr1[i] !== arr2[j]) {
-        common.push(arr2[i]); 
-        i++; 
-        j++; 
-      }
-    }
-  }
+#           })
+#         )
+#       )
+#     );
+#   }
 
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+#   console.log(
+#     findCommonElements(
+#       [1, 1.2, 1.5, 3, 0],
+#       [1.9, 3, 0, 3.9],
+#       (a, b) => Math.round(a) === Math.round(b)
+#     )
+#   );
 
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
+# Enter the next line: " response
+# answer="return ( a.findIndex(function (y) { return comp(x, y); }) === -1 )"
+# additional_feedback="
 
-Enter the next line: " response
-answer="else if (arr1[i] < arr2[j]) { i++; }"
-additional_feedback="
-function getCommon(arr1: number[], arr2:number): number[] { 
-    arr1.sort(); 
-    arr2.sort();
+#   type Comp = { 
+#     (x: number, y: number): boolean; 
+#   };
 
-    let common = []; 
-    let i = 0; 
-    let j = 0;
+#   function findCommonElements(a: number[], b: number[], comp: Comp) { 
+#     return Array.from(
+#       new Set(
+#         ([] as number[]).concat(
+#           a, 
+#           b.filter(function (x) { 
+#             return ( 
+#               a.findIndex(function (y) { 
+#                 return comp(x, y); 
+#               }) === -1 
+#              )
+#           })
+#         )
+#       )
+#     );
+#   }
 
-    while (i < arr1.length && j < arr2.length) { 
-      if (arr1[i] !== arr2[j]) {
-        common.push(arr2[i]); 
-        i++; 
-        j++; 
-      } else if (arr1[i] < arr2[j]) { 
-        i++; 
-      }
-    }
-   }
+#   console.log(
+#     findCommonElements(
+#       [1, 1.2, 1.5, 3, 0],
+#       [1.9, 3, 0, 3.9],
+#       (a, b) => Math.round(a) === Math.round(b)
+#     )
+#   );
 
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  Write a program to find every element that exists in any of the two given arrays once.
-  
-  function getCommon(arr1: number[], arr2:number): number[] { 
-    arr1.sort(); 
-    arr2.sort();
-
-    let common = []; 
-    let i = 0; 
-    let j = 0;
-
-    while (i < arr1.length && j < arr2.length) { 
-      if (arr1[i] !== arr2[j]) {
-        common.push(arr2[i]); 
-        i++; 
-        j++; 
-      } else if (arr1[i] < arr2[j]) { 
-        i++; 
-     }
-    }
-  }
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
-
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
-
-Enter the next line: " response
-answer="return Array.from(new Set(arr1.concat(common)));"
-additional_feedback="
-
-function getCommon(arr1: number[], arr2:number): number[] { 
-    arr1.sort(); 
-    arr2.sort();
-
-    let common = []; 
-    let i = 0; 
-    let j = 0;
-
-    while (i < arr1.length && j < arr2.length) { 
-      if (arr1[i] !== arr2[j]) {
-        common.push(arr2[i]); 
-        i++; 
-        j++; 
-      } else if (arr1[i] < arr2[j]) { 
-        i++; 
-      } else { 
-        j++; 
-      }
-    } 
-    return Array.from(new Set(arr1.concat(common)));   
-  }
-  const arr1 = [45, 99, 55, 15, 17, 93, 23];
-  const arr2 = [45, 18, 93, 7, 23, 1, 15];
-
-  const commonElements = getCommon(arr1, arr2);
-  console.log(commonElements);
-  // [
-  //   15, 17, 23, 45, 55,
-  //   93, 99,  1, 18,  7
-  // ]
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-Since we are sorting the elements and running through the lengths of the arrays, our time complexity would be,
-
-O(nLog2n + mLog2m + n + m) or O(nLog2n + n). Since nLog2n is greater than n, we can say that the time complexity is O(nLog2n).
-
-Finally, If you have any queries or doubts on how to get common elements from two arrays in JavaScript, simply comment in the comment section provided below.
 # next_question
 
 # read -p "
@@ -4390,6 +4060,555 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 #   console.log(minMax(1, 2, 3, 4, 5));
 #   console.log(minMax(1, 2, 5, 4, 3));
 #   console.log(minMax(1, 2, 5, -4, 3));
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "
+
+#   Remove a duplicate using Set and map.
+  
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+
+# Enter the next line: " response
+# answer="const filteredArr = Array.from()"
+# additional_feedback="
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+
+#   const filteredArr = Array.from()
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "
+
+#   Remove a duplicate using Set and map.
+  
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+#   const filteredArr = Array.from()
+
+
+# Enter the next line: " response
+# answer="new Set(),"
+# additional_feedback="
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+#   const filteredArr = Array.from(
+#     new Set()
+#   )
+
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+# next_question
+
+# read -p "
+
+#   Remove a duplicate using Set and map.
+  
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+
+#   const filteredArr = Array.from(
+#     new Set(),
+#   )
+
+
+# Enter the next line: " response
+# answer="arr.map(function (item) { return item.id; }),"
+# additional_feedback="
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+
+#   const filteredArr = Array.from(
+#     new Set(
+#       arr.map(function (item) { 
+#         return item.id; 
+#       }),
+#     ),
+#   )
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "
+
+#   Remove a duplicate using Set and map.
+  
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+#   const filteredArr = Array.from(
+#     new Set(
+#       arr.map(function (item) { 
+#         return item.id; 
+#       }),
+#     ),
+#   )
+
+
+# Enter the next line: " response
+# answer=".map(function (id) { });"
+# additional_feedback="
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+
+#   const filteredArr = Array.from(
+#     new Set(
+#       arr.map(function (item) { 
+#         return item.id; 
+#       }),
+#     ),
+#   ).map(function (id) { 
+
+#     }); 
+
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "
+
+#   Remove a duplicate using Set and map.
+  
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+
+#   const filteredArr = Array.from(
+#     new Set(
+#       arr.map(function (item) { 
+#         return item.id; 
+#       }),
+#     ),
+#   ).map(function (id) { 
+
+#   });
+
+
+# Enter the next line: " response
+# answer="return arr.find(function (item) { });"
+# additional_feedback="
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+
+#   const filteredArr = Array.from(
+#     new Set(
+#       arr.map(function (item) { 
+#         return item.id; 
+#       }),
+#     ),
+#   ).map(function (id) { 
+#     return arr.find(function (item) { 
+
+#     });
+#   });
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "
+
+#   Remove a duplicate using Set and map.
+  
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+
+#   const filteredArr = Array.from(
+#     new Set(
+#       arr.map(function (item) { 
+#         return item.id; 
+#       }),
+#     ),
+#   ).map(function (id) { 
+#     return arr.find(function (item) { 
+      
+#     });
+#   });
+
+
+# Enter the next line: " response
+# answer="return item.id === id;"
+# additional_feedback="
+
+#     const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+
+#   const filteredArr = Array.from(
+#     new Set(
+#       arr.map(function (item) { 
+#         return item.id; 
+#       }),
+#     ),
+#   ).map(function (id) { 
+#     return arr.find(function (item) { 
+#       return item.id === id;
+#     });
+#   });
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "
+
+#   Remove duplicate using find and reduce.
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ]; 
+
+# Enter the next line: " response
+
+# answer="const filteredArr = arr.reduce(function (acc, cur) { }, []);"
+# additional_feedback="
+
+#   const filteredArr = arr.reduce(function (acc, cur) { 
+
+#   }, []);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "
+
+#   Remove duplicate using find and reduce.
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ]; 
+
+#   const filteredArr = arr.reduce(function (acc, cur) { 
+
+#   }, []);
+
+# Enter the next line: " response
+# answer="const x = acc.find(function (item) { });"
+# additional_feedback="
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ]; 
+
+#   const filteredArr = arr.reduce(function (acc, cur) { 
+#     const x = acc.find(function (item) { 
+
+#     });
+
+#   }, []);
+
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "
+
+#   Remove duplicate using find and reduce.
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ]; 
+
+#   const filteredArr = arr.reduce(function (acc, cur) { 
+#     const x = acc.find(function (item) { 
+
+#     });
+
+#   }, []);
+
+# Enter the next line: " response
+# answer="return item.id === cur.id;"
+# additional_feedback="
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ]; 
+
+#   const filteredArr = arr.reduce(function (acc, cur) { 
+#     const x = acc.find(function (item) { 
+#       return item.id === cur.id;
+#     });
+
+#   }, []);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "
+
+#   Remove duplicate using find and reduce.
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ]; 
+
+#   const filteredArr = arr.reduce(function (acc, cur) { 
+#     const x = acc.find(function (item) { 
+#       return item.id === cur.id;
+#     });
+
+#   }, []);
+
+# Enter the next line: " response
+# answer="if (!x) { return acc.concat([cur]); }"
+# additional_feedback="
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ]; 
+
+#   const filteredArr = arr.reduce(function (acc, cur) { 
+#     const x = acc.find(function (item) { 
+#       return item.id === cur.id;
+#     });
+
+#     if (!x) { 
+#       return acc.concat([cur]  ); 
+#     }
+
+#   }, []);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "
+
+#   Remove duplicate using find and reduce.
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ]; 
+
+#   const filteredArr = arr.reduce(function (acc, cur) { 
+#     const x = acc.find(function (item) { 
+#       return item.id === cur.id;
+#     });
+
+#     if (!x) { 
+#       return acc.concat([cur]  ); 
+#     }
+
+#   }, []);
+
+# Enter the next line: " response
+# answer="else { return acc; }"
+# additional_feedback="
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ]; 
+
+#   const filteredArr = arr.reduce(function (acc, cur) { 
+#     const x = acc.find(function (item) { 
+#       return item.id === cur.id;
+#     });
+
+#     if (!x) { 
+#       return acc.concat([cur]  ); 
+#     } else { 
+#       return acc; 
+#     }
+
+#   }, []);
+
 
 # "
 # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -4613,6 +4832,583 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 # next_question
+
+# read -p "
+
+#   Remove duplicates using Map and map. 
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+# Enter the next line: " response
+# answer="const filteredArr = [].concat();"
+# additional_feedback="
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+#   const filteredArr = [].concat();
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+
+# read -p "
+
+#   Remove duplicates using Map and map.
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+#   const filteredArr = [].concat();
+
+
+# Enter the next line: " response
+# answer="new Map().values(),"
+# additional_feedback="
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+#   const filteredArr = [].concat(
+#     new Map().values(),
+#   );
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Remove duplicates using Map and map.
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+#   const filteredArr = [].concat(
+#     new Map().values(),
+#   );
+
+
+# Enter the next line: " response
+# answer="arr.map(function (item) { return [item.id, item]; }),"
+# additional_feedback="
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+#   const filteredArr = [].concat(
+#     new Map(
+#       arr.map(function (item) { 
+#         return [item.id, item]; 
+#       }),
+#     ).values(),
+#   );
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Remove duplicates using Map and map.
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+#   const filteredArr = [].concat(
+#     new Map(
+#       arr.map(function (item) { 
+#         return [item.id, item]; 
+#       }),
+#     ).values(),
+#   );
+
+
+# Enter the next line: " response
+# answer="const iterator = filteredArr[0][Symbol.iterator]();"
+# additional_feedback="
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+#   const filteredArr = [].concat(
+#     new Map(
+#       arr.map(function (item) { 
+#         return [item.id, item]; 
+#       }),
+#     ).values(),
+#   );
+
+#   const iterator = unique[0][Symbol.iterator]();
+
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Remove duplicates using Map and map.
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+#   const filteredArr = [].concat(
+#     new Map(
+#       arr.map(function (item) { 
+#         return [item.id, item]; 
+#       }),
+#     ).values(),
+#   );
+
+#   const iterator = filteredArr[0][Symbol.iterator]();
+
+
+# Enter the next line: " response
+# answer="for (let i of iterator) { console.log(i, 'item'); }"
+# additional_feedback="
+
+#   const arr = [
+#     { id: 1, name: 'test1' },
+#     { id: 2, name: 'test2' },
+#     { id: 2, name: 'test3' },
+#     { id: 3, name: 'test4' },
+#     { id: 4, name: 'test5' },
+#     { id: 5, name: 'test6' },
+#     { id: 5, name: 'test7' },
+#     { id: 6, name: 'test8' }
+#   ];
+
+#   const filteredArr = [].concat(
+#     new Map(
+#       arr.map(function (item) { 
+#         return [item.id, item]; 
+#       }),
+#     ).values(),
+#   );
+
+#   const iterator = filteredArr[0][Symbol.iterator]();
+#   for (let i of iterator) { 
+#     console.log(i, 'item');
+#   } 
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Remove a duplicates by adding values to a map 
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+  
+# Enter the next line: " response
+# answer="function hasDuplicates(array) { }"
+# additional_feedback="
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+#   function hasDuplicates(array) { 
+
+#   }
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Remove a duplicates by adding values to a map 
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+#   function hasDuplicates(array) { 
+
+#   }
+  
+# Enter the next line: " response
+# answer="const words = new Map();"
+# additional_feedback="
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+#   function hasDuplicates(array) { 
+#     const words = new Map();
+#   }  
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Remove a duplicates by adding values to a map 
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+#   function hasDuplicates(array) {
+#     const words = new Map(); 
+
+#   }
+  
+# Enter the next line: " response
+# answer="for (let i = 0; i < array.length; i++) { }"
+# additional_feedback="
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+#   function hasDuplicates(array) { 
+#     const words = new Map();
+#     for (let i = 0; i < array.length; i++) { 
+
+#     }
+#   }  
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Remove a duplicates by adding values to a map 
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+#   function hasDuplicates(array) {
+#     const words = new Map(); 
+#     for (let i = 0; i < array.length; i++) { 
+
+#     }
+#   }
+  
+# Enter the next line: " response
+# answer="const word = array[i];"
+# additional_feedback="
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+#   function hasDuplicates(array) { 
+#     const words = new Map();
+#     for (let i = 0; i < array.length; i++) { 
+#       const word = array[i];
+#     }
+#   }
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Remove a duplicates by adding values to a map 
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+#   function hasDuplicates(array) {
+#     const words = new Map(); 
+#     for (let i = 0; i < array.length; i++) { 
+#       const word = array[i];
+#     }
+#   }
+  
+# Enter the next line: " response
+# answer="if (words.has(word)) { continue; }"
+# additional_feedback="
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+#   function hasDuplicates(array) { 
+#     const words = new Map();
+#     for (let i = 0; i < array.length; i++) { 
+#       const word = array[i];
+#       if (words.has(word)) { 
+#         continue;
+#       }
+#     }
+#   }
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Remove a duplicates by adding values to a map 
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+#   function hasDuplicates(array) {
+#     const words = new Map(); 
+#     for (let i = 0; i < array.length; i++) { 
+#       const word = array[i];
+#       if (words.has(word)) { 
+#         continue;
+#       }
+#     }
+#   }
+  
+# Enter the next line: " response
+# answer="words.set(word, true);"
+# additional_feedback="
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+#   function hasDuplicates(array) { 
+#     const words = new Map();
+#     for (let i = 0; i < array.length; i++) { 
+#       const word = array[i];
+#       if (words.has(word)) { 
+#         continue;
+#       }
+#       words.set(word, true);
+#     }
+#   }
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Remove a duplicates by adding values to a map 
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+#   function hasDuplicates(array) { 
+#     const words = new Map();
+#     for (let i = 0; i < array.length; i++) { 
+#       const word = array[i];
+#       if (words.has(word)) { 
+#         continue;
+#       }
+#       words.set(word, true);
+#     }
+#   }
+  
+# Enter the next line: " response
+# answer="return words;"
+# additional_feedback="
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+#   function hasDuplicates(array) {
+#     const words = new Map(); 
+#     for (let i = 0; i < array.length; i++) { 
+#       const word = array[i];
+#       if (words.has(word)) { 
+#         continue;
+#       }
+#       words.set(word, true);
+#     }
+#     return words;
+#   }
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Remove a duplicates by adding values to a map 
+
+#    const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+#   function hasDuplicates(array) {
+#     const words = new Map(); 
+#     for (let i = 0; i < array.length; i++) { 
+#       const word = array[i];
+#       if (words.has(word)) { 
+#         continue;
+#       }
+#       words.set(word, true);
+#     }
+#     return words;
+#   }
+  
+# Enter the next line: " response
+# answer="console.log(Object.keys(Object.fromEntries(hasDuplicates(array))));"
+# additional_feedback="
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+#   function hasDuplicates(array) {
+#     const words = new Map(); 
+#     for (let i = 0; i < array.length; i++) { 
+#       const word = array[i];
+#       if (words.has(word)) { 
+#         continue;
+#       }
+#       words.set(word, true);
+#     }
+#     return words;
+#   }
+
+#   console.log(Object.keys(Object.fromEntries(hasDuplicates(array))));
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "
+
+#   Remove duplicate using reduce. 
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+# Enter the next line: " response
+# answer="const removeDuplicate = array.reduce(function (acc, cur) { }, []);"
+# additional_feedback="
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+#   const removeDuplicate = array.reduce(function (acc, cur) { 
+    
+#   }, []);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Remove duplicate using reduce. 
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+#   const removeDuplicate = array.reduce(function (acc, cur) { 
+    
+#   }, []);
+
+# Enter the next line: " response
+# answer="if (!acc.includes(cur)) { acc.push(cur); }"
+# additional_feedback="
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+#   const removeDuplicate = array.reduce(function (acc, cur) { 
+#     if (!acc.includes(cur)) { 
+#       acc.push(cur);
+#     }
+#   }, []);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Remove duplicate using reduce. 
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+#   const removeDuplicate = array.reduce(function (acc, cur) { 
+#     if (!acc.includes(cur)) { 
+#       acc.push(cur);
+#     }
+#   }, []);
+
+# Enter the next line: " response
+# answer="return acc;"
+# additional_feedback="
+
+#   const array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+#   const removeDuplicate = array.reduce(function (acc, cur) { 
+#     if (!acc.includes(cur)) { 
+#       acc.push(cur);
+#     }
+#     return acc;
+#   }, []);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
 
 # read -p "Reverse a string using a for-loop. 
 
@@ -4913,7 +5709,6 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 #   }
 
 # Enter the next line: " response
-# answer="const b = i % 5 === 0;"
 # answer="console.log(f ? (b ? 'FizzBuzz' : 'Fizz') : b ? 'Buzz' : i);"
 # additional_feedback="
 
@@ -4926,25 +5721,24 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # "
 # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_question
+# next_line
 
 # read -p "Pick a random element from an array. " response
 # answer="const randomValue = arr[Math.floor(Math.random() * arr.length)];"
-# evaluate_answer "$response" "$answer"
+# evaluate_answer_written_with_code "$response" "$answer"
 
-# next_question
+# next_line
 
 # read -p "Flip a coin. " response
 # answer="const isHeads = Boolean(Math.round(Math.random()));"
-# evaluate_answer "$response" "$answer"
+# evaluate_answer_written_with_code "$response" "$answer"
 
-# next_question
+# next_line
 
 # read -p "
 #   Count the instance of an an item in array and create an array 
 #   of the number of occurrences. 
 
-#   const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
 
 #   // countedNames is:
 #   // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
@@ -4968,8 +5762,6 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # read -p "
 #   Count the instance of an an item in array and create an array 
 #   of the number of occurrences. 
-
-#   const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
 
 #   const countedNames = names.reduce(function (allNames, name) { 
 
@@ -4999,8 +5791,6 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # read -p "
 #   Count the instance of an an item in array and create an array 
 #   of the number of occurrences. 
-
-#   const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
 
 #   const countedNames = names.reduce(function (allNames, name) { 
 #     if (name in allNames) { 
@@ -5051,7 +5841,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 #   // }
 
 # Enter the next line: " response
-# answer="function groupBy(objectArray, property) { }"
+# answer="function groupBy(objectArray, key) { }"
 # additional_feedback="
 
 #   const people = [
@@ -5060,7 +5850,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 #     { name: 'Jane', age: 20 }
 #   ];
 
-#   function groupBy(objectArray, property) { 
+#   function groupBy(objectArray, key) { 
     
 #   }
 
@@ -5088,7 +5878,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 #     { name: 'Jane', age: 20 }
 #   ];
 
-#   function groupBy(objectArray, property) { 
+#   function groupBy(objectArray, key) { 
     
 #   }
 
@@ -5112,7 +5902,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 #     { name: 'Jane', age: 20 }
 #   ];
 
-#   function groupBy(objectArray, property) { 
+#   function groupBy(objectArray, key) { 
 #     return objectArray.reduce(function (acc, cur) { 
 
 #     }, {});
@@ -5143,66 +5933,9 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 #     { name: 'Jane', age: 20 }
 #   ];
 
-#   function groupBy(objectArray, property) { 
+#   function groupBy(objectArray, key) { 
 #     return objectArray.reduce(function (acc, cur) { 
 
-#     }, {});
-#   }
-
-#   const groupedPeople = groupBy(people, 'age');
-#   // groupedPeople is:
-#   // { 
-#   //   20: [
-#   //     { name: 'Max', age: 20 }, 
-#   //     { name: 'Jane', age: 20 }
-#   //   ], 
-#   //   21: [{ name: 'Alice', age: 21 }] 
-#   // }
-
-# Enter the next line: " response
-# answer="const key = cur[property];"
-# additional_feedback="
-
-#   const people = [
-#     { name: 'Alice', age: 21 },
-#     { name: 'Max', age: 20 },
-#     { name: 'Jane', age: 20 }
-#   ];
-
-#   function groupBy(objectArray, property) { 
-#     return objectArray.reduce(function (acc, cur) { 
-#       const key = cur[property];
-#     }, {});
-#   }
-
-#   const groupedPeople = groupBy(people, 'age');
-#   // groupedPeople is:
-#   // { 
-#   //   20: [
-#   //     { name: 'Max', age: 20 }, 
-#   //     { name: 'Jane', age: 20 }
-#   //   ], 
-#   //   21: [{ name: 'Alice', age: 21 }] 
-#   // }
-
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-#   Group objects by property. 
-
-#   const people = [
-#     { name: 'Alice', age: 21 },
-#     { name: 'Max', age: 20 },
-#     { name: 'Jane', age: 20 }
-#   ];
-
-#   function groupBy(objectArray, property) { 
-#     return objectArray.reduce(function (acc, cur) { 
-#       const key = cur[property];
 #     }, {});
 #   }
 
@@ -5226,9 +5959,8 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 #     { name: 'Jane', age: 20 }
 #   ];
 
-#   function groupBy(objectArray, property) { 
+#   function groupBy(objectArray, key) { 
 #     return objectArray.reduce(function (acc, cur) { 
-#       const key = cur[property];
 #       if (!acc[key]) { 
 #         acc[key] = []; 
 #       }
@@ -5259,9 +5991,8 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 #     { name: 'Jane', age: 20 }
 #   ];
 
-#   function groupBy(objectArray, property) { 
+#   function groupBy(objectArray, key) { 
 #     return objectArray.reduce(function (acc, cur) { 
-#       const key = cur[property];
 #       if (!acc[key]) { 
 #         acc[key] = []; 
 #       }
@@ -5288,9 +6019,8 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 #     { name: 'Jane', age: 20 }
 #   ];
 
-#   function groupBy(objectArray, property) { 
+#   function groupBy(objectArray, key) { 
 #     return objectArray.reduce(function (acc, cur) { 
-#       const key = cur[property];
 #       if (!acc[key]) { 
 #         acc[key] = []; 
 #       }
@@ -5312,13 +6042,9 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # "
 # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_question
+# next_line
 
 # read -p "Function composition enabling pipe. 
-
-#   const double = x => x + x
-#   const triple = x => 3 * x
-#   const quadruple = x => 4 * x
 
 #   // Composed functions for multiplication of specific values
 #   const multiply6 = pipe(double, triple)
@@ -5334,13 +6060,12 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 
 # Enter the next line: " response
 # answer="const pipe = (...functions) => input => functions.reduce((acc, fn) => fn(acc), input);"
+
 # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 # next_line
 
 # read -p "Recursively flatten an array using reduce.
-
-#   const arr = [1, 2, [3, 4, [5, 6]]];
 
 #   flatDeep(arr, Infinity);
 #   // [1, 2, 3, 4, 5, 6];
@@ -5359,8 +6084,6 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # next_line
 
 # read -p "Recursively flatten an array using reduce.
-  
-#   const arr = [1, 2, [3, 4, [5, 6]]];
 
 #   function flatDeep(arr, d = 1) { 
   
@@ -5388,8 +6111,6 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # next_line
 
 # read -p "Recursively flatten an array using reduce.
-
-#   const arr = [1, 2, [3, 4, [5, 6]]];
 
 #   function flatDeep(arr, d = 1) { 
 #     return d > 0 ? arr.reduce(function (acc, cur) {  
@@ -5420,8 +6141,6 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 
 # read -p "Recursively flatten an array using reduce.
 
-#   const arr = [1, 2, [3, 4, [5, 6]]];
-
 #   function flatDeep(arr, d = 1) { 
 #     return d > 0 ? arr.reduce(function (acc, cur) {  
 #       return acc.concat(Array.isArray(cur));
@@ -5450,8 +6169,6 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # next_line
 
 # read -p "Recursively flatten an array using reduce.
-
-#   const arr = [1, 2, [3, 4, [5, 6]]];
 
 #   function flatDeep(arr, d = 1) { 
 #     return d > 0 ? arr.reduce(function (acc, cur) {  
@@ -5705,7 +6422,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # "
 # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_question
+# next_line
 
 # read -p "Use a WeakMap to track how often a method was called.
 
@@ -6094,7 +6811,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 #   A Map will keep everything in memory even when it is not in use.
 
 # Enter the next line: " response
-# answer="Because keys will be garbage collected if they are not referenced, WeakMap doesn't have any iterators"
+# answer="Because keys will be garbage collected if they are not referenced, WeakMap does not have any iterators"
 # additional_feedback="
 
 #   WeakMap is weakly set. If a key is set and no methods reference it, 
@@ -6233,7 +6950,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 #   console.log(createPhoneNumber(1234561029));
 
 # Enter the next line: " response
-# answer="function createPhoneNumber(numbers) { }" 
+# answer="function createPhoneNumber(numbers) { }"
 # additional_feedback="
 
 #   function createPhoneNumber(numbers) { 
@@ -6413,10 +7130,10 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 #   Create a countdown timer.
 
 # Enter the next line: " response
-# answer="const countDownDate = new Date().getTime();"
+# answer="const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();"
 # additional_feedback="
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 # "
 # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
@@ -6426,13 +7143,13 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # read -p "
 #   Create a countdown timer.
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 # Enter the next line: " response
 # answer="const x = setInterval(function () { }, 1000);"
 # additional_feedback="
 
-#     const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#     const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () { 
 
@@ -6446,7 +7163,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # read -p "
 #   Create a countdown timer.
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () { 
 
@@ -6456,7 +7173,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # answer="const now = new Date().getTime();"
 # additional_feedback="
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () {
 
@@ -6472,7 +7189,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # read -p "
 #   Create a countdown timer.
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () {
 
@@ -6484,7 +7201,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # answer="const distance = countDownDate - now;"
 # additional_feedback="
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () {
 
@@ -6501,7 +7218,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # read -p "
 #   Create a countdown timer.
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () {
 
@@ -6514,7 +7231,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # answer="const days = Math.floor(distance / (1000 * 60 * 60 * 24));"
 # additional_feedback="
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () {
 
@@ -6533,7 +7250,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # read -p "
 #   Create a countdown timer.
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () {
 
@@ -6548,7 +7265,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # answer="const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));"
 # additional_feedback="
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () {
 
@@ -6569,7 +7286,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # read -p "
 #   Create a countdown timer.
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () {
 
@@ -6586,7 +7303,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # answer="const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));"
 # additional_feedback="
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () {
 
@@ -6608,7 +7325,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # read -p "
 #   Create a countdown timer.
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () {
 
@@ -6626,7 +7343,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # answer="const seconds = Math.floor((distance % (1000 * 60)) / 1000);"
 # additional_feedback="
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () {
 
@@ -6648,7 +7365,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # read -p "
 #   Create a countdown timer.
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () {
 
@@ -6666,7 +7383,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # answer="console.log(\`\${days}d \${hours}h \${minutes}m \${seconds}s\`);"
 # additional_feedback="
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () {
 
@@ -6690,7 +7407,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # read -p "
 #   Create a countdown timer.
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () {
 
@@ -6710,7 +7427,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # answer="if (distance < 0) { clearInterval(x); console.log('Expired'); }"
 # additional_feedback="
 
-#   const countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
+#   const countDownDate = new Date('Jan 1, 2000 00:00:00').getTime();
 
 #     const x = setInterval(function () {
 
@@ -6734,7 +7451,7 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 # "
 # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_question
+# next_line
 
 # read -p "Extraction initials.
 
@@ -6876,11 +7593,11 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 
 
 # Enter the next line: " response
-# answer="return new RegExp('^(https?:\\\/\\\/)').test(url);"
+# answer="return new RegExp('^(https?:\\\\/\\\\/)').test(url);"
 # additional_feedback="
 
 #   const matchesURLPattern = (url: string): boolean => {
-#     return new RegExp('^(https?:\\\/\\\/)').test(url);
+#     return new RegExp('^(https?:\\\\/\\\\/)').test(url);
 #   } 
 
 # "
@@ -6888,196 +7605,196 @@ Finally, If you have any queries or doubts on how to get common elements from tw
 
 # next_question
 
-read -p "Convert a string to camel case.
+# read -p "Convert a string to camel case.
 
-  function camelCase(str) { 
+#   function camelCase(str) { 
 
-  }
+#   }
 
-Enter the next line: " response
-answer="return str.replace(//g)"
-additional_feedback="
+# Enter the next line: " response
+# answer="return str.replace(//g)"
+# additional_feedback="
 
-  function camelCase(str) { 
-    return str.replace(//g)
-  }
+#   function camelCase(str) { 
+#     return str.replace(//g)
+#   }
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "Convert a string to camel case.
+# read -p "Convert a string to camel case.
 
-  function camelCase(str) { 
-    return str.replace(//g)
-  }
+#   function camelCase(str) { 
+#     return str.replace(//g)
+#   }
 
-Enter the next line: " response
-answer="()"
-additional_feedback="
+# Enter the next line: " response
+# answer="()"
+# additional_feedback="
 
-  function camelCase(str) { 
-    return str.replace(/()/g)
-  }
+#   function camelCase(str) { 
+#     return str.replace(/()/g)
+#   }
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "Convert a string to camel case.
+# read -p "Convert a string to camel case.
 
-  function camelCase(str) { 
-    return str.replace(/()/g)
-  }
+#   function camelCase(str) { 
+#     return str.replace(/()/g)
+#   }
 
-Enter the next line: " response
-answer="?:^\\w"
-additional_feedback="
+# Enter the next line: " response
+# answer="?:^\\w"
+# additional_feedback="
 
-  function camelCase(str) { 
-    return str.replace(/(?:^\\w)/g)
-  }
+#   function camelCase(str) { 
+#     return str.replace(/(?:^\\w)/g)
+#   }
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "Convert a string to camel case.
+# read -p "Convert a string to camel case.
 
-  function camelCase(str) { 
-    return str.replace(/(?:^\\w)/g)
-  }
+#   function camelCase(str) { 
+#     return str.replace(/(?:^\\w)/g)
+#   }
 
-Enter the next line: " response
-answer="|[A-Z]|"
-additional_feedback="
+# Enter the next line: " response
+# answer="|[A-Z]|"
+# additional_feedback="
 
-  function camelCase(str) { 
-    return str.replace(/(?:^\\w|[A-Z]|)/g)
-  }
+#   function camelCase(str) { 
+#     return str.replace(/(?:^\\w|[A-Z]|)/g)
+#   }
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "Convert a string to camel case.
+# read -p "Convert a string to camel case.
 
-  function camelCase(str) { 
-    return str.replace(/(?:^\\w|[A-Z]|)/g)
-  }
+#   function camelCase(str) { 
+#     return str.replace(/(?:^\\w|[A-Z]|)/g)
+#   }
 
-Enter the next line: " response
-answer="\\b\\w"
-additional_feedback="
+# Enter the next line: " response
+# answer="\\b\\w"
+# additional_feedback="
 
-  function camelCase(str) { 
-    return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g)
-  }
+#   function camelCase(str) { 
+#     return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g)
+#   }
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "Convert a string to camel case.
+# read -p "Convert a string to camel case.
 
-  function camelCase(str) { 
-    return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g)
-  }
+#   function camelCase(str) { 
+#     return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g)
+#   }
 
-Enter the next line: " response
-answer="function(word, index) { })"
-additional_feedback="
+# Enter the next line: " response
+# answer="function(word, index) { })"
+# additional_feedback="
 
-  function camelCase(str) { 
-    return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, function(word, index) { 
+#   function camelCase(str) { 
+#     return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, function(word, index) { 
 
-    })
-  }
+#     })
+#   }
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "Convert a string to camel case.
+# read -p "Convert a string to camel case.
 
-  function camelCase(str) { 
-    return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, function(word, index) { 
+#   function camelCase(str) { 
+#     return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, function(word, index) { 
 
-    })
-  }
+#     })
+#   }
 
-Enter the next line: " response
-answer="return index === 0 ? word.toLowerCase() : word.toUpperCase();"
-additional_feedback="
+# Enter the next line: " response
+# answer="return index === 0 ? word.toLowerCase() : word.toUpperCase();"
+# additional_feedback="
 
-  function camelCase(str) { 
-    return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, function(word, index) { 
-      return index === 0 ? word.toLowerCase() : word.toUpperCase();
-    })
-  }
+#   function camelCase(str) { 
+#     return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, function(word, index) { 
+#       return index === 0 ? word.toLowerCase() : word.toUpperCase();
+#     })
+#   }
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "Convert a string to camel case.
+# read -p "Convert a string to camel case.
 
-  function camelCase(str) { 
-    return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, function(word, index) { 
-      return index === 0 ? word.toLowerCase() : word.toUpperCase();
-    })
-  }
+#   function camelCase(str) { 
+#     return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, function(word, index) { 
+#       return index === 0 ? word.toLowerCase() : word.toUpperCase();
+#     })
+#   }
 
-Enter the next line: " response
-answer=".replace(/\\s+/g, '');"
-additional_feedback="
+# Enter the next line: " response
+# answer=".replace(/\\s+/g, '');"
+# additional_feedback="
 
-  function camelCase(str) { 
-    return return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, function(word, index) { 
-      return index === 0 ? word.toLowerCase() : word.toUpperCase();
-    })
-    .replace(/\\s+/g, '');
-  }
+#   function camelCase(str) { 
+#     return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, function(word, index) { 
+#       return index === 0 ? word.toLowerCase() : word.toUpperCase();
+#     })
+#     .replace(/\\s+/g, '');
+#   }
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "Destructure undefined in JavaScript.
+# read -p "Destructure undefined in JavaScript.
 
 
-  function pointValues(point) {
+#   function pointValues(point) {
    
-    console.log(n);
-    console.log(a);
-  }
-  pointValues({ name: 'jerry', age: 2 });
-  pointValues(undefined);
+#     console.log(n);
+#     console.log(a);
+#   }
+#   pointValues({ name: 'jerry', age: 2 });
+#   pointValues(undefined);
 
-Enter the next line: " response
-answer="const { name: n, age: a } = { ...point };"
-additional_feedback="
+# Enter the next line: " response
+# answer="const { name: n, age: a } = { ...point };"
+# additional_feedback="
 
-  function pointValues(point) {
-    const { name: n, age: a } = { ...point };
-    console.log(n);
-    console.log(a);
-  }
-  pointValues({ name: 'jerry', age: 2 });
-  pointValues(undefined);
+#   function pointValues(point) {
+#     const { name: n, age: a } = { ...point };
+#     console.log(n);
+#     console.log(a);
+#   }
+#   pointValues({ name: 'jerry', age: 2 });
+#   pointValues(undefined);
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_question
+# next_question
 
 read -p "Sort the the following using the language locale for Mexico.
 
@@ -7095,414 +7812,419 @@ additional_feedback="
 "
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_question
+# next_question
 
-read -p "Write a function that replaces the World with Web.
+# read -p "Write a function that replaces the World with Web.
 
+#     replaceString('World', 'Web', 'Brave New World');
 
-Enter the next line: " response
-answer="function replaceString(oldS: string, newS: string, phrase: string): string { }"
-additional_feedback="
+# Enter the next line: " response
+# answer="function replaceString(oldS: string, newS: string, fullS: string): string { }"
+# additional_feedback="
 
-  function replaceString(oldS: string, newS: string, phrase: string): string {
+#   function replaceString(oldS: string, newS: string, fullS: string): string {
   
-  }
+#   }
 
-  replaceString('World', 'Web', 'Brave New World');
+#   replaceString('World', 'Web', 'Brave New World');
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "Write a function that replaces the World with Web.
+# read -p "Write a function that replaces the World with Web.
 
-  function replaceString(oldS: string, newS: string, fullS: string): string {
+#   function replaceString(oldS: string, newS: string, fullS: string): string {
   
-  }
+#   }
 
- replaceString('World', 'Web', 'Brave New World');
+#  replaceString('World', 'Web', 'Brave New World');
   
-Enter the next line: " response
-answer="return phrase.split(oldS).join(newS);"
-additional_feedback="
+# Enter the next line: " response
+# answer="return fullS.split(oldS).join(newS);"
+# additional_feedback="
 
-  function replaceString(oldS: string, newS: string, fullS: string): string {
-    return fullS.split(oldS).join(newS);
-  }
+#   function replaceString(oldS: string, newS: string, fullS: string): string {
+#     return fullS.split(oldS).join(newS);
+#   }
 
-  replaceString('World', 'Web', 'Brave New World');
+#   replaceString('World', 'Web', 'Brave New World');
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_question
+# next_question
 
-read -p "
+# read -p "
   
-  Solve using a for-loop
+#   Solve using a for-loop
 
-  function replaceString(oldS: string, newS: string, fullS: string): string {
+#   function replaceString(oldS: string, newS: string, fullS: string): string {
     
-  }
+#   }
 
-  replaceString('World', 'Web', 'Brave New World');
+#   replaceString('World', 'Web', 'Brave New World');
 
-Enter the next line: " response
-answer="for (let i = 0; i < fullS.length; ++i) { }"
-additional_feedback="
+# Enter the next line: " response
+# answer="for (let i = 0; i < fullS.length; ++i) { }"
+# additional_feedback="
 
-  function replaceString(oldS: string, newS: string, fullS: string): string {
-    for (let i = 0; i < fullS.length; ++i) { 
+#   function replaceString(oldS: string, newS: string, fullS: string): string {
+#     for (let i = 0; i < fullS.length; ++i) { 
       
-    }
-  } 
+#     }
+#   } 
 
- replaceString('World', 'Web', 'Brave New World'); 
+#  replaceString('World', 'Web', 'Brave New World'); 
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
   
-  Solve using a for-loop
+#   Solve using a for-loop
 
-  function replaceString(oldS: string, newS: string, fullS: string): string {
-    for (let i = 0; i < fullS.length; ++i) { 
+#   function replaceString(oldS: string, newS: string, fullS: string): string {
+#     for (let i = 0; i < fullS.length; ++i) { 
       
-    }
-  }
+#     }
+#   }
 
-  replaceString('World', 'Web', 'Brave New World');
+#   replaceString('World', 'Web', 'Brave New World');
 
-Enter the next line: " response
-answer="if (fullS.substring(i, i + oldS.length) === oldS) { }"
-additional_feedback="
+# Enter the next line: " response
+# answer="if (fullS.substring(i, i + oldS.length) === oldS) { }"
+# additional_feedback="
 
-  function replaceString(oldS: string, newS: string, fullS: string): string {
-    for (let i = 0; i < fullS.length; ++i) { 
-      if (fullS.substring(i, i + oldS.length) === oldS) { 
+#   function replaceString(oldS: string, newS: string, fullS: string): string {
+#     for (let i = 0; i < fullS.length; ++i) { 
+#       if (fullS.substring(i, i + oldS.length) === oldS) { 
 
-      }
-    }
-  }  
+#       }
+#     }
+#   }  
 
-  replaceString('World', 'Web', 'Brave New World');
+#   replaceString('World', 'Web', 'Brave New World');
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
 
-read -p "
+# read -p "
   
-  Solve using a for-loop
+#   Solve using a for-loop
 
-  function replaceString(oldS: string, newS: string, fullS: string): string {
-    for (let i = 0; i < fullS.length; ++i) { 
-      if (fullS.substring(i, i + oldS.length) === oldS) { 
+#   function replaceString(oldS: string, newS: string, fullS: string): string {
+#     for (let i = 0; i < fullS.length; ++i) { 
+#       if (fullS.substring(i, i + oldS.length) === oldS) { 
         
-      }
-    }
-  }
+#       }
+#     }
+#   }
 
   
- replaceString('World', 'Web', 'Brave New World');
+#  replaceString('World', 'Web', 'Brave New World');
 
 
-Enter the next line: " response
-answer="fullS = fullS.substring(0, i)"
-additional_feedback="
+# Enter the next line: " response
+# answer="fullS = fullS.substring(0, i)"
+# additional_feedback="
 
-  function replaceString(oldS: string, newS: string, fullS: string): string {
-    for (let i = 0; i < fullS.length; ++i) { 
-      if (fullS.substring(i, i + oldS.length) === oldS) { 
-        fullS = fullS.substring(0, i)
-      }
-    }
-  }  
+#   function replaceString(oldS: string, newS: string, fullS: string): string {
+#     for (let i = 0; i < fullS.length; ++i) { 
+#       if (fullS.substring(i, i + oldS.length) === oldS) { 
+#         fullS = fullS.substring(0, i)
+#       }
+#     }
+#   }  
 
-  replaceString('World', 'Web', 'Brave New World');
+#   replaceString('World', 'Web', 'Brave New World');
 
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-next_line
+# next_line
+
+# read -p "
+  
+#   Solve using a for-loop
+
+#   function replaceString(oldS: string, newS: string, fullS: string): string {
+#     for (let i = 0; i < fullS.length; ++i) { 
+#       if (fullS.substring(i, i + oldS.length) === oldS) { 
+#         fullS = fullS.substring(0, i)
+#       }
+#     }
+#   }
+
+#   replaceString('World', 'Web', 'Brave New World');
+
+# Enter the next line: " response
+# answer="+ newS + fullS.substring();"
+# additional_feedback="
+
+#   function replaceString(oldS: string, newS: string, fullS: string): string {
+#     for (let i = 0; i < fullS.length; ++i) { 
+#       if (fullS.substring(i, i + oldS.length) === oldS) { 
+#         fullS = fullS.substring(0, i) + newS + fullS.substring();
+#       }
+#     }
+#   }  
+
+#   replaceString('World', 'Web', 'Brave New World');
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+  
+#   Solve using a for-loop
+
+#   function replaceString(oldS: string, newS: string, fullS: string): string {
+#     for (let i = 0; i < fullS.length; ++i) { 
+#       if (fullS.substring(i, i + oldS.length) === oldS) { 
+#         fullS = fullS.substring(0, i) + newS + fullS.substring();
+#       }
+#     }
+#   }
+
+#   replaceString('World', 'Web', 'Brave New World');
+
+# Enter the next line: " response
+# answer="i + oldS.length, fullS.length"
+# additional_feedback="
+
+#   function replaceString(oldS: string, newS: string, fullS: string): string {
+#     for (let i = 0; i < fullS.length; ++i) { 
+#       if (fullS.substring(i, i + oldS.length) === oldS) { 
+#         fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length);
+#       }
+#     }
+#   }  
+  
+#   replaceString('World', 'Web', 'Brave New World');
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+  
+#   Solve using a for-loop
+
+#   function replaceString(oldS: string, newS: string, fullS: string): string {
+#     for (let i = 0; i < fullS.length; ++i) { 
+#       if (fullS.substring(i, i + oldS.length) === oldS) { 
+#         fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length);
+#       }
+#     }
+#   } 
+
+#   replaceString('World', 'Web', 'Brave New World');
+
+# Enter the next line: " response
+# answer="return fullS;"
+# additional_feedback="
+
+#   function replaceString(oldS: string, newS: string, fullS: string): string {
+#     for (let i = 0; i < fullS.length; ++i) { 
+#       if (fullS.substring(i, i + oldS.length) === oldS) { 
+#         fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length);
+#       }
+#     }
+#     return fullS;
+#   } 
+
+#   replaceString('World', 'Web', 'Brave New World'); 
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "Write a sleep function that wraps a setTimeout in a Promise. " response
+# answer="const sleep = (ms: number): Promise<ReturnType<typeof setTimeout>> => { };"
+# additional_feedback="
+
+#   const sleep = (ms: number): Promise<ReturnType<typeof setTimeout>> => { 
+
+#   };
+
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "Write a sleep function that wraps a setTimeout in a Promise.
+
+#   const sleep = (ms: number): Promise<ReturnType<typeof setTimeout>> => { 
+
+#   };
+
+# Enter the next line: " response
+# answer="return new Promise((resolve) => setTimeout(resolve, ms));"
+# additional_feedback="
+
+#   const sleep = (ms: number): Promise<ReturnType<typeof setTimeout>> => { 
+#     return new Promise((resolve) => setTimeout(resolve, ms));
+#   };
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "Write a curry function that accepts an number and returns a string from the curried function. " response
+# answer="const func: (num: number) => string = (num: number) => num.toString();"
+# additional_feedback="
+
+#   const func: (num: number) => string = (num: number) => num.toString();
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "Write a generic function to take a number to and an element and return an array. " response
+# answer="function fillArray<T>(len: number, elem: T) { }"
+# additional_feedback="
+
+#   function fillArray<T>(len: number, elem: T) {
+
+#   }
+  
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "Write a generic function to take a number to and an element and return an array. " response
+# answer="return new Array<T>(len).fill(elem);"
+# additional_feedback="
+
+#   function fillArray<T>(len: number, elem: T) {
+#     return new Array<T>(len).fill(elem);
+#   }
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+# read -p "
+  
+#   Complete the curry function. 
+
+#   const add10 = add(10);
+#   const add20 = add(20);
+#   const add30 = add(30);
+
+#   console.log(add10(5)); // 15
+#   console.log(add20(5)); // 25
+#   console.log(add30(5)); // 35
+
+
+# Enter the next line: " response
+# answer="function add(x: number): (y: number) => number { }"
+# additional_feedback="
+
+#   function add(x: number): (y: number) => number {
+  
+#   }
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+  
+#   Complete the curry function. 
+
+#   function add(x: number): (y: number) => number {
+  
+#   }
+
+#   const add10 = add(10);
+#   const add20 = add(20);
+#   const add30 = add(30);
+
+#   console.log(add10(5)); // 15
+#   console.log(add20(5)); // 25
+#   console.log(add30(5)); // 35
+
+
+# Enter the next line: " response
+# answer="return (y: number): number => x + y;"
+# additional_feedback="
+
+#   function add(x: number): (y: number) => number {
+#     return (y: number): number => x + y;
+#   }
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#  Describe how the curry function works.
+
+#   function add(x: number): (y: number) => number {
+#     return (y: number): number => x + y;
+#   } 
+
+# Enter the next line: " response
+# answer="A function is returned from a closure."
+# additional_feedback="
+
+#   A function is returned from a closure.
+
+#   function add(x: number): (y: number) => number {
+#     return (y: number): number => x + y;
+#   }
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#  Describe how the curry function works.
+
+#   function add(x: number): (y: number) => number {
+#     return (y: number): number => x + y;
+#   } 
+
+# Enter the next line: " response
+# answer="Variable x is obtained from the outer scope when the add function is called and memoized in the closure."
+# additional_feedback="
+
+#   A function is returned from a closure. Variable x is obtained from 
+#   the outer scope when the add function is called and memoized in the closure.
+
+#   function add(x: number): (y: number) => number {
+#     return (y: number): number => x + y;
+#   }
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
 
 read -p "
   
-  Solve using a for-loop
-
-  function replaceString(oldS: string, newS: string, fullS: string): string {
-    for (let i = 0; i < fullS.length; ++i) { 
-      if (fullS.substring(i, i + oldS.length) === oldS) { 
-        fullS = fullS.substring(0, i)
-      }
-    }
-  }
-
-  replaceString('World', 'Web', 'Brave New World');
-
-Enter the next line: " response
-answer="+ newS + fullS.substring();"
-additional_feedback="
-
-  function replaceString(oldS: string, newS: string, fullS: string): string {
-    for (let i = 0; i < fullS.length; ++i) { 
-      if (fullS.substring(i, i + oldS.length) === oldS) { 
-        fullS = fullS.substring(0, i) + newS + fullS.substring();
-      }
-    }
-  }  
-
-  replaceString('World', 'Web', 'Brave New World');
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  
-  Solve using a for-loop
-
-  function replaceString(oldS: string, newS: string, fullS: string): string {
-    for (let i = 0; i < fullS.length; ++i) { 
-      if (fullS.substring(i, i + oldS.length) === oldS) { 
-        fullS = fullS.substring(0, i)
-      }
-    }
-  }
-
-  replaceString('World', 'Web', 'Brave New World');
-
-Enter the next line: " response
-answer="i + oldS.length, fullS.length"
-additional_feedback="
-
-  function replaceString(oldS: string, newS: string, fullS: string): string {
-    for (let i = 0; i < fullS.length; ++i) { 
-      if (fullS.substring(i, i + oldS.length) === oldS) { 
-        fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length);
-      }
-    }
-  }  
-  
-  replaceString('World', 'Web', 'Brave New World');
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  
-  Solve using a for-loop
-
-  function replaceString(oldS: string, newS: string, fullS: string): string {
-    for (let i = 0; i < fullS.length; ++i) { 
-      if (fullS.substring(i, i + oldS.length) === oldS) { 
-        fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length);
-      }
-    }
-  } 
-
-  replaceString('World', 'Web', 'Brave New World');
-
-Enter the next line: " response
-answer="return fullS;"
-additional_feedback="
-
-  function replaceString(oldS: string, newS: string, fullS: string): string {
-    for (let i = 0; i < fullS.length; ++i) { 
-      if (fullS.substring(i, i + oldS.length) === oldS) { 
-        fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length);
-      }
-    }
-    return fullS;
-  } 
-
-  replaceString('World', 'Web', 'Brave New World'); 
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_question
-
-read -p "Write a sleep function that wraps a setTimeout in a Promise. " response
-answer="const sleep = (ms: number): Promise<ReturnType<typeof setTimeout>> => { };"
-additional_feedback="
-
-  const sleep = (ms: number): Promise<ReturnType<typeof setTimeout>> => { 
-
-  };
-
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_question
-
-read -p "Write a sleep function that wraps a setTimeout in a Promise.
-
-  const sleep = (ms: number): Promise<ReturnType<typeof setTimeout>> => { 
-
-  };
-
-Enter the next line: " response
-answer="return new Promise((resolve) => setTimeout(resolve, ms));"
-additional_feedback="
-
-  const sleep = (ms: number): Promise<ReturnType<typeof setTimeout>> => { 
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  };
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_question
-
-read -p "Write a curry function that accepts an number and returns a string from the curried function. " response
-answer="const func: (num: number) => string = (num: number) => num.toString();"
-additional_feedback="
-
-  const func: (num: number) => string = (num: number) => num.toString();
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_question
-
-read -p "Write a generic function to take a number to and an element and return an array. " response
-answer="function fillArray<T>(len: number, elem: T) { }"
-additional_feedback="
-
-  function fillArray<T>(len: number, elem: T) {
-
-  }
-  
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "Write a generic function to take a number to and an element and return an array. " response
-answer="return new Array<T>(len).fill(elem);"
-additional_feedback="
-
-  function fillArray<T>(len: number, elem: T) {
-    return new Array<T>(len).fill(elem);
-  }
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_question
-
-read -p "
-  
-  Complete the curry function. 
-
-  const add10 = add(10);
-  const add20 = add(20);
-  const add30 = add(30);
-
-  console.log(add10(5)); // 15
-  console.log(add20(5)); // 25
-  console.log(add30(5)); // 35
-
-
-Enter the next line: " response
-answer="function add(x: number): (y: number) => number { }"
-additional_feedback="
-
-  function add(x: number): (y: number) => number {
-  
-  }
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-  
-  Complete the curry function. 
-
-  const add10 = add(10);
-  const add20 = add(20);
-  const add30 = add(30);
-
-  console.log(add10(5)); // 15
-  console.log(add20(5)); // 25
-  console.log(add30(5)); // 35
-
-
-Enter the next line: " response
-answer="return (y: number): number => x + y;"
-additional_feedback="
-
-  function add(x: number): (y: number) => number {
-    return (y: number): number => x + y;
-  }
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-
- Describe how the curry function works.
-
-  function add(x: number): (y: number) => number {
-    return (y: number): number => x + y;
-  } 
-
-Enter the next line: " response
-answer="A function is returned from a closure."
-additional_feedback="
-
-  A function is returned from a closure.
-
-  function add(x: number): (y: number) => number {
-    return (y: number): number => x + y;
-  }
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p "
-
- Describe how the curry function works.
-
-  function add(x: number): (y: number) => number {
-    return (y: number): number => x + y;
-  } 
-
-Enter the next line: " response
-answer="Variable x is obtained from the outer scope of this method and memorized in the closure."
-additional_feedback="
-
-  A function is returned from a closure. Variable x is obtained from 
-  the outer scope of this method and memorized in the closure.
-
-  function add(x: number): (y: number) => number {
-    return (y: number): number => x + y;
-  }
-
-"
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_question
-
-read -p "
-  
-  Write a program that cancel a inner loop when the both x and z equal 10.
+  Write a program that cancel the inner loop when both x and z equal 10.
 
 
   let x = 0;
@@ -7515,7 +8237,7 @@ read -p "
   }
 
 Enter the  next line: " response
-answer="labelCancelLoops: while (true) { }"
+answer="labelCancelLoops: while(true) { }"
 additional_feedback="
 
   let x = 0;
@@ -7535,7 +8257,7 @@ next_line
 
 read -p "
   
-  Write a program that cancel a inner loop when the both x and z equal 10.
+  Write a program that cancel the inner loop when both x and z equal 10.
 
 
   let x = 0;
@@ -7568,7 +8290,7 @@ next_line
 
 read -p "
   
-  Write a program that cancel a inner loop when the both x and z equal 10.
+  Write a program that cancel the inner loop when both x and z equal 10.
 
 
     let x = 0;
@@ -7604,7 +8326,7 @@ next_line
 
 read -p "
   
-  Write a program that cancel a inner loop when the both x and z equal 10.
+  Write a program that cancel the inner loop when both x and z equal 10.
 
 
     let x = 0;
@@ -7642,7 +8364,7 @@ next_line
 
 read -p "
   
-  Write a program that cancel a inner loop when the both x and z equal 10.
+  Write a program that cancel the inner loop when both x and z equal 10.
 
 
     let x = 0;
@@ -7681,7 +8403,7 @@ next_line
 
 read -p "
   
-  Write a program that cancel a inner loop when the both x and z equal 10.
+  Write a program that cancel the inner loop when both x and z equal 10.
 
 
     let x = 0;
@@ -7724,7 +8446,7 @@ next_line
 
 read -p "
   
-  Write a program that cancel a inner loop when the both x and z equal 10.
+  Write a program that cancel the inner loop when both x and z equal 10.
 
 
     let x = 0;
@@ -7737,6 +8459,9 @@ read -p "
       while(true) {
         console.log('Inner loops: ' + z);
         z += 1;
+        if (z === 10 && x === 10) { 
+          
+        }
       }
     }
 
@@ -7767,7 +8492,7 @@ next_line
 
 read -p "
   
-  Write a program that cancel a inner loop when the both x and z equal 10.
+  Write a program that cancel the inner loop when both x and z equal 10.
 
 
     let x = 0;
@@ -7819,7 +8544,7 @@ read -p "Skip an increment when i equals 3.
   let n = 0;
 
 Enter the next line: " response
-answer="while (i < 5) { }"
+answer="while(i < 5) { }"
 additional_feedback="
 
   let i = 0;
@@ -7996,13 +8721,6 @@ additional_feedback="
   After the third pass: n = 3 and x = 6
 
 "
-evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-next_line
-
-read -p " " response
-answer=""
-additional_feedback=""
 evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 next_line
@@ -8369,7 +9087,7 @@ read -p "Write a program where i is 0 j is 10. There are two while loops.
         only prints odd numbers: 
         
 Enter the next line: " response
-answer="checkiandj: while (i < 4) { }"
+answer="checkiandj: while(i < 4) { }"
 additional_feedback="
 
   let i = 0;
@@ -8409,7 +9127,7 @@ read -p "Write a program where i is 0 j is 10. There are two while loops.
         only prints odd numbers: 
         
 Enter the next line: " response
-answer="checkj: while (j > 4) { }"
+answer="checkj: while(j > 4) { }"
 additional_feedback="
 
   let i = 0;

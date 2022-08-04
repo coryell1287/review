@@ -33,9 +33,9 @@ calculate_score() {
 
 
 
-       Wrong! There is no tommorrow, 
+       Wrong! There is no tomorrow, 
 
-       so get this right right now!
+       so get this right now!
 
 
 
@@ -156,9 +156,9 @@ evaluate_answer() {
 
 
 
-       Wrong! There is no tommorrow, 
+       Wrong! There is no tomorrow, 
 
-       so get this right right now!
+       so get this right now!
 
 
 
@@ -201,9 +201,9 @@ evaluate_answer_written_with_code() {
 
 
 
-       Wrong! There is no tommorrow, 
+       Wrong! There is no tomorrow, 
 
-       so get this right right now!
+       so get this right now!
 
 
 

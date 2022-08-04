@@ -119,6 +119,14 @@ next_line() {
 "
 }
 
+echo "
+
+     ########################################
+                First Question
+    ########################################
+
+"
+
 
 # read -p "
    
@@ -2994,6 +3002,339 @@ next_line() {
 
 # read -p "
 
+#   Create a interfaces for the PostsContext API.
+
+#   export const PostsContext = createContext(postsContextDefaultValue);
+  
+# Enter the next line: " response
+# answer="interface PostsContextData { }"
+# additional_feedback="
+
+#   interface PostsContextData { 
+  
+#   }  
+
+#   export const PostsContext = createContext(postsContextDefaultValue);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+# read -p "
+
+#   Create a interfaces for the PostsContext API.
+
+#   interface PostsContextData { 
+  
+#   } 
+
+#   export const PostsContext = createContext(postsContextDefaultValue);
+  
+# Enter the next line: " response
+# answer="posts: Post[];"
+# additional_feedback="
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#   }  
+
+#   export const PostsContext = createContext(postsContextDefaultValue);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# next_line
+
+# read -p "
+
+#   Create a interfaces for the PostsContext API.
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#   }
+
+#   export const PostsContext = createContext(postsContextDefaultValue);
+  
+# Enter the next line: " response
+# answer="isLoading: boolean;"
+# additional_feedback="
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#     isLoading: boolean; 
+#   }  
+
+#   export const PostsContext = createContext(postsContextDefaultValue);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# next_line
+
+# read -p "
+
+#   Create a interfaces for the PostsContext API.
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#     isLoading: boolean; 
+#   }  
+
+#   export const PostsContext = createContext(postsContextDefaultValue);
+  
+# Enter the next line: " response
+# answer="fetchPosts: () => void;"
+# additional_feedback="
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#     isLoading: boolean; 
+#     fetchPosts: () => void;  
+#   }  
+
+#   export const PostsContext = createContext(postsContextDefaultValue);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+# next_line
+
+# read -p "
+
+#   Create a interfaces for the PostsContext API.
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#     isLoading: boolean; 
+#     fetchPosts: () => void;  
+#   }
+
+#   export const PostsContext = createContext(postsContextDefaultValue);
+  
+# Enter the next line: " response
+# answer="removePost: (postId: number) => void;"
+# additional_feedback="
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#     isLoading: boolean; 
+#     fetchPosts: () => void; 
+#     removePost: (postId: number) => void; 
+#   }  
+
+#   export const PostsContext = createContext(postsContextDefaultValue);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+
+# read -p "
+
+#   Create a interfaces for the PostsContext API.
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#     isLoading: boolean; 
+#     fetchPosts: () => void; 
+#     removePost: (postId: number) => void; 
+#   }  
+
+#   export const PostsContext = createContext(postsContextDefaultValue);
+
+# Enter the next line: " response
+# answer="const postsContextDefaultValue: PostsContextData = { };"
+# additional_feedback="
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#     isLoading: boolean; 
+#     fetchPosts: () => void; 
+#     removePost: (postId: number) => void; 
+#   }  
+
+#   const postsContextDefaultValue: PostsContextData = { 
+    
+#   };
+
+#   export const PostsContext = createContext<PostsContextData>(postsContextDefaultValue);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+
+# read -p "
+
+#   Create a interfaces for the PostsContext API.
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#     isLoading: boolean; 
+#     fetchPosts: () => void; 
+#     removePost: (postId: number) => void; 
+#   }  
+
+#   const postsContextDefaultValue: PostsContextData = { 
+    
+#   };
+
+#   export const PostsContext = createContext(postsContextDefaultValue);
+
+# Enter the next line: " response
+# answer="posts: [],"
+# additional_feedback="
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#     isLoading: boolean; 
+#     fetchPosts: () => void; 
+#     removePost: (postId: number) => void; 
+#   }  
+
+#   const postsContextDefaultValue: PostsContextData = { 
+#     posts: [],
+#   };
+
+#   export const PostsContext = createContext<PostsContextData>(postsContextDefaultValue);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+
+# read -p "
+
+#   Create a interfaces for the PostsContext API.
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#     isLoading: boolean; 
+#     fetchPosts: () => void; 
+#     removePost: (postId: number) => void; 
+#   }  
+
+#   const postsContextDefaultValue: PostsContextData = { 
+#     posts: [],
+#   };
+
+#   export const PostsContext = createContext(postsContextDefaultValue);
+
+# Enter the next line: " response
+# answer="isLoading: false,"
+# additional_feedback="
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#     isLoading: boolean; 
+#     fetchPosts: () => void; 
+#     removePost: (postId: number) => void; 
+#   }  
+
+#   const postsContextDefaultValue: PostsContextData = { 
+#     posts: [],
+#     isLoading: false,
+#   };
+
+#   export const PostsContext = createContext<PostsContextData>(postsContextDefaultValue);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+
+# read -p "
+
+#   Create a interfaces for the PostsContext API.
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#     isLoading: boolean; 
+#     fetchPosts: () => void; 
+#     removePost: (postId: number) => void; 
+#   }  
+
+#   const postsContextDefaultValue: PostsContextData = { 
+#     posts: [],
+#     isLoading: false,
+#   };
+
+#   export const PostsContext = createContext(postsContextDefaultValue);
+
+# Enter the next line: " response
+# answer="fetchPosts: () => null,"
+# additional_feedback="
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#     isLoading: boolean; 
+#     fetchPosts: () => void; 
+#     removePost: (postId: number) => void; 
+#   }  
+
+#   const postsContextDefaultValue: PostsContextData = { 
+#     posts: [],
+#     isLoading: false,
+#     fetchPosts: () => null,
+#   };
+
+#   export const PostsContext = createContext<PostsContextData>(postsContextDefaultValue);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_line
+
+
+# read -p "
+
+#   Create a interfaces for the PostsContext API.
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#     isLoading: boolean; 
+#     fetchPosts: () => void; 
+#     removePost: (postId: number) => void; 
+#   }  
+
+#   const postsContextDefaultValue: PostsContextData = { 
+#     posts: [],
+#     isLoading: false,
+#     fetchPosts: () => null,
+#   };
+
+#   export const PostsContext = createContext(postsContextDefaultValue);
+
+# Enter the next line: " response
+# answer="removePost: (postId: number) => null"
+# additional_feedback="
+
+#   interface PostsContextData { 
+#     posts: Post[]; 
+#     isLoading: boolean; 
+#     fetchPosts: () => void; 
+#     removePost: (postId: number) => void; 
+#   }  
+
+#   const postsContextDefaultValue: PostsContextData = { 
+#     posts: [],
+#     isLoading: false,
+#     fetchPosts: () => null,
+#     removePost: (postId: number) => null
+#   };
+
+#   export const PostsContext = createContext<PostsContextData>(postsContextDefaultValue);
+
+# "
+# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+# next_question
+
+
+# read -p "
+
 #   Complete the functionality for fetchPosts.
   
 #   function usePostsContextValue(): PostsContextData {
@@ -3447,2869 +3788,2869 @@ next_line() {
 
 # next_question
 
-  # read -p "
+#   read -p "
 
-  #  Write a function that uses the usePostsContexValue.
+#    Write a function that uses the usePostsContexValue.
 
-  #   function App() {
-  #     return  <PostsList />;
-  #   }  
+#     function App() {
+#       return  <PostsList />;
+#     }  
 
-  # Enter the next line: " response
-  # answer="const postsContextValue = usePostsContextValue();"
-  # additional_feedback="
+#   Enter the next line: " response
+#   answer="const postsContextValue = usePostsContextValue();"
+#   additional_feedback="
 
-  #   const postsContextValue = usePostsContextValue();
 
-  #   function PostsProvider() {
-  #     return  <PostsList />;
-  #   }  
+#     function PostsProvider() {
+#     const postsContextValue = usePostsContextValue();
+#       return  <PostsList />;
+#     }  
 
-  # "
-  # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+#   "
+#   evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-  # next_line
+#   next_line
 
-  # read -p "
+#   read -p "
 
-  #   Write a function that uses the usePostsContexValue.
+#     Write a function that uses the usePostsContexValue.
 
-  #   const postsContextValue = usePostsContextValue();
 
-  #   function PostsProvider() {
-  #     return  <PostsList />;
-  #   }
-
-  # Enter the next line: " response
-  # answer="<PostsContext.Provider value={postsContextValue}><PostsList /></PostsContext.Provider>"
-  # additional_feedback="
-
-  #   const postsContextValue = usePostsContextValue();
-
-  #   function PostsProvider() {
-  #     return (
-  #       <PostsContext.Provider value={postsContextValue}>
-  #         <PostsList />
-  #       </PostsContext.Provider>
-  #     );
-  #   }  
-
-
-  # "
-  # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-  # next_question
-
-  # read -p "
-  #   Write a function that uses the PostsContext.
-
-
-  # Enter the line next line: " response
-  # answer="function usePostsContext() { }"
-  # additional_feedback="
-
-  #   function usePostsContext() { 
-      
-  #   }
-
-
-
-  # "
-  # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-  # next_line
-
-
-  # read -p "
-  #   Write a function that uses the PostsContext.
-
-  #   function usePostsContext() { 
-      
-  #   }
-
-  # Enter the line next line: " response
-  # answer="const postsContext = useContext(PostsContext);"
-  # additional_feedback="
-
-  #   function usePostsContext() { 
-  #     const postsContext = useContext(PostsContext);
-  #   }
-
-
-
-  # "
-  # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-  # next_line
-
-  # read -p "
-  #   Write a function that uses the PostsContext.
-
-  #   function usePostsContext() { 
-  #     const postsContext = useContext(PostsContext);
-  #   }
-
-  # Enter the line next line: " response
-  # answer="if (!postsContext) { }"
-  # additional_feedback="
-
-  #   function usePostsContext() { 
-  #     const postsContext = useContext(PostsContext);
-  #     if (!postsContext) {
-
-  #     }
-  #   }
-
-
-  # "
-  # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-  # next_line
-
-  # read -p "
-  #   Write a function that uses the PostsContext.
-
-  #   function usePostsContext() { 
-  #     const postsContext = useContext(PostsContext);
-  #     if (!postsContext) {
-
-  #     }
-  #   }
-
-  # Enter the line next line: " response
-  # answer="throw new Error('usePostsContext must be used within the PostsContext.Provider');"
-  # additional_feedback="
-
-  #   function usePostsContext() { 
-  #     const postsContext = useContext(PostsContext);
-  #     if (!postsContext) {
-  #       throw new Error('usePostsContext must be used within the PostsContext.Provider');
-  #     }
-  #   }
-
-
-
-  # "
-  # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-  # next_line
-
-  # read -p "
-  #   Write a function that uses the PostsContext.
-
-  #   function usePostsContext() { 
-  #     const postsContext = useContext(PostsContext);
-  #     if (!postsContext) {
-  #       throw new Error('usePostsContext must be used within the PostsContext.Provider');
-  #     }
-  #   }
-
-  # Enter the line next line: " response
-  # answer="return postsContext;"
-  # additional_feedback="
-
-  #   function usePostsContext() { 
-  #     const postsContext = useContext(PostsContext);
-  #     if (!postsContext) {
-  #       throw new Error('usePostsContext must be used within the PostsContext.Provider');
-  #     }
-  #     return postsContext;
-  #   }
-
-
-  # "
-  # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-  # next_line
-
-  # read -p "
-  #   Write a function that uses the PostsContext.
-
-  #   function usePostsContext() { 
-  #     const postsContext = useContext(PostsContext);
-  #     if (!postsContext) {
-  #       throw new Error('usePostsContext must be used within the PostsContext.Provider');
-  #     }
-  #     return postsContext;
-  #   }
-
-  # Enter the line next line: " response
-  # answer="export { PostsProvider, usePostsContext };"
-  # additional_feedback="
-
-  #   function usePostsContext() { 
-  #     const postsContext = useContext(PostsContext);
-  #     if (!postsContext) {
-  #       throw new Error('usePostsContext must be used within the PostsContext.Provider');
-  #     }
-  #     return postsContext;
-  #   }
-
-  #   export { PostsProvider, usePostsContext };
-
-  # "
-  # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-  # next_question
-
-# read -p "
-#   Create a Class API for the following code.
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-
-#   }
-
-# Enter the next line: " response
-# answer="constructor(authToken) { this.authToken = authToken; }"
-# additional_feedback="
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
+#     function PostsProvider() {
+#     const postsContextValue = usePostsContextValue();
+#       return  <PostsList />;
 #     }
-#   }
 
-# "
+#   Enter the next line: " response
+#   answer="<PostsContext.Provider value={postsContextValue}><PostsList /></PostsContext.Provider>"
+#   additional_feedback="
+
+
+#     function PostsProvider() {
+#     const postsContextValue = usePostsContextValue();
+#       return (
+#         <PostsContext.Provider value={postsContextValue}>
+#           <PostsList />
+#         </PostsContext.Provider>
+#       );
+#     }  
+
+
+#   "
+#   evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+#   next_question
+
+#   read -p "
+#     Write a function that uses the PostsContext.
+
+
+#   Enter the line next line: " response
+#   answer="function usePostsContext() { }"
+#   additional_feedback="
+
+#     function usePostsContext() { 
+      
+#     }
+
+
+
+#   "
+#   evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+#   next_line
+
+
+#   read -p "
+#     Write a function that uses the PostsContext.
+
+#     function usePostsContext() { 
+      
+#     }
+
+#   Enter the line next line: " response
+#   answer="const postsContext = useContext(PostsContext);"
+#   additional_feedback="
+
+#     function usePostsContext() { 
+#       const postsContext = useContext(PostsContext);
+#     }
+
+
+
+#   "
+#   evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+#   next_line
+
+#   read -p "
+#     Write a function that uses the PostsContext.
+
+#     function usePostsContext() { 
+#       const postsContext = useContext(PostsContext);
+#     }
+
+#   Enter the line next line: " response
+#   answer="if (!postsContext) { }"
+#   additional_feedback="
+
+#     function usePostsContext() { 
+#       const postsContext = useContext(PostsContext);
+#       if (!postsContext) {
+
+#       }
+#     }
+
+
+#   "
+#   evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+#   next_line
+
+#   read -p "
+#     Write a function that uses the PostsContext.
+
+#     function usePostsContext() { 
+#       const postsContext = useContext(PostsContext);
+#       if (!postsContext) {
+
+#       }
+#     }
+
+#   Enter the line next line: " response
+#   answer="throw new Error('usePostsContext must be used within the PostsContext.Provider');"
+#   additional_feedback="
+
+#     function usePostsContext() { 
+#       const postsContext = useContext(PostsContext);
+#       if (!postsContext) {
+#         throw new Error('usePostsContext must be used within the PostsContext.Provider');
+#       }
+#     }
+
+
+
+#   "
+#   evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+#   next_line
+
+#   read -p "
+#     Write a function that uses the PostsContext.
+
+#     function usePostsContext() { 
+#       const postsContext = useContext(PostsContext);
+#       if (!postsContext) {
+#         throw new Error('usePostsContext must be used within the PostsContext.Provider');
+#       }
+#     }
+
+#   Enter the line next line: " response
+#   answer="return postsContext;"
+#   additional_feedback="
+
+#     function usePostsContext() { 
+#       const postsContext = useContext(PostsContext);
+#       if (!postsContext) {
+#         throw new Error('usePostsContext must be used within the PostsContext.Provider');
+#       }
+#       return postsContext;
+#     }
+
+
+#   "
+#   evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+#   next_line
+
+#   read -p "
+#     Write a function that uses the PostsContext.
+
+#     function usePostsContext() { 
+#       const postsContext = useContext(PostsContext);
+#       if (!postsContext) {
+#         throw new Error('usePostsContext must be used within the PostsContext.Provider');
+#       }
+#       return postsContext;
+#     }
+
+#   Enter the line next line: " response
+#   answer="export { PostsProvider, usePostsContext };"
+#   additional_feedback="
+
+#     function usePostsContext() { 
+#       const postsContext = useContext(PostsContext);
+#       if (!postsContext) {
+#         throw new Error('usePostsContext must be used within the PostsContext.Provider');
+#       }
+#       return postsContext;
+#     }
+
+#     export { PostsProvider, usePostsContext };
+
+#   "
 # evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+# next_question
 
-# read -p "
-#   Create a Class API for the following code.
+read -p "
+  Create a Class API for the following code.
 
-#   const api = new API('my-auth-token');
+  const api = new API('my-auth-token');
 
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-#   }
-
-# Enter the next line: " response
-# answer="constructHeaders() { }"
-# additional_feedback="
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
 
 
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
+  class API {
 
-#     constructHeaders() {
+  }
+
+Enter the next line: " response
+answer="constructor(authToken) { this.authToken = authToken; }"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+  }
+
+Enter the next line: " response
+answer="constructHeaders() { }"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
      
-#     }
+    }
    
-#   }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
-#   Create a Class API for the following code.
+read -p "
+  Create a Class API for the following code.
 
-#   const api = new API('my-auth-token');
+  const api = new API('my-auth-token');
 
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
 
 
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
 
-#     constructHeaders() {
+    constructHeaders() {
 
-#     } 
+    } 
 
     
-#   }
+  }
 
-# Enter the next line: " response
-# answer="const headers = new Headers();"
-# additional_feedback="
+Enter the next line: " response
+answer="const headers = new Headers();"
+additional_feedback="
 
-#   const api = new API('my-auth-token');
+  const api = new API('my-auth-token');
 
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
 
 
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
 
-#     constructHeaders() {
-#       const headers = new Headers();
-#     }
+    constructHeaders() {
+      const headers = new Headers();
+    }
    
-#   }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
-
-
-# read -p "
-#   Create a Class API for the following code.
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
+next_line
 
 
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
+read -p "
+  Create a Class API for the following code.
 
-#     constructHeaders() {
-#       const headers = new Headers();
-#     }
-#   }
+  const api = new API('my-auth-token');
 
-# Enter the next line: " response
-# answer="headers.set('Authorization', this.authToken);"
-# additional_feedback="
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
 
 
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
 
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#     }
+    constructHeaders() {
+      const headers = new Headers();
+    }
+  }
+
+Enter the next line: " response
+answer="headers.set('Authorization', this.authToken);"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+    }
    
-#   }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-
-# next_line
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
 
-# read -p "
-#   Create a Class API for the following code.
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
+next_line
 
 
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
+read -p "
+  Create a Class API for the following code.
 
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#     }
-#   }
+  const api = new API('my-auth-token');
 
-# Enter the next line: " response
-# answer="return headers;"
-# additional_feedback="
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
 
 
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
 
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+    }
+  }
+
+Enter the next line: " response
+answer="return headers;"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
    
-#   }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
-#   Create a Class API for the following code.
+read -p "
+  Create a Class API for the following code.
 
-#   const api = new API('my-auth-token');
+  const api = new API('my-auth-token');
 
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-#   }
-
-# Enter the next line: " response
-# answer="handleResponse(response) { }"
-# additional_feedback="
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
 
 
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
 
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+  }
 
-#     handleResponse(response) { 
+Enter the next line: " response
+answer="handleResponse(response) { }"
+additional_feedback="
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
       
-#     }
-#   }
+    }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
-#   Create a Class API for the following code.
+read -p "
+  Create a Class API for the following code.
 
-#   const api = new API('my-auth-token');
+  const api = new API('my-auth-token');
 
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
 
 
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
 
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
 
-#     handleResponse(response) { 
+    handleResponse(response) { 
       
-#     }
-#   }
-
-# Enter the next line: " response
-# answer="if (response.ok) { return response.json(); }"
-# additional_feedback="
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#     handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       }
-#     }
-#   }
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-#   Create a Class API for the following code.
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#      handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       }
-#     }
-#   }
-
-# Enter the next line: " response
-# answer="else { return Promise.reject({ }); }"
-# additional_feedback="
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#     handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       } else { 
-#         return Promise.reject({ });
-#       }
-#     }
-#   }
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-#   Create a Class API for the following code.
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#      handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       } else { 
-#         return Promise.reject({ });
-#       }
-#     }
-#   }
-
-# Enter the next line: " response
-# answer="status: response.status,"
-# additional_feedback="
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#     handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       } else { 
-#         return Promise.reject({ 
-#           status: response.status,
-#         });
-#       }
-#     }
-#   }
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-#   Create a Class API for the following code.
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#     handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       } else { 
-#         return Promise.reject({ 
-#           status: response.status,
-#         });
-#       }
-#     }
-#   }
-
-# Enter the next line: " response
-# answer="statusText: response.statusText"
-# additional_feedback="
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#     handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       } else { 
-#         return Promise.reject({ 
-#           status: response.status,
-#           statusText: response.statusText
-#         });
-#       }
-#     }
-#   }
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-#   Create a Class API for the following code.
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#     handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       } else { 
-#         return Promise.reject({ 
-#           status: response.status, 
-#           statusText: response.statusText 
-#         });
-#       }
-#     }
-#   }
-
-# Enter the next line: " response
-# answer="get(url, options) { }"
-# additional_feedback="
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#     handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       } else { 
-#         return Promise.reject({ 
-#           status: response.status, 
-#           statusText: response.statusText 
-#         });
-#       }
-#     }
-
-#     get(url, options) { 
+    }
+  }
+
+Enter the next line: " response
+answer="if (response.ok) { return response.json(); }"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      }
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+     handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      }
+    }
+  }
+
+Enter the next line: " response
+answer="else { return Promise.reject({ }); }"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ });
+      }
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+     handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ });
+      }
+    }
+  }
+
+Enter the next line: " response
+answer="status: response.status,"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status,
+        });
+      }
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status,
+        });
+      }
+    }
+  }
+
+Enter the next line: " response
+answer="statusText: response.statusText"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status,
+          statusText: response.statusText
+        });
+      }
+    }
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
+  }
+
+Enter the next line: " response
+answer="get(url, options) { }"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
+
+    get(url, options) { 
       
-#     } 
-#   }
+    } 
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
-#   Create a Class API for the following code.
+read -p "
+  Create a Class API for the following code.
 
-#   const api = new API('my-auth-token');
+  const api = new API('my-auth-token');
 
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
 
 
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
 
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
 
-#     handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       } else { 
-#         return Promise.reject({ 
-#           status: response.status, 
-#           statusText: response.statusText 
-#         });
-#       }
-#     }
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
 
-#     get(url, options) { 
+    get(url, options) { 
       
-#     } 
-#   }
-
-# Enter the next line: " response
-# answer="return fetch(url, { })"
-# additional_feedback="
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#     handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       } else { 
-#         return Promise.reject({ 
-#           status: response.status, 
-#           statusText: response.statusText 
-#         });
-#       }
-#     }
-
-#     get(url, options) { 
-#       return fetch(url, { })
-#     } 
-#   }
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-#   Create a Class API for the following code.
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#     handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       } else { 
-#         return Promise.reject({ 
-#           status: response.status, 
-#           statusText: response.statusText 
-#         });
-#       }
-#     }
-
-#     get(url, options) { 
-#       return fetch(url, { })
-#     } 
-#   }
-
-# Enter the next line: " response
-# answer="headers: this.constructHeaders()"
-# additional_feedback="
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#     handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       } else { 
-#         return Promise.reject({ 
-#           status: response.status, 
-#           statusText: response.statusText 
-#         });
-#       }
-#     }
-
-#     get(url, options) { 
-#       return fetch(url, { 
-#         headers: this.constructHeaders() 
-#       })
-#     } 
-#   }
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-#   Create a Class API for the following code.
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#     handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       } else { 
-#         return Promise.reject({ 
-#           status: response.status, 
-#           statusText: response.statusText 
-#         });
-#       }
-#     }
-
-#     get(url, options) { 
-#       return fetch(url, { 
-#         headers: this.constructHeaders() 
-#       })
-#     } 
-#   }
-
-# Enter the next line: " response
-# answer="...options"
-# additional_feedback="
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#     handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       } else { 
-#         return Promise.reject({ 
-#           status: response.status, 
-#           statusText: response.statusText 
-#         });
-#       }
-#     }
-
-#     get(url, options) { 
-#       return fetch(url, { 
-#         headers: this.constructHeaders(), 
-#         ...options 
-#       })
-#     } 
-#   }
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-#   Create a Class API for the following code.
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#     handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       } else { 
-#         return Promise.reject({ 
-#           status: response.status, 
-#           statusText: response.statusText 
-#         });
-#       }
-#     }
-
-#     get(url, options) { 
-#       return fetch(url, { 
-#         headers: this.constructHeaders(), 
-#         ...options 
-#       })
-#     } 
-#   }
-
-# Enter the next line: " response
-# answer=".then(this.handleResponse);"
-# additional_feedback="
-
-#   const api = new API('my-auth-token');
-
-#   api.get('https://api/users/1')
-#     .then(data => {
-#       console.log('User data', data);
-#     })
-#     .catch(error => {
-#       console.error(error);
-#   });
-
-#   class API {
-#     constructor(authToken) { 
-#       this.authToken = authToken; 
-#     }
-
-#     constructHeaders() {
-#       const headers = new Headers();
-#       headers.set('Authorization', this.authToken);
-#       return headers;
-#     }
-
-#     handleResponse(response) { 
-#       if (response.ok) { 
-#         return response.json(); 
-#       } else { 
-#         return Promise.reject({ 
-#           status: response.status, 
-#           statusText: response.statusText 
-#         });
-#       }
-#     }
-
-#     get(url, options) { 
-#       return fetch(url, { 
-#         headers: this.constructHeaders(), 
-#         ...options, 
-#         })
-#         .then(this.handleResponse);
-#     }
-
-#     post(url, options) {
-#       return fetch(url, {
-#         method: 'POST',
-#         headers: this.constructHeaders(),
-#         ...options,
-#       })
-#         .then(this.handleResponse);
-#     }
-
-#     put(url, options) {
-#       return fetch(url, {
-#         method: 'PUT',
-#         headers: this.constructHeaders(),
-#         ...options,
-#       })
-#         .then(this.handleResponse);
-#     }
-
-#     delete(url, options) {
-#       return fetch(url, {
-#         method: 'DELETE',
-#         headers: this.constructHeaders(),
-#         ...options,
-#       })
-#         .then(this.handleResponse); 
-#   }
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_question
-
-# read -p "
-#  Optimize the list component.
-
-#   function MyParent({ term }) {
-
-#     const onItemClick = (event) => {
-#       console.log(event.currentTarget);
-#     };
-
-#     return (
-#       <MyBigList
-#         term={term}
-#         onItemClick={onItemClick}
-#       />
-#     );
-#   } 
-
-#   function MyBigList({ term, onItemClick }) {
-#     const items = useSearch(term);
-#     const map = item => <div onClick={onItemClick}>{item}</div>;
-#     return <div>{items.map(map)}</div>;
-#   }
-#   export default MyBigList;
-
-# Enter the next line: " response
-# answer="const onItemClick = React.useCallback((event) => { }, [term]);"
-# additional_feedback="
-
-#   export function MyParent({ term }) {
-
-#     const onItemClick = React.useCallback((event) => {
-#       console.log(event.currentTarget);
-#     }, [term]);
-
-#     return (
-#       <MyBigList
-#         term={term}
-#         onItemClick={onItemClick}
-#       />
-#     );
-#   }   
-
-#   function MyBigList({ term, onItemClick }) {
-#     const items = useSearch(term);
-#     const map = item => <div onClick={onItemClick}>{item}</div>;
-#     return <div>{items.map(map)}</div>;
-#   }
-#   export default MyBigList;
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-#  Optimize the list component.
-
-#   function MyParent({ term }) {
-
-#     const onItemClick = React.useCallback((event) => {
-#       console.log(event.currentTarget);
-#     }, [term]);
-
-#     return (
-#       <MyBigList
-#         term={term}
-#         onItemClick={onItemClick}
-#       />
-#     );
-#   } 
-
-#   function MyBigList({ term, onItemClick }) {
-#     const items = useSearch(term);
-#     const map = item => <div onClick={onItemClick}>{item}</div>;
-#     return <div>{items.map(map)}</div>;
-#   }
-#   export default MyBigList;
-
-# Enter the next line: " response
-# answer="export default React.memo(MyBigList);"
-# additional_feedback="
-
-#   function MyParent({ term }) {
-
-#     const onItemClick = React.useCallback((event) => {
-#       console.log(event.currentTarget);
-#     }, [term]);
-
-#     return (
-#       <MyBigList
-#         term={term}
-#         onItemClick={onItemClick}
-#       />
-#     );
-#   } 
-
-#   function MyBigList({ term, onItemClick }) {
-#     const items = useSearch(term);
-#     const map = item => <div onClick={onItemClick}>{item}</div>;
-#     return <div>{items.map(map)}</div>;
-#   }
-#   export default React.memo(MyBigList);
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_question
-
-# read -p "What does the documentation on the createContext warn about the API? " response
-# answer="All consumers that are descendants of a Provider will re-render whenever the Provider's value prop changes."
-# evaluate_answer "$response" "$answer"
-
-# next_question
-
-
-# read -p "Why would the context not have a default value? " response
-# answer="Context would not have a default value when fetching information from an API to use the results as a default value."
-# evaluate_answer "$response" "$answer"
-
-# next_question
-
-# read -p "What should good error message for the context API include? " response
-# answer="The error message should include what went wrong and explain how to fix the error."
-# evaluate_answer "$response" "$answer"
-
-# next_question
-
-# read -p "What does useCallback do? " response
-# answer="The useCallback() hook memoize functions to prevent re-creating them on every re-render."
-# evaluate_answer "$response" "$answer"
-
-# next_question
-
-# read -p "What is the issue with this component
-
-#   const Input = () => {  
-#     const [name, setName] = useState('');
-
-#     return (
-#       <input type=\"text\" value={name} onChange={(e) => setName(e.target.value)} />
-#     );
-#   };
-
-# Enter your answer: " response
-# answer="The onChange function has an anonymous function and is always a new reference every time the component renders."
-# additional_feedback="
-
-#   Even if you make it not anonymous, because it uses scoped 
-#   variables and therefore has to be declared inside the component, 
-#   it will always be a new reference.
-
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_question
-
-# read -p "
-
-#   The following function constructs data to pass to the submit function. How can it be optimized?
-
-#   import { callApi } from './actions';
-
-#   const FormWrapper = () => {  
-#     const submit = (data) => {
-#       const name = \`\${ data.fields.firstname } \${ data.fields.lastname }\`;
-#       const country = data.fields.country || 'USA';
-#       callApi({ ...data.fields, name, country });
-#     };
-
-#     // \"submit\" is always a different reference so
-#     // this component will always re-render
-#     return <Form submit={submit} />;
-#   });
-
-# Enter your answer: " response
-# answer="const submit = useCallback((data) => { }, []);"
-# additional_feedback="
-
-#   const FormWrapper = () => {  
-#     const submit = useCallback((data) => {
-#       const name = \`\${ data.fields.firstname } \${ data.fields.lastname }\`;
-#       const country = data.fields.country || 'USA';
-#       callApi({ ...data.fields, name, country });
-#     }, []);
+    } 
+  }
+
+Enter the next line: " response
+answer="return fetch(url, { })"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
+
+    get(url, options) { 
+      return fetch(url, { })
+    } 
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
+
+    get(url, options) { 
+      return fetch(url, { })
+    } 
+  }
+
+Enter the next line: " response
+answer="headers: this.constructHeaders()"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
+
+    get(url, options) { 
+      return fetch(url, { 
+        headers: this.constructHeaders() 
+      })
+    } 
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
+
+    get(url, options) { 
+      return fetch(url, { 
+        headers: this.constructHeaders() 
+      })
+    } 
+  }
+
+Enter the next line: " response
+answer="...options"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
+
+    get(url, options) { 
+      return fetch(url, { 
+        headers: this.constructHeaders(), 
+        ...options 
+      })
+    } 
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Create a Class API for the following code.
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
+
+    get(url, options) { 
+      return fetch(url, { 
+        headers: this.constructHeaders(), 
+        ...options 
+      })
+    } 
+  }
+
+Enter the next line: " response
+answer=".then(this.handleResponse);"
+additional_feedback="
+
+  const api = new API('my-auth-token');
+
+  api.get('https://api/users/1')
+    .then(data => {
+      console.log('User data', data);
+    })
+    .catch(error => {
+      console.error(error);
+  });
+
+  class API {
+    constructor(authToken) { 
+      this.authToken = authToken; 
+    }
+
+    constructHeaders() {
+      const headers = new Headers();
+      headers.set('Authorization', this.authToken);
+      return headers;
+    }
+
+    handleResponse(response) { 
+      if (response.ok) { 
+        return response.json(); 
+      } else { 
+        return Promise.reject({ 
+          status: response.status, 
+          statusText: response.statusText 
+        });
+      }
+    }
+
+    get(url, options) { 
+      return fetch(url, { 
+        headers: this.constructHeaders(), 
+        ...options, 
+        })
+        .then(this.handleResponse);
+    }
+
+    post(url, options) {
+      return fetch(url, {
+        method: 'POST',
+        headers: this.constructHeaders(),
+        ...options,
+      })
+        .then(this.handleResponse);
+    }
+
+    put(url, options) {
+      return fetch(url, {
+        method: 'PUT',
+        headers: this.constructHeaders(),
+        ...options,
+      })
+        .then(this.handleResponse);
+    }
+
+    delete(url, options) {
+      return fetch(url, {
+        method: 'DELETE',
+        headers: this.constructHeaders(),
+        ...options,
+      })
+        .then(this.handleResponse); 
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+ Optimize the list component.
+
+  function MyParent({ term }) {
+
+    const onItemClick = (event) => {
+      console.log(event.currentTarget);
+    };
+
+    return (
+      <MyBigList
+        term={term}
+        onItemClick={onItemClick}
+      />
+    );
+  } 
+
+  function MyBigList({ term, onItemClick }) {
+    const items = useSearch(term);
+    const map = item => <div onClick={onItemClick}>{item}</div>;
+    return <div>{items.map(map)}</div>;
+  }
+  export default MyBigList;
+
+Enter the next line: " response
+answer="const onItemClick = React.useCallback((event) => { }, [term]);"
+additional_feedback="
+
+  export function MyParent({ term }) {
+
+    const onItemClick = React.useCallback((event) => {
+      console.log(event.currentTarget);
+    }, [term]);
+
+    return (
+      <MyBigList
+        term={term}
+        onItemClick={onItemClick}
+      />
+    );
+  }   
+
+  function MyBigList({ term, onItemClick }) {
+    const items = useSearch(term);
+    const map = item => <div onClick={onItemClick}>{item}</div>;
+    return <div>{items.map(map)}</div>;
+  }
+  export default MyBigList;
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+ Optimize the list component.
+
+  function MyParent({ term }) {
+
+    const onItemClick = React.useCallback((event) => {
+      console.log(event.currentTarget);
+    }, [term]);
+
+    return (
+      <MyBigList
+        term={term}
+        onItemClick={onItemClick}
+      />
+    );
+  } 
+
+  function MyBigList({ term, onItemClick }) {
+    const items = useSearch(term);
+    const map = item => <div onClick={onItemClick}>{item}</div>;
+    return <div>{items.map(map)}</div>;
+  }
+  export default MyBigList;
+
+Enter the next line: " response
+answer="export default React.memo(MyBigList);"
+additional_feedback="
+
+  function MyParent({ term }) {
+
+    const onItemClick = React.useCallback((event) => {
+      console.log(event.currentTarget);
+    }, [term]);
+
+    return (
+      <MyBigList
+        term={term}
+        onItemClick={onItemClick}
+      />
+    );
+  } 
+
+  function MyBigList({ term, onItemClick }) {
+    const items = useSearch(term);
+    const map = item => <div onClick={onItemClick}>{item}</div>;
+    return <div>{items.map(map)}</div>;
+  }
+  export default React.memo(MyBigList);
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "What does the documentation on the createContext warn about the API? " response
+answer="All consumers that are descendants of a Provider will re-render whenever the Provider's value prop changes."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+
+read -p "Why would the context not have a default value? " response
+answer="Context would not have a default value when fetching information from an API to use the results as a default value."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What should good error message for the context API include? " response
+answer="The error message should include what went wrong and explain how to fix the error."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What does useCallback do? " response
+answer="The useCallback() hook memoize functions to prevent re-creating them on every re-render."
+evaluate_answer "$response" "$answer"
+
+next_question
+
+read -p "What is the issue with this component
+
+  const Input = () => {  
+    const [name, setName] = useState('');
+
+    return (
+      <input type=\"text\" value={name} onChange={(e) => setName(e.target.value)} />
+    );
+  };
+
+Enter your answer: " response
+answer="The onChange function has an anonymous function and is always a new reference every time the component renders."
+additional_feedback="
+
+  Even if you make it not anonymous, because it uses scoped 
+  variables and therefore has to be declared inside the component, 
+  it will always be a new reference.
+
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
+
+read -p "
+
+  The following function constructs data to pass to the submit function. How can it be optimized?
+
+  import { callApi } from './actions';
+
+  const FormWrapper = () => {  
+    const submit = (data) => {
+      const name = \`\${ data.fields.firstname } \${ data.fields.lastname }\`;
+      const country = data.fields.country || 'USA';
+      callApi({ ...data.fields, name, country });
+    };
+
+    // \"submit\" is always a different reference so
+    // this component will always re-render
+    return <Form submit={submit} />;
+  });
+
+Enter your answer: " response
+answer="const submit = useCallback((data) => { }, []);"
+additional_feedback="
+
+  const FormWrapper = () => {  
+    const submit = useCallback((data) => {
+      const name = \`\${ data.fields.firstname } \${ data.fields.lastname }\`;
+      const country = data.fields.country || 'USA';
+      callApi({ ...data.fields, name, country });
+    }, []);
 
     
-#       return <Form submit={submit} />;
-#   });
+      return <Form submit={submit} />;
+  });
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_question
+next_question
 
-# read -p "
+read -p "
 
-#   Why is this an improvement?
+  Why is this an improvement?
 
-#   import { callApi } from './actions';
+  import { callApi } from './actions';
 
-#   const FormWrapper = () => {  
-#     const submit = useCallback((data) => {
-#       const name = \`\${ data.fields.firstname } \${ data.fields.lastname }\`;
-#       const country = data.fields.country || 'USA';
-#       callApi({ ...data.fields, name, country });
-#     }, []);
+  const FormWrapper = () => {  
+    const submit = useCallback((data) => {
+      const name = \`\${ data.fields.firstname } \${ data.fields.lastname }\`;
+      const country = data.fields.country || 'USA';
+      callApi({ ...data.fields, name, country });
+    }, []);
 
-#       return <Form submit={submit} />;
-#   });
+      return <Form submit={submit} />;
+  });
 
-# Enter your answer: " response
-# answer="submit function is cached and because no dependencies are specified, it will never change."
-# additional_feedback="
+Enter your answer: " response
+answer="submit function is cached and because no dependencies are specified, it will never change."
+additional_feedback="
 
-#   const FormWrapper = () => {  
-#     const submit = useCallback((data) => {
-#       const name = \`\${ data.fields.firstname } \${ data.fields.lastname }\`;
-#       const country = data.fields.country || 'USA';
-#       callApi({ ...data.fields, name, country });
-#     }, []);
+  const FormWrapper = () => {  
+    const submit = useCallback((data) => {
+      const name = \`\${ data.fields.firstname } \${ data.fields.lastname }\`;
+      const country = data.fields.country || 'USA';
+      callApi({ ...data.fields, name, country });
+    }, []);
 
-#       return <Form submit={submit} />;
-#   });
+      return <Form submit={submit} />;
+  });
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_question
+next_question
 
-# read -p "
+read -p "
 
-#   Create a component that will accept a submit or a button type that the parent can 
-#   reference using ref.
+  Create a component that will accept a submit or a button type that the parent can 
+  reference using ref.
 
-#   export const FancyButton = () => (
-#     <button ref={ref} className=\"MyClassName\" type={props.type}>
-#       {props.children}
-#     </button>
-#   ));
+  export const FancyButton = () => (
+    <button ref={ref} className=\"MyClassName\" type={props.type}>
+      {props.children}
+    </button>
+  ));
 
-# Enter the next line: " response
-# answer="type Props = { children: React.ReactNode; type: 'submit' | 'button' };"
-# additional_feedback="
+Enter the next line: " response
+answer="type Props = { children: React.ReactNode; type: 'submit' | 'button' };"
+additional_feedback="
 
-#   type Props = { children: React.ReactNode; type: 'submit' | 'button' };
+  type Props = { children: React.ReactNode; type: 'submit' | 'button' };
 
-#   export const FancyButton = () => (
-#     <button ref={ref} className=\"MyClassName\" type={props.type}>
-#       {props.children}
-#     </button>
-#   ));
+  export const FancyButton = () => (
+    <button ref={ref} className=\"MyClassName\" type={props.type}>
+      {props.children}
+    </button>
+  ));
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
+read -p "
 
-#   Create a component that will accept a submit or a button type that the parent can 
-#   reference using ref.
+  Create a component that will accept a submit or a button type that the parent can 
+  reference using ref.
 
-#   type Props = { children: React.ReactNode; type: 'submit' | 'button' };
+  type Props = { children: React.ReactNode; type: 'submit' | 'button' };
   
-#   export const FancyButton = () => (
-#     <button ref={ref} className=\"MyClassName\" type={props.type}>
-#       {props.children}
-#     </button>
-#   ));
+  export const FancyButton = () => (
+    <button ref={ref} className=\"MyClassName\" type={props.type}>
+      {props.children}
+    </button>
+  ));
 
-# Enter the next line: " response
-# answer="type Ref = HTMLButtonElement;"
-# additional_feedback="
+Enter the next line: " response
+answer="type Ref = HTMLButtonElement;"
+additional_feedback="
 
-#   type Props = { children: React.ReactNode; type: 'submit' | 'button' };
-#   type Ref = HTMLButtonElement;
+  type Props = { children: React.ReactNode; type: 'submit' | 'button' };
+  type Ref = HTMLButtonElement;
   
-#   export const FancyButton = () => (
-#     <button ref={ref} className=\"MyClassName\" type={props.type}>
-#       {props.children}
-#     </button>
-#   ));  
+  export const FancyButton = () => (
+    <button ref={ref} className=\"MyClassName\" type={props.type}>
+      {props.children}
+    </button>
+  ));  
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
+read -p "
 
-#   Create a component that will accept a submit or a button type that the parent can 
-#   reference using ref.
+  Create a component that will accept a submit or a button type that the parent can 
+  reference using ref.
 
-#   type Props = { children: React.ReactNode; type: 'submit' | 'button' };
-#   type Ref = HTMLButtonElement;
+  type Props = { children: React.ReactNode; type: 'submit' | 'button' };
+  type Ref = HTMLButtonElement;
   
-#   export const FancyButton = () => (
-#     <button ref={ref} className=\"MyClassName\" type={props.type}>
-#       {props.children}
-#     </button>
-#   ));  
+  export const FancyButton = () => (
+    <button ref={ref} className=\"MyClassName\" type={props.type}>
+      {props.children}
+    </button>
+  ));  
 
-# Enter the next line: " response
-# answer="export const FancyButton = React.forwardRef<Ref, Props>((props, ref) => ( ));"
-# additional_feedback="
+Enter the next line: " response
+answer="export const FancyButton = React.forwardRef<Ref, Props>((props, ref) => ( ));"
+additional_feedback="
 
-#   type Props = { children: React.ReactNode; type: 'submit' | 'button' };
-#   type Ref = HTMLButtonElement;
+  type Props = { children: React.ReactNode; type: 'submit' | 'button' };
+  type Ref = HTMLButtonElement;
 
-#   export const FancyButton = React.forwardRef<Ref, Props>((props, ref) => (
-#     <button ref={ref} className=\"MyClassName\" type={props.type}>
-#       {props.children}
-#     </button>
-#   )); 
+  export const FancyButton = React.forwardRef<Ref, Props>((props, ref) => (
+    <button ref={ref} className=\"MyClassName\" type={props.type}>
+      {props.children}
+    </button>
+  )); 
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
+read -p "
 
-#   Write a function to assert that data is characters
+  Write a function to assert that data is characters
 
-#   type Character = {
-#     name: string;
-#   };
+  type Character = {
+    name: string;
+  };
 
-# Enter the next line: " response
-# answer="function assertIsCharacter(data: any): asserts data is Character { }"
-# additional_feedback="
+Enter the next line: " response
+answer="function assertIsCharacter(data: any): asserts data is Character { }"
+additional_feedback="
 
-#   type Character = {
-#     name: string;
-#   };
+  type Character = {
+    name: string;
+  };
 
-#   function assertIsCharacter(data: any): asserts data is Character {
+  function assertIsCharacter(data: any): asserts data is Character {
 
-#   }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
+read -p "
 
-#   Write a function to assert that data is characters
+  Write a function to assert that data is characters
 
-#   type Character = {
-#     name: string;
-#   };
+  type Character = {
+    name: string;
+  };
 
-#   function assertIsCharacter(data: any): asserts data is Character {
+  function assertIsCharacter(data: any): asserts data is Character {
 
-#   }
+  }
 
-# Enter the next line: " response
-# answer="if (!('name' in data)) { }"
-# additional_feedback="
+Enter the next line: " response
+answer="if (!('name' in data)) { }"
+additional_feedback="
 
-#   type Character = {
-#     name: string;
-#   };
+  type Character = {
+    name: string;
+  };
 
-#   function assertIsCharacter(data: any): asserts data is Character {
-#     if (!('name' in data)) { 
+  function assertIsCharacter(data: any): asserts data is Character {
+    if (!('name' in data)) { 
 
-#     }
-#   }
+    }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
+read -p "
 
-#   Write a function to assert that data is characters
+  Write a function to assert that data is characters
 
-#   type Character = {
-#     name: string;
-#   };
+  type Character = {
+    name: string;
+  };
 
-#   function assertIsCharacter(data: any): asserts data is Character {
-#     if (!('name' in data)) { 
+  function assertIsCharacter(data: any): asserts data is Character {
+    if (!('name' in data)) { 
 
-#     }
-#   }
+    }
+  }
 
-# Enter the next line: " response
-# answer="throw new Error('Not Character');"
-# additional_feedback="
+Enter the next line: " response
+answer="throw new Error('Not Character');"
+additional_feedback="
 
-#   type Character = {
-#     name: string;
-#   };
+  type Character = {
+    name: string;
+  };
 
-#   function assertIsCharacter(data: any): asserts data is Character {
-#     if (!('name' in data)) { 
-#       throw new Error('Not character');
-#     }
-#   }
+  function assertIsCharacter(data: any): asserts data is Character {
+    if (!('name' in data)) { 
+      throw new Error('Not character');
+    }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_question
+next_question
 
-# read -p "
-#   Write a program that fetch data and aborts the request.
+read -p "
+  Write a program that fetch data and aborts the request.
 
-#   function getCharacter(id: number) {
+  function getCharacter(id: number) {
     
-#   }
+  }
 
-# Enter the next line: " response
-# answer="const controller = new AbortController();"
-# additional_feedback="
+Enter the next line: " response
+answer="const controller = new AbortController();"
+additional_feedback="
 
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#   }  
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+  }  
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
-#   Write a program that fetch data and aborts the request.
+read -p "
+  Write a program that fetch data and aborts the request.
 
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#   } 
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+  } 
 
-# Enter the next line: " response
-# answer="const signal = controller.signal;"
-# additional_feedback="
+Enter the next line: " response
+answer="const signal = controller.signal;"
+additional_feedback="
 
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-#   }  
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+  }  
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
-#   Write a program that fetch data and aborts the request.
+read -p "
+  Write a program that fetch data and aborts the request.
 
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-#   }
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+  }
 
-# Enter the next line: " response
-# answer="const promise = new Promise(async (resolve) => { });"
-# additional_feedback="
+Enter the next line: " response
+answer="const promise = new Promise(async (resolve) => { });"
+additional_feedback="
 
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
 
-#     const promise = new Promise(async (resolve) => { 
+    const promise = new Promise(async (resolve) => { 
 
-#     });
-#   }  
+    });
+  }  
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
-#   Write a program that fetch data and aborts the request.
+read -p "
+  Write a program that fetch data and aborts the request.
 
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
 
-#     const promise = new Promise(async (resolve) => { 
+    const promise = new Promise(async (resolve) => { 
 
-#     });
-#   }
+    });
+  }
 
-# Enter the next line: " response
-# answer="const response = await fetch('api', { });"
-# additional_feedback="
+Enter the next line: " response
+answer="const response = await fetch('api', { });"
+additional_feedback="
 
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
 
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
         
-#       }); 
-#     });
-#   }  
+      }); 
+    });
+  }  
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
-#   Write a program that fetch data and aborts the request.
+read -p "
+  Write a program that fetch data and aborts the request.
 
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
 
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
         
-#       }); 
-#     });
-#   }
-
-# Enter the next line: " response
-# answer="method: 'get', signal"
-# additional_feedback="
-
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       }); 
-#     });
-#   }  
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-#   Write a program that fetch data and aborts the request.
-
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       }); 
-#     });
-#   }
-
-# Enter the next line: " response
-# answer="const data = await response.json();"
-# additional_feedback="
-
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json(); 
-#     });
-#   }  
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-#   Write a program that fetch data and aborts the request.
-
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json(); 
-#     });
-#   }
-
-# Enter the next line: " response
-# answer="assertIsCharacter(data);"
-# additional_feedback="
-
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json();
-#       assertIsCharacter(data); 
-#     });
-#   }  
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-#   Write a program that fetch data and aborts the request.
-
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json();
-#       assertIsCharacter(data); 
-#     });
-#   }
-
-# Enter the next line: " response
-# answer="resolve(data);"
-# additional_feedback="
-
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json();
-#       assertIsCharacter(data); 
-#       resolve(data);
-#     });
-#   }  
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-#   Write a program that fetch data and aborts the request.
-
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json();
-#       assertIsCharacter(data); 
-#       resolve(data);
-#     });
-#   }
-
-# Enter the next line: " response
-# answer="promise.cancel = () => controller.abort();"
-# additional_feedback="
-
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json();
-#       assertIsCharacter(data); 
-#       resolve(data);
-#     });
-#     promise.cancel = () => controller.abort();
-#   }  
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-#   Write a program that fetch data and aborts the request.
-
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json();
-#       assertIsCharacter(data); 
-#       resolve(data);
-#     });
-#     promise.cancel = () => controller.abort();
-#   }
-
-# Enter the next line: " response
-# answer="return promise;"
-# additional_feedback="
-
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json();
-#       assertIsCharacter(data); 
-#       resolve(data);
-#     });
-#     promise.cancel = () => controller.abort();
-#     return promise;
-#   }  
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-
-# read -p "
-
-#   How do you solve this issue?
-
-#   // 💥 - Property 'cancel' does not exist on type 'Promise<unknown>'
-#   promise.cancel = () => controller.abort();
-
-# Enter the next line: " response
-# answer="interface PromiseWithCancel<T> extends Promise<T> { cancel: () => void; }"
-# additional_feedback="
-
-#   interface PromiseWithCancel<T> extends Promise<T> {
-#     cancel: () => void;
-#   }
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   How do you solve this issue?
-
-#   // 💥 - Property 'cancel' does not exist on type 'Promise<unknown>'
-#   promise.cancel = () => controller.abort();
-
-
-#   *******************
-#    Promise Interface
-#   ******************
-
-#   interface PromiseWithCancel<T> extends Promise<T> {
-#     cancel: () => void;
-#   } 
-
-
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json();
-#       assertIsCharacter(data); 
-#       resolve(data);
-#     });
-#     promise.cancel = () => controller.abort();
-#     return promise;
-#   } 
-
-# Enter the next line: " response
-# answer="(promise as PromiseWithCancel<Character>).cancel = () => controller.abort();"
-# additional_feedback="
-
-#   *******************
-#    Promise Interface
-#   ******************
-
-#   interface PromiseWithCancel<T> extends Promise<T> {
-#     cancel: () => void;
-#   } 
-
-
-
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json();
-#       assertIsCharacter(data); 
-#       resolve(data);
-#     });
-#     (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
-#     return promise;
-
-#   } 
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_line
-
-# read -p "
-
-#   How do you solve this issue?
-
-#   // 💥 - Property 'cancel' does not exist on type 'Promise<unknown>'
-#   promise.cancel = () => controller.abort();
-
-
-#   *******************
-#    Promise Interface
-#   ******************
-
-#   interface PromiseWithCancel<T> extends Promise<T> {
-#     cancel: () => void;
-#   } 
-
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json();
-#       assertIsCharacter(data); 
-#       resolve(data);
-#     });
-#     (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
-#     return promise;
-#   }
-
-# Enter the next line: " response
-# answer="return promise as PromiseWithCancel<Character>;"
-# additional_feedback="
-
-#   *******************
-#    Promise Interface
-#   ******************
-
-#   interface PromiseWithCancel<T> extends Promise<T> {
-#     cancel: () => void;
-#   } 
-
-
-
-#   function getCharacter(id: number) {
-#     const controller = new AbortController();
-#     const signal = controller.signal;
-
-#     const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json();
-#       assertIsCharacter(data); 
-#       resolve(data);
-#     });
-#     (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
-#     return promise as PromiseWithCancel<Character>;
-
-#   } 
-
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
-
-# next_question
+      }); 
+    });
+  }
+
+Enter the next line: " response
+answer="method: 'get', signal"
+additional_feedback="
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      }); 
+    });
+  }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a program that fetch data and aborts the request.
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      }); 
+    });
+  }
+
+Enter the next line: " response
+answer="const data = await response.json();"
+additional_feedback="
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json(); 
+    });
+  }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a program that fetch data and aborts the request.
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json(); 
+    });
+  }
+
+Enter the next line: " response
+answer="assertIsCharacter(data);"
+additional_feedback="
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data); 
+    });
+  }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a program that fetch data and aborts the request.
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data); 
+    });
+  }
+
+Enter the next line: " response
+answer="resolve(data);"
+additional_feedback="
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data); 
+      resolve(data);
+    });
+  }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a program that fetch data and aborts the request.
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data); 
+      resolve(data);
+    });
+  }
+
+Enter the next line: " response
+answer="promise.cancel = () => controller.abort();"
+additional_feedback="
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data); 
+      resolve(data);
+    });
+    promise.cancel = () => controller.abort();
+  }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+  Write a program that fetch data and aborts the request.
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data); 
+      resolve(data);
+    });
+    promise.cancel = () => controller.abort();
+  }
+
+Enter the next line: " response
+answer="return promise;"
+additional_feedback="
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data); 
+      resolve(data);
+    });
+    promise.cancel = () => controller.abort();
+    return promise;
+  }  
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+
+read -p "
+
+  How do you solve this issue?
+
+  // 💥 - Property 'cancel' does not exist on type 'Promise<unknown>'
+  promise.cancel = () => controller.abort();
+
+Enter the next line: " response
+answer="interface PromiseWithCancel<T> extends Promise<T> { cancel: () => void; }"
+additional_feedback="
+
+  interface PromiseWithCancel<T> extends Promise<T> {
+    cancel: () => void;
+  }
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  How do you solve this issue?
+
+  // 💥 - Property 'cancel' does not exist on type 'Promise<unknown>'
+  promise.cancel = () => controller.abort();
+
+
+  *******************
+   Promise Interface
+  ******************
+
+  interface PromiseWithCancel<T> extends Promise<T> {
+    cancel: () => void;
+  } 
+
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data); 
+      resolve(data);
+    });
+    promise.cancel = () => controller.abort();
+    return promise;
+  } 
+
+Enter the next line: " response
+answer="(promise as PromiseWithCancel<Character>).cancel = () => controller.abort();"
+additional_feedback="
+
+  *******************
+   Promise Interface
+  ******************
+
+  interface PromiseWithCancel<T> extends Promise<T> {
+    cancel: () => void;
+  } 
+
+
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data); 
+      resolve(data);
+    });
+    (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
+    return promise;
+
+  } 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_line
+
+read -p "
+
+  How do you solve this issue?
+
+  // 💥 - Property 'cancel' does not exist on type 'Promise<unknown>'
+  promise.cancel = () => controller.abort();
+
+
+  *******************
+   Promise Interface
+  ******************
+
+  interface PromiseWithCancel<T> extends Promise<T> {
+    cancel: () => void;
+  } 
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data); 
+      resolve(data);
+    });
+    (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
+    return promise;
+  }
+
+Enter the next line: " response
+answer="return promise as PromiseWithCancel<Character>;"
+additional_feedback="
+
+  *******************
+   Promise Interface
+  ******************
+
+  interface PromiseWithCancel<T> extends Promise<T> {
+    cancel: () => void;
+  } 
+
+
+
+  function getCharacter(id: number) {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data); 
+      resolve(data);
+    });
+    (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
+    return promise as PromiseWithCancel<Character>;
+
+  } 
+
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+
+next_question
       
-# read -p "Create the isAbortError function. " response
-# answer="function isAbortError(error: any): error is DOMException { }"
-# additional_feedback="
+read -p "Create the isAbortError function. " response
+answer="function isAbortError(error: any): error is DOMException { }"
+additional_feedback="
 
-#   function isAbortError(error: any): error is DOMException { 
+  function isAbortError(error: any): error is DOMException { 
      
-#   }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
       
-# read -p "Create the isAbortError function. 
+read -p "Create the isAbortError function. 
 
-#   function isAbortError(error: any): error is DOMException { 
+  function isAbortError(error: any): error is DOMException { 
      
-#   }
+  }
 
-# Enter the next line: " response
-# answer="if (error && error.name === 'AbortError') { }"
-# additional_feedback="
+Enter the next line: " response
+answer="if (error && error.name === 'AbortError') { }"
+additional_feedback="
 
-#   function isAbortError(error: any): error is DOMException { 
-#     if (error && error.name === 'AbortError') {
+  function isAbortError(error: any): error is DOMException { 
+    if (error && error.name === 'AbortError') {
 
-#     }  
-#   }
+    }  
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
       
-# read -p "Create the isAbortError function. 
+read -p "Create the isAbortError function. 
 
-#   function isAbortError(error: any): error is DOMException { 
-#     if (error && error.name === 'AbortError') {
+  function isAbortError(error: any): error is DOMException { 
+    if (error && error.name === 'AbortError') {
 
-#     }  
-#   }
+    }  
+  }
 
-# Enter the next line: " response
-# answer="return true;"
-# additional_feedback="
+Enter the next line: " response
+answer="return true;"
+additional_feedback="
 
-#   function isAbortError(error: any): error is DOMException { 
-#     if (error && error.name === 'AbortError') {
-#       return true;
-#     }  
-#   }
+  function isAbortError(error: any): error is DOMException { 
+    if (error && error.name === 'AbortError') {
+      return true;
+    }  
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
       
-# read -p "Create the isAbortError function. 
+read -p "Create the isAbortError function. 
 
-#   function isAbortError(error: any): error is DOMException { 
-#     if (error && error.name === 'AbortError') {
-#       return true;
-#     }  
-#   }
+  function isAbortError(error: any): error is DOMException { 
+    if (error && error.name === 'AbortError') {
+      return true;
+    }  
+  }
 
-# Enter the next line: " response
-# answer="return false;"
-# additional_feedback="
+Enter the next line: " response
+answer="return false;"
+additional_feedback="
 
-#   function isAbortError(error: any): error is DOMException { 
-#     if (error && error.name === 'AbortError') {
-#       return true;
-#     } 
-#     return false; 
-#   }
+  function isAbortError(error: any): error is DOMException { 
+    if (error && error.name === 'AbortError') {
+      return true;
+    } 
+    return false; 
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_question
+next_question
 
-# read -p "
+read -p "
 
-#   Complete the code that catches the error if the fetch call is aborted.
+  Complete the code that catches the error if the fetch call is aborted.
 
-#    const promise = new Promise(async (resolve) => {
-#       const response = await fetch('https://api/people/\${id}/', { 
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json();
-#       assertIsCharacter(data); 
-#       resolve(data);
-#     });
-#     (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
-#     return promise as PromiseWithCancel<Character>;
+   const promise = new Promise(async (resolve) => {
+      const response = await fetch('https://api/people/\${id}/', { 
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data); 
+      resolve(data);
+    });
+    (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
+    return promise as PromiseWithCancel<Character>;
 
-# Enter the next line: " response
-# answer="try { } catch (ex: unknown) { }"
-# additional_feedback="
+Enter the next line: " response
+answer="try { } catch (ex: unknown) { }"
+additional_feedback="
 
-#   const promise = new Promise(async (resolve) => {
-#     try {
-#       const response = await fetch('https://api/people/\${id}/', {
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json();
-#       assertIsCharacter(data);
-#       resolve(data);
-#      } catch (ex: unknown) {
+  const promise = new Promise(async (resolve) => {
+    try {
+      const response = await fetch('https://api/people/\${id}/', {
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data);
+      resolve(data);
+     } catch (ex: unknown) {
        
-#      }
-#   });
-#   (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
-#   return promise as PromiseWithCancel<Character>;
+     }
+  });
+  (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
+  return promise as PromiseWithCancel<Character>;
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
+read -p "
 
-# Complete the code that catches the error if the fetch call is aborted.
+Complete the code that catches the error if the fetch call is aborted.
 
-# const promise = new Promise(async (resolve) => {
-#     try {
-#       const response = await fetch('https://api/people/\${id}/', {
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json();
-#       assertIsCharacter(data);
-#       resolve(data);
+const promise = new Promise(async (resolve) => {
+    try {
+      const response = await fetch('https://api/people/\${id}/', {
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data);
+      resolve(data);
       
-#      } catch (ex: unknown) {
+     } catch (ex: unknown) {
        
-#      }
-#   });
-#   (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
-#   return promise as PromiseWithCancel<Character>;
+     }
+  });
+  (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
+  return promise as PromiseWithCancel<Character>;
 
-# Enter the next line: " response
-# answer="if (isAbortError(ex)) { console.log(ex.message); }"
-# additional_feedback="
+Enter the next line: " response
+answer="if (isAbortError(ex)) { console.log(ex.message); }"
+additional_feedback="
 
-#   const promise = new Promise(async (resolve) => {
-#     try {
-#       const response = await fetch('https://api/people/${id}/', {
-#         method: 'get',
-#         signal,
-#       });
-#       const data = await response.json();
-#       assertIsCharacter(data);
-#       resolve(data);
-#     } catch (ex: unknown) {
-#       if (isAbortError(ex)) {
-#         console.log(ex.message);
-#       }
-#     }
-#     (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
-#     return promise as PromiseWithCancel<Character>;
-#   });
+  const promise = new Promise(async (resolve) => {
+    try {
+      const response = await fetch('https://api/people/\${id}/', {
+        method: 'get',
+        signal,
+      });
+      const data = await response.json();
+      assertIsCharacter(data);
+      resolve(data);
+    } catch (ex: unknown) {
+      if (isAbortError(ex)) {
+        console.log(ex.message);
+      }
+    }
+    (promise as PromiseWithCancel<Character>).cancel = () => controller.abort();
+    return promise as PromiseWithCancel<Character>;
+  });
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_question
+next_question
 
-# read -p "
+read -p "
 
-#   Complete this component to use the PromiseWithCancel interface for querying data.
+  Complete this component to use the PromiseWithCancel interface for querying data.
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
 
-#   }
+  }
 
-# Enter the next line: " response
-# answer="const [query, setQuery] = React.useState(undefined);"
-# additional_feedback="
+Enter the next line: " response
+answer="const [query, setQuery] = React.useState(undefined);"
+additional_feedback="
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
-#     const [query, setQuery] = React.useState(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
+    const [query, setQuery] = React.useState(undefined);
 
-#   }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
+read -p "
 
-#   Complete this component to use the PromiseWithCancel interface for querying data.
+  Complete this component to use the PromiseWithCancel interface for querying data.
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
-#     const [query, setQuery] = React.useState(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
+    const [query, setQuery] = React.useState(undefined);
 
-#   }
+  }
 
-# Enter the next line: " response
-# answer="<PromiseWithCancel<Character> | undefined>"
-# additional_feedback="
+Enter the next line: " response
+answer="<PromiseWithCancel<Character> | undefined>"
+additional_feedback="
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
-#     const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
+    const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
 
-#   }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
+read -p "
 
-#   Complete this component to use the PromiseWithCancel interface for querying data.
+  Complete this component to use the PromiseWithCancel interface for querying data.
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
-#     const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
+    const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
 
-#   }
+  }
 
-# Enter the next line: " response
-# answer="React.useEffect(() => { }, []);"
-# additional_feedback="
+Enter the next line: " response
+answer="React.useEffect(() => { }, []);"
+additional_feedback="
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
-#     const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
+    const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
 
-#     React.useEffect(() => { 
+    React.useEffect(() => { 
       
-#     }, []);
+    }, []);
 
-#   }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
+read -p "
 
-#   Complete this component to use the PromiseWithCancel interface for querying data.
+  Complete this component to use the PromiseWithCancel interface for querying data.
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
-#     const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
+    const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
 
-#     React.useEffect(() => { 
+    React.useEffect(() => { 
       
-#     }, []);
+    }, []);
 
-#   }
+  }
 
-# Enter the next line: " response
-# answer="const q = getCharacter(1);"
-# additional_feedback="
+Enter the next line: " response
+answer="const q = getCharacter(1);"
+additional_feedback="
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
-#     const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
+    const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
 
-#     React.useEffect(() => {
-#       const q = getCharacter(1); 
+    React.useEffect(() => {
+      const q = getCharacter(1); 
 
-#     }, []);
+    }, []);
 
-#   }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
+read -p "
 
-#   Complete this component to use the PromiseWithCancel interface for querying data.
+  Complete this component to use the PromiseWithCancel interface for querying data.
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
-#     const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
+    const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
 
-#     React.useEffect(() => {
-#       const q = getCharacter(1); 
+    React.useEffect(() => {
+      const q = getCharacter(1); 
 
-#     }, []);
+    }, []);
 
-#   }
+  }
 
-# Enter the next line: " response
-# answer="setQuery(q);"
-# additional_feedback="
+Enter the next line: " response
+answer="setQuery(q);"
+additional_feedback="
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
-#     const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
+    const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
 
-#     React.useEffect(() => {
-#       const q = getCharacter(1);
-#       setQuery(q); 
+    React.useEffect(() => {
+      const q = getCharacter(1);
+      setQuery(q); 
 
-#     }, []);
+    }, []);
 
-#   }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
+read -p "
 
-#   Complete this component to use the PromiseWithCancel interface for querying data.
+  Complete this component to use the PromiseWithCancel interface for querying data.
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
-#     const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
+    const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
 
-#     React.useEffect(() => {
-#       const q = getCharacter(1);
-#       setQuery(q); 
+    React.useEffect(() => {
+      const q = getCharacter(1);
+      setQuery(q); 
 
-#     }, []);
+    }, []);
 
-#   }
+  }
 
-# Enter the next line: " response
-# answer="q.then((character) => { });"
-# additional_feedback="
+Enter the next line: " response
+answer="q.then((character) => { });"
+additional_feedback="
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
-#     const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
+    const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
 
-#     React.useEffect(() => {
-#       const q = getCharacter(1);
-#       setQuery(q);
-#       q.then((character) => { 
+    React.useEffect(() => {
+      const q = getCharacter(1);
+      setQuery(q);
+      q.then((character) => { 
         
-#       }); 
+      }); 
 
-#     }, []);
+    }, []);
 
-#   }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
+read -p "
 
-#   Complete this component to use the PromiseWithCancel interface for querying data.
+  Complete this component to use the PromiseWithCancel interface for querying data.
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
-#     const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
+    const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
 
-#     React.useEffect(() => {
-#       const q = getCharacter(1);
-#       setQuery(q);
-#       q.then((character) => { 
+    React.useEffect(() => {
+      const q = getCharacter(1);
+      setQuery(q);
+      q.then((character) => { 
         
-#       }); 
+      }); 
 
-#     }, []);
+    }, []);
 
-#   }
+  }
 
-# Enter the next line: " response
-# answer="setData(character);"
-# additional_feedback="
+Enter the next line: " response
+answer="setData(character);"
+additional_feedback="
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
-#     const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
+    const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
 
-#     React.useEffect(() => {
-#       const q = getCharacter(1);
-#       setQuery(q);
-#       q.then((character) => { 
-#         setData(character);
-#       }); 
+    React.useEffect(() => {
+      const q = getCharacter(1);
+      setQuery(q);
+      q.then((character) => { 
+        setData(character);
+      }); 
 
-#     }, []);
+    }, []);
 
-#   }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
 
-# read -p "
+read -p "
 
-#   Complete this component to use the PromiseWithCancel interface for querying data.
+  Complete this component to use the PromiseWithCancel interface for querying data.
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
-#     const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
+    const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
 
-#     React.useEffect(() => {
-#       const q = getCharacter(1);
-#       setQuery(q);
-#       q.then((character) => { 
-#         setData(character);
-#       }); 
+    React.useEffect(() => {
+      const q = getCharacter(1);
+      setQuery(q);
+      q.then((character) => { 
+        setData(character);
+      }); 
 
-#     }, []);
+    }, []);
 
-#   }
+  }
 
-# Enter the next line: " response
-# answer="return () => { query?.cancel(); }"
-# additional_feedback="
+Enter the next line: " response
+answer="return () => { query?.cancel(); }"
+additional_feedback="
 
-#   export function App() {
-#     const [data, setData] = React.useState<Character | undefined>(undefined);
-#     const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
+  export function App() {
+    const [data, setData] = React.useState<Character | undefined>(undefined);
+    const [query, setQuery] = React.useState<PromiseWithCancel<Character> | undefined>(undefined);
 
-#     React.useEffect(() => {
-#       const q = getCharacter(1);
-#       setQuery(q);
-#       q.then((character) => { 
-#         setData(character);
-#       });
+    React.useEffect(() => {
+      const q = getCharacter(1);
+      setQuery(q);
+      q.then((character) => { 
+        setData(character);
+      });
 
-#       return () => { 
-#         query?.cancel(); 
-#       } 
+      return () => { 
+        query?.cancel(); 
+      } 
 
-#     }, []);
+    }, []);
 
-#   }
+  }
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_question
+next_question
       
-# read -p "Write a filter that doesn't get substrings. 
+read -p "Write a filter that doesn't get substrings. 
 
-#   const filter = (e) => {
+  const filter = (e) => {
 
-#   }; 
+  }; 
 
 
-# Enter the next line: " response
-# answer="const keyword = e.target.value;"
-# additional_feedback="
+Enter the next line: " response
+answer="const keyword = e.target.value;"
+additional_feedback="
 
-#   const filter = (e) => {
-#     const keyword = e.target.value;
-#   }; 
+  const filter = (e) => {
+    const keyword = e.target.value;
+  }; 
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
       
-# read -p "Write a filter that doesn't get substrings. 
+read -p "Write a filter that doesn't get substrings. 
 
-#   const filter = (e) => {
-#     const keyword = e.target.value;
-#   }; 
+  const filter = (e) => {
+    const keyword = e.target.value;
+  }; 
 
 
-# Enter the next line: " response
-# answer="if (keyword !== '') { }"
-# additional_feedback="
+Enter the next line: " response
+answer="if (keyword !== '') { }"
+additional_feedback="
 
-#   const filter = (e) => {
-#     const keyword = e.target.value;
-#     if (keyword !== '') { 
+  const filter = (e) => {
+    const keyword = e.target.value;
+    if (keyword !== '') { 
       
-#     }
-#   }; 
+    }
+  }; 
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
       
-# read -p "Write a filter that doesn't get substrings. 
+read -p "Write a filter that doesn't get substrings. 
 
-#   const filter = (e) => {
-#     const keyword = e.target.value;
-#     if (keyword !== '') { 
+  const filter = (e) => {
+    const keyword = e.target.value;
+    if (keyword !== '') { 
       
-#     }
-#   };
+    }
+  };
 
 
-# Enter the next line: " response
-# answer="const results = users.filter((user) => { });"
-# additional_feedback="
+Enter the next line: " response
+answer="const results = users.filter((user) => { });"
+additional_feedback="
 
-#   const filter = (e) => {
-#     const keyword = e.target.value;
-#     if (keyword !== '') { 
-#       const results = users.filter((user) => { 
+  const filter = (e) => {
+    const keyword = e.target.value;
+    if (keyword !== '') { 
+      const results = users.filter((user) => { 
         
-#       });
-#     }
-#   }; 
+      });
+    }
+  }; 
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
       
-# read -p "Write a filter that doesn't get substrings. 
+read -p "Write a filter that doesn't get substrings. 
 
-#   const filter = (e) => {
-#     const keyword = e.target.value;
-#     if (keyword !== '') { 
-#       const results = users.filter((user) => { 
+  const filter = (e) => {
+    const keyword = e.target.value;
+    if (keyword !== '') { 
+      const results = users.filter((user) => { 
         
-#       });
-#     }
-#   }; 
+      });
+    }
+  }; 
 
 
-# Enter the next line: " response
-# answer="return user.name.toLowerCase().startsWith(keyword.toLowerCase());"
-# additional_feedback="
+Enter the next line: " response
+answer="return user.name.toLowerCase().startsWith(keyword.toLowerCase());"
+additional_feedback="
 
-#   const filter = (e) => {
-#     const keyword = e.target.value;
-#     if (keyword !== '') { 
-#       const results = users.filter((user) => { 
-#         return user.name.toLowerCase().startsWith(keyword.toLowerCase());
-#       });
-#     }
-#   }; 
+  const filter = (e) => {
+    const keyword = e.target.value;
+    if (keyword !== '') { 
+      const results = users.filter((user) => { 
+        return user.name.toLowerCase().startsWith(keyword.toLowerCase());
+      });
+    }
+  }; 
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
       
-# read -p "Write a filter that doesn't get substrings. 
+read -p "Write a filter that doesn't get substrings. 
 
-#   const filter = (e) => {
-#     const keyword = e.target.value;
-#     if (keyword !== '') { 
-#       const results = users.filter((user) => { 
-#         return user.name.toLowerCase().startsWith(keyword.toLowerCase());
-#       });
-#     }
-#   };  
+  const filter = (e) => {
+    const keyword = e.target.value;
+    if (keyword !== '') { 
+      const results = users.filter((user) => { 
+        return user.name.toLowerCase().startsWith(keyword.toLowerCase());
+      });
+    }
+  };  
 
 
-# Enter the next line: " response
-# answer="setFoundUsers(results);"
-# additional_feedback="
+Enter the next line: " response
+answer="setFoundUsers(results);"
+additional_feedback="
 
-#   const filter = (e) => {
-#     const keyword = e.target.value;
-#     if (keyword !== '') { 
-#       const results = users.filter((user) => { 
-#         return user.name.toLowerCase().startsWith(keyword.toLowerCase());
-#       });
-#       setFoundUsers(results);
-#     }
-#   }; 
+  const filter = (e) => {
+    const keyword = e.target.value;
+    if (keyword !== '') { 
+      const results = users.filter((user) => { 
+        return user.name.toLowerCase().startsWith(keyword.toLowerCase());
+      });
+      setFoundUsers(results);
+    }
+  }; 
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
       
-# read -p "Write a filter that doesn't get substrings. 
+read -p "Write a filter that doesn't get substrings. 
 
-#   const filter = (e) => {
-#     const keyword = e.target.value;
-#     if (keyword !== '') { 
-#       const results = users.filter((user) => { 
-#         return user.name.toLowerCase().startsWith(keyword.toLowerCase());
-#       });
-#       setFoundUsers(results);
-#     }
-#   }; 
+  const filter = (e) => {
+    const keyword = e.target.value;
+    if (keyword !== '') { 
+      const results = users.filter((user) => { 
+        return user.name.toLowerCase().startsWith(keyword.toLowerCase());
+      });
+      setFoundUsers(results);
+    }
+  }; 
 
 
-# Enter the next line: " response
-# answer="else { setFoundUsers(users); }"
-# additional_feedback="
+Enter the next line: " response
+answer="else { setFoundUsers(users); }"
+additional_feedback="
 
-#   const filter = (e) => {
-#     const keyword = e.target.value;
-#     if (keyword !== '') { 
-#       const results = users.filter((user) => { 
-#         return user.name.toLowerCase().startsWith(keyword.toLowerCase());
-#       });
-#       setFoundUsers(results);
-#     } else { 
-#       setFoundUsers(users); 
-#     }
-#   }; 
+  const filter = (e) => {
+    const keyword = e.target.value;
+    if (keyword !== '') { 
+      const results = users.filter((user) => { 
+        return user.name.toLowerCase().startsWith(keyword.toLowerCase());
+      });
+      setFoundUsers(results);
+    } else { 
+      setFoundUsers(users); 
+    }
+  }; 
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
       
-# read -p "Write a filter that doesn't get substrings. 
+read -p "Write a filter that doesn't get substrings. 
 
-#   const filter = (e) => {
-#     const keyword = e.target.value;
-#     if (keyword !== '') { 
-#       const results = users.filter((user) => { 
-#         return user.name.toLowerCase().startsWith(keyword.toLowerCase());
-#       });
-#       setFoundUsers(results);
-#     } else { 
-#       setFoundUsers(users); 
-#     }
-#   }; 
+  const filter = (e) => {
+    const keyword = e.target.value;
+    if (keyword !== '') { 
+      const results = users.filter((user) => { 
+        return user.name.toLowerCase().startsWith(keyword.toLowerCase());
+      });
+      setFoundUsers(results);
+    } else { 
+      setFoundUsers(users); 
+    }
+  }; 
 
 
-# Enter the next line: " response
-# answer="setName(keyword);"
-# additional_feedback="
+Enter the next line: " response
+answer="setName(keyword);"
+additional_feedback="
 
-#   const filter = (e) => {
-#     const keyword = e.target.value;
-#     if (keyword !== '') { 
-#       const results = users.filter((user) => { 
-#         return user.name.toLowerCase().startsWith(keyword.toLowerCase());
-#       });
-#       setFoundUsers(results);
-#     } else { 
-#       setFoundUsers(users); 
-#     }
-#     setName(keyword);
-#   }; 
+  const filter = (e) => {
+    const keyword = e.target.value;
+    if (keyword !== '') { 
+      const results = users.filter((user) => { 
+        return user.name.toLowerCase().startsWith(keyword.toLowerCase());
+      });
+      setFoundUsers(results);
+    } else { 
+      setFoundUsers(users); 
+    }
+    setName(keyword);
+  }; 
 
-# "
-# evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
+"
+evaluate_answer_written_with_code "$response" "$answer" "$additional_feedback"
 
-# next_line
+next_line
       
 read -p "Write a function that searches for substrings. 
   
